@@ -1,0 +1,23 @@
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net Profiles.vbproj.ResolveComReference.cache
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net Profiles.pdb
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net_Profiles.About.resources
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net_Profiles.ActivateSelectNetworkCard.resources
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net_Profiles.AutoActivate.resources
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net_Profiles.CopyProfile.resources
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net_Profiles.DesktopShortcut.resources
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net_Profiles.MappedDrive.resources
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net_Profiles.ProfileSettings.resources
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net_Profiles.RunPrograms.resources
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net_Profiles.WirelessDetected.resources
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net_Profiles.MainForm.resources
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net_Profiles.AutoActivate.af.resources
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net Profiles.vbproj.GenerateResource.Cache
+C:\Users\Christoph\Documents\Dev\Net Profiles\bin\Debug\Net Profiles.exe
+C:\Users\Christoph\Documents\Dev\Net Profiles\bin\Debug\Net Profiles.pdb
+C:\Users\Christoph\Documents\Dev\Net Profiles\bin\Debug\af\Net Profiles.resources.dll
+C:\Users\Christoph\Documents\Dev\Net Profiles\bin\Debug\MessageBoxHook.dll
+C:\Users\Christoph\Documents\Dev\Net Profiles\bin\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\af\Net Profiles.resources.dll
+C:\Users\Christoph\Documents\Dev\Net Profiles\obj\Debug\Net Profiles.exe

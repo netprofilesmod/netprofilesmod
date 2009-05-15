@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Net Profiles">
+</Property><Property Name="Projektmappendatei" Value="C:\Users\Christoph\Documents\Dev\Net Profiles\Net Profiles.sln">
+</Property><Property Name="Date" Value="Freitag, 15. Mai 2009">
+</Property><Property Name="Time" Value="08:45">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Net Profiles.sln" Description="Datei wurde erfolgreich als &quot;C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\Net Profiles.sln&quot; gesichert">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="Net Profiles.vbproj" Description="Projektdatei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\Net Profiles.vbproj">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="About.Designer.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\About.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="About.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\About.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="ActivateSelectNetworkCard.Designer.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\ActivateSelectNetworkCard.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="ActivateSelectNetworkCard.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\ActivateSelectNetworkCard.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="AutoActivate.Designer.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\AutoActivate.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="AutoActivate.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\AutoActivate.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="clsScreenRes.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\clsScreenRes.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="CopyProfile.Designer.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\CopyProfile.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="CopyProfile.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\CopyProfile.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="DesktopShortcut.Designer.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\DesktopShortcut.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="DesktopShortcut.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\DesktopShortcut.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="Encryption.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\Encryption.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="Globals.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\Globals.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="MappedDrive.Designer.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\MappedDrive.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="MappedDrive.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\MappedDrive.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="ProfileSettings.Designer.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\ProfileSettings.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="ProfileSettings.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\ProfileSettings.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="RunPrograms.Designer.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\RunPrograms.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="RunPrograms.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\RunPrograms.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="WirelessDetected.Designer.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\WirelessDetected.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="WirelessDetected.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\WirelessDetected.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="AssemblyInfo.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\AssemblyInfo.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="INIFiles.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\INIFiles.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="MainForm.Designer.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\MainForm.Designer.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="MainForm.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\MainForm.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="Program.vb" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\Program.vb">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="About.resx" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\About.resx">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="ActivateSelectNetworkCard.resx" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\ActivateSelectNetworkCard.resx">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="AutoActivate.af.resx" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\AutoActivate.af.resx">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="AutoActivate.resx" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\AutoActivate.resx">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="CopyProfile.resx" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\CopyProfile.resx">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="DesktopShortcut.resx" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\DesktopShortcut.resx">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="MappedDrive.resx" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\MappedDrive.resx">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="ProfileSettings.resx" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\ProfileSettings.resx">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="RunPrograms.resx" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\RunPrograms.resx">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="WirelessDetected.resx" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\WirelessDetected.resx">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="MainForm.resx" Description="Datei erfolgreich gesichert als C:\Users\Christoph\Documents\Dev\Net Profiles\backup\Backup\MainForm.resx">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="Net Profiles.vbproj" Description="Projekt erfolgreich konvertiert">
+</Event><Event ErrorLevel="3" Project="Net Profiles" Source="Net Profiles.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Net Profiles.sln" Description="Die Projektmappe wurde erfolgreich konvertiert.">
+</Event><Event ErrorLevel="3" Project="" Source="Net Profiles.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Net Profiles" Source="Net Profiles.vbproj" Description="Überprüfung abgeschlossen: Aktualisierung von Projektdateien nicht erforderlich.">
+</Event></UpgradeLog>

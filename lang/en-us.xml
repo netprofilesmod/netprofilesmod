@@ -1,0 +1,231 @@
+﻿<Language name="en-US" translated_by="Daniel Milner" version="5" date="8/27/2007" display_name="English">
+  <MainForm>
+    <fileToolStripMenuItem>File</fileToolStripMenuItem>
+    <toolStripMenuItemNewProfile>New Profile</toolStripMenuItemNewProfile>
+    <applyProfileToolStripMenuItemApplyProfile>Activate Profile</applyProfileToolStripMenuItemApplyProfile>
+    <activateOnDifferentNetworkCardToolStripMenuItem1>Activate On Different Network Card...</activateOnDifferentNetworkCardToolStripMenuItem1>
+    <toolStripMenuItemCopyProfile>Copy...</toolStripMenuItemCopyProfile>
+	<toolStripMenuItemEditProfile>Edit</toolStripMenuItemEditProfile>
+    <deleteToolStripMenuItemDeleteProfile>Delete</deleteToolStripMenuItemDeleteProfile>
+    <createDesktopShortcutToolStripMenuItem1>Create Desktop Shortcut</createDesktopShortcutToolStripMenuItem1>
+    <exitToolStripMenuItem>Exit</exitToolStripMenuItem>
+    <optionsToolStripMenuItem>Options</optionsToolStripMenuItem>
+    <toggleToolbarTextToolStripMenuItem>Show Toolbar Text</toggleToolbarTextToolStripMenuItem>
+    <minimizeToTrayOnCloseToolStripMenuItem>Minimize To Tray On Close</minimizeToTrayOnCloseToolStripMenuItem>
+    <minimizeToTrayOnStartupToolStripMenuItem>Minimize To Tray On Startup</minimizeToTrayOnStartupToolStripMenuItem>
+    <dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>Don't Ask Before Auto Activating Wireless Profiles</dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>
+    <screenResolutionToolStripMenuItem>Screen Resolution</screenResolutionToolStripMenuItem>
+    <askBeforeChangingResolutionToolStripMenuItem>Ask Before Changing Resolution</askBeforeChangingResolutionToolStripMenuItem>
+    <confirmSettingsAfterChangingResolutionToolStripMenuItem>Confirm Settings After Changing Resolution</confirmSettingsAfterChangingResolutionToolStripMenuItem>
+    <runWhenILogInToWindowsToolStripMenuItem>Run When I Log In To Windows</runWhenILogInToWindowsToolStripMenuItem>
+	<languageToolStripMenuItem>Select Your Language</languageToolStripMenuItem>
+    <customizeDesktopShortcutsToolStripMenuItem>Customize Desktop Shortcuts...</customizeDesktopShortcutsToolStripMenuItem>
+    <reloadNetworkInterfacesToolStripMenuItem>Reload Network Interfaces</reloadNetworkInterfacesToolStripMenuItem>
+    <reloadProfilesToolStripMenuItem>Reload Profiles</reloadProfilesToolStripMenuItem>
+    <helpToolStripMenuItem>Help</helpToolStripMenuItem>
+    <!-- Required: %1 (program name) -->
+    <netProfilesWebsiteToolStripMenuItem>%1 Website...</netProfilesWebsiteToolStripMenuItem>
+    <checkForUpdatesToolStripMenuItem>Check For Updates...</checkForUpdatesToolStripMenuItem>
+    <aboutToolStripMenuItem>About</aboutToolStripMenuItem>
+    <toolStripButtonNewProfile>New Profile</toolStripButtonNewProfile>
+    <toolStripButtonApplyProfile>Activate Profile</toolStripButtonApplyProfile>
+    <toolStripButtonCopyProfile>Copy</toolStripButtonCopyProfile>
+	<toolStripButtonEditProfile>Edit</toolStripButtonEditProfile>
+    <toolStripButtonDeleteProfile>Delete</toolStripButtonDeleteProfile>
+    <toolStripStatusLabelWorking>Loading Profiles...</toolStripStatusLabelWorking>
+    <toolStripStatusLabelWorking-Preloading>Preloading Network Interfaces...</toolStripStatusLabelWorking-Preloading>
+    <toolStripStatusLabelWorking-Activating>Activating Profile...</toolStripStatusLabelWorking-Activating>
+    <toolStripStatusLabelWorking-UnmapDrives>Disconnecting Mapped Drives...</toolStripStatusLabelWorking-UnmapDrives>
+    <toolStripStatusLabelWorking-MapDrives>Connecting Mapped Drives...</toolStripStatusLabelWorking-MapDrives>
+    <toolStripStatusLabelWorking-Printer>Setting Default Printer...</toolStripStatusLabelWorking-Printer>
+    <toolStripStatusLabelWorking-Internet>Activating Internet Settings...</toolStripStatusLabelWorking-Internet>
+    <toolStripStatusLabelWorking-Homepage>Setting Homepage...</toolStripStatusLabelWorking-Homepage>
+    <toolStripStatusLabelWorking-Programs>Running Programs...</toolStripStatusLabelWorking-Programs>
+    <toolStripStatusLabelWorking-Wallpaper>Changing Wallpaper...</toolStripStatusLabelWorking-Wallpaper>
+    <toolStripStatusLabelWorking-Resolution>Changing Screen Resolution...</toolStripStatusLabelWorking-Resolution>
+    <toolStripStatusLabelWorking-Reloading>Reloading Network Interfaces...</toolStripStatusLabelWorking-Reloading>
+    <toolStripStatusLabelWorking-DHCP>Enabling DHCP...</toolStripStatusLabelWorking-DHCP>
+    <toolStripStatusLabelWorking-IPAddress>Setting IP Address...</toolStripStatusLabelWorking-IPAddress>
+    <toolStripStatusLabelWorking-Gateway>Setting Gateway...</toolStripStatusLabelWorking-Gateway>
+    <toolStripStatusLabelWorking-DNS>Setting DNS Servers...</toolStripStatusLabelWorking-DNS>
+    <toolStripStatusLabelWorking-WINS>Setting WINS Server...</toolStripStatusLabelWorking-WINS>
+    <applyProfileToolStripMenuItem>Activate Profile</applyProfileToolStripMenuItem>
+    <activateOnDifferentNetworkCardToolStripMenuItem>Activate On Different Network Card...</activateOnDifferentNetworkCardToolStripMenuItem>
+    <copyToolStripMenuItem>Copy</copyToolStripMenuItem>
+	<editToolStripMenuItem>Edit</editToolStripMenuItem>
+    <deleteToolStripMenuItem>Delete</deleteToolStripMenuItem>
+    <createDesktopShortcutToolStripMenuItem>Create Desktop Shortcut</createDesktopShortcutToolStripMenuItem>
+    <showHideWindowToolStripMenuItem>Show/Hide Window</showHideWindowToolStripMenuItem>
+    <profilesToolStripMenuItem>Profiles</profilesToolStripMenuItem>
+    <exitToolStripMenuItem1>Exit</exitToolStripMenuItem1>
+    <NoNetworkProfilesMessageBox-1>There are currently no network profiles.</NoNetworkProfilesMessageBox-1>
+    <NoNetworkProfilesMessageBox-2>Would you like to create one now?</NoNetworkProfilesMessageBox-2>
+    <!-- Required: %1 (profile name) -->
+    <DeleteProfileMessageBox>Are you sure you want to delete %1?</DeleteProfileMessageBox>
+    <DeleteProfileMessageBox-Title>Delete Profile</DeleteProfileMessageBox-Title>
+    <!-- Available Variables: %1 (interface name), %2 (profile name), %3 (ip address), %4 (mac address) -->
+    <ShortcutConfigDefault>Activate %2 on %1</ShortcutConfigDefault>
+    <CreateShortcutMessagebox>The shortcut was created on your Desktop</CreateShortcutMessagebox>
+    <CheckForUpdates-Latest>You are running the latest version.</CheckForUpdates-Latest>
+    <!-- Required: %1 (program name), %2 (program version) -->
+    <CheckForUpdates-New-1>%1 %2 is now available.</CheckForUpdates-New-1>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-New-2>Would you like to visit the %1 website to download it?</CheckForUpdates-New-2>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-Title>%1 Update</CheckForUpdates-Title>
+    <CheckForUpdates-Error-1>There was a problem checking for updates.</CheckForUpdates-Error-1>
+    <CheckForUpdates-Error-2>Please try again later.</CheckForUpdates-Error-2>
+  </MainForm>
+  <About>
+    <labelFreeware>This program is freeware</labelFreeware>
+    <!-- Required: %1 (program name) -->
+    <WindowTitle>About %1</WindowTitle>
+    <buttonOK>OK</buttonOK>
+  </About>
+  <ActivateSelectNetworkCard>
+    <WindowTitle>Activate Profile</WindowTitle>
+    <labelProfileTitle>Profile:</labelProfileTitle>
+    <labelSelectNetworkCard>Select A Network Card:</labelSelectNetworkCard>
+    <buttonActivate>Activate</buttonActivate>
+    <buttonCancel>Cancel</buttonCancel>
+  </ActivateSelectNetworkCard>
+  <AutoActivate>
+    <!-- Required: %1 (profile name), %2 (network card name) -->
+    <labelTitle>Activating %1 on %2...</labelTitle>
+  </AutoActivate>
+  <DesktopShortcut>
+    <WindowTitle>Desktop Shortcut Configuration</WindowTitle>
+    <groupBoxLegend>Legend</groupBoxLegend>
+    <labelVar1>Name of the network interface</labelVar1>
+    <labelVar2>Name of the profile</labelVar2>
+    <labelVar3>IP Address of the profile</labelVar3>
+    <labelVar4>MAC Address of the network interface</labelVar4>
+    <buttonRestoreDefaults>Restore Defaults</buttonRestoreDefaults>
+    <buttonSave>Save</buttonSave>
+    <buttonCancel>Close</buttonCancel>
+  </DesktopShortcut>
+  <MappedDrive>
+    <WindowTitle>Mapped Drive</WindowTitle>
+    <labelUsername>Username:</labelUsername>
+    <labelPassword>Password:</labelPassword>
+    <labelNote>Username and Password may be left blank if not needed.</labelNote>
+    <buttonSave>Save</buttonSave>
+    <buttonAdd>Add</buttonAdd>
+    <buttonCancel>Close</buttonCancel>
+    <AlreadyMapped-Messagebox>This drive letter is already mapped in this profile.</AlreadyMapped-Messagebox>
+    <DriveUsed>Used</DriveUsed>
+  </MappedDrive>
+  <ProfileSettings>
+    <WindowTitle>Profile Settings</WindowTitle>
+    <labelProfileName>Name:</labelProfileName>
+    <labelNetworkCard>Network Card:</labelNetworkCard>
+    <tabPageIPSettings>IP Settings</tabPageIPSettings>
+    <tabPageInternet>Internet</tabPageInternet>
+    <tabPageMappedDrives>Mapped Drives</tabPageMappedDrives>
+    <tabPagePrinter>Printer</tabPagePrinter>
+    <tabPageRun>Run</tabPageRun>
+    <tabPageDesktop>Desktop</tabPageDesktop>
+    <tabPageWireless>Wireless</tabPageWireless>
+    <checkBoxDHCP>Obtain an IP Address automatically (DHCP)</checkBoxDHCP>
+    <labelIPAddress>IP Address:</labelIPAddress>
+    <labelSubnetMask>Subnet Mask:</labelSubnetMask>
+    <labelDefaultGateway>Default Gateway:</labelDefaultGateway>
+    <labelPrimaryDNSServer>Primary DNS Server:</labelPrimaryDNSServer>
+    <labelAlternateDNSServer>Alternate DNS Server:</labelAlternateDNSServer>
+    <labelWINSServer>WINS Server:</labelWINSServer>
+    <buttonGetCurrentIPSettings>Get Current Settings</buttonGetCurrentIPSettings>
+    <groupBoxAutoConfigAddress>Automatic Configuration Address:</groupBoxAutoConfigAddress>
+	<groupBoxProxy>Use Proxy Settings</groupBoxProxy>
+    <labelServerAddress>Server Address:</labelServerAddress>
+    <labelPort>Port:</labelPort>
+    <checkBoxBypassProxy>Bypass proxy server for local addresses (IE and Opera)</checkBoxBypassProxy>
+    <groupBoxHomepage>Default Homepage:</groupBoxHomepage>
+    <buttonUseBlankHomepage>Use Blank</buttonUseBlankHomepage>
+    <labelHomepageNote>Leave blank for no change.</labelHomepageNote>
+    <groupBoxWebBrowsers>Enable Settings For</groupBoxWebBrowsers>
+    <buttonClearFirefox>Clear Firefox Settings</buttonClearFirefox>
+	<buttonClearFirefox-ToolTip>Click here if you're having problems changing your proxy settings or default homepage from within Firefox.</buttonClearFirefox-ToolTip>
+    <groupBoxPleaseNote>Please Note</groupBoxPleaseNote>
+	<labelPleaseNote>Mozilla Firefox and Opera must not be running for the changes to take effect.</labelPleaseNote>
+	<checkBoxIE>Internet Explorer</checkBoxIE>
+	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
+	<checkBoxOpera>Opera</checkBoxOpera>
+	<ClearFirefox-Messagebox-1>Settings have been removed.</ClearFirefox-Messagebox-1>
+    <ClearFirefox-Messagebox-2>If Firefox is running, it must be restarted before changes will take effect.</ClearFirefox-Messagebox-2>
+    <toolStripButtonAddDrive>Add Drive</toolStripButtonAddDrive>
+    <toolStripButtonEditDrive>Edit</toolStripButtonEditDrive>
+    <toolStripButtonRemoveDrive>Remove</toolStripButtonRemoveDrive>
+    <groupBoxPrinter>Default Printer</groupBoxPrinter>
+    <buttonGetDefaultPrinter>Get Current Settings</buttonGetDefaultPrinter>
+    <toolStripButtonAddProgram>Add Program</toolStripButtonAddProgram>
+    <toolStripButtonEditProgram>Edit</toolStripButtonEditProgram>
+    <toolStripButtonRemoveProgram>Remove</toolStripButtonRemoveProgram>
+    <groupBoxWallpaper>Wallpaper</groupBoxWallpaper>
+    <buttonBrowseWallpaper-ToolTip>Browse For Wallpaper</buttonBrowseWallpaper-ToolTip>
+    <openFileDialogWallpaper-Title>Choose the wallpaper you would like to use.</openFileDialogWallpaper-Title>
+    <openFileDialogWallpaper-Filter>Image Files</openFileDialogWallpaper-Filter>
+    <buttonResetWallpaper-ToolTip>Remove Wallpaper</buttonResetWallpaper-ToolTip>
+    <groupBoxWallpaperPreview>Preview</groupBoxWallpaperPreview>
+    <groupBoxDisplaySettings>Display Settings</groupBoxDisplaySettings>
+    <labelScreenResolution>Screen Resolution:</labelScreenResolution>
+	<ScreenResolutionText-By>by</ScreenResolutionText-By>
+	<ScreenResolutionText-Pixels>pixels</ScreenResolutionText-Pixels>
+    <labelColorQuality>Color Quality:</labelColorQuality>
+	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
+	<ColorQualityText-Lowest>Lowest</ColorQualityText-Lowest>
+	<ColorQualityText-Highest>Highest</ColorQualityText-Highest>
+    <buttonGetCurrentDisplaySettings>Get Current Settings</buttonGetCurrentDisplaySettings>
+    <groupBoxWireless>Auto Activate Profile</groupBoxWireless>
+    <labelSSID>Wireless SSID:</labelSSID>
+    <labelSSIDNotes>Specifying a wireless SSID will automatically activate this profile when a connection to the wireless network listed above is detected.</labelSSIDNotes>
+	<labelWirelessVista>Windows Vista users: This tab will be disabled until I figure out how to determine the currently connected wireless SSID in Vista.</labelWirelessVista>
+    <buttonSave>Save</buttonSave>
+    <buttonClose>Close</buttonClose>
+    <labelWorking-NetworkCards>Loading Network Cards...</labelWorking-NetworkCards>
+    <labelWorking-Profile>Loading Profile...</labelWorking-Profile>
+    <labelWorking-Printer>Loading Printers...</labelWorking-Printer>
+    <ProfileName-Messagebox>Please enter a name for this profile.</ProfileName-Messagebox>
+  </ProfileSettings>
+  <RunPrograms>
+    <WindowTitle>Run Programs</WindowTitle>
+    <labelPath>Path:</labelPath>
+    <labelArgs>Arguments:</labelArgs>
+    <labelRun>Run:</labelRun>
+    <groupBoxCredentials>Run with different credentials (optional)</groupBoxCredentials>
+    <labelUsername>Username:</labelUsername>
+    <labelPassword>Password:</labelPassword>
+    <labelDomain>Domain:</labelDomain>
+    <buttonAdd>Add</buttonAdd>
+    <buttonSave>Save</buttonSave>
+    <buttonCancel>Cancel</buttonCancel>
+	<RunText-Normal>Normal</RunText-Normal>
+	<RunText-Minimized>Minimized</RunText-Minimized>
+	<RunText-Maximized>Maximized</RunText-Maximized>
+	<RunText-Hidden>Hidden</RunText-Hidden>
+  </RunPrograms>
+  <WirelessDetected>
+    <WindowTitle>Wireless Network Detected</WindowTitle>
+    <labelConnectedTo>You are connected to:</labelConnectedTo>
+    <labelActivate>Would you like to activate:</labelActivate>
+    <buttonYes>Yes</buttonYes>
+    <buttonNo>No</buttonNo>
+  </WirelessDetected>
+  <Misc>
+    <BrowseNetworkShare-Title>Select a network computer or share.</BrowseNetworkShare-Title>
+	<DisplaySettings-ConfirmPrompt-Title>Confirm Display Change</DisplaySettings-ConfirmPrompt-Title>
+	<DisplaySettings-ConfirmPrompt-Message>Would you like to change your display settings?</DisplaySettings-ConfirmPrompt-Message>
+	<DisplaySettings-Resolution>Resolution:</DisplaySettings-Resolution>
+	<DisplaySettings-Bits>Color Bits:</DisplaySettings-Bits>
+	<DisplaySettings-Refresh>Refresh:</DisplaySettings-Refresh>`
+	<DisplaySettings-RevertPrompt-Title>Display Changed</DisplaySettings-RevertPrompt-Title>
+	<DisplaySettings-RevertPrompt-Message>Would you like to keep your current settings?</DisplaySettings-RevertPrompt-Message>
+  </Misc>
+  <CopyProfile>
+	<WindowTitle>Copy Profile</WindowTitle>
+	<labelProfile>Profile:</labelProfile>
+	<labelNewProfile>New Name:</labelNewProfile>
+	<labelSelectNetworkCard>Select A Network Card:</labelSelectNetworkCard>
+	<buttonCopy>Copy</buttonCopy>
+	<buttonCancel>Cancel</buttonCancel>
+  </CopyProfile>
+</Language>
