@@ -529,11 +529,22 @@ Public Module Globals
       				TheID = TheID & chr(queryObj("Ndis80211SsId")(i + 4))
       			Next
       			TheName = queryObj("InstanceName")
-                If Not (TheName.Contains("Packet Scheduler")) Then
+      			
+      			' potofcoffee:
+      			' the problem is right here: Not all "Packet Schedulers" identify by that
+      			' name, especially on non-English systems. For now, I added to more keywords
+      			' to check, but:
+      			' Is there a way to find out whether an object is a real card or a packet 
+      			' scheduler?
+      			
+                If Not (TheName.Contains("Packet Scheduler") _
+                		Or TheName.Contains("Miniport") _
+                	    or TheName.Contains("Paketplaner")) Then
                     'MessageBox.Show(TheID.Length.ToString)
                     CurrentWirelessSSID = TheID.Substring(0, TheID.Length - 1)
                     'MessageBox.Show(CurrentWirelessSSID.Length.ToString)
-                    CurrentWirelessName = TheName.ToString
+                    CurrentWirelessName = TheName.ToString 
+                    
                     If CurrentWirelessSSID.Length > 0 Then
                         Call CompareWirelessSSID()
                     Else
