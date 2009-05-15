@@ -1,0 +1,231 @@
+<Language name="en-US" translated_by="allway" version="1" date="10/2/2007" display_name="简体中文">
+  <MainForm>
+    <fileToolStripMenuItem>文件</fileToolStripMenuItem>
+    <toolStripMenuItemNewProfile>新建配置</toolStripMenuItemNewProfile>
+    <applyProfileToolStripMenuItemApplyProfile>激活配置</applyProfileToolStripMenuItemApplyProfile>
+    <activateOnDifferentNetworkCardToolStripMenuItem1>在不同的网卡上激活配置...</activateOnDifferentNetworkCardToolStripMenuItem1>
+    <toolStripMenuItemCopyProfile>复制...</toolStripMenuItemCopyProfile>
+	<toolStripMenuItemEditProfile>编辑</toolStripMenuItemEditProfile>
+    <deleteToolStripMenuItemDeleteProfile>删除</deleteToolStripMenuItemDeleteProfile>
+    <createDesktopShortcutToolStripMenuItem1>创建桌面快捷方式</createDesktopShortcutToolStripMenuItem1>
+    <exitToolStripMenuItem>退出</exitToolStripMenuItem>
+    <optionsToolStripMenuItem>选项</optionsToolStripMenuItem>
+    <toggleToolbarTextToolStripMenuItem>显示工具栏文本</toggleToolbarTextToolStripMenuItem>
+    <minimizeToTrayOnCloseToolStripMenuItem>关闭时最小化到托盘区</minimizeToTrayOnCloseToolStripMenuItem>
+    <minimizeToTrayOnStartupToolStripMenuItem>启动时最小化到托盘区</minimizeToTrayOnStartupToolStripMenuItem>
+    <dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>自动激活无线配置时不提示</dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>
+    <screenResolutionToolStripMenuItem>屏幕分辨率</screenResolutionToolStripMenuItem>
+    <askBeforeChangingResolutionToolStripMenuItem>更改屏幕分辨率前提示</askBeforeChangingResolutionToolStripMenuItem>
+    <confirmSettingsAfterChangingResolutionToolStripMenuItem>更改屏幕分辨后需确认</confirmSettingsAfterChangingResolutionToolStripMenuItem>
+    <runWhenILogInToWindowsToolStripMenuItem>登录Windows时自动运行</runWhenILogInToWindowsToolStripMenuItem>
+	<languageToolStripMenuItem>选择语言</languageToolStripMenuItem>
+    <customizeDesktopShortcutsToolStripMenuItem>定制桌面快捷方式...</customizeDesktopShortcutsToolStripMenuItem>
+    <reloadNetworkInterfacesToolStripMenuItem>重新加载网络接口</reloadNetworkInterfacesToolStripMenuItem>
+    <reloadProfilesToolStripMenuItem>重新加载配置</reloadProfilesToolStripMenuItem>
+    <helpToolStripMenuItem>帮助</helpToolStripMenuItem>
+    <!-- Required: %1 (program name) -->
+    <netProfilesWebsiteToolStripMenuItem>%1 网站...</netProfilesWebsiteToolStripMenuItem>
+    <checkForUpdatesToolStripMenuItem>检查更新...</checkForUpdatesToolStripMenuItem>
+    <aboutToolStripMenuItem>关于</aboutToolStripMenuItem>
+    <toolStripButtonNewProfile>新建配置</toolStripButtonNewProfile>
+    <toolStripButtonApplyProfile>激活配置</toolStripButtonApplyProfile>
+    <toolStripButtonCopyProfile>复制</toolStripButtonCopyProfile>
+	<toolStripButtonEditProfile>编辑</toolStripButtonEditProfile>
+    <toolStripButtonDeleteProfile>删除</toolStripButtonDeleteProfile>
+    <toolStripStatusLabelWorking>加载配置...</toolStripStatusLabelWorking>
+    <toolStripStatusLabelWorking-Preloading>预载网络接口...</toolStripStatusLabelWorking-Preloading>
+    <toolStripStatusLabelWorking-Activating>激活配置...</toolStripStatusLabelWorking-Activating>
+    <toolStripStatusLabelWorking-UnmapDrives>断开映射驱动器...</toolStripStatusLabelWorking-UnmapDrives>
+    <toolStripStatusLabelWorking-MapDrives>连接映射驱动器...</toolStripStatusLabelWorking-MapDrives>
+    <toolStripStatusLabelWorking-Printer>设置默认打印机...</toolStripStatusLabelWorking-Printer>
+    <toolStripStatusLabelWorking-Internet>激活Internet设置...</toolStripStatusLabelWorking-Internet>
+    <toolStripStatusLabelWorking-Homepage>设置主页...</toolStripStatusLabelWorking-Homepage>
+    <toolStripStatusLabelWorking-Programs>运行程序...</toolStripStatusLabelWorking-Programs>
+    <toolStripStatusLabelWorking-Wallpaper>更换墙纸...</toolStripStatusLabelWorking-Wallpaper>
+    <toolStripStatusLabelWorking-Resolution>更换屏幕分辨率...</toolStripStatusLabelWorking-Resolution>
+    <toolStripStatusLabelWorking-Reloading>重新加载网络接口...</toolStripStatusLabelWorking-Reloading>
+    <toolStripStatusLabelWorking-DHCP>启用DHCP...</toolStripStatusLabelWorking-DHCP>
+    <toolStripStatusLabelWorking-IPAddress>设置IP地址...</toolStripStatusLabelWorking-IPAddress>
+    <toolStripStatusLabelWorking-Gateway>设置网关...</toolStripStatusLabelWorking-Gateway>
+    <toolStripStatusLabelWorking-DNS>设置DNS服务器...</toolStripStatusLabelWorking-DNS>
+    <toolStripStatusLabelWorking-WINS>设置WINS服务器...</toolStripStatusLabelWorking-WINS>
+    <applyProfileToolStripMenuItem>激活配置</applyProfileToolStripMenuItem>
+    <activateOnDifferentNetworkCardToolStripMenuItem>在不同的网卡上激活配置...</activateOnDifferentNetworkCardToolStripMenuItem>
+    <copyToolStripMenuItem>复制</copyToolStripMenuItem>
+	<editToolStripMenuItem>编辑</editToolStripMenuItem>
+    <deleteToolStripMenuItem>删除</deleteToolStripMenuItem>
+    <createDesktopShortcutToolStripMenuItem>创建桌面快捷方式</createDesktopShortcutToolStripMenuItem>
+    <showHideWindowToolStripMenuItem>显示/隐藏窗口</showHideWindowToolStripMenuItem>
+    <profilesToolStripMenuItem>配置</profilesToolStripMenuItem>
+    <exitToolStripMenuItem1>退出</exitToolStripMenuItem1>
+    <NoNetworkProfilesMessageBox-1>当前没有网络配置.</NoNetworkProfilesMessageBox-1>
+    <NoNetworkProfilesMessageBox-2>现在要创建吗?</NoNetworkProfilesMessageBox-2>
+    <!-- Required: %1 (profile name) -->
+    <DeleteProfileMessageBox>确认要删除 %1 吗?</DeleteProfileMessageBox>
+    <DeleteProfileMessageBox-Title>删除设置</DeleteProfileMessageBox-Title>
+    <!-- Available Variables: %1 (interface name), %2 (profile name), %3 (ip address), %4 (mac address) -->
+    <ShortcutConfigDefault>在 %1 上激活 %2 </ShortcutConfigDefault>
+    <CreateShortcutMessagebox>成功在桌面创建快捷方式.</CreateShortcutMessagebox>
+    <CheckForUpdates-Latest>目前是最新版本.</CheckForUpdates-Latest>
+    <!-- Required: %1 (program name), %2 (program version) -->
+    <CheckForUpdates-New-1>%1 %2 现在可用。</CheckForUpdates-New-1>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-New-2>现在要访问 %1 网站下载吗?</CheckForUpdates-New-2>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-Title>%1 更新</CheckForUpdates-Title>
+    <CheckForUpdates-Error-1>检查更新时出错.</CheckForUpdates-Error-1>
+    <CheckForUpdates-Error-2>请稍后再试.</CheckForUpdates-Error-2>
+  </MainForm>
+  <About>
+    <labelFreeware>本程序为免费软件</labelFreeware>
+    <!-- Required: %1 (program name) -->
+    <WindowTitle>关于 %1</WindowTitle>
+    <buttonOK>确定</buttonOK>
+  </About>
+  <ActivateSelectNetworkCard>
+    <WindowTitle>激活配置</WindowTitle>
+    <labelProfileTitle>配置:</labelProfileTitle>
+    <labelSelectNetworkCard>选择网卡:</labelSelectNetworkCard>
+    <buttonActivate>激活</buttonActivate>
+    <buttonCancel>取消</buttonCancel>
+  </ActivateSelectNetworkCard>
+  <AutoActivate>
+    <!-- Required: %1 (profile name), %2 (network card name) -->
+    <labelTitle>在 %2 上激活 %1...</labelTitle>
+  </AutoActivate>
+  <DesktopShortcut>
+    <WindowTitle>桌面快捷方式配置</WindowTitle>
+    <groupBoxLegend>图例</groupBoxLegend>
+    <labelVar1>网络接口名称</labelVar1>
+    <labelVar2>配置名称</labelVar2>
+    <labelVar3>配置IP地址</labelVar3>
+    <labelVar4>网络接口MAC地址</labelVar4>
+    <buttonRestoreDefaults>恢复默认</buttonRestoreDefaults>
+    <buttonSave>保存</buttonSave>
+    <buttonCancel>关闭</buttonCancel>
+  </DesktopShortcut>
+  <MappedDrive>
+    <WindowTitle>映射驱动器</WindowTitle>
+    <labelUsername>用户名:</labelUsername>
+    <labelPassword>密码:</labelPassword>
+    <labelNote>用户名和密码可以为空.</labelNote>
+    <buttonSave>保存</buttonSave>
+    <buttonAdd>增加</buttonAdd>
+    <buttonCancel>关闭</buttonCancel>
+    <AlreadyMapped-Messagebox>该盘符已映射.</AlreadyMapped-Messagebox>
+    <DriveUsed>已用</DriveUsed>
+  </MappedDrive>
+  <ProfileSettings>
+    <WindowTitle>配置设置</WindowTitle>
+    <labelProfileName>名称:</labelProfileName>
+    <labelNetworkCard>网卡:</labelNetworkCard>
+    <tabPageIPSettings>IP设置</tabPageIPSettings>
+    <tabPageInternet>Internet</tabPageInternet>
+    <tabPageMappedDrives>映射驱动器</tabPageMappedDrives>
+    <tabPagePrinter>打印机</tabPagePrinter>
+    <tabPageRun>运行</tabPageRun>
+    <tabPageDesktop>桌面</tabPageDesktop>
+    <tabPageWireless>无线</tabPageWireless>
+    <checkBoxDHCP>动态获取IP地址(DHCP)</checkBoxDHCP>
+    <labelIPAddress>IP地址:</labelIPAddress>
+    <labelSubnetMask>子网掩码:</labelSubnetMask>
+    <labelDefaultGateway>默认网关:</labelDefaultGateway>
+    <labelPrimaryDNSServer>主DNS服务器:</labelPrimaryDNSServer>
+    <labelAlternateDNSServer>次DNS服务器:</labelAlternateDNSServer>
+    <labelWINSServer>WINS服务器:</labelWINSServer>
+    <buttonGetCurrentIPSettings>获取当前设置</buttonGetCurrentIPSettings>
+    <groupBoxAutoConfigAddress>自动配置地址:</groupBoxAutoConfigAddress>
+	<groupBoxProxy>使用代理设置</groupBoxProxy>
+    <labelServerAddress>服务器地址:</labelServerAddress>
+    <labelPort>端口:</labelPort>
+    <checkBoxBypassProxy>对于本地地址不使用代理服务器 (IE 和 Opera)</checkBoxBypassProxy>
+    <groupBoxHomepage>默认主页:</groupBoxHomepage>
+    <buttonUseBlankHomepage>使用空白页</buttonUseBlankHomepage>
+    <labelHomepageNote>不更改请保持空白</labelHomepageNote>
+    <groupBoxWebBrowsers>为以下启用设置</groupBoxWebBrowsers>
+    <buttonClearFirefox>清除Firefox设置</buttonClearFirefox>
+	<buttonClearFirefox-ToolTip>如果改变Firefox默认主页或代理服务器时有问题请点击此处.</buttonClearFirefox-ToolTip>
+    <groupBoxPleaseNote>请注意</groupBoxPleaseNote>
+	<labelPleaseNote>为了使改变生效Mozilla Firefox和Opera 必须关闭.</labelPleaseNote>
+	<checkBoxIE>Internet Explorer</checkBoxIE>
+	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
+	<checkBoxOpera>Opera</checkBoxOpera>
+	<ClearFirefox-Messagebox-1>设置已被删除.</ClearFirefox-Messagebox-1>
+    <ClearFirefox-Messagebox-2>如果Firefox正在运行,为使改变生效必须重启.</ClearFirefox-Messagebox-2>
+    <toolStripButtonAddDrive>增加驱动器</toolStripButtonAddDrive>
+    <toolStripButtonEditDrive>编辑</toolStripButtonEditDrive>
+    <toolStripButtonRemoveDrive>删除</toolStripButtonRemoveDrive>
+    <groupBoxPrinter>默认打印机</groupBoxPrinter>
+    <buttonGetDefaultPrinter>获取当前设置</buttonGetDefaultPrinter>
+    <toolStripButtonAddProgram>增加程序</toolStripButtonAddProgram>
+    <toolStripButtonEditProgram>编辑</toolStripButtonEditProgram>
+    <toolStripButtonRemoveProgram>删除</toolStripButtonRemoveProgram>
+    <groupBoxWallpaper>墙纸</groupBoxWallpaper>
+    <buttonBrowseWallpaper-ToolTip>浏览墙纸</buttonBrowseWallpaper-ToolTip>
+    <openFileDialogWallpaper-Title>选择要使用的墙纸.</openFileDialogWallpaper-Title>
+    <openFileDialogWallpaper-Filter>图像文件</openFileDialogWallpaper-Filter>
+    <buttonResetWallpaper-ToolTip>删除墙纸</buttonResetWallpaper-ToolTip>
+    <groupBoxWallpaperPreview>预览</groupBoxWallpaperPreview>
+    <groupBoxDisplaySettings>显示设置</groupBoxDisplaySettings>
+    <labelScreenResolution>屏幕分辨率:</labelScreenResolution>
+	<ScreenResolutionText-By>x</ScreenResolutionText-By>
+	<ScreenResolutionText-Pixels>像素</ScreenResolutionText-Pixels>
+    <labelColorQuality>颜色质量:</labelColorQuality>
+	<ColorQualityText-Bit>位数</ColorQualityText-Bit>
+	<ColorQualityText-Lowest>中</ColorQualityText-Lowest>
+	<ColorQualityText-Highest>最高</ColorQualityText-Highest>
+    <buttonGetCurrentDisplaySettings>获取当前设置</buttonGetCurrentDisplaySettings>
+    <groupBoxWireless>自动激活配置</groupBoxWireless>
+    <labelSSID>无线SSID:</labelSSID>
+    <labelSSIDNotes>指定无线SSID以便当检测到列表中的无线网络时自动激活配置.</labelSSIDNotes>
+	<labelWirelessVista>Windows Vista 用户: 该功能暂不可用.</labelWirelessVista>
+    <buttonSave>保存</buttonSave>
+    <buttonClose>关闭</buttonClose>
+    <labelWorking-NetworkCards>加载网卡...</labelWorking-NetworkCards>
+    <labelWorking-Profile>加载设置...</labelWorking-Profile>
+    <labelWorking-Printer>加载打印机...</labelWorking-Printer>
+    <ProfileName-Messagebox>请输入该设置名称.</ProfileName-Messagebox>
+  </ProfileSettings>
+  <RunPrograms>
+    <WindowTitle>运行程序</WindowTitle>
+    <labelPath>路径:</labelPath>
+    <labelArgs>参数:</labelArgs>
+    <labelRun>运行:</labelRun>
+    <groupBoxCredentials>以其他用户身份运行(可选)</groupBoxCredentials>
+    <labelUsername>用户名:</labelUsername>
+    <labelPassword>密码:</labelPassword>
+    <labelDomain>域:</labelDomain>
+    <buttonAdd>增加</buttonAdd>
+    <buttonSave>保存</buttonSave>
+    <buttonCancel>取消</buttonCancel>
+	<RunText-Normal>正常</RunText-Normal>
+	<RunText-Minimized>最小</RunText-Minimized>
+	<RunText-Maximized>最大</RunText-Maximized>
+	<RunText-Hidden>隐藏</RunText-Hidden>
+  </RunPrograms>
+  <WirelessDetected>
+    <WindowTitle>检测到无线网络</WindowTitle>
+    <labelConnectedTo>已连接到:</labelConnectedTo>
+    <labelActivate>是否要激活:</labelActivate>
+    <buttonYes>是</buttonYes>
+    <buttonNo>否</buttonNo>
+  </WirelessDetected>
+  <Misc>
+    <BrowseNetworkShare-Title>选择网络计算机或共享.</BrowseNetworkShare-Title>
+	<DisplaySettings-ConfirmPrompt-Title>确认显示设置</DisplaySettings-ConfirmPrompt-Title>
+	<DisplaySettings-ConfirmPrompt-Message>确定要改变显示设置吗?</DisplaySettings-ConfirmPrompt-Message>
+	<DisplaySettings-Resolution>分辨率:</DisplaySettings-Resolution>
+	<DisplaySettings-Bits>颜色质量:</DisplaySettings-Bits>
+	<DisplaySettings-Refresh>刷新率:</DisplaySettings-Refresh>`
+	<DisplaySettings-RevertPrompt-Title>显示设置已变更</DisplaySettings-RevertPrompt-Title>
+	<DisplaySettings-RevertPrompt-Message>要保留当前设置吗?</DisplaySettings-RevertPrompt-Message>
+  </Misc>
+  <CopyProfile>
+	<WindowTitle>复制配置</WindowTitle>
+	<labelProfile>配置:</labelProfile>
+	<labelNewProfile>新名称:</labelNewProfile>
+	<labelSelectNetworkCard>选择网卡:</labelSelectNetworkCard>
+	<buttonCopy>复制</buttonCopy>
+	<buttonCancel>取消</buttonCancel>
+  </CopyProfile>
+</Language>
