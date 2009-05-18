@@ -512,6 +512,35 @@ Public Module Globals
     End Sub
     '*** END DISPLAY SETTINGS ***
     
+    
+    ' potofcoffee:
+ 	' new function to determine whether a particular network adapter is a physical 
+ 	' adapter or merely some kind of packet scheduler.
+ 	' We proceed to do this as follows:
+ 	' 1. Try to find the name of the adapter in a list of available network adapters
+ 	' 2. If found, try to exclude Microsoft as the manufacturer
+ 	' This should catch most PacketSchedulers
+ 	'
+ 	' Reference:
+ 	' http://www.eggheadcafe.com/forumarchives/win32programmerwmi/Oct2005/post25122084.asp
+    Public Function isPhysicalAdapter(theName As String) As Boolean
+    	Dim searcher As New ManagementObjectSearcher( _
+    				"\root\cimv2", _
+    				"Select * from Win32_NetworkAdapter WHERE Caption LIKE '%" & theName & "%'")
+    	dim result as ManagementObjectCollection 
+		result = searcher.Get()
+		If result.Count > 0 Then
+			Dim f As Boolean
+			For Each Adapter As ManagementObject In result
+				f = (Adapter("Manufacturer") <> "Microsoft")
+			Next
+			return f
+		Else
+			' not even found: this can't be a physical adapter
+			return false
+		End If
+    End Function
+    
     Public Sub GetConnectedSSIDs()
 		 Try
 			Dim searcher As New ManagementObjectSearcher( _
@@ -537,9 +566,10 @@ Public Module Globals
       			' Is there a way to find out whether an object is a real card or a packet 
       			' scheduler?
       			
-                If Not (TheName.Contains("Packet Scheduler") _
-                		Or TheName.Contains("Miniport") _
-                	    or TheName.Contains("Paketplaner")) Then
+'                If Not (TheName.Contains("Packet Scheduler") _
+'                		Or TheName.Contains("Miniport") _
+'                	    Or TheName.Contains("Paketplaner")) Then
+                if isPhysicalAdapter(TheName) then 
                     'MessageBox.Show(TheID.Length.ToString)
                     CurrentWirelessSSID = TheID.Substring(0, TheID.Length - 1)
                     'MessageBox.Show(CurrentWirelessSSID.Length.ToString)
