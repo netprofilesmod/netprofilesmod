@@ -57,6 +57,14 @@ Public Module Globals
 		Return New String(chars)
 	End Function
 	
+	' potofcoffee:
+	' set default printer through Windows API is way faster!
+	' The old way, which did a WMI query, forced windows to try and contact EVERY
+	' installed printer, even non-connected network printers. The wait for timeouts
+	' made this a very slow function. This one is very speedy!
+    public Declare Function SetDefaultPrinter Lib "winspool.drv" Alias "SetDefaultPrinterA" (ByVal pszPrinter As String) As Long
+
+	
 	'*** START NETWORK STUFF ***
 	Private Structure BROWSEINFO 'bi
 		Dim hOwner As Integer
@@ -79,8 +87,11 @@ Public Module Globals
 	Private Declare Function SHGetSpecialFolderLocation Lib "shell32.dll" (ByVal hwndOwner As Integer, ByVal nFolder As Integer, ByRef pidl As Integer) As Integer
 	Private Declare Function SHBrowseForFolder Lib "shell32.dll"  Alias "SHBrowseForFolderA"(ByRef lpBrowseInfo As BROWSEINFO) As Integer
 	Private Declare Function SHGetPathFromIDList Lib "shell32.dll"  Alias "SHGetPathFromIDListA"(ByVal pidl As Integer, ByVal pszPath As String) As Integer
-	Private Declare Function lstrlenW Lib "kernel32" (ByVal lpString As Integer) As Integer
-	Private Declare Sub CoTaskMemFree Lib "ole32.dll" (ByVal pv_Renamed As Integer)
+    Private Declare Function lstrlenW Lib "kernel32" (ByVal lpString As Integer) As Integer
+    Private Declare Sub CoTaskMemFree Lib "ole32.dll" (ByVal pv_Renamed As Integer)
+
+
+
 	
 	Public Function GetBrowseNetworkShare(ByRef hwndOwner As Integer, ByRef bNewDialog As Boolean, ByRef bNoNewFolder As Boolean) As String
 		Dim bi As BROWSEINFO
@@ -274,25 +285,7 @@ Public Module Globals
 	End Function
 	'*** END MAPPED DRIVES ***
 	
-	'*** START PRINTERS ***
-	Public Sub SetDefaultPrinter(ByRef defaultPrinter As String)
-		Dim objprinter As Object
-		Dim colInstalledPrinters As Object
-		Dim objWMIService As Object
-		Dim strComputer As Object
-		strComputer = "."
-		objWMIService = GetObject("winmgmts:" & "{impersonationLevel=impersonate}!\\" & strComputer & "\root\cimv2")
-		colInstalledPrinters = objWMIService.ExecQuery("Select * from Win32_Printer")
-		For	Each objprinter In colInstalledPrinters
-			Application.DoEvents()
-			If objprinter.Name = defaultPrinter Then
-				objprinter.SetDefaultPrinter()
-			End If
-		Next objprinter
-	End Sub
-	'*** END PRINTERS ***
-	
-	'*** START DEFAULT HOMEPAGE ***
+    '*** START DEFAULT HOMEPAGE ***
 	Public Sub SetHomepage(ByRef URL As String)
 		Dim regKey As RegistryKey
 		regKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer\Main\", True)
