@@ -1,0 +1,232 @@
+﻿<Language name="ca-ES" translated_by="CRP GA" version="5" date="18/11/2007" display_name="Català">
+  <MainForm>
+    <fileToolStripMenuItem>Fitxer</fileToolStripMenuItem>
+    <toolStripMenuItemNewProfile>Crear nou perfil</toolStripMenuItemNewProfile>
+    <applyProfileToolStripMenuItemApplyProfile>Activar el perfil</applyProfileToolStripMenuItemApplyProfile>
+    <activateOnDifferentNetworkCardToolStripMenuItem1>Activar en un altra targeta de xarxa...</activateOnDifferentNetworkCardToolStripMenuItem1>
+    <toolStripMenuItemCopyProfile>Copiar</toolStripMenuItemCopyProfile>
+	<toolStripMenuItemEditProfile>Editar</toolStripMenuItemEditProfile>
+    <deleteToolStripMenuItemDeleteProfile>Esborrar</deleteToolStripMenuItemDeleteProfile>
+    <createDesktopShortcutToolStripMenuItem1>Crear un accés directe</createDesktopShortcutToolStripMenuItem1>
+    <exitToolStripMenuItem>Sortir</exitToolStripMenuItem>
+    <optionsToolStripMenuItem>Opcions</optionsToolStripMenuItem>
+    <toggleToolbarTextToolStripMenuItem>Veure les icones amb text</toggleToolbarTextToolStripMenuItem>
+    <minimizeToTrayOnCloseToolStripMenuItem>Minimitzar a la safata al tancar</minimizeToTrayOnCloseToolStripMenuItem>
+    <minimizeToTrayOnStartupToolStripMenuItem>Minimitzar a la safata al obrir</minimizeToTrayOnStartupToolStripMenuItem>
+    <dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>No preguntar després d'autoactivar un perfil wirelees</dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>
+    <screenResolutionToolStripMenuItem>Resolució de pantalla</screenResolutionToolStripMenuItem>
+    <askBeforeChangingResolutionToolStripMenuItem>Preguntar abans de canviar la resolució</askBeforeChangingResolutionToolStripMenuItem>
+    <confirmSettingsAfterChangingResolutionToolStripMenuItem>Confirmar els canvis després de canviar la resolució</confirmSettingsAfterChangingResolutionToolStripMenuItem>
+    <runWhenILogInToWindowsToolStripMenuItem>Arrancar al iniciar windows</runWhenILogInToWindowsToolStripMenuItem>
+	<languageToolStripMenuItem>Seleccionar el llenguatge</languageToolStripMenuItem>
+    <customizeDesktopShortcutsToolStripMenuItem>Modificar els accessos directes</customizeDesktopShortcutsToolStripMenuItem>
+    <reloadNetworkInterfacesToolStripMenuItem>Actualitzar les targetes de xarxa</reloadNetworkInterfacesToolStripMenuItem>
+    <reloadProfilesToolStripMenuItem>Actualitzar els perfils</reloadProfilesToolStripMenuItem>
+    <helpToolStripMenuItem>Ajuda</helpToolStripMenuItem>
+    <!-- Required: %1 (program name) -->
+    <netProfilesWebsiteToolStripMenuItem>El web de %1</netProfilesWebsiteToolStripMenuItem>
+    <checkForUpdatesToolStripMenuItem>Cercar actualitzacions</checkForUpdatesToolStripMenuItem>
+    <aboutToolStripMenuItem>Quant al programa</aboutToolStripMenuItem>
+    <toolStripButtonNewProfile>Crear nou perfil</toolStripButtonNewProfile>
+    <toolStripButtonApplyProfile>Activar el perfil</toolStripButtonApplyProfile>
+    <toolStripButtonCopyProfile>Copiar</toolStripButtonCopyProfile>
+	<toolStripButtonEditProfile>Editar</toolStripButtonEditProfile>
+    <toolStripButtonDeleteProfile>Esborrar</toolStripButtonDeleteProfile>
+    <toolStripStatusLabelWorking>Buscant perfils...</toolStripStatusLabelWorking>
+    <toolStripStatusLabelWorking-Preloading>Buscant interfícies de xarxa...</toolStripStatusLabelWorking-Preloading>
+    <toolStripStatusLabelWorking-Activating>Activant el perfil...</toolStripStatusLabelWorking-Activating>
+    <toolStripStatusLabelWorking-UnmapDrives>Desconnectant unitats de xarxa...</toolStripStatusLabelWorking-UnmapDrives>
+    <toolStripStatusLabelWorking-MapDrives>Connectant unitats de xarxa...</toolStripStatusLabelWorking-MapDrives>
+    <toolStripStatusLabelWorking-Printer>Configurant la impressora per defecte...</toolStripStatusLabelWorking-Printer>
+    <toolStripStatusLabelWorking-Internet>Activant la configuració d'internet...</toolStripStatusLabelWorking-Internet>
+    <toolStripStatusLabelWorking-Homepage>Configurant la pàgina d'inici...</toolStripStatusLabelWorking-Homepage>
+    <toolStripStatusLabelWorking-Programs>Carregant programes...</toolStripStatusLabelWorking-Programs>
+    <toolStripStatusLabelWorking-Wallpaper>Canviant el fons d'escriptori...</toolStripStatusLabelWorking-Wallpaper>
+    <toolStripStatusLabelWorking-Resolution>Canviant la resolució de pantalla...</toolStripStatusLabelWorking-Resolution>
+    <toolStripStatusLabelWorking-Reloading>Buscant interfícies de xarxa...</toolStripStatusLabelWorking-Reloading>
+    <toolStripStatusLabelWorking-DHCP>Activant DHCP...</toolStripStatusLabelWorking-DHCP>
+    <toolStripStatusLabelWorking-IPAddress>Configurant adreça IP...</toolStripStatusLabelWorking-IPAddress>
+    <toolStripStatusLabelWorking-Gateway>Configurant la porta d'enllaç...</toolStripStatusLabelWorking-Gateway>
+    <toolStripStatusLabelWorking-DNS>Configurant els servidors DNS...</toolStripStatusLabelWorking-DNS>
+    <toolStripStatusLabelWorking-WINS>Configurant els servidors WINS...</toolStripStatusLabelWorking-WINS>
+    <applyProfileToolStripMenuItem>Activar el perfil</applyProfileToolStripMenuItem>
+    <activateOnDifferentNetworkCardToolStripMenuItem>Activar en un altra targeta de xarxa...</activateOnDifferentNetworkCardToolStripMenuItem>
+    <copyToolStripMenuItem>Copiar</copyToolStripMenuItem>
+	<editToolStripMenuItem>Editar</editToolStripMenuItem>
+    <deleteToolStripMenuItem>Esborrar</deleteToolStripMenuItem>
+    <createDesktopShortcutToolStripMenuItem>Crear un accés directe</createDesktopShortcutToolStripMenuItem>
+    <showHideWindowToolStripMenuItem>Mostar/Amagar la finestra</showHideWindowToolStripMenuItem>
+    <profilesToolStripMenuItem>Perfils</profilesToolStripMenuItem>
+    <exitToolStripMenuItem1>Sortir</exitToolStripMenuItem1>
+    <NoNetworkProfilesMessageBox-1>No hi hacap perfil definit.</NoNetworkProfilesMessageBox-1>
+    <NoNetworkProfilesMessageBox-2>Vols crear-ne un ara?</NoNetworkProfilesMessageBox-2>
+    <!-- Required: %1 (profile name) -->
+    <DeleteProfileMessageBox>Segur que vols esborrar %1?</DeleteProfileMessageBox>
+    <DeleteProfileMessageBox-Title>Esborrar el perfil</DeleteProfileMessageBox-Title>
+    <!-- Available Variables: %1 (interface name), %2 (profile name), %3 (ip address), %4 (mac address) -->
+    <ShortcutConfigDefault>Activar %2 en %1</ShortcutConfigDefault>
+    <CreateShortcutMessagebox>La dreçera s'ha creat a l'escriptori</CreateShortcutMessagebox>
+    <CheckForUpdates-Latest>No cal cap actualització.</CheckForUpdates-Latest>
+    <!-- Required: %1 (program name), %2 (program version) -->
+    <CheckForUpdates-New-1>%1 %2 està disponible.</CheckForUpdates-New-1>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-New-2>Vols descarregar la nova versió?</CheckForUpdates-New-2>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-Title>%1 Descarregar</CheckForUpdates-Title>
+    <CheckForUpdates-Error-1>Problemes per comprovar si hi ha actualitzacions.</CheckForUpdates-Error-1>
+    <CheckForUpdates-Error-2>Prova-ho més trad.</CheckForUpdates-Error-2>
+  </MainForm>
+  <About>
+    <labelFreeware>Aquest programa és freeware</labelFreeware>
+    <!-- Required: %1 (program name) -->
+    <WindowTitle>Quant a %1</WindowTitle>
+    <buttonOK>D'acord</buttonOK>
+  </About>
+  <ActivateSelectNetworkCard>
+    <WindowTitle>Activar el perfil</WindowTitle>
+    <labelProfileTitle>Perfil:</labelProfileTitle>
+    <labelSelectNetworkCard>Seleccionar una targeta de xarxa:</labelSelectNetworkCard>
+    <buttonActivate>Activar</buttonActivate>
+    <buttonCancel>Tancar</buttonCancel>
+  </ActivateSelectNetworkCard>
+  <AutoActivate>
+    <!-- Required: %1 (profile name), %2 (network card name) -->
+    <labelTitle>Activant %1 en %2...</labelTitle>
+  </AutoActivate>
+  <DesktopShortcut>
+    <WindowTitle>Configurar l'accés directe</WindowTitle>
+    <groupBoxLegend>Nom</groupBoxLegend>
+    <labelVar1>Nom de la xarxa</labelVar1>
+    <labelVar2>Nom del perfil</labelVar2>
+    <labelVar3>Adreça IP del perfil</labelVar3>
+    <labelVar4>Adreça MAC de la targeta de xarxa</labelVar4>
+    <buttonRestoreDefaults>Per defecte</buttonRestoreDefaults>
+    <buttonSave>Guardar</buttonSave>
+    <buttonCancel>Tancar</buttonCancel>
+  </DesktopShortcut>
+  <MappedDrive>
+    <WindowTitle>Unitats de xarxa</WindowTitle>
+    <labelUsername>Usuari:</labelUsername>
+    <labelPassword>Contrasenya:</labelPassword>
+    <labelNote>Usuari i/o Contrasenya poden quedar en blanc si no es necessiten.</labelNote>
+    <buttonSave>Guardar</buttonSave>
+    <buttonAdd>Afegir</buttonAdd>
+    <buttonCancel>Tancar</buttonCancel>
+    <AlreadyMapped-Messagebox>Aquesta lletra d'unitat ja està assignada.</AlreadyMapped-Messagebox>
+    <DriveUsed>Assignada</DriveUsed>
+  </MappedDrive>
+  <ProfileSettings>
+    <WindowTitle>Configurar el perfil</WindowTitle>
+    <labelProfileName>Nom:</labelProfileName>
+    <labelNetworkCard>Targeta de xarxa:</labelNetworkCard>
+    <tabPageIPSettings>Configurar IP</tabPageIPSettings>
+    <tabPageInternet>Internet</tabPageInternet>
+    <tabPageMappedDrives>Unitats de xarxa</tabPageMappedDrives>
+    <tabPagePrinter>Impressores</tabPagePrinter>
+    <tabPageRun>Executa</tabPageRun>
+    <tabPageDesktop>Escriptori</tabPageDesktop>
+    <tabPageWireless>wirelees</tabPageWireless>
+    <checkBoxDHCP>Obtenir adreça IP automàtica (DHCP)</checkBoxDHCP>
+    <labelIPAddress>adreça IP:</labelIPAddress>
+    <labelSubnetMask>Màscara de subxarxa:</labelSubnetMask>
+    <labelDefaultGateway>Porta d'enllaç:</labelDefaultGateway>
+    <labelPrimaryDNSServer>Servidor DNS primari:</labelPrimaryDNSServer>
+    <labelAlternateDNSServer>Servidor DNS secundari:</labelAlternateDNSServer>
+    <labelWINSServer>Servidor WINS:</labelWINSServer>
+    <buttonGetCurrentIPSettings>Obtenir l'actual</buttonGetCurrentIPSettings>
+    <groupBoxAutoConfigAddress>Configurar automàticament:</groupBoxAutoConfigAddress>
+	<groupBoxProxy>Configuració del proxy</groupBoxProxy>
+    <labelServerAddress>Adreça del servidor:</labelServerAddress>
+    <labelPort>Port:</labelPort>
+    <checkBoxBypassProxy>No utilitzar el proxy per a adreçes locals (IE i Opera)</checkBoxBypassProxy>
+    <groupBoxHomepage>Pàgina d'inici:</groupBoxHomepage>
+    <buttonUseBlankHomepage>En blanc</buttonUseBlankHomepage>
+    <labelHomepageNote>deixar-ho en blanc si no es vol canviar.</labelHomepageNote>
+    <groupBoxWebBrowsers>Activar la configuració per:</groupBoxWebBrowsers>
+    <buttonClearFirefox>Esborrar la configuració del Firefox</buttonClearFirefox>
+	<buttonClearFirefox-ToolTip>Cal clicar aquest botó si no es pot canviar la configuració del Firefox.</buttonClearFirefox-ToolTip>
+    <groupBoxPleaseNote>Nota</groupBoxPleaseNote>
+	<labelPleaseNote>Mozilla Firefox i Opera han d'estar tancats per realitzar els canvis.</labelPleaseNote>
+	<checkBoxIE>Internet Explorer</checkBoxIE>
+	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
+	<checkBoxOpera>Opera</checkBoxOpera>
+	<ClearFirefox-Messagebox-1>S'ha esborrat la configuració.</ClearFirefox-Messagebox-1>
+    <ClearFirefox-Messagebox-2>Cal reiniciar el Firefox per per realitzar els canvis.</ClearFirefox-Messagebox-2>
+    <toolStripButtonAddDrive>Afegir una unitat de xarxa</toolStripButtonAddDrive>
+    <toolStripButtonEditDrive>Editar</toolStripButtonEditDrive>
+    <toolStripButtonRemoveDrive>Esborrar</toolStripButtonRemoveDrive>
+    <groupBoxPrinter>Impressora per defecte</groupBoxPrinter>
+    <buttonGetDefaultPrinter>Obtenir l'actual</buttonGetDefaultPrinter>
+    <toolStripButtonAddProgram>Afegir Programa</toolStripButtonAddProgram>
+    <toolStripButtonEditProgram>Editar</toolStripButtonEditProgram>
+    <toolStripButtonRemoveProgram>Esborrar</toolStripButtonRemoveProgram>
+    <groupBoxWallpaper>Fons de pantalla</groupBoxWallpaper>
+    <buttonBrowseWallpaper-ToolTip>Buscar imatge</buttonBrowseWallpaper-ToolTip>
+    <openFileDialogWallpaper-Title>Buscar imatge pel fons d'escriptori.</openFileDialogWallpaper-Title>
+    <openFileDialogWallpaper-Filter>Fitxer d'imatge</openFileDialogWallpaper-Filter>
+    <buttonResetWallpaper-ToolTip>Esborrar fons de pantalla</buttonResetWallpaper-ToolTip>
+    <groupBoxWallpaperPreview>Previsualitzar</groupBoxWallpaperPreview>
+    <groupBoxDisplaySettings>Configurar la pantalla</groupBoxDisplaySettings>
+    <labelScreenResolution>Resolució:</labelScreenResolution>
+	<ScreenResolutionText-By>per</ScreenResolutionText-By>
+	<ScreenResolutionText-Pixels>pixels</ScreenResolutionText-Pixels>
+    <labelColorQuality>Color:</labelColorQuality>
+	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
+	<ColorQualityText-Lowest>Mitjana</ColorQualityText-Lowest>
+	<ColorQualityText-Highest>La més alta</ColorQualityText-Highest>
+    <buttonGetCurrentDisplaySettings>Obtenir l'actual</buttonGetCurrentDisplaySettings>
+    <groupBoxWireless>Auto-activar el perfil</groupBoxWireless>
+    <labelSSID>Wirelees SSID:</labelSSID>
+    <labelSSIDNotes>Especificar el nom SSID si voleu connectar-vos-hi automaticament al detectar la xarxa wirelees.</labelSSIDNotes>
+	<labelWirelessVista>Usuaris de Windows Vista: Aquesta pestanya restarà desactivada fins a noves versions.</labelWirelessVista>
+    <buttonSave>Guardar</buttonSave>
+    <buttonClose>Tancar</buttonClose>
+    <labelWorking-NetworkCards>Buscant targetes de xarxa...</labelWorking-NetworkCards>
+    <labelWorking-Profile>Buscant perfils...</labelWorking-Profile>
+    <labelWorking-Printer>Buscant impressores...</labelWorking-Printer>
+    <ProfileName-Messagebox>Anomena aquest perfil.</ProfileName-Messagebox>
+  </ProfileSettings>
+  <RunPrograms>
+    <WindowTitle>Executa programes</WindowTitle>
+    <labelPath>Camí:</labelPath>
+    <labelArgs>Parametres:</labelArgs>
+    <labelRun>Executa:</labelRun>
+    <groupBoxCredentials>Executat per un usuari diferent (opcional)</groupBoxCredentials>
+    <labelUsername>Usuari:</labelUsername>
+    <labelPassword>Contrasenya:</labelPassword>
+    <labelDomain>Domini:</labelDomain>
+    <buttonAdd>Afegeix</buttonAdd>
+    <buttonSave>Guardar</buttonSave>
+    <buttonCancel>Tancar</buttonCancel>
+	<RunText-Normal>Finestra normal</RunText-Normal>
+	<RunText-Minimized>Minimitzada</RunText-Minimized>
+	<RunText-Maximized>Maximitzada</RunText-Maximized>
+	<RunText-Hidden>Amagada</RunText-Hidden>
+  </RunPrograms>
+  <WirelessDetected>
+    <WindowTitle>Detectar xarxa sense fils</WindowTitle>
+    <labelConnectedTo>Connexió a la xarxa:</labelConnectedTo>
+    <labelActivate>Continuar activant?</labelActivate>
+    <buttonYes>Sí</buttonYes>
+    <buttonNo>No</buttonNo>
+  </WirelessDetected>
+  <Misc>
+    <BrowseNetworkShare-Title>Seleccionar una xarxa.</BrowseNetworkShare-Title>
+	<DisplaySettings-ConfirmPrompt-Title>Confirmar el canvi de configuració de pantalla</DisplaySettings-ConfirmPrompt-Title>
+	<DisplaySettings-ConfirmPrompt-Message>Canviar la configuració de pantalla?</DisplaySettings-ConfirmPrompt-Message>
+	<DisplaySettings-Resolution>Resolució:</DisplaySettings-Resolution>
+	<DisplaySettings-Bits>Color:</DisplaySettings-Bits>
+	<DisplaySettings-Refresh>Refresc:</DisplaySettings-Refresh>`
+	<DisplaySettings-RevertPrompt-Title>Configuració canviada</DisplaySettings-RevertPrompt-Title>
+	<DisplaySettings-RevertPrompt-Message>Mantenir la configuració actual?</DisplaySettings-RevertPrompt-Message>
+  </Misc>
+  <CopyProfile>
+	<WindowTitle>Copiar perfil</WindowTitle>
+	<labelProfile>Perfil:</labelProfile>
+	<labelNewProfile>Nom nou:</labelNewProfile>
+	<labelSelectNetworkCard>Seleccionar una targeta de xarxa:</labelSelectNetworkCard>
+	<buttonCopy>Copiar</buttonCopy>
+	<buttonCancel>Tancar</buttonCancel>
+  </CopyProfile>
+</Language>
+

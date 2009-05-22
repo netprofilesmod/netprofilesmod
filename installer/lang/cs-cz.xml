@@ -1,0 +1,231 @@
+﻿<Language name="cs-CZ" translated_by="iXDave" version="2.1.5" date="1/22/2008" display_name="Česky">
+  <MainForm>
+    <fileToolStripMenuItem>Soubor</fileToolStripMenuItem>
+    <toolStripMenuItemNewProfile>Nový profil</toolStripMenuItemNewProfile>
+    <applyProfileToolStripMenuItemApplyProfile>Aktivuj profil</applyProfileToolStripMenuItemApplyProfile>
+    <activateOnDifferentNetworkCardToolStripMenuItem1>Aktivuj na jiné kartě...</activateOnDifferentNetworkCardToolStripMenuItem1>
+    <toolStripMenuItemCopyProfile>Kopíruj...</toolStripMenuItemCopyProfile>
+	<toolStripMenuItemEditProfile>Edituj</toolStripMenuItemEditProfile>
+    <deleteToolStripMenuItemDeleteProfile>Smaž</deleteToolStripMenuItemDeleteProfile>
+    <createDesktopShortcutToolStripMenuItem1>Vytvoř zástupce na ploše</createDesktopShortcutToolStripMenuItem1>
+    <exitToolStripMenuItem>Konec</exitToolStripMenuItem>
+    <optionsToolStripMenuItem>Volby</optionsToolStripMenuItem>
+    <toggleToolbarTextToolStripMenuItem>Ukaž lištu s textem</toggleToolbarTextToolStripMenuItem>
+    <minimizeToTrayOnCloseToolStripMenuItem>Minimalizuj při zavření</minimizeToTrayOnCloseToolStripMenuItem>
+    <minimizeToTrayOnStartupToolStripMenuItem>Minimalizuj po startu</minimizeToTrayOnStartupToolStripMenuItem>
+    <dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>Neptat se při automatické aktivaci WiFi Profilu</dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>
+    <screenResolutionToolStripMenuItem>Rozlišení obrazovky</screenResolutionToolStripMenuItem>
+    <askBeforeChangingResolutionToolStripMenuItem>Ptát se před změnou rozlišení</askBeforeChangingResolutionToolStripMenuItem>
+    <confirmSettingsAfterChangingResolutionToolStripMenuItem>Potvrdit nastavení po změně rozlišení</confirmSettingsAfterChangingResolutionToolStripMenuItem>
+    <runWhenILogInToWindowsToolStripMenuItem>Spusť po přihlášení do Windows</runWhenILogInToWindowsToolStripMenuItem>
+	<languageToolStripMenuItem>Výběr jazyka</languageToolStripMenuItem>
+    <customizeDesktopShortcutsToolStripMenuItem>Uprav zástupce na ploše...</customizeDesktopShortcutsToolStripMenuItem>
+    <reloadNetworkInterfacesToolStripMenuItem>Načti síťová rozhraní</reloadNetworkInterfacesToolStripMenuItem>
+    <reloadProfilesToolStripMenuItem>Načti profily</reloadProfilesToolStripMenuItem>
+    <helpToolStripMenuItem>Nápověda</helpToolStripMenuItem>
+    <!-- Required: %1 (program name) -->
+    <netProfilesWebsiteToolStripMenuItem>%1 stránky...</netProfilesWebsiteToolStripMenuItem>
+    <checkForUpdatesToolStripMenuItem>Zkontroluj aktualizace...</checkForUpdatesToolStripMenuItem>
+    <aboutToolStripMenuItem>O programu</aboutToolStripMenuItem>
+    <toolStripButtonNewProfile>Nový profil</toolStripButtonNewProfile>
+    <toolStripButtonApplyProfile>Aktivuj profil</toolStripButtonApplyProfile>
+    <toolStripButtonCopyProfile>Kopíruj</toolStripButtonCopyProfile>
+	<toolStripButtonEditProfile>Edituj</toolStripButtonEditProfile>
+    <toolStripButtonDeleteProfile>Smaž</toolStripButtonDeleteProfile>
+    <toolStripStatusLabelWorking>Načítání profilů...</toolStripStatusLabelWorking>
+    <toolStripStatusLabelWorking-Preloading>Příprava síťových rozhraní...</toolStripStatusLabelWorking-Preloading>
+    <toolStripStatusLabelWorking-Activating>Aktivace profilu...</toolStripStatusLabelWorking-Activating>
+    <toolStripStatusLabelWorking-UnmapDrives>Odpojení namapovaných disků...</toolStripStatusLabelWorking-UnmapDrives>
+    <toolStripStatusLabelWorking-MapDrives>Připojení namapovaných disků...</toolStripStatusLabelWorking-MapDrives>
+    <toolStripStatusLabelWorking-Printer>Nastavení výchozí tiskárny...</toolStripStatusLabelWorking-Printer>
+    <toolStripStatusLabelWorking-Internet>Aktivace nastavení internetu...</toolStripStatusLabelWorking-Internet>
+    <toolStripStatusLabelWorking-Homepage>Nastavení domovské stránky...</toolStripStatusLabelWorking-Homepage>
+    <toolStripStatusLabelWorking-Programs>Běžící programy...</toolStripStatusLabelWorking-Programs>
+    <toolStripStatusLabelWorking-Wallpaper>Změna tapety...</toolStripStatusLabelWorking-Wallpaper>
+    <toolStripStatusLabelWorking-Resolution>Změna rozlišení obrazovky...</toolStripStatusLabelWorking-Resolution>
+    <toolStripStatusLabelWorking-Reloading>Načtení síťových rozhraní...</toolStripStatusLabelWorking-Reloading>
+    <toolStripStatusLabelWorking-DHCP>Povolení DHCP...</toolStripStatusLabelWorking-DHCP>
+    <toolStripStatusLabelWorking-IPAddress>Nastavení IP adresy...</toolStripStatusLabelWorking-IPAddress>
+    <toolStripStatusLabelWorking-Gateway>Nastavení brány...</toolStripStatusLabelWorking-Gateway>
+    <toolStripStatusLabelWorking-DNS>Nastavení DNS serverů...</toolStripStatusLabelWorking-DNS>
+    <toolStripStatusLabelWorking-WINS>Nastavení WINS serverů...</toolStripStatusLabelWorking-WINS>
+    <applyProfileToolStripMenuItem>Aktivuj profil</applyProfileToolStripMenuItem>
+    <activateOnDifferentNetworkCardToolStripMenuItem>Aktivuj na jiné síťové kartě...</activateOnDifferentNetworkCardToolStripMenuItem>
+    <copyToolStripMenuItem>Kopíruj</copyToolStripMenuItem>
+	<editToolStripMenuItem>Edituj</editToolStripMenuItem>
+    <deleteToolStripMenuItem>Smaž</deleteToolStripMenuItem>
+    <createDesktopShortcutToolStripMenuItem>Vytvoř zástupce na ploše</createDesktopShortcutToolStripMenuItem>
+    <showHideWindowToolStripMenuItem>Ukaž/Skryj okno</showHideWindowToolStripMenuItem>
+    <profilesToolStripMenuItem>Profily</profilesToolStripMenuItem>
+    <exitToolStripMenuItem1>Konec</exitToolStripMenuItem1>
+    <NoNetworkProfilesMessageBox-1>K dispozici nejsou žádné síťové profily.</NoNetworkProfilesMessageBox-1>
+    <NoNetworkProfilesMessageBox-2>Chcete nějaký nyní vytvořit?</NoNetworkProfilesMessageBox-2>
+    <!-- Required: %1 (profile name) -->
+    <DeleteProfileMessageBox>Určitě smazat %1?</DeleteProfileMessageBox>
+    <DeleteProfileMessageBox-Title>Smazat profil</DeleteProfileMessageBox-Title>
+    <!-- Available Variables: %1 (interface name), %2 (profile name), %3 (ip address), %4 (mac address) -->
+    <ShortcutConfigDefault>Aktivuj %2 na %1</ShortcutConfigDefault>
+    <CreateShortcutMessagebox>Zástupce byl vytvořen na ploše.</CreateShortcutMessagebox>
+    <CheckForUpdates-Latest>Používáte poslední verzi.</CheckForUpdates-Latest>
+    <!-- Required: %1 (program name), %2 (program version) -->
+    <CheckForUpdates-New-1>%1 %2 je nyní dostupný.</CheckForUpdates-New-1>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-New-2>Chcete navštívit %1 stránky ke stažení?</CheckForUpdates-New-2>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-Title>%1 Update</CheckForUpdates-Title>
+    <CheckForUpdates-Error-1>Nastal problém při kontrole aktualizací.</CheckForUpdates-Error-1>
+    <CheckForUpdates-Error-2>Prosím, zkuste to později.</CheckForUpdates-Error-2>
+  </MainForm>
+  <About>
+    <labelFreeware>Tento program je freeware</labelFreeware>
+    <!-- Required: %1 (program name) -->
+    <WindowTitle>O programu %1</WindowTitle>
+    <buttonOK>OK</buttonOK>
+  </About>
+  <ActivateSelectNetworkCard>
+    <WindowTitle>Aktivuj profil</WindowTitle>
+    <labelProfileTitle>Profil:</labelProfileTitle>
+    <labelSelectNetworkCard>Vyber síťovou kartu:</labelSelectNetworkCard>
+    <buttonActivate>Aktivuj</buttonActivate>
+    <buttonCancel>Ukončit</buttonCancel>
+  </ActivateSelectNetworkCard>
+  <AutoActivate>
+    <!-- Required: %1 (profile name), %2 (network card name) -->
+    <labelTitle>Aktivace %1 na %2...</labelTitle>
+  </AutoActivate>
+  <DesktopShortcut>
+    <WindowTitle>Konfigurace zástupce na ploše</WindowTitle>
+    <groupBoxLegend>Legenda</groupBoxLegend>
+    <labelVar1>Název síťového zařízení</labelVar1>
+    <labelVar2>Název profilu</labelVar2>
+    <labelVar3>IP Adresa profilu</labelVar3>
+    <labelVar4>MAC adresa síťového zařízení</labelVar4>
+    <buttonRestoreDefaults>Obnov původní hodnoty</buttonRestoreDefaults>
+    <buttonSave>Ulož</buttonSave>
+    <buttonCancel>Zavři</buttonCancel>
+  </DesktopShortcut>
+  <MappedDrive>
+    <WindowTitle>Namapovaný disk</WindowTitle>
+    <labelUsername>Uživatelské jméno:</labelUsername>
+    <labelPassword>Heslo:</labelPassword>
+    <labelNote>Uživatelské jméno a heslo může být prázdné, jestliže není vyžadováno.</labelNote>
+    <buttonSave>Ulož</buttonSave>
+    <buttonAdd>Přidej</buttonAdd>
+    <buttonCancel>Zavři</buttonCancel>
+    <AlreadyMapped-Messagebox>Toto písmeno disku je již namapováno v tomto profilu.</AlreadyMapped-Messagebox>
+    <DriveUsed>Použito</DriveUsed>
+  </MappedDrive>
+  <ProfileSettings>
+    <WindowTitle>Nastavení profilu</WindowTitle>
+    <labelProfileName>Název profilu:</labelProfileName>
+    <labelNetworkCard>Síťová karta:</labelNetworkCard>
+    <tabPageIPSettings>Nastavení IP</tabPageIPSettings>
+    <tabPageInternet>Internet</tabPageInternet>
+    <tabPageMappedDrives>Mapované disky</tabPageMappedDrives>
+    <tabPagePrinter>Tiskárna</tabPagePrinter>
+    <tabPageRun>Spusť</tabPageRun>
+    <tabPageDesktop>Plocha</tabPageDesktop>
+    <tabPageWireless>WiFi</tabPageWireless>
+    <checkBoxDHCP>Zjisti IP adresu automaticky (DHCP)</checkBoxDHCP>
+    <labelIPAddress>IP Adresa:</labelIPAddress>
+    <labelSubnetMask>Maska sítě:</labelSubnetMask>
+    <labelDefaultGateway>Výchozí brána:</labelDefaultGateway>
+    <labelPrimaryDNSServer>Primární server DNS:</labelPrimaryDNSServer>
+    <labelAlternateDNSServer>Sekundární server DNS:</labelAlternateDNSServer>
+    <labelWINSServer>Server WINS:</labelWINSServer>
+    <buttonGetCurrentIPSettings>Zjisti aktuální nastavení</buttonGetCurrentIPSettings>
+    <groupBoxAutoConfigAddress>Automatická konfigurace adresy:</groupBoxAutoConfigAddress>
+	<groupBoxProxy>Použij nastavení proxy</groupBoxProxy>
+    <labelServerAddress>Adresa serveru:</labelServerAddress>
+    <labelPort>Port:</labelPort>
+    <checkBoxBypassProxy>Nepoužívat proxy server pro lokální adresy (IE a Opera)</checkBoxBypassProxy>
+    <groupBoxHomepage>Výchozí domovská stránka:</groupBoxHomepage>
+    <buttonUseBlankHomepage>Použij prázdnou</buttonUseBlankHomepage>
+    <labelHomepageNote>Nechat prázdnou stránku (žádné změny).</labelHomepageNote>
+    <groupBoxWebBrowsers>Povolit nastavení pro</groupBoxWebBrowsers>
+    <buttonClearFirefox>Vyčistit nastavení Firefoxu</buttonClearFirefox>
+	<buttonClearFirefox-ToolTip>Klikněte sem, jestli máte problémy se změnou nastavení proxy, nebo výchozí domovské stránky ve Firefoxu.</buttonClearFirefox-ToolTip>
+    <groupBoxPleaseNote>Poznámka</groupBoxPleaseNote>
+	<labelPleaseNote>Mozilla Firefox a Opera nesmí být spustěny, aby mohly být provedeny změny.</labelPleaseNote>
+	<checkBoxIE>Internet Explorer</checkBoxIE>
+	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
+	<checkBoxOpera>Opera</checkBoxOpera>
+	<ClearFirefox-Messagebox-1>Nastavení byla odstraněna.</ClearFirefox-Messagebox-1>
+    <ClearFirefox-Messagebox-2>Jesltiže Firefox běží, musí být restartován, aby mohly být provedeny změny.</ClearFirefox-Messagebox-2>
+    <toolStripButtonAddDrive>Přidat disk</toolStripButtonAddDrive>
+    <toolStripButtonEditDrive>Edituj</toolStripButtonEditDrive>
+    <toolStripButtonRemoveDrive>Odstraň</toolStripButtonRemoveDrive>
+    <groupBoxPrinter>Výchozí tiskárna</groupBoxPrinter>
+    <buttonGetDefaultPrinter>Zjisti aktuální nastavení</buttonGetDefaultPrinter>
+    <toolStripButtonAddProgram>Přidej Program</toolStripButtonAddProgram>
+    <toolStripButtonEditProgram>Edituj</toolStripButtonEditProgram>
+    <toolStripButtonRemoveProgram>Odstraň</toolStripButtonRemoveProgram>
+    <groupBoxWallpaper>Tapeta</groupBoxWallpaper>
+    <buttonBrowseWallpaper-ToolTip>Procházej tapety</buttonBrowseWallpaper-ToolTip>
+    <openFileDialogWallpaper-Title>Vyberte tapetu, kterou chcete použít.</openFileDialogWallpaper-Title>
+    <openFileDialogWallpaper-Filter>Soubory s obrázky</openFileDialogWallpaper-Filter>
+    <buttonResetWallpaper-ToolTip>Odstraň tapetu</buttonResetWallpaper-ToolTip>
+    <groupBoxWallpaperPreview>Náhled</groupBoxWallpaperPreview>
+    <groupBoxDisplaySettings>Zobraz nastavení</groupBoxDisplaySettings>
+    <labelScreenResolution>Rozlišení obrazovky:</labelScreenResolution>
+	<ScreenResolutionText-By>na</ScreenResolutionText-By>
+	<ScreenResolutionText-Pixels>pixelů</ScreenResolutionText-Pixels>
+    <labelColorQuality>Kvalita barev:</labelColorQuality>
+	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
+	<ColorQualityText-Lowest>Nejnižší</ColorQualityText-Lowest>
+	<ColorQualityText-Highest>Nejvyšší</ColorQualityText-Highest>
+    <buttonGetCurrentDisplaySettings>Zjisti aktuální nastavení</buttonGetCurrentDisplaySettings>
+    <groupBoxWireless>Automatická aktivace profilu</groupBoxWireless>
+    <labelSSID>WiFi SSID:</labelSSID>
+    <labelSSIDNotes>Specifikace WiFi SSID automaticky aktivuje tento profil pokud je detekováno připojení k výše uvedené bezdrátové síti.</labelSSIDNotes>
+	<labelWirelessVista>Windows Vista uživatelé: Tato záložka nebude povolena dokud nepřijdu na to, jak rozpoznat aktuálně připojenou WiFi síť s SSID ve Vistě.</labelWirelessVista>
+    <buttonSave>Ulož</buttonSave>
+    <buttonClose>Zavři</buttonClose>
+    <labelWorking-NetworkCards>Načítání síťových karet...</labelWorking-NetworkCards>
+    <labelWorking-Profile>Načítání profilu...</labelWorking-Profile>
+    <labelWorking-Printer>Načítání tiskáren...</labelWorking-Printer>
+    <ProfileName-Messagebox>Prosím, vložte název tohoto profilu.</ProfileName-Messagebox>
+  </ProfileSettings>
+  <RunPrograms>
+    <WindowTitle>Spusť programy</WindowTitle>
+    <labelPath>Cesta:</labelPath>
+    <labelArgs>Argumenty:</labelArgs>
+    <labelRun>Spusť:</labelRun>
+    <groupBoxCredentials>Spusť s jinými pověřeními (volitelné)</groupBoxCredentials>
+    <labelUsername>Uživatel:</labelUsername>
+    <labelPassword>Heslo:</labelPassword>
+    <labelDomain>Doména:</labelDomain>
+    <buttonAdd>Přidej</buttonAdd>
+    <buttonSave>Ulož</buttonSave>
+    <buttonCancel>Ukonči</buttonCancel>
+	<RunText-Normal>Normalní</RunText-Normal>
+	<RunText-Minimized>Minimalizovaný</RunText-Minimized>
+	<RunText-Maximized>Maximalizovaný</RunText-Maximized>
+	<RunText-Hidden>Skrytý</RunText-Hidden>
+  </RunPrograms>
+  <WirelessDetected>
+    <WindowTitle>Detekována síť WiFi</WindowTitle>
+    <labelConnectedTo>Jste připojen k:</labelConnectedTo>
+    <labelActivate>Chcete aktivovat:</labelActivate>
+    <buttonYes>Ano</buttonYes>
+    <buttonNo>Ne</buttonNo>
+  </WirelessDetected>
+  <Misc>
+    <BrowseNetworkShare-Title>Vyber síť, počítač, sdílení.</BrowseNetworkShare-Title>
+	<DisplaySettings-ConfirmPrompt-Title>Potvrď změnu zobrazení</DisplaySettings-ConfirmPrompt-Title>
+	<DisplaySettings-ConfirmPrompt-Message>Chcete změnit nastavení zobrazení?</DisplaySettings-ConfirmPrompt-Message>
+	<DisplaySettings-Resolution>Rozlišení:</DisplaySettings-Resolution>
+	<DisplaySettings-Bits>Barevných Bitů:</DisplaySettings-Bits>
+	<DisplaySettings-Refresh>Obnovování:</DisplaySettings-Refresh>`
+	<DisplaySettings-RevertPrompt-Title>Zobrazení změněno</DisplaySettings-RevertPrompt-Title>
+	<DisplaySettings-RevertPrompt-Message>Chcete zachovat aktuální nastavení?</DisplaySettings-RevertPrompt-Message>
+  </Misc>
+  <CopyProfile>
+	<WindowTitle>Kopíruj profil</WindowTitle>
+	<labelProfile>Profil:</labelProfile>
+	<labelNewProfile>Nový název:</labelNewProfile>
+	<labelSelectNetworkCard>Vyber síťovou kartu:</labelSelectNetworkCard>
+	<buttonCopy>Kopíruj</buttonCopy>
+	<buttonCancel>Ukonči</buttonCancel>
+  </CopyProfile>
+</Language>

@@ -1,0 +1,231 @@
+﻿<Language name="PR-BR" translated_by="Marcelo Gonçalves - malgon.net" version="5" date="8/27/2007" display_name="Portuguese-BR">
+  <MainForm>
+    <fileToolStripMenuItem>Arquivo</fileToolStripMenuItem>
+    <toolStripMenuItemNewProfile>Novo Perfil</toolStripMenuItemNewProfile>
+    <applyProfileToolStripMenuItemApplyProfile>Ativar Perfil</applyProfileToolStripMenuItemApplyProfile>
+    <activateOnDifferentNetworkCardToolStripMenuItem1>Ativar Em Placa De Rede Diferente...</activateOnDifferentNetworkCardToolStripMenuItem1>
+    <toolStripMenuItemCopyProfile>Copiar...</toolStripMenuItemCopyProfile>
+	<toolStripMenuItemEditProfile>Editar</toolStripMenuItemEditProfile>
+    <deleteToolStripMenuItemDeleteProfile>Apagar</deleteToolStripMenuItemDeleteProfile>
+    <createDesktopShortcutToolStripMenuItem1>Criar Atalho Na Tela</createDesktopShortcutToolStripMenuItem1>
+    <exitToolStripMenuItem>Sair</exitToolStripMenuItem>
+    <optionsToolStripMenuItem>Opções</optionsToolStripMenuItem>
+    <toggleToolbarTextToolStripMenuItem>Exibir Texto da Barra de Ferramentas</toggleToolbarTextToolStripMenuItem>
+    <minimizeToTrayOnCloseToolStripMenuItem>Minimizar Na Bandeja Ao Fechar</minimizeToTrayOnCloseToolStripMenuItem>
+    <minimizeToTrayOnStartupToolStripMenuItem>Minimizar Na Bandeja Ao Iniciar</minimizeToTrayOnStartupToolStripMenuItem>
+    <dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>Confirmar Ao Carregar Perfil de Rede Sem Fio</dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>
+    <screenResolutionToolStripMenuItem>Resolução De Tela</screenResolutionToolStripMenuItem>
+    <askBeforeChangingResolutionToolStripMenuItem>Confirmar Antes de Mudar A Resolução</askBeforeChangingResolutionToolStripMenuItem>
+    <confirmSettingsAfterChangingResolutionToolStripMenuItem>Confirmar Ajustes Após Mudar Resolução</confirmSettingsAfterChangingResolutionToolStripMenuItem>
+    <runWhenILogInToWindowsToolStripMenuItem>Executar Ao Iniciar O Windows</runWhenILogInToWindowsToolStripMenuItem>
+	<languageToolStripMenuItem>Selecionar Idioma</languageToolStripMenuItem>
+    <customizeDesktopShortcutsToolStripMenuItem>Personalizar Atalhos De Tela...</customizeDesktopShortcutsToolStripMenuItem>
+    <reloadNetworkInterfacesToolStripMenuItem>Carregar Interfaces De Rede</reloadNetworkInterfacesToolStripMenuItem>
+    <reloadProfilesToolStripMenuItem>Carregar Perfis</reloadProfilesToolStripMenuItem>
+    <helpToolStripMenuItem>Ajuda</helpToolStripMenuItem>
+    <!-- Required: %1 (program name) -->
+    <netProfilesWebsiteToolStripMenuItem>%1 Website...</netProfilesWebsiteToolStripMenuItem>
+    <checkForUpdatesToolStripMenuItem>Procurar Atualizações...</checkForUpdatesToolStripMenuItem>
+    <aboutToolStripMenuItem>Sobre</aboutToolStripMenuItem>
+    <toolStripButtonNewProfile>Novo Perfil</toolStripButtonNewProfile>
+    <toolStripButtonApplyProfile>Ativar Perfil</toolStripButtonApplyProfile>
+    <toolStripButtonCopyProfile>Copiar</toolStripButtonCopyProfile>
+	<toolStripButtonEditProfile>Editar</toolStripButtonEditProfile>
+    <toolStripButtonDeleteProfile>Apagar</toolStripButtonDeleteProfile>
+    <toolStripStatusLabelWorking>Carregando Perfis...</toolStripStatusLabelWorking>
+    <toolStripStatusLabelWorking-Preloading>Carregando Interfaces De Rede...</toolStripStatusLabelWorking-Preloading>
+    <toolStripStatusLabelWorking-Activating>Ativando Perfil...</toolStripStatusLabelWorking-Activating>
+    <toolStripStatusLabelWorking-UnmapDrives>Desconectando Drives Mapeados...</toolStripStatusLabelWorking-UnmapDrives>
+    <toolStripStatusLabelWorking-MapDrives>Conectando Drives Mapeados...</toolStripStatusLabelWorking-MapDrives>
+    <toolStripStatusLabelWorking-Printer>Ajustando Impressora Padrão...</toolStripStatusLabelWorking-Printer>
+    <toolStripStatusLabelWorking-Internet>Ativando Ajustes De Internet...</toolStripStatusLabelWorking-Internet>
+    <toolStripStatusLabelWorking-Homepage>Ajustando Página Inicial...</toolStripStatusLabelWorking-Homepage>
+    <toolStripStatusLabelWorking-Programs>Executando Programas...</toolStripStatusLabelWorking-Programs>
+    <toolStripStatusLabelWorking-Wallpaper>Alterando O Papel De Parede...</toolStripStatusLabelWorking-Wallpaper>
+    <toolStripStatusLabelWorking-Resolution>Mudando A Resolução De Tela...</toolStripStatusLabelWorking-Resolution>
+    <toolStripStatusLabelWorking-Reloading>Carregando Interfaces De Rede...</toolStripStatusLabelWorking-Reloading>
+    <toolStripStatusLabelWorking-DHCP>Habilitando DHCP...</toolStripStatusLabelWorking-DHCP>
+    <toolStripStatusLabelWorking-IPAddress>Atribuindo Endereços de IP...</toolStripStatusLabelWorking-IPAddress>
+    <toolStripStatusLabelWorking-Gateway>Ajustando O Gateway...</toolStripStatusLabelWorking-Gateway>
+    <toolStripStatusLabelWorking-DNS>Ajustando Os Servidores DNS...</toolStripStatusLabelWorking-DNS>
+    <toolStripStatusLabelWorking-WINS>Ajustando Servidor WINS...</toolStripStatusLabelWorking-WINS>
+    <applyProfileToolStripMenuItem>Ativar Perfil</applyProfileToolStripMenuItem>
+    <activateOnDifferentNetworkCardToolStripMenuItem>Ativar Em Placa De Rede Diferente...</activateOnDifferentNetworkCardToolStripMenuItem>
+    <copyToolStripMenuItem>Copiar</copyToolStripMenuItem>
+	<editToolStripMenuItem>Editar</editToolStripMenuItem>
+    <deleteToolStripMenuItem>Apagar</deleteToolStripMenuItem>
+    <createDesktopShortcutToolStripMenuItem>Criar Atalho Na Tela</createDesktopShortcutToolStripMenuItem>
+    <showHideWindowToolStripMenuItem>Exibe/Oculta a Janela</showHideWindowToolStripMenuItem>
+    <profilesToolStripMenuItem>Perfis</profilesToolStripMenuItem>
+    <exitToolStripMenuItem1>Sair</exitToolStripMenuItem1>
+    <NoNetworkProfilesMessageBox-1>Não Há Perfis De Rede.</NoNetworkProfilesMessageBox-1>
+    <NoNetworkProfilesMessageBox-2>Você Deseja Criar Um Agora?</NoNetworkProfilesMessageBox-2>
+    <!-- Required: %1 (profile name) -->
+    <DeleteProfileMessageBox>Tem Certeza De Que Deseja Apagar %1?</DeleteProfileMessageBox>
+    <DeleteProfileMessageBox-Title>Apagar Perfil</DeleteProfileMessageBox-Title>
+    <!-- Available Variables: %1 (interface name), %2 (profile name), %3 (ip address), %4 (mac address) -->
+    <ShortcutConfigDefault>Ativar %2 em %1</ShortcutConfigDefault>
+    <CreateShortcutMessagebox>O Atalho Foi Criado Em Sua Tela</CreateShortcutMessagebox>
+    <CheckForUpdates-Latest>Você Já Tem A Versão Mais Atual.</CheckForUpdates-Latest>
+    <!-- Required: %1 (program name), %2 (program version) -->
+    <CheckForUpdates-New-1>%1 %2 Agora Está Disponível.</CheckForUpdates-New-1>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-New-2>Você Deseja Ir Ao Site %1 Para Baixá-lo?</CheckForUpdates-New-2>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-Title>%1 Atualizar</CheckForUpdates-Title>
+    <CheckForUpdates-Error-1>Houve Problemas Ao Procurar Por Atualizações.</CheckForUpdates-Error-1>
+    <CheckForUpdates-Error-2>Por Favor Tente Mais Tarde.</CheckForUpdates-Error-2>
+  </MainForm>
+  <About>
+    <labelFreeware>Este Programa É Gratuíto</labelFreeware>
+    <!-- Required: %1 (program name) -->
+    <WindowTitle>Sobre %1</WindowTitle>
+    <buttonOK>OK</buttonOK>
+  </About>
+  <ActivateSelectNetworkCard>
+    <WindowTitle>Ativar Perfil</WindowTitle>
+    <labelProfileTitle>Perfil:</labelProfileTitle>
+    <labelSelectNetworkCard>Escolha Uma Placa De Rede:</labelSelectNetworkCard>
+    <buttonActivate>Ativar</buttonActivate>
+    <buttonCancel>Cancelar</buttonCancel>
+  </ActivateSelectNetworkCard>
+  <AutoActivate>
+    <!-- Required: %1 (profile name), %2 (network card name) -->
+    <labelTitle>Ativando %1 em %2...</labelTitle>
+  </AutoActivate>
+  <DesktopShortcut>
+    <WindowTitle>Configuração Do Atalho De Tela</WindowTitle>
+    <groupBoxLegend>Legenda</groupBoxLegend>
+    <labelVar1>Nome Da Interface De Rede</labelVar1>
+    <labelVar2>Nome Do Perfil</labelVar2>
+    <labelVar3>Endereço de IP Do Perfil</labelVar3>
+    <labelVar4>Endereço MAC Da Interface De Rede</labelVar4>
+    <buttonRestoreDefaults>Restaurar Padrões</buttonRestoreDefaults>
+    <buttonSave>Salvar</buttonSave>
+    <buttonCancel>Fechar</buttonCancel>
+  </DesktopShortcut>
+  <MappedDrive>
+    <WindowTitle>Drive Mapeado</WindowTitle>
+    <labelUsername>Usuário:</labelUsername>
+    <labelPassword>Senha:</labelPassword>
+    <labelNote>Usuário E Senha Podem Ficar Vazios Se Não For Necessário.</labelNote>
+    <buttonSave>Salvar</buttonSave>
+    <buttonAdd>Adicionar</buttonAdd>
+    <buttonCancel>Fechar</buttonCancel>
+    <AlreadyMapped-Messagebox>Esta Letra de Drive Já Está Mapeada Neste Perfil.</AlreadyMapped-Messagebox>
+    <DriveUsed>Usado</DriveUsed>
+  </MappedDrive>
+  <ProfileSettings>
+    <WindowTitle>Ajustes Do Perfil</WindowTitle>
+    <labelProfileName>Nome:</labelProfileName>
+    <labelNetworkCard>Placa De Rede:</labelNetworkCard>
+    <tabPageIPSettings>IP</tabPageIPSettings>
+    <tabPageInternet>Internet</tabPageInternet>
+    <tabPageMappedDrives>Unidades</tabPageMappedDrives>
+    <tabPagePrinter>Impressora</tabPagePrinter>
+    <tabPageRun>Executar</tabPageRun>
+    <tabPageDesktop>Área de Trabalho</tabPageDesktop>
+    <tabPageWireless>Rede Sem Fio</tabPageWireless>
+    <checkBoxDHCP>Obter Um IP Automaticamente (DHCP)</checkBoxDHCP>
+    <labelIPAddress>Endereço de IP:</labelIPAddress>
+    <labelSubnetMask>Máscara:</labelSubnetMask>
+    <labelDefaultGateway>Gateway:</labelDefaultGateway>
+    <labelPrimaryDNSServer>DNS Primário:</labelPrimaryDNSServer>
+    <labelAlternateDNSServer>DNS Secundário:</labelAlternateDNSServer>
+    <labelWINSServer>Servidor WINS:</labelWINSServer>
+    <buttonGetCurrentIPSettings>Ler Dados Atuais</buttonGetCurrentIPSettings>
+    <groupBoxAutoConfigAddress>Endereços Automáticos De Configuração:</groupBoxAutoConfigAddress>
+	<groupBoxProxy>Usar Ajustes De Proxy</groupBoxProxy>
+    <labelServerAddress>Endereço Do Servidor:</labelServerAddress>
+    <labelPort>Porta:</labelPort>
+    <checkBoxBypassProxy>Usar Servidor Proxy Em Endereços Locais (IE e Opera)</checkBoxBypassProxy>
+    <groupBoxHomepage>Página Inicial:</groupBoxHomepage>
+    <buttonUseBlankHomepage>Usar Branca</buttonUseBlankHomepage>
+    <labelHomepageNote>Deixe Em Branco Para Não Alterar.</labelHomepageNote>
+    <groupBoxWebBrowsers>Habilitar Ajustes Para</groupBoxWebBrowsers>
+    <buttonClearFirefox>Limpar Ajustes Do Firefox</buttonClearFirefox>
+	<buttonClearFirefox-ToolTip>Clique Aqui Se Estiver Tendo Problemas Para Ajustar Seu Proxy Ou Página Padrão Do Firefox.</buttonClearFirefox-ToolTip>
+    <groupBoxPleaseNote>Atenção</groupBoxPleaseNote>
+	<labelPleaseNote>O Firefox e Opera Não Podem Estar Rodando Para Que Os Ajustes Tenham Efeito.</labelPleaseNote>
+	<checkBoxIE>Internet Explorer</checkBoxIE>
+	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
+	<checkBoxOpera>Opera</checkBoxOpera>
+	<ClearFirefox-Messagebox-1>Os Ajustes Foram Removidos.</ClearFirefox-Messagebox-1>
+    <ClearFirefox-Messagebox-2>Se O Firefox Estiver Em Execução, Reinicie-o Para As Alterações Terem Efeito.</ClearFirefox-Messagebox-2>
+    <toolStripButtonAddDrive>Adicionar Drive</toolStripButtonAddDrive>
+    <toolStripButtonEditDrive>Editar</toolStripButtonEditDrive>
+    <toolStripButtonRemoveDrive>Remover</toolStripButtonRemoveDrive>
+    <groupBoxPrinter>Impressora Padrão</groupBoxPrinter>
+    <buttonGetDefaultPrinter>Ler Ajustes Atuais</buttonGetDefaultPrinter>
+    <toolStripButtonAddProgram>Adicionar Programa</toolStripButtonAddProgram>
+    <toolStripButtonEditProgram>Editar</toolStripButtonEditProgram>
+    <toolStripButtonRemoveProgram>Remover</toolStripButtonRemoveProgram>
+    <groupBoxWallpaper>Papel de Parede</groupBoxWallpaper>
+    <buttonBrowseWallpaper-ToolTip>Procurar Papel De Parede</buttonBrowseWallpaper-ToolTip>
+    <openFileDialogWallpaper-Title>Escolha O Papel De Parede A Usar.</openFileDialogWallpaper-Title>
+    <openFileDialogWallpaper-Filter>Arquivos De Imagem</openFileDialogWallpaper-Filter>
+    <buttonResetWallpaper-ToolTip>Remover Papel De Parede</buttonResetWallpaper-ToolTip>
+    <groupBoxWallpaperPreview>Visualizar</groupBoxWallpaperPreview>
+    <groupBoxDisplaySettings>Ajustes De Vídeo</groupBoxDisplaySettings>
+    <labelScreenResolution>Resolução De Tela:</labelScreenResolution>
+	<ScreenResolutionText-By>por</ScreenResolutionText-By>
+	<ScreenResolutionText-Pixels>pixels</ScreenResolutionText-Pixels>
+    <labelColorQuality>Cores:</labelColorQuality>
+	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
+	<ColorQualityText-Lowest>Baixa</ColorQualityText-Lowest>
+	<ColorQualityText-Highest>Alta</ColorQualityText-Highest>
+    <buttonGetCurrentDisplaySettings>Ler Ajustes Atuais</buttonGetCurrentDisplaySettings>
+    <groupBoxWireless>Auto-Ativar O Perfil</groupBoxWireless>
+    <labelSSID>Senha Rede Sem Fio:</labelSSID>
+    <labelSSIDNotes>Ao Especificar A Senha Da Rede Sem Fio, O Perfil Será Automaticamente Ativado Ao Detectar Uma Rede Sem Fio.</labelSSIDNotes>
+	<labelWirelessVista>Usuários Do Windows Vista: Esta Aba Será Desabilitada Até Que Eu Entenda Como Isso Funciona Na Rede Sem Fio No Vista.</labelWirelessVista>
+    <buttonSave>Salvar</buttonSave>
+    <buttonClose>Fechar</buttonClose>
+    <labelWorking-NetworkCards>Carregando Placas De Rede...</labelWorking-NetworkCards>
+    <labelWorking-Profile>Carregando Perfil...</labelWorking-Profile>
+    <labelWorking-Printer>Carregando Impressoras...</labelWorking-Printer>
+    <ProfileName-Messagebox>Informe O Nome Para Este Perfil.</ProfileName-Messagebox>
+  </ProfileSettings>
+  <RunPrograms>
+    <WindowTitle>Executar Programas</WindowTitle>
+    <labelPath>Caminho:</labelPath>
+    <labelArgs>Argumentos:</labelArgs>
+    <labelRun>Executar:</labelRun>
+    <groupBoxCredentials>Executar Com Credenciais Diferentes (Opcional)</groupBoxCredentials>
+    <labelUsername>Usuário:</labelUsername>
+    <labelPassword>Senha:</labelPassword>
+    <labelDomain>Domínio:</labelDomain>
+    <buttonAdd>Adicionar</buttonAdd>
+    <buttonSave>Salvar</buttonSave>
+    <buttonCancel>Cancelar</buttonCancel>
+	<RunText-Normal>Normal</RunText-Normal>
+	<RunText-Minimized>Minimizado</RunText-Minimized>
+	<RunText-Maximized>Maximizado</RunText-Maximized>
+	<RunText-Hidden>Oculto</RunText-Hidden>
+  </RunPrograms>
+  <WirelessDetected>
+    <WindowTitle>Detectada Rede Sem Fio</WindowTitle>
+    <labelConnectedTo>Você Está Conectado A:</labelConnectedTo>
+    <labelActivate>Você Deseja Ativar:</labelActivate>
+    <buttonYes>Sim</buttonYes>
+    <buttonNo>Não</buttonNo>
+  </WirelessDetected>
+  <Misc>
+    <BrowseNetworkShare-Title>Selecione Um Computador Ou Recurso Da Rede.</BrowseNetworkShare-Title>
+	<DisplaySettings-ConfirmPrompt-Title>Confirmar Mudança De Vídeo</DisplaySettings-ConfirmPrompt-Title>
+	<DisplaySettings-ConfirmPrompt-Message>Você Deseja Alterar Seus Ajustes De Vídeo?</DisplaySettings-ConfirmPrompt-Message>
+	<DisplaySettings-Resolution>Resolução:</DisplaySettings-Resolution>
+	<DisplaySettings-Bits>Cores:</DisplaySettings-Bits>
+	<DisplaySettings-Refresh>Taxa:</DisplaySettings-Refresh>`
+	<DisplaySettings-RevertPrompt-Title>Video Alterado</DisplaySettings-RevertPrompt-Title>
+	<DisplaySettings-RevertPrompt-Message>Você Deseja Manter Seus Ajustes Atuais?</DisplaySettings-RevertPrompt-Message>
+  </Misc>
+  <CopyProfile>
+	<WindowTitle>Copiar Perfil</WindowTitle>
+	<labelProfile>Perfil:</labelProfile>
+	<labelNewProfile>Novo Nome:</labelNewProfile>
+	<labelSelectNetworkCard>Escolha Uma Placa De Rede:</labelSelectNetworkCard>
+	<buttonCopy>Copiar</buttonCopy>
+	<buttonCancel>Cancelar</buttonCancel>
+  </CopyProfile>
+</Language>

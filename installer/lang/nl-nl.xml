@@ -1,0 +1,231 @@
+<Language name="nl-NL" translated_by="fg200" version="5" date="9/12/2007" display_name="Nederlands">
+  <MainForm>
+    <fileToolStripMenuItem>Bestand</fileToolStripMenuItem>
+    <toolStripMenuItemNewProfile>Nieuw Profiel</toolStripMenuItemNewProfile>
+    <applyProfileToolStripMenuItemApplyProfile>Profiel Activeren </applyProfileToolStripMenuItemApplyProfile>
+    <activateOnDifferentNetworkCardToolStripMenuItem1>Activeer een andere Netwerkkaart...</activateOnDifferentNetworkCardToolStripMenuItem1>
+    <toolStripMenuItemCopyProfile>Kopieer...</toolStripMenuItemCopyProfile>
+	<toolStripMenuItemEditProfile>Aanpassen</toolStripMenuItemEditProfile>
+    <deleteToolStripMenuItemDeleteProfile>Verwijder</deleteToolStripMenuItemDeleteProfile>
+    <createDesktopShortcutToolStripMenuItem1>Maak een snelkoppeling op Buroblad</createDesktopShortcutToolStripMenuItem1>
+    <exitToolStripMenuItem>Afsluiten</exitToolStripMenuItem>
+    <optionsToolStripMenuItem>Optie</optionsToolStripMenuItem>
+    <toggleToolbarTextToolStripMenuItem>Op Toolbar Tekst weergeven</toggleToolbarTextToolStripMenuItem>
+    <minimizeToTrayOnCloseToolStripMenuItem>Minimaliseer naar SysTray bij afsluiten</minimizeToTrayOnCloseToolStripMenuItem>
+    <minimizeToTrayOnStartupToolStripMenuItem>Minimaliseer naar SysTray bij Opstarten </minimizeToTrayOnStartupToolStripMenuItem>
+    <dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>Niet vragen Voor automatisch activeren van Draadloos profiel</dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>
+    <screenResolutionToolStripMenuItem>Scherm Resolutie</screenResolutionToolStripMenuItem>
+    <askBeforeChangingResolutionToolStripMenuItem>Vraag voor veranderen Resolutie</askBeforeChangingResolutionToolStripMenuItem>
+    <confirmSettingsAfterChangingResolutionToolStripMenuItem>Bevestig instellingen na veranderen Resolutie</confirmSettingsAfterChangingResolutionToolStripMenuItem>
+    <runWhenILogInToWindowsToolStripMenuItem>Start "Net Profiles" op Na inloggen Windows</runWhenILogInToWindowsToolStripMenuItem>
+	<languageToolStripMenuItem>Selecteer je Taal</languageToolStripMenuItem>
+    <customizeDesktopShortcutsToolStripMenuItem>Pas Buroblad snelkoppeling aan...</customizeDesktopShortcutsToolStripMenuItem>
+    <reloadNetworkInterfacesToolStripMenuItem>Herstart Netwerk Interface</reloadNetworkInterfacesToolStripMenuItem>
+    <reloadProfilesToolStripMenuItem>Herstart Profiel</reloadProfilesToolStripMenuItem>
+    <helpToolStripMenuItem>Help</helpToolStripMenuItem>
+    <!-- Required: %1 (program name) -->
+    <netProfilesWebsiteToolStripMenuItem>"%1" Website...</netProfilesWebsiteToolStripMenuItem>
+    <checkForUpdatesToolStripMenuItem>Controleer op nieuwere versie...</checkForUpdatesToolStripMenuItem>
+    <aboutToolStripMenuItem>Over</aboutToolStripMenuItem>
+    <toolStripButtonNewProfile>Nieuw Profiel</toolStripButtonNewProfile>
+    <toolStripButtonApplyProfile>Activeer Profiel</toolStripButtonApplyProfile>
+    <toolStripButtonCopyProfile>Kopieer</toolStripButtonCopyProfile>
+	<toolStripButtonEditProfile>Aanpassen</toolStripButtonEditProfile>
+    <toolStripButtonDeleteProfile>Verwijderen</toolStripButtonDeleteProfile>
+    <toolStripStatusLabelWorking>Laad Profiel...</toolStripStatusLabelWorking>
+    <toolStripStatusLabelWorking-Preloading>Preloading Netwerk Interfaces...</toolStripStatusLabelWorking-Preloading>
+    <toolStripStatusLabelWorking-Activating>Activeer Profiel...</toolStripStatusLabelWorking-Activating>
+    <toolStripStatusLabelWorking-UnmapDrives>Verbreek Mapped Drives...</toolStripStatusLabelWorking-UnmapDrives>
+    <toolStripStatusLabelWorking-MapDrives>Maak verbinding met Mapped Drives...</toolStripStatusLabelWorking-MapDrives>
+    <toolStripStatusLabelWorking-Printer>Stel standaard printer in...</toolStripStatusLabelWorking-Printer>
+    <toolStripStatusLabelWorking-Internet>Activeer Internet Instellingen...</toolStripStatusLabelWorking-Internet>
+    <toolStripStatusLabelWorking-Homepage>Stel Homepage in...</toolStripStatusLabelWorking-Homepage>
+    <toolStripStatusLabelWorking-Programs>Start Programma's...</toolStripStatusLabelWorking-Programs>
+    <toolStripStatusLabelWorking-Wallpaper>Verander achtergrond...</toolStripStatusLabelWorking-Wallpaper>
+    <toolStripStatusLabelWorking-Resolution>Verander scherm Resolutie...</toolStripStatusLabelWorking-Resolution>
+    <toolStripStatusLabelWorking-Reloading>Herlaat Netwerk Interfaces...</toolStripStatusLabelWorking-Reloading>
+    <toolStripStatusLabelWorking-DHCP>DHCP Inschakelen...</toolStripStatusLabelWorking-DHCP>
+    <toolStripStatusLabelWorking-IPAddress>Stel IP-Adres in...</toolStripStatusLabelWorking-IPAddress>
+    <toolStripStatusLabelWorking-Gateway>Stel Gateway in...</toolStripStatusLabelWorking-Gateway>
+    <toolStripStatusLabelWorking-DNS>Stel DNS-Servers in...</toolStripStatusLabelWorking-DNS>
+    <toolStripStatusLabelWorking-WINS>Stel WINS-Server in...</toolStripStatusLabelWorking-WINS>
+    <applyProfileToolStripMenuItem>Activeer Profiel</applyProfileToolStripMenuItem>
+    <activateOnDifferentNetworkCardToolStripMenuItem>Activeer een andere Netwerkkaart...</activateOnDifferentNetworkCardToolStripMenuItem>
+    <copyToolStripMenuItem>Kopieer</copyToolStripMenuItem>
+	<editToolStripMenuItem>Aanpassen</editToolStripMenuItem>
+    <deleteToolStripMenuItem>Verwijder</deleteToolStripMenuItem>
+    <createDesktopShortcutToolStripMenuItem>Maak een snelkoppeling op Buroblad</createDesktopShortcutToolStripMenuItem>
+    <showHideWindowToolStripMenuItem>Laat zien/verberg Window</showHideWindowToolStripMenuItem>
+    <profilesToolStripMenuItem>Profiel</profilesToolStripMenuItem>
+    <exitToolStripMenuItem1>Afsluiten</exitToolStripMenuItem1>
+    <NoNetworkProfilesMessageBox-1>Er zijn momenteel geen netwerk profielen.</NoNetworkProfilesMessageBox-1>
+    <NoNetworkProfilesMessageBox-2>Wil je een nieuwe maken?</NoNetworkProfilesMessageBox-2>
+    <!-- Required: %1 (profile name) -->
+    <DeleteProfileMessageBox>Ben je er zeker van dat je %1 wil verwijderen?</DeleteProfileMessageBox>
+    <DeleteProfileMessageBox-Title>Verwijder Profiel</DeleteProfileMessageBox-Title>
+    <!-- Available Variables: %1 (interface name), %2 (profile name), %3 (ip address), %4 (mac address) -->
+    <ShortcutConfigDefault>Activeer %2 op %1</ShortcutConfigDefault>
+    <CreateShortcutMessagebox>De snelkoppeling is op je buroblad gemaakt</CreateShortcutMessagebox>
+    <CheckForUpdates-Latest>Je gebruikt de laatste versie.</CheckForUpdates-Latest>
+    <!-- Required: %1 (program name), %2 (program version) -->
+    <CheckForUpdates-New-1>%1 %2 is nu beschikbaar.</CheckForUpdates-New-1>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-New-2>Wil je de %1 website bezoeken om het te downloaden?</CheckForUpdates-New-2>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-Title>%1 Opwaarderen</CheckForUpdates-Title>
+    <CheckForUpdates-Error-1>Er was een probleem met controleren voor een nieuwere versie.</CheckForUpdates-Error-1>
+    <CheckForUpdates-Error-2>Probeer het nog eens.</CheckForUpdates-Error-2>
+  </MainForm>
+  <About>
+    <labelFreeware>Dit programma is freeware (gratis)</labelFreeware>
+    <!-- Required: %1 (program name) -->
+    <WindowTitle>Over %1</WindowTitle>
+    <buttonOK>OK</buttonOK>
+  </About>
+  <ActivateSelectNetworkCard>
+    <WindowTitle>Activeer Profiel</WindowTitle>
+    <labelProfileTitle>Profiel:</labelProfileTitle>
+    <labelSelectNetworkCard>Selecteer een Netwerkkaart:</labelSelectNetworkCard>
+    <buttonActivate>Activeer</buttonActivate>
+    <buttonCancel>Annuleer</buttonCancel>
+  </ActivateSelectNetworkCard>
+  <AutoActivate>
+    <!-- Required: %1 (profile name), %2 (network card name) -->
+    <labelTitle>Activeer %1 op %2...</labelTitle>
+  </AutoActivate>
+  <DesktopShortcut>
+    <WindowTitle>instellingen buroblad snelkoppeling</WindowTitle>
+    <groupBoxLegend>Legende</groupBoxLegend>
+    <labelVar1>Naam van netwerk interface</labelVar1>
+    <labelVar2>Naam van profiel</labelVar2>
+    <labelVar3>IP-adres van profiel</labelVar3>
+    <labelVar4>MAC-adres van de netwerk interface</labelVar4>
+    <buttonRestoreDefaults>Herstel standaard</buttonRestoreDefaults>
+    <buttonSave>Opslaan</buttonSave>
+    <buttonCancel>Annuleer</buttonCancel>
+  </DesktopShortcut>
+  <MappedDrive>
+    <WindowTitle>Mapped Drive</WindowTitle>
+    <labelUsername>Gebruikersnaam:</labelUsername>
+    <labelPassword>Wachtwoord:</labelPassword>
+    <labelNote>Gebruikersnaam en Wachtwoord mogen leeg blijven indien ze niet nodig zijn.</labelNote>
+    <buttonSave>Opslaan</buttonSave>
+    <buttonAdd>Toevoegen</buttonAdd>
+    <buttonCancel>Annuleer</buttonCancel>
+    <AlreadyMapped-Messagebox>Deze driveletter is al in gebruik in dit profiel.</AlreadyMapped-Messagebox>
+    <DriveUsed>in gebruik</DriveUsed>
+  </MappedDrive>
+  <ProfileSettings>
+    <WindowTitle>Profiel instellingen</WindowTitle>
+    <labelProfileName>Naam:</labelProfileName>
+    <labelNetworkCard>Netwerkkaart:</labelNetworkCard>
+    <tabPageIPSettings>IP instellingen</tabPageIPSettings>
+    <tabPageInternet>Internet</tabPageInternet>
+    <tabPageMappedDrives>Mapped Drives</tabPageMappedDrives>
+    <tabPagePrinter>Printer</tabPagePrinter>
+    <tabPageRun>Uitvoeren</tabPageRun>
+    <tabPageDesktop>Buroblad</tabPageDesktop>
+    <tabPageWireless>Draadloos</tabPageWireless>
+    <checkBoxDHCP>Verkrijg een IP-adres automatisch (DHCP)</checkBoxDHCP>
+    <labelIPAddress>IP Adres:</labelIPAddress>
+    <labelSubnetMask>Subnet Mask:</labelSubnetMask>
+    <labelDefaultGateway>Standaard Gateway:</labelDefaultGateway>
+    <labelPrimaryDNSServer>DNS-1 Server:</labelPrimaryDNSServer>
+    <labelAlternateDNSServer>DNS-2 Server:</labelAlternateDNSServer>
+    <labelWINSServer>WINS Server:</labelWINSServer>
+    <buttonGetCurrentIPSettings>Haal huidige instellingen op</buttonGetCurrentIPSettings>
+    <groupBoxAutoConfigAddress>Adres Automatisch Configureren:</groupBoxAutoConfigAddress>
+	<groupBoxProxy>Gebruik Proxy instellingen</groupBoxProxy>
+    <labelServerAddress>Server Adres:</labelServerAddress>
+    <labelPort>Poort:</labelPort>
+    <checkBoxBypassProxy>Passeer proxy server voor lokaal ip-adrressen (IE en Opera)</checkBoxBypassProxy>
+    <groupBoxHomepage>Standaard Homepage:</groupBoxHomepage>
+    <buttonUseBlankHomepage>Laat leeg</buttonUseBlankHomepage>
+    <labelHomepageNote>Laat leeg, om instellingen niet te veranderen.</labelHomepageNote>
+    <groupBoxWebBrowsers>Instellingen inschakelen voor</groupBoxWebBrowsers>
+    <buttonClearFirefox>Firefox instellingen resetten</buttonClearFirefox>
+	<buttonClearFirefox-ToolTip>Klik hier als je problemen heb met veranderen van je proxy instellingen of standaard homepage vanuit Firefox.</buttonClearFirefox-ToolTip>
+    <groupBoxPleaseNote>Let op!</groupBoxPleaseNote>
+	<labelPleaseNote>Mozilla Firefox en Opera mogen niet actief zijn tijdens het wijzigen van deze instellingen.</labelPleaseNote>
+	<checkBoxIE>Internet Explorer</checkBoxIE>
+	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
+	<checkBoxOpera>Opera</checkBoxOpera>
+	<ClearFirefox-Messagebox-1>Instellingen zijn verwijderd.</ClearFirefox-Messagebox-1>
+    <ClearFirefox-Messagebox-2>Als Firefox actief is, moet het herstart worden voordat de veranderingen doorgevoerd worden.</ClearFirefox-Messagebox-2>
+    <toolStripButtonAddDrive>Drive toevoegen</toolStripButtonAddDrive>
+    <toolStripButtonEditDrive>Aanpassen</toolStripButtonEditDrive>
+    <toolStripButtonRemoveDrive>Verwijder</toolStripButtonRemoveDrive>
+    <groupBoxPrinter>Standaard Printer</groupBoxPrinter>
+    <buttonGetDefaultPrinter>Haal huidige instellingen op</buttonGetDefaultPrinter>
+    <toolStripButtonAddProgram>Programma Toevoegen</toolStripButtonAddProgram>
+    <toolStripButtonEditProgram>Aanpassen</toolStripButtonEditProgram>
+    <toolStripButtonRemoveProgram>Verwijder</toolStripButtonRemoveProgram>
+    <groupBoxWallpaper>Achtergrond</groupBoxWallpaper>
+    <buttonBrowseWallpaper-ToolTip>Zoek naar achtergronden</buttonBrowseWallpaper-ToolTip>
+    <openFileDialogWallpaper-Title>Kies de achtrgrond die je wil gebruiken.</openFileDialogWallpaper-Title>
+    <openFileDialogWallpaper-Filter>Afbeelding bestand</openFileDialogWallpaper-Filter>
+    <buttonResetWallpaper-ToolTip>Verwijder Achtergrond</buttonResetWallpaper-ToolTip>
+    <groupBoxWallpaperPreview>Voorbeeld</groupBoxWallpaperPreview>
+    <groupBoxDisplaySettings>Scherm instelling</groupBoxDisplaySettings>
+    <labelScreenResolution>Scherm Resolutie:</labelScreenResolution>
+	<ScreenResolutionText-By>bij</ScreenResolutionText-By>
+	<ScreenResolutionText-Pixels>pixels</ScreenResolutionText-Pixels>
+    <labelColorQuality>Kleur kwaliteit:</labelColorQuality>
+	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
+	<ColorQualityText-Lowest>Laagste</ColorQualityText-Lowest>
+	<ColorQualityText-Highest>Hoogste</ColorQualityText-Highest>
+    <buttonGetCurrentDisplaySettings>Haal huidige instellingen op</buttonGetCurrentDisplaySettings>
+    <groupBoxWireless>Profiel automatisch activeren</groupBoxWireless>
+    <labelSSID>Draadloos SSID:</labelSSID>
+    <labelSSIDNotes>Het specificeren van een draadloze SSID zal automatisch dit profiel activeren wanneer een verbinding aan het draadloze hierboven vermelde netwerk wordt ontdekt.</labelSSIDNotes>
+	<labelWirelessVista>Windows Vista gebruikers: Dit tabblad is uitgeschakeld, totdat ik weet hoe de huidige draadloos netwerkverbinding in Vista kan achter halen.</labelWirelessVista>
+    <buttonSave>Opslaan</buttonSave>
+    <buttonClose>Sluiten</buttonClose>
+    <labelWorking-NetworkCards>Loading Netwerkkaart...</labelWorking-NetworkCards>
+    <labelWorking-Profile>Loading Profiel...</labelWorking-Profile>
+    <labelWorking-Printer>Loading Printers...</labelWorking-Printer>
+    <ProfileName-Messagebox>Vul een naam in voor dit profiel.</ProfileName-Messagebox>
+  </ProfileSettings>
+  <RunPrograms>
+    <WindowTitle>Voer Programma's uit</WindowTitle>
+    <labelPath>Path:</labelPath>
+    <labelArgs>Parameters:</labelArgs>
+    <labelRun>Uitvoeren:</labelRun>
+    <groupBoxCredentials>Uitvoeren met andere inloggegevens (optie)</groupBoxCredentials>
+    <labelUsername>Gebruikersnaam:</labelUsername>
+    <labelPassword>Wachtwoord:</labelPassword>
+    <labelDomain>Domain:</labelDomain>
+    <buttonAdd>Toevoegen</buttonAdd>
+    <buttonSave>Opslaan</buttonSave>
+    <buttonCancel>Annuleer</buttonCancel>
+	<RunText-Normal>Normaal</RunText-Normal>
+	<RunText-Minimized>Geminimaliseerd</RunText-Minimized>
+	<RunText-Maximized>Gemaximaliseerd</RunText-Maximized>
+	<RunText-Hidden>Verborgen</RunText-Hidden>
+  </RunPrograms>
+  <WirelessDetected>
+    <WindowTitle>Draadloos Netwerk ontdekt</WindowTitle>
+    <labelConnectedTo>Je bent verbonden met:</labelConnectedTo>
+    <labelActivate>Wil je activeren:</labelActivate>
+    <buttonYes>Ja</buttonYes>
+    <buttonNo>Nee</buttonNo>
+  </WirelessDetected>
+  <Misc>
+    <BrowseNetworkShare-Title>Selecteer een netwerk computer/share.</BrowseNetworkShare-Title>
+	<DisplaySettings-ConfirmPrompt-Title>Bevestig veranderingen scherm instellingen</DisplaySettings-ConfirmPrompt-Title>
+	<DisplaySettings-ConfirmPrompt-Message>Wil je je scherm instellingen veranderen?</DisplaySettings-ConfirmPrompt-Message>
+	<DisplaySettings-Resolution>Resolutie:</DisplaySettings-Resolution>
+	<DisplaySettings-Bits>Kleur Bits:</DisplaySettings-Bits>
+	<DisplaySettings-Refresh>Herlaad:</DisplaySettings-Refresh>`
+	<DisplaySettings-RevertPrompt-Title>Scherm instellingen zijn Veranderd</DisplaySettings-RevertPrompt-Title>
+	<DisplaySettings-RevertPrompt-Message>Wil je je huidige instellingen behouden?</DisplaySettings-RevertPrompt-Message>
+  </Misc>
+  <CopyProfile>
+	<WindowTitle>Kopieer Profiel</WindowTitle>
+	<labelProfile>Profiel:</labelProfile>
+	<labelNewProfile>Nieuwe Naam:</labelNewProfile>
+	<labelSelectNetworkCard>Selecteer een Netwerkkaart:</labelSelectNetworkCard>
+	<buttonCopy>Kopieer</buttonCopy>
+	<buttonCancel>Annuleer</buttonCancel>
+  </CopyProfile>
+</Language>

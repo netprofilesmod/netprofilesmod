@@ -1,0 +1,231 @@
+<Language name="en-US" translated_by="mouson" version="1" date="11/9/2007" display_name="繁體中文">
+  <MainForm>
+    <fileToolStripMenuItem>文件</fileToolStripMenuItem>
+    <toolStripMenuItemNewProfile>建立設定檔</toolStripMenuItemNewProfile>
+    <applyProfileToolStripMenuItemApplyProfile>套用設定檔</applyProfileToolStripMenuItemApplyProfile>
+    <activateOnDifferentNetworkCardToolStripMenuItem1>在不同的網卡上套用設定檔...</activateOnDifferentNetworkCardToolStripMenuItem1>
+    <toolStripMenuItemCopyProfile>複製...</toolStripMenuItemCopyProfile>
+	<toolStripMenuItemEditProfile>編輯</toolStripMenuItemEditProfile>
+    <deleteToolStripMenuItemDeleteProfile>刪除</deleteToolStripMenuItemDeleteProfile>
+    <createDesktopShortcutToolStripMenuItem1>建立桌面捷徑</createDesktopShortcutToolStripMenuItem1>
+    <exitToolStripMenuItem>退出</exitToolStripMenuItem>
+    <optionsToolStripMenuItem>選項</optionsToolStripMenuItem>
+    <toggleToolbarTextToolStripMenuItem>顯示工具列說明</toggleToolbarTextToolStripMenuItem>
+    <minimizeToTrayOnCloseToolStripMenuItem>關閉時最小化到常駐列</minimizeToTrayOnCloseToolStripMenuItem>
+    <minimizeToTrayOnStartupToolStripMenuItem>啟動時最小化到常駐列</minimizeToTrayOnStartupToolStripMenuItem>
+    <dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>自動套用無線設定檔時不提示</dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>
+    <screenResolutionToolStripMenuItem>螢幕解析度</screenResolutionToolStripMenuItem>
+    <askBeforeChangingResolutionToolStripMenuItem>更改螢幕解析度前提示</askBeforeChangingResolutionToolStripMenuItem>
+    <confirmSettingsAfterChangingResolutionToolStripMenuItem>更改螢幕解析度後需確認</confirmSettingsAfterChangingResolutionToolStripMenuItem>
+    <runWhenILogInToWindowsToolStripMenuItem>登入Windows時自動啟動</runWhenILogInToWindowsToolStripMenuItem>
+	<languageToolStripMenuItem>選擇語言</languageToolStripMenuItem>
+    <customizeDesktopShortcutsToolStripMenuItem>自訂桌面快捷方式...</customizeDesktopShortcutsToolStripMenuItem>
+    <reloadNetworkInterfacesToolStripMenuItem>重新載入網絡介面</reloadNetworkInterfacesToolStripMenuItem>
+    <reloadProfilesToolStripMenuItem>重新載入設定檔</reloadProfilesToolStripMenuItem>
+    <helpToolStripMenuItem>協助</helpToolStripMenuItem>
+    <!-- Required: %1 (program name) -->
+    <netProfilesWebsiteToolStripMenuItem>%1 網站...</netProfilesWebsiteToolStripMenuItem>
+    <checkForUpdatesToolStripMenuItem>檢查更新...</checkForUpdatesToolStripMenuItem>
+    <aboutToolStripMenuItem>關於</aboutToolStripMenuItem>
+    <toolStripButtonNewProfile>新建設定檔</toolStripButtonNewProfile>
+    <toolStripButtonApplyProfile>套用設定檔</toolStripButtonApplyProfile>
+    <toolStripButtonCopyProfile>複製</toolStripButtonCopyProfile>
+	<toolStripButtonEditProfile>編輯</toolStripButtonEditProfile>
+    <toolStripButtonDeleteProfile>刪除</toolStripButtonDeleteProfile>
+    <toolStripStatusLabelWorking>載入設定檔...</toolStripStatusLabelWorking>
+    <toolStripStatusLabelWorking-Preloading>預設網絡介面...</toolStripStatusLabelWorking-Preloading>
+    <toolStripStatusLabelWorking-Activating>套用設定檔...</toolStripStatusLabelWorking-Activating>
+    <toolStripStatusLabelWorking-UnmapDrives>解除網路磁碟...</toolStripStatusLabelWorking-UnmapDrives>
+    <toolStripStatusLabelWorking-MapDrives>連接網路磁碟...</toolStripStatusLabelWorking-MapDrives>
+    <toolStripStatusLabelWorking-Printer>設定預設列表機...</toolStripStatusLabelWorking-Printer>
+    <toolStripStatusLabelWorking-Internet>套用網路設定...</toolStripStatusLabelWorking-Internet>
+    <toolStripStatusLabelWorking-Homepage>設定首頁...</toolStripStatusLabelWorking-Homepage>
+    <toolStripStatusLabelWorking-Programs>啟動程式...</toolStripStatusLabelWorking-Programs>
+    <toolStripStatusLabelWorking-Wallpaper>更換桌布...</toolStripStatusLabelWorking-Wallpaper>
+    <toolStripStatusLabelWorking-Resolution>更換螢幕解析度...</toolStripStatusLabelWorking-Resolution>
+    <toolStripStatusLabelWorking-Reloading>重新載入網路介面...</toolStripStatusLabelWorking-Reloading>
+    <toolStripStatusLabelWorking-DHCP>啟用DHCP...</toolStripStatusLabelWorking-DHCP>
+    <toolStripStatusLabelWorking-IPAddress>設置IP地址...</toolStripStatusLabelWorking-IPAddress>
+    <toolStripStatusLabelWorking-Gateway>設置預設閘道...</toolStripStatusLabelWorking-Gateway>
+    <toolStripStatusLabelWorking-DNS>設置DNS...</toolStripStatusLabelWorking-DNS>
+    <toolStripStatusLabelWorking-WINS>設置WINS Server...</toolStripStatusLabelWorking-WINS>
+    <applyProfileToolStripMenuItem>套用設定檔</applyProfileToolStripMenuItem>
+    <activateOnDifferentNetworkCardToolStripMenuItem>在不同的網卡上套用設定檔...</activateOnDifferentNetworkCardToolStripMenuItem>
+    <copyToolStripMenuItem>複製</copyToolStripMenuItem>
+	<editToolStripMenuItem>編輯</editToolStripMenuItem>
+    <deleteToolStripMenuItem>刪除</deleteToolStripMenuItem>
+    <createDesktopShortcutToolStripMenuItem>建立桌面捷徑</createDesktopShortcutToolStripMenuItem>
+    <showHideWindowToolStripMenuItem>顯示/隱藏視窗</showHideWindowToolStripMenuItem>
+    <profilesToolStripMenuItem>設定檔</profilesToolStripMenuItem>
+    <exitToolStripMenuItem1>退出</exitToolStripMenuItem1>
+    <NoNetworkProfilesMessageBox-1>當前沒有網絡設定檔.</NoNetworkProfilesMessageBox-1>
+    <NoNetworkProfilesMessageBox-2>現在要建立嗎?</NoNetworkProfilesMessageBox-2>
+    <!-- Required: %1 (profile name) -->
+    <DeleteProfileMessageBox>確定要刪除 %1 嗎?</DeleteProfileMessageBox>
+    <DeleteProfileMessageBox-Title>刪除設定檔</DeleteProfileMessageBox-Title>
+    <!-- Available Variables: %1 (interface name), %2 (profile name), %3 (ip address), %4 (mac address) -->
+    <ShortcutConfigDefault>在 %1 上套用 %2 </ShortcutConfigDefault>
+    <CreateShortcutMessagebox>成功在桌面建立捷徑.</CreateShortcutMessagebox>
+    <CheckForUpdates-Latest>目前是最新版本.</CheckForUpdates-Latest>
+    <!-- Required: %1 (program name), %2 (program version) -->
+    <CheckForUpdates-New-1>%1 %2 現在可用。</CheckForUpdates-New-1>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-New-2>現在要連到 %1 網站下載嗎?</CheckForUpdates-New-2>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-Title>%1 更新</CheckForUpdates-Title>
+    <CheckForUpdates-Error-1>檢查更新時出錯.</CheckForUpdates-Error-1>
+    <CheckForUpdates-Error-2>請稍後再試.</CheckForUpdates-Error-2>
+  </MainForm>
+  <About>
+    <labelFreeware>本程式為免費軟體</labelFreeware>
+    <!-- Required: %1 (program name) -->
+    <WindowTitle>關於 %1</WindowTitle>
+    <buttonOK>確定</buttonOK>
+  </About>
+  <ActivateSelectNetworkCard>
+    <WindowTitle>套用設定檔</WindowTitle>
+    <labelProfileTitle>設定檔:</labelProfileTitle>
+    <labelSelectNetworkCard>選擇網卡:</labelSelectNetworkCard>
+    <buttonActivate>套用</buttonActivate>
+    <buttonCancel>取消</buttonCancel>
+  </ActivateSelectNetworkCard>
+  <AutoActivate>
+    <!-- Required: %1 (profile name), %2 (network card name) -->
+    <labelTitle>在 %2 上套用 %1...</labelTitle>
+  </AutoActivate>
+  <DesktopShortcut>
+    <WindowTitle>桌面捷徑設定檔</WindowTitle>
+    <groupBoxLegend>圖例</groupBoxLegend>
+    <labelVar1>網絡介面名稱</labelVar1>
+    <labelVar2>設定檔名稱</labelVar2>
+    <labelVar3>設定檔IP地址</labelVar3>
+    <labelVar4>網絡介面MAC地址</labelVar4>
+    <buttonRestoreDefaults>回復預設值</buttonRestoreDefaults>
+    <buttonSave>儲存</buttonSave>
+    <buttonCancel>關閉</buttonCancel>
+  </DesktopShortcut>
+  <MappedDrive>
+    <WindowTitle>網路磁碟</WindowTitle>
+    <labelUsername>用戶名:</labelUsername>
+    <labelPassword>密碼:</labelPassword>
+    <labelNote>用戶名和密碼可以為空.</labelNote>
+    <buttonSave>儲存</buttonSave>
+    <buttonAdd>新增</buttonAdd>
+    <buttonCancel>關閉</buttonCancel>
+    <AlreadyMapped-Messagebox>網路磁碟已存在.</AlreadyMapped-Messagebox>
+    <DriveUsed>已用</DriveUsed>
+  </MappedDrive>
+  <ProfileSettings>
+    <WindowTitle>配置設置</WindowTitle>
+    <labelProfileName>名稱:</labelProfileName>
+    <labelNetworkCard>網卡:</labelNetworkCard>
+    <tabPageIPSettings>IP設置</tabPageIPSettings>
+    <tabPageInternet>網路設定</tabPageInternet>
+    <tabPageMappedDrives>網路磁碟</tabPageMappedDrives>
+    <tabPagePrinter>列表機</tabPagePrinter>
+    <tabPageRun>啟動程式</tabPageRun>
+    <tabPageDesktop>桌面</tabPageDesktop>
+    <tabPageWireless>無線</tabPageWireless>
+    <checkBoxDHCP>動態取得IP地址(DHCP)</checkBoxDHCP>
+    <labelIPAddress>IP地址:</labelIPAddress>
+    <labelSubnetMask>子網路遮罩:</labelSubnetMask>
+    <labelDefaultGateway>預設閘道:</labelDefaultGateway>
+    <labelPrimaryDNSServer>主DNS:</labelPrimaryDNSServer>
+    <labelAlternateDNSServer>次DNS:</labelAlternateDNSServer>
+    <labelWINSServer>WINS Server:</labelWINSServer>
+    <buttonGetCurrentIPSettings>取得目前設定</buttonGetCurrentIPSettings>
+    <groupBoxAutoConfigAddress>自動配置地址:</groupBoxAutoConfigAddress>
+	<groupBoxProxy>使用Proxy</groupBoxProxy>
+    <labelServerAddress>Proxy位置:</labelServerAddress>
+    <labelPort>Port:</labelPort>
+    <checkBoxBypassProxy>近端網址不使用Proxy (IE 和 Opera)</checkBoxBypassProxy>
+    <groupBoxHomepage>預設首頁:</groupBoxHomepage>
+    <buttonUseBlankHomepage>使用空白頁</buttonUseBlankHomepage>
+    <labelHomepageNote>不更改請保持空白</labelHomepageNote>
+    <groupBoxWebBrowsers>設定預設瀏覽器</groupBoxWebBrowsers>
+    <buttonClearFirefox>清除Firefox設置</buttonClearFirefox>
+	<buttonClearFirefox-ToolTip>如果改變Firefox預設首頁或Proxy時有問題請點擊此處.</buttonClearFirefox-ToolTip>
+    <groupBoxPleaseNote>請注意</groupBoxPleaseNote>
+	<labelPleaseNote>為了使設定檔生效Mozilla Firefox和Opera 必須關閉.</labelPleaseNote>
+	<checkBoxIE>Internet Explorer</checkBoxIE>
+	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
+	<checkBoxOpera>Opera</checkBoxOpera>
+	<ClearFirefox-Messagebox-1>設定檔已被刪除.</ClearFirefox-Messagebox-1>
+    <ClearFirefox-Messagebox-2>如果Firefox正在使用,為使設定值生效必須重新啟動.</ClearFirefox-Messagebox-2>
+    <toolStripButtonAddDrive>增加磁碟</toolStripButtonAddDrive>
+    <toolStripButtonEditDrive>編輯</toolStripButtonEditDrive>
+    <toolStripButtonRemoveDrive>刪除</toolStripButtonRemoveDrive>
+    <groupBoxPrinter>預設列表機</groupBoxPrinter>
+    <buttonGetDefaultPrinter>取得目前預設</buttonGetDefaultPrinter>
+    <toolStripButtonAddProgram>增加程式</toolStripButtonAddProgram>
+    <toolStripButtonEditProgram>編輯</toolStripButtonEditProgram>
+    <toolStripButtonRemoveProgram>刪除</toolStripButtonRemoveProgram>
+    <groupBoxWallpaper>桌布</groupBoxWallpaper>
+    <buttonBrowseWallpaper-ToolTip>瀏覽桌布</buttonBrowseWallpaper-ToolTip>
+    <openFileDialogWallpaper-Title>選擇要使用的桌布.</openFileDialogWallpaper-Title>
+    <openFileDialogWallpaper-Filter>圖像文件</openFileDialogWallpaper-Filter>
+    <buttonResetWallpaper-ToolTip>刪除桌布</buttonResetWallpaper-ToolTip>
+    <groupBoxWallpaperPreview>預覽</groupBoxWallpaperPreview>
+    <groupBoxDisplaySettings>顯示設置</groupBoxDisplaySettings>
+    <labelScreenResolution>螢幕解析度:</labelScreenResolution>
+	<ScreenResolutionText-By>x</ScreenResolutionText-By>
+	<ScreenResolutionText-Pixels>像素</ScreenResolutionText-Pixels>
+    <labelColorQuality>色彩品質:</labelColorQuality>
+	<ColorQualityText-Bit>位元</ColorQualityText-Bit>
+	<ColorQualityText-Lowest>中</ColorQualityText-Lowest>
+	<ColorQualityText-Highest>最高</ColorQualityText-Highest>
+    <buttonGetCurrentDisplaySettings>取得當前設定</buttonGetCurrentDisplaySettings>
+    <groupBoxWireless>自動套用設定檔</groupBoxWireless>
+    <labelSSID>無線SSID:</labelSSID>
+    <labelSSIDNotes>指定無線SSID以便當檢測到列表中的無線網絡時自動套用設定檔.</labelSSIDNotes>
+	<labelWirelessVista>Windows Vista 用戶: 該功能暫不可用.</labelWirelessVista>
+    <buttonSave>儲存</buttonSave>
+    <buttonClose>關閉</buttonClose>
+    <labelWorking-NetworkCards>載入網卡...</labelWorking-NetworkCards>
+    <labelWorking-Profile>載入設置...</labelWorking-Profile>
+    <labelWorking-Printer>載入列表機...</labelWorking-Printer>
+    <ProfileName-Messagebox>請輸入該設置名稱.</ProfileName-Messagebox>
+  </ProfileSettings>
+  <RunPrograms>
+    <WindowTitle>啟動程式</WindowTitle>
+    <labelPath>路徑:</labelPath>
+    <labelArgs>參數:</labelArgs>
+    <labelRun>啟動:</labelRun>
+    <groupBoxCredentials>以其他用戶身份啟動(可選)</groupBoxCredentials>
+    <labelUsername>用戶名:</labelUsername>
+    <labelPassword>密碼:</labelPassword>
+    <labelDomain>域:</labelDomain>
+    <buttonAdd>增加</buttonAdd>
+    <buttonSave>保存</buttonSave>
+    <buttonCancel>取消</buttonCancel>
+	<RunText-Normal>正常</RunText-Normal>
+	<RunText-Minimized>最小</RunText-Minimized>
+	<RunText-Maximized>最大</RunText-Maximized>
+	<RunText-Hidden>隱藏</RunText-Hidden>
+  </RunPrograms>
+  <WirelessDetected>
+    <WindowTitle>偵測到無線網絡</WindowTitle>
+    <labelConnectedTo>已連接到:</labelConnectedTo>
+    <labelActivate>是否要套用:</labelActivate>
+    <buttonYes>是</buttonYes>
+    <buttonNo>否</buttonNo>
+  </WirelessDetected>
+  <Misc>
+    <BrowseNetworkShare-Title>選擇網路位置或網路上芳鄰.</BrowseNetworkShare-Title>
+	<DisplaySettings-ConfirmPrompt-Title>確認顯示設定</DisplaySettings-ConfirmPrompt-Title>
+	<DisplaySettings-ConfirmPrompt-Message>確定要改變顯示設定嗎?</DisplaySettings-ConfirmPrompt-Message>
+	<DisplaySettings-Resolution>解析度:</DisplaySettings-Resolution>
+	<DisplaySettings-Bits>色彩品質:</DisplaySettings-Bits>
+	<DisplaySettings-Refresh>螢幕更新頻率:</DisplaySettings-Refresh>`
+	<DisplaySettings-RevertPrompt-Title>顯示設定已變更</DisplaySettings-RevertPrompt-Title>
+	<DisplaySettings-RevertPrompt-Message>要保留當前設定嗎?</DisplaySettings-RevertPrompt-Message>
+  </Misc>
+  <CopyProfile>
+	<WindowTitle>複製設定檔</WindowTitle>
+	<labelProfile>設定檔:</labelProfile>
+	<labelNewProfile>新名稱:</labelNewProfile>
+	<labelSelectNetworkCard>選擇網卡:</labelSelectNetworkCard>
+	<buttonCopy>複製</buttonCopy>
+	<buttonCancel>取消</buttonCancel>
+  </CopyProfile>
+</Language>

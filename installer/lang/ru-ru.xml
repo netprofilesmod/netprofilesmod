@@ -1,0 +1,231 @@
+﻿<Language name="ru-RU" translated_by="Alexander Serashov" version="5" date="9/14/2008" display_name="Русский">
+  <MainForm>
+    <fileToolStripMenuItem>Файл</fileToolStripMenuItem>
+    <toolStripMenuItemNewProfile>Новый профиль</toolStripMenuItemNewProfile>
+    <applyProfileToolStripMenuItemApplyProfile>Активировать профиль</applyProfileToolStripMenuItemApplyProfile>
+    <activateOnDifferentNetworkCardToolStripMenuItem1>Активировать на другой сетевой карте...</activateOnDifferentNetworkCardToolStripMenuItem1>
+    <toolStripMenuItemCopyProfile>Копировать...</toolStripMenuItemCopyProfile>
+	<toolStripMenuItemEditProfile>Редактировать</toolStripMenuItemEditProfile>
+    <deleteToolStripMenuItemDeleteProfile>Удалить</deleteToolStripMenuItemDeleteProfile>
+    <createDesktopShortcutToolStripMenuItem1>Создать ярлык на рабочем столе</createDesktopShortcutToolStripMenuItem1>
+    <exitToolStripMenuItem>Выход</exitToolStripMenuItem>
+    <optionsToolStripMenuItem>Настройки</optionsToolStripMenuItem>
+    <toggleToolbarTextToolStripMenuItem>Показать текст на панели кнопок</toggleToolbarTextToolStripMenuItem>
+    <minimizeToTrayOnCloseToolStripMenuItem>Свернуть в трей при закрытии</minimizeToTrayOnCloseToolStripMenuItem>
+    <minimizeToTrayOnStartupToolStripMenuItem>Свернуть в трей при старте</minimizeToTrayOnStartupToolStripMenuItem>
+    <dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>Не спрашивать перед авто активацией профилей беспроводной сети</dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>
+    <screenResolutionToolStripMenuItem>Разрешение экрана</screenResolutionToolStripMenuItem>
+    <askBeforeChangingResolutionToolStripMenuItem>Спрашивать перед сменой разрешения экрана</askBeforeChangingResolutionToolStripMenuItem>
+    <confirmSettingsAfterChangingResolutionToolStripMenuItem>Подтверждать настройки после смены разрешения экрана</confirmSettingsAfterChangingResolutionToolStripMenuItem>
+    <runWhenILogInToWindowsToolStripMenuItem>Запускать при входе в Виндовс</runWhenILogInToWindowsToolStripMenuItem>
+	<languageToolStripMenuItem>Выбрать язык</languageToolStripMenuItem>
+    <customizeDesktopShortcutsToolStripMenuItem>Настроить ярлыки рабочего столя...</customizeDesktopShortcutsToolStripMenuItem>
+    <reloadNetworkInterfacesToolStripMenuItem>Перезагрузить сетевые интерфейсы</reloadNetworkInterfacesToolStripMenuItem>
+    <reloadProfilesToolStripMenuItem>Перезагрузить профили</reloadProfilesToolStripMenuItem>
+    <helpToolStripMenuItem>Помощь</helpToolStripMenuItem>
+    <!-- Required: %1 (program name) -->
+    <netProfilesWebsiteToolStripMenuItem>%1 Сайт...</netProfilesWebsiteToolStripMenuItem>
+    <checkForUpdatesToolStripMenuItem>Проверить обновления...</checkForUpdatesToolStripMenuItem>
+    <aboutToolStripMenuItem>О программе</aboutToolStripMenuItem>
+    <toolStripButtonNewProfile>Новый профиль</toolStripButtonNewProfile>
+    <toolStripButtonApplyProfile>Активировать профиль</toolStripButtonApplyProfile>
+    <toolStripButtonCopyProfile>Копировать</toolStripButtonCopyProfile>
+	<toolStripButtonEditProfile>Редактировать</toolStripButtonEditProfile>
+    <toolStripButtonDeleteProfile>Удалить</toolStripButtonDeleteProfile>
+    <toolStripStatusLabelWorking>Загрузка профиля...</toolStripStatusLabelWorking>
+    <toolStripStatusLabelWorking-Preloading>Предварительная загрузка сетевого интерфейса...</toolStripStatusLabelWorking-Preloading>
+    <toolStripStatusLabelWorking-Activating>Активирование профиль...</toolStripStatusLabelWorking-Activating>
+    <toolStripStatusLabelWorking-UnmapDrives>Отключение смонтированных дисков...</toolStripStatusLabelWorking-UnmapDrives>
+    <toolStripStatusLabelWorking-MapDrives>Подключение смонтированных дисков...</toolStripStatusLabelWorking-MapDrives>
+    <toolStripStatusLabelWorking-Printer>Установка принтера по умолчанию...</toolStripStatusLabelWorking-Printer>
+    <toolStripStatusLabelWorking-Internet>Установка настроек интернета...</toolStripStatusLabelWorking-Internet>
+    <toolStripStatusLabelWorking-Homepage>Настройка стартовой страницы...</toolStripStatusLabelWorking-Homepage>
+    <toolStripStatusLabelWorking-Programs>Запуск программ...</toolStripStatusLabelWorking-Programs>
+    <toolStripStatusLabelWorking-Wallpaper>Смена фона рабочего стола...</toolStripStatusLabelWorking-Wallpaper>
+    <toolStripStatusLabelWorking-Resolution>Смена разрешения экрана...</toolStripStatusLabelWorking-Resolution>
+    <toolStripStatusLabelWorking-Reloading>Перезагрузка сетевого интерфейса...</toolStripStatusLabelWorking-Reloading>
+    <toolStripStatusLabelWorking-DHCP>Настройка параметров DHCP...</toolStripStatusLabelWorking-DHCP>
+    <toolStripStatusLabelWorking-IPAddress>Настройка параметров IP адреса...</toolStripStatusLabelWorking-IPAddress>
+    <toolStripStatusLabelWorking-Gateway>Настройка параметров шлюза...</toolStripStatusLabelWorking-Gateway>
+    <toolStripStatusLabelWorking-DNS>Настройка параметров DNS серверов...</toolStripStatusLabelWorking-DNS>
+    <toolStripStatusLabelWorking-WINS>Настройка параметров WINS сервера...</toolStripStatusLabelWorking-WINS>
+    <applyProfileToolStripMenuItem>Активировать профиль</applyProfileToolStripMenuItem>
+    <activateOnDifferentNetworkCardToolStripMenuItem>Активировать на другой сетевой карте...</activateOnDifferentNetworkCardToolStripMenuItem>
+    <copyToolStripMenuItem>Копировать</copyToolStripMenuItem>
+	<editToolStripMenuItem>Редактировать</editToolStripMenuItem>
+    <deleteToolStripMenuItem>Удалить</deleteToolStripMenuItem>
+    <createDesktopShortcutToolStripMenuItem>Создать ярлык на рабочем столе</createDesktopShortcutToolStripMenuItem>
+    <showHideWindowToolStripMenuItem>Показать.скрыть окно</showHideWindowToolStripMenuItem>
+    <profilesToolStripMenuItem>Профили</profilesToolStripMenuItem>
+    <exitToolStripMenuItem1>Выход</exitToolStripMenuItem1>
+    <NoNetworkProfilesMessageBox-1>Профили отсутствуют.</NoNetworkProfilesMessageBox-1>
+    <NoNetworkProfilesMessageBox-2>Хотите создать профиль?</NoNetworkProfilesMessageBox-2>
+    <!-- Required: %1 (profile name) -->
+    <DeleteProfileMessageBox>Вы уверены, что хотите удалить %1?</DeleteProfileMessageBox>
+    <DeleteProfileMessageBox-Title>Удалить профиль</DeleteProfileMessageBox-Title>
+    <!-- Available Variables: %1 (interface name), %2 (profile name), %3 (ip address), %4 (mac address) -->
+    <ShortcutConfigDefault>Активировать %2 на %1</ShortcutConfigDefault>
+    <CreateShortcutMessagebox>Ярлык был создан на рабочем столе</CreateShortcutMessagebox>
+    <CheckForUpdates-Latest>Текущая версия последняя.</CheckForUpdates-Latest>
+    <!-- Required: %1 (program name), %2 (program version) -->
+    <CheckForUpdates-New-1>%1 %2 доступна.</CheckForUpdates-New-1>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-New-2>Хотите открыть %1 сайт для скачивания ?</CheckForUpdates-New-2>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-Title>%1 Обновление</CheckForUpdates-Title>
+    <CheckForUpdates-Error-1>Ошибка проверки обновления.</CheckForUpdates-Error-1>
+    <CheckForUpdates-Error-2>Пожалуйста попытайтесь повторить проверку позже.</CheckForUpdates-Error-2>
+  </MainForm>
+  <About>
+    <labelFreeware>Эта программа бесплатна</labelFreeware>
+    <!-- Required: %1 (program name) -->
+    <WindowTitle>О %1</WindowTitle>
+    <buttonOK>OK</buttonOK>
+  </About>
+  <ActivateSelectNetworkCard>
+    <WindowTitle>Активировать профиль</WindowTitle>
+    <labelProfileTitle>Профиль:</labelProfileTitle>
+    <labelSelectNetworkCard>Выберите сетевую карту:</labelSelectNetworkCard>
+    <buttonActivate>Активировать</buttonActivate>
+    <buttonCancel>Отмена</buttonCancel>
+  </ActivateSelectNetworkCard>
+  <AutoActivate>
+    <!-- Required: %1 (profile name), %2 (network card name) -->
+    <labelTitle>Активация профиля %1 на адаптере %2...</labelTitle>
+  </AutoActivate>
+  <DesktopShortcut>
+    <WindowTitle>Конфигурация ярлыков рабочего стола</WindowTitle>
+    <groupBoxLegend>Параметры</groupBoxLegend>
+    <labelVar1>Имя сетевого интерфейса</labelVar1>
+    <labelVar2>Имя профиля</labelVar2>
+    <labelVar3>IP адрес профиля</labelVar3>
+    <labelVar4>MAC адрес сетевого интерфейса</labelVar4>
+    <buttonRestoreDefaults>Восстановить значения по умолчанию</buttonRestoreDefaults>
+    <buttonSave>Сохранить</buttonSave>
+    <buttonCancel>Закрыть</buttonCancel>
+  </DesktopShortcut>
+  <MappedDrive>
+    <WindowTitle>Монтируемые диски</WindowTitle>
+    <labelUsername>Имя пользователя:</labelUsername>
+    <labelPassword>Пароль:</labelPassword>
+    <labelNote>Имя пользователя и Пароль могут быть пустыми.</labelNote>
+    <buttonSave>Сохранить</buttonSave>
+    <buttonAdd>Добавить</buttonAdd>
+    <buttonCancel>Закрыть</buttonCancel>
+    <AlreadyMapped-Messagebox>Диск с такой буквой уже существует в системе.</AlreadyMapped-Messagebox>
+    <DriveUsed>Используется</DriveUsed>
+  </MappedDrive>
+  <ProfileSettings>
+    <WindowTitle>Настройки профиля</WindowTitle>
+    <labelProfileName>Имя:</labelProfileName>
+    <labelNetworkCard>Сетевая карта:</labelNetworkCard>
+    <tabPageIPSettings>IP установки</tabPageIPSettings>
+    <tabPageInternet>Интернет</tabPageInternet>
+    <tabPageMappedDrives>Монтируемые диски</tabPageMappedDrives>
+    <tabPagePrinter>Принтер</tabPagePrinter>
+    <tabPageRun>Запуск</tabPageRun>
+    <tabPageDesktop>Рабочий стол</tabPageDesktop>
+    <tabPageWireless>Буспроводные сети</tabPageWireless>
+    <checkBoxDHCP>Получить IP адрес автоматически (DHCP)</checkBoxDHCP>
+    <labelIPAddress>IP адрес:</labelIPAddress>
+    <labelSubnetMask>Маска подсети:</labelSubnetMask>
+    <labelDefaultGateway>Шлюз по умолчанию:</labelDefaultGateway>
+    <labelPrimaryDNSServer>Первичный DNS сервер:</labelPrimaryDNSServer>
+    <labelAlternateDNSServer>Дополнительный DNS сервер:</labelAlternateDNSServer>
+    <labelWINSServer>WINS сервер:</labelWINSServer>
+    <buttonGetCurrentIPSettings>Получить текущие настройки</buttonGetCurrentIPSettings>
+    <groupBoxAutoConfigAddress>Арес автоматической настройки:</groupBoxAutoConfigAddress>
+	<groupBoxProxy>Использовать настройки прокси</groupBoxProxy>
+    <labelServerAddress>Адрес сервера:</labelServerAddress>
+    <labelPort>Порт:</labelPort>
+    <checkBoxBypassProxy>Использовать прокси для локальных адресов (IE and Opera)</checkBoxBypassProxy>
+    <groupBoxHomepage>Страница по умолчанию:</groupBoxHomepage>
+    <buttonUseBlankHomepage>Использвать пустую</buttonUseBlankHomepage>
+    <labelHomepageNote>Оставте пустым, если не надо менять.</labelHomepageNote>
+    <groupBoxWebBrowsers>Разрешит настройки для</groupBoxWebBrowsers>
+    <buttonClearFirefox>Очистить настройки Firefox</buttonClearFirefox>
+	<buttonClearFirefox-ToolTip>Нажмите здесь, если у вас возникли проблемы при смене настроек прокси или страницы по умолчанию для Firefox.</buttonClearFirefox-ToolTip>
+    <groupBoxPleaseNote>Обратите внимание</groupBoxPleaseNote>
+	<labelPleaseNote>Mozilla Firefox и Opera не должны быть запущены чтобы настройки сработали.</labelPleaseNote>
+	<checkBoxIE>Internet Explorer</checkBoxIE>
+	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
+	<checkBoxOpera>Opera</checkBoxOpera>
+	<ClearFirefox-Messagebox-1>Настройки были удалены.</ClearFirefox-Messagebox-1>
+    <ClearFirefox-Messagebox-2>Если Firefox запущен, он должен быть перезапущен, для применения настроек.</ClearFirefox-Messagebox-2>
+    <toolStripButtonAddDrive>Добавить диск</toolStripButtonAddDrive>
+    <toolStripButtonEditDrive>Редактировать</toolStripButtonEditDrive>
+    <toolStripButtonRemoveDrive>Удалить</toolStripButtonRemoveDrive>
+    <groupBoxPrinter>Принтер по умолчанию</groupBoxPrinter>
+    <buttonGetDefaultPrinter>Получить текущие настройки</buttonGetDefaultPrinter>
+    <toolStripButtonAddProgram>Добавить программу</toolStripButtonAddProgram>
+    <toolStripButtonEditProgram>Редактировать</toolStripButtonEditProgram>
+    <toolStripButtonRemoveProgram>Удалить</toolStripButtonRemoveProgram>
+    <groupBoxWallpaper>Картинка рабочего стола</groupBoxWallpaper>
+    <buttonBrowseWallpaper-ToolTip>Поиск картинки рабочего стола</buttonBrowseWallpaper-ToolTip>
+    <openFileDialogWallpaper-Title>Выберите картинки рабочего стола, ктотрую хотите использовать.</openFileDialogWallpaper-Title>
+    <openFileDialogWallpaper-Filter>Картинки</openFileDialogWallpaper-Filter>
+    <buttonResetWallpaper-ToolTip>Удалить картинку рабочего стола</buttonResetWallpaper-ToolTip>
+    <groupBoxWallpaperPreview>Предпросмотр</groupBoxWallpaperPreview>
+    <groupBoxDisplaySettings>Показать установки</groupBoxDisplaySettings>
+    <labelScreenResolution>Рзрешение экрана:</labelScreenResolution>
+	<ScreenResolutionText-By>на</ScreenResolutionText-By>
+	<ScreenResolutionText-Pixels>пикселей</ScreenResolutionText-Pixels>
+    <labelColorQuality>Количество цветов:</labelColorQuality>
+	<ColorQualityText-Bit>бит</ColorQualityText-Bit>
+	<ColorQualityText-Lowest>Худшее</ColorQualityText-Lowest>
+	<ColorQualityText-Highest>Лучшее</ColorQualityText-Highest>
+    <buttonGetCurrentDisplaySettings>Получить текущие настройки</buttonGetCurrentDisplaySettings>
+    <groupBoxWireless>Автоактивация профиля</groupBoxWireless>
+    <labelSSID>SSID беспроводной сети:</labelSSID>
+    <labelSSIDNotes>Указание SSID беспроводной сети автоматически активирует профиль когда соединение с данной сентью будет возможно.</labelSSIDNotes>
+	<labelWirelessVista>Пользователи Windows Vista: Эта вкладка будет неактивной до тех пор, пока я не вычсню, как определить текущие SSID беспроводной сети в Vista.</labelWirelessVista>
+    <buttonSave>Сохранить</buttonSave>
+    <buttonClose>Закрыть</buttonClose>
+    <labelWorking-NetworkCards>Закгрузка сетевых карт...</labelWorking-NetworkCards>
+    <labelWorking-Profile>Закгрузка профиля...</labelWorking-Profile>
+    <labelWorking-Printer>Закгрузка принтеров...</labelWorking-Printer>
+    <ProfileName-Messagebox>Пожалуйста введите имя для этого профиля.</ProfileName-Messagebox>
+  </ProfileSettings>
+  <RunPrograms>
+    <WindowTitle>Запуск программ</WindowTitle>
+    <labelPath>Путь:</labelPath>
+    <labelArgs>Аргумента:</labelArgs>
+    <labelRun>Пуск:</labelRun>
+    <groupBoxCredentials>Запуск от имени другого пользователя (опционально)</groupBoxCredentials>
+    <labelUsername>Имя пользователя:</labelUsername>
+    <labelPassword>Пароль:</labelPassword>
+    <labelDomain>Домен:</labelDomain>
+    <buttonAdd>Добавить</buttonAdd>
+    <buttonSave>Сохранить</buttonSave>
+    <buttonCancel>Отмена</buttonCancel>
+	<RunText-Normal>Норманый вид</RunText-Normal>
+	<RunText-Minimized>Свернутый</RunText-Minimized>
+	<RunText-Maximized>Развернутый</RunText-Maximized>
+	<RunText-Hidden>Скрытый</RunText-Hidden>
+  </RunPrograms>
+  <WirelessDetected>
+    <WindowTitle>Беспроводная сеть обноружена</WindowTitle>
+    <labelConnectedTo>Вы подключены к:</labelConnectedTo>
+    <labelActivate>Хотите активировать:</labelActivate>
+    <buttonYes>Да</buttonYes>
+    <buttonNo>Нет</buttonNo>
+  </WirelessDetected>
+  <Misc>
+    <BrowseNetworkShare-Title>Выберите компьютер в сети или папку с общим доступом.</BrowseNetworkShare-Title>
+	<DisplaySettings-ConfirmPrompt-Title>Подтерждение смены параметров дисплея</DisplaySettings-ConfirmPrompt-Title>
+	<DisplaySettings-ConfirmPrompt-Message>Хотите сменить параметры дисплея?</DisplaySettings-ConfirmPrompt-Message>
+	<DisplaySettings-Resolution>Разрешение:</DisplaySettings-Resolution>
+	<DisplaySettings-Bits>Глубина цвета:</DisplaySettings-Bits>
+	<DisplaySettings-Refresh>Обновление:</DisplaySettings-Refresh>`
+	<DisplaySettings-RevertPrompt-Title>Параметры дисплея изменены</DisplaySettings-RevertPrompt-Title>
+	<DisplaySettings-RevertPrompt-Message>Сохранить текущие настройки?</DisplaySettings-RevertPrompt-Message>
+  </Misc>
+  <CopyProfile>
+	<WindowTitle>Копировать профиль</WindowTitle>
+	<labelProfile>Профиль:</labelProfile>
+	<labelNewProfile>Новое имя:</labelNewProfile>
+	<labelSelectNetworkCard>Выберите сетевой адаптер:</labelSelectNetworkCard>
+	<buttonCopy>Копировать</buttonCopy>
+	<buttonCancel>Отмена</buttonCancel>
+  </CopyProfile>
+</Language>
