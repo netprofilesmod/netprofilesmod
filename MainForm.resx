@@ -120,38 +120,6 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuStrip1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuStrip1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="menuStrip1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="menuStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="menuStrip1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="fileToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="fileToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="toolStripMenuItemNewProfile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripMenuItemNewProfile.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="toolStripMenuItemNewProfile.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripMenuItemNewProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -170,47 +138,14 @@
         vy+TyO2+SmZp0iIZqouRy50XyEuKZCJFfu70y5R40/5l/BsV3J5Ng8nYFAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="toolStripMenuItemNewProfile.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripMenuItemNewProfile.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="toolStripMenuItemNewProfile.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripMenuItemNewProfile.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="toolStripMenuItemNewProfile.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripMenuItemNewProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 22</value>
   </data>
   <data name="toolStripMenuItemNewProfile.Text" xml:space="preserve">
     <value>New Profile</value>
   </data>
-  <data name="toolStripMenuItemNewProfile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripMenuItemNewProfile.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripSeparator1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>267, 6</value>
-  </data>
-  <data name="applyProfileToolStripMenuItemApplyProfile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="applyProfileToolStripMenuItemApplyProfile.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="applyProfileToolStripMenuItemApplyProfile.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="applyProfileToolStripMenuItemApplyProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -226,41 +161,11 @@
         r+KkpvxTkw+TOHxqGWjxLQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="applyProfileToolStripMenuItemApplyProfile.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="applyProfileToolStripMenuItemApplyProfile.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="applyProfileToolStripMenuItemApplyProfile.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="applyProfileToolStripMenuItemApplyProfile.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="applyProfileToolStripMenuItemApplyProfile.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="applyProfileToolStripMenuItemApplyProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 22</value>
   </data>
   <data name="applyProfileToolStripMenuItemApplyProfile.Text" xml:space="preserve">
     <value>Activate Profile</value>
-  </data>
-  <data name="applyProfileToolStripMenuItemApplyProfile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="applyProfileToolStripMenuItemApplyProfile.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="activateOnDifferentNetworkCardToolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -273,47 +178,14 @@
         8yheICYq9Qu0LIDO/g7UfJPsWABq3qEQJ0t+NGJzKUnpYHAaAABvYKkCkr/+vQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem1.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem1.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem1.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="activateOnDifferentNetworkCardToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 22</value>
   </data>
   <data name="activateOnDifferentNetworkCardToolStripMenuItem1.Text" xml:space="preserve">
     <value>Activate On Different Network Card...</value>
   </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem1.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripSeparator3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>267, 6</value>
-  </data>
-  <data name="toolStripMenuItemCopyProfile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripMenuItemCopyProfile.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="toolStripMenuItemCopyProfile.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="toolStripMenuItemCopyProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -332,41 +204,11 @@
         ujNZCj5I1f8Af5omEpoZlxEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="toolStripMenuItemCopyProfile.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripMenuItemCopyProfile.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="toolStripMenuItemCopyProfile.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripMenuItemCopyProfile.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="toolStripMenuItemCopyProfile.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripMenuItemCopyProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 22</value>
   </data>
   <data name="toolStripMenuItemCopyProfile.Text" xml:space="preserve">
     <value>Copy...</value>
-  </data>
-  <data name="toolStripMenuItemCopyProfile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripMenuItemCopyProfile.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripMenuItemEditProfile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripMenuItemEditProfile.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="toolStripMenuItemEditProfile.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="toolStripMenuItemEditProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -381,41 +223,11 @@
         VJJYrT0AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="toolStripMenuItemEditProfile.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripMenuItemEditProfile.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="toolStripMenuItemEditProfile.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripMenuItemEditProfile.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="toolStripMenuItemEditProfile.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripMenuItemEditProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 22</value>
   </data>
   <data name="toolStripMenuItemEditProfile.Text" xml:space="preserve">
     <value>Edit</value>
-  </data>
-  <data name="toolStripMenuItemEditProfile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripMenuItemEditProfile.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="deleteToolStripMenuItemDeleteProfile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="deleteToolStripMenuItemDeleteProfile.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="deleteToolStripMenuItemDeleteProfile.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="deleteToolStripMenuItemDeleteProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -433,47 +245,14 @@
         wc3b3cqXLtJVfuve279yu6THdnerNQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="deleteToolStripMenuItemDeleteProfile.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="deleteToolStripMenuItemDeleteProfile.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="deleteToolStripMenuItemDeleteProfile.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="deleteToolStripMenuItemDeleteProfile.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="deleteToolStripMenuItemDeleteProfile.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="deleteToolStripMenuItemDeleteProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 22</value>
   </data>
   <data name="deleteToolStripMenuItemDeleteProfile.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="deleteToolStripMenuItemDeleteProfile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="deleteToolStripMenuItemDeleteProfile.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripSeparator6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
     <value>267, 6</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="createDesktopShortcutToolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -492,47 +271,14 @@
         RU5ErkJggg==
 </value>
   </data>
-  <data name="createDesktopShortcutToolStripMenuItem1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem1.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem1.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem1.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="createDesktopShortcutToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 22</value>
   </data>
   <data name="createDesktopShortcutToolStripMenuItem1.Text" xml:space="preserve">
     <value>Create Desktop Shortcut</value>
   </data>
-  <data name="createDesktopShortcutToolStripMenuItem1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem1.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripSeparator7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
     <value>267, 6</value>
-  </data>
-  <data name="exitToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="exitToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="exitToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="exitToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -553,50 +299,11 @@
         thSt2utRv1zXpFoR9WhWPhICD54AIXWDWClnHQ4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="exitToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="exitToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="exitToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="exitToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="exitToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
-  </data>
-  <data name="exitToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="exitToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="fileToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="fileToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="fileToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="fileToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="fileToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="fileToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
@@ -604,77 +311,11 @@
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
   </data>
-  <data name="fileToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="fileToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="optionsToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optionsToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="toggleToolbarTextToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toggleToolbarTextToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="toggleToolbarTextToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toggleToolbarTextToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toggleToolbarTextToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="toggleToolbarTextToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toggleToolbarTextToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="toggleToolbarTextToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toggleToolbarTextToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 22</value>
   </data>
   <data name="toggleToolbarTextToolStripMenuItem.Text" xml:space="preserve">
     <value>Show Toolbar Text</value>
-  </data>
-  <data name="toggleToolbarTextToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toggleToolbarTextToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="minimizeToTrayOnCloseToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="minimizeToTrayOnCloseToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="minimizeToTrayOnCloseToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="minimizeToTrayOnCloseToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="minimizeToTrayOnCloseToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="minimizeToTrayOnCloseToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="minimizeToTrayOnCloseToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="minimizeToTrayOnCloseToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="minimizeToTrayOnCloseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 22</value>
@@ -682,71 +323,11 @@
   <data name="minimizeToTrayOnCloseToolStripMenuItem.Text" xml:space="preserve">
     <value>Minimize To Tray On Close</value>
   </data>
-  <data name="minimizeToTrayOnCloseToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="minimizeToTrayOnCloseToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="minimizeToTrayOnStartupToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="minimizeToTrayOnStartupToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="minimizeToTrayOnStartupToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="minimizeToTrayOnStartupToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="minimizeToTrayOnStartupToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="minimizeToTrayOnStartupToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="minimizeToTrayOnStartupToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="minimizeToTrayOnStartupToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="minimizeToTrayOnStartupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 22</value>
   </data>
   <data name="minimizeToTrayOnStartupToolStripMenuItem.Text" xml:space="preserve">
     <value>Minimize To Tray On Startup</value>
-  </data>
-  <data name="minimizeToTrayOnStartupToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="minimizeToTrayOnStartupToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 22</value>
@@ -754,77 +335,11 @@
   <data name="dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Text" xml:space="preserve">
     <value>Don't Ask Before Auto Activating Wireless Profiles</value>
   </data>
-  <data name="dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="screenResolutionToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="screenResolutionToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="askBeforeChangingResolutionToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="askBeforeChangingResolutionToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="askBeforeChangingResolutionToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="askBeforeChangingResolutionToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="askBeforeChangingResolutionToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="askBeforeChangingResolutionToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="askBeforeChangingResolutionToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="askBeforeChangingResolutionToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="askBeforeChangingResolutionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>306, 22</value>
   </data>
   <data name="askBeforeChangingResolutionToolStripMenuItem.Text" xml:space="preserve">
     <value>Ask Before Changing Resolution</value>
-  </data>
-  <data name="askBeforeChangingResolutionToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="askBeforeChangingResolutionToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="confirmSettingsAfterChangingResolutionToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="confirmSettingsAfterChangingResolutionToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="confirmSettingsAfterChangingResolutionToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="confirmSettingsAfterChangingResolutionToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="confirmSettingsAfterChangingResolutionToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="confirmSettingsAfterChangingResolutionToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="confirmSettingsAfterChangingResolutionToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="confirmSettingsAfterChangingResolutionToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="confirmSettingsAfterChangingResolutionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>306, 22</value>
@@ -832,65 +347,11 @@
   <data name="confirmSettingsAfterChangingResolutionToolStripMenuItem.Text" xml:space="preserve">
     <value>Confirm Settings After Changing Resolution</value>
   </data>
-  <data name="confirmSettingsAfterChangingResolutionToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="confirmSettingsAfterChangingResolutionToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="screenResolutionToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="screenResolutionToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="screenResolutionToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="screenResolutionToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="screenResolutionToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="screenResolutionToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="screenResolutionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 22</value>
   </data>
   <data name="screenResolutionToolStripMenuItem.Text" xml:space="preserve">
     <value>Screen Resolution</value>
-  </data>
-  <data name="screenResolutionToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="screenResolutionToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="runWhenILogInToWindowsToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="runWhenILogInToWindowsToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="runWhenILogInToWindowsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="runWhenILogInToWindowsToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="runWhenILogInToWindowsToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="runWhenILogInToWindowsToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="runWhenILogInToWindowsToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="runWhenILogInToWindowsToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="runWhenILogInToWindowsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 22</value>
@@ -898,41 +359,8 @@
   <data name="runWhenILogInToWindowsToolStripMenuItem.Text" xml:space="preserve">
     <value>Run When I Log In To Windows</value>
   </data>
-  <data name="runWhenILogInToWindowsToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="runWhenILogInToWindowsToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripSeparator9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
     <value>333, 6</value>
-  </data>
-  <data name="languageToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="languageToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="languageToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="languageToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="languageToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="languageToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="languageToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="languageToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 22</value>
@@ -940,26 +368,8 @@
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
     <value>Select Your Language</value>
   </data>
-  <data name="languageToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="languageToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripSeparator11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
     <value>333, 6</value>
-  </data>
-  <data name="customizeDesktopShortcutsToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="customizeDesktopShortcutsToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="customizeDesktopShortcutsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="customizeDesktopShortcutsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -981,41 +391,11 @@
         c0cS/AdTLw4mckFItAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="customizeDesktopShortcutsToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="customizeDesktopShortcutsToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="customizeDesktopShortcutsToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="customizeDesktopShortcutsToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="customizeDesktopShortcutsToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="customizeDesktopShortcutsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 22</value>
   </data>
   <data name="customizeDesktopShortcutsToolStripMenuItem.Text" xml:space="preserve">
     <value>Customize Desktop Shortcuts...</value>
-  </data>
-  <data name="customizeDesktopShortcutsToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="customizeDesktopShortcutsToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="reloadNetworkInterfacesToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="reloadNetworkInterfacesToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="reloadNetworkInterfacesToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="reloadNetworkInterfacesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1033,41 +413,11 @@
         uk2KHCOkOkIq+dtP2RL5xSGkBSX+a2PLChBSMSEdqbTm/P/fhKyImURcon4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="reloadNetworkInterfacesToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="reloadNetworkInterfacesToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="reloadNetworkInterfacesToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="reloadNetworkInterfacesToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="reloadNetworkInterfacesToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="reloadNetworkInterfacesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 22</value>
   </data>
   <data name="reloadNetworkInterfacesToolStripMenuItem.Text" xml:space="preserve">
     <value>Reload Network Interfaces</value>
-  </data>
-  <data name="reloadNetworkInterfacesToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="reloadNetworkInterfacesToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="reloadProfilesToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="reloadProfilesToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="reloadProfilesToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="reloadProfilesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1085,77 +435,17 @@
         uk2KHCOkOkIq+dtP2RL5xSGkBSX+a2PLChBSMSEdqbTm/P/fhKyImURcon4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="reloadProfilesToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="reloadProfilesToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="reloadProfilesToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="reloadProfilesToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="reloadProfilesToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="reloadProfilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 22</value>
   </data>
   <data name="reloadProfilesToolStripMenuItem.Text" xml:space="preserve">
     <value>Reload Profiles</value>
   </data>
-  <data name="reloadProfilesToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="reloadProfilesToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="optionsToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="optionsToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="optionsToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="optionsToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="optionsToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
   </data>
   <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Options</value>
-  </data>
-  <data name="optionsToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="optionsToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="helpToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="helpToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="netProfilesWebsiteToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="netProfilesWebsiteToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="netProfilesWebsiteToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="netProfilesWebsiteToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1178,41 +468,11 @@
         Y59pdeLvQ/Pe2hkif7N1a1bQjHBJSw+5HZi15sHm42vYkCkKeHT9f6ypkVQGWw0QAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="netProfilesWebsiteToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="netProfilesWebsiteToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="netProfilesWebsiteToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="netProfilesWebsiteToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="netProfilesWebsiteToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="netProfilesWebsiteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 22</value>
   </data>
   <data name="netProfilesWebsiteToolStripMenuItem.Text" xml:space="preserve">
     <value>Net Profiles Website...</value>
-  </data>
-  <data name="netProfilesWebsiteToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="netProfilesWebsiteToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="checkForUpdatesToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkForUpdatesToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="checkForUpdatesToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="checkForUpdatesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1233,41 +493,11 @@
         8Wt+AT9Mq5V1uy/rAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="checkForUpdatesToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="checkForUpdatesToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="checkForUpdatesToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="checkForUpdatesToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="checkForUpdatesToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="checkForUpdatesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 22</value>
   </data>
   <data name="checkForUpdatesToolStripMenuItem.Text" xml:space="preserve">
     <value>Check For Updates...</value>
-  </data>
-  <data name="checkForUpdatesToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="checkForUpdatesToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="aboutToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="aboutToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="aboutToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1287,50 +517,11 @@
         xklFlkh0mFv/98v0+037l++fDRyfGvO8afwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="aboutToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="aboutToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="aboutToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="aboutToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="aboutToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 22</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>About</value>
-  </data>
-  <data name="aboutToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="aboutToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="helpToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="helpToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="helpToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="helpToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="helpToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="helpToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
@@ -1338,32 +529,18 @@
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Help</value>
   </data>
-  <data name="helpToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="helpToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
-  </data>
-  <data name="menuStrip1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>478, 24</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="menuStrip1.Text" xml:space="preserve">
     <value>menuStrip1</value>
-  </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>338, 91</value>
-  </metadata>
-  <data name="menuStrip1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
     <value>menuStrip1</value>
@@ -1380,30 +557,6 @@
   <metadata name="toolStripMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 24</value>
   </metadata>
-  <data name="toolStripMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
-  </data>
-  <data name="toolStripMain.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripMain.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="toolStripMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="toolStripMain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="toolStripButtonNewProfile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripButtonNewProfile.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="toolStripButtonNewProfile.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripButtonNewProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1421,17 +574,8 @@
         gaU1Ccm0hkMHf6Z/+dk/AMB3zyJvvt2vAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripButtonNewProfile.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripButtonNewProfile.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
   <data name="toolStripButtonNewProfile.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonNewProfile.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="toolStripButtonNewProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 22</value>
@@ -1439,23 +583,8 @@
   <data name="toolStripButtonNewProfile.Text" xml:space="preserve">
     <value>New Profile</value>
   </data>
-  <data name="toolStripButtonNewProfile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripButtonNewProfile.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripSeparator10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
-  </data>
-  <data name="toolStripButtonApplyProfile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripButtonApplyProfile.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
   </data>
   <data name="toolStripButtonApplyProfile.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1473,17 +602,8 @@
         bTb/Lx8v/1slV4WdqISCrsgYaAjZmkm1EQCv2sQRIZ3uDAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="toolStripButtonApplyProfile.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripButtonApplyProfile.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
   <data name="toolStripButtonApplyProfile.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonApplyProfile.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="toolStripButtonApplyProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 22</value>
@@ -1491,23 +611,8 @@
   <data name="toolStripButtonApplyProfile.Text" xml:space="preserve">
     <value>Activate Profile</value>
   </data>
-  <data name="toolStripButtonApplyProfile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripButtonApplyProfile.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripSeparator2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
-  </data>
-  <data name="toolStripButtonCopyProfile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripButtonCopyProfile.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
   </data>
   <data name="toolStripButtonCopyProfile.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1516,48 +621,27 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAn1JREFUOE99k8tP
-        E1EUxluNCx+J/hH+B27cGRuKr8QEEHTjRhMXxg2xGBsfRWnULVZZ+IouZWOixAhFCVBabHkVUFLaXkmH
-        Mu0UaGeGtnRen+cOYSXjSb6cZCb3d7/zzRl3sz/Wf/TwgeP79ruOwW2aLio3XK664a4qVf0dRO3V6IfT
-        2/z5nnUpGJ/TdT1dVHUmkQqKzoSSxgRFY0/DEmsLzr45cePzIUdAx5PEcokOTmR2NJZpsIEFlakNnUVy
-        Ggt9L7EzD8a7HQEtPT/TFQJM5UgCh2hsOKWyTFFlJVVj6rbOrr2czvwXIBNgng4nSRwUIRdvxyX0jazh
-        eXjV1q33yer113O1qy8Syx5/5OHJzo8HbSh3oBBgkQ5zcUicXPT9yMMCUFRNSKSCYkAoaxAVDc/CEtqD
-        M19O3ew/YgP4CLsA3vkoIbp1o2phghmIreigbDCwUIXasEDZIDS6jrP3xkI2gI+QKuosLe10DuG2KzUL
-        0zkD04KByT8ahlN1ZItVUDagbNAW+GbZAP4V9gLIdQvzeQPJVQOUDSLZBsJLNXxKqlilca4EhggQmGKC
-        XPoH0EsOlDrwS7RsJfMm4isaIqxhOxEVE5c54OL92AJ3UJBpeSoaK8q0ULRMvUM0gg0AfosmFtdMzJGT
-        hMDz0FBQLXRwwHl/dPCCf3LG64tmm25HF3fVGoxDJkCqCKSlnb5EsPk8kMjBftceGLQc96O1Z0rfrOqO
-        gHJNJwA5cKq2x7MQ5bIjoKCU0fFohn47hzp3N7axrhqgbCBWNFA2oGxslUibWyY83SMNR4Cnc3zU0xVd
-        83Z9tby+mOr1TZJ4j6nNXRNbTb6xQsuduPwXDKGhNYIPFRsAAAAASUVORK5CYII=
+        E1EUxluNCx+J/hH+B27cGQjFV2ICCLpxo4kL44ZYjI2PojTqFqssfEWXsjFRjGJRApQWW14FlJSWK2kp
+        05kC7cwwLZ3X57lDXMl4ki8nmcn93e98c8bbHIj3Hz647+ievZ4j8FqWh8oLj6dmejVFM15D0J+PvG3Y
+        5s93rfOhxKxhGBlRNZhEKioGy5d0lld09igisbbQzMtjVz8ccAV0PEwulejgeHZHo9k6G5hXmVo3WDSn
+        s/C3Ejt5d6zbFdDS8yNTIcBkjpTnEJ0NpVWWFVVWUnWmbhvs8rOp7H8BMgHm6HCKxEFRcvFqTELf8Bqe
+        RFYdXX+T0q68mK1eeppcagxE7x3vfLffgXIHCgEW6DAXhyTIRd/3AmwAompBIhUVE/myDkHR8TgioT00
+        /fHEtf5DDoCP8BfAOx8lTLduaDbGmYn4igHKBgPzGtS6DcoG4ZF1nLo9GnYAfIS0aLCMtNM5hNuuVG1M
+        5UxM5U1M/NYxlK5hWdRA2YCyQVvws+0A+FfYDSDXbMwVTKRWTVA2iC7XEVms4n1KxSqNczE4SIDgJMvL
+        pX8AveRAqQE/BdtRqmAhsaIjyuqOE0GxcIEDzt2Jz3MHRZmWp6IzUaaFomXq/UojOADgl2BhYc3CLDlJ
+        5nkeOoqqjQ4OOBOIDZ4NTEz7/LHlphuxhb9qDSUgEyAtAhlppy8SbK4AJHNw3rUHv9iu+9HaM2lsaoYr
+        oFw1CEAO3KrtwQwEuewKKCpldNyfpt/OpU7fim+sqyYoGwgVHZQNKBtHJdLmloWG7uG6K6Cxc2yksSu2
+        5uv6ZPv8cdXnnyDxHlebu8a3mvyjxZabCfkPA9GhLR0JUXcAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="toolStripButtonCopyProfile.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripButtonCopyProfile.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
   </data>
   <data name="toolStripButtonCopyProfile.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonCopyProfile.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="toolStripButtonCopyProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 22</value>
   </data>
   <data name="toolStripButtonCopyProfile.Text" xml:space="preserve">
     <value>Copy</value>
-  </data>
-  <data name="toolStripButtonCopyProfile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripButtonCopyProfile.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripButtonEditProfile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripButtonEditProfile.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
   </data>
   <data name="toolStripButtonEditProfile.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1574,35 +658,14 @@
         EQ7C/+OcRP/PyVQFa9zZZbmWYBKllgIAhSwqnu+ey5wAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="toolStripButtonEditProfile.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripButtonEditProfile.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
   <data name="toolStripButtonEditProfile.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonEditProfile.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="toolStripButtonEditProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 22</value>
   </data>
   <data name="toolStripButtonEditProfile.Text" xml:space="preserve">
     <value>Edit</value>
-  </data>
-  <data name="toolStripButtonEditProfile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripButtonEditProfile.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripButtonDeleteProfile.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripButtonDeleteProfile.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
   </data>
   <data name="toolStripButtonDeleteProfile.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1622,17 +685,8 @@
         /JvHtv8B9QhF+fnINuMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="toolStripButtonDeleteProfile.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripButtonDeleteProfile.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
   <data name="toolStripButtonDeleteProfile.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonDeleteProfile.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="toolStripButtonDeleteProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 22</value>
@@ -1640,17 +694,8 @@
   <data name="toolStripButtonDeleteProfile.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="toolStripButtonDeleteProfile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripButtonDeleteProfile.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
   <data name="toolStripMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
-  </data>
-  <data name="toolStripMain.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
   </data>
   <data name="toolStripMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>478, 25</value>
@@ -1660,9 +705,6 @@
   </data>
   <data name="toolStripMain.Text" xml:space="preserve">
     <value>toolStripMain</value>
-  </data>
-  <data name="toolStripMain.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;toolStripMain.Name" xml:space="preserve">
     <value>toolStripMain</value>
@@ -1679,89 +721,14 @@
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 263</value>
   </metadata>
-  <data name="statusStrip1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
-  </data>
-  <data name="statusStrip1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="statusStrip1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="statusStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="statusStrip1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="toolStripProgressBar1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripProgressBar1.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripProgressBar1.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="toolStripProgressBar1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 16</value>
-  </data>
-  <data name="toolStripProgressBar1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripProgressBar1.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
   </data>
   <data name="toolStripProgressBar1.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="toolStripStatusLabelProgress.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripStatusLabelProgress.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="toolStripStatusLabelProgress.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripStatusLabelProgress.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripStatusLabelProgress.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="toolStripStatusLabelProgress.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="toolStripStatusLabelProgress.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 17</value>
-  </data>
-  <data name="toolStripStatusLabelProgress.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripStatusLabelProgress.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripStatusLabelProgress.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripStatusLabelWorking.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripStatusLabelWorking.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="toolStripStatusLabelWorking.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripStatusLabelWorking.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripStatusLabelWorking.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="toolStripStatusLabelWorking.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="toolStripStatusLabelWorking.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 17</value>
@@ -1769,50 +736,20 @@
   <data name="toolStripStatusLabelWorking.Text" xml:space="preserve">
     <value>Loading Profiles...</value>
   </data>
-  <data name="toolStripStatusLabelWorking.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripStatusLabelWorking.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
   <data name="toolStripStatusLabelWorking.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="toolStripStatusLabel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripStatusLabel1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="toolStripStatusLabel1.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripStatusLabel1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripStatusLabel1.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="toolStripStatusLabel1.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>463, 17</value>
+    <value>229, 17</value>
   </data>
   <data name="toolStripStatusLabel1.Text" xml:space="preserve">
-    <value>Net Profiles v2.1.6</value>
+    <value>Net Profiles v2.1.7</value>
   </data>
   <data name="toolStripStatusLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="toolStripStatusLabel1.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 263</value>
-  </data>
-  <data name="statusStrip1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
   </data>
   <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>478, 22</value>
@@ -1822,9 +759,6 @@
   </data>
   <data name="statusStrip1.Text" xml:space="preserve">
     <value>statusStrip1</value>
-  </data>
-  <data name="statusStrip1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
     <value>statusStrip1</value>
@@ -1845,251 +779,205 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAI
-        LAAAAk1TRnQBSQFMAgEBAwEAAQQBAAEEAQABIAEAASABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAGA
-        AwABIAMAAQEBAAEgBgABQFoAAwIBAwMlATcBNQI0AVUDMwFTATgCNwFcAVECRgGiAVwCRgHMAV0CRQHK
-        AVwCRgHMAVMCRgGoATsCOQFjAzMBUwE1AjQBVgEwAi8BS/8AyQABMwIyAVIBXQJFAdcBXQJHAe0BYAJI
-        AesBSQE/AUMB9gERAbUB6QH/ARkBrwHcAf8BGgG0Ad8B/wELAakB3AH/AVMCPwH0AWACSAHrAVwCSQHs
-        AVgCRwHuAVYCRgG2swABAQMGAQgDDQESAxMBGgMWAR8DFgEfAxMBGgMNAREDBQEHAwABAcQAAxABFgMQ
-        ARYDEAEWAxABFgMQARYDEAEWAxABFgMQARYDEAEWAxABFgQAAUICPwF0AZcBmAGZAf8BlwGYAZkB/wGc
-        ApYB/wFmAZ0BrAH/AUUB0QHzAf8BgQHqAv8BgQHvAv8BOwHDAecB/wFgAY4BngH/AZ8BlwGWAf8BngGg
-        AaEB/wOBAf8BWgJFAcA4AAMWAR8BQAI+AXABRQJBAXwDJAE1AwABAVwAAwEBAgMKAQ0DGAEiAygBPAMz
-        AVMBOwI6AWQBQAI9AW4BQAI9AW4BOwI6AWQBMwIyAVIDJwE7AxgBIgMKAQ0DAQECuwAB/wMAAf8DAAH/
-        AwAB/wMAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wMAAf8EAAFBAj4BcgHdAdkB1AH/AfcB8QHpAf8B+wHw
-        AecB/wGxAdcB3wH/AYMB1QHrAf8BygH7Av8BzwP/AWsBygHjAf8BqwHPAdgB/wH+AfQB6QL/AfwB9AH/
-        AbYBtQGwAf8BVAJGAaw4AAFVAkYBrQFoAWUBZwH/AYECZwH/AV0CRQHXAyUBN1gAAwMBBAMTARoBLAIr
-        AUMBSAJDAYUBWAJGAbwBXQJFAdcBYQJGAeQBYQJGAeYBYQJHAdwBXAJGAckBVAJGAa4BTAJEAY8BPwI9
-        AW0DKgFBAxIBGQMDAQSzAAH/AUACPgFwAx8BLQMQARYDEAEWAxABFgMQARYDEAEWAxABFgMQARYDEAEW
-        AxABFgQAATECMAFNAVcCRQG6AVgCRgG7AVcCRgG4AV4CRgHOAYQB0wHtAf8BxAHpAfQB/wHBAesB+AH/
-        AYEBzQHpAf8BXwJHAeABWAJGAbsBVwJFAboBWAJDAcEDMAFMOAABYQJIAeIBpgGeAZ8B/wHJApoB/wFn
-        AlMB+AE4AjcBXVQAAwMBBAMWAR8BRQJBAXwBXgJEAd0B4QGBAU8B/wHoAYEBQwH/AekBgQE/Af8B6wGB
-        AToB/wHrAYEBPQH/AesBgQE/Af8B5wGBAUIB/wHiAYEBTQH/AWICRwHpAVoCRwG9AUoCQwGLAzMBUwMV
-        AR0DAwEErwAB/wFIAkMBhgMQARY4AAMMARABWwJFAcYBuwHaAeAB/wFgAZIBogH/AVkCRgHxATkCOAFf
-        CwABATwAAWACRAHeAbIBqgGsAf8BzgGbAZwB/wFhAkcB7gE1AjQBVVAAAwEBAgMUARsBUAJFAZ0BagIr
-        AfwB7wGBATgB/wHzAYEBNgH/AfQBgQE2Af8B9AGBAUEB/wH6Aa0BgQH/AfUBgQFGAf8B9AGBATYB/wH0
-        AYEBNgH/AfMBgQE2Af8B8AGBATgB/wGqAkAB/QFcAkUB0QFOAkUBlAE0AjMBVAMSARkDAQECqwAB/wFI
-        AkMBhgMQARY4AAMUARsBWAJFAbkB/wH0AegB/wGWAY8BigH/AVsCRwHpAT8CPQFsAw4BE0QAAWECRwHc
-        AawBpQGmAf8BxwGYAZoB/wFiAkgB7wE1AjQBVVAAAwsBDwFOAkUBlAHmAYEBQwH/AfIBgQE3Af8B8wGB
-        ATcB/wHzAYEBNwH/AfMBgQE2Af8B8gGBAVcB/wH+AfkB8AH/AfoBuQGbAf8B8wGBATgB/wHzAYEBNgH/
-        AfMBgQE3Af8B8wGBATcB/wHyAYEBOAH/AecBgQFDAf8BXQJFAdIBSgJEAYwBLAIrAUMDCgENqwAB/wFI
-        AkMBhgMQARYwAAMEAQUBOwI5AWMBWwJGAcMBbgFLAT0B9wHWAYMBWAH/AbwBZAFFAf8BWQI/AfUBWwJF
-        AcsBSwJEAY4DKAE9AwMBBDwAAWECRwHcAawBpQGmAf8ByAGYAZoB/wFiAkgB7wE1AjQBVUwAAwEBAgE3
-        AjYBWwFqAisB/AHxAYEBNwH/AfQBgQE2Af8B8wGBATcB/wHzAYEBNwH/AfMBgQE2Af8B8gGBAUgB/wH9
-        AeUB0gX/AfoBtAGLAf8B8wGBAToB/wHzAYEBNgH/AfMBgQE3Af8B9AGBATcB/wHyAYEBNwH/AaoCQAH9
-        AVkCRQG/AUACPgFxAxoBJQMBAQKnAAH/AUgCQwGGAxABFiwAAwUBBwFMAkUBkgGAAT8BMwH5Ab0BSgEh
-        Af8BnAFQAS4B/wGvAUMBIAH/Ab8BRwElAf8BywFWATYB/wHKAVgBOAH/AV0CQgHwAVQCRQGvAywBRAMC
-        AQM4AAFhAkcB3AGsAaUBpgH/AcgBmAGaAf8BYgJIAe8BNQI0AVVMAAMLAQ8BXAJFAc0B7wGBATcB/wHz
-        AYEBNgH/AfMBgQE3Af8B8wGBATcB/wHzAYEBNwH/AfMBgQE2Af8B8gGBAUcB/wH9AeQB0An/AfoBsAGM
-        Af8B8wGBATcB/wHzAYEBNgH/AfMBgQE3Af8B9AGBATYB/wHwAYEBNgH/AWQCSQHsAU4CRQGVAyoBQAMH
-        AQqnAAH/AUACPgFwAxABFiwAAUkCQwGIAb4BSgEGAf8BogEuAQAB/wGjAS4BAAH/AVYBSgEFAf8BWAFG
-        AQEB/wGnAS4BAAH/AZ8BLwEAAf8BrQE8ARUB/wHHAVIBMQH/AWUBPwE+AfQBUgJFAaEDHAEoOAABYQJH
-        AdwBrAGlAaYB/wHIAZgBmgH/AWICSAHvATUCNAFVTAABLQIsAUUB5QGBAUcB/wHzAYEBNgH/AfMBgQE3
-        Af8B8wGBATYB/wHzAYEBNgH/AfMBgQE3Af8B8wGBATYB/wHyAYEBRwH/Af0B5AHQDf8B+gG0AYwB/wHy
-        AYEBOgH/AfIBgQE2Af8B8wGBATcB/wHzAYEBNgH/AeQBgQFDAf8BVgJFAbQDNQFXAw4BE58AAQEDBwEJ
-        AwoBDgMZASMDCgEOAwoBDQMEAQYgAAEwAi8BSwF2ATwBOQH4AaMBMAEAAf8BrwE+AQAB/wHAAUQBAAH/
-        AlYBAAH/AQABYwEAAf8BgQFMAQAB/wG0ATwBAAH/AaMBMQEAAf8BmwE7AQkB/wGjAVwBPwH/AWECRwHh
-        ATsCOgFkOAABYQJHAdwBrAGlAaYB/wHIAZgBmgH/AWICSAHvATUCNAFVTAABSgJDAYoB6gGBAToB/wH0
-        AYEBNgH/AfIBgQE2Af8B9AGBAU4B/wHzAYEBPAH/AfMBgQE2Af8B8wGBATYB/wHyAYEBRwH/Af4B5gHU
-        Af8B/gH5AfYB/wH7AbsBmgH/Af4B/AH4Bf8B+QGvAYsB/wHxAYEBOQH/AfIBgQE2Af8B9AGBATYB/wHs
-        AYEBOgH/AVwCRAHPAT0COwFnAxQBHJgAAwkBDAMaASUDLwFKATwCOgFmAT4CPAFrAT4CPAFrATkCOAFf
-        AykBPgMTARoDAwEEGAABVwJGAbcBrQE/AQAB/wG5AUcBAAH/Ac8BVAEAAf8BxAFfAQAB/wEmAYEBAAH/
-        AQABgQEAAf8BLQFqAQAB/wHIAVQBAAH/AckBRQEAAf8BiQFGAQAB/wFbAWIBLQH/AWoBPwE3AfkBUAJG
-        AZs4AAFhAkcB3AGsAaUBpgH/AcgBmAGaAf8BYgJIAe8BNQI0AVVMAAFWAkUBtAHwAYEBNgH/AfMBgQE2
-        Af8B9QGBAWYB/wH8AdkBxQH/AfoBvgGaAf8B8wGBAT4B/wHyAYEBNgH/AfIBgQFIAf8B/gHoAdYB/wH+
-        AfUB7AH/AfQBgQFPAf8B9wGTAYEB/wH+AfoB9gH/Af0D/wH3AbYBlQH/AfIBgQFLAf8B8wGBATYB/wHv
-        AYEBOAH/AWECRwHhAUACPgFwAxcBIJQAAxABFgE6AjkBYgFZAkYBvgFgAkQB3gFfAkcB4AFfAkcB4AFh
-        AkcB3AFbAkYBwwFRAkcBoAFGAkEBfgMkATUDAwEEFAABXQJCAfABuwFKAQAB/wHWAVwBAAH/AdwBagEA
-        Af8BpAGCAQAB/wEJAZABAAH/ATcBiwEAAf8BzwGBAQAB/wG7AWoBAAH/AS0BZwEAAf8BCAFfAQAB/wEZ
-        AV4BDgH/AYEBWQEhAf8BVwJFAbo4AAFhAkcB3AGsAaUBpgH/AcgBmAGaAf8BYgJIAe8BNQI0AVVMAAFY
-        AkMBwQHzAYEBNgH/AfMBgQE2Af8B9gGFAYED/wH+Bf8B+wG+AZsB/wHyAYEBOgH/AfEBXAFCAf8B/QHo
-        AdQB/wH+AfYB7wH/AfQBgQFVAf8B8AFKATYB/wH7AdcBtwH/Af0D/wH+A/8B9wGQAYEB/wHzAYEBNgH/
-        AfEBgQE3Af8BZAJJAecBQgI/AXMDGAEikAADCQEMAVQCRgGmAdECygH/AeUC6QH/A+EB/wHjAt4B/wHR
-        AroB/wG6ApkB/wHNAqcB/wFhAj8B9QFXAkUBugFHAkIBgQMPARQUAAHVAYoBKwH/AdYBWQEAAf8BvAGB
-        AQAB/wE5AZoBBAH/ATkBoAEHAf8BYgGiAQkB/wHiAZgBAAL/AYwBAAH/AcIBhQEAAf8BEgGDAQAB/wEA
-        AW0BAAH/AQMBXgEAAf8BSwFfARAB/wFYAkUBuTgAAWECRwHcAawBpQGmAf8ByAGYAZoB/wFiAkgB7wE1
-        AjQBVUwAAVoCRQHAAfMBgQE2Af8B8wGBATYB/wHzAYEBNgH/AfgBlwGBAv8B/AH7Bf8B+gGzAZEB/wHw
-        AVoBNgH/Af0B2wHDAf8B/gH3AfAB/wH0AYEBSgH/AfUCgQH/Af4B8gHoAf8B/gP/AfoBxwGrAf8B9AGB
-        AU8B/wHzAYEBNgH/AfMBgQE3Af8BYgJHAekBQgI/AXMDGAEikAABTAJEAY8B4gLlAf8B+gP/AfAC9AH/
-        AeUC6QH/AdsC1QH/AdMCvAH/AaUCnwH/AZYCgQH/AdcCsgH/AXcCUgH5AU4CRQGWAxwBKAMKAQ4DBAEG
-        DAABegFLAT0B9wHaAWQBAAH/AUUBnQENAf8BAAG3ASwB/wEOAbkBNwH/AYEBuwE7Av8BvQE7Af8B/gGs
-        ARkC/wGTAQAB/wFlAYkBAAH/AQABggEAAf8BBwFlAQAB/wEtAV4BAAH/AVACRQGeOAABYQJHAdwBrAGl
-        AaYB/wHIAZgBmgH/AWICSAHvATUCNAFVTAABWgJFAcAB8wGBATYB/wHzAYEBNwH/AfMBgQE2Af8B8gFq
-        ATYB/wH3AZQBgQP/AfwF/wH5AacBgQH/Af4B6gHgAf8B/gHzAe0B/wH5AaMBgQH/Af4B9AHrBf8B+wHD
-        AZ8B/wHzAYEBPgH/AfIBgQE2Af8B8wGBATcB/wHzAYEBNwH/AWICRwHpAUICPwFzAxgBIpAAAVoCRwG9
-        AfUL/wHxAf4B/QH/AdYCzwH/AdQCtAH/Aa4CjAH/AaUCgQH/AdICrQH/AYUCWgH7AVQCRQGvAUkCRAGH
-        ATwCOgFmAScCJgE6Aw4BEwgAAVoCRwG9AcEBgQEAAf8BJAGyASoB/wEfAcgBUgH/AT8B0gFpAf8BOwHU
-        AWwB/wGzAdwBhgL/Ac0BXgL/AacBEQH/AZoBkAEAAf8BAgGJAQAB/wEAAYEBAAH/ASwBNgEgAfwBPQI7
-        AWg4AAFhAkcB3AGsAaUBpgH/AcgBmAGaAf8BYgJIAe8BNQI0AVVMAAFaAkUBwAHzAYEBNgH/AfMBgQE3
-        Af8B8wGBATcB/wHzAYEBNgH/AfIBaAE2Af8B9wGQAYEC/wH9AfwK/wL9Av8C/gX/AfoBvwGgAf8B8wGB
-        AUIB/wHzAYEBNgH/AfMBgQE2Af8B8wGBATcB/wHzAYEBNgH/AWICRwHpAUICPwFzAxgBIpAAAxEBFwFd
-        AkUB1wHzAeoB7gH/Ad8BwwHUAf8B5wHwAv8B0gHKAc0B/wHNAp0B/wG2AmQB/wG+AWIBYAH/AdACoQH/
-        AcYBnQGcAf8BZQJKAfQBXwJHAeABWQJFAb8BUAJGAZoBOwI6AWQDDwEUBAADLwFKAW0BWgFAAfcBCAG/
-        AUAB/wFGAdYBgQH/AasB6QGeAf8BnQHsAaoB/wHEAfQBvAH/AcYB2QGBAf8B1AGzAScB/wHOAZEBAAH/
-        AWEBhAEAAf8BAAGCAQAB/wFbAkUBxgMWAR8UAAMWAR4DEAEVAwABARgAAWECRwHcAa4BpgGoAf8BywGa
-        AZsB/wFiAkgB7wE1AjQBVRgAAwsBDwMaASQsAAFaAkUBwAHzAYEBNwH/AfMBgQE3Af8B8wGBATcB/wHz
-        AYEBNwH/AfMBgQE2Af8B8gFrATYB/wH3AY8BgQH/Af4B9AHvDf8B+gG3AZEB/wHyAYEBOgH/AfMBgQE2
-        Af8B8wGBATcB/wHzAYEBNwH/AfMBgQE3Af8B9QGBATcB/wFiAkcB6QFCAj8BcwMYASKYAAFZAkUBxwHk
-        AZsBWAH/Ad0BrwGlAf8BxQGVAbAB/wG9AV8BgQH/AcEBRQFOAf8ByAFHAUgB/wHgAdAB0QH/AdoB0QHQ
-        Af8BuQKiAf8BuwKcAf8BzwKlAf8BYQJIAeIBUAJGAZoDJQE3AwQBBgQAAUsCRAGOAUIBxQFSAf8BUAHb
-        AYQB/wGrAfEBsAH/AcgB9wG/Af8BzQHxAbEB/wE4AdMBaQH/AT4BtwExAf8BygGPAQAB/wHbAYEBAAH/
-        AWACSAHrAywBRBQAATMCMgFSAVoCRwG9AVMCRgGoAxABFhgAAV4CRgHZAbEBqgGrAf8B0AKdAf8BXQJJ
-        Ae0DMgFRGAABSgJDAYoBWwJGAcMBPQI7AWcoAAFaAkUBwAHzAYEBNwH/AfMBgQE3Af8B8wGBATcB/wHz
-        AYEBNwH/AfMBgQE2Af8B8wGBATYB/wHwAU8BNgH/AfsBwwGpCv8B9QHtAf8B8wGBAT8B/wHxAWoBNgH/
-        AfMBgQE2Af8B8wGBATcB/wHzAYEBNwH/AfMBgQE3Af8B9QGBATcB/wFiAkcB6QFCAj8BcwMYASKXAAEB
-        AWECRwHcAf8BoQEAAv8BtQEEAf8B+gG6AU4B/wHhAacBiwH/AcgBZAGBAf8BswFBAV8B/wHVAdIB4QH/
-        AdgBzgHTAf8BwAG+AcAB/wGNAoEB/wHCAp0B/wHWAqgB/wFZAkYBvgMoATwDBgEIBAADBwEJAUwCRAGQ
-        AV8BeQFZAfsBlQHhAZEB/wGkAegBnQH/AYEB3wGLAf8BIAHLAVsB/wEXAbQBLQH/AdABjwEAAf8BXgJG
-        AdkBMAIvAUsUAAMjATMBXwJHAeABMAG8AUwB/wFSAkYBowMFAQcDKAE8AT8CPQFtAxoBJQwAAVwCQwHf
-        AYIChAH/AZECgQH/AV0CQgHwAzABTAgAAxIBGAE6AjkBYQMyAVEEAAFGAkEBfgEoAbABQQH/AV0BSwFK
-        Ae0BMAIvAUskAAFaAkUBwAHzAYEBNgH/AfMBgQE3Af8B8wGBATcB/wHzAYEBNwH/AfMBgQE2Af8B8QFq
-        ATYB/wH3AY0BgQH/Af4B7wHmCv8B/AH6Af8B+gGyAZAB/wHxAYEBPQH/AfIBgQE2Af8B8wGBATcB/wHz
-        AYEBNwH/AfMBgQE3Af8B9AGBATcB/wFiAkcB6QFCAj8BcwMYASKUAAMIAQsB0wGiAZUC/wGvARMC/wGz
-        ARkC/wG3ARcC/wHDASEC/wHJAUUB/wHrAa4BYAH/AdEBgQFtAf8B0QGSAaIB/wG6AZQBmAH/AaUCaQH/
-        AccCngH/AdQCqQH/AVYCRgGxAxwBJwMCAQMDAAEBCAADLwFKAVUCRgGtAVwCRQHRAV4CRAHdAV4CRQHY
-        AVoCRQHAAUQCQQF7AxMBGhQAAwcBCgFRAkYBogFEAdgBbAH/AVoCRwG9AxEBFwMfASwBXgJFAdgBWgFL
-        AUcB8gFAAj4BbwQAAwsBDwFMAkUBkgFtAksB9wGCAmMB/wGGAWYBZQH/AV8BTQFMAfsBUQJEAZ8DEAEV
-        BAABNAIzAVQBXwJIAegBZQJJAeUDMgFQAwcBCgFVAkYBrQE9Ac4BYgH/AVkCRQG/Aw8BFCAAAVoCRQHA
-        AfMBgQE2Af8B8wGBATcB/wHzAYEBNwH/AfMBgQE2Af8B8gFrATYB/wH3AZQBgQH/Av4B+hX/AfoBwwGg
-        Af8B8wGBAT8B/wHzAYEBNgH/AfMBgQE2Af8B8wGBATcB/wH0AYEBNgH/AWICRwHpAUICPwFzAxgBIpQA
-        ATYCNQFYAdwBqwGJAv8BvwEmAv8BwgFDAv8BxAFJAv8BxQFIAv8BxAE4Av8BxwEtAv8BygEmAf8B7QGU
-        AT0B/wG0AVMBaAH/Ab4CXAH/AdIBlwGWAf8BygGoAacB/wEtAiwBRQMEAQVEAAMmATgBYAJIAesBSwFQ
-        AT8B9QE2AjUBWQQAAVICRQGhAUYB2wFsAf8BXAJGAcwDGwEmAwcBCQFDAkABeAFfAkQB8wGVAogB/wG8
-        ApgB/wHSAZQBkwH/Ab4ChAH/AWUCQQH0AUYCQQF/AwkBDAMWAR4BUwJGAaoBNQHJAVQB/wFcAkYByQMO
-        ARMDKgFAAVwCSQHsAmoBWgH5Ay8BSiAAAVoCRQHAAfMBgQE2Af8B8wGBATcB/wHzAYEBNgH/AfIBaQE2
-        Af8B+AGOAYEC/wH7AfgF/wH5AasBhAH/Af4B6wHhAv8B+QH2Af8B+QGoAYIB/wH+AfkB8QX/AfsBvQGg
-        Af8B8gGBATwB/wHyAYEBNgH/AfMBgQE3Af8B8gGBATcB/wFfAkgB6AFAAj4BcQMYASGUAAFOAkUBlAHk
-        AbQBgQL/Ac4BPQL/Ac0BXAL/Ac8BYAL/AdABYgL/Ac4BYAL/AcsBWAL/AdUBPgH/AfABrQFKAf8BuwFI
-        AWwB/wG/ATUBPgH/AWECSAHaAUUCQQF9Ax8BLAMKAQ0fAAH/AUgCQwGGAxABFhwAAToCOQFiAWUBnQF/
-        Af4BXgJGAdYDFgEfAxsBJgFfAkgB6AFTAkQB8wE9AjsBaAQAAx0BKgFcAkQBzwGOAY8BjgH/AsgByQH/
-        AcQCwwH/AcUBqgGsAf8B6AGbAZwB/wG5AoEB/wFcAkUB0QMgAS8EAAMpAT8BYAJGAeYBWgGGAWUB/AEw
-        Ai8BSwMEAQUBXQJFAcoBRQHbAW0B/wFHAkIBgAMBAQIcAAFaAkUBwAHzAYEBNgH/AfMBgQE3Af8B8wGB
-        ATcB/wH3AZQBgQH/Af4B+wH0Bf8B+gG7AZcB/wHwAWQBNgH/Af0B3QHGAv8B9QHtAf8B8wGBAUwB/wH2
-        AoEB/wH+AfcB8QX/AfoBwwGiAf8B8wGBAUUB/wHzAYEBNgH/AfIBgQE4Af8BZAJJAecBPgI8AWsDFQEd
-        lAABWgJFAcUB7wG/AWsC/wHVAVcC/wHXAYEC/wHbAYIC/wHbAYEC/wHZAYEC/wHYAYEC/wHbAVgB/wHg
-        AZ4BbQH/AdUBkQGPAf8BvwFZAWQB/wFeAkQB3QFUAkUBrwFMAkQBkwE0AjMBVAMJAQwbAAH/AUgCQwGG
-        AxABFhwAAUUCQQF9AUAB1AFlAf8BWAJGAbsDCAELAywBRAFeAZ4BfgH+AV0CSAHiAx0BKgQAAyMBNAFg
-        AkQB3gGzAbQBtQH/Ae0B7wHwAf8B2AHeAd8B/wG5AcABwQH/Ac8CowH/AdoBjgGNAf8BZAJJAewDMQFO
-        BAADEAEVAVkCRQG/AVUB5AGPAf8BPgI8AWoEAAFYAkUBuQE0Ab8BUgH/AVICRgGnAwYBCBwAAVUCRQG1
-        AfMBgQE2Af8B8wGBATYB/wH3AY0BgQn/AfsBxgGkAf8B8QGBATsB/wHwAVsBQAH/Af0B5wHSAv8B9gHv
-        Af8B8wGBAVUB/wHvAUcBNgH/AfsB0QGwBf8B/gP/AfYBlgGBAf8B8wGBATYB/wHwAYEBOAH/AWACRAHe
-        ATgCNwFeAxEBF5AAAwcBCQFiAlAB9gH7Ac8BagL/Ad4BgQL/AeEBkAL/AeUBlwL/AecBmgL/AeQBlgL/
-        AeMBiwL/AeABaQH/AdEBkwGMAf8B+QHBAUwC/wHJATgB/wHjAaABXwH/AdEBgwGBAf8BXQJFAdcBPgI8
-        AWoDCwEPGwAB/wFIAkMBhgMQARYcAAFGAkEBfwFBAdUBaQH/AVgCRQG5AwYBCAMtAUYBTgHnAYMB/wFf
-        AkcB4AMaASUEAAMjATQBYAJEAd4BsgKzBf8B7gLvAf8BxgHLAc0B/wHOAqkB/wG/AoYB/wFlAkkB5QMr
-        AUIEAAMMARABVwJFAboBVgHlAY8B/wE/Aj0BbQQAAVcCRgG3ATQBvgFSAf8BUgJGAakDBwEJHAABTgJF
-        AZYB8QGBATYB/wHzAYEBNgH/AfQBgQFmAf8B/QHoAdgB/wH7AckBqwH/AfQBgQFDAf8B8gGBATYB/wHy
-        AYEBSQH/Af4B6AHXAv8B9QHtAf8B8gGBAU8B/wH2AYsBgQH/Af0B8AHlAf8B/gP/AfkBwwGhAf8B8gGB
-        AVcB/wHzAYEBNgH/AfABgQE5Af8BXgJGAc4DLwFKAwoBDpAAATYCNQFYAdQCxAL/AeABZgL/AfABjgL/
-        AfABpgL/AfQBrwL/AfYBsgL/AfABrQL/Ae4BnwL/AegBhgH/AccBiAGLAf8B+wHIAVgC/wHJATIC/wHN
-        ASkC/wHAASkB/wFhAkgB4gFAAj4BcAMKAQ0bAAH/AUgCQwGGAxABFhwAAT0COwFpAU4B4gGEAf8BXgJG
-        AdYDFAEbAx0BKgFkAkkB7AFZAUkBRwHvAzEBTwQAAxMBGgFVAkYBsAGDAYUBhAH/AdUB1gHXAf8B5AHo
-        AeoB/wHNAccByAH/AcABmgGbAf8BhgFmAWQB/wFXAkYBtwMWAR4EAAMgAS4BXwJHAdwBXgHzAZwB/wMy
-        AVAEAAFcAkYByQFEAdgBagH/AUgCQwGEAwEBAhwAATcCNgFaAesBgQE9Af8B8wGBATYB/wHxAYEBNgH/
-        AfUBgQFXAf8B8wGBAUUB/wHzAYEBNgH/AfMBgQE2Af8B8gGBAUcB/wH+AecB1AH/Af4B9AHuAf8B+gGz
-        AY0B/wH+AfgB8gX/AfoBuAGTAf8B8wGBAT0B/wHxAYEBNgH/AfMBgQE3Af8B7QGBAToB/wFSAkYBpwMh
-        ATADBAEFkAABWwJFAcsB2AHLAcIB/wHVAbYBYAH/Ae8B4AGSAv8B9wGvA/8BzgP/AdcD/wHKA/8BswH/
-        AfsB5gGWAf8BzgGUAYQC/wHbAWcC/wHPAVsC/wHRAU8B/wH8Ab0BQAH/AVwCQwHfAUwCRAGTAxABFgQA
-        AxABFgMQARYDEAEWAxABFgMQARYDAAH/AUACPgFwAxABFhwAAygBPQFdAUgBQgHwAVMBSgE/AfQDMgFR
-        AwQBBQFWAkYBqwE/AdcBYgH/AVYCRgG2AxQBGwMBAQIDJgE5AVwCRQHNA4EB/wGaApwB/wGaAZEBkgH/
-        AYEBZwFoAf8BYAJEAd4BMAIvAUsDAgEDAwgBCwFPAkUBlwFIAYABVgH+AVwCRQHRAxABFgMoATwBXQFJ
-        AUcB7QFZAfUBlAH/ATMCMgFSIAADEQEXAWICRwHpAfMBgQE2Af8B8wGBATcB/wHzAYEBNgH/AfMBgQE2
-        Af8B8wGBATcB/wHzAYEBNgH/AfIBgQFHAf8B/QHkAdAN/wH6AbwBlgH/AfIBgQFAAf8B8wGBATYB/wHz
-        AYEBNgH/AfQBgQE2Af8BXwJEAfMBOwI6AWQDEAEWAwABAZAAAVwCRgHMAdsB2gHfAf8BugGzAcEB/wG2
-        AaQBrgH/AbwBpwGjAf8BxAGwAakB/wHQAb8BsgH/AeIB1gG2Af8B9QHxAa4B/wHtAdABlQH/AcwBmAGH
-        Av8B6QGEAv8B3AGBAv8B3QFkAf8B8gGzAVYB/wKBAYIB/wFLAkQBjgMQARYDAAH/AwAB/wMAAf8DAAH/
-        AwAB/wMAAf8BQAI+AXADHwEtIAADCAELAVYCRgGrAUIB1gFqAf8BWAJGAbsDCgENAyABLgFgAkQB3gFc
-        AVUBOgH4ATgCNwFeBAADAgEDAx8BLQFKAkQBjAFbAkUBxAFZAkUBxwFMAkUBkgMkATYDBAEFBAABMAIv
-        AUsBXAJFAeoBXwFNAUQB8wExAjABTQMAAQEBVAJGAawBOwHKAV0B/wFZAkUBxwMQARUkAAFHAkIBgAHu
-        AYEBOwH/AfMBgQE3Af8B8wGBATcB/wHzAYEBNwH/AfMBgQE3Af8B8wGBATYB/wHxAYEBSAH/AfwB4wHP
-        Af8B/gf/AfsBugGTAf8B8wGBAToB/wHyAYEBNgH/AfMBgQE3Af8B8wGBATcB/wHvAYEBOgH/AVQCRQGv
-        Ax0BKQMEAQWYAAMXASADMAFMATwCOgFmAUkCQwGIAWQCRgHxAb0BnQGnAf8BuwGVAaYB/wG6AZABowH/
-        AakBaAGGAf8BzwGlAYgC/wH6AaEC/wHkAZUC/wHqAYEB/wHrAa4BZwH/AoEBggH/AzMBUwMGAQgEAAMQ
-        ARYDEAEWAxABFgMQARYDEAEWAxABFicAAQEDKAE8AWICRwHpAUcBfwFTAf4BUQJHAaADBQEHAyIBMgE5
-        AjgBXwMYASILAAEBAwcBCQMUARsDFgEeAwkBDAMBAQIIAAMUARwBNgI1AVkDLAFEAwMBBAFEAkEBewFM
-        AVUBOgH4AV8BhQFbAfsDMgFQAwEBAiQAAwcBCgFbAkUBxgHyAYEBNwH/AfMBgQE2Af8B8wGBATcB/wHz
-        AYEBNwH/AfMBgQE2Af8B7wGBAUoB/wH6AeIB0AH/Af0D/wH6AbwBmAH/AfMBgQFDAf8B8gGBATYB/wHz
-        AYEBNgH/AfQBgQE3Af8B8wGBATcB/wFfAkYB2wMmATgDCAELqAADAwEEAV4CRAHdAfsB1gGBAv8B8wGD
-        Af8B8wHhAacB/wHcAccBrAH/AfgB7AGyA/8BtwL/Ae4BqAL/AfcBkwH/AdIBmAFhAf8BWwJFAcQDIwEz
-        AwQBBUQAAwQBBQE0AjMBVAFcAkYByQFKAkQBjAMHAQoDAAEBAwIBAwMAAQErAAEBAwIBAwMBAQIEAAE+
-        AjwBagFaAkUBzQE9AjsBaQMFAQcsAAMVAR0BYAJHAdQB8QGBATYB/wHzAYEBNgH/AfMBgQE3Af8B8QGB
-        ATYB/wHsAYEBWAH/AfMB8AHoAf8B8wHDAaUB/wHxAYEBOAH/AfIBgQE2Af8B8wGBATYB/wH0AYEBNgH/
-        AfQBgQE2Af8BXAJDAd8BLAIrAUMDCgENAwABAagAAyIBMgHiAd4B4wH/AcUBrQGEAf8B3QHJAYYB/wHy
-        AeQBmwP/Ab4D/wHZA/8B1QP/AcED/wGjAf8BtwGDAVMB/wFWAkYBsQMYASIDAQECSAADCwEPAy0BRgMe
-        AStIAAMUARwBMAIvAUsDEAEVAwABATAAAxMBGgFSAkYBqQHwAYEBPgH/AfIBgQE5Af8B8QGBATcB/wHt
-        AYEBSQH/AewBvAGYAf8B7AGBAVsB/wHxAYEBNgH/AfIBgQE2Af8B8QGBATkB/wHwAYEBPQH/AVcCRgG3
-        ASICIQExAwcBCQMAAQGsAAMbASYBYQJHAdwBygHIAdUB/wG4Aa0BvwH/AbUBpAGuAf8BwAGoAawB/wHE
-        AawBpQH/AdEBvAGpAf8B3wHQAakB/wHzAeEBmgH/AcABiAFrAf8BSQJEAYcDEAEW6AADKQE+AVICRgGn
-        AWUCSQHlAV8CRAHzAW0CNwH3AW0CNwH3AWUCPQH0AVwCRQHqAVYCRQG0ATMCMgFSAwoBDQMBAQK8AAMH
-        AQoDGwEmAzEBTwFIAkMBhQFWAkUBtAFcAkQBzwF4AV8BZQH8AcMBmQGfAf8BXwJFAeMDDwEU8AADDwEU
-        AycBOwE8AjoBZgFDAkABeAFEAkABegE+AjwBawMsAUQDEwEaAwMBBAMAAQGoAAFCAU0BPgcAAT4DAAEo
-        AwABgAMAASADAAEBAQABAQYAAQIWAAP/AQAC/wHAAQAI/wQAAv8BwAEABf8B8AEDAf8EAAH+AQABQAEA
-        Af8B/AEfAv8BwAEAAf8EAAH8AQABQAEAAf8B/AEfAv8BgAEAAX8EAAH4AQABQAEAAf8B/AEfAv8CAAE/
-        BAAB+AH/AfwBDQH/AfwBHwH/Af4CAAEfBAAB+AH/AfwBBwH/AfwBHwH/Af4CAAEfBAAB+AH/AfABAQH/
-        AfwBHwH/AfwCAAEPBAAB+AH/AeABAAH/AfwBHwH/AfwCAAEPBAAB+AH/AeABAAH/AfwBHwH/AfwCAAEP
-        BAAB4AE/AcABAAH/AfwBHwH/AfwCAAEPBAABwAEPAcABAAH/AfwBHwH/AfwCAAEPBAABgAEHAcABAAH/
-        AfwBHwH/AfwCAAEPBQABBwHAAQAB/wH8AR8B/wH8AgABDwUAAQEBwAEAAf8B/AEfAf8B/AIAAQ8GAAHA
-        AQAB/wH8AR8B/wH8AgABDwYAAUABAAH4AfwBHwGfAfwCAAEPBAABwAEAASABAQHwAfwBHwGPAfwCAAEP
-        BAABgAEAASABAwHgARwBGAGHAfwCAAEPBAABgAEAARgBBwHAARABCAEDAfwCAAEPBAABgAEAAX8B/wHC
-        AgABAwH8AgABDwQAAYABAAF/AR8BwAEgAQQBAQH8AgABDwQAAYABAAE/AR8BwAEgAQQBIQH8AgABDwYA
-        AT8BHwHAASABBAEhAfwCAAEPBgABPwEfAcABIAEEASEB/AIAAQ8GAAEgAR8BwAIAAQMB/AIAAQ8HAAE/
-        AcABEAEIAQMB/gIAAR8EAAGAAQABIAF/AcACGAEDAf4CAAE/BAAB8AEAAT8B/wHgAR8B+AGHAf8CAAE/
-        BAAB8AEAAT8B/wHxAv8BhwH/AYABAAF/BAAB8AEAAX8G/wHgAQEB/wQAAfwBAAf/AfABAwH/BAAL
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACa
+        KwAAAk1TRnQBSQFMAgEBAwEAAQQBAAEEAQABIAEAASABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAGA
+        AwABIAMAAQEBAAEgBgABQFoAAwIBAwMlATcBNQI0AVUDMwFTAzgBXAFRAkwBogFcAk4BzAFdAk4BygFc
+        Ak4BzAFTAkwBqAE7AjoBYwMzAVMDNQFWAzABS/8AyQADMwFSAV0CSwHXAV0CSgHtAWACSwHrAUkBQQFF
+        AfYBEAG1AekB/wEYAa8B3AH/ARkBtAHfAf8BCgGpAdwB/wFSAkAB9AFgAksB6wFcAk0B7AFYAkkB7gFW
+        Ak4BtrMAAQEDBgEIAw0BEgMTARoDFgEfAxYBHwMTARoDDQERAwUBBwMAAQHEAAMQARYDEAEWAxABFgMQ
+        ARYDEAEWAxABFgMQARYDEAEWAxABFgMQARYEAAFCAkEBdAGXAZgBmQH/AZcBmAGZAf8BnAKWAf8BZQGd
+        AawB/wFEAdEB8wH/AYEB6gL/AYEB7wL/AToBwwHnAf8BXwGOAZ4B/wGfAZcBlgH/AZ4BoAGhAf8DgQH/
+        AVoCTgHAOAADFgEfAUACPwFwAUUCRAF8AyQBNQMAAQFcAAMBAQIDCgENAxgBIgMoATwDMwFTAzsBZAFA
+        Aj8BbgFAAj8BbgM7AWQDMwFSAycBOwMYASIDCgENAwEBArsAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wMA
+        Af8DAAH/AwAB/wMAAf8DAAH/BAADQQFyAd0B2QHUAf8B9wHxAekB/wH7AfAB5wH/AbEB1wHfAf8BgwHV
+        AesB/wHKAfsC/wHPA/8BagHKAeMB/wGrAc8B2AH/Af4B9AHpAv8B/AH0Af8BtgG1AbAB/wFUAk0BrDgA
+        AVUCTQGtAWcBZAFmAf8BgQJmAf8BXQJLAdcDJQE3WAADAwEEAxMBGgEsAisBQwFIAkcBhQFYAk4BvAFd
+        AksB1wFhAksB5AFhAkoB5gFhAkwB3AFcAk0ByQFUAk4BrgFMAkkBjwM/AW0DKgFBAxIBGQMDAQSzAAH/
+        AUACPwFwAx8BLQMQARYDEAEWAxABFgMQARYDEAEWAxABFgMQARYDEAEWAxABFgQAATECMAFNAVcCTQG6
+        AVgCTgG7AVcCTwG4AV4CTgHOAYQB0wHtAf8BxAHpAfQB/wHBAesB+AH/AYEBzQHpAf8BXwJMAeABWAJO
+        AbsBVwJNAboBWAJMAcEDMAFMOAABYQJNAeIBpgGeAZ8B/wHJApoB/wFlAlQB+AM4AV1UAAMDAQQDFgEf
+        AUUCRAF8AV4CSwHdAeEBgQFOAf8B6AGBAUIB/wHpAYEBPgH/AesBgQE5Af8B6wGBATwB/wHrAYEBPgH/
+        AecBgQFBAf8B4gGBAUwB/wFiAksB6QFaAk8BvQFKAkgBiwMzAVMDFQEdAwMBBK8AAf8BSAJHAYYDEAEW
+        OAADDAEQAVsCTgHGAbsB2gHgAf8BXwGSAaIB/wFZAkgB8QM5AV8LAAEBPAABYAJJAd4BsgGqAawB/wHO
+        AZsBnAH/AWECSQHuATUCNAFVUAADAQECAxQBGwFQAksBnQFpAisB/AHvAYEBNwH/AfMBgQE1Af8B9AGB
+        ATUB/wH0AYEBQAH/AfoBrQGBAf8B9QGBAUUB/wH0AYEBNQH/AfQBgQE1Af8B8wGBATUB/wHwAYEBNwH/
+        AakCQAH9AVwCTQHRAU4CSgGUAzQBVAMSARkDAQECqwAB/wFIAkcBhgMQARY4AAMUARsBWAJNAbkB/wH0
+        AegB/wGWAY8BigH/AVsCSwHpAT8CPgFsAw4BE0QAAWECTAHcAawBpQGmAf8BxwGYAZoB/wFiAkoB7wE1
+        AjQBVVAAAwsBDwFOAkoBlAHmAYEBQgH/AfIBgQE2Af8B8wGBATYB/wHzAYEBNgH/AfMBgQE1Af8B8gGB
+        AVYB/wH+AfkB8AH/AfoBuQGbAf8B8wGBATcB/wHzAYEBNQH/AfMBgQE2Af8B8wGBATYB/wHyAYEBNwH/
+        AecBgQFCAf8BXQJNAdIBSgJIAYwBLAIrAUMDCgENqwAB/wFIAkcBhgMQARYwAAMEAQUBOwI6AWMBWwJP
+        AcMBbQFNAT4B9wHWAYMBVwH/AbwBYwFEAf8BWQJCAfUBWwJNAcsBSwJJAY4DKAE9AwMBBDwAAWECTAHc
+        AawBpQGmAf8ByAGYAZoB/wFiAkoB7wE1AjQBVUwAAwEBAgM3AVsBaQIrAfwB8QGBATYB/wH0AYEBNQH/
+        AfMBgQE2Af8B8wGBATYB/wHzAYEBNQH/AfIBgQFHAf8B/QHlAdIF/wH6AbQBiwH/AfMBgQE5Af8B8wGB
+        ATUB/wHzAYEBNgH/AfQBgQE2Af8B8gGBATYB/wGpAkAB/QFZAk4BvwNAAXEDGgElAwEBAqcAAf8BSAJH
+        AYYDEAEWLAADBQEHAUwCSgGSAX8BQQE1AfkBvQFJASAB/wGcAU8BLQH/Aa8BQgEfAf8BvwFGASQB/wHL
+        AVUBNQH/AcoBVwE3Af8BXQJEAfABVAJNAa8DLAFEAwIBAzgAAWECTAHcAawBpQGmAf8ByAGYAZoB/wFi
+        AkoB7wE1AjQBVUwAAwsBDwFcAkwBzQHvAYEBNgH/AfMBgQE1Af8B8wGBATYB/wHzAYEBNgH/AfMBgQE2
+        Af8B8wGBATUB/wHyAYEBRgH/Af0B5AHQCf8B+gGwAYwB/wHzAYEBNgH/AfMBgQE1Af8B8wGBATYB/wH0
+        AYEBNQH/AfABgQE1Af8BZAJNAewBTgJLAZUDKgFAAwcBCqcAAf8BQAI/AXADEAEWLAABSQJHAYgBvgFJ
+        AQUB/wGiAS0BAAH/AaMBLQEAAf8BVQFJAQQB/wFXAUUBAAH/AacBLQEAAf8BnwEuAQAB/wGtATsBFAH/
+        AccBUQEwAf8BZQFAAT8B9AFSAkwBoQMcASg4AAFhAkwB3AGsAaUBpgH/AcgBmAGaAf8BYgJKAe8BNQI0
+        AVVMAAMtAUUB5QGBAUYB/wHzAYEBNQH/AfMBgQE2Af8B8wGBATUB/wHzAYEBNQH/AfMBgQE2Af8B8wGB
+        ATUB/wHyAYEBRgH/Af0B5AHQDf8B+gG0AYwB/wHyAYEBOQH/AfIBgQE1Af8B8wGBATYB/wHzAYEBNQH/
+        AeQBgQFCAf8BVgJOAbQDNQFXAw4BE58AAQEDBwEJAwoBDgMZASMDCgEOAwoBDQMEAQYgAAMwAUsBdQE9
+        AToB+AGjAS8BAAH/Aa8BPQEAAf8BwAFDAQAB/wJVAQAB/wEAAWIBAAH/AYEBSwEAAf8BtAE7AQAB/wGj
+        ATABAAH/AZsBOgEIAf8BowFbAT4B/wFhAk0B4QM7AWQ4AAFhAkwB3AGsAaUBpgH/AcgBmAGaAf8BYgJK
+        Ae8BNQI0AVVMAAFKAkgBigHqAYEBOQH/AfQBgQE1Af8B8gGBATUB/wH0AYEBTQH/AfMBgQE7Af8B8wGB
+        ATUB/wHzAYEBNQH/AfIBgQFGAf8B/gHmAdQB/wH+AfkB9gH/AfsBuwGaAf8B/gH8AfgF/wH5Aa8BiwH/
+        AfEBgQE4Af8B8gGBATUB/wH0AYEBNQH/AewBgQE5Af8BXAJMAc8BPQI8AWcDFAEcmAADCQEMAxoBJQMv
+        AUoDPAFmAT4CPQFrAT4CPQFrAzkBXwMpAT4DEwEaAwMBBBgAAVcCTgG3Aa0BPgEAAf8BuQFGAQAB/wHP
+        AVMBAAH/AcQBXgEAAf8BJQGBAQAB/wEAAYEBAAH/ASwBaQEAAf8ByAFTAQAB/wHJAUQBAAH/AYkBRQEA
+        Af8BWgFhASwB/wFqAUEBOQH5AVACTAGbOAABYQJMAdwBrAGlAaYB/wHIAZgBmgH/AWICSgHvATUCNAFV
+        TAABVgJOAbQB8AGBATUB/wHzAYEBNQH/AfUBgQFlAf8B/AHZAcUB/wH6Ab4BmgH/AfMBgQE9Af8B8gGB
+        ATUB/wHyAYEBRwH/Af4B6AHWAf8B/gH1AewB/wH0AYEBTgH/AfcBkwGBAf8B/gH6AfYB/wH9A/8B9wG2
+        AZUB/wHyAYEBSgH/AfMBgQE1Af8B7wGBATcB/wFhAk0B4QFAAj8BcAMXASCUAAMQARYDOgFiAVkCTQG+
+        AWACSQHeAV8CTAHgAV8CTAHgAWECTAHcAVsCTwHDAVECTQGgAUYCRAF+AyQBNQMDAQQUAAFdAkQB8AG7
+        AUkBAAH/AdYBWwEAAf8B3AFpAQAB/wGkAYIBAAH/AQgBkAEAAf8BNgGLAQAB/wHPAYEBAAH/AbsBaQEA
+        Af8BLAFmAQAB/wEHAV4BAAH/ARgBXQENAf8BgQFYASAB/wFXAk0BujgAAWECTAHcAawBpQGmAf8ByAGY
+        AZoB/wFiAkoB7wE1AjQBVUwAAVgCTAHBAfMBgQE1Af8B8wGBATUB/wH2AYUBgQP/Af4F/wH7Ab4BmwH/
+        AfIBgQE5Af8B8QFbAUEB/wH9AegB1AH/Af4B9gHvAf8B9AGBAVQB/wHwAUkBNQH/AfsB1wG3Af8B/QP/
+        Af4D/wH3AZABgQH/AfMBgQE1Af8B8QGBATYB/wFkAkwB5wFCAkEBcwMYASKQAAMJAQwBVAJNAaYB0QLK
+        Af8B5QLpAf8D4QH/AeMC3gH/AdECugH/AboCmQH/Ac0CpwH/AV8CQgH1AVcCTQG6AUcCRQGBAw8BFBQA
+        AdUBigEqAf8B1gFYAQAB/wG8AYEBAAH/ATgBmgEDAf8BOAGgAQYB/wFhAaIBCAH/AeIBmAEAAv8BjAEA
+        Af8BwgGFAQAB/wERAYMBAAH/AQABbAEAAf8BAgFdAQAB/wFKAV4BDwH/AVgCTQG5OAABYQJMAdwBrAGl
+        AaYB/wHIAZgBmgH/AWICSgHvATUCNAFVTAABWgJOAcAB8wGBATUB/wHzAYEBNQH/AfMBgQE1Af8B+AGX
+        AYEC/wH8AfsF/wH6AbMBkQH/AfABWQE1Af8B/QHbAcMB/wH+AfcB8AH/AfQBgQFJAf8B9QKBAf8B/gHy
+        AegB/wH+A/8B+gHHAasB/wH0AYEBTgH/AfMBgQE1Af8B8wGBATYB/wFiAksB6QFCAkEBcwMYASKQAAFM
+        AkkBjwHiAuUB/wH6A/8B8AL0Af8B5QLpAf8B2wLVAf8B0wK8Af8BpQKfAf8BlgKBAf8B1wKyAf8BdAJR
+        AfkBTgJLAZYDHAEoAwoBDgMEAQYMAAF3AU0BPgH3AdoBYwEAAf8BRAGdAQwB/wEAAbcBKwH/AQ0BuQE2
+        Af8BgQG7AToC/wG9AToB/wH+AawBGAL/AZMBAAH/AWQBiQEAAf8BAAGCAQAB/wEGAWQBAAH/ASwBXQEA
+        Af8BUAJLAZ44AAFhAkwB3AGsAaUBpgH/AcgBmAGaAf8BYgJKAe8BNQI0AVVMAAFaAk4BwAHzAYEBNQH/
+        AfMBgQE2Af8B8wGBATUB/wHyAWkBNQH/AfcBlAGBA/8B/AX/AfkBpwGBAf8B/gHqAeAB/wH+AfMB7QH/
+        AfkBowGBAf8B/gH0AesF/wH7AcMBnwH/AfMBgQE9Af8B8gGBATUB/wHzAYEBNgH/AfMBgQE2Af8BYgJL
+        AekBQgJBAXMDGAEikAABWgJPAb0B9Qv/AfEB/gH9Af8B1gLPAf8B1AK0Af8BrgKMAf8BpQKBAf8B0gKt
+        Af8BhAJaAfsBVAJNAa8BSQJHAYcDPAFmAycBOgMOARMIAAFaAk8BvQHBAYEBAAH/ASMBsgEpAf8BHgHI
+        AVEB/wE+AdIBaAH/AToB1AFrAf8BswHcAYYC/wHNAV0C/wGnARAB/wGaAZABAAH/AQEBiQEAAf8BAAGB
+        AQAB/wErATUBIQH8AT0CPAFoOAABYQJMAdwBrAGlAaYB/wHIAZgBmgH/AWICSgHvATUCNAFVTAABWgJO
+        AcAB8wGBATUB/wHzAYEBNgH/AfMBgQE2Af8B8wGBATUB/wHyAWcBNQH/AfcBkAGBAv8B/QH8Cv8C/QL/
+        Av4F/wH6Ab8BoAH/AfMBgQFBAf8B8wGBATUB/wHzAYEBNQH/AfMBgQE2Af8B8wGBATUB/wFiAksB6QFC
+        AkEBcwMYASKQAAMRARcBXQJLAdcB8wHqAe4B/wHfAcMB1AH/AecB8AL/AdIBygHNAf8BzQKdAf8BtgJj
+        Af8BvgFhAV8B/wHQAqEB/wHGAZ0BnAH/AWUCTAH0AV8CTAHgAVkCTgG/AVACSwGaAzsBZAMPARQEAAMv
+        AUoBbQFZAUIB9wEHAb8BPwH/AUUB1gGBAf8BqwHpAZ4B/wGdAewBqgH/AcQB9AG8Af8BxgHZAYEB/wHU
+        AbMBJgH/Ac4BkQEAAf8BYAGEAQAB/wEAAYIBAAH/AVsCTgHGAxYBHxQAAxYBHgMQARUDAAEBGAABYQJM
+        AdwBrgGmAagB/wHLAZoBmwH/AWICSgHvATUCNAFVGAADCwEPAxoBJCwAAVoCTgHAAfMBgQE2Af8B8wGB
+        ATYB/wHzAYEBNgH/AfMBgQE2Af8B8wGBATUB/wHyAWoBNQH/AfcBjwGBAf8B/gH0Ae8N/wH6AbcBkQH/
+        AfIBgQE5Af8B8wGBATUB/wHzAYEBNgH/AfMBgQE2Af8B8wGBATYB/wH1AYEBNgH/AWICSwHpAUICQQFz
+        AxgBIpgAAVkCTQHHAeQBmwFXAf8B3QGvAaUB/wHFAZUBsAH/Ab0BXgGBAf8BwQFEAU0B/wHIAUYBRwH/
+        AeAB0AHRAf8B2gHRAdAB/wG5AqIB/wG7ApwB/wHPAqUB/wFhAk0B4gFQAksBmgMlATcDBAEGBAABSwJJ
+        AY4BQQHFAVEB/wFPAdsBhAH/AasB8QGwAf8ByAH3Ab8B/wHNAfEBsQH/ATcB0wFoAf8BPQG3ATAB/wHK
+        AY8BAAH/AdsBgQEAAf8BYAJLAesDLAFEFAADMwFSAVoCTwG9AVMCTAGoAxABFhgAAV4CTQHZAbEBqgGr
+        Af8B0AKdAf8BXQJMAe0DMgFRGAABSgJIAYoBWwJPAcMBPQI8AWcoAAFaAk4BwAHzAYEBNgH/AfMBgQE2
+        Af8B8wGBATYB/wHzAYEBNgH/AfMBgQE1Af8B8wGBATUB/wHwAU4BNQH/AfsBwwGpCv8B9QHtAf8B8wGB
+        AT4B/wHxAWkBNQH/AfMBgQE1Af8B8wGBATYB/wHzAYEBNgH/AfMBgQE2Af8B9QGBATYB/wFiAksB6QFC
+        AkEBcwMYASKXAAEBAWECTAHcAf8BoQEAAv8BtQEDAf8B+gG6AU0B/wHhAacBiwH/AcgBYwGBAf8BswFA
+        AV4B/wHVAdIB4QH/AdgBzgHTAf8BwAG+AcAB/wGNAoEB/wHCAp0B/wHWAqgB/wFZAk0BvgMoATwDBgEI
+        BAADBwEJAUwCSQGQAV8BdgFZAfsBlQHhAZEB/wGkAegBnQH/AYEB3wGLAf8BHwHLAVoB/wEWAbQBLAH/
+        AdABjwEAAf8BXgJNAdkDMAFLFAADIwEzAV8CTAHgAS8BvAFLAf8BUgJNAaMDBQEHAygBPAM/AW0DGgEl
+        DAABXAJKAd8BggKEAf8BkQKBAf8BXQJEAfADMAFMCAADEgEYAzoBYQMyAVEEAAFGAkQBfgEnAbABQAH/
+        AV0BTgFNAe0DMAFLJAABWgJOAcAB8wGBATUB/wHzAYEBNgH/AfMBgQE2Af8B8wGBATYB/wHzAYEBNQH/
+        AfEBaQE1Af8B9wGNAYEB/wH+Ae8B5gr/AfwB+gH/AfoBsgGQAf8B8QGBATwB/wHyAYEBNQH/AfMBgQE2
+        Af8B8wGBATYB/wHzAYEBNgH/AfQBgQE2Af8BYgJLAekBQgJBAXMDGAEilAADCAELAdMBogGVAv8BrwES
+        Av8BswEYAv8BtwEWAv8BwwEgAv8ByQFEAf8B6wGuAV8B/wHRAYEBbAH/AdEBkgGiAf8BugGUAZgB/wGl
+        AmgB/wHHAp4B/wHUAqkB/wFWAk4BsQMcAScDAgEDAwABAQgAAy8BSgFVAk0BrQFcAk0B0QFeAksB3QFe
+        AksB2AFaAk4BwAFEAkMBewMTARoUAAMHAQoBUQJMAaIBQwHYAWsB/wFaAk8BvQMRARcDHwEsAV4CSwHY
+        AVkBTAFIAfIBQAI/AW8EAAMLAQ8BTAJKAZIBbQJNAfcBggJiAf8BhgFlAWQB/wFfAU0BTAH7AVECSwGf
+        AxABFQQAAzQBVAFfAk0B6AFlAk4B5QMyAVADBwEKAVUCTQGtATwBzgFhAf8BWQJOAb8DDwEUIAABWgJO
+        AcAB8wGBATUB/wHzAYEBNgH/AfMBgQE2Af8B8wGBATUB/wHyAWoBNQH/AfcBlAGBAf8C/gH6Ff8B+gHD
+        AaAB/wHzAYEBPgH/AfMBgQE1Af8B8wGBATUB/wHzAYEBNgH/AfQBgQE1Af8BYgJLAekBQgJBAXMDGAEi
+        lAABNgI1AVgB3AGrAYkC/wG/ASUC/wHCAUIC/wHEAUgC/wHFAUcC/wHEATcC/wHHASwC/wHKASUB/wHt
+        AZQBPAH/AbQBUgFnAf8BvgJbAf8B0gGXAZYB/wHKAagBpwH/Ay0BRQMEAQVEAAMmATgBYAJLAesBSwFR
+        AUIB9QM2AVkEAAFSAkwBoQFFAdsBawH/AVwCTgHMAxsBJgMHAQkDQwF4AV8CRwHzAZUCiAH/AbwCmAH/
+        AdIBlAGTAf8BvgKEAf8BZQJCAfQBRgJEAX8DCQEMAxYBHgFTAk0BqgE0AckBUwH/AVwCTQHJAw4BEwMq
+        AUABXAJNAewCagFaAfkDLwFKIAABWgJOAcAB8wGBATUB/wHzAYEBNgH/AfMBgQE1Af8B8gFoATUB/wH4
+        AY4BgQL/AfsB+AX/AfkBqwGEAf8B/gHrAeEC/wH5AfYB/wH5AagBggH/Af4B+QHxBf8B+wG9AaAB/wHy
+        AYEBOwH/AfIBgQE1Af8B8wGBATYB/wHyAYEBNgH/AV8CTQHoA0ABcQMYASGUAAFOAkoBlAHkAbQBgQL/
+        Ac4BPAL/Ac0BWwL/Ac8BXwL/AdABYQL/Ac4BXwL/AcsBVwL/AdUBPQH/AfABrQFJAf8BuwFHAWsB/wG/
+        ATQBPQH/AWECTwHaAUUCRAF9Ax8BLAMKAQ0fAAH/AUgCRwGGAxABFhwAAzoBYgFlAZsBfwH+AV4CTQHW
+        AxYBHwMbASYBXwJNAegBUwJHAfMBPQI8AWgEAAMdASoBXAJMAc8BjgGPAY4B/wLIAckB/wHEAsMB/wHF
+        AaoBrAH/AegBmwGcAf8BuQKBAf8BXAJNAdEDIAEvBAADKQE/AWECSgHmAVkBgwFkAfwDMAFLAwQBBQFd
+        Ak4BygFEAdsBbAH/AUcCRQGAAwEBAhwAAVoCTgHAAfMBgQE1Af8B8wGBATYB/wHzAYEBNgH/AfcBlAGB
+        Af8B/gH7AfQF/wH6AbsBlwH/AfABYwE1Af8B/QHdAcYC/wH1Ae0B/wHzAYEBSwH/AfYCgQH/Af4B9wHx
+        Bf8B+gHDAaIB/wHzAYEBRAH/AfMBgQE1Af8B8gGBATcB/wFkAkwB5wE+Aj0BawMVAR2UAAFaAk0BxQHv
+        Ab8BagL/AdUBVgL/AdcBgQL/AdsBggL/AdsBgQL/AdkBgQL/AdgBgQL/AdsBVwH/AeABngFsAf8B1QGR
+        AY8B/wG/AVgBYwH/AV4CSwHdAVQCTQGvAUwCSgGTAzQBVAMJAQwbAAH/AUgCRwGGAxABFhwAAUUCRAF9
+        AT8B1AFkAf8BWAJOAbsDCAELAywBRAFeAZwBfgH+AV0CTQHiAx0BKgQAAyMBNAFgAkkB3gGzAbQBtQH/
+        Ae0B7wHwAf8B2AHeAd8B/wG5AcABwQH/Ac8CowH/AdoBjgGNAf8BZAJNAewDMQFOBAADEAEVAVkCTgG/
+        AVQB5AGPAf8BPgI9AWoEAAFYAk0BuQEzAb8BUQH/AVICTQGnAwYBCBwAAVUCTQG1AfMBgQE1Af8B8wGB
+        ATUB/wH3AY0BgQn/AfsBxgGkAf8B8QGBAToB/wHwAVoBPwH/Af0B5wHSAv8B9gHvAf8B8wGBAVQB/wHv
+        AUYBNQH/AfsB0QGwBf8B/gP/AfYBlgGBAf8B8wGBATUB/wHwAYEBNwH/AWACSQHeAzgBXgMRAReQAAMH
+        AQkBYgJPAfYB+wHPAWkC/wHeAYEC/wHhAZAC/wHlAZcC/wHnAZoC/wHkAZYC/wHjAYsC/wHgAWgB/wHR
+        AZMBjAH/AfkBwQFLAv8ByQE3Af8B4wGgAV4B/wHRAYMBgQH/AV0CSwHXAT4CPQFqAwsBDxsAAf8BSAJH
+        AYYDEAEWHAABRgJEAX8BQAHVAWgB/wFYAk0BuQMGAQgDLQFGAU0B5wGDAf8BXwJMAeADGgElBAADIwE0
+        AWACSQHeAbICswX/Ae4C7wH/AcYBywHNAf8BzgKpAf8BvwKGAf8BZQJOAeUDKwFCBAADDAEQAVcCTQG6
+        AVUB5QGPAf8DPwFtBAABVwJOAbcBMwG+AVEB/wFSAk0BqQMHAQkcAAFOAksBlgHxAYEBNQH/AfMBgQE1
+        Af8B9AGBAWUB/wH9AegB2AH/AfsByQGrAf8B9AGBAUIB/wHyAYEBNQH/AfIBgQFIAf8B/gHoAdcC/wH1
+        Ae0B/wHyAYEBTgH/AfYBiwGBAf8B/QHwAeUB/wH+A/8B+QHDAaEB/wHyAYEBVgH/AfMBgQE1Af8B8AGB
+        ATgB/wFeAk4BzgMvAUoDCgEOkAABNgI1AVgB1ALEAv8B4AFlAv8B8AGOAv8B8AGmAv8B9AGvAv8B9gGy
+        Av8B8AGtAv8B7gGfAv8B6AGGAf8BxwGIAYsB/wH7AcgBVwL/AckBMQL/Ac0BKAL/AcABKAH/AWECTQHi
+        AUACPwFwAwoBDRsAAf8BSAJHAYYDEAEWHAADPQFpAU0B4gGEAf8BXgJNAdYDFAEbAx0BKgFkAk0B7AFY
+        AkoB7wMxAU8EAAMTARoBVQJNAbABgwGFAYQB/wHVAdYB1wH/AeQB6AHqAf8BzQHHAcgB/wHAAZoBmwH/
+        AYYBZQFjAf8BVwJOAbcDFgEeBAADIAEuAV8CTAHcAV0B8wGcAf8DMgFQBAABXAJNAckBQwHYAWkB/wFI
+        AkcBhAMBAQIcAAM3AVoB6wGBATwB/wHzAYEBNQH/AfEBgQE1Af8B9QGBAVYB/wHzAYEBRAH/AfMBgQE1
+        Af8B8wGBATUB/wHyAYEBRgH/Af4B5wHUAf8B/gH0Ae4B/wH6AbMBjQH/Af4B+AHyBf8B+gG4AZMB/wHz
+        AYEBPAH/AfEBgQE1Af8B8wGBATYB/wHtAYEBOQH/AVICTQGnAyEBMAMEAQWQAAFbAk0BywHYAcsBwgH/
+        AdUBtgFfAf8B7wHgAZIC/wH3Aa8D/wHOA/8B1wP/AcoD/wGzAf8B+wHmAZYB/wHOAZQBhAL/AdsBZgL/
+        Ac8BWgL/AdEBTgH/AfwBvQE/Af8BXAJKAd8BTAJKAZMDEAEWBAADEAEWAxABFgMQARYDEAEWAxABFgMA
+        Af8BQAI/AXADEAEWHAADKAE9AV0BSwFEAfABUgFMAUAB9AMyAVEDBAEFAVYCTgGrAT4B1wFhAf8BVgJO
+        AbYDFAEbAwEBAgMmATkBXAJMAc0DgQH/AZoCnAH/AZoBkQGSAf8BgQFmAWcB/wFgAkkB3gMwAUsDAgED
+        AwgBCwFPAkoBlwFIAX8BVgH+AVwCTQHRAxABFgMoATwBXQFMAUoB7QFYAfUBlAH/AzMBUiAAAxEBFwFi
+        AksB6QHzAYEBNQH/AfMBgQE2Af8B8wGBATUB/wHzAYEBNQH/AfMBgQE2Af8B8wGBATUB/wHyAYEBRgH/
+        Af0B5AHQDf8B+gG8AZYB/wHyAYEBPwH/AfMBgQE1Af8B8wGBATUB/wH0AYEBNQH/AV8CRwHzAzsBZAMQ
+        ARYDAAEBkAABXAJOAcwB2wHaAd8B/wG6AbMBwQH/AbYBpAGuAf8BvAGnAaMB/wHEAbABqQH/AdABvwGy
+        Af8B4gHWAbYB/wH1AfEBrgH/Ae0B0AGVAf8BzAGYAYcC/wHpAYQC/wHcAYEC/wHdAWMB/wHyAbMBVQH/
+        AoEBggH/AUsCSQGOAxABFgMAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wFAAj8BcAMfAS0gAAMIAQsBVgJO
+        AasBQQHWAWkB/wFYAk4BuwMKAQ0DIAEuAWACSQHeAVwBVgE7AfgDOAFeBAADAgEDAx8BLQFKAkgBjAFb
+        Ak0BxAFZAk0BxwFMAkoBkgMkATYDBAEFBAADMAFLAVwCSAHqAV8BTQFHAfMBMQIwAU0DAAEBAVQCTQGs
+        AToBygFcAf8BWQJNAccDEAEVJAABRwJFAYAB7gGBAToB/wHzAYEBNgH/AfMBgQE2Af8B8wGBATYB/wHz
+        AYEBNgH/AfMBgQE1Af8B8QGBAUcB/wH8AeMBzwH/Af4H/wH7AboBkwH/AfMBgQE5Af8B8gGBATUB/wHz
+        AYEBNgH/AfMBgQE2Af8B7wGBATkB/wFUAk0BrwMdASkDBAEFmAADFwEgAzABTAM8AWYBSQJHAYgBZAJI
+        AfEBvQGdAacB/wG7AZUBpgH/AboBkAGjAf8BqQFnAYYB/wHPAaUBiAL/AfoBoQL/AeQBlQL/AeoBgQH/
+        AesBrgFmAf8CgQGCAf8DMwFTAwYBCAQAAxABFgMQARYDEAEWAxABFgMQARYDEAEWJwABAQMoATwBYgJL
+        AekBRwF/AVMB/gFRAk0BoAMFAQcDIgEyAzkBXwMYASILAAEBAwcBCQMUARsDFgEeAwkBDAMBAQIIAAMU
+        ARwDNgFZAywBRAMDAQQBRAJDAXsBTQFWATsB+AFfAYQBWwH7AzIBUAMBAQIkAAMHAQoBWwJOAcYB8gGB
+        ATYB/wHzAYEBNQH/AfMBgQE2Af8B8wGBATYB/wHzAYEBNQH/Ae8BgQFJAf8B+gHiAdAB/wH9A/8B+gG8
+        AZgB/wHzAYEBQgH/AfIBgQE1Af8B8wGBATUB/wH0AYEBNgH/AfMBgQE2Af8BXwJMAdsDJgE4AwgBC6gA
+        AwMBBAFeAksB3QH7AdYBgQL/AfMBgwH/AfMB4QGnAf8B3AHHAawB/wH4AewBsgP/AbcC/wHuAagC/wH3
+        AZMB/wHSAZgBYAH/AVsCTQHEAyMBMwMEAQVEAAMEAQUDNAFUAVwCTQHJAUoCSAGMAwcBCgMAAQEDAgED
+        AwABASsAAQEDAgEDAwEBAgQAAT4CPQFqAVoCTAHNAz0BaQMFAQcsAAMVAR0BYAJNAdQB8QGBATUB/wHz
+        AYEBNQH/AfMBgQE2Af8B8QGBATUB/wHsAYEBVwH/AfMB8AHoAf8B8wHDAaUB/wHxAYEBNwH/AfIBgQE1
+        Af8B8wGBATUB/wH0AYEBNQH/AfQBgQE1Af8BXAJKAd8BLAIrAUMDCgENAwABAagAAyIBMgHiAd4B4wH/
+        AcUBrQGEAf8B3QHJAYYB/wHyAeQBmwP/Ab4D/wHZA/8B1QP/AcED/wGjAf8BtwGDAVIB/wFWAk4BsQMY
+        ASIDAQECSAADCwEPAy0BRgMeAStIAAMUARwDMAFLAxABFQMAAQEwAAMTARoBUgJNAakB8AGBAT0B/wHy
+        AYEBOAH/AfEBgQE2Af8B7QGBAUgB/wHsAbwBmAH/AewBgQFaAf8B8QGBATUB/wHyAYEBNQH/AfEBgQE4
+        Af8B8AGBATwB/wFXAk4BtwEiAiEBMQMHAQkDAAEBrAADGwEmAWECTAHcAcoByAHVAf8BuAGtAb8B/wG1
+        AaQBrgH/AcABqAGsAf8BxAGsAaUB/wHRAbwBqQH/Ad8B0AGpAf8B8wHhAZoB/wHAAYgBagH/AUkCRwGH
+        AxABFugAAykBPgFSAk0BpwFlAk4B5QFfAkcB8wFtAjgB9wFtAjgB9wFlAj4B9AFcAkgB6gFWAk4BtAMz
+        AVIDCgENAwEBArwAAwcBCgMbASYDMQFPAUgCRwGFAVYCTgG0AVwCTAHPAXcBXgFkAfwBwwGZAZ8B/wFf
+        AkoB4wMPARTwAAMPARQDJwE7AzwBZgNDAXgBRAJDAXoBPgI9AWsDLAFEAxMBGgMDAQQDAAEBqAABQgFN
+        AT4HAAE+AwABKAMAAYADAAEgAwABAQEAAQEGAAECFgAD/wEAAv8BwAEACP8EAAL/AcABAAX/AfABAwH/
+        BAAB/gEAAUABAAH/AfwBHwL/AcABAAH/BAAB/AEAAUABAAH/AfwBHwL/AYABAAF/BAAB+AEAAUABAAH/
+        AfwBHwL/AgABPwQAAfgB/wH8AQ0B/wH8AR8B/wH+AgABHwQAAfgB/wH8AQcB/wH8AR8B/wH+AgABHwQA
+        AfgB/wHwAQEB/wH8AR8B/wH8AgABDwQAAfgB/wHgAQAB/wH8AR8B/wH8AgABDwQAAfgB/wHgAQAB/wH8
+        AR8B/wH8AgABDwQAAeABPwHAAQAB/wH8AR8B/wH8AgABDwQAAcABDwHAAQAB/wH8AR8B/wH8AgABDwQA
+        AYABBwHAAQAB/wH8AR8B/wH8AgABDwUAAQcBwAEAAf8B/AEfAf8B/AIAAQ8FAAEBAcABAAH/AfwBHwH/
+        AfwCAAEPBgABwAEAAf8B/AEfAf8B/AIAAQ8GAAFAAQAB+AH8AR8BnwH8AgABDwQAAcABAAEgAQEB8AH8
+        AR8BjwH8AgABDwQAAYABAAEgAQMB4AEcARgBhwH8AgABDwQAAYABAAEYAQcBwAEQAQgBAwH8AgABDwQA
+        AYABAAF/Af8BwgIAAQMB/AIAAQ8EAAGAAQABfwEfAcABIAEEAQEB/AIAAQ8EAAGAAQABPwEfAcABIAEE
+        ASEB/AIAAQ8GAAE/AR8BwAEgAQQBIQH8AgABDwYAAT8BHwHAASABBAEhAfwCAAEPBgABIAEfAcACAAED
+        AfwCAAEPBwABPwHAARABCAEDAf4CAAEfBAABgAEAASABfwHAAhgBAwH+AgABPwQAAfABAAE/Af8B4AEf
+        AfgBhwH/AgABPwQAAfABAAE/Af8B8QL/AYcB/wGAAQABfwQAAfABAAF/Bv8B4AEBAf8EAAH8AQAH/wHw
+        AQMB/wQACw==
 </value>
-  </data>
-  <data name="listViewProfiles.Alignment" type="System.Windows.Forms.ListViewAlignment, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="listViewProfiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
-  </data>
-  <data name="listViewProfiles.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
   </data>
   <data name="columnHeaderName.Text" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="columnHeaderName.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="columnHeaderName.Width" type="System.Int32, mscorlib">
-    <value>60</value>
-  </data>
   <data name="columnHeaderIPAddress.Text" xml:space="preserve">
     <value>IPAddress</value>
-  </data>
-  <data name="columnHeaderIPAddress.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="columnHeaderIPAddress.Width" type="System.Int32, mscorlib">
-    <value>60</value>
   </data>
   <metadata name="contextMenuStripProfiles.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 54</value>
   </metadata>
-  <data name="contextMenuStripProfiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
-  </data>
-  <data name="contextMenuStripProfiles.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="contextMenuStripProfiles.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="contextMenuStripProfiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="contextMenuStripProfiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="applyProfileToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="applyProfileToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="applyProfileToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="applyProfileToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt, style=Bold</value>
   </data>
@@ -2107,41 +995,11 @@
         r+KkpvxTkw+TOHxqGWjxLQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="applyProfileToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="applyProfileToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="applyProfileToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="applyProfileToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="applyProfileToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="applyProfileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 22</value>
   </data>
   <data name="applyProfileToolStripMenuItem.Text" xml:space="preserve">
     <value>Activate Profile</value>
-  </data>
-  <data name="applyProfileToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="applyProfileToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="activateOnDifferentNetworkCardToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2154,47 +1012,14 @@
         8yheICYq9Qu0LIDO/g7UfJPsWABq3qEQJ0t+NGJzKUnpYHAaAABvYKkCkr/+vQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="activateOnDifferentNetworkCardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 22</value>
   </data>
   <data name="activateOnDifferentNetworkCardToolStripMenuItem.Text" xml:space="preserve">
     <value>Activate On Different Network Card....</value>
   </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="activateOnDifferentNetworkCardToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripSeparator4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 6</value>
-  </data>
-  <data name="copyToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="copyToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="copyToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="copyToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2213,41 +1038,11 @@
         ujNZCj5I1f8Af5omEpoZlxEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="copyToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="copyToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="copyToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="copyToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="copyToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="copyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 22</value>
   </data>
   <data name="copyToolStripMenuItem.Text" xml:space="preserve">
     <value>Copy...</value>
-  </data>
-  <data name="copyToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="copyToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="editToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="editToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="editToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="editToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2262,41 +1057,11 @@
         VJJYrT0AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="editToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="editToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="editToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="editToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="editToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 22</value>
   </data>
   <data name="editToolStripMenuItem.Text" xml:space="preserve">
     <value>Edit</value>
-  </data>
-  <data name="editToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="editToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="deleteToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="deleteToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="deleteToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2314,47 +1079,14 @@
         wc3b3cqXLtJVfuve279yu6THdnerNQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="deleteToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="deleteToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="deleteToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="deleteToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="deleteToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 22</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="deleteToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="deleteToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripSeparator8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 6</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="createDesktopShortcutToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2373,41 +1105,14 @@
         RU5ErkJggg==
 </value>
   </data>
-  <data name="createDesktopShortcutToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="createDesktopShortcutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 22</value>
   </data>
   <data name="createDesktopShortcutToolStripMenuItem.Text" xml:space="preserve">
     <value>Create Desktop Shortcut</value>
   </data>
-  <data name="createDesktopShortcutToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="createDesktopShortcutToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="contextMenuStripProfiles.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
   <data name="contextMenuStripProfiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>274, 148</value>
-  </data>
-  <data name="contextMenuStripProfiles.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;contextMenuStripProfiles.Name" xml:space="preserve">
     <value>contextMenuStripProfiles</value>
@@ -2415,32 +1120,18 @@
   <data name="&gt;&gt;contextMenuStripProfiles.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="listViewProfiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="listViewProfiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="listViewProfiles.LabelWrap" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="listViewProfiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 49</value>
-  </data>
-  <data name="listViewProfiles.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="listViewProfiles.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="listViewProfiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>478, 214</value>
   </data>
   <data name="listViewProfiles.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
-  </data>
-  <data name="listViewProfiles.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;listViewProfiles.Name" xml:space="preserve">
     <value>listViewProfiles</value>
@@ -2460,39 +1151,9 @@
   <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>194, 54</value>
   </metadata>
-  <data name="notifyIcon1.BalloonTipText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="notifyIcon1.BalloonTipTitle" xml:space="preserve">
-    <value />
-  </data>
   <metadata name="contextMenuStripSystemTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>300, 54</value>
   </metadata>
-  <data name="contextMenuStripSystemTray.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
-  </data>
-  <data name="contextMenuStripSystemTray.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="contextMenuStripSystemTray.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="contextMenuStripSystemTray.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="contextMenuStripSystemTray.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="showHideWindowToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="showHideWindowToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="showHideWindowToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="showHideWindowToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt, style=Bold</value>
   </data>
@@ -2511,41 +1172,11 @@
         RK5CYII=
 </value>
   </data>
-  <data name="showHideWindowToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="showHideWindowToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="showHideWindowToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="showHideWindowToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="showHideWindowToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="showHideWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 22</value>
   </data>
   <data name="showHideWindowToolStripMenuItem.Text" xml:space="preserve">
     <value>Show/Hide Window</value>
-  </data>
-  <data name="showHideWindowToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="showHideWindowToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="profilesToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="profilesToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="profilesToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="profilesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2565,47 +1196,14 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="profilesToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="profilesToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="profilesToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="profilesToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="profilesToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="profilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 22</value>
   </data>
   <data name="profilesToolStripMenuItem.Text" xml:space="preserve">
     <value>Profiles</value>
   </data>
-  <data name="profilesToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="profilesToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="toolStripSeparator5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 6</value>
-  </data>
-  <data name="exitToolStripMenuItem1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="exitToolStripMenuItem1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="exitToolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="exitToolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2626,41 +1224,14 @@
         thSt2utRv1zXpFoR9WhWPhICD54AIXWDWClnHQ4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="exitToolStripMenuItem1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="exitToolStripMenuItem1.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>SizeToFit</value>
-  </data>
-  <data name="exitToolStripMenuItem1.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="exitToolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="exitToolStripMenuItem1.ShowShortcutKeys" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 22</value>
   </data>
   <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="exitToolStripMenuItem1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="exitToolStripMenuItem1.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="contextMenuStripSystemTray.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
   <data name="contextMenuStripSystemTray.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 76</value>
-  </data>
-  <data name="contextMenuStripSystemTray.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;contextMenuStripSystemTray.Name" xml:space="preserve">
     <value>contextMenuStripSystemTray</value>
@@ -3403,37 +1974,19 @@
   <data name="pictureBoxWallpaper.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="pictureBoxWallpaper.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="pictureBoxWallpaper.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
   <data name="pictureBoxWallpaper.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="pictureBoxWallpaper.Location" type="System.Drawing.Point, System.Drawing">
     <value>378, 0</value>
   </data>
-  <data name="pictureBoxWallpaper.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
   <data name="pictureBoxWallpaper.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 50</value>
-  </data>
-  <data name="pictureBoxWallpaper.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Normal</value>
   </data>
   <data name="pictureBoxWallpaper.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="pictureBoxWallpaper.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="pictureBoxWallpaper.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="pictureBoxWallpaper.WaitOnLoad" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="&gt;&gt;pictureBoxWallpaper.Name" xml:space="preserve">
@@ -3454,6 +2007,9 @@
   <metadata name="timerDetectWireless.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>185, 91</value>
   </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>338, 91</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -3462,18 +2018,6 @@
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
-  </data>
-  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowOnly</value>
-  </data>
-  <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>478, 285</value>
@@ -4205,28 +2749,13 @@
 </value>
   </data>
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Net Profiles</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
     <value>fileToolStripMenuItem</value>

@@ -17,7 +17,7 @@ Imports System.IO
 Imports System.Xml
 
 Public Module Globals
-	Public ProgramVersion As String = "2.1.6"
+	Public ProgramVersion As String = "2.1.7"
 	Public ProgramName As String = "Net Profiles"
 	Public CurrentLang As String = "en-US"
 	Public CurrentLangPath As String
