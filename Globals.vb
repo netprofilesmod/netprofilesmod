@@ -360,16 +360,28 @@ Public Module Globals
 				"root\CIMV2", _
 				"SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled = True")
 			
+			' potofcoffee:
+			' tried to patch for issue 1 here
+			' (Ref: http://code.google.com/p/netprofiles/issues/detail?id=1)
+			' 
+			' For some reason, sometimes queryObj doesn't seem to be a valid object
+			' probably depends on some specific configurations, but why not check for
+			' queryObj being something else than "Nothing" ?
 			For Each queryObj As ManagementObject in searcher.Get()
      			Application.DoEvents
-     			If Not MACAddresses.Contains(queryObj("MACAddress")) Then
-     				NetworkInterfaceName = ""
-     				NetworkInterfaceName = GetInterfaceName(queryObj("MACAddress"))
-     				If NetworkInterfaceName.Trim.Length = 0 Then
-     					NetworkInterfaceName = GetNetworkInstanceName(queryObj("MACAddress").Replace("-",":"))
-     				End If
-     				NetworkCardList.Add(New DictionaryEntry(queryObj("MACAddress"), NetworkInterfaceName))
-     				MACAddresses = MACAddresses & queryObj("MACAddress")
+     			
+     			' check goes here:
+     			If not (queryobj Is Nothing) Then 
+     				' looking good? Then back to the original code ...
+	     			If Not MACAddresses.Contains(queryObj("MACAddress")) Then
+	     				NetworkInterfaceName = ""
+	     				NetworkInterfaceName = GetInterfaceName(queryObj("MACAddress"))  
+	     				If NetworkInterfaceName.Trim.Length = 0 Then
+	     					NetworkInterfaceName = GetNetworkInstanceName(queryObj("MACAddress").Replace("-",":"))
+	     				End If
+	     				NetworkCardList.Add(New DictionaryEntry(queryObj("MACAddress"), NetworkInterfaceName))
+	     				MACAddresses = MACAddresses & queryObj("MACAddress")
+	     			End If
      			End If
 			Next
 			
