@@ -375,10 +375,15 @@ Public Module Globals
      				' looking good? Then back to the original code ...
 	     			If Not MACAddresses.Contains(queryObj("MACAddress")) Then
 	     				NetworkInterfaceName = ""
-	     				NetworkInterfaceName = GetInterfaceName(queryObj("MACAddress"))  
-	     				If NetworkInterfaceName.Trim.Length = 0 Then
-	     					NetworkInterfaceName = GetNetworkInstanceName(queryObj("MACAddress").Replace("-",":"))
-	     				End If
+                        NetworkInterfaceName = GetInterfaceName(queryObj("MACAddress"))
+
+                        ' Implementing ivan.hrehor's solution from
+                        ' http://code.google.com/p/netprofiles/issues/detail?id=1#c18
+                        If NetworkInterfaceName Is Nothing Then
+                            NetworkInterfaceName = GetNetworkInstanceName(queryObj("MACAddress").Replace("-", ":"))
+                        ElseIf NetworkInterfaceName.Trim().Length = 0 Then
+                            NetworkInterfaceName = GetNetworkInstanceName(queryObj("MACAddress").Replace("-", ":"))
+                        End If
 	     				NetworkCardList.Add(New DictionaryEntry(queryObj("MACAddress"), NetworkInterfaceName))
 	     				MACAddresses = MACAddresses & queryObj("MACAddress")
 	     			End If
