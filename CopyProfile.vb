@@ -25,7 +25,8 @@ Public Partial Class CopyProfile
 	Public ProfileName_Messagebox As String
 	
 	Sub CopyProfileLoad(ByVal sender As Object, ByVal e As EventArgs)
-		Me.Opacity = "1"
+        'Me.Opacity = "1"
+        Me.Opacity = 1
 		Me.labelCopyThisProfile.Text = MainForm.listViewProfiles.SelectedItems.Item(0).SubItems.Item(0).Text
 		Me.textBoxNewName.Text = "Copy of " & Me.labelCopyThisProfile.Text
 		Me.comboBoxNetworkCards.DataSource = NetworkCardList
@@ -74,7 +75,8 @@ Public Partial Class CopyProfile
 		INIWrite(ThisINIFile, "General", "Name", Me.textBoxNewName.Text.Trim)
 		
 		'Me.Visible = False
-		Me.Opacity = "0"
+        'Me.Opacity = "0"
+        Me.Opacity = 0
         Application.DoEvents()
         Call MainForm.RefreshProfiles()
         'Me.Dispose
