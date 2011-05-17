@@ -40,7 +40,7 @@ Public Partial Class ProfileSettings
 	End Sub
 	
 	Sub ProfileSettingsLoad(ByVal sender As Object, ByVal e As EventArgs)
-		Me.Opacity = Opacity.MaxValue
+        Me.Opacity = Double.MaxValue
 		Me.progressBar1.Visible = True
 		Me.labelWorking.Visible = True
 		Me.timer1.Enabled = True
@@ -287,7 +287,7 @@ Public Partial Class ProfileSettings
         
         'Me.Hide
         'Me.Visible = False
-        Me.Opacity = Opacity.MinValue
+        Me.Opacity = Double.MinValue
         Application.DoEvents()
         Call MainForm.RefreshProfiles()
         'Me.Dispose
@@ -301,19 +301,19 @@ Public Partial Class ProfileSettings
 			If InStr(Numbers, Chr(KeyAscii)) = 0 Then
 				KeyAscii = 0
 				GoTo EventExitSub
-			ElseIf sender.Text.Length = 2 And sender.SelectionLength <> 2 And JumpForward = True Then
-				NextField.Focus()
-				NextField.SelectAll()
+            ElseIf CBool(sender.Text.Length = 2 And sender.SelectionLength <> 2 And JumpForward = True) Then
+                NextField.Focus()
+                NextField.SelectAll()
 			End If
-		ElseIf KeyAscii = 46 And JumpForward = True And sender.Text.Length > 0 Then
-			KeyAscii = 0
-			NextField.Focus()		
+        ElseIf CBool(KeyAscii = 46 And JumpForward = True And sender.Text.Length > 0) Then
+            KeyAscii = 0
+            NextField.Focus()
 		ElseIf KeyAscii = 46 Then
 			KeyAscii = 0
-		ElseIf KeyAscii = 8 And (sender.Text.Length = 1 Or sender.Text.Length = 0 Or sender.Text.Length = sender.SelectedText.Length) And JumpBack = True Then
-			PrevField.Focus()
-			'PrevField.Select(PrevField.Text.Length,1)
-			PrevField.SelectAll()
+        ElseIf CBool(KeyAscii = 8 And (sender.Text.Length = 1 Or sender.Text.Length = 0 Or sender.Text.Length = sender.SelectedText.Length) And JumpBack = True) Then
+            PrevField.Focus()
+            'PrevField.Select(PrevField.Text.Length,1)
+            PrevField.SelectAll()
 		End If
 		
 		EventExitSub:
@@ -324,122 +324,122 @@ Public Partial Class ProfileSettings
 	End Sub
 	
 	Sub TextBoxIPAddress1KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxIPAddress2, Me.textBoxIPAddress1, e, True, False)
 	End Sub	
 
 	Sub TextBoxIPAddress2KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxIPAddress3, Me.textBoxIPAddress1, e, True, True)
 	End Sub
 	
 	Sub TextBoxIPAddress3KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxIPAddress4, Me.textBoxIPAddress2, e, True, True)
 	End Sub
 	
 	Sub TextBoxIPAddress4KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxIPAddress4, Me.textBoxIPAddress3, e, False, True)
 	End Sub
 	
 	Sub TextBoxSubnetMask1KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxSubnetMask2, Me.textBoxSubnetMask1, e, True, False)
 	End Sub
 	
 	Sub TextBoxSubnetMask2KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxSubnetMask3, Me.textBoxSubnetMask1, e, True, True)
 	End Sub
 	
 	Sub TextBoxSubnetMask3KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxSubnetMask4, Me.textBoxSubnetMask2, e, True, True)
 	End Sub
 	
 	Sub TextBoxSubnetMask4KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxSubnetMask4, Me.textBoxSubnetMask3, e, False, True)
 	End Sub
 	
 	Sub TextBoxDefaultGateway1KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxDefaultGateway2, Me.textBoxDefaultGateway1, e, True, False)
 	End Sub
 	
 	Sub TextBoxDefaultGateway2KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxDefaultGateway3, Me.textBoxDefaultGateway1, e, True, True)
 	End Sub
 	
 	Sub TextBoxDefaultGateway3KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxDefaultGateway4, Me.textBoxDefaultGateway2, e, True, True)
 	End Sub
 	
 	Sub TextBoxDefaultGateway4KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxDefaultGateway4, Me.textBoxDefaultGateway3, e, False, True)
 	End Sub
 	
 	Sub TextBoxPrimaryDNSServer1KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxPrimaryDNSServer2, Me.textBoxPrimaryDNSServer1, e, True, False)
 	End Sub
 	
 	Sub TextBoxPrimaryDNSServer2KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxPrimaryDNSServer3, Me.textBoxPrimaryDNSServer1, e, True, True)
 	End Sub
 	
 	Sub TextBoxPrimaryDNSServer3KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxPrimaryDNSServer4, Me.textBoxPrimaryDNSServer2, e, True, True)
 	End Sub
 	
 	Sub TextBoxPrimaryDNSServer4KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxPrimaryDNSServer4, Me.textBoxPrimaryDNSServer3, e, False, True)
 	End Sub
 	
 	Sub TextBoxAlternateDNSServer1KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxAlternateDNSServer2, Me.textBoxAlternateDNSServer1, e, True, False)
 	End Sub
 	
 	Sub TextBoxAlternateDNSServer2KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxAlternateDNSServer3, Me.textBoxAlternateDNSServer1, e, True, True)
 	End Sub
 	
 	Sub TextBoxAlternateDNSServer3KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxAlternateDNSServer4, Me.textBoxAlternateDNSServer2, e, True, True)
 	End Sub
 	
 	Sub TextBoxAlternateDNSServer4KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxAlternateDNSServer4, Me.textBoxAlternateDNSServer3, e, False, True)
 	End Sub
 	
 	Sub TextBoxWINSServer1KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxWINSServer2, Me.textBoxWINSServer1, e, True, False)
 	End Sub
 	
 	Sub TextBoxWINSServer2KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxWINSServer3, Me.textBoxWINSServer1, e, True, True)
 	End Sub
 	
 	Sub TextBoxWINSServer3KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxWINSServer4, Me.textBoxWINSServer2, e, True, True)
 	End Sub
 	
 	Sub TextBoxWINSServer4KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs)
-		Dim KeyAscii As Short = Asc(e.KeyChar)
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
 		Call Me.ValidateIPBoxes(sender, KeyAscii, Me.textBoxWINSServer4, Me.textBoxWINSServer3, e, False, True)
 	End Sub
 	
@@ -472,7 +472,7 @@ Public Partial Class ProfileSettings
 			'*** LOAD IP SETTINGS ***
 			Dim IPAddress As String = INIRead(TheINIFile,"TCP/IP Settings","IP Address", "")
 			Application.DoEvents()
-			Dim IPAddressParts() As String = IPAddress.Split(".")
+            Dim IPAddressParts() As String = IPAddress.Split(CChar("."))
 			Application.DoEvents()
 			If IPAddressParts.GetUpperBound(0) = 3 Then
 				Me.textBoxIPAddress1.Text = IPAddressParts(0).ToString
@@ -487,7 +487,7 @@ Public Partial Class ProfileSettings
 			
 			Dim SubnetMask As String = INIRead(TheINIFile,"TCP/IP Settings","Subnet Mask", "")
 			Application.DoEvents()
-			Dim SubnetMaskParts() As String = SubnetMask.Split(".")
+            Dim SubnetMaskParts() As String = SubnetMask.Split(CChar("."))
 			Application.DoEvents()
 			If SubnetMaskParts.GetUpperBound(0) = 3 Then
 				Me.textBoxSubnetMask1.Text = SubnetMaskParts(0).ToString
@@ -502,7 +502,7 @@ Public Partial Class ProfileSettings
 			
 			Dim DefaultGateway As String = INIRead(TheINIFile,"TCP/IP Settings","Default Gateway", "")
 			Application.DoEvents()
-			Dim DefaultGatewayParts() As String = DefaultGateway.Split(".")
+            Dim DefaultGatewayParts() As String = DefaultGateway.Split(CChar("."))
 			Application.DoEvents()
 			If DefaultGatewayParts.GetUpperBound(0) = 3 Then
 				Me.textBoxDefaultGateway1.Text = DefaultGatewayParts(0).ToString
@@ -517,7 +517,7 @@ Public Partial Class ProfileSettings
 			
 			Dim PrimaryDNSServer As String = INIRead(TheINIFile,"TCP/IP Settings","DNS Server", "")
 			Application.DoEvents()
-			Dim PrimaryDNSServerParts() As String = PrimaryDNSServer.Split(".")
+            Dim PrimaryDNSServerParts() As String = PrimaryDNSServer.Split(CChar("."))
 			Application.DoEvents()
 			If PrimaryDNSServerParts.GetUpperBound(0) = 3 Then
 				Me.textBoxPrimaryDNSServer1.Text = PrimaryDNSServerParts(0).ToString
@@ -532,7 +532,7 @@ Public Partial Class ProfileSettings
 			
 			Dim AlternateDNSServer As String = INIRead(TheINIFile,"TCP/IP Settings","Alternate DNS Server", "")
 			Application.DoEvents()
-			Dim AlternateDNSServerParts() As String = AlternateDNSServer.Split(".")
+            Dim AlternateDNSServerParts() As String = AlternateDNSServer.Split(CChar("."))
 			Application.DoEvents()
 			If AlternateDNSServerParts.GetUpperBound(0) = 3 Then
 				Me.textBoxAlternateDNSServer1.Text = AlternateDNSServerParts(0).ToString
@@ -547,7 +547,7 @@ Public Partial Class ProfileSettings
 			
 			Dim WINSServer As String = INIRead(TheINIFile,"TCP/IP Settings","WINS Server", "")
 			Application.DoEvents()
-			Dim WINSServerParts() As String = WINSServer.Split(".")
+            Dim WINSServerParts() As String = WINSServer.Split(CChar("."))
 			Application.DoEvents()
 			If WINSServerParts.GetUpperBound(0) = 3 Then
 				Me.textBoxWINSServer1.Text = WINSServerParts(0).ToString
@@ -582,11 +582,11 @@ Public Partial Class ProfileSettings
 			iniText = INIRead(TheINIFile, "Mapped Drives")
 			iniText = iniText.Replace(ControlChars.NullChar, "|")
 			iniText = Trim(iniText)
-			iniArray = iniText.Split("|")
+            iniArray = iniText.Split(CChar("|"))
 			Dim iniArray2() As String
 			Dim X As Integer
 			For X = iniArray.GetLowerBound(0) To (iniArray.GetUpperBound(0) - 1)
-				iniArray2 = INIRead(TheINIFile,"Mapped Drives", iniArray(X), "").Split("|")
+                iniArray2 = INIRead(TheINIFile, "Mapped Drives", iniArray(X), "").Split(CChar("|"))
 				Dim itmx As ListViewItem
 				itmx = Me.listViewMappedDrives.Items.Add(iniArray(X))
 				itmx.SubItems.Add(iniArray2(0))
@@ -618,20 +618,20 @@ Public Partial Class ProfileSettings
 			Application.DoEvents()
 			Me.textBoxDefaultHomepage.Text = INIRead(TheINIFile,"Internet Settings", "DefaultHomepage", "")
 			Application.DoEvents()
-			Me.checkBoxIE.Checked = INIRead(TheINIFile, "Internet Settings", "InternetExplorer", False)
+            Me.checkBoxIE.Checked = CBool(INIRead(TheINIFile, "Internet Settings", "InternetExplorer", "False"))
 			Application.DoEvents()
-			Me.checkBoxFirefox.Checked = INIRead(TheINIFile, "Internet Settings", "Firefox", False)
+            Me.checkBoxFirefox.Checked = CBool(INIRead(TheINIFile, "Internet Settings", "Firefox", "False"))
 			Application.DoEvents()
-			Me.checkBoxOpera.Checked = INIRead(TheINIFile, "Internet Settings", "Opera", False)
+            Me.checkBoxOpera.Checked = CBool(INIRead(TheINIFile, "Internet Settings", "Opera", "False"))
 			Application.DoEvents()
-			Me.checkBoxBypassProxyForLocalAddresses.Checked = INIRead(TheINIFile, "Internet Settings", "ProxyBypass", False)
+            Me.checkBoxBypassProxyForLocalAddresses.Checked = CBool(INIRead(TheINIFile, "Internet Settings", "ProxyBypass", "False"))
 			
 			Dim iniTextRun As String
 			Dim iniRunArray() As String
 			iniTextRun = INIRead(TheINIFile, "Run")
 			iniTextRun = iniTextRun.Replace(ControlChars.NullChar, "|")
 			iniTextRun = Trim(iniTextRun)
-			iniRunArray = iniTextRun.Split("|")
+            iniRunArray = iniTextRun.Split(CChar("|"))
 			Dim iniRunArray2() As String
 			Dim XRun As Integer
 			For XRun = iniRunArray.GetLowerBound(0) To (iniRunArray.GetUpperBound(0) - 1)
@@ -750,7 +750,7 @@ Public Partial Class ProfileSettings
     	Else
       		Try
         		' read and display the value
-        		Dim startPage As String = rk.GetValue("Start Page")
+                Dim startPage As String = CStr(rk.GetValue("Start Page"))
         		Me.textBoxDefaultHomepage.Text = startPage
       		Finally
         		' cleanup
@@ -777,7 +777,7 @@ Public Partial Class ProfileSettings
 	
 	Sub ButtonGetCurrentIPSettingsClick(ByVal sender As Object, ByVal e As EventArgs)
 		Dim CurrentIPSettings As String = GetCurrentIPSettings(Me.comboBoxNetworkCards.SelectedValue.ToString)
-		Dim CurrentIPSettingsArray() As String = CurrentIPSettings.Split("|")
+        Dim CurrentIPSettingsArray() As String = CurrentIPSettings.Split(CChar("|"))
 		
 		If CurrentIPSettingsArray(0).ToString = "True" Then
 			Me.checkBoxDHCP.Checked = True
@@ -786,7 +786,7 @@ Public Partial Class ProfileSettings
 		End If
 		
 		If CurrentIPSettingsArray(1).Length > 0 Then
-			Dim CurrentIPAddress() As String = CurrentIPSettingsArray(1).Split(".")
+            Dim CurrentIPAddress() As String = CurrentIPSettingsArray(1).Split(CChar("."))
 			Me.textBoxIPAddress1.Text = CurrentIPAddress(0)
 			Me.textBoxIPAddress2.Text = CurrentIPAddress(1)
 			Me.textBoxIPAddress3.Text = CurrentIPAddress(2)
@@ -799,7 +799,7 @@ Public Partial Class ProfileSettings
 		End If
 		
 		If CurrentIPSettingsArray(2).Length > 0 Then
-			Dim CurrentSubnetMask() As String = CurrentIPSettingsArray(2).Split(".")
+            Dim CurrentSubnetMask() As String = CurrentIPSettingsArray(2).Split(CChar("."))
 			Me.textBoxSubnetMask1.Text = CurrentSubnetMask(0)
 			Me.textBoxSubnetMask2.Text = CurrentSubnetMask(1)
 			Me.textBoxSubnetMask3.Text = CurrentSubnetMask(2)
@@ -812,7 +812,7 @@ Public Partial Class ProfileSettings
 		End If
 		
 		If CurrentIPSettingsArray(3).Length > 0 Then
-			Dim CurrentDefaultGateway() As String = CurrentIPSettingsArray(3).Split(".")
+            Dim CurrentDefaultGateway() As String = CurrentIPSettingsArray(3).Split(CChar("."))
 			Me.textBoxDefaultGateway1.Text = CurrentDefaultGateway(0)
 			Me.textBoxDefaultGateway2.Text = CurrentDefaultGateway(1)
 			Me.textBoxDefaultGateway3.Text = CurrentDefaultGateway(2)
@@ -825,9 +825,9 @@ Public Partial Class ProfileSettings
 		End If
 		
 		If CurrentIPSettingsArray(4).Length > 0 Then
-			Dim CurrentDNSServerArray() As String = CurrentIPSettingsArray(4).Split(",")
+            Dim CurrentDNSServerArray() As String = CurrentIPSettingsArray(4).Split(CChar(","))
 			If CurrentDNSServerArray.GetUpperBound(0) > 0 Or CurrentDNSServerArray.GetUpperBound(0) = 0 Then
-				Dim CurrentPrimaryDNSServer() As String = CurrentDNSServerArray(0).Split(".")
+                Dim CurrentPrimaryDNSServer() As String = CurrentDNSServerArray(0).Split(CChar("."))
 				Me.textBoxPrimaryDNSServer1.Text = CurrentPrimaryDNSServer(0)
 				Me.textBoxPrimaryDNSServer2.Text = CurrentPrimaryDNSServer(1)
 				Me.textBoxPrimaryDNSServer3.Text = CurrentPrimaryDNSServer(2)
@@ -839,7 +839,7 @@ Public Partial Class ProfileSettings
 				Me.textBoxPrimaryDNSServer4.Text = ""
 			End If
 			If CurrentDNSServerArray.GetUpperBound(0) > 0 Then
-				Dim CurrentAlternateDNSServer() As String = CurrentDNSServerArray(1).Split(".")
+                Dim CurrentAlternateDNSServer() As String = CurrentDNSServerArray(1).Split(CChar("."))
 				Me.textBoxAlternateDNSServer1.Text = CurrentAlternateDNSServer(0)
 				Me.textBoxAlternateDNSServer2.Text = CurrentAlternateDNSServer(1)
 				Me.textBoxAlternateDNSServer3.Text = CurrentAlternateDNSServer(2)
@@ -863,7 +863,7 @@ Public Partial Class ProfileSettings
 		End If
 		
 		If CurrentIPSettingsArray(5).Length > 0 Then
-			Dim CurrentWINSServer() As String = CurrentIPSettingsArray(5).Split(".")
+            Dim CurrentWINSServer() As String = CurrentIPSettingsArray(5).Split(CChar("."))
 			Me.textBoxWINSServer1.Text = CurrentWINSServer(0)
 			Me.textBoxWINSServer2.Text = CurrentWINSServer(1)
 			Me.textBoxWINSServer3.Text = CurrentWINSServer(2)
@@ -879,15 +879,15 @@ Public Partial Class ProfileSettings
 	Sub ButtonGetCurrentServerAddressSettingsClick(ByVal sender As Object, ByVal e As EventArgs)
 		Dim regKey As RegistryKey
 		regKey = Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Internet Settings\", True)
-		Dim ProxyEnable As String = regKey.GetValue("ProxyEnable", 0)
+        Dim ProxyEnable As String = CStr(regKey.GetValue("ProxyEnable", 0))
 		If ProxyEnable = "0" Then
 			Me.checkBoxUseProxySettings.Checked = False
 		Else
 			Me.checkBoxUseProxySettings.Checked = True
 		End If
-		Dim ProxyAddress As String = regKey.GetValue("ProxyServer", "")
+        Dim ProxyAddress As String = CStr(regKey.GetValue("ProxyServer", ""))
 		If ProxyAddress.Contains(":") Then
-			Dim ProxyAddressArray() As String = ProxyAddress.Split(":")
+            Dim ProxyAddressArray() As String = ProxyAddress.Split(CChar(":"))
 			Me.textBoxServerAddress.Text = ProxyAddressArray(0)
 			Me.textBoxPort.Text = ProxyAddressArray(1)
 		Else
