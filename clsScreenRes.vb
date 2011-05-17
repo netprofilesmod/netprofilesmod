@@ -287,13 +287,13 @@ Errorhandler:
 
         Dim strSplit(1) As String
         strSplit = Split(m_currentRes, "x", 2, CompareMethod.Text)
-        m_width = Val(strSplit(0))
-        m_height = Val(strSplit(1))
+        m_width = CInt(Val(strSplit(0)))
+        m_height = CInt(Val(strSplit(1)))
         'Dim strSplit(2) As String
         'strSplit = Split(m_currentRes, " ", 3, CompareMethod.Text)
         'm_width = Val(strSplit(0))
         'm_height = Val(strSplit(2))
-        m_bpp = Val(m_currentBPP)
+        m_bpp = CInt(Val(m_currentBPP))
         'Select Case m_currentBPP.ToString
         '	Case "256 (8 bit)"
 		'		m_bpp = Val("8")
@@ -302,7 +302,7 @@ Errorhandler:
 		'	Case "Highest (32 bit)"
 		'		m_bpp = Val("32")
         'End Select
-        m_refreshrate = Val(m_currentRefresh)
+        m_refreshrate = CInt(Val(m_currentRefresh))
         Return m_width & "x" & m_height & "x" & m_bpp & "x" & m_refreshrate
 
     End Function
@@ -321,7 +321,7 @@ Errorhandler:
 		Dim byText As String = root.SelectSingleNode("/Language/ProfileSettings/ScreenResolutionText-By").InnerText
 		Dim pixelsText As String = root.SelectSingleNode("/Language/ProfileSettings/ScreenResolutionText-Pixels").InnerText
         
-        Dim strTempResArray() As String = m_currentRes.Split("x")
+        Dim strTempResArray() As String = m_currentRes.Split(CChar("x"))
         Return strTempResArray(0) & " " & byText & " " & strTempResArray(1) & " " & pixelsText
         'Return m_currentRes
     End Function
@@ -340,13 +340,13 @@ Errorhandler:
         
         Dim ThisBPP As String = ""
 		Select Case m_currentBPP
-			Case 8
-				ThisBPP = "256 (8 " & bitText & ")"
-			Case 16
-				ThisBPP = lowestText & " (16 " & bitText & ")"
-			Case 32
-				ThisBPP = highestText & " (32 " & bitText & ")"
-		End Select
+            Case "8"
+                ThisBPP = "256 (8 " & bitText & ")"
+            Case "16"
+                ThisBPP = lowestText & " (16 " & bitText & ")"
+            Case "32"
+                ThisBPP = highestText & " (32 " & bitText & ")"
+        End Select
         Return ThisBPP
     End Function
 
@@ -370,18 +370,18 @@ Errorhandler:
         Dim DevM As New DEVMODE
         Dim lnumModes As Integer = 0
 
-        l = EnumDisplaySettings(0, -1, DevM)
+        l = CLng(EnumDisplaySettings(0, -1, DevM))
 
-        Do While l
+        Do While CBool(l)
             If DevM.dmBitsPerPel = 8 And strPrevious <> DevM.dmPelsWidth & "x" & DevM.dmPelsHeight Then
-            'If DevM.dmBitsPerPel = 8 And strPrevious <> DevM.dmPelsWidth & " by " & DevM.dmPelsHeight & " pixels" Then
+                'If DevM.dmBitsPerPel = 8 And strPrevious <> DevM.dmPelsWidth & " by " & DevM.dmPelsHeight & " pixels" Then
                 If strResolutions = "" Then
                     strResolutions = DevM.dmPelsWidth & "x" & DevM.dmPelsHeight
                     'strResolutions = DevM.dmPelsWidth & " by " & DevM.dmPelsHeight & " pixels"
                     strFirst = strResolutions
                 Else
                     If strFirst <> DevM.dmPelsWidth & "x" & DevM.dmPelsHeight Then
-                    'If strFirst <> DevM.dmPelsWidth & " by " & DevM.dmPelsHeight & " pixels" Then
+                        'If strFirst <> DevM.dmPelsWidth & " by " & DevM.dmPelsHeight & " pixels" Then
                         strResolutions = strResolutions & "," & DevM.dmPelsWidth & "x" & DevM.dmPelsHeight
                         'strResolutions = strResolutions & "," & DevM.dmPelsWidth & " by " & DevM.dmPelsHeight & " pixels"
                         ' Debug.Print(strResolutions)
@@ -393,7 +393,7 @@ Errorhandler:
 
             lnumModes = lnumModes + 1
             If lnumModes > lMaxModes Then lMaxModes = lMaxModes + 8
-            l = EnumDisplaySettings(0, lnumModes, DevM)
+            l = CLng(EnumDisplaySettings(0, lnumModes, DevM))
         Loop
 
         If bStandardResolutionsOnly = True And bValidating = False Then
@@ -438,9 +438,9 @@ Errorhandler:
         Dim DevM As New DEVMODE
 
 
-        l = EnumDisplaySettings(0, -1, DevM)
+        l = CLng(EnumDisplaySettings(0, -1, DevM))
 
-        Do While l
+        Do While CBool(l)
 
             Select Case Val(DevM.dmBitsPerPel)
                 Case 8
@@ -457,7 +457,7 @@ Errorhandler:
             lnumModes = lnumModes + 1
             If lnumModes > lMaxModes Then lMaxModes = lMaxModes + 8
 
-            l = EnumDisplaySettings(0, lnumModes, DevM)
+            l = CLng(EnumDisplaySettings(0, lnumModes, DevM))
 
         Loop
         For Each strBPP In strArrayBPP
@@ -485,19 +485,19 @@ Errorhandler:
         Dim DevM As New DEVMODE
 
         Dim lnumModes As Integer = 0
-        lngTemp = EnumDisplaySettings(0, -1, DevM)
+        lngTemp = CLng(EnumDisplaySettings(0, -1, DevM))
 
         strCheckResolution = iWidth & "x" & iHeight
         'strCheckResolution = iWidth & " by " & iHeight & " pixels"
 
-        Do While lngTemp
+        Do While CBool(lngTemp)
 
             strTempResolution = DevM.dmPelsWidth & "x" & DevM.dmPelsHeight
             'strTempResolution = DevM.dmPelsWidth & " by " & DevM.dmPelsHeight & " pixels"
 
             If strTempResolution = strCheckResolution And DevM.dmBitsPerPel = 8 Then
                 If strTempRates = "" Then
-                    strTempRates = DevM.dmDisplayFrequency
+                    strTempRates = CStr(DevM.dmDisplayFrequency)
                 Else
                     strTempRates = strTempRates & "," & DevM.dmDisplayFrequency
 
@@ -507,7 +507,7 @@ Errorhandler:
             lnumModes = lnumModes + 1
             If lnumModes > lngMaxModes Then lngMaxModes = lngMaxModes + 8
 
-            lngTemp = EnumDisplaySettings(0, lnumModes, DevM)
+            lngTemp = CLng(EnumDisplaySettings(0, lnumModes, DevM))
 
         Loop
 
