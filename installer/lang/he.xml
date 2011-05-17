@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><Language name="he" translated_by="Ariel Nemtzov" version="1" date="10/10/09" display_name="עברית">
+  <MainForm>
+    <fileToolStripMenuItem>קובץ</fileToolStripMenuItem>
+    <toolStripMenuItemNewProfile>פרופיל חדש</toolStripMenuItemNewProfile>
+    <applyProfileToolStripMenuItemApplyProfile>הפעל פרופיל</applyProfileToolStripMenuItemApplyProfile>
+    <activateOnDifferentNetworkCardToolStripMenuItem1>הפעל פרופיל בכרטיס רשת אחר</activateOnDifferentNetworkCardToolStripMenuItem1>
+    <toolStripMenuItemCopyProfile>העתק</toolStripMenuItemCopyProfile>
+    <toolStripMenuItemEditProfile>ערוך</toolStripMenuItemEditProfile>
+    <deleteToolStripMenuItemDeleteProfile>מחק</deleteToolStripMenuItemDeleteProfile>
+    <createDesktopShortcutToolStripMenuItem1>צור קיצור דרך בשולחן העבודה</createDesktopShortcutToolStripMenuItem1>
+    <exitToolStripMenuItem>צא</exitToolStripMenuItem>
+    <optionsToolStripMenuItem>אפשרויות</optionsToolStripMenuItem>
+    <toggleToolbarTextToolStripMenuItem>הצג טקסט בסרגל הכלים</toggleToolbarTextToolStripMenuItem>
+    <minimizeToTrayOnCloseToolStripMenuItem>הקטן למגש ביציאה</minimizeToTrayOnCloseToolStripMenuItem>
+    <minimizeToTrayOnStartupToolStripMenuItem>הקטן למגש בהפעלה</minimizeToTrayOnStartupToolStripMenuItem>
+    <dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>אל תשאל לפני הפעלה אוטומטית של פרופילים אלחוטיים</dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>
+    <screenResolutionToolStripMenuItem>רזולוציית מסך</screenResolutionToolStripMenuItem>
+    <askBeforeChangingResolutionToolStripMenuItem>שאל לפני שינוי רזולוציה</askBeforeChangingResolutionToolStripMenuItem>
+    <confirmSettingsAfterChangingResolutionToolStripMenuItem>אשר הגדרות לאחר שינוי רזולוציה</confirmSettingsAfterChangingResolutionToolStripMenuItem>
+    <runWhenILogInToWindowsToolStripMenuItem>הפעל כשאני נכנס לחלונות</runWhenILogInToWindowsToolStripMenuItem>
+    <languageToolStripMenuItem>בחר שפה</languageToolStripMenuItem>
+    <customizeDesktopShortcutsToolStripMenuItem>התאם אישית קיצורי דרך בשולחן העבודה</customizeDesktopShortcutsToolStripMenuItem>
+    <reloadNetworkInterfacesToolStripMenuItem>טען ממשקי רשת מחדש</reloadNetworkInterfacesToolStripMenuItem>
+    <reloadProfilesToolStripMenuItem>טען פרופילים מחדש</reloadProfilesToolStripMenuItem>
+    <helpToolStripMenuItem>עזרה</helpToolStripMenuItem>
+<!-- Required: %1 (program name) -->    <netProfilesWebsiteToolStripMenuItem>%1 אתר האינטרנט של</netProfilesWebsiteToolStripMenuItem>
+    <checkForUpdatesToolStripMenuItem>חפש עידכונים</checkForUpdatesToolStripMenuItem>
+    <aboutToolStripMenuItem>אודות</aboutToolStripMenuItem>
+    <toolStripButtonNewProfile>פרופיל חדש</toolStripButtonNewProfile>
+    <toolStripButtonApplyProfile>הפעל פרופיל</toolStripButtonApplyProfile>
+    <toolStripButtonCopyProfile>העתק</toolStripButtonCopyProfile>
+    <toolStripButtonEditProfile>ערוך</toolStripButtonEditProfile>
+    <toolStripButtonDeleteProfile>מחק</toolStripButtonDeleteProfile>
+    <toolStripStatusLabelWorking>...טוען פרופילים</toolStripStatusLabelWorking>
+    <toolStripStatusLabelWorking-Preloading>...טוען מראש ממשקי רשת</toolStripStatusLabelWorking-Preloading>
+    <toolStripStatusLabelWorking-Activating>...מפעיל פרופיל</toolStripStatusLabelWorking-Activating>
+    <toolStripStatusLabelWorking-UnmapDrives>...מנתק כוננים ממופים</toolStripStatusLabelWorking-UnmapDrives>
+    <toolStripStatusLabelWorking-MapDrives>...מחבר כוננים ממופים</toolStripStatusLabelWorking-MapDrives>
+    <toolStripStatusLabelWorking-Printer>...קובע מדפסת ברירת מחדל</toolStripStatusLabelWorking-Printer>
+    <toolStripStatusLabelWorking-Internet>...מפעיל הגדרות אינטרנט</toolStripStatusLabelWorking-Internet>
+    <toolStripStatusLabelWorking-Homepage>...קובע את דף הבית</toolStripStatusLabelWorking-Homepage>
+    <toolStripStatusLabelWorking-Programs>...מריץ תוכנות</toolStripStatusLabelWorking-Programs>
+    <toolStripStatusLabelWorking-Wallpaper>...משנה טפט</toolStripStatusLabelWorking-Wallpaper>
+    <toolStripStatusLabelWorking-Resolution>...משנה רזולציית מסך</toolStripStatusLabelWorking-Resolution>
+    <toolStripStatusLabelWorking-Reloading>...טוען ממשקי רשת מחדש</toolStripStatusLabelWorking-Reloading>
+    <toolStripStatusLabelWorking-DHCP>...DHCP מאפשר</toolStripStatusLabelWorking-DHCP>
+    <toolStripStatusLabelWorking-IPAddress>...IP קובע כתובת</toolStripStatusLabelWorking-IPAddress>
+    <toolStripStatusLabelWorking-Gateway>...קובע שער</toolStripStatusLabelWorking-Gateway>
+    <toolStripStatusLabelWorking-DNS>...DNS קובע שרתי</toolStripStatusLabelWorking-DNS>
+    <toolStripStatusLabelWorking-WINS>...WINS קובע שרת</toolStripStatusLabelWorking-WINS>
+    <applyProfileToolStripMenuItem>הפעל פרופיל</applyProfileToolStripMenuItem>
+    <activateOnDifferentNetworkCardToolStripMenuItem>הפעל בכרטיס רשת אחר</activateOnDifferentNetworkCardToolStripMenuItem>
+    <copyToolStripMenuItem>העתק</copyToolStripMenuItem>
+    <editToolStripMenuItem>ערוך</editToolStripMenuItem>
+    <deleteToolStripMenuItem>מחק</deleteToolStripMenuItem>
+    <createDesktopShortcutToolStripMenuItem>צור קיצור דרך בשולחן העבודה</createDesktopShortcutToolStripMenuItem>
+    <showHideWindowToolStripMenuItem>הצג/הסתר חלון</showHideWindowToolStripMenuItem>
+    <profilesToolStripMenuItem>פרופילים</profilesToolStripMenuItem>
+    <exitToolStripMenuItem1>צא</exitToolStripMenuItem1>
+    <NoNetworkProfilesMessageBox-1>.לא קיימים שום פרופילי רשת כרגע</NoNetworkProfilesMessageBox-1>
+    <NoNetworkProfilesMessageBox-2>?ליצור אחד כעת</NoNetworkProfilesMessageBox-2>
+<!-- Required: %1 (profile name) -->    <DeleteProfileMessageBox>?%1 האם אתה בטוח שאתה רוצה להסיר את</DeleteProfileMessageBox>
+    <DeleteProfileMessageBox-Title>מחק פרופיל</DeleteProfileMessageBox-Title>
+<!-- Available Variables: %1 (interface name), %2 (profile name), %3 (ip address), %4 (mac address) -->    <ShortcutConfigDefault>%1- %2 הפעל</ShortcutConfigDefault>
+    <CreateShortcutMessagebox>.קיצור הדרך מוצר על שולחן העבודה שלך</CreateShortcutMessagebox>
+    <CheckForUpdates-Latest>.יש לך את הגירסה המעודכנת ביותר</CheckForUpdates-Latest>
+<!-- Required: %1 (program name), %2 (program version) -->    <CheckForUpdates-New-1>%2 %1 :גירסה זמינה כעת</CheckForUpdates-New-1>
+<!-- Required: %1 (program name) -->    <CheckForUpdates-New-2>?%1 האם תרצה להוריד אותה מהאתר של </CheckForUpdates-New-2>
+<!-- Required: %1 (program name) -->    <CheckForUpdates-Title>%1 עדכון של</CheckForUpdates-Title>
+    <CheckForUpdates-Error-1>.אירעה שגיאה בזמן חיפוש עידכונים</CheckForUpdates-Error-1>
+    <CheckForUpdates-Error-2>.אנא נסה שנית מאוחר יותר</CheckForUpdates-Error-2>
+  </MainForm>
+  <About>
+    <labelFreeware>תוכנה זו הינה חינמית</labelFreeware>
+<!-- Required: %1 (program name) -->    <WindowTitle>%1 אודות</WindowTitle>
+    <buttonOK>אוקיי</buttonOK>
+  </About>
+  <ActivateSelectNetworkCard>
+    <WindowTitle>הפעל פרופיל</WindowTitle>
+    <labelProfileTitle>פרופיל:</labelProfileTitle>
+    <labelSelectNetworkCard>בחר כרטיס רשת:</labelSelectNetworkCard>
+    <buttonActivate>הפעל</buttonActivate>
+    <buttonCancel>בטל</buttonCancel>
+  </ActivateSelectNetworkCard>
+  <AutoActivate>
+<!-- Required: %1 (profile name), %2 (network card name) -->    <labelTitle>...%1- %2 מפעיל</labelTitle>
+  </AutoActivate>
+  <DesktopShortcut>
+    <WindowTitle>הגדרת קיצור דרך בשולחן העבודה</WindowTitle>
+    <groupBoxLegend>מקרא</groupBoxLegend>
+    <labelVar1>שם ממשק הרשת</labelVar1>
+    <labelVar2>שם הפרופיל</labelVar2>
+    <labelVar3>של הפרופיל IP-כתובת ה</labelVar3>
+    <labelVar4>של הפרופיל MAC-כתובת ה</labelVar4>
+    <buttonRestoreDefaults>שחזר ברירות מחדל</buttonRestoreDefaults>
+    <buttonSave>שמור</buttonSave>
+    <buttonCancel>סגור</buttonCancel>
+  </DesktopShortcut>
+  <MappedDrive>
+    <WindowTitle>כונן ממופה</WindowTitle>
+    <labelUsername>שם משתמש:</labelUsername>
+    <labelPassword>סיסמא:</labelPassword>
+    <labelNote>.ניתן להשאר שם משתמש וסיסמא ריקים אם אינם נחוצים</labelNote>
+    <buttonSave>שמור</buttonSave>
+    <buttonAdd>הוסף</buttonAdd>
+    <buttonCancel>סגור</buttonCancel>
+    <AlreadyMapped-Messagebox>.אות הכונן הזאת כבר ממופית בפרופיל זה</AlreadyMapped-Messagebox>
+    <DriveUsed>בשימוש</DriveUsed>
+  </MappedDrive>
+  <ProfileSettings>
+    <WindowTitle>הגדרות פרופיל</WindowTitle>
+    <labelProfileName>שם:</labelProfileName>
+    <labelNetworkCard>כרטיס רשת:</labelNetworkCard>
+    <tabPageIPSettings>IP הגדרות</tabPageIPSettings>
+    <tabPageInternet>אינטרנט</tabPageInternet>
+    <tabPageMappedDrives>כוננים ממופים</tabPageMappedDrives>
+    <tabPagePrinter>מדפסת</tabPagePrinter>
+    <tabPageRun>הרץ</tabPageRun>
+    <tabPageDesktop>שולחן העבודה</tabPageDesktop>
+    <tabPageWireless>אלחוטי</tabPageWireless>
+    <checkBoxDHCP>(DHCP) באופן אוטומטי IP השג כתובת</checkBoxDHCP>
+    <labelIPAddress>IP כתובת:</labelIPAddress>
+    <labelSubnetMask>מסיכת תת-רשת:</labelSubnetMask>
+    <labelDefaultGateway>שער ברירת המחדל:</labelDefaultGateway>
+    <labelPrimaryDNSServer>ראשי DNS שרת:</labelPrimaryDNSServer>
+    <labelAlternateDNSServer>חילופי DNS שרת:</labelAlternateDNSServer>
+    <labelWINSServer>WINS שרת:</labelWINSServer>
+    <buttonGetCurrentIPSettings>השג הגדרות נוכחיות</buttonGetCurrentIPSettings>
+    <groupBoxAutoConfigAddress>כתובת הגדרה אוטומטית:</groupBoxAutoConfigAddress>
+    <groupBoxProxy>השתמש בהגדרות פרוקסי</groupBoxProxy>
+    <labelServerAddress>כתובת שרת:</labelServerAddress>
+    <labelPort>פורט:</labelPort>
+    <checkBoxBypassProxy>(IE-ו Opera) עקוף שרת פרוקסי עבור כתובות מקומיות</checkBoxBypassProxy>
+    <groupBoxHomepage>ברירת המחדל של דף הבית:</groupBoxHomepage>
+    <buttonUseBlankHomepage>השתמש בריק</buttonUseBlankHomepage>
+    <labelHomepageNote>.השאר ריק בשביל לא לשנות</labelHomepageNote>
+    <groupBoxWebBrowsers>אפשר הגדרות הבור</groupBoxWebBrowsers>
+    <buttonClearFirefox>Firefox נקה הגדרות</buttonClearFirefox>
+    <buttonClearFirefox-ToolTip>.Firefox הקלק כאן אם נתקלת בקשיים בשינוי הגדרות הפרוקסי או ברירת המחדל של דף הבית מתוך</buttonClearFirefox-ToolTip>
+    <groupBoxPleaseNote>לתשומת ליבך</groupBoxPleaseNote>
+    <labelPleaseNote>.לא יכולות לפעול על מנת שהשינויים ייכנסו לתוקף Mozilla Firefox-ו Opera</labelPleaseNote>
+    <checkBoxIE>Internet Explorer</checkBoxIE>
+    <checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
+    <checkBoxOpera>Opera</checkBoxOpera>
+    <ClearFirefox-Messagebox-1>.ההגדרות הוסרו</ClearFirefox-Messagebox-1>
+    <ClearFirefox-Messagebox-2>.פועל, יש להפעילו מחדש על מנת שהשינויים ייכנסו לתוקף Firefox אם</ClearFirefox-Messagebox-2>
+    <toolStripButtonAddDrive>הוסף כונן</toolStripButtonAddDrive>
+    <toolStripButtonEditDrive>ערוך</toolStripButtonEditDrive>
+    <toolStripButtonRemoveDrive>הסר</toolStripButtonRemoveDrive>
+    <groupBoxPrinter>מדפסת ברירת המחדל</groupBoxPrinter>
+    <buttonGetDefaultPrinter>השג הגדרות נוכחיות</buttonGetDefaultPrinter>
+    <toolStripButtonAddProgram>הוסף תוכנה</toolStripButtonAddProgram>
+    <toolStripButtonEditProgram>ערוך</toolStripButtonEditProgram>
+    <toolStripButtonRemoveProgram>הסר</toolStripButtonRemoveProgram>
+    <groupBoxWallpaper>טפט</groupBoxWallpaper>
+    <buttonBrowseWallpaper-ToolTip>עיין עבור טפט</buttonBrowseWallpaper-ToolTip>
+    <openFileDialogWallpaper-Title>.בחר את הטפט שברצונך להשתמש</openFileDialogWallpaper-Title>
+    <openFileDialogWallpaper-Filter>קבצי תמונה</openFileDialogWallpaper-Filter>
+    <buttonResetWallpaper-ToolTip>הסר טפט</buttonResetWallpaper-ToolTip>
+    <groupBoxWallpaperPreview>תצוגה מקדימה</groupBoxWallpaperPreview>
+    <groupBoxDisplaySettings>הגדרות תצוגה</groupBoxDisplaySettings>
+    <labelScreenResolution>רזולוציית מסך:</labelScreenResolution>
+    <ScreenResolutionText-By>על</ScreenResolutionText-By>
+    <ScreenResolutionText-Pixels>פיקסלים</ScreenResolutionText-Pixels>
+    <labelColorQuality>איכות צבע:</labelColorQuality>
+    <ColorQualityText-Bit>ביט</ColorQualityText-Bit>
+    <ColorQualityText-Lowest>הכי נמוך</ColorQualityText-Lowest>
+    <ColorQualityText-Highest>הכי גבוה</ColorQualityText-Highest>
+    <buttonGetCurrentDisplaySettings>השג הגדרות נוכחיות</buttonGetCurrentDisplaySettings>
+    <groupBoxWireless>הפעל פרופיל אוטומטית</groupBoxWireless>
+    <labelSSID>אלחוטי SSID:</labelSSID>
+    <labelSSIDNotes>.אלחוטי תפעיל את הפרופיל הזה אוטומטית כאשר יתגלה חיבור לרשת האלחוטית הנ&quot;ל SSID ציון</labelSSIDNotes>
+    <labelWirelessVista>Vista-האלחוטי המחובר ב SSID-תווית זו תהיה מנוטרלת עד שאבין איך לראות את ה :Vista משתמשי</labelWirelessVista>
+    <buttonSave>שמור</buttonSave>
+    <buttonClose>סגור</buttonClose>
+    <labelWorking-NetworkCards>...טוען כרטיסי רשת</labelWorking-NetworkCards>
+    <labelWorking-Profile>...טוען פרופיל</labelWorking-Profile>
+    <labelWorking-Printer>...טוען מדפסות</labelWorking-Printer>
+    <ProfileName-Messagebox>.אנא הכנס שם לפרופיל זה</ProfileName-Messagebox>
+  </ProfileSettings>
+  <RunPrograms>
+    <WindowTitle>הרץ תוכנות</WindowTitle>
+    <labelPath>נתיב:</labelPath>
+    <labelArgs>טענות:</labelArgs>
+    <labelRun>הרץ:</labelRun>
+    <groupBoxCredentials>(הרץ עם הרשאות שונות (אופציה</groupBoxCredentials>
+    <labelUsername>שם משתמש:</labelUsername>
+    <labelPassword>סיסמא:</labelPassword>
+    <labelDomain>דומיין:</labelDomain>
+    <buttonAdd>הוסף</buttonAdd>
+    <buttonSave>שמור</buttonSave>
+    <buttonCancel>בטל</buttonCancel>
+    <RunText-Normal>רגיל</RunText-Normal>
+    <RunText-Minimized>מוקטן</RunText-Minimized>
+    <RunText-Maximized>מוגדל</RunText-Maximized>
+    <RunText-Hidden>נסתר</RunText-Hidden>
+  </RunPrograms>
+  <WirelessDetected>
+    <WindowTitle>התגלתה רשת אלחוטית</WindowTitle>
+    <labelConnectedTo>הנך מחובר לרשת:</labelConnectedTo>
+    <labelActivate>?האם תרצה להפעיל:</labelActivate>
+    <buttonYes>כן</buttonYes>
+    <buttonNo>לא</buttonNo>
+  </WirelessDetected>
+  <Misc><BrowseNetworkShare-Title>.בחר במחשב-רשת או חלקה</BrowseNetworkShare-Title><DisplaySettings-ConfirmPrompt-Title>אשר שינוי תצוגה</DisplaySettings-ConfirmPrompt-Title><DisplaySettings-ConfirmPrompt-Message>?האם תרצה לשנות את הגדרות התצוגה שלך</DisplaySettings-ConfirmPrompt-Message><DisplaySettings-Resolution>רזולוציה:</DisplaySettings-Resolution><DisplaySettings-Bits>ביטים של צבע:</DisplaySettings-Bits><DisplaySettings-Refresh>רענן:</DisplaySettings-Refresh>` <DisplaySettings-RevertPrompt-Title>תצוגה שונתה</DisplaySettings-RevertPrompt-Title><DisplaySettings-RevertPrompt-Message>?האם תרצה לשמור את ההגדרות הנוכחיות שלך</DisplaySettings-RevertPrompt-Message></Misc>
+  <CopyProfile>
+    <WindowTitle>העתק פרופיל</WindowTitle>
+    <labelProfile>פרופיל:</labelProfile>
+    <labelNewProfile>שם חדש:</labelNewProfile>
+    <labelSelectNetworkCard>בחר כרטיס רשת:</labelSelectNetworkCard>
+    <buttonCopy>העתק</buttonCopy>
+    <buttonCancel>בטל</buttonCancel>
+  </CopyProfile>
+</Language>
