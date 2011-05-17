@@ -21,7 +21,7 @@ Public Partial Class AutoActivate
 	End Sub
 	
 	Public ProfileName As String
-	Public NetworkCardName As String
+    Public NetworkCardName As String
 	
 	Sub AutoActivateLoad(ByVal sender As Object, ByVal e As EventArgs)
 		If Microsoft.VisualBasic.Command.Length > 0 Then
@@ -34,7 +34,7 @@ Public Partial Class AutoActivate
 				MainForm.Visible = True
 			End If
 		End If
-		Dim TheMACAddress() As String = StrReverse(Globals.INIAutoLoad).Split("\")
+        Dim TheMACAddress() As String = StrReverse(Globals.INIAutoLoad).Split(CChar("\"))
 		Dim UseThisMACAddress As String = StrReverse(TheMACAddress(1))
 		ProfileName = INIRead(Globals.INIAutoLoad, "General", "Name", "[No Name]")
 		NetworkCardName = GetInterfaceName(UseThisMACAddress)
@@ -56,7 +56,7 @@ Public Partial Class AutoActivate
 	
 	Sub Timer1Tick(ByVal sender As Object, ByVal e As EventArgs)
 		Me.timer1.Enabled = False
-		Call MainForm.ApplyProfile(Globals.INIAutoLoad, "auto")
+        Call MainForm.ApplyProfile(Globals.INIAutoLoad, "auto")
 		If Microsoft.VisualBasic.Command.Length > 0 Then
 			Globals.OKToCloseProgram = True
 			MainForm.Close
