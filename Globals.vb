@@ -17,7 +17,7 @@ Imports System.IO
 Imports System.Xml
 
 Public Module Globals
-	Public ProgramVersion As String = "2.1.7"
+    Public ProgramVersion As String = "2.1.8"
 	Public ProgramName As String = "Net Profiles"
 	Public CurrentLang As String = "en-US"
 	Public CurrentLangPath As String
@@ -115,15 +115,19 @@ Public Module Globals
 			
 			If pidl <> 0 Then
 				spath = Space(MAX_PATH)
-				If SHGetPathFromIDList(pidl, spath) Then
-					GetBrowseNetworkShare = TrimNull(spath)
-				Else
-					GetBrowseNetworkShare = "\\" & bi.pszDisplayName
-				End If
-			End If
+                If CBool(SHGetPathFromIDList(pidl, spath)) Then
+                    GetBrowseNetworkShare = TrimNull(spath)
+                Else
+                    GetBrowseNetworkShare = "\\" & bi.pszDisplayName
+                End If
+            Else
+                GetBrowseNetworkShare = ""
+            End If
 			
 			Call CoTaskMemFree(pidl)
-		End If
+        Else
+            GetBrowseNetworkShare = ""
+        End If
 	End Function
 	
 	Private Function TrimNull(ByRef startstr As String) As String
@@ -155,7 +159,8 @@ Public Module Globals
 		Dim strComputer As Object
 
 		strComputer = "."
-		objWMIService = GetObject("winmgmts:\\" & strComputer & "\root\cimv2")
+        'objWMIService = GetObject("winmgmts:\\" & strComputer & "\root\cimv2")
+        objWMIService = GetObject("winmgmts:\\.\root\cimv2")
 		Application.DoEvents()
 		colNetAdapters = objWMIService.ExecQuery("Select * from Win32_NetworkAdapterConfiguration where IPEnabled=TRUE and MACAddress='" & MACAddress.Replace("-", ":") & "'")
 		Application.DoEvents()
@@ -196,36 +201,36 @@ Public Module Globals
 			strDNSServers = New Object(){""}
 		End If
 		
-		For	Each objNetAdapter In colNetAdapters
-			If DHCP.Equals(True) Then
-				Application.DoEvents()
-				objNetAdapter.SetDNSServerSearchOrder()
-				Application.DoEvents()
-				objNetAdapter.SetDynamicDNSRegistration(True)
-				Call UpdateProgress(MainForm.StatusLabelWorking_DHCP, ApplyType)
-				Application.DoEvents()
-				objNetAdapter.EnableDHCP()
-				Application.DoEvents()
-				objNetAdapter.RenewDHCPLease()
-				Application.DoEvents()
-			Else
-				Call UpdateProgress(MainForm.StatusLabelWorking_IPAddress, ApplyType)
-				Application.DoEvents()
-				objNetAdapter.EnableStatic(strIPAddress, strSubnetMask)
-				Call UpdateProgress(MainForm.StatusLabelWorking_Gateway, ApplyType)
-				Application.DoEvents()
-				objNetAdapter.SetGateways(strGateway, strGatewaymetric)
-				Application.DoEvents()
-				objNetAdapter.SetDNSServerSearchOrder()
-				Call UpdateProgress(MainForm.StatusLabelWorking_DNS, ApplyType)
-				Application.DoEvents()
-				objNetAdapter.SetDNSServerSearchOrder(strDNSServers)
-				Call UpdateProgress(MainForm.StatusLabelWorking_WINS, ApplyType)
-				Application.DoEvents()
-				objNetAdapter.SetWINSServer(strWINSServer, "")
-				Application.DoEvents()
-			End If
-		Next objNetAdapter
+        For Each objNetAdapter In colNetAdapters
+            If DHCP.Equals(True) Then
+                Application.DoEvents()
+                objNetAdapter.SetDNSServerSearchOrder()
+                Application.DoEvents()
+                objNetAdapter.SetDynamicDNSRegistration(True)
+                Call UpdateProgress(MainForm.StatusLabelWorking_DHCP, ApplyType)
+                Application.DoEvents()
+                objNetAdapter.EnableDHCP()
+                Application.DoEvents()
+                objNetAdapter.RenewDHCPLease()
+                Application.DoEvents()
+            Else
+                Call UpdateProgress(MainForm.StatusLabelWorking_IPAddress, ApplyType)
+                Application.DoEvents()
+                objNetAdapter.EnableStatic(strIPAddress, strSubnetMask)
+                Call UpdateProgress(MainForm.StatusLabelWorking_Gateway, ApplyType)
+                Application.DoEvents()
+                objNetAdapter.SetGateways(strGateway, strGatewaymetric)
+                Application.DoEvents()
+                objNetAdapter.SetDNSServerSearchOrder()
+                Call UpdateProgress(MainForm.StatusLabelWorking_DNS, ApplyType)
+                Application.DoEvents()
+                objNetAdapter.SetDNSServerSearchOrder(strDNSServers)
+                Call UpdateProgress(MainForm.StatusLabelWorking_WINS, ApplyType)
+                Application.DoEvents()
+                objNetAdapter.SetWINSServer(strWINSServer, "")
+                Application.DoEvents()
+            End If
+        Next objNetAdapter
 	End Sub
 	
 	'*** START MAPPED DRIVES ***
@@ -233,7 +238,7 @@ Public Module Globals
 	Private Declare Function WNetCancelConnection2 Lib "mpr.dll"  Alias "WNetCancelConnection2A"(ByVal lpName As String, ByVal dwFlags As Integer, ByVal fForce As Integer) As Integer
 	
 	Public Function DisconnectNetworkDrive(ByRef sDrv As String, ByRef sForce As Boolean) As Boolean
-		DisconnectNetworkDrive = WNetCancelConnection2(sDrv, CONNECT_UPDATE_PROFILE, sForce)
+        DisconnectNetworkDrive = CBool(WNetCancelConnection2(sDrv, CONNECT_UPDATE_PROFILE, CInt(sForce)))
 	End Function
 	
 	Public Structure NETRESOURCE
@@ -297,8 +302,8 @@ Public Module Globals
 	Public Sub CreateShortcut(ByVal ShortcutName As String, ByVal ShortcutPath As String, Optional ByVal ShortcutArg As String = "", Optional ByVal ShortcutDesc As String = "", Optional ByVal ShortcutDir As String = "", Optional ByVal ShortcutIcon As String = "", Optional ByRef WinStyle As Integer = 4)
          Dim Placement As String
          Dim oShell As New IWshRuntimeLibrary.IWshShell_Class()
-         Dim oShortcut As IWshRuntimeLibrary.IWshShortcut_Class
-         Placement = oShell.SpecialFolders.Item("Desktop")
+        Dim oShortcut As IWshRuntimeLibrary.IWshShortcut_Class
+        Placement = CStr(oShell.SpecialFolders.Item("Desktop"))
          oShortcut = oShell.CreateShortcut(Placement & "\" & ShortcutName & ".lnk")
          oShortcut.TargetPath = ShortcutPath
          oShortcut.Description = ShortcutDesc
@@ -342,7 +347,7 @@ Public Module Globals
 '
 			For Each queryObj As ManagementObject in searcher.Get()
 				Application.DoEvents
-				Return queryObj("NetConnectionID")
+                Return CStr(queryObj("NetConnectionID"))
 			Next
 		Catch err As ManagementException
 			Return ""
@@ -373,20 +378,20 @@ Public Module Globals
      			' check goes here:
      			If not (queryobj Is Nothing) Then 
      				' looking good? Then back to the original code ...
-	     			If Not MACAddresses.Contains(queryObj("MACAddress")) Then
-	     				NetworkInterfaceName = ""
-                        NetworkInterfaceName = GetInterfaceName(queryObj("MACAddress"))
+                    If Not MACAddresses.Contains(CStr(queryObj("MACAddress"))) Then
+                        NetworkInterfaceName = ""
+                        NetworkInterfaceName = GetInterfaceName(CStr(queryObj("MACAddress")))
 
                         ' Implementing ivan.hrehor's solution from
                         ' http://code.google.com/p/netprofiles/issues/detail?id=1#c18
                         If NetworkInterfaceName Is Nothing Then
-                            NetworkInterfaceName = GetNetworkInstanceName(queryObj("MACAddress").Replace("-", ":"))
+                            NetworkInterfaceName = GetNetworkInstanceName(CStr(queryObj("MACAddress").Replace("-", ":")))
                         ElseIf NetworkInterfaceName.Trim().Length = 0 Then
-                            NetworkInterfaceName = GetNetworkInstanceName(queryObj("MACAddress").Replace("-", ":"))
+                            NetworkInterfaceName = GetNetworkInstanceName(CStr(queryObj("MACAddress").Replace("-", ":")))
                         End If
-	     				NetworkCardList.Add(New DictionaryEntry(queryObj("MACAddress"), NetworkInterfaceName))
-	     				MACAddresses = MACAddresses & queryObj("MACAddress")
-	     			End If
+                        NetworkCardList.Add(New DictionaryEntry(queryObj("MACAddress"), NetworkInterfaceName))
+                        MACAddresses = MACAddresses & CStr(queryObj("MACAddress"))
+                    End If
      			End If
 			Next
 			
@@ -405,12 +410,12 @@ Public Module Globals
 '
 			For Each queryObj As ManagementObject in searcher.Get()
 				Application.DoEvents
-				Dim DHCP As String = queryObj("DHCPEnabled")
-				Dim IPAddress As String = queryObj("IPAddress")(0)
-				Dim SubnetMask As String = queryObj("IPSubnet")(0)
-				Dim DefaultGateway As String = Join(queryObj("DefaultIPGateway"), ",")
-				Dim PrimaryDNSServer As String = Join(queryObj("DNSServerSearchOrder"), ",")
-				Dim WINSServer As String = queryObj("WINSPrimaryServer")
+                Dim DHCP As String = CStr(queryObj("DHCPEnabled"))
+                Dim IPAddress As String = queryObj("IPAddress")(0)
+                Dim SubnetMask As String = queryObj("IPSubnet")(0)
+                Dim DefaultGateway As String = CStr(Join(queryObj("DefaultIPGateway"), ","))
+                Dim PrimaryDNSServer As String = CStr(Join(queryObj("DNSServerSearchOrder"), ","))
+                Dim WINSServer As String = CStr(queryObj("WINSPrimaryServer"))
 				Return DHCP & "|" & IPAddress & "|" & SubnetMask & "|" & DefaultGateway & "|" & PrimaryDNSServer & "|" & WINSServer
 			Next
 		Catch err As ManagementException
@@ -427,7 +432,7 @@ Public Module Globals
 '
 			For Each queryObj As ManagementObject in searcher.Get()
 				Application.DoEvents
-				Return queryObj("Name")
+                Return CStr(queryObj("Name"))
 			Next
 		Catch err As ManagementException
 			Return ""
@@ -481,7 +486,7 @@ Public Module Globals
 
         For Each strTempRes In strModes
             'cboResolution.Items.Add(strTempRes)
-            Dim strTempResArray() As String = strTempRes.Split("x")
+            Dim strTempResArray() As String = strTempRes.Split(CChar("x"))
             If strTempResArray.GetUpperBound(0).ToString = "1" Then
             	ProfileSettings.comboBoxDisplaySettings.Items.Add(strTempResArray(0) & " " & byText & " " & strTempResArray(1) & " " & pixelsText)
             End If
@@ -509,11 +514,11 @@ Public Module Globals
         For Each strTempBPP In strBPPModes
             Dim ThisBPP As String = ""
             Select Case strTempBPP
-                Case 8
+                Case "8"
                     ThisBPP = "256 (8 " & bitText & ")"
-                Case 16
+                Case "16"
                     ThisBPP = lowestText & " (16 " & bitText & ")"
-                Case 32
+                Case "32"
                     ThisBPP = highestText & " (32 " & bitText & ")"
             End Select
             ProfileSettings.comboBoxDisplayColors.Items.Add(ThisBPP)
@@ -542,7 +547,7 @@ Public Module Globals
 		If result.Count > 0 Then
 			Dim f As Boolean
 			For Each Adapter As ManagementObject In result
-				f = (Adapter("Manufacturer") <> "Microsoft")
+                f = CBool(Adapter("Manufacturer") IsNot "Microsoft")
 			Next
 			return f
 		Else
@@ -564,10 +569,10 @@ Public Module Globals
 			For Each queryObj As ManagementObject in searcher.Get()
 				Dim i As Integer
 				Dim ThisName As String = ""
-				For i = 0 To queryObj("Ndis80211SsId")(0)
-      				TheID = TheID & chr(queryObj("Ndis80211SsId")(i + 4))
-      			Next
-      			TheName = queryObj("InstanceName")
+                For i = 0 To CInt(queryObj("Ndis80211SsId")(0))
+                    TheID = TheID & Chr(CInt(queryObj("Ndis80211SsId")(i + 4)))
+                Next
+                TheName = CStr(queryObj("InstanceName"))
       			
       			' potofcoffee:
       			' the problem is right here: Not all "Packet Schedulers" identify by that
@@ -614,7 +619,7 @@ Public Module Globals
 			'Next
 			For i = 0 To AutoConnectSSID.Count - 1
 				If GetNetworkInstanceName(AutoConnectMACAddress(i).ToString).ToLower = CurrentWirelessName.ToLower And AutoConnectSSID(i).ToString.ToLower = CurrentWirelessSSID.ToLower Then
-					Dim ProfileName As String = INIRead(AutoConnectProfile(i), "General", "Name", "[No Name]")
+                    Dim ProfileName As String = INIRead(CStr(AutoConnectProfile(i)), "General", "Name", "[No Name]")
 					Dim DoNotConfirmAutoActivate As String = INIRead(ProgramINIFile, "Program", "DoNotConfirmAutoActivate", "False")
 					If DoNotConfirmAutoActivate.Equals("True") Then
 						Globals.INIAutoLoad = AutoConnectProfile(i).ToString
@@ -647,7 +652,7 @@ Public Module Globals
 '
 			For Each queryObj As ManagementObject in searcher.Get()
 				Application.DoEvents
-				Return queryObj("Description")
+                Return CStr(queryObj("Description"))
 			Next
 		Catch err As ManagementException
 			Return ""
@@ -664,20 +669,20 @@ Public Module Globals
     End Function
 
     Public Sub SetRegistryKey(ByVal PathToValue As String, ByVal KeyName As String, ByVal ValueToUse As String)
-        Dim oReg As Microsoft.Win32.Registry
+        'Dim oReg As Microsoft.Win32.Registry
         Dim oRegKey As Microsoft.Win32.RegistryKey
 
         'oRegKey = oReg.LocalMachine.OpenSubKey(PathToValue, True)
-        oRegKey = oReg.CurrentUser.OpenSubKey(PathToValue, True)
+        oRegKey = Registry.CurrentUser.OpenSubKey(PathToValue, True)
         oRegKey.SetValue(KeyName, ValueToUse)
     End Sub
     
     Public Sub DeleteRegistryKey(ByVal PathToValue As String, ByVal KeyName As String)
-        Dim oReg As Microsoft.Win32.Registry
+        'Dim oReg As Microsoft.Win32.Registry
         Dim oRegKey As Microsoft.Win32.RegistryKey
 
         'oRegKey = oReg.LocalMachine.OpenSubKey(PathToValue, True)
-        oRegKey = oReg.CurrentUser.OpenSubKey(PathToValue, True)
+        oRegKey = Registry.CurrentUser.OpenSubKey(PathToValue, True)
         oRegKey.DeleteValue(KeyName, False)
     End Sub
     
@@ -690,19 +695,19 @@ Public Module Globals
         	Else
         		INIWrite(OperaSettingsINI, "Proxy", "HTTP Server", "")
         	End If
-        	INIWrite(OperaSettingsINI, "Proxy", "Use HTTP", ProxyEnable)
-        	INIWrite(OperaSettingsINI, "Proxy", "Use HTTPS", ProxyEnable)
+            INIWrite(OperaSettingsINI, "Proxy", "Use HTTP", CStr(ProxyEnable))
+            INIWrite(OperaSettingsINI, "Proxy", "Use HTTPS", CStr(ProxyEnable))
         	Dim AutoProxyConfigEnable As Integer = 0
         	If AutoProxyConfigURL.Length > 0 Then
         		AutoProxyConfigEnable = 1
         	End If
-        	INIWrite(OperaSettingsINI, "Proxy", "Use Automatic Proxy Configuration", AutoProxyConfigEnable)
+            INIWrite(OperaSettingsINI, "Proxy", "Use Automatic Proxy Configuration", CStr(AutoProxyConfigEnable))
         	INIWrite(OperaSettingsINI, "Proxy", "Automatic Proxy Configuration URL", AutoProxyConfigURL.Trim)
         	Dim UseProxyOnLocal As Integer = 1
         	If ProxyBypass.Equals(True) Then
         		UseProxyOnLocal = 0
         	End If
-        	INIWrite(OperaSettingsINI, "Proxy", "Use Proxy On Local Names Check", UseProxyOnLocal)
+            INIWrite(OperaSettingsINI, "Proxy", "Use Proxy On Local Names Check", CStr(UseProxyOnLocal))
         	If DefaultHomepage.Length > 0 Then
         		INIWrite(OperaSettingsINI, "User Prefs", "Home URL", DefaultHomepage)
         	End If
@@ -718,9 +723,9 @@ Public Module Globals
 			For Each DirectoryName In Dirs
 				Try
 					If Not Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js", FileAttribute.Normal) = "" Then
-						Dim oFile As System.IO.File
+                        'Dim oFile As System.IO.File
 						Dim oRead As System.IO.StreamReader
-						oRead = oFile.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
+                        oRead = File.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
 						Dim CurrentFile As String = ""
 						Dim CurrentLine As String = ""
 						Dim AutoConfigAddressExists As Boolean = False
@@ -745,13 +750,13 @@ Public Module Globals
 						End If
 						
 						Dim oWrite As System.IO.StreamWriter
-						oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
+                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
 						oWrite.Write(CurrentFile)
 						oWrite.Close()
 					Else
-						Dim oFile As System.IO.File
+                        'Dim oFile As System.IO.File
 						Dim oWrite As System.IO.StreamWriter
-						oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
+                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
 						oWrite.WriteLine("user_pref(" & Chr(34) & "network.proxy.autoconfig_url" & Chr(34) & ", " & Chr(34) & AutoConfigAddress & Chr(34) & ");")
 						oWrite.Close()
 					End If
@@ -771,9 +776,9 @@ Public Module Globals
 			For Each DirectoryName In Dirs
 				Try
 					If Not Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js", FileAttribute.Normal) = "" Then
-						Dim oFile As System.IO.File
+                        'Dim oFile As System.IO.File
 						Dim oRead As System.IO.StreamReader
-						oRead = oFile.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
+                        oRead = File.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
 						Dim CurrentFile As String = ""
 						Dim CurrentLine As String = ""
 						Dim ProxyHTTPExists As Boolean = False
@@ -814,13 +819,13 @@ Public Module Globals
 						End If
 						
 						Dim oWrite As System.IO.StreamWriter
-						oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
+                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
 						oWrite.Write(CurrentFile)
 						oWrite.Close()
 					Else
-						Dim oFile As System.IO.File
+                        'Dim oFile As System.IO.File
 						Dim oWrite As System.IO.StreamWriter
-						oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
+                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
 						oWrite.WriteLine("user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", " & Chr(34) & ProxyServer & Chr(34) & ");")
 						oWrite.WriteLine("user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", " & ProxyPort & ");")
 						oWrite.WriteLine("user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", " & ProxyEnable & ");")
@@ -842,9 +847,9 @@ Public Module Globals
 			For Each DirectoryName In Dirs
 				Try
 					If Not Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js", FileAttribute.Normal) = "" Then
-						Dim oFile As System.IO.File
+                        'Dim oFile As System.IO.File
 						Dim oRead As System.IO.StreamReader
-						oRead = oFile.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
+                        oRead = File.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
 						Dim CurrentFile As String = ""
 						Dim CurrentLine As String = ""
 						While oRead.Peek <> -1
@@ -869,7 +874,7 @@ Public Module Globals
 						oRead.Close()
 						
 						Dim oWrite As System.IO.StreamWriter
-						oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
+                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
 						oWrite.Write(CurrentFile)
 						oWrite.Close()
 					Else
@@ -891,9 +896,9 @@ Public Module Globals
 			For Each DirectoryName In Dirs
 				Try
 					If Not Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js", FileAttribute.Normal) = "" Then
-						Dim oFile As System.IO.File
+                        'Dim oFile As System.IO.File
 						Dim oRead As System.IO.StreamReader
-						oRead = oFile.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
+                        oRead = File.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
 						Dim CurrentFile As String = ""
 						Dim CurrentLine As String = ""
 						Dim LineExists As Boolean = False
@@ -918,13 +923,13 @@ Public Module Globals
 						End If
 						
 						Dim oWrite As System.IO.StreamWriter
-						oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
+                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
 						oWrite.Write(CurrentFile)
 						oWrite.Close()
 					Else
-						Dim oFile As System.IO.File
+                        'Dim oFile As System.IO.File
 						Dim oWrite As System.IO.StreamWriter
-						oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
+                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
 						oWrite.WriteLine("user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", " & Chr(34) & Homepage & Chr(34) & ");")
 						oWrite.Close()
 					End If
@@ -941,7 +946,7 @@ Public Module Globals
 		Dim objWMIService As Object
 		Dim strComputer As Object
 		strComputer = "."
-		objWMIService = GetObject("winmgmts:{impersonationLevel=impersonate}!\\" & strComputer & "\root\cimv2")
+        objWMIService = GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\root\cimv2")
 		colComputers = objWMIService.ExecQuery("Select * from Win32_ComputerSystem")
 		For Each objComputer In colComputers
 			ObjComputer.Rename(NewName)
