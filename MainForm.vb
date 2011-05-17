@@ -57,79 +57,79 @@ Public Partial Class MainForm
 	Public CheckForUpdates_Error_1 As String
 	Public CheckForUpdates_Error_2 As String
 	
-	Sub MainFormLoad(ByVal sender As Object, ByVal e As EventArgs)
-		Globals.CurrentLangPath = My.Application.Info.DirectoryPath & "\lang\" & INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
-		Globals.CurrentLang = INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
-		Globals.CurrentLang = Globals.CurrentLang.Substring(0, Globals.CurrentLang.Length - 4)
-		Call LoadLanguage
+    Sub MainFormLoad(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+        Globals.CurrentLangPath = My.Application.Info.DirectoryPath & "\lang\" & INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
+        Globals.CurrentLang = INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
+        Globals.CurrentLang = Globals.CurrentLang.Substring(0, Globals.CurrentLang.Length - 4)
+        Call LoadLanguage()
 
-		If Microsoft.VisualBasic.Command.Length > 0 Then
-			commandArray = Microsoft.VisualBasic.Command.Split("|")
-			Select Case commandArray(0)
-				Case "auto"
-					Globals.EnableLoadTimer = False
-					Me.notifyIcon1.Visible = False
-					Me.Visible = False
-					AutoActivate.ShowDialog
-			End Select
-		End If
-		If Dir(My.Application.Info.DirectoryPath & "\profiles", FileAttribute.Directory) = "" Then
-			MkDir((My.Application.Info.DirectoryPath & "\profiles"))
-		End If
-		Dim ShowToolbarText As String = INIRead(Globals.ProgramINIFile, "Program", "ShowToolbarText", "True")
-		If ShowToolbarText = "False" Then
-			Call Me.ToggleToolbarTextToolStripMenuItemClick(sender, e)
-		End If
-		Dim MinimizeToTray As String = INIRead(Globals.ProgramINIFile, "Program", "MinimizeToTray", "False")
-		If MinimizeToTray.Equals("False") Then
-			Globals.OKToCloseProgram = True
-			Me.minimizeToTrayOnCloseToolStripMenuItem.Checked = False
-		Else
-			Globals.OKToCloseProgram = False
-			Me.minimizeToTrayOnCloseToolStripMenuItem.Checked = True
-		End If
-		
-		Dim LocationTop As String = INIRead(Globals.ProgramINIFile, "Program", "LocationTop", "")
-		Dim LocationLeft As String = INIRead(Globals.ProgramINIFile, "Program", "LocationLeft", "")
-		If LocationTop.Length > 0 And LocationLeft.Length > 0 Then
-			Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-			Me.Location = new System.Drawing.Point(CInt(LocationLeft), CInt(LocationTop))
-		End If
-		Dim WindowWidth As String = INIRead(Globals.ProgramINIFile, "Program", "WindowWidth", "")
-		Dim WindowHeight As String = INIRead(Globals.ProgramINIFile, "Program", "WindowHeight", "")
-		If WindowWidth.Length > 0 And WindowHeight.Length > 0 Then
-			Me.Size = new Size(CInt(WindowWidth), CInt(WindowHeight))
-		End If
-		Dim AskBeforeChangingResolution As String = INIRead(Globals.ProgramINIFile, "Program", "AskBeforeChangingResolution", "True")
-		If AskBeforeChangingResolution.Equals("False") Then
-			Globals.AskBeforeChangingResolution = False
-			Me.askBeforeChangingResolutionToolStripMenuItem.Checked = False
-		End If
-		Dim AskAfterChangingResolution As String = INIRead(Globals.ProgramINIFile, "Program", "AskAfterChangingResolution", "True")
-		If AskAfterChangingResolution.Equals("False") Then
-			Globals.AskAfterChangingResolution = False
-			Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked = False
-		End If
-		Dim ToTrayOnStartup As String = INIRead(Globals.ProgramINIFile, "Program", "ToTrayOnStartup", "False")
-		If ToTrayOnStartup = "True" Then
-			Me.minimizeToTrayOnStartupToolStripMenuItem.Checked = True
-			Me.WindowState = FormWindowState.Minimized
-			Me.Visible = False
-			Me.ShowInTaskbar = False
-		End If
-		Dim DoNotConfirmAutoActivate As String = INIRead(Globals.ProgramINIFile, "Program", "DoNotConfirmAutoActivate", "False")
-		If DoNotConfirmAutoActivate.Equals("True") Then
-			Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Checked = True
-		End If
-		If GetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", "Net Profiles").Length > 0 Then
-			Me.runWhenILogInToWindowsToolStripMenuItem.Checked = True
-		End If
-		If Globals.EnableLoadTimer.Equals(True) Then
-			Me.timerLoad.Enabled = True
-		End If
-		
-		Call GetLanguages
-	End Sub
+        If Microsoft.VisualBasic.Command.Length > 0 Then
+            commandArray = Microsoft.VisualBasic.Command.Split(System.Convert.ToChar("|"))
+            Select Case commandArray(0)
+                Case "auto"
+                    Globals.EnableLoadTimer = False
+                    Me.notifyIcon1.Visible = False
+                    Me.Visible = False
+                    AutoActivate.ShowDialog()
+            End Select
+        End If
+        If Dir(My.Application.Info.DirectoryPath & "\profiles", Microsoft.VisualBasic.FileAttribute.Directory) = "" Then
+            MkDir((My.Application.Info.DirectoryPath & "\profiles"))
+        End If
+        Dim ShowToolbarText As String = INIRead(Globals.ProgramINIFile, "Program", "ShowToolbarText", "True")
+        If ShowToolbarText = "False" Then
+            Call Me.ToggleToolbarTextToolStripMenuItemClick(sender, e)
+        End If
+        Dim MinimizeToTray As String = INIRead(Globals.ProgramINIFile, "Program", "MinimizeToTray", "False")
+        If MinimizeToTray.Equals("False") Then
+            Globals.OKToCloseProgram = True
+            Me.minimizeToTrayOnCloseToolStripMenuItem.Checked = False
+        Else
+            Globals.OKToCloseProgram = False
+            Me.minimizeToTrayOnCloseToolStripMenuItem.Checked = True
+        End If
+
+        Dim LocationTop As String = INIRead(Globals.ProgramINIFile, "Program", "LocationTop", "")
+        Dim LocationLeft As String = INIRead(Globals.ProgramINIFile, "Program", "LocationLeft", "")
+        If LocationTop.Length > 0 And LocationLeft.Length > 0 Then
+            Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
+            Me.Location = New System.Drawing.Point(CInt(LocationLeft), CInt(LocationTop))
+        End If
+        Dim WindowWidth As String = INIRead(Globals.ProgramINIFile, "Program", "WindowWidth", "")
+        Dim WindowHeight As String = INIRead(Globals.ProgramINIFile, "Program", "WindowHeight", "")
+        If WindowWidth.Length > 0 And WindowHeight.Length > 0 Then
+            Me.Size = New Size(CInt(WindowWidth), CInt(WindowHeight))
+        End If
+        Dim AskBeforeChangingResolution As String = INIRead(Globals.ProgramINIFile, "Program", "AskBeforeChangingResolution", "True")
+        If AskBeforeChangingResolution.Equals("False") Then
+            Globals.AskBeforeChangingResolution = False
+            Me.askBeforeChangingResolutionToolStripMenuItem.Checked = False
+        End If
+        Dim AskAfterChangingResolution As String = INIRead(Globals.ProgramINIFile, "Program", "AskAfterChangingResolution", "True")
+        If AskAfterChangingResolution.Equals("False") Then
+            Globals.AskAfterChangingResolution = False
+            Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked = False
+        End If
+        Dim ToTrayOnStartup As String = INIRead(Globals.ProgramINIFile, "Program", "ToTrayOnStartup", "False")
+        If ToTrayOnStartup = "True" Then
+            Me.minimizeToTrayOnStartupToolStripMenuItem.Checked = True
+            Me.WindowState = FormWindowState.Minimized
+            Me.Visible = False
+            Me.ShowInTaskbar = False
+        End If
+        Dim DoNotConfirmAutoActivate As String = INIRead(Globals.ProgramINIFile, "Program", "DoNotConfirmAutoActivate", "False")
+        If DoNotConfirmAutoActivate.Equals("True") Then
+            Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Checked = True
+        End If
+        If GetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", "Net Profiles").Length > 0 Then
+            Me.runWhenILogInToWindowsToolStripMenuItem.Checked = True
+        End If
+        If Globals.EnableLoadTimer.Equals(True) Then
+            Me.timerLoad.Enabled = True
+        End If
+
+        Call GetLanguages()
+    End Sub
 	
 	Public Sub GetLanguages()
 		Dim LanguagePath As New DirectoryInfo(My.Application.Info.DirectoryPath & "\lang")
@@ -157,20 +157,20 @@ Public Partial Class MainForm
 	End Sub
 	
 	Private Sub LanguageMenuClick(sender as Object, e as System.EventArgs)
-		If sender.Checked = True Then
-			Dim LangMenuItem As ToolStripMenuItem
-			For Each LangMenuItem In Me.languageToolStripMenuItem.DropDownItems
-				If LangMenuItem.Tag.Substring(0, LangMenuItem.Tag.Length - 4) = Globals.CurrentLang.ToLower Then
-					LangMenuItem.Checked = False
-				End If
-			Next
-			Globals.CurrentLang = sender.Tag.Substring(0, sender.Tag.Length - 4)
-			Globals.CurrentLangPath = My.Application.Info.DirectoryPath & "\lang\" & sender.Tag
-			INIWrite(Globals.ProgramINIFile, "Program", "Language", sender.Tag)
-			Call LoadLanguage()
-		Else
-			sender.Checked = True
-		End If
+        If sender.Checked = True Then
+            Dim LangMenuItem As ToolStripMenuItem
+            For Each LangMenuItem In Me.languageToolStripMenuItem.DropDownItems
+                If LangMenuItem.Tag.Substring(0, LangMenuItem.Tag.Length - 4) = Globals.CurrentLang.ToLower Then
+                    LangMenuItem.Checked = False
+                End If
+            Next
+            Globals.CurrentLang = CStr(sender.Tag).Substring(0, CInt(sender.Tag.Length) - 4)
+            Globals.CurrentLangPath = CStr(My.Application.Info.DirectoryPath & "\lang\" & sender.Tag)
+            INIWrite(Globals.ProgramINIFile, "Program", "Language", CStr(sender.Tag))
+            Call LoadLanguage()
+        Else
+            sender.Checked = True
+        End If
 	End Sub
 	
 	Public Sub LoadLanguage()
@@ -251,18 +251,18 @@ Public Partial Class MainForm
 		Me.CheckForUpdates_Error_2 = root.SelectSingleNode("/Language/MainForm/CheckForUpdates-Error-2").InnerText
 	End Sub
 	
-	Sub ToggleToolbarTextToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		Dim i As Integer
-		For i = 0 To Me.toolStripMain.Items.Count-1
-			If Me.toolStripMain.Items.Item(i).DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText Then
-				Me.toolStripMain.Items.Item(i).DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-				INIWrite(Globals.ProgramINIFile, "Program", "ShowToolbarText", "False")
-			Else
-				Me.toolStripMain.Items.Item(i).DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText
-				INIWrite(Globals.ProgramINIFile, "Program", "ShowToolbarText", "True")
-			End If
-		Next
-	End Sub
+    Sub ToggleToolbarTextToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles toggleToolbarTextToolStripMenuItem.Click
+        Dim i As Integer
+        For i = 0 To Me.toolStripMain.Items.Count - 1
+            If Me.toolStripMain.Items.Item(i).DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText Then
+                Me.toolStripMain.Items.Item(i).DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+                INIWrite(Globals.ProgramINIFile, "Program", "ShowToolbarText", "False")
+            Else
+                Me.toolStripMain.Items.Item(i).DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText
+                INIWrite(Globals.ProgramINIFile, "Program", "ShowToolbarText", "True")
+            End If
+        Next
+    End Sub
 	
 	Public Sub GetProfileCategories()
 		Me.listViewProfiles.Items.Clear
@@ -367,7 +367,7 @@ Public Partial Class MainForm
 	End Sub
 	
 	Private Sub SystemTrayMenuClick(sender as Object, e as System.EventArgs)
-		Globals.INIAutoLoad = sender.Tag
+        Globals.INIAutoLoad = CStr(sender.Tag)
 		AutoActivate.Show
 	End Sub
 	
@@ -378,7 +378,7 @@ Public Partial Class MainForm
 				"SELECT * FROM Win32_NetworkAdapter WHERE MACAddress = '" & ThisInterface.Replace("-",":") & "'") 
 
 			For Each queryObj As ManagementObject in searcher.Get()
-				Return queryObj("ProductName")
+                Return CStr(queryObj("ProductName"))
 			Next
 		Catch err As ManagementException
 			Return "Error"
@@ -386,14 +386,14 @@ Public Partial Class MainForm
 		Return ""
 	End Function
 	
-	Sub ToolStripButtonNewProfileClick(ByVal sender As Object, ByVal e As EventArgs)
-		Globals.CreatingNewProfile = True
-		ProfileSettings.ShowDialog()
-	End Sub
+    Sub ToolStripButtonNewProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripButtonNewProfile.Click
+        Globals.CreatingNewProfile = True
+        ProfileSettings.ShowDialog()
+    End Sub
 	
-	Sub ToolStripButtonEditProfileClick(ByVal sender As Object, ByVal e As EventArgs)
-		Call Me.EditProfile
-	End Sub
+    Sub ToolStripButtonEditProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripButtonEditProfile.Click
+        Call Me.EditProfile()
+    End Sub
 	
 	Public Sub EditProfile
 		If Me.listViewProfiles.SelectedItems.Count > 0 Then
@@ -402,23 +402,23 @@ Public Partial Class MainForm
 		End If
 	End Sub
 	
-	Sub TimerLoadTick(ByVal sender As Object, ByVal e As EventArgs)
-		Me.timerLoad.Enabled = False
-		Me.toolStripProgressBar1.Enabled = True
-		Me.toolStripProgressBar1.Visible = True
-		Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking_Preloading
-		Me.toolStripStatusLabelWorking.Visible = True
-		Call PopulateNetworkCardArray
-		Call RefreshProfiles
-		If Me.listViewProfiles.Items.Count = 0 Then
-			Dim YNResult As Object
-			YNResult = MessageBox.Show(Me.NoNetworkProfilesMessageBox_1 & vbCrLf & Me.NoNetworkProfilesMessageBox_2, "Net Profiles", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-			If YNResult = Me.DialogResult.Yes Then
-				Globals.CreatingNewProfile = True
-				ProfileSettings.ShowDialog
-			End If
-		End If
-	End Sub
+    Sub TimerLoadTick(ByVal sender As Object, ByVal e As EventArgs) Handles timerLoad.Tick
+        Me.timerLoad.Enabled = False
+        Me.toolStripProgressBar1.Enabled = True
+        Me.toolStripProgressBar1.Visible = True
+        Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking_Preloading
+        Me.toolStripStatusLabelWorking.Visible = True
+        Call PopulateNetworkCardArray()
+        Call RefreshProfiles()
+        If Me.listViewProfiles.Items.Count = 0 Then
+            Dim YNResult As Object
+            YNResult = MessageBox.Show(Me.NoNetworkProfilesMessageBox_1 & vbCrLf & Me.NoNetworkProfilesMessageBox_2, "Net Profiles", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If YNResult = DialogResult.Yes Then
+                Globals.CreatingNewProfile = True
+                ProfileSettings.ShowDialog()
+            End If
+        End If
+    End Sub
 	
 	Public Sub RefreshProfiles
 		Me.toolStripProgressBar1.Enabled = True
@@ -442,44 +442,44 @@ Public Partial Class MainForm
 		Me.toolStripStatusLabelWorking.Visible = False
 	End Sub
 	
-	Sub ToolStripButtonDeleteProfileClick(ByVal sender As Object, ByVal e As EventArgs)
-		Call Me.DeleteProfile
-	End Sub
+    Sub ToolStripButtonDeleteProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripButtonDeleteProfile.Click
+        Call Me.DeleteProfile()
+    End Sub
 	
 	Public Sub DeleteProfile
 		If Me.listViewProfiles.SelectedItems.Count > 0 Then
 			Dim YNResult As Object
 			YNResult = MessageBox.Show(Me.DeleteProfileMessageBox.Replace("%1", Me.listViewProfiles.FocusedItem.Text), Me.DeleteProfileMessageBox_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-			If YNResult = Me.DialogResult.Yes Then
-				System.IO.File.Delete(My.Application.Info.DirectoryPath & "\profiles\" & Me.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & Me.listViewProfiles.SelectedItems(0).SubItems(2).Text)
-				Call Me.RefreshProfiles
-			Else
-				Exit Sub
-			End If
+            If YNResult = DialogResult.Yes Then
+                System.IO.File.Delete(My.Application.Info.DirectoryPath & "\profiles\" & Me.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & Me.listViewProfiles.SelectedItems(0).SubItems(2).Text)
+                Call Me.RefreshProfiles()
+            Else
+                Exit Sub
+            End If
 		End If		
 	End Sub
 	
-	Sub ContextMenuStripProfilesOpening(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs)
-		If Me.listViewProfiles.SelectedItems.Count = 0 Then
-			e.Cancel = True
-		Else
-			e.Cancel = False
-		End If
-	End Sub
+    Sub ContextMenuStripProfilesOpening(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles contextMenuStripProfiles.Opening
+        If Me.listViewProfiles.SelectedItems.Count = 0 Then
+            e.Cancel = True
+        Else
+            e.Cancel = False
+        End If
+    End Sub
 	
-	Sub ApplyProfileToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		If Me.listViewProfiles.SelectedItems.Count > 0 Then
-			Call Me.ApplyProfile(Me.listViewProfiles.SelectedItems.Item(0).SubItems.Item(3).Text, "normal")
-		End If
-	End Sub
+    Sub ApplyProfileToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles applyProfileToolStripMenuItem.Click
+        If Me.listViewProfiles.SelectedItems.Count > 0 Then
+            Call Me.ApplyProfile(Me.listViewProfiles.SelectedItems.Item(0).SubItems.Item(3).Text, "normal")
+        End If
+    End Sub
 	
-	Sub EditToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		Call Me.EditProfile
-	End Sub
+    Sub EditToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles editToolStripMenuItem.Click
+        Call Me.EditProfile()
+    End Sub
 	
-	Sub DeleteToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		Call Me.DeleteProfile
-	End Sub
+    Sub DeleteToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles deleteToolStripMenuItem.Click
+        Call Me.DeleteProfile()
+    End Sub
 	
     Public Sub ApplyProfile(ByVal ThisProfile As String, ByVal ApplyType As String, Optional ByVal MACAddress As String = "")
         Call UpdateProgress(Me.StatusLabelWorking_Activating, ApplyType)
@@ -516,12 +516,12 @@ Public Partial Class MainForm
         If strUseProxySettings.Equals("1") Then boolUseProxySettings = True
         Dim strProxyServerAddress As String = INIRead(ThisProfile, "Internet Settings", "ProxyServerAddress", "")
         Dim strProxyServerPort As String = INIRead(ThisProfile, "Internet Settings", "ProxyServerPort", "")
-        Dim boolProxyBypass As Boolean = INIRead(ThisProfile, "Internet Settings", "ProxyBypass", False)
-        Dim boolProxyIE As Boolean = INIRead(ThisProfile, "Internet Settings", "InternetExplorer", False)
-        Dim boolProxyFirefox As Boolean = INIRead(ThisProfile, "Internet Settings", "Firefox", False)
-        Dim boolOpera As Boolean = INIRead(ThisProfile, "Internet Settings", "Opera", False)
+        Dim boolProxyBypass As Boolean = System.Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "ProxyBypass", "False"))
+        Dim boolProxyIE As Boolean = System.Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "InternetExplorer", "False"))
+        Dim boolProxyFirefox As Boolean = System.Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "Firefox", "False"))
+        Dim boolOpera As Boolean = System.Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "Opera", "False"))
         Dim strDefaultHomepage As String = INIRead(ThisProfile, "Internet Settings", "DefaultHomepage", "")
-        Dim TheMACAddress() As String = StrReverse(ThisProfile).Split("\")
+        Dim TheMACAddress() As String = StrReverse(ThisProfile).Split(System.Convert.ToChar("\"))
         Dim UseThisMACAddress As String = StrReverse(TheMACAddress(1))
         If MACAddress.Length > 0 Then
             UseThisMACAddress = MACAddress
@@ -533,11 +533,11 @@ Public Partial Class MainForm
         '*** START DISCONNECT PREVIOUSLY MAPPED DRIVES ***
         Call UpdateProgress(Me.StatusLabelWorking_UnmapDrives, ApplyType)
         Dim DisconnectTheseDrives() As String
-        DisconnectTheseDrives = INIRead(Globals.ProgramINIFile, "Options", "Mapped Drives", "").Split("|")
+        DisconnectTheseDrives = INIRead(Globals.ProgramINIFile, "Options", "Mapped Drives", "").Split(System.Convert.ToChar("|"))
         Dim TheDrive As Object
         For TheDrive = DisconnectTheseDrives.GetLowerBound(0) To DisconnectTheseDrives.GetUpperBound(0)
             Application.DoEvents()
-            DisconnectNetworkDrive(DisconnectTheseDrives(TheDrive), True)
+            DisconnectNetworkDrive(DisconnectTheseDrives(System.Convert.ToInt16(TheDrive)), True)
         Next TheDrive
         '*** END DISCONNECT PREVIOUSLY MAPPED DRIVES ***
 
@@ -549,12 +549,12 @@ Public Partial Class MainForm
         iniText = INIRead(ThisProfile, "Mapped Drives")
         iniText = iniText.Replace(ControlChars.NullChar, "|")
         iniText = Trim(iniText)
-        iniArray = iniText.Split("|")
+        iniArray = iniText.Split(System.Convert.ToChar("|"))
         Dim iniArray2() As String
         Dim X As Integer
         For X = iniArray.GetLowerBound(0) To (iniArray.GetUpperBound(0) - 1)
             Application.DoEvents()
-            iniArray2 = INIRead(ThisProfile, "Mapped Drives", iniArray(X), "").Split("|")
+            iniArray2 = INIRead(ThisProfile, "Mapped Drives", iniArray(X), "").Split(System.Convert.ToChar("|"))
             ConnectThisNetworkDrive(iniArray2(0), iniArray(X), SubstitutionDecode(iniArray2(1)), SubstitutionDecode(iniArray2(2)))
             CurrentlyMappedDrives = CurrentlyMappedDrives & "|" & iniArray(X)
         Next X
@@ -625,7 +625,7 @@ Public Partial Class MainForm
         End If
 
         If boolOpera.Equals(True) Then
-            Call SaveOperaSettings(strProxyServerAddress, strProxyServerPort, strUseProxySettings, strAutoConfigAddress, boolProxyBypass, strDefaultHomepage)
+            Call SaveOperaSettings(strProxyServerAddress, strProxyServerPort, System.Convert.ToInt16(strUseProxySettings), strAutoConfigAddress, boolProxyBypass, strDefaultHomepage)
         End If
 
         Call UpdateProgress(Me.StatusLabelWorking_Homepage, ApplyType)
@@ -646,7 +646,7 @@ Public Partial Class MainForm
         iniRunText = INIRead(ThisProfile, "Run")
         iniRunText = iniRunText.Replace(ControlChars.NullChar, "|")
         iniRunText = Trim(iniRunText)
-        iniRunArray = iniRunText.Split("|")
+        iniRunArray = iniRunText.Split(System.Convert.ToChar("|"))
         Dim iniRunArray2() As String
         Dim XRun As Integer
         For XRun = iniRunArray.GetLowerBound(0) To (iniRunArray.GetUpperBound(0) - 1)
@@ -712,7 +712,7 @@ Public Partial Class MainForm
         cScreen.bRevertPrompt = Globals.AskAfterChangingResolution
         cScreen.bValidate = True
         If NewDisplayResolution.Length > 0 And NewColorQuality.Length > 0 Then
-            Dim ResArray() As String = NewDisplayResolution.Split(" ")
+            Dim ResArray() As String = NewDisplayResolution.Split(System.Convert.ToChar(" "))
             Dim ResW As Integer = CInt(ResArray(0))
             Dim ResH As Integer = CInt(ResArray(2))
             Dim ResC As Integer = CInt("16")
@@ -722,9 +722,9 @@ Public Partial Class MainForm
             Call UpdateProgress(Me.StatusLabelWorking_Resolution, ApplyType)
             cScreen.ChangeResolution(ResW, ResH, ResC)
         ElseIf NewDisplayResolution.Length > 0 And NewColorQuality.Length = 0 Then
-            Dim ResArray() As String = NewDisplayResolution.Split(" ")
-            Dim ResW As Integer = ResArray(0)
-            Dim ResH As Integer = ResArray(2)
+            Dim ResArray() As String = NewDisplayResolution.Split(System.Convert.ToChar(" "))
+            Dim ResW As Integer = System.Convert.ToInt16(ResArray(0))
+            Dim ResH As Integer = System.Convert.ToInt16(ResArray(2))
             Call UpdateProgress(Me.StatusLabelWorking_Resolution, ApplyType)
             cScreen.ChangeResolution(ResW, ResH)
         End If
@@ -739,79 +739,79 @@ Public Partial Class MainForm
         End If
     End Sub
 	
-	Sub ToolStripButtonApplyProfileClick(ByVal sender As Object, ByVal e As EventArgs)
-		If Me.listViewProfiles.SelectedItems.Count > 0 Then
-			Call Me.ApplyProfile(Me.listViewProfiles.SelectedItems.Item(0).SubItems.Item(3).Text, "normal")
-		End If
-	End Sub
+    Sub ToolStripButtonApplyProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripButtonApplyProfile.Click
+        If Me.listViewProfiles.SelectedItems.Count > 0 Then
+            Call Me.ApplyProfile(Me.listViewProfiles.SelectedItems.Item(0).SubItems.Item(3).Text, "normal")
+        End If
+    End Sub
 	
-	Sub ToolStripMenuItemNewProfileClick(ByVal sender As Object, ByVal e As EventArgs)
-		Globals.CreatingNewProfile = True
-		ProfileSettings.ShowDialog
-	End Sub
+    Sub ToolStripMenuItemNewProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripMenuItemNewProfile.Click
+        Globals.CreatingNewProfile = True
+        ProfileSettings.ShowDialog()
+    End Sub
 	
-	Sub ToolStripMenuItemEditProfileClick(ByVal sender As Object, ByVal e As EventArgs)
-		Call Me.EditProfile
-	End Sub
+    Sub ToolStripMenuItemEditProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripMenuItemEditProfile.Click
+        Call Me.EditProfile()
+    End Sub
 	
-	Sub DeleteToolStripMenuItemDeleteProfileClick(ByVal sender As Object, ByVal e As EventArgs)
-		Call Me.DeleteProfile
-	End Sub
+    Sub DeleteToolStripMenuItemDeleteProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles deleteToolStripMenuItemDeleteProfile.Click
+        Call Me.DeleteProfile()
+    End Sub
 	
-	Sub ApplyProfileToolStripMenuItemApplyProfileClick(ByVal sender As Object, ByVal e As EventArgs)
-		If Me.listViewProfiles.SelectedItems.Count > 0 Then
-			Call Me.ApplyProfile(Me.listViewProfiles.SelectedItems.Item(0).SubItems.Item(3).Text, "normal")
-		End If
-	End Sub
+    Sub ApplyProfileToolStripMenuItemApplyProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles applyProfileToolStripMenuItemApplyProfile.Click
+        If Me.listViewProfiles.SelectedItems.Count > 0 Then
+            Call Me.ApplyProfile(Me.listViewProfiles.SelectedItems.Item(0).SubItems.Item(3).Text, "normal")
+        End If
+    End Sub
 	
-	Sub ExitToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		Globals.OKToCloseProgram = True
-		Me.Close
-	End Sub
+    Sub ExitToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles exitToolStripMenuItem.Click
+        Globals.OKToCloseProgram = True
+        Me.Close()
+    End Sub
 	
-	Sub MainFormFormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs)
-		If e.CloseReason = System.Windows.Forms.CloseReason.WindowsShutDown Then
-			
-		Else
-			If Me.toolStripProgressBar1.Visible = True Or Globals.OKToCloseProgram = False Then
-				If Me.toolStripProgressBar1.Visible = False Then
-					Call Me.ToggleProgramVisibility
-				End If
-				e.Cancel = True
-			Else
-				e.Cancel = False
-			End If
-			If Me.Visible.Equals(True) And Me.WindowState <> FormWindowState.Minimized Then
-				INIWrite(Globals.ProgramINIFile, "Program", "LocationTop", Me.Top.ToString)
-				INIWrite(Globals.ProgramINIFile, "Program", "LocationLeft", Me.Left.ToString)
-				INIWrite(Globals.ProgramINIFile, "Program", "WindowWidth", Me.Width.ToString)
-				INIWrite(Globals.ProgramINIFile, "Program", "WindowHeight", Me.Height.ToString)
-			End If		
-		End If
-	End Sub
+    Sub MainFormFormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If e.CloseReason = System.Windows.Forms.CloseReason.WindowsShutDown Then
+
+        Else
+            If Me.toolStripProgressBar1.Visible = True Or Globals.OKToCloseProgram = False Then
+                If Me.toolStripProgressBar1.Visible = False Then
+                    Call Me.ToggleProgramVisibility()
+                End If
+                e.Cancel = True
+            Else
+                e.Cancel = False
+            End If
+            If Me.Visible.Equals(True) And Me.WindowState <> FormWindowState.Minimized Then
+                INIWrite(Globals.ProgramINIFile, "Program", "LocationTop", Me.Top.ToString)
+                INIWrite(Globals.ProgramINIFile, "Program", "LocationLeft", Me.Left.ToString)
+                INIWrite(Globals.ProgramINIFile, "Program", "WindowWidth", Me.Width.ToString)
+                INIWrite(Globals.ProgramINIFile, "Program", "WindowHeight", Me.Height.ToString)
+            End If
+        End If
+    End Sub
 	
-	Sub ExitToolStripMenuItem1Click(ByVal sender As Object, ByVal e As EventArgs)
-		Globals.OKToCloseProgram = True
-		Me.Close
-	End Sub
+    Sub ExitToolStripMenuItem1Click(ByVal sender As Object, ByVal e As EventArgs) Handles exitToolStripMenuItem1.Click
+        Globals.OKToCloseProgram = True
+        Me.Close()
+    End Sub
 	
-	Sub ShowHideWindowToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		Call Me.ToggleProgramVisibility
-	End Sub
+    Sub ShowHideWindowToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles showHideWindowToolStripMenuItem.Click
+        Call Me.ToggleProgramVisibility()
+    End Sub
 	
-	Sub MinimizeToTrayOnCloseToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		If Me.minimizeToTrayOnCloseToolStripMenuItem.Checked.Equals(True) Then
-			INIWrite(Globals.ProgramINIFile, "Program", "MinimizeToTray", "True")
-			Globals.OKToCloseProgram = False
-		Else
-			INIWrite(Globals.ProgramINIFile, "Program", "MinimizeToTray", "False")
-			Globals.OKToCloseProgram = True
-		End If
-	End Sub
+    Sub MinimizeToTrayOnCloseToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles minimizeToTrayOnCloseToolStripMenuItem.Click
+        If Me.minimizeToTrayOnCloseToolStripMenuItem.Checked.Equals(True) Then
+            INIWrite(Globals.ProgramINIFile, "Program", "MinimizeToTray", "True")
+            Globals.OKToCloseProgram = False
+        Else
+            INIWrite(Globals.ProgramINIFile, "Program", "MinimizeToTray", "False")
+            Globals.OKToCloseProgram = True
+        End If
+    End Sub
 	
-	Sub NotifyIcon1DoubleClick(ByVal sender As Object, ByVal e As EventArgs)
-		Call Me.ToggleProgramVisibility
-	End Sub
+    Sub NotifyIcon1DoubleClick(ByVal sender As Object, ByVal e As EventArgs) Handles notifyIcon1.DoubleClick
+        Call Me.ToggleProgramVisibility()
+    End Sub
 	
 	Public Sub ToggleProgramVisibility
 		If Me.ShowInTaskbar.Equals(False) Then
@@ -836,23 +836,23 @@ Public Partial Class MainForm
 			
 	End Sub
 	
-	Sub FileToolStripMenuItemDropDownOpening(ByVal sender As Object, ByVal e As EventArgs)
-		If Me.listViewProfiles.SelectedItems.Count > 0 Then
-			Me.toolStripMenuItemEditProfile.Enabled = True
-			Me.deleteToolStripMenuItemDeleteProfile.Enabled = True
-			Me.applyProfileToolStripMenuItemApplyProfile.Enabled = True
-			Me.createDesktopShortcutToolStripMenuItem1.Enabled = True
-			Me.activateOnDifferentNetworkCardToolStripMenuItem1.Enabled = True
-			Me.toolStripMenuItemCopyProfile.Enabled = True
-		Else
-			Me.toolStripMenuItemEditProfile.Enabled = False
-			Me.deleteToolStripMenuItemDeleteProfile.Enabled = False
-			Me.applyProfileToolStripMenuItemApplyProfile.Enabled = False
-			Me.createDesktopShortcutToolStripMenuItem1.Enabled = False
-			Me.activateOnDifferentNetworkCardToolStripMenuItem1.Enabled = False
-			Me.toolStripMenuItemCopyProfile.Enabled = False
-		End If
-	End Sub
+    Sub FileToolStripMenuItemDropDownOpening(ByVal sender As Object, ByVal e As EventArgs) Handles fileToolStripMenuItem.DropDownOpening
+        If Me.listViewProfiles.SelectedItems.Count > 0 Then
+            Me.toolStripMenuItemEditProfile.Enabled = True
+            Me.deleteToolStripMenuItemDeleteProfile.Enabled = True
+            Me.applyProfileToolStripMenuItemApplyProfile.Enabled = True
+            Me.createDesktopShortcutToolStripMenuItem1.Enabled = True
+            Me.activateOnDifferentNetworkCardToolStripMenuItem1.Enabled = True
+            Me.toolStripMenuItemCopyProfile.Enabled = True
+        Else
+            Me.toolStripMenuItemEditProfile.Enabled = False
+            Me.deleteToolStripMenuItemDeleteProfile.Enabled = False
+            Me.applyProfileToolStripMenuItemApplyProfile.Enabled = False
+            Me.createDesktopShortcutToolStripMenuItem1.Enabled = False
+            Me.activateOnDifferentNetworkCardToolStripMenuItem1.Enabled = False
+            Me.toolStripMenuItemCopyProfile.Enabled = False
+        End If
+    End Sub
 	
 	Sub CreateDesktopShortcut
 		If Me.listViewProfiles.SelectedItems.Count > 0 Then
@@ -875,139 +875,139 @@ Public Partial Class MainForm
 		End If
 	End Sub
 	
-	Sub CreateDesktopShortcutToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		Call CreateDesktopShortcut
-	End Sub
+    Sub CreateDesktopShortcutToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles createDesktopShortcutToolStripMenuItem.Click
+        Call CreateDesktopShortcut()
+    End Sub
 	
-	Sub CustomizeDesktopShortcutsToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		DesktopShortcut.ShowDialog
-	End Sub
+    Sub CustomizeDesktopShortcutsToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles customizeDesktopShortcutsToolStripMenuItem.Click
+        DesktopShortcut.ShowDialog()
+    End Sub
 	
-	Sub ReloadNetworkInterfacesToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		Me.toolStripProgressBar1.Enabled = True
-		Me.toolStripProgressBar1.Visible = True
-		Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking_Reloading
-		Me.toolStripStatusLabelWorking.Visible = True
-		Call PopulateNetworkCardArray
-		Me.toolStripProgressBar1.Visible = False
-		Me.toolStripProgressBar1.Enabled = False
-		Me.toolStripStatusLabelWorking.Visible = False
-	End Sub
+    Sub ReloadNetworkInterfacesToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles reloadNetworkInterfacesToolStripMenuItem.Click
+        Me.toolStripProgressBar1.Enabled = True
+        Me.toolStripProgressBar1.Visible = True
+        Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking_Reloading
+        Me.toolStripStatusLabelWorking.Visible = True
+        Call PopulateNetworkCardArray()
+        Me.toolStripProgressBar1.Visible = False
+        Me.toolStripProgressBar1.Enabled = False
+        Me.toolStripStatusLabelWorking.Visible = False
+    End Sub
 	
-	Sub ReloadProfilesToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		Call RefreshProfiles
-	End Sub
+    Sub ReloadProfilesToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles reloadProfilesToolStripMenuItem.Click
+        Call RefreshProfiles()
+    End Sub
 	
-	Sub CreateDesktopShortcutToolStripMenuItem1Click(ByVal sender As Object, ByVal e As EventArgs)
-		Call CreateDesktopShortcut
-	End Sub
+    Sub CreateDesktopShortcutToolStripMenuItem1Click(ByVal sender As Object, ByVal e As EventArgs) Handles createDesktopShortcutToolStripMenuItem1.Click
+        Call CreateDesktopShortcut()
+    End Sub
 	
 	Sub ToolStripButtonCreateDesktopShortcutClick(ByVal sender As Object, ByVal e As EventArgs)
 		Call CreateDesktopShortcut
 	End Sub
 	
-	Sub ActivateOnDifferentNetworkCardToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		ActivateSelectNetworkCard.ShowDialog
-	End Sub
+    Sub ActivateOnDifferentNetworkCardToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles activateOnDifferentNetworkCardToolStripMenuItem.Click
+        ActivateSelectNetworkCard.ShowDialog()
+    End Sub
 	
-	Sub ActivateOnDifferentNetworkCardToolStripMenuItem1Click(ByVal sender As Object, ByVal e As EventArgs)
-		ActivateSelectNetworkCard.ShowDialog
-	End Sub
+    Sub ActivateOnDifferentNetworkCardToolStripMenuItem1Click(ByVal sender As Object, ByVal e As EventArgs) Handles activateOnDifferentNetworkCardToolStripMenuItem1.Click
+        ActivateSelectNetworkCard.ShowDialog()
+    End Sub
 	
-	Sub AskBeforeChangingResolutionToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		Globals.AskBeforeChangingResolution = Me.askBeforeChangingResolutionToolStripMenuItem.Checked
-		INIWrite(Globals.ProgramINIFile, "Program", "AskBeforeChangingResolution", Me.askBeforeChangingResolutionToolStripMenuItem.Checked.ToString)
-	End Sub
+    Sub AskBeforeChangingResolutionToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles askBeforeChangingResolutionToolStripMenuItem.Click
+        Globals.AskBeforeChangingResolution = Me.askBeforeChangingResolutionToolStripMenuItem.Checked
+        INIWrite(Globals.ProgramINIFile, "Program", "AskBeforeChangingResolution", Me.askBeforeChangingResolutionToolStripMenuItem.Checked.ToString)
+    End Sub
 	
-	Sub ConfirmSettingsAfterChangingResolutionToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		Globals.AskAfterChangingResolution = Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked
-		INIWrite(Globals.ProgramINIFile, "Program", "AskAfterChangingResolution", Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked.ToString)
-	End Sub
+    Sub ConfirmSettingsAfterChangingResolutionToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles confirmSettingsAfterChangingResolutionToolStripMenuItem.Click
+        Globals.AskAfterChangingResolution = Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked
+        INIWrite(Globals.ProgramINIFile, "Program", "AskAfterChangingResolution", Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked.ToString)
+    End Sub
 	
-	Sub TimerDetectWirelessTick(ByVal sender As Object, ByVal e As EventArgs)
-		Me.timerDetectWireless.Enabled = False
-		Call GetConnectedSSIDs()
-		Me.timerDetectWireless.Enabled = True
-	End Sub
+    Sub TimerDetectWirelessTick(ByVal sender As Object, ByVal e As EventArgs) Handles timerDetectWireless.Tick
+        Me.timerDetectWireless.Enabled = False
+        Call GetConnectedSSIDs()
+        Me.timerDetectWireless.Enabled = True
+    End Sub
 	
-	Sub MinimizeToTrayOnStartupToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		INIWrite(Globals.ProgramINIFile, "Program", "ToTrayOnStartup", Me.minimizeToTrayOnStartupToolStripMenuItem.Checked.ToString)
-	End Sub
+    Sub MinimizeToTrayOnStartupToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles minimizeToTrayOnStartupToolStripMenuItem.Click
+        INIWrite(Globals.ProgramINIFile, "Program", "ToTrayOnStartup", Me.minimizeToTrayOnStartupToolStripMenuItem.Checked.ToString)
+    End Sub
 	
-	Sub DontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		INIWrite(Globals.ProgramINIFile, "Program", "DoNotConfirmAutoActivate", Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Checked.ToString)
-	End Sub
+    Sub DontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Click
+        INIWrite(Globals.ProgramINIFile, "Program", "DoNotConfirmAutoActivate", Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Checked.ToString)
+    End Sub
 	
-	Sub RunWhenILogInToWindowsToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		If Me.runWhenILogInToWindowsToolStripMenuItem.Checked.Equals(True) Then
-			Call SetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", "Net Profiles", Chr(34) & Application.ExecutablePath & Chr(34))
-		Else
-			Call DeleteRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", "Net Profiles")
-		End If
-	End Sub
+    Sub RunWhenILogInToWindowsToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles runWhenILogInToWindowsToolStripMenuItem.Click
+        If Me.runWhenILogInToWindowsToolStripMenuItem.Checked.Equals(True) Then
+            Call SetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", "Net Profiles", Chr(34) & Application.ExecutablePath & Chr(34))
+        Else
+            Call DeleteRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", "Net Profiles")
+        End If
+    End Sub
 	
-	Sub AboutToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		About.ShowDialog
-	End Sub
+    Sub AboutToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles aboutToolStripMenuItem.Click
+        About.ShowDialog()
+    End Sub
 	
-	Sub ListViewProfilesDoubleClick(ByVal sender As Object, ByVal e As EventArgs)
-		If Me.listViewProfiles.SelectedItems.Count > 0 Then
-			Call Me.ApplyProfile(Me.listViewProfiles.SelectedItems.Item(0).SubItems.Item(3).Text, "normal")
-		End If
-	End Sub
+    Sub ListViewProfilesDoubleClick(ByVal sender As Object, ByVal e As EventArgs) Handles listViewProfiles.DoubleClick
+        If Me.listViewProfiles.SelectedItems.Count > 0 Then
+            Call Me.ApplyProfile(Me.listViewProfiles.SelectedItems.Item(0).SubItems.Item(3).Text, "normal")
+        End If
+    End Sub
 	
-	Sub ListViewProfilesItemSelectionChanged(ByVal sender As Object, ByVal e As ListViewItemSelectionChangedEventArgs)
-		If Me.listViewProfiles.SelectedItems.Count > 0 Then
-			Me.toolStripButtonApplyProfile.Enabled = True
-			Me.toolStripButtonEditProfile.Enabled = True
-			Me.toolStripButtonDeleteProfile.Enabled = True
-			Me.toolStripButtonCopyProfile.Enabled = True
-		Else
-			Me.toolStripButtonApplyProfile.Enabled = False
-			Me.toolStripButtonEditProfile.Enabled = False
-			Me.toolStripButtonDeleteProfile.Enabled = False
-			Me.toolStripButtonCopyProfile.Enabled = False
-		End If
-	End Sub
+    Sub ListViewProfilesItemSelectionChanged(ByVal sender As Object, ByVal e As ListViewItemSelectionChangedEventArgs) Handles listViewProfiles.ItemSelectionChanged
+        If Me.listViewProfiles.SelectedItems.Count > 0 Then
+            Me.toolStripButtonApplyProfile.Enabled = True
+            Me.toolStripButtonEditProfile.Enabled = True
+            Me.toolStripButtonDeleteProfile.Enabled = True
+            Me.toolStripButtonCopyProfile.Enabled = True
+        Else
+            Me.toolStripButtonApplyProfile.Enabled = False
+            Me.toolStripButtonEditProfile.Enabled = False
+            Me.toolStripButtonDeleteProfile.Enabled = False
+            Me.toolStripButtonCopyProfile.Enabled = False
+        End If
+    End Sub
 	
-	Sub CheckForUpdatesToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		Application.DoEvents
-		Try
-			Dim wrq As WebRequest = WebRequest.Create("http://www.milnersolutions.com/netprofiles/currentversion.php")
-			Dim wrp As WebResponse = wrq.GetResponse()
-			Application.DoEvents
-			Dim sr As StreamReader = New StreamReader(wrp.GetResponseStream())
-			Application.DoEvents
-			Dim currentVersion As String = sr.ReadToEnd()
-			If currentVersion.Trim = Globals.ProgramVersion Then
-				MessageBox.Show(Me.CheckForUpdates_Latest, "Net Profiles", MessageBoxButtons.OK, MessageBoxIcon.Information)
-			Else
-				Dim YNResult As Object
-				YNResult = MessageBox.Show(Me.CheckForUpdates_New_1.Replace("%2", currentVersion.Trim) & vbCrLf & Me.CheckForUpdates_New_2, Me.CheckForUpdates_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-				If YNResult = Me.DialogResult.Yes Then
-					Application.DoEvents
-					Start("http://code.google.com/p/netprofiles/")
-				End If
-			End If
-		Catch
-			MessageBox.Show(Me.CheckForUpdates_Error_1 & vbCrLf & Me.CheckForUpdates_Error_2, "Net Profiles", MessageBoxButtons.OK, MessageBoxIcon.Information)
-		End Try
-		
-	End Sub
+    Sub CheckForUpdatesToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles checkForUpdatesToolStripMenuItem.Click
+        Application.DoEvents()
+        Try
+            Dim wrq As WebRequest = WebRequest.Create("http://www.milnersolutions.com/netprofiles/currentversion.php")
+            Dim wrp As WebResponse = wrq.GetResponse()
+            Application.DoEvents()
+            Dim sr As StreamReader = New StreamReader(wrp.GetResponseStream())
+            Application.DoEvents()
+            Dim currentVersion As String = sr.ReadToEnd()
+            If currentVersion.Trim = Globals.ProgramVersion Then
+                MessageBox.Show(Me.CheckForUpdates_Latest, "Net Profiles", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                Dim YNResult As Object
+                YNResult = MessageBox.Show(Me.CheckForUpdates_New_1.Replace("%2", currentVersion.Trim) & vbCrLf & Me.CheckForUpdates_New_2, Me.CheckForUpdates_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                If YNResult = DialogResult.Yes Then
+                    Application.DoEvents()
+                    Start("http://code.google.com/p/netprofiles/")
+                End If
+            End If
+        Catch
+            MessageBox.Show(Me.CheckForUpdates_Error_1 & vbCrLf & Me.CheckForUpdates_Error_2, "Net Profiles", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
+
+    End Sub
 	
-	Sub CopyToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		CopyProfile.ShowDialog
-	End Sub
+    Sub CopyToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles copyToolStripMenuItem.Click
+        CopyProfile.ShowDialog()
+    End Sub
 	
-	Sub toolStripMenuItemCopyProfileClick(ByVal sender As Object, ByVal e As EventArgs)
-		CopyProfile.ShowDialog
-	End Sub
+    Sub toolStripMenuItemCopyProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripMenuItemCopyProfile.Click
+        CopyProfile.ShowDialog()
+    End Sub
 	
-	Sub ToolStripButtonCopyProfileClick(ByVal sender As Object, ByVal e As EventArgs)
-		CopyProfile.ShowDialog
-	End Sub
+    Sub ToolStripButtonCopyProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripButtonCopyProfile.Click
+        CopyProfile.ShowDialog()
+    End Sub
 	
-	Sub NetProfilesWebsiteToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs)
-		Start("http://code.google.com/p/netprofiles/")
-	End Sub
+    Sub NetProfilesWebsiteToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles netProfilesWebsiteToolStripMenuItem.Click
+        Start("http://code.google.com/p/netprofiles/")
+    End Sub
 End Class
