@@ -5,7 +5,7 @@ Name "Net Profiles"
 
 # Defines
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 2.1.7
+!define VERSION 2.1.8
 !define COMPANY "Daniel Milner"
 !define URL http://code.google.com/p/netprofiles/
 
@@ -46,7 +46,7 @@ InstallDir "$PROGRAMFILES\Net Profiles"
 CRCCheck on
 XPStyle on
 ShowInstDetails show
-VIProductVersion 2.1.7.0
+VIProductVersion 2.1.8.0
 VIAddVersionKey ProductName "Net Profiles"
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
@@ -86,6 +86,8 @@ Section "-Net Profiles" SEC0000
 	File lang\es-ar.xml
 	File lang\pl-pl.xml
 	File lang\ru-ru.xml
+	File lang\hu-hu.xml
+	File lang\he.xml
 
 SectionEnd
 
@@ -175,6 +177,7 @@ Function .onInit
 	${If} $R0 != "XP"
 	${OrIf} $R0 != "XP x64"
 	${OrIf} $R0 != "Vista"
+	${OrIf} $R0 != "7"
 
 	${Else}
 		MessageBox MB_OK|MB_ICONEXCLAMATION \
