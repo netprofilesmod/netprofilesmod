@@ -411,8 +411,8 @@ Public Module Globals
 			For Each queryObj As ManagementObject in searcher.Get()
 				Application.DoEvents
                 Dim DHCP As String = CStr(queryObj("DHCPEnabled"))
-                Dim IPAddress As String = queryObj("IPAddress")(0)
-                Dim SubnetMask As String = queryObj("IPSubnet")(0)
+                Dim IPAddress As String = Convert.ToString(queryObj("IPAddress")(0))
+                Dim SubnetMask As String = Convert.ToString(queryObj("IPSubnet")(0))
                 Dim DefaultGateway As String = CStr(Join(queryObj("DefaultIPGateway"), ","))
                 Dim PrimaryDNSServer As String = CStr(Join(queryObj("DNSServerSearchOrder"), ","))
                 Dim WINSServer As String = CStr(queryObj("WINSPrimaryServer"))
