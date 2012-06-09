@@ -445,8 +445,8 @@ Public Module Globals
     Private Declare Function SystemParametersInfo Lib "user32" Alias "SystemParametersInfoA" (ByVal uAction As Integer, ByVal uParam As Integer, ByVal lpvParam As String, ByVal fuWinIni As Integer) As Integer
 
     'constants to be used with the above api
-    Private Const SPI_SETDESKWALLPAPER = 20
-    Private Const SPIF_UPDATEINIFILE = &H1
+    Private Const SPI_SETDESKWALLPAPER As Integer = 20
+    Private Const SPIF_UPDATEINIFILE As Integer = &H1
     
     Public Sub SetWallpaper(ByVal WallpaperFile As String)
 		MainForm.pictureBoxWallpaper.Image = Image.FromFile(WallpaperFile)
