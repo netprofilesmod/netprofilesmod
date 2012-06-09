@@ -219,7 +219,7 @@ Public Class clsScreenRes
         'Prompt for Confirmation (ConfirmPrompt)
 
         If m_bConfirmPrompt = True And m_bResetting = False Then
-            If ShowConfirmPrompt(iWidth, iHeight, iBPP, iRefreshRate) = MsgBoxResult.No Then
+            If ShowConfirmPrompt(iWidth, iHeight, iBPP, iRefreshRate) = DialogResult.No Then
                 Call Reset()
                 Return "Confirm Failed"
             End If
@@ -252,7 +252,7 @@ Public Class clsScreenRes
         'Prompt to Keep Settings RevertPrompt, if NO then  Reset.
 
         If m_bRevertPrompt = True And m_bResetting = False Then
-            If ShowRevertPrompt(iWidth, iHeight, iBPP, iRefreshRate) = MsgBoxResult.No Then
+            If ShowRevertPrompt(iWidth, iHeight, iBPP, iRefreshRate) = DialogResult.No Then
                 Call Reset()
                 Return "Revert Reset"
             End If
@@ -577,7 +577,7 @@ Errorhandler:
         Return bValid
     End Function
     
-    Private Function ShowConfirmPrompt(ByVal iWidth As Integer, ByVal iHeight As Integer, ByVal iBPP As Integer, ByVal iRefreshRate As Integer) As MsgBoxResult
+    Private Function ShowConfirmPrompt(ByVal iWidth As Integer, ByVal iHeight As Integer, ByVal iBPP As Integer, ByVal iRefreshRate As Integer) As DialogResult
         Dim xDoc As New XmlDocument
 		xDoc.Load(Globals.CurrentLangPath)
 		Dim root As XmlElement = xDoc.DocumentElement
@@ -587,7 +587,7 @@ Errorhandler:
 		Dim BitsText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Bits").InnerText
 		Dim RefreshText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Refresh").InnerText
         
-        'Confirm Prompt: Returns Yes/No (msgboxresult)
+        'Confirm Prompt: Returns Yes/No (DialogResult)
         Dim strMessage As String
         'strMessage = "Would you like to change display settings?" & vbCrLf
         'strMessage += vbCrLf & "Resolution: " & iWidth & "x" & iHeight
@@ -601,7 +601,7 @@ Errorhandler:
         ShowConfirmPrompt = MessageBox.Show(strMessage, ConfirmPromptTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
     End Function
     
-    Private Function ShowRevertPrompt(ByVal iWidth As Integer, ByVal iHeight As Integer, ByVal iBPP As Integer, ByVal iRefreshRate As Integer) As MsgBoxResult
+    Private Function ShowRevertPrompt(ByVal iWidth As Integer, ByVal iHeight As Integer, ByVal iBPP As Integer, ByVal iRefreshRate As Integer) As DialogResult
         Dim xDoc As New XmlDocument
 		xDoc.Load(Globals.CurrentLangPath)
 		Dim root As XmlElement = xDoc.DocumentElement
@@ -611,7 +611,7 @@ Errorhandler:
 		Dim BitsText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Bits").InnerText
 		Dim RefreshText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Refresh").InnerText
         
-        'Revert Prompt: Returns Yes/No (msgboxresult)
+        'Revert Prompt: Returns Yes/No (DialogResult)
         Dim strMessage As String
         'strMessage = "Would you like to keep current settings?" & vbCrLf
         'strMessage += vbCrLf & "Resolution: " & iWidth & "x" & iHeight
