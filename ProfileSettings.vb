@@ -142,7 +142,7 @@ Public Partial Class ProfileSettings
 	
 	Sub ButtonSaveClick(ByVal sender As Object, ByVal e As EventArgs)
         If Me.textBoxProfileName.Text.Trim.Length = 0 Then
-        	MessageBox.Show(Me.ProfileName_Messagebox, "Net Profiles", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        	MessageBox.Show(Me.ProfileName_Messagebox, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
         	Me.textBoxProfileName.Focus()
         	Exit Sub
         End If
@@ -944,7 +944,7 @@ Public Partial Class ProfileSettings
 	
 	Sub ButtonClearFirefoxClick(ByVal sender As Object, ByVal e As EventArgs)
 		Call DeleteFirefoxSettings()
-		MessageBox.Show(Me.ClearFirefox_Messagebox_1 & vbCrLf & vbCrLf & Me.ClearFirefox_Messagebox_2, "Net Profiles - Firefox")
+		MessageBox.Show(Me.ClearFirefox_Messagebox_1 & vbCrLf & vbCrLf & Me.ClearFirefox_Messagebox_2, Globals.ProgramName & " - Firefox")
 	End Sub
 	
 	Sub ProfileSettingsFormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs)

@@ -213,7 +213,7 @@
     <value>1</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Net Profiles</value>
+    <value>Net Profiles mod</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -336,7 +336,7 @@
     <value>7</value>
   </data>
   <data name="linkLabelHomepage.Text" xml:space="preserve">
-    <value>http://code.google.com/p/netprofiles/</value>
+    <value>http://code.google.com/p/netprofilesmod/</value>
   </data>
   <data name="linkLabelHomepage.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -372,7 +372,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>About Net Profiles</value>
+    <value>About Net Profiles mod</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>About</value>

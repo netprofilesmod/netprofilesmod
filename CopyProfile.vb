@@ -57,8 +57,7 @@ Public Partial Class CopyProfile
 	
 	Sub ButtonCopyClick(ByVal sender As Object, ByVal e As EventArgs)
 		If Me.textBoxNewName.Text.Trim.Length = 0 Then
-        	'MessageBox.Show("Please enter a name for this profile.", "Net Profiles", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        	MessageBox.Show(Me.ProfileName_Messagebox, "Net Profiles", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        	MessageBox.Show(Me.ProfileName_Messagebox, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
         	Me.textBoxNewName.Focus()
         	Exit Sub
         End If

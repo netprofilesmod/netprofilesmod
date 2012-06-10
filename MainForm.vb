@@ -121,7 +121,7 @@ Public Partial Class MainForm
         If DoNotConfirmAutoActivate.Equals("True") Then
             Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Checked = True
         End If
-        If GetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", "Net Profiles").Length > 0 Then
+        If GetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", Globals.ProgramName).Length > 0 Then
             Me.runWhenILogInToWindowsToolStripMenuItem.Checked = True
         End If
         If Globals.EnableLoadTimer.Equals(True) Then
@@ -414,7 +414,7 @@ Public Partial Class MainForm
         Call RefreshProfiles()
         If Me.listViewProfiles.Items.Count = 0 Then
             Dim YNResult As Object
-            YNResult = MessageBox.Show(Me.NoNetworkProfilesMessageBox_1 & vbCrLf & Me.NoNetworkProfilesMessageBox_2, "Net Profiles", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            YNResult = MessageBox.Show(Me.NoNetworkProfilesMessageBox_1 & vbCrLf & Me.NoNetworkProfilesMessageBox_2, Globals.ProgramName, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If YNResult = DialogResult.Yes Then
                 Globals.CreatingNewProfile = True
                 ProfileSettings.ShowDialog()
@@ -873,7 +873,7 @@ Public Partial Class MainForm
 			ShortcutConfig = ShortcutConfig.Replace("%4", MACAddress)
 			
 			CreateShortcut(ShortcutConfig, My.Application.Info.DirectoryPath & "\" & My.Application.Info.AssemblyName & ".exe", "auto|" & Me.listViewProfiles.SelectedItems.Item(0).Group.Name & "|" & Me.listViewProfiles.SelectedItems.Item(0).SubItems.Item(2).Text,,,)
-			MessageBox.Show(Me.CreateShortcutMessagebox, "Net Profiles", MessageBoxButtons.OK, MessageBoxIcon.Information)
+			MessageBox.Show(Me.CreateShortcutMessagebox, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
 		End If
 	End Sub
 	
@@ -942,9 +942,9 @@ Public Partial Class MainForm
 	
     Sub RunWhenILogInToWindowsToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles runWhenILogInToWindowsToolStripMenuItem.Click
         If Me.runWhenILogInToWindowsToolStripMenuItem.Checked.Equals(True) Then
-            Call SetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", "Net Profiles", Chr(34) & Application.ExecutablePath & Chr(34))
+            Call SetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", Globals.ProgramName, Chr(34) & Application.ExecutablePath & Chr(34))
         Else
-            Call DeleteRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", "Net Profiles")
+            Call DeleteRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", Globals.ProgramName)
         End If
     End Sub
 	
@@ -975,24 +975,24 @@ Public Partial Class MainForm
     Sub CheckForUpdatesToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles checkForUpdatesToolStripMenuItem.Click
         Application.DoEvents()
         Try
-            Dim wrq As WebRequest = WebRequest.Create("http://www.milnersolutions.com/netprofiles/currentversion.php")
+            Dim wrq As WebRequest = WebRequest.Create("http://www.feldhammer.at/osp/netprofilesmod/latestversion.php")
             Dim wrp As WebResponse = wrq.GetResponse()
             Application.DoEvents()
             Dim sr As StreamReader = New StreamReader(wrp.GetResponseStream())
             Application.DoEvents()
             Dim currentVersion As String = sr.ReadToEnd()
             If currentVersion.Trim = Globals.ProgramVersion Then
-                MessageBox.Show(Me.CheckForUpdates_Latest, "Net Profiles", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show(Me.CheckForUpdates_Latest, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 Dim YNResult As Object
                 YNResult = MessageBox.Show(Me.CheckForUpdates_New_1.Replace("%2", currentVersion.Trim) & vbCrLf & Me.CheckForUpdates_New_2, Me.CheckForUpdates_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If YNResult = DialogResult.Yes Then
                     Application.DoEvents()
-                    Start("http://code.google.com/p/netprofiles/")
+                    Start("http://code.google.com/p/netprofilesmod/")
                 End If
             End If
         Catch
-            MessageBox.Show(Me.CheckForUpdates_Error_1 & vbCrLf & Me.CheckForUpdates_Error_2, "Net Profiles", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show(Me.CheckForUpdates_Error_1 & vbCrLf & Me.CheckForUpdates_Error_2, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Try
 
     End Sub
@@ -1010,6 +1010,6 @@ Public Partial Class MainForm
     End Sub
 	
     Sub NetProfilesWebsiteToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles netProfilesWebsiteToolStripMenuItem.Click
-        Start("http://code.google.com/p/netprofiles/")
+        Start("http://code.google.com/p/netprofilesmod/")
     End Sub
 End Class

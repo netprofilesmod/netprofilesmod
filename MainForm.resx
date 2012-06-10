@@ -472,7 +472,7 @@
     <value>189, 22</value>
   </data>
   <data name="netProfilesWebsiteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Net Profiles Website...</value>
+    <value>Net Profiles mod Website...</value>
   </data>
   <data name="checkForUpdatesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -743,7 +743,7 @@
     <value>229, 17</value>
   </data>
   <data name="toolStripStatusLabel1.Text" xml:space="preserve">
-    <value>Net Profiles v2.1.8</value>
+    <value>Net Profiles mod v2.1.8</value>
   </data>
   <data name="toolStripStatusLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -1963,7 +1963,7 @@
 </value>
   </data>
   <data name="notifyIcon1.Text" xml:space="preserve">
-    <value>Net Profiles</value>
+    <value>Net Profiles mod</value>
   </data>
   <data name="notifyIcon1.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2749,7 +2749,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Net Profiles</value>
+    <value>Net Profiles mod</value>
   </data>
   <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
     <value>fileToolStripMenuItem</value>

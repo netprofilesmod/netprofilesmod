@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 ' change them to the information which is associated with the assembly
 ' you compile.
 
-<assembly: AssemblyTitle("Net Profiles")>
+<assembly: AssemblyTitle(Globals.ProgramName)>
 <assembly: AssemblyDescription("")>
 <assembly: AssemblyConfiguration("")>
 <assembly: AssemblyCompany("")>
-<assembly: AssemblyProduct("Net Profiles")>
+<assembly: AssemblyProduct(Globals.ProgramName)>
 <assembly: AssemblyCopyright("")>
 <assembly: AssemblyTrademark("")>
 <assembly: AssemblyCulture("")>

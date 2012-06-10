@@ -18,13 +18,13 @@ Imports System.Xml
 
 Public Module Globals
     Public ProgramVersion As String = "2.1.8"
-	Public ProgramName As String = "Net Profiles"
+	Public const ProgramName As String = "Net Profiles mod"
 	Public CurrentLang As String = "en-US"
 	Public CurrentLangPath As String
 	Public CreatingNewProfile As Boolean
 	Public CreatingNewMappedDrive As Boolean
 	Public CreatingNewRunCommand As Boolean
-	Public ProgramINIFile As String = My.Application.Info.DirectoryPath & "\netprofiles.ini"
+	Public ProgramINIFile As String = My.Application.Info.DirectoryPath & "\netprofilesmod.ini"
 	Public OKToCloseProgram As Boolean = False
 	Public commandArray() As String
 	Public EnableLoadTimer As Boolean = True
@@ -630,7 +630,7 @@ Public Module Globals
 						WirelessDetected.labelProfile.Text = ProfileName
 						WirelessDetected.Show
 						'Dim YNResult As Object
-						'YNResult = MessageBox.Show("You are connected to " & CurrentWirelessSSID.ToString & "." & vbCrLf & "Would you like to activate the " & ProfileName & " profile?", "Net Profiles - Wireless Network Detected", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+						'YNResult = MessageBox.Show("You are connected to " & CurrentWirelessSSID.ToString & "." & vbCrLf & "Would you like to activate the " & ProfileName & " profile?", Globals.ProgramName & " - Wireless Network Detected", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 						'If YNResult = System.Windows.Forms.DialogResult.Yes Then
 						'	Globals.INIAutoLoad = AutoConnectProfile(i).ToString
 						'	AutoActivate.Show
