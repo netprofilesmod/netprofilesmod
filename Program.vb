@@ -23,5 +23,14 @@ Namespace My
 		Protected Overrides Sub OnCreateMainForm()
 			Me.MainForm = My.Forms.MainForm
 		End Sub
+
+        Protected Overrides Sub OnRun()
+            Try
+                MyBase.OnRun()
+            Catch ex As Exception
+
+                MessageBox.Show(ex.ToString, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End Sub	
 	End Class
 End Namespace
