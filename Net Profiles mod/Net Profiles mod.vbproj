@@ -48,7 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MessageBoxHook, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>MessageBoxHook.dll</HintPath>
+      <HintPath>..\MessageBoxHook.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System" />
