@@ -243,7 +243,7 @@
     <value>2</value>
   </data>
   <data name="labelVersion.Text" xml:space="preserve">
-    <value>Version 2.1.8</value>
+    <value>Version 0.1.0</value>
   </data>
   <data name="labelVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>

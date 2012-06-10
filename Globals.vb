@@ -17,7 +17,7 @@ Imports System.IO
 Imports System.Xml
 
 Public Module Globals
-    Public ProgramVersion As String = "2.1.8"
+    Public const ProgramVersion As String = "0.1.0"
 	Public const ProgramName As String = "Net Profiles mod"
 	Public CurrentLang As String = "en-US"
 	Public CurrentLangPath As String
