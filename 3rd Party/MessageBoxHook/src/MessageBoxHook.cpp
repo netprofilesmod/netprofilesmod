@@ -122,7 +122,7 @@ LRESULT CALLBACK CBTProc(int nCode, WPARAM wParam, LPARAM lParam)
 			CenterWindow(hWndMsgBox, GetParent(hWndMsgBox));
 		}		
 
-		pOldProc = (DLGPROC)SetWindowLongPtr(hWndMsgBox, DWL_DLGPROC, (LONG_PTR)MessageBoxProc);
+		pOldProc = (DLGPROC)SetWindowLongPtr(hWndMsgBox, DWLP_DLGPROC, (LONG_PTR)MessageBoxProc);
 		nTimeOut = pMessageBoxManager->TimeOut;
 		if(nTimeOut > 0)
 			nTimerID = SetTimer(NULL, 0, 1000, TimerProc);
