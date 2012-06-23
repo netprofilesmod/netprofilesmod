@@ -47,9 +47,8 @@
     <NoWarn>42017,42018,42019,42032,42036</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MessageBoxHook, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\MessageBoxHook.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="MessageBoxHook">
+      <HintPath>..\3rd Party\MessageBoxHook\bin\Win32\MessageBoxHook.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
