@@ -1,0 +1,231 @@
+﻿<Language name="hu-hu" translated_by="Attila Csipak" version="1" date="8/11/2010" display_name="Magyar">
+  <MainForm>
+    <fileToolStripMenuItem>Fájl</fileToolStripMenuItem>
+    <toolStripMenuItemNewProfile>Új Profil</toolStripMenuItemNewProfile>
+    <applyProfileToolStripMenuItemApplyProfile>Profil Aktiválása</applyProfileToolStripMenuItemApplyProfile>
+    <activateOnDifferentNetworkCardToolStripMenuItem1>Aktiválás Más Hálózati Kártyán...</activateOnDifferentNetworkCardToolStripMenuItem1>
+    <toolStripMenuItemCopyProfile>Másolás...</toolStripMenuItemCopyProfile>
+    <toolStripMenuItemEditProfile>Szerkesztés</toolStripMenuItemEditProfile>
+    <deleteToolStripMenuItemDeleteProfile>Törlés</deleteToolStripMenuItemDeleteProfile>
+    <createDesktopShortcutToolStripMenuItem1>Parancsikon Létrehozása Az Asztalon</createDesktopShortcutToolStripMenuItem1>
+    <exitToolStripMenuItem>Kilépés</exitToolStripMenuItem>
+    <optionsToolStripMenuItem>Beállítások</optionsToolStripMenuItem>
+    <toggleToolbarTextToolStripMenuItem>Eszköztár Szöveg Megjelenítése</toggleToolbarTextToolStripMenuItem>
+    <minimizeToTrayOnCloseToolStripMenuItem>Bezáráskor Küldés A Tálcára</minimizeToTrayOnCloseToolStripMenuItem>
+    <minimizeToTrayOnStartupToolStripMenuItem>Indításkor Küldés A Tálcára</minimizeToTrayOnStartupToolStripMenuItem>
+    <dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>Ne Kérdezzen A Wifi Profilok Automatikus Aktiválása Előtt</dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>
+    <screenResolutionToolStripMenuItem>Képernyőfelbontás</screenResolutionToolStripMenuItem>
+    <askBeforeChangingResolutionToolStripMenuItem>Kérdezzen A Képernyőfelbontás Megváltoztatása Előtt</askBeforeChangingResolutionToolStripMenuItem>
+    <confirmSettingsAfterChangingResolutionToolStripMenuItem>Beállítások Megerősítése Felbontás Változtatást Követően</confirmSettingsAfterChangingResolutionToolStripMenuItem>
+    <runWhenILogInToWindowsToolStripMenuItem>Futtatás Windows Bejelentkezés Után</runWhenILogInToWindowsToolStripMenuItem>
+    <languageToolStripMenuItem>Válasszon Nyelvet</languageToolStripMenuItem>
+    <customizeDesktopShortcutsToolStripMenuItem>Asztal Parancsikon Testreszabása...</customizeDesktopShortcutsToolStripMenuItem>
+    <reloadNetworkInterfacesToolStripMenuItem>Hálózati Csatolók Újratöltése</reloadNetworkInterfacesToolStripMenuItem>
+    <reloadProfilesToolStripMenuItem>Profilok Újratöltése</reloadProfilesToolStripMenuItem>
+    <helpToolStripMenuItem>Súgó</helpToolStripMenuItem>
+    <!-- Required: %1 (program name) -->
+    <netProfilesWebsiteToolStripMenuItem>%1 Honlap...</netProfilesWebsiteToolStripMenuItem>
+    <checkForUpdatesToolStripMenuItem>Frissítések Keresése...</checkForUpdatesToolStripMenuItem>
+    <aboutToolStripMenuItem>Névjegy</aboutToolStripMenuItem>
+    <toolStripButtonNewProfile>Új Profil</toolStripButtonNewProfile>
+    <toolStripButtonApplyProfile>Profil Aktiválása</toolStripButtonApplyProfile>
+    <toolStripButtonCopyProfile>Másolás</toolStripButtonCopyProfile>
+    <toolStripButtonEditProfile>Szerkesztés</toolStripButtonEditProfile>
+    <toolStripButtonDeleteProfile>Törlés</toolStripButtonDeleteProfile>
+    <toolStripStatusLabelWorking>Profilok Betöltése Folyamatban...</toolStripStatusLabelWorking>
+    <toolStripStatusLabelWorking-Preloading>Hálózati Csatolók Betöltése Folyamatban...</toolStripStatusLabelWorking-Preloading>
+    <toolStripStatusLabelWorking-Activating>Profil Aktiválása Folyamatban...</toolStripStatusLabelWorking-Activating>
+    <toolStripStatusLabelWorking-UnmapDrives>Hálózati Meghajtók Leválasztása Folyamatban...</toolStripStatusLabelWorking-UnmapDrives>
+    <toolStripStatusLabelWorking-MapDrives>Hálózati Meghajtók Csatolása Folyamatban...</toolStripStatusLabelWorking-MapDrives>
+    <toolStripStatusLabelWorking-Printer>Alapértelmezett Nyomtató Beállítása Folyamatban...</toolStripStatusLabelWorking-Printer>
+    <toolStripStatusLabelWorking-Internet>Internet Beállítások Aktiválása Folyamatban...</toolStripStatusLabelWorking-Internet>
+    <toolStripStatusLabelWorking-Homepage>Kezdőlap Beállítása Folyamatban...</toolStripStatusLabelWorking-Homepage>
+    <toolStripStatusLabelWorking-Programs>Programok Futtatása Folyamatban...</toolStripStatusLabelWorking-Programs>
+    <toolStripStatusLabelWorking-Wallpaper>Háttérkép Megváltoztatása Folyamatban...</toolStripStatusLabelWorking-Wallpaper>
+    <toolStripStatusLabelWorking-Resolution>Képernyőfelbontás Megváltoztatása Folyamatban...</toolStripStatusLabelWorking-Resolution>
+    <toolStripStatusLabelWorking-Reloading>Hálózati Csatolók Újratöltése Folyamatban...</toolStripStatusLabelWorking-Reloading>
+    <toolStripStatusLabelWorking-DHCP>DHCP Engedélyezése Folyamatban...</toolStripStatusLabelWorking-DHCP>
+    <toolStripStatusLabelWorking-IPAddress>IP-cím Beállítása Folyamatban...</toolStripStatusLabelWorking-IPAddress>
+    <toolStripStatusLabelWorking-Gateway>Átjáró Beállítása Folyamatban...</toolStripStatusLabelWorking-Gateway>
+    <toolStripStatusLabelWorking-DNS>DNS Kiszolgálók Beállítása Folyamatban...</toolStripStatusLabelWorking-DNS>
+    <toolStripStatusLabelWorking-WINS>WINS Kiszolgáló Beállítása Folyamatban...</toolStripStatusLabelWorking-WINS>
+    <applyProfileToolStripMenuItem>Profil Aktiválása</applyProfileToolStripMenuItem>
+    <activateOnDifferentNetworkCardToolStripMenuItem>Aktiválás Más Hálózati Kártyán...</activateOnDifferentNetworkCardToolStripMenuItem>
+    <copyToolStripMenuItem>Másolás</copyToolStripMenuItem>
+    <editToolStripMenuItem>Szerkesztés</editToolStripMenuItem>
+    <deleteToolStripMenuItem>Törlés</deleteToolStripMenuItem>
+    <createDesktopShortcutToolStripMenuItem>Parancsikon Létrehozása Az Asztalon</createDesktopShortcutToolStripMenuItem>
+    <showHideWindowToolStripMenuItem>Ablak Megjelenítése/Elrejtése</showHideWindowToolStripMenuItem>
+    <profilesToolStripMenuItem>Profilok</profilesToolStripMenuItem>
+    <exitToolStripMenuItem1>Kilépés</exitToolStripMenuItem1>
+    <NoNetworkProfilesMessageBox-1>Jelenleg nincsenek hálózati profilok.</NoNetworkProfilesMessageBox-1>
+    <NoNetworkProfilesMessageBox-2>Kíván létrehozni egyet?</NoNetworkProfilesMessageBox-2>
+    <!-- Required: %1 (profile name) -->
+    <DeleteProfileMessageBox>Biztosan törölni szeretné a következőt: %1?</DeleteProfileMessageBox>
+    <DeleteProfileMessageBox-Title>Profil Törlése</DeleteProfileMessageBox-Title>
+    <!-- Available Variables: %1 (interface name), %2 (profile name), %3 (ip address), %4 (mac address) -->
+    <ShortcutConfigDefault>%2 Aktiválása %1-n</ShortcutConfigDefault>
+    <CreateShortcutMessagebox>A parancsikon kikerült az Asztalra</CreateShortcutMessagebox>
+    <CheckForUpdates-Latest>Ön a legfrissebb verziót futtatja.</CheckForUpdates-Latest>
+    <!-- Required: %1 (program name), %2 (program version) -->
+    <CheckForUpdates-New-1>A %1 %2 verziója elérhető.</CheckForUpdates-New-1>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-New-2>Szeretné meglátogatni a %1 honlapját, hogy letöltse?</CheckForUpdates-New-2>
+    <!-- Required: %1 (program name) -->
+    <CheckForUpdates-Title>%1 Frissítés</CheckForUpdates-Title>
+    <CheckForUpdates-Error-1>Probléma lépett fel a frissítések keresése közben.</CheckForUpdates-Error-1>
+    <CheckForUpdates-Error-2>Kérjük próbálkozzon később.</CheckForUpdates-Error-2>
+  </MainForm>
+  <About>
+    <labelFreeware>Ez a program nyílt forráskódú (GNU General Public License v3).</labelFreeware>
+    <!-- Required: %1 (program name) -->
+    <WindowTitle>A %1 Névjegye</WindowTitle>
+    <buttonOK>OK</buttonOK>
+  </About>
+  <ActivateSelectNetworkCard>
+    <WindowTitle>Profil Aktiválása</WindowTitle>
+    <labelProfileTitle>Profil:</labelProfileTitle>
+    <labelSelectNetworkCard>Válasszon Hálózati Kártyát:</labelSelectNetworkCard>
+    <buttonActivate>Aktiválás</buttonActivate>
+    <buttonCancel>Mégsem</buttonCancel>
+  </ActivateSelectNetworkCard>
+  <AutoActivate>
+    <!-- Required: %1 (profile name), %2 (network card name) -->
+    <labelTitle>%2 Aktiválása %1-n...</labelTitle>
+  </AutoActivate>
+  <DesktopShortcut>
+    <WindowTitle>Asztal Parancsikon Beállítás</WindowTitle>
+    <groupBoxLegend>Jelmagyarázat</groupBoxLegend>
+    <labelVar1>Hálózati csatoló neve</labelVar1>
+    <labelVar2>Profil neve</labelVar2>
+    <labelVar3>Profil IP címe</labelVar3>
+    <labelVar4>Hálózati csatoló MAC címe</labelVar4>
+    <buttonRestoreDefaults>Alapértelmezések Visszaállítása</buttonRestoreDefaults>
+    <buttonSave>Mentés</buttonSave>
+    <buttonCancel>Bezárás</buttonCancel>
+  </DesktopShortcut>
+  <MappedDrive>
+    <WindowTitle>Csatolt Meghajtó</WindowTitle>
+    <labelUsername>Felhasználónév:</labelUsername>
+    <labelPassword>Jelszó:</labelPassword>
+    <labelNote>A Felhasználónév és a Jelszó üresen hagyhatóak, ha nem szükségesek.</labelNote>
+    <buttonSave>Mentés</buttonSave>
+    <buttonAdd>Hozzáadás</buttonAdd>
+    <buttonCancel>Bezárás</buttonCancel>
+    <AlreadyMapped-Messagebox>Ez a meghajtóbetűjel már felhasználásra került ebben a profilban.</AlreadyMapped-Messagebox>
+    <DriveUsed>Használatban</DriveUsed>
+  </MappedDrive>
+  <ProfileSettings>
+    <WindowTitle>Profilbeállítások</WindowTitle>
+    <labelProfileName>Név:</labelProfileName>
+    <labelNetworkCard>Hálózati Kártya:</labelNetworkCard>
+    <tabPageIPSettings>IP Beállítások</tabPageIPSettings>
+    <tabPageInternet>Internet</tabPageInternet>
+    <tabPageMappedDrives>Csatolt Meghajtók</tabPageMappedDrives>
+    <tabPagePrinter>Nyomtató</tabPagePrinter>
+    <tabPageRun>Futtatás</tabPageRun>
+    <tabPageDesktop>Asztal</tabPageDesktop>
+    <tabPageWireless>Wifi</tabPageWireless>
+    <checkBoxDHCP>IP-cím automatikus kérése (DHCP)</checkBoxDHCP>
+    <labelIPAddress>IP-cím:</labelIPAddress>
+    <labelSubnetMask>Alhálózati Maszk:</labelSubnetMask>
+    <labelDefaultGateway>Alapértelmezett Átjáró:</labelDefaultGateway>
+    <labelPrimaryDNSServer>Elsődleges DNS-kiszolgáló:</labelPrimaryDNSServer>
+    <labelAlternateDNSServer>Másodlagos DNS-kiszolgáló:</labelAlternateDNSServer>
+    <labelWINSServer>WINS Kiszolgáló:</labelWINSServer>
+    <buttonGetCurrentIPSettings>Aktuális Beállítások Kinyerése</buttonGetCurrentIPSettings>
+    <groupBoxAutoConfigAddress>Automatikus Proxybeállítás Cím:</groupBoxAutoConfigAddress>
+    <groupBoxProxy>Proxy Beállítások Használata</groupBoxProxy>
+    <labelServerAddress>Kiszolgáló Címe:</labelServerAddress>
+    <labelPort>Port:</labelPort>
+    <checkBoxBypassProxy>Proxy figyelmen kívül hagyása helyi címeknél (IE és Opera esetén)</checkBoxBypassProxy>
+    <groupBoxHomepage>Alapértelmezett Kezdőlap:</groupBoxHomepage>
+    <buttonUseBlankHomepage>Üres Oldal Megjelenítése</buttonUseBlankHomepage>
+    <labelHomepageNote>Hagyja üresen, ha nem szeretne változtatást.</labelHomepageNote>
+    <groupBoxWebBrowsers>Beállítások Engedélyezése:</groupBoxWebBrowsers>
+    <buttonClearFirefox>Firefox Beállítások Törlése</buttonClearFirefox>
+    <buttonClearFirefox-ToolTip>Kattintson ide, ha problémái adódnak a proxy és az alapértelmezett kezdőlap beállításával Firefoxban.</buttonClearFirefox-ToolTip>
+    <groupBoxPleaseNote>Figyelem!</groupBoxPleaseNote>
+    <labelPleaseNote>A változtatások érvénybe lépése csak akkor lehetséges, ha a Mozilla Firefox és az Opera nem futnak.</labelPleaseNote>
+    <checkBoxIE>Internet Explorer</checkBoxIE>
+    <checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
+    <checkBoxOpera>Opera</checkBoxOpera>
+    <ClearFirefox-Messagebox-1>A beállítások törlésre kerültek.</ClearFirefox-Messagebox-1>
+    <ClearFirefox-Messagebox-2>Ha a Firefox fut, újraindítás szükséges a változtatások érvénybe léptetéséhez.</ClearFirefox-Messagebox-2>
+    <toolStripButtonAddDrive>Meghajtó Hozzáadása</toolStripButtonAddDrive>
+    <toolStripButtonEditDrive>Szerkesztés</toolStripButtonEditDrive>
+    <toolStripButtonRemoveDrive>Eltávolítás</toolStripButtonRemoveDrive>
+    <groupBoxPrinter>Alapértelmezett Nyomtató</groupBoxPrinter>
+    <buttonGetDefaultPrinter>Aktuális Beállítások Kinyerése</buttonGetDefaultPrinter>
+    <toolStripButtonAddProgram>Program Hozzáadása</toolStripButtonAddProgram>
+    <toolStripButtonEditProgram>Szerkesztés</toolStripButtonEditProgram>
+    <toolStripButtonRemoveProgram>Eltávolítás</toolStripButtonRemoveProgram>
+    <groupBoxWallpaper>Háttérkép</groupBoxWallpaper>
+    <buttonBrowseWallpaper-ToolTip>Háttérkép Tallózása</buttonBrowseWallpaper-ToolTip>
+    <openFileDialogWallpaper-Title>Válassza ki a használni kívánt háttérképet.</openFileDialogWallpaper-Title>
+    <openFileDialogWallpaper-Filter>Képfájlok</openFileDialogWallpaper-Filter>
+    <buttonResetWallpaper-ToolTip>Háttérkép Eltávolítása</buttonResetWallpaper-ToolTip>
+    <groupBoxWallpaperPreview>Előnézet</groupBoxWallpaperPreview>
+    <groupBoxDisplaySettings>Képernyőbeállítások</groupBoxDisplaySettings>
+    <labelScreenResolution>Képernyőfelbontás:</labelScreenResolution>
+    <ScreenResolutionText-By>x</ScreenResolutionText-By>
+    <ScreenResolutionText-Pixels>pixel</ScreenResolutionText-Pixels>
+    <labelColorQuality>Színmélység:</labelColorQuality>
+    <ColorQualityText-Bit>bit</ColorQualityText-Bit>
+    <ColorQualityText-Lowest>Legalacsonyabb</ColorQualityText-Lowest>
+    <ColorQualityText-Highest>Legmagasabb</ColorQualityText-Highest>
+    <buttonGetCurrentDisplaySettings>Aktuális Beállítások Kinyerése</buttonGetCurrentDisplaySettings>
+    <groupBoxWireless>Proful Automatikus Aktiválása</groupBoxWireless>
+    <labelSSID>Wifi SSID:</labelSSID>
+    <labelSSIDNotes>A wifi SSID megadását követően a profil automatikusan aktiválódni fog, ha a felsorolt hálózatok valamelyikét észlelésre kerül.</labelSSIDNotes>
+    <labelWirelessVista>Windows Vista felhasználók: Ez a fül le lesz tiltva, amíg rá nem jövök, hogyan állapítható meg az éppen csatlakoztatott wifi SSID Vista alatt.</labelWirelessVista>
+    <buttonSave>Mentés</buttonSave>
+    <buttonClose>Bezárás</buttonClose>
+    <labelWorking-NetworkCards>Hálózati Kártyák Betöltése Folyamatban...</labelWorking-NetworkCards>
+    <labelWorking-Profile>Profilok Betöltése Folyamatban...</labelWorking-Profile>
+    <labelWorking-Printer>Printerek Betöltése Folyamatban...</labelWorking-Printer>
+    <ProfileName-Messagebox>Kérjük adjon meg egy nevet ennek a profilnak.</ProfileName-Messagebox>
+  </ProfileSettings>
+  <RunPrograms>
+    <WindowTitle>Programok Futtatása</WindowTitle>
+    <labelPath>Elérési Út:</labelPath>
+    <labelArgs>Parancssori Argumentumok:</labelArgs>
+    <labelRun>Futtatás:</labelRun>
+    <groupBoxCredentials>Futtatás más hitelesítő adatokkal (nem kötelező)</groupBoxCredentials>
+    <labelUsername>Felhasználónév:</labelUsername>
+    <labelPassword>Jelszó:</labelPassword>
+    <labelDomain>Domain:</labelDomain>
+    <buttonAdd>Hozzáadás</buttonAdd>
+    <buttonSave>Mentés</buttonSave>
+    <buttonCancel>Mégsem</buttonCancel>
+    <RunText-Normal>Eredeti méret</RunText-Normal>
+    <RunText-Minimized>Minimalizált</RunText-Minimized>
+    <RunText-Maximized>Maximalizált</RunText-Maximized>
+    <RunText-Hidden>Rejtett</RunText-Hidden>
+  </RunPrograms>
+  <WirelessDetected>
+    <WindowTitle>Wifi Hálózat Detektálva</WindowTitle>
+    <labelConnectedTo>Ön csatlakozott a következőhöz:</labelConnectedTo>
+    <labelActivate>Kívánja aktiválni a következőt:</labelActivate>
+    <buttonYes>Igen</buttonYes>
+    <buttonNo>Nem</buttonNo>
+  </WirelessDetected>
+  <Misc>
+    <BrowseNetworkShare-Title>Válasszon egy hálózati számítógépet vagy megosztást.</BrowseNetworkShare-Title>
+    <DisplaySettings-ConfirmPrompt-Title>Képernyő Változtatás Megerősítése</DisplaySettings-ConfirmPrompt-Title>
+    <DisplaySettings-ConfirmPrompt-Message>Szeretné megváltoztati a képernyő beállításokat?</DisplaySettings-ConfirmPrompt-Message>
+    <DisplaySettings-Resolution>Felbontás:</DisplaySettings-Resolution>
+    <DisplaySettings-Bits>Színmélység:</DisplaySettings-Bits>
+    <DisplaySettings-Refresh>Frissítési Frekvencia:</DisplaySettings-Refresh>`
+    <DisplaySettings-RevertPrompt-Title>Képernyő Megváltoztatva</DisplaySettings-RevertPrompt-Title>
+    <DisplaySettings-RevertPrompt-Message>Szeretné megtartani a mostani beállításokat?</DisplaySettings-RevertPrompt-Message>
+  </Misc>
+  <CopyProfile>
+    <WindowTitle>Profil Másolása</WindowTitle>
+    <labelProfile>Profil:</labelProfile>
+    <labelNewProfile>Új Név:</labelNewProfile>
+    <labelSelectNetworkCard>Válasszon Hálózati Kártyát:</labelSelectNetworkCard>
+    <buttonCopy>Másolás</buttonCopy>
+    <buttonCancel>Mégsem</buttonCancel>
+  </CopyProfile>
+</Language>
