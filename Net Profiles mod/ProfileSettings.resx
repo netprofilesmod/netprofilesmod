@@ -212,9 +212,9 @@
   <data name="buttonGetCurrentIPSettings.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>524, 17</value>
-  </metadata>
+  </data>
   <data name="buttonGetCurrentIPSettings.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -4721,9 +4721,9 @@
   <data name="listViewMappedDrives.Size" type="System.Drawing.Size, System.Drawing">
     <value>459, 200</value>
   </data>
-  <metadata name="imageListDrives.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="imageListDrives.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>100, 17</value>
-  </metadata>
+  </data>
   <data name="imageListDrives.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
@@ -4768,9 +4768,9 @@
   <data name="&gt;&gt;listViewMappedDrives.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="toolStripMappedDrives.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="toolStripMappedDrives.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>3, 203</value>
-  </metadata>
+  </data>
   <data name="toolStripMappedDrives.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left</value>
   </data>
@@ -5377,9 +5377,9 @@
   <data name="&gt;&gt;listViewRun.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="toolStripRun.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="toolStripRun.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>232, 17</value>
-  </metadata>
+  </data>
   <data name="toolStripRun.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left</value>
   </data>
@@ -7227,9 +7227,9 @@
   <data name="&gt;&gt;progressBar1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
-  </metadata>
+  </data>
   <data name="labelWorking.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -7287,18 +7287,18 @@
   <data name="&gt;&gt;labelWorking.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="openFileDialogWallpaper.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="openFileDialogWallpaper.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>346, 17</value>
-  </metadata>
+  </data>
   <data name="openFileDialogWallpaper.Filter" xml:space="preserve">
     <value />
   </data>
   <data name="openFileDialogWallpaper.Title" xml:space="preserve">
     <value />
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
