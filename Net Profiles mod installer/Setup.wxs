@@ -1,0 +1,214 @@
+﻿<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	
+	<Product Id="*"
+		Name="Net Profiles mod"
+		Language="1033"
+		Version="0.1.0"
+		UpgradeCode="72B60A10-9E82-4CBB-929B-3774C7F7617E"
+		Manufacturer="Hugo Feldhammer, Urs Geissbühler, Daniel Milner">
+
+		<Package Description="#Description"
+			Comments="Comments"
+			InstallerVersion="200"
+			Compressed="yes"/>
+
+		<!-- dont install a x86 build on a x64 system -->
+	
+		<?if $(var.Platform) = "x86" ?>
+	
+			<Condition Message="This is a x86 package which should not be installed in x64 Windows. Please use the x64 package.">
+				Not VersionNT64
+			</Condition>
+		<?endif?> 	
+
+		<MajorUpgrade DowngradeErrorMessage="A later version of Net Profiles mod is already installed. Setup will now exit."/>
+		
+		<!--
+			Source media for the installation. 
+ 			Specifies a single cab file to be embedded in the installer's .msi. 
+		-->
+		
+		<Media Id="1" Cabinet="contents.cab" EmbedCab="yes" CompressionLevel="high"/>
+		
+		<!-- Installation directory and files are defined in Files.wxs -->
+		
+		<Directory Id="TARGETDIR" Name="SourceDir"/>
+		
+		<Feature Id="Net_Profiles_mod"
+		         Title="Net Profiles mod"
+		         Description="Net Profiles mod"
+		         Level="1"
+				 ConfigurableDirectory="INSTALLDIR">
+			
+		         <ComponentRef Id="InteropIWshRuntimeLibraryDll"/>
+		         <ComponentRef Id="MessageBoxHookDll"/>
+		         <ComponentRef Id="Net_Profiles_modExe"/>
+		         <ComponentRef Id="ApplicationShortcut"/>
+		
+			<Feature Id="Localization"
+			         Title="Localization"
+			         Description="Language files"
+			         Level="1">
+
+				<Feature Id="Ca_esXml"
+				         Title="Catalan"
+				         Description="Catalan language file"
+				         Level="1">
+					
+				         <ComponentRef Id="Ca_esXml"/>
+				</Feature>
+
+				<Feature Id="Zh_cnXml"
+				         Title="Chinese - China"
+				         Description="Chinese - China language file"
+				         Level="1">
+					
+				         <ComponentRef Id="Zh_cnXml"/>
+				</Feature>
+
+				<Feature Id="Zh_twXml"
+				         Title="Chinese - Taiwan"
+				         Description="Chinese - Taiwan language file"
+				         Level="1">
+					
+				         <ComponentRef Id="Zh_twXml"/>
+				</Feature>
+
+				<Feature Id="Cs_czXml"
+				         Title="Czech"
+				         Description="Czech language file"
+				         Level="1">
+					
+				         <ComponentRef Id="Cs_czXml"/>
+				</Feature>
+
+				<Feature Id="Nl_nlXml"
+				         Title="Dutch"
+				         Description="Dutch language file"
+				         Level="1">
+					
+				         <ComponentRef Id="Nl_nlXml"/>
+				</Feature>
+
+				<Feature Id="En_usXml"
+				         Title="English"
+				         Description="English language file"
+				         Level="1">
+					
+				         <ComponentRef Id="En_usXml"/>
+				</Feature>
+
+				<Feature Id="Fr_frXml"
+				         Title="French"
+				         Description="French language file"
+				         Level="1">
+					
+				         <ComponentRef Id="Fr_frXml"/>
+				</Feature>
+
+				<Feature Id="De_deXml"
+				         Title="German"
+				         Description="German language file"
+				         Level="1">
+					
+				         <ComponentRef Id="De_deXml"/>
+				</Feature>
+
+				<Feature Id="HeXml"
+				         Title="Hebrew"
+				         Description="Hebrew language file"
+				         Level="1">
+					
+				         <ComponentRef Id="HeXml"/>
+				</Feature>
+
+				<Feature Id="Hu_huXml"
+				         Title="Hungarian"
+				         Description="Hungarian language file"
+				         Level="1">
+					
+				         <ComponentRef Id="Hu_huXml"/>
+				</Feature>
+
+				<Feature Id="It_itXml"
+				         Title="Italian"
+				         Description="Italian language file"
+				         Level="1">
+					
+				         <ComponentRef Id="It_itXml"/>
+				</Feature>
+
+				<Feature Id="Pl_plXml"
+				         Title="Polish"
+				         Description="Polish language file"
+				         Level="1">
+					
+				         <ComponentRef Id="Pl_plXml"/>
+				</Feature>
+
+				<Feature Id="Pt_brXml"
+				         Title="Portuguese - Brazil"
+				         Description="Portuguese - Brazil language file"
+				         Level="1">
+					
+				         <ComponentRef Id="Pt_brXml"/>
+				</Feature>
+
+				<Feature Id="Ru_ruXml"
+				         Title="Russian"
+				         Description="Russian language file"
+				         Level="1">
+					
+				         <ComponentRef Id="Ru_ruXml"/>
+				</Feature>
+
+				<Feature Id="Es_arXml"
+				         Title="Spanish - Argentina"
+				         Description="Spanish - Argentina language file"
+				         Level="1">
+					
+				         <ComponentRef Id="Es_arXml"/>
+				</Feature>
+			</Feature>
+		</Feature>
+		
+		<!-- 
+			Using the Wix UI library
+ 
+			WixUI_InstallDir does not allow the user to choose 
+			features but adds a dialog to let the user choose a 
+			directory where the product will be installed
+		-->
+		
+		<!--Wix UI Entries-->
+		
+        <!-- 
+		<UI Id="Product_Mondo">
+            <UIRef Id="WixUI_Mondo" />
+            <UIRef Id="WixUI_ErrorProgressText" />
+		-->
+
+            <!--
+			<DialogRef Id="ProductRegistrationDlg"/>
+
+            <Publish Dialog="LicenseAgreementDlg" Control="Next" Event="NewDialog" Value="ProductRegistrationDlg" Order="3">LicenseAccepted = "1"</Publish>
+            <Publish Dialog="SetupTypeDlg" Control="Back" Event="NewDialog" Value="ProductRegistrationDlg ">1</Publish>
+		-->
+
+        <!-- 
+			<Publish Dialog="SetupTypeDlg" Control="CustomButton" Property="INSTALLLEVEL" Value="3">1</Publish>
+            <Publish Dialog="SetupTypeDlg" Control="CustomButton" Property="SetstallLevel" Value="3">1</Publish>
+        </UI>
+		-->
+
+		<!--Wix UI Entries-->
+
+		<Property Id="WIXUI_INSTALLDIR">INSTALLDIR</Property>
+		<UIRef Id="WixUI_InstallDir"/>
+		
+		<!-- 		
+		<UIRef Id="WixUI_FeatureTree"/>
+		-->
+	</Product>
+</Wix>
