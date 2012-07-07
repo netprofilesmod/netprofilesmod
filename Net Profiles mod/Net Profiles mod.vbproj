@@ -230,6 +230,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.manifest" />
+    <Icon Include="icons\netprofiles4.ico" />
     <Lang Include="lang\ca-es.xml" />
     <Lang Include="lang\cs-cz.xml" />
     <Lang Include="lang\de-de.xml" />
@@ -250,6 +251,12 @@
     <Folder Include="lang" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.Targets" />
+  <Target Name="CleanIcon">
+    <RemoveDir Directories="$(OutputPath)\icons" />
+  </Target>
+  <Target Name="DeployIcon">
+    <Copy SourceFiles="@(Icon)" DestinationFolder="$(OutputPath)\icons" />
+  </Target>
   <Target Name="CleanLang">
     <RemoveDir Directories="$(OutputPath)\lang" />
   </Target>
@@ -257,9 +264,11 @@
     <Copy SourceFiles="@(Lang)" DestinationFolder="$(OutputPath)\lang" />
   </Target>
   <Target Name="BeforeBuild">
+    <MSBuild Projects="$(MSBuildProjectFile)" Targets="DeployIcon" />
     <MSBuild Projects="$(MSBuildProjectFile)" Targets="DeployLang" />
   </Target>
   <Target Name="BeforeClean">
+    <MSBuild Projects="$(MSBuildProjectFile)" Targets="CleanIcon" />
     <MSBuild Projects="$(MSBuildProjectFile)" Targets="CleanLang" />
   </Target>
 </Project>

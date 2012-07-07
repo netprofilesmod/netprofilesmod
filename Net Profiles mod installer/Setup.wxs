@@ -24,6 +24,11 @@
 
 		<MajorUpgrade DowngradeErrorMessage="A later version of Net Profiles mod is already installed. Setup will now exit."/>
 		
+		<!-- Icon -->
+
+		<Icon Id="icon.ico" SourceFile="..\Net Profiles mod\bin\Release\icons\netprofiles4.ico"/>
+		<Property Id="ARPPRODUCTICON" Value="icon.ico" />
+		
 		<!--
 			Source media for the installation. 
  			Specifies a single cab file to be embedded in the installer's .msi. 
