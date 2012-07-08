@@ -14,7 +14,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
     <PlatformTarget>x86</PlatformTarget>
-    <OutputName>Net Profiles mod - Windows x86</OutputName>
+    <OutputName>Net Profiles mod - Windows x86 - 0.1.0</OutputName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -30,7 +30,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
     <PlatformTarget>x86</PlatformTarget>
-    <OutputName>Net Profiles mod - Windows x64</OutputName>
+    <OutputName>Net Profiles mod - Windows x64 - 0.1.0</OutputName>
   </PropertyGroup>
   <ItemGroup>
     <WixExtension Include="$(WixToolPath)\WixUIExtension.dll" />
