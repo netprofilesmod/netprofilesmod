@@ -46,7 +46,10 @@
 		         Level="1"
 				 ConfigurableDirectory="INSTALLDIR">
 			
+		         <ComponentRef Id="COPYINGTxt"/>
 		         <ComponentRef Id="InteropIWshRuntimeLibraryDll"/>
+		         <ComponentRef Id="MessageBoxManagerLicenseTxt"/>
+		         <ComponentRef Id="MessageBoxManagerReadmeTxt"/>
 		         <ComponentRef Id="MessageBoxHookDll"/>
 		         <ComponentRef Id="Net_Profiles_modExe"/>
 		         <ComponentRef Id="ApplicationShortcut"/>

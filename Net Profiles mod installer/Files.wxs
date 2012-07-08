@@ -17,11 +17,9 @@
 	
 	<Fragment>
 		<DirectoryRef Id="TARGETDIR">
-	
 			<Directory Id="ProgramMenuFolder">
-			    <Directory Id="ApplicationProgramsFolder" Name="Net Profiles mod"/>
+				<Directory Id="ApplicationProgramsFolder" Name="Net Profiles mod" />
 			</Directory>
-
 			<Directory Id="$(var.ProgramFilesFolderHelper)" Name="PFiles">
 				<Directory Id="INSTALLDIR" Name="Net Profiles mod">
 					<Directory Id="lang" Name="lang">
@@ -80,6 +78,17 @@
 					<Component Id="Net_Profiles_modExe" Guid="10F78F23-24F6-407A-AA6A-E01D8E4B5320" DiskId="1">
 						<File Id="Net_Profiles_mod.exe" Name="Net Profiles mod.exe" Source="..\Net Profiles mod\bin\Release\Net Profiles mod.exe" KeyPath="yes" />
 					</Component>
+					<Component Id="COPYINGTxt" Guid="8C3EA1FC-5D84-434D-AC30-EE7FFDC76D77" DiskId="1">
+						<File Id="COPYING.txt" Name="COPYING.txt" Source="..\Net Profiles mod\bin\Release\COPYING.txt" KeyPath="yes" />
+					</Component>
+					<Directory Id="MessageBoxManager" Name="MessageBoxManager">
+						<Component Id="MessageBoxManagerLicenseTxt" Guid="4B3CAA7A-531D-48F2-864C-064548917588" DiskId="1">
+							<File Id="License.txt" Name="License.txt" Source="..\Net Profiles mod\bin\Release\MessageBoxManager\License.txt" KeyPath="yes" />
+						</Component>
+						<Component Id="MessageBoxManagerReadmeTxt" Guid="4A9244E5-C82E-4C12-AD1A-EEC356E1C7F9" DiskId="1">
+							<File Id="Readme.txt" Name="Readme.txt" Source="..\Net Profiles mod\bin\Release\MessageBoxManager\Readme.txt" KeyPath="yes" />
+						</Component>
+					</Directory>
 				</Directory>
 			</Directory>
 		</DirectoryRef>
