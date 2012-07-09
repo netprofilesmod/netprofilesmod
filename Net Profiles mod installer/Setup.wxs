@@ -46,6 +46,8 @@
 		         Level="1"
 				 ConfigurableDirectory="INSTALLDIR">
 			
+				 <MergeRef Id="CRT" />
+			
 		         <ComponentRef Id="COPYINGTxt"/>
 		         <ComponentRef Id="InteropIWshRuntimeLibraryDll"/>
 		         <ComponentRef Id="MessageBoxManagerLicenseTxt"/>

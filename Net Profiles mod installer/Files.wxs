@@ -17,6 +17,14 @@
 	
 	<Fragment>
 		<DirectoryRef Id="TARGETDIR">
+
+			<?if $(var.Platform) = "x64" ?>
+			
+				<Merge Id="CRT" Language="0" SourceFile="$(env.CommonProgramFiles)\Merge Modules\microsoft_vc80_crt_x86.msm" DiskId="1" />
+			<?else?>
+		
+				<Merge Id="CRT" Language="0" SourceFile="$(env.CommonProgramFiles(x86))\Merge Modules\microsoft_vc80_crt_x86.msm" DiskId="1" />
+			<?endif?>
 			<Directory Id="ProgramMenuFolder">
 				<Directory Id="ApplicationProgramsFolder" Name="Net Profiles mod" />
 			</Directory>
