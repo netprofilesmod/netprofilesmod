@@ -10,7 +10,7 @@
 
 		<Package Description="#Description"
 			Comments="Comments"
-			InstallerVersion="200"
+			InstallerVersion="300"
 			Compressed="yes"/>
 
 		<!-- dont install a x86 build on a x64 system -->
@@ -47,6 +47,11 @@
 				 ConfigurableDirectory="INSTALLDIR">
 			
 				 <MergeRef Id="CRT" />
+
+				 <!-- the general recommendation is to not include policy MSMs when redistributing the VC runtime files
+
+				<MergeRef Id="POLICY_CRT" />
+				-->
 			
 		         <ComponentRef Id="COPYINGTxt"/>
 		         <ComponentRef Id="InteropIWshRuntimeLibraryDll"/>
