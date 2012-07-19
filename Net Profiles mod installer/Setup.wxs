@@ -26,7 +26,6 @@
 		
 		<!-- Icon -->
 
-		<Icon Id="icon.ico" SourceFile="..\Net Profiles mod\bin\Release\icons\netprofiles4.ico"/>
 		<Property Id="ARPPRODUCTICON" Value="icon.ico" />
 		
 		<!--

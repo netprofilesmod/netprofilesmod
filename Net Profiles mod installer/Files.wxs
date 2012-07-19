@@ -1,5 +1,15 @@
 <?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<!-- set source path -->
+
+	<?if $(var.Configuration) = "Release" ?>
+	
+		<?define SourcePath="..\Net Profiles mod\bin\Release\"?>
+	<?elseif $(var.Configuration) = "Debug" ?>
+	
+		<?define SourcePath="..\Net Profiles mod\bin\Debug\"?>
+	<?endif?>
 	
 	<!-- set our ProgramFilesFolder depending on x64 or x86 build
 
@@ -42,69 +52,69 @@
 				<Directory Id="INSTALLDIR" Name="Net Profiles mod">
 					<Directory Id="lang" Name="lang">
 						<Component Id="Ca_esXml" Guid="13D07F9B-373F-4C3E-88BD-9DBCB88C99F1" DiskId="1">
-							<File Id="ca_es.xml" Name="ca-es.xml" Source="..\Net Profiles mod\bin\Release\lang\ca-es.xml" KeyPath="yes" />
+							<File Id="ca_es.xml" Name="ca-es.xml" Source="$(var.SourcePath)lang\ca-es.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="Cs_czXml" Guid="5BA374D8-2310-4C00-BAD4-867AD4D50D4D" DiskId="1">
-							<File Id="cs_cz.xml" Name="cs-cz.xml" Source="..\Net Profiles mod\bin\Release\lang\cs-cz.xml" KeyPath="yes" />
+							<File Id="cs_cz.xml" Name="cs-cz.xml" Source="$(var.SourcePath)lang\cs-cz.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="De_deXml" Guid="B1C2EC76-45FD-421D-A09B-77415E7C54D3" DiskId="1">
-							<File Id="de_de.xml" Name="de-de.xml" Source="..\Net Profiles mod\bin\Release\lang\de-de.xml" KeyPath="yes" />
+							<File Id="de_de.xml" Name="de-de.xml" Source="$(var.SourcePath)lang\de-de.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="En_usXml" Guid="CAE8771F-9F30-482B-9B12-E78A50B687FD" DiskId="1">
-							<File Id="en_us.xml" Name="en-us.xml" Source="..\Net Profiles mod\bin\Release\lang\en-us.xml" KeyPath="yes" />
+							<File Id="en_us.xml" Name="en-us.xml" Source="$(var.SourcePath)lang\en-us.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="Es_arXml" Guid="99496325-0785-4335-A690-0CC880CCA2B4" DiskId="1">
-							<File Id="es_ar.xml" Name="es-ar.xml" Source="..\Net Profiles mod\bin\Release\lang\es-ar.xml" KeyPath="yes" />
+							<File Id="es_ar.xml" Name="es-ar.xml" Source="$(var.SourcePath)lang\es-ar.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="Fr_frXml" Guid="BB213352-AF52-40CF-B766-70D2FA687514" DiskId="1">
-							<File Id="fr_fr.xml" Name="fr-fr.xml" Source="..\Net Profiles mod\bin\Release\lang\fr-fr.xml" KeyPath="yes" />
+							<File Id="fr_fr.xml" Name="fr-fr.xml" Source="$(var.SourcePath)lang\fr-fr.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="HeXml" Guid="01856B36-F42F-47AE-9C0B-4B57C5EDEC10" DiskId="1">
-							<File Id="he.xml" Name="he.xml" Source="..\Net Profiles mod\bin\Release\lang\he.xml" KeyPath="yes" />
+							<File Id="he.xml" Name="he.xml" Source="$(var.SourcePath)lang\he.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="Hu_huXml" Guid="DDBD15D9-70E7-4C70-911A-50E14D7A1A77" DiskId="1">
-							<File Id="hu_hu.xml" Name="hu-hu.xml" Source="..\Net Profiles mod\bin\Release\lang\hu-hu.xml" KeyPath="yes" />
+							<File Id="hu_hu.xml" Name="hu-hu.xml" Source="$(var.SourcePath)lang\hu-hu.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="It_itXml" Guid="104713C2-A625-4DF7-B118-9273D31AB35A" DiskId="1">
-							<File Id="it_it.xml" Name="it-it.xml" Source="..\Net Profiles mod\bin\Release\lang\it-it.xml" KeyPath="yes" />
+							<File Id="it_it.xml" Name="it-it.xml" Source="$(var.SourcePath)lang\it-it.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="Nl_nlXml" Guid="1216D4D8-4649-4152-86B6-913BB2EE77D0" DiskId="1">
-							<File Id="nl_nl.xml" Name="nl-nl.xml" Source="..\Net Profiles mod\bin\Release\lang\nl-nl.xml" KeyPath="yes" />
+							<File Id="nl_nl.xml" Name="nl-nl.xml" Source="$(var.SourcePath)lang\nl-nl.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="Pl_plXml" Guid="8A7BA970-587F-4FAC-A5EF-E204520F0D53" DiskId="1">
-							<File Id="pl_pl.xml" Name="pl-pl.xml" Source="..\Net Profiles mod\bin\Release\lang\pl-pl.xml" KeyPath="yes" />
+							<File Id="pl_pl.xml" Name="pl-pl.xml" Source="$(var.SourcePath)lang\pl-pl.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="Pt_brXml" Guid="9704684D-355F-4159-B333-2AE8D7CE6472" DiskId="1">
-							<File Id="pt_br.xml" Name="pt-br.xml" Source="..\Net Profiles mod\bin\Release\lang\pt-br.xml" KeyPath="yes" />
+							<File Id="pt_br.xml" Name="pt-br.xml" Source="$(var.SourcePath)lang\pt-br.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="Ru_ruXml" Guid="F8C61338-4C29-413E-9F8F-9DEEA2B70584" DiskId="1">
-							<File Id="ru_ru.xml" Name="ru-ru.xml" Source="..\Net Profiles mod\bin\Release\lang\ru-ru.xml" KeyPath="yes" />
+							<File Id="ru_ru.xml" Name="ru-ru.xml" Source="$(var.SourcePath)lang\ru-ru.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="Zh_cnXml" Guid="6509792C-2A19-4361-B84B-A3621BB23BF4" DiskId="1">
-							<File Id="zh_cn.xml" Name="zh-cn.xml" Source="..\Net Profiles mod\bin\Release\lang\zh-cn.xml" KeyPath="yes" />
+							<File Id="zh_cn.xml" Name="zh-cn.xml" Source="$(var.SourcePath)lang\zh-cn.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="Zh_twXml" Guid="439C0E32-3F36-40AA-917F-8BFC9146153E" DiskId="1">
-							<File Id="zh_tw.xml" Name="zh-tw.xml" Source="..\Net Profiles mod\bin\Release\lang\zh-tw.xml" KeyPath="yes" />
+							<File Id="zh_tw.xml" Name="zh-tw.xml" Source="$(var.SourcePath)lang\zh-tw.xml" KeyPath="yes" />
 						</Component>
 					</Directory>
 					<Component Id="InteropIWshRuntimeLibraryDll" Guid="42B1E3EC-2869-4DD1-90BE-35E6A3D3342E" DiskId="1">
-						<File Id="Interop.IWshRuntimeLibrary.dll" Name="Interop.IWshRuntimeLibrary.dll" Source="..\Net Profiles mod\bin\Release\Interop.IWshRuntimeLibrary.dll" KeyPath="yes" />
+						<File Id="Interop.IWshRuntimeLibrary.dll" Name="Interop.IWshRuntimeLibrary.dll" Source="$(var.SourcePath)Interop.IWshRuntimeLibrary.dll" KeyPath="yes" />
 					</Component>
 					<Component Id="MessageBoxHookDll" Guid="F595F608-26B0-4A7F-B99B-E29C98A1780F" DiskId="1">
-						<File Id="MessageBoxHook.dll" Name="MessageBoxHook.dll" Source="..\Net Profiles mod\bin\Release\MessageBoxHook.dll" KeyPath="yes" />
+						<File Id="MessageBoxHook.dll" Name="MessageBoxHook.dll" Source="$(var.SourcePath)MessageBoxHook.dll" KeyPath="yes" />
 					</Component>
 					<Component Id="Net_Profiles_modExe" Guid="10F78F23-24F6-407A-AA6A-E01D8E4B5320" DiskId="1">
-						<File Id="Net_Profiles_mod.exe" Name="Net Profiles mod.exe" Source="..\Net Profiles mod\bin\Release\Net Profiles mod.exe" KeyPath="yes" />
+						<File Id="Net_Profiles_mod.exe" Name="Net Profiles mod.exe" Source="$(var.SourcePath)Net Profiles mod.exe" KeyPath="yes" />
 					</Component>
 					<Component Id="COPYINGTxt" Guid="8C3EA1FC-5D84-434D-AC30-EE7FFDC76D77" DiskId="1">
-						<File Id="COPYING.txt" Name="COPYING.txt" Source="..\Net Profiles mod\bin\Release\COPYING.txt" KeyPath="yes" />
+						<File Id="COPYING.txt" Name="COPYING.txt" Source="$(var.SourcePath)COPYING.txt" KeyPath="yes" />
 					</Component>
 					<Directory Id="MessageBoxManager" Name="MessageBoxManager">
 						<Component Id="MessageBoxManagerLicenseTxt" Guid="4B3CAA7A-531D-48F2-864C-064548917588" DiskId="1">
-							<File Id="License.txt" Name="License.txt" Source="..\Net Profiles mod\bin\Release\MessageBoxManager\License.txt" KeyPath="yes" />
+							<File Id="License.txt" Name="License.txt" Source="$(var.SourcePath)MessageBoxManager\License.txt" KeyPath="yes" />
 						</Component>
 						<Component Id="MessageBoxManagerReadmeTxt" Guid="4A9244E5-C82E-4C12-AD1A-EEC356E1C7F9" DiskId="1">
-							<File Id="Readme.txt" Name="Readme.txt" Source="..\Net Profiles mod\bin\Release\MessageBoxManager\Readme.txt" KeyPath="yes" />
+							<File Id="Readme.txt" Name="Readme.txt" Source="$(var.SourcePath)MessageBoxManager\Readme.txt" KeyPath="yes" />
 						</Component>
 					</Directory>
 				</Directory>
@@ -122,5 +132,7 @@
 		        <RegistryValue Root="HKCU" Key="Software\Microsoft\Net Profiles mod" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
 		    </Component>
 		</DirectoryRef>
+
+		<Icon Id="icon.ico" SourceFile="$(var.SourcePath)icons\netprofiles4.ico"/>
 	</Fragment>
 </Wix>
