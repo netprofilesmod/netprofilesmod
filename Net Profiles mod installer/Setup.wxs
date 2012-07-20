@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
 
 	<?include Globals.wxi ?>
 	
@@ -15,7 +15,7 @@
 			InstallerVersion="300"
 			Compressed="yes"/>
 
-		<!-- dont install a x86 build on a x64 system -->
+		<!-- don't install a x86 build on a x64 system -->
 	
 		<?if $(var.Platform) = "x86" ?>
 	
@@ -24,6 +24,14 @@
 			</Condition>
 		<?endif?> 	
 
+		<!-- don't install if .NET Framework 2.0 is missing -->
+
+		<PropertyRef Id="NETFRAMEWORK20"/>
+		
+		<Condition Message="This application requires .NET Framework 2.0. Please install the .NET Framework, then run this installer again.">
+    		<![CDATA[Installed OR NETFRAMEWORK20]]>
+		</Condition>
+		
 		<MajorUpgrade DowngradeErrorMessage="A later version of $(var.ProductName) is already installed. Setup will now exit."/>
 		
 		<!-- Icon -->
