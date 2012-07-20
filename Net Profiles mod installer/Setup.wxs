@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+	<?include Globals.wxi ?>
 	
 	<Product Id="*"
-		Name="Net Profiles mod"
+		Name="$(var.ProductName)"
 		Language="1033"
-		Version="0.1.0"
+		Version="$(var.ProductVersion)"
 		UpgradeCode="72B60A10-9E82-4CBB-929B-3774C7F7617E"
 		Manufacturer="Hugo Feldhammer, Urs Geissbühler, Daniel Milner">
 
@@ -22,7 +24,7 @@
 			</Condition>
 		<?endif?> 	
 
-		<MajorUpgrade DowngradeErrorMessage="A later version of Net Profiles mod is already installed. Setup will now exit."/>
+		<MajorUpgrade DowngradeErrorMessage="A later version of $(var.ProductName) is already installed. Setup will now exit."/>
 		
 		<!-- Icon -->
 
@@ -40,8 +42,8 @@
 		<Directory Id="TARGETDIR" Name="SourceDir"/>
 		
 		<Feature Id="Net_Profiles_mod"
-		         Title="Net Profiles mod"
-		         Description="Net Profiles mod"
+		         Title="$(var.ProductName)"
+		         Description="$(var.ProductName)"
 		         Level="1"
 				 ConfigurableDirectory="INSTALLDIR">
 			
@@ -59,6 +61,7 @@
 		         <ComponentRef Id="MessageBoxHookDll"/>
 		         <ComponentRef Id="Net_Profiles_modExe"/>
 		         <ComponentRef Id="ApplicationShortcut"/>
+		         <ComponentRef Id="ApplicationCommonAppDataFolderCreation"/>
 		
 			<Feature Id="Localization"
 			         Title="Localization"

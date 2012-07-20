@@ -1,14 +1,16 @@
 <?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
+	<?include Globals.wxi ?>
+	
 	<!-- set source path -->
 
 	<?if $(var.Configuration) = "Release" ?>
 	
-		<?define SourcePath="..\Net Profiles mod\bin\Release\"?>
+		<?define SourcePath="..\$(var.ProductName)\bin\Release\"?>
 	<?elseif $(var.Configuration) = "Debug" ?>
 	
-		<?define SourcePath="..\Net Profiles mod\bin\Debug\"?>
+		<?define SourcePath="..\$(var.ProductName)\bin\Debug\"?>
 	<?endif?>
 	
 	<!-- set our ProgramFilesFolder depending on x64 or x86 build
@@ -27,29 +29,35 @@
 	
 	<Fragment>
 		<DirectoryRef Id="TARGETDIR">
-
+			
 			<?if $(var.Platform) = "x64" ?>
 			
 				<Merge Id="CRT" Language="0" SourceFile="..\3rd Party\Microsoft\VC80_CRT\bin\x64\Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
-
+			
 				<!-- the general recommendation is to not include policy MSMs when redistributing the VC runtime files
-
-				<Merge Id="POLICY_CRT" Language="0" SourceFile="..\3rd Party\Microsoft\VC80_CRT\bin\x64\policy_8_0_Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
+		
+					<Merge Id="POLICY_CRT" Language="0" SourceFile="..\3rd Party\Microsoft\VC80_CRT\bin\x64\policy_8_0_Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
 				-->
 			<?elseif $(var.Platform) = "x86"?>
-		
+
 				<Merge Id="CRT" Language="0" SourceFile="..\3rd Party\Microsoft\VC80_CRT\bin\x86\Microsoft_VC80_CRT_x86.msm" DiskId="1" />
-
+			
 				<!-- the general recommendation is to not include policy MSMs when redistributing the VC runtime files
-
-				<Merge Id="POLICY_CRT" Language="0" SourceFile="..\3rd Party\Microsoft\VC80_CRT\bin\x86\policy_8_0_Microsoft_VC80_CRT_x86.msm" DiskId="1" />
+		
+					<Merge Id="POLICY_CRT" Language="0" SourceFile="..\3rd Party\Microsoft\VC80_CRT\bin\x86\policy_8_0_Microsoft_VC80_CRT_x86.msm" DiskId="1" />
 				-->
 			<?endif?>
+
 			<Directory Id="ProgramMenuFolder">
-				<Directory Id="ApplicationProgramsFolder" Name="Net Profiles mod" />
+				<Directory Id="ApplicationProgramsFolder" Name="$(var.ProductName)" />
 			</Directory>
+
+			<Directory Id="CommonAppDataFolder">
+				<Directory Id="ApplicationCommonAppDataFolder" Name="$(var.ProductName)" />
+			</Directory>
+
 			<Directory Id="$(var.ProgramFilesFolderHelper)" Name="PFiles">
-				<Directory Id="INSTALLDIR" Name="Net Profiles mod">
+				<Directory Id="INSTALLDIR" Name="$(var.ProductName)">
 					<Directory Id="lang" Name="lang">
 						<Component Id="Ca_esXml" Guid="13D07F9B-373F-4C3E-88BD-9DBCB88C99F1" DiskId="1">
 							<File Id="ca_es.xml" Name="ca-es.xml" Source="$(var.SourcePath)lang\ca-es.xml" KeyPath="yes" />
@@ -104,7 +112,7 @@
 						<File Id="MessageBoxHook.dll" Name="MessageBoxHook.dll" Source="$(var.SourcePath)MessageBoxHook.dll" KeyPath="yes" />
 					</Component>
 					<Component Id="Net_Profiles_modExe" Guid="10F78F23-24F6-407A-AA6A-E01D8E4B5320" DiskId="1">
-						<File Id="Net_Profiles_mod.exe" Name="Net Profiles mod.exe" Source="$(var.SourcePath)Net Profiles mod.exe" KeyPath="yes" />
+						<File Id="Net_Profiles_mod.exe" Name="$(var.ProductName).exe" Source="$(var.SourcePath)$(var.ProductName).exe" KeyPath="yes" />
 					</Component>
 					<Component Id="COPYINGTxt" Guid="8C3EA1FC-5D84-434D-AC30-EE7FFDC76D77" DiskId="1">
 						<File Id="COPYING.txt" Name="COPYING.txt" Source="$(var.SourcePath)COPYING.txt" KeyPath="yes" />
@@ -124,15 +132,21 @@
 		<DirectoryRef Id="ApplicationProgramsFolder">
 		    <Component Id="ApplicationShortcut" Guid="874B75C6-E263-45DB-A6F0-C1703D1BB206">
 		        <Shortcut Id="ApplicationStartMenuShortcut" 
-		                  Name="Net Profiles mod"
-		                  Description="Net Profiles mod"
-		                  Target="[INSTALLDIR]Net Profiles mod.exe"
+		                  Name="$(var.ProductName)"
+		                  Description="$(var.ProductName)"
+		                  Target="[INSTALLDIR]$(var.ProductName).exe"
 		                  WorkingDirectory="INSTALLDIR"/>
 		        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
-		        <RegistryValue Root="HKCU" Key="Software\Microsoft\Net Profiles mod" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+		        <RegistryValue Root="HKCU" Key="Software\Microsoft\$(var.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
 		    </Component>
 		</DirectoryRef>
-
+		
+		<DirectoryRef Id="ApplicationCommonAppDataFolder">
+			<Component Id="ApplicationCommonAppDataFolderCreation" Guid="82703F5C-F1FF-4545-9EBA-A4DCEB82E4FD">
+            	<CreateFolder />
+			</Component>
+		</DirectoryRef>
+		
 		<Icon Id="icon.ico" SourceFile="$(var.SourcePath)icons\netprofiles4.ico"/>
 	</Fragment>
 </Wix>
