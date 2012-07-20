@@ -166,15 +166,16 @@ Public Partial Class ProfileSettings
         	Exit Sub
         End If
         
-        If Dir(My.Application.Info.DirectoryPath & "\profiles\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-"), FileAttribute.Directory) = "" Then
-			MkDir((My.Application.Info.DirectoryPath & "\profiles\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-")))
+        If Dir(ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-"), FileAttribute.Directory) = "" Then
+			MkDir((ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-")))
 		End If
         
         Dim ThisINIFile As String
+        
         If Globals.CreatingNewProfile = True Then
-        	ThisINIFile = My.Application.Info.DirectoryPath & "\profiles\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini"
+        	ThisINIFile = ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini"
         Else
-        	ThisINIFile = My.Application.Info.DirectoryPath & "\profiles\" & MainForm.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & MainForm.listViewProfiles.SelectedItems(0).SubItems(2).Text
+        	ThisINIFile = ProfilesFolder & "\" & MainForm.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & MainForm.listViewProfiles.SelectedItems(0).SubItems(2).Text
         End If
         
         '*** SAVE PROFILE NAME ***
@@ -300,7 +301,8 @@ Public Partial Class ProfileSettings
 		
 		If MainForm.listViewProfiles.SelectedItems.Count > 0 And Globals.CreatingNewProfile = False Then
 			If Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":","-") <> MainForm.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString Then
-        		System.IO.File.Move(ThisINIFile,My.Application.Info.DirectoryPath & "\profiles\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini")
+				
+				System.IO.File.Move(ThisINIFile, ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini")
         	End If
         End If
         

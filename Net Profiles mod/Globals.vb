@@ -44,9 +44,10 @@ Public Module Globals
 	Public CreatingNewMappedDrive As Boolean
 	Public CreatingNewRunCommand As Boolean
 	
-	Public CommonApplicationDataFolder As String = System.Environment.GetFolderPath(System.Environment.SpecialFolder.CommonApplicationData) + "\" + ProgramName + "\"
+	Public CommonApplicationDataFolder As String = System.Environment.GetFolderPath(System.Environment.SpecialFolder.CommonApplicationData) + "\" + ProgramName
+	Public ProfilesFolder As String = CommonApplicationDataFolder + "\profiles"
 	
-	Public ProgramINIFile As String = CommonApplicationDataFolder + "netprofilesmod.ini"
+	Public ProgramINIFile As String = CommonApplicationDataFolder + "\netprofilesmod.ini"
 	Public OKToCloseProgram As Boolean = False
 	Public commandArray() As String
 	Public EnableLoadTimer As Boolean = True

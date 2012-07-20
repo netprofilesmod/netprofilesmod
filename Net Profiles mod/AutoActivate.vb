@@ -44,7 +44,7 @@ Public Partial Class AutoActivate
 	
 	Sub AutoActivateLoad(ByVal sender As Object, ByVal e As EventArgs)
 		If Microsoft.VisualBasic.Command.Length > 0 Then
-			Globals.INIAutoLoad = My.Application.Info.DirectoryPath & "\profiles\" & commandArray(1) & "\" & commandArray(2)
+			Globals.INIAutoLoad = ProfilesFolder & "\" & commandArray(1) & "\" & commandArray(2)
 		Else
 			If MainForm.Visible.Equals(False) Then
 				Globals.RunFromTaskTray = True

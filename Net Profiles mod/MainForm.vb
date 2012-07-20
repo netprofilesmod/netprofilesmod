@@ -91,8 +91,8 @@ Public Partial Class MainForm
                     AutoActivate.ShowDialog()
             End Select
         End If
-        If Dir(My.Application.Info.DirectoryPath & "\profiles", Microsoft.VisualBasic.FileAttribute.Directory) = "" Then
-            MkDir((My.Application.Info.DirectoryPath & "\profiles"))
+        If Dir(ProfilesFolder, Microsoft.VisualBasic.FileAttribute.Directory) = "" Then
+            MkDir((ProfilesFolder))
         End If
         Dim ShowToolbarText As String = INIRead(Globals.ProgramINIFile, "Program", "ShowToolbarText", "True")
         If ShowToolbarText = "False" Then
@@ -287,7 +287,7 @@ Public Partial Class MainForm
 	Public Sub GetProfileCategories()
 		Me.listViewProfiles.Items.Clear
 		Me.profilesToolStripMenuItem.DropDownItems.Clear
-		Dim ProfileCategories As New DirectoryInfo(My.Application.Info.DirectoryPath & "\profiles\")
+		Dim ProfileCategories As New DirectoryInfo(ProfilesFolder)
 		Dim Dirs As DirectoryInfo() = ProfileCategories.GetDirectories("*.*")
 		Dim DirectoryName As DirectoryInfo
 		Dim CategoryMenu As ToolStripMenuItem
@@ -471,7 +471,7 @@ Public Partial Class MainForm
 			Dim YNResult As Object
 			YNResult = MessageBox.Show(Me.DeleteProfileMessageBox.Replace("%1", Me.listViewProfiles.FocusedItem.Text), Me.DeleteProfileMessageBox_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If YNResult = DialogResult.Yes Then
-                System.IO.File.Delete(My.Application.Info.DirectoryPath & "\profiles\" & Me.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & Me.listViewProfiles.SelectedItems(0).SubItems(2).Text)
+                System.IO.File.Delete(ProfilesFolder & "\" & Me.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & Me.listViewProfiles.SelectedItems(0).SubItems(2).Text)
                 Call Me.RefreshProfiles()
             Else
                 Exit Sub
