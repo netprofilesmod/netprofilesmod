@@ -62,6 +62,7 @@
 		         <ComponentRef Id="Net_Profiles_modExe"/>
 		         <ComponentRef Id="ApplicationShortcut"/>
 		         <ComponentRef Id="ApplicationCommonAppDataFolderCreation"/>
+		         <ComponentRef Id="ProfilesFolderCreation"/>
 		
 			<Feature Id="Localization"
 			         Title="Localization"

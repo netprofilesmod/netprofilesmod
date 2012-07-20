@@ -53,7 +53,9 @@
 			</Directory>
 
 			<Directory Id="CommonAppDataFolder">
-				<Directory Id="ApplicationCommonAppDataFolder" Name="$(var.ProductName)" />
+				<Directory Id="ApplicationCommonAppDataFolder" Name="$(var.ProductName)">
+					<Directory Id="ProfilesFolder" Name="profiles" />
+				</Directory>
 			</Directory>
 
 			<Directory Id="$(var.ProgramFilesFolderHelper)" Name="PFiles">
@@ -143,6 +145,12 @@
 		
 		<DirectoryRef Id="ApplicationCommonAppDataFolder">
 			<Component Id="ApplicationCommonAppDataFolderCreation" Guid="82703F5C-F1FF-4545-9EBA-A4DCEB82E4FD">
+            	<CreateFolder />
+			</Component>
+		</DirectoryRef>
+		
+		<DirectoryRef Id="ProfilesFolder">
+			<Component Id="ProfilesFolderCreation" Guid="6E28CA8D-DAE9-4F81-AB36-BF813CE78A3B">
             	<CreateFolder />
 			</Component>
 		</DirectoryRef>
