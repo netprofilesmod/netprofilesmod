@@ -475,7 +475,7 @@ Public Module Globals
 		MainForm.pictureBoxWallpaper.Image = Image.FromFile(WallpaperFile)
         'just some generic path and name for the image in the picturebox 
         'to save to
-        Dim imagePath As String = My.Application.Info.DirectoryPath & "\wallpaper.bmp"
+        Dim imagePath As String = CommonApplicationDataFolder & "\wallpaper.bmp"
 
         'the image must be in bitmap format for it to work as a 
         'wallpaper, unless I am not doing something right
