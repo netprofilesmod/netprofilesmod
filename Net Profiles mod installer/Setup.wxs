@@ -8,7 +8,7 @@
 		Language="1033"
 		Version="$(var.ProductVersion)"
 		UpgradeCode="72B60A10-9E82-4CBB-929B-3774C7F7617E"
-		Manufacturer="Hugo Feldhammer, Urs Geissbühler, Daniel Milner">
+		Manufacturer="Hugo Anton Feldhammer, Urs Geissbühler, Daniel Milner">
 
 		<Package Description="#Description"
 			Comments="Comments"
