@@ -15,6 +15,12 @@
 			InstallerVersion="300"
 			Compressed="yes"/>
 
+		<!-- only install on Windows XP, Windows Vista or Windows 7 -->
+
+		<Condition Message="This application is only supported on Windows XP, Windows Vista or Windows 7.">
+    		<![CDATA[Installed OR ((VersionNT >= 501) AND (VersionNT <= 601))]]>
+		</Condition>
+
 		<!-- don't install a x86 build on a x64 system -->
 	
 		<?if $(var.Platform) = "x86" ?>
