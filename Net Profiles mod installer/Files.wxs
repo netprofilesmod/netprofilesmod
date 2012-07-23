@@ -31,8 +31,12 @@
 		<DirectoryRef Id="TARGETDIR">
 			
 			<?if $(var.Platform) = "x64" ?>
+
+				 <!-- merge modules which install assemblies to the GAC make a major upgrade virtually impossible.
+                      see also: http://support.microsoft.com/kb/905238
 			
 				<Merge Id="CRT" Language="0" SourceFile="..\3rd Party\Microsoft\VC80_CRT\bin\x64\Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
+				-->
 			
 				<!-- the general recommendation is to not include policy MSMs when redistributing the VC runtime files
 		
@@ -40,7 +44,11 @@
 				-->
 			<?elseif $(var.Platform) = "x86"?>
 
+				 <!-- merge modules which install assemblies to the GAC make a major upgrade virtually impossible.
+                      see also: http://support.microsoft.com/kb/905238
+
 				<Merge Id="CRT" Language="0" SourceFile="..\3rd Party\Microsoft\VC80_CRT\bin\x86\Microsoft_VC80_CRT_x86.msm" DiskId="1" />
+				-->
 			
 				<!-- the general recommendation is to not include policy MSMs when redistributing the VC runtime files
 		

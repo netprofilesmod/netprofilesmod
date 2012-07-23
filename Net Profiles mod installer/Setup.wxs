@@ -60,8 +60,12 @@
 		         Description="$(var.ProductName)"
 		         Level="1"
 				 ConfigurableDirectory="INSTALLDIR">
+
+				 <!-- merge modules which install assemblies to the GAC make a major upgrade virtually impossible.
+                      see also: http://support.microsoft.com/kb/905238
 			
 				 <MergeRef Id="CRT" />
+				-->
 
 				 <!-- the general recommendation is to not include policy MSMs when redistributing the VC runtime files
 
