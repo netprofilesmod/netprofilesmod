@@ -32,27 +32,31 @@
 			
 			<?if $(var.Platform) = "x64" ?>
 
-				 <!-- merge modules which install assemblies to the GAC make a major upgrade virtually impossible.
+				<?define VC80_CRT_SourcePath="..\3rd Party\Microsoft\VC80_CRT\bin\x64\"?>
+
+				<!-- merge modules which install assemblies to the GAC make a major upgrade virtually impossible.
                       see also: http://support.microsoft.com/kb/905238
 			
-				<Merge Id="CRT" Language="0" SourceFile="..\3rd Party\Microsoft\VC80_CRT\bin\x64\Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
+				<Merge Id="CRT" Language="0" SourceFile="$(var.VC80_CRT_SourcePath)Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
 				-->
 			
 				<!-- the general recommendation is to not include policy MSMs when redistributing the VC runtime files
 		
-					<Merge Id="POLICY_CRT" Language="0" SourceFile="..\3rd Party\Microsoft\VC80_CRT\bin\x64\policy_8_0_Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
+					<Merge Id="POLICY_CRT" Language="0" SourceFile="$(var.VC80_CRT_SourcePath)policy_8_0_Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
 				-->
 			<?elseif $(var.Platform) = "x86"?>
 
-				 <!-- merge modules which install assemblies to the GAC make a major upgrade virtually impossible.
+				<?define VC80_CRT_SourcePath="..\3rd Party\Microsoft\VC80_CRT\bin\x86\"?>
+			
+				<!-- merge modules which install assemblies to the GAC make a major upgrade virtually impossible.
                       see also: http://support.microsoft.com/kb/905238
 
-				<Merge Id="CRT" Language="0" SourceFile="..\3rd Party\Microsoft\VC80_CRT\bin\x86\Microsoft_VC80_CRT_x86.msm" DiskId="1" />
+				<Merge Id="CRT" Language="0" SourceFile="$(var.VC80_CRT_SourcePath)Microsoft_VC80_CRT_x86.msm" DiskId="1" />
 				-->
 			
 				<!-- the general recommendation is to not include policy MSMs when redistributing the VC runtime files
 		
-					<Merge Id="POLICY_CRT" Language="0" SourceFile="..\3rd Party\Microsoft\VC80_CRT\bin\x86\policy_8_0_Microsoft_VC80_CRT_x86.msm" DiskId="1" />
+					<Merge Id="POLICY_CRT" Language="0" SourceFile="$(var.VC80_CRT_SourcePath)policy_8_0_Microsoft_VC80_CRT_x86.msm" DiskId="1" />
 				-->
 			<?endif?>
 
@@ -133,6 +137,20 @@
 						</Component>
 						<Component Id="MessageBoxManagerReadmeTxt" Guid="4A9244E5-C82E-4C12-AD1A-EEC356E1C7F9" DiskId="1">
 							<File Id="Readme.txt" Name="Readme.txt" Source="$(var.SourcePath)MessageBoxManager\Readme.txt" KeyPath="yes" />
+						</Component>
+					</Directory>
+					<Directory Id="Microsoft.VC80.CRT" Name="Microsoft.VC80.CRT">
+						<Component Id="MicrosoftVC80CRTManifest" Guid="FB8B9134-6CD7-4EF2-AA6D-0296DF9C3302" DiskId="1">
+							<File Id="Microsoft.VC80.CRT.manifest" Name="Microsoft.VC80.CRT.manifest" Source="$(var.VC80_CRT_SourcePath)Microsoft.VC80.CRT\Microsoft.VC80.CRT.manifest" KeyPath="yes" />
+						</Component>
+						<Component Id="Msvcm80Dll" Guid="9DF12B20-9717-4216-B172-CD739558B330" DiskId="1">
+							<File Id="msvcm80.dll" Name="msvcm80.dll" Source="$(var.VC80_CRT_SourcePath)Microsoft.VC80.CRT\msvcm80.dll" KeyPath="yes" />
+						</Component>
+						<Component Id="Msvcp80Dll" Guid="963A2850-9C60-4A65-A403-E5E4F3C85865" DiskId="1">
+							<File Id="msvcp80.dll" Name="msvcp80.dll" Source="$(var.VC80_CRT_SourcePath)Microsoft.VC80.CRT\msvcp80.dll" KeyPath="yes" />
+						</Component>
+						<Component Id="Msvcr80Dll" Guid="D5922F0C-498E-4F27-B9A6-A610A6DE8669" DiskId="1">
+							<File Id="msvcr80.dll" Name="msvcr80.dll" Source="$(var.VC80_CRT_SourcePath)Microsoft.VC80.CRT\msvcr80.dll" KeyPath="yes" />
 						</Component>
 					</Directory>
 				</Directory>

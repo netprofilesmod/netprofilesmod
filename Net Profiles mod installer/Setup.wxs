@@ -76,6 +76,10 @@
 		         <ComponentRef Id="InteropIWshRuntimeLibraryDll"/>
 		         <ComponentRef Id="MessageBoxManagerLicenseTxt"/>
 		         <ComponentRef Id="MessageBoxManagerReadmeTxt"/>
+		         <ComponentRef Id="MicrosoftVC80CRTManifest"/>
+		         <ComponentRef Id="Msvcm80Dll"/>
+		         <ComponentRef Id="Msvcp80Dll"/>
+		         <ComponentRef Id="Msvcr80Dll"/>
 		         <ComponentRef Id="MessageBoxHookDll"/>
 		         <ComponentRef Id="Net_Profiles_modExe"/>
 		         <ComponentRef Id="ApplicationShortcut"/>
