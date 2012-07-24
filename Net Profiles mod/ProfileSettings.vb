@@ -97,6 +97,7 @@ Public Partial Class ProfileSettings
 		Me.labelPrimaryDNSServer.Text = root.SelectSingleNode("/Language/ProfileSettings/labelPrimaryDNSServer").InnerText
 		Me.labelAlternateDNSServer.Text = root.SelectSingleNode("/Language/ProfileSettings/labelAlternateDNSServer").InnerText
 		Me.labelWINSServer.Text = root.SelectSingleNode("/Language/ProfileSettings/labelWINSServer").InnerText
+		'Me.labelDNSSuffix.Text = root.SelectSingleNode("/Language/ProfileSettings/labelDNSSuffix").InnerText
 		Me.buttonGetCurrentIPSettings.Text = root.SelectSingleNode("/Language/ProfileSettings/buttonGetCurrentIPSettings").InnerText
 		Me.groupBoxProxy.Text = "    " & root.SelectSingleNode("/Language/ProfileSettings/groupBoxProxy").InnerText
 		Me.labelServerAddress.Text = root.SelectSingleNode("/Language/ProfileSettings/labelServerAddress").InnerText
@@ -234,6 +235,9 @@ Public Partial Class ProfileSettings
         	WINSServerEntry = Me.textBoxWINSServer1.Text & "." & Me.textBoxWINSServer2.Text & "." & Me.textBoxWINSServer3.Text & "." & Me.textBoxWINSServer4.Text
         End If
         INIWrite(ThisINIFile, "TCP/IP Settings", "WINS Server", WINSServerEntry)
+        
+        '*** SAVE DNS SUFFIX ***
+        INIWrite(ThisINIFile, "TCP/IP Settings", "DNS Suffix", Me.textBoxDNSSuffix.Text.Trim)
         
         '*** SAVE DHCP ***
         Dim DHCPEntry As String = Me.checkBoxDHCP.Checked.ToString
@@ -581,6 +585,8 @@ Public Partial Class ProfileSettings
 			End If
 			Application.DoEvents()
 			
+			Me.textBoxDNSSuffix.Text = INIRead(TheINIFile, "TCP/IP Settings", "DNS Suffix", "")
+			
 			Dim DHCP As String = INIRead(TheINIFile,"TCP/IP Settings","DHCP", "0")
 			Application.DoEvents()
 			If DHCP = "1" Then
@@ -742,6 +748,9 @@ Public Partial Class ProfileSettings
 		Me.textBoxWINSServer2.Enabled = DHCPStatus
 		Me.textBoxWINSServer3.Enabled = DHCPStatus
 		Me.textBoxWINSServer4.Enabled = DHCPStatus
+		
+		Me.labelDNSSuffix.Enabled = DHCPStatus
+		Me.textBoxDNSSuffix.Enabled = DHCPStatus
 	End Sub
 	
 	Sub ToolStripButtonAddDriveClick(ByVal sender As Object, ByVal e As EventArgs)
@@ -895,6 +904,8 @@ Public Partial Class ProfileSettings
 			Me.textBoxWINSServer3.Text = ""
 			Me.textBoxWINSServer4.Text = ""
 		End If
+		
+		Me.textBoxDNSSuffix.Text = CurrentIPSettingsArray(6)
 	End Sub
 	
 	Sub ButtonGetCurrentServerAddressSettingsClick(ByVal sender As Object, ByVal e As EventArgs)

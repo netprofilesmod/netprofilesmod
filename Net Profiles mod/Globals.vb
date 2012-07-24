@@ -169,10 +169,11 @@ Public Module Globals
 	End Function
 	'*** END NETWORK STUFF ***
 	
-	Public Sub SaveTCPIPSettings(ByRef IPAddress As String, ByRef SubnetMask As String, ByRef Gateway As String, ByRef PDNSServer As String, ByRef ADNSServer As String, ByRef WINSServer As String, ByRef DHCP As Boolean, ByRef MACAddress As String, ByRef ApplyType As String)
+	Public Sub SaveTCPIPSettings(ByRef IPAddress As String, ByRef SubnetMask As String, ByRef Gateway As String, ByRef PDNSServer As String, ByRef ADNSServer As String, ByRef WINSServer As String, ByRef DNSSuffix As String, ByRef DHCP As Boolean, ByRef MACAddress As String, ByRef ApplyType As String)
 		Dim objNetAdapter As Object
 		Dim strDNSServers As Object
 		Dim strWINSServer As Object
+		Dim strDNSSuffix As Object
 		Dim strGatewaymetric As Object
 		Dim strGateway As Object
 		Dim strSubnetMask As Object
@@ -223,9 +224,11 @@ Public Module Globals
 		Else
 			strDNSServers = New Object(){""}
 		End If
+		strDNSSuffix = DNSSuffix
 		
         For Each objNetAdapter In colNetAdapters
             If DHCP.Equals(True) Then
+                objNetAdapter.SetDNSDomain("")
                 Application.DoEvents()
                 objNetAdapter.SetDNSServerSearchOrder()
                 Application.DoEvents()
@@ -237,6 +240,7 @@ Public Module Globals
                 objNetAdapter.RenewDHCPLease()
                 Application.DoEvents()
             Else
+                objNetAdapter.SetDNSDomain(strDNSSuffix)
                 Call UpdateProgress(MainForm.StatusLabelWorking_IPAddress, ApplyType)
                 Application.DoEvents()
                 objNetAdapter.EnableStatic(strIPAddress, strSubnetMask)
@@ -439,7 +443,8 @@ Public Module Globals
                 Dim DefaultGateway As String = CStr(Join(queryObj("DefaultIPGateway"), ","))
                 Dim PrimaryDNSServer As String = CStr(Join(queryObj("DNSServerSearchOrder"), ","))
                 Dim WINSServer As String = CStr(queryObj("WINSPrimaryServer"))
-				Return DHCP & "|" & IPAddress & "|" & SubnetMask & "|" & DefaultGateway & "|" & PrimaryDNSServer & "|" & WINSServer
+				Dim DNSSuffix As String = queryObj("DNSDomain")
+				Return DHCP & "|" & IPAddress & "|" & SubnetMask & "|" & DefaultGateway & "|" & PrimaryDNSServer & "|" & WINSServer & "|" & DNSSuffix
 			Next
 		Catch err As ManagementException
 			Return ""

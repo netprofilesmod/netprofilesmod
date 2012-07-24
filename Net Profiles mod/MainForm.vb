@@ -525,6 +525,7 @@ Public Partial Class MainForm
         Dim strPrefDNSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "DNS Server", "")
         Dim strAltDNSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "Alternate DNS Server", "")
         Dim strWINSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "WINS Server", "")
+        Dim strDNSSuffix As String = INIRead(ThisProfile, "TCP/IP Settings", "DNS Suffix", "")
         Dim strDHCP As String = INIRead(ThisProfile, "TCP/IP Settings", "DHCP", "0")
         Dim boolDHCP As Boolean
         If strDHCP.Equals("0") Then boolDHCP = False
@@ -546,7 +547,7 @@ Public Partial Class MainForm
             UseThisMACAddress = MACAddress
         End If
 
-        Call SaveTCPIPSettings(strIPAddress, strSubnetMask, strDefaultGateway, strPrefDNSServer, strAltDNSServer, strWINSServer, boolDHCP, UseThisMACAddress, ApplyType)
+        Call SaveTCPIPSettings(strIPAddress, strSubnetMask, strDefaultGateway, strPrefDNSServer, strAltDNSServer, strWINSServer, strDNSSuffix, boolDHCP, UseThisMACAddress, ApplyType)
         '*** END SAVE TCP/IP SETTINGS ***
 
         '*** START DISCONNECT PREVIOUSLY MAPPED DRIVES ***
