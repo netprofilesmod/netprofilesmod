@@ -264,7 +264,7 @@ Public Partial Class ProfileSettings
 		
 		INIWrite(ThisINIFile, "Internet Settings", "UseProxySettings", UseProxyEntry)
 		INIWrite(ThisINIFile, "Internet Settings", "ProxyServerAddress", Me.textBoxServerAddress.Text.Trim)
-		INIWrite(ThisINIFile, "Internet Settings", "ProxyServerPort", Me.textBoxPort.Text.Trim)
+		INIWrite(ThisINIFile, "Internet Settings", "ProxyExceptions", Me.textBoxPort.Text.Trim)
 		INIWrite(ThisINIFile, "Internet Settings", "DefaultHomepage", Me.textBoxDefaultHomepage.Text.Trim)
 		INIWrite(ThisINIFile, "Internet Settings", "InternetExplorer", Me.checkBoxIE.Checked.ToString)
 		INIWrite(ThisINIFile, "Internet Settings", "Firefox", Me.checkBoxFirefox.Checked.ToString)
@@ -635,7 +635,7 @@ Public Partial Class ProfileSettings
 			Application.DoEvents()
 			Me.textBoxServerAddress.Text = INIRead(TheINIFile,"Internet Settings", "ProxyServerAddress", "")
 			Application.DoEvents()
-			Me.textBoxPort.Text = INIRead(TheINIFile,"Internet Settings", "ProxyServerPort", "")
+			Me.textBoxPort.Text = INIRead(TheINIFile,"Internet Settings", "ProxyExceptions", "")
 			Application.DoEvents()
 			Me.textBoxDefaultHomepage.Text = INIRead(TheINIFile,"Internet Settings", "DefaultHomepage", "")
 			Application.DoEvents()

@@ -535,11 +535,10 @@ Public Partial Class MainForm
         If strUseProxySettings.Equals("0") Then boolUseProxySettings = False
         If strUseProxySettings.Equals("1") Then boolUseProxySettings = True
         Dim strProxyServerAddress As String = INIRead(ThisProfile, "Internet Settings", "ProxyServerAddress", "")
-        Dim strProxyServerPort As String = INIRead(ThisProfile, "Internet Settings", "ProxyServerPort", "")
-        Dim boolProxyBypass As Boolean = System.Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "ProxyBypass", "False"))
-        Dim boolProxyIE As Boolean = System.Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "InternetExplorer", "False"))
-        Dim boolProxyFirefox As Boolean = System.Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "Firefox", "False"))
-        Dim boolOpera As Boolean = System.Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "Opera", "False"))
+        Dim strProxyExceptions As String = INIRead(ThisProfile, "Internet Settings", "ProxyExceptions", "")
+        Dim boolProxyBypass As Boolean = INIRead(ThisProfile, "Internet Settings", "ProxyBypass", False)
+        Dim boolProxyIE As Boolean = INIRead(ThisProfile, "Internet Settings", "InternetExplorer", False)
+        Dim boolProxyFirefox As Boolean = INIRead(ThisProfile, "Internet Settings", "Firefox", False)
         Dim strDefaultHomepage As String = INIRead(ThisProfile, "Internet Settings", "DefaultHomepage", "")
         Dim TheMACAddress() As String = StrReverse(ThisProfile).Split(System.Convert.ToChar("\"))
         Dim UseThisMACAddress As String = StrReverse(TheMACAddress(1))
@@ -595,40 +594,125 @@ Public Partial Class MainForm
 
         '*** START INTERNET SETTINGS ***
         Call UpdateProgress(Me.StatusLabelWorking_Internet, ApplyType)
+        
         Dim regKey As RegistryKey
         regKey = Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Internet Settings\", True)
+        Dim ProxyGlobal As String
+        Dim ProxyGlobalPort As String
+        Dim ProxyHttp As String
+        Dim ProxyHttpPort As String
+        Dim ProxyHttps As String
+        Dim ProxyHttpsPort As String
+        Dim ProxyFtp As String
+        Dim ProxyFtpPort As String
+        Dim ProxySocks As String
+        Dim ProxySocksPort As String
+        Dim ProxyGopher As String
+        Dim ProxyGopherPort As String
+        
         If boolUseProxySettings.Equals(True) Then
-            If boolProxyIE.Equals(True) Then
-                regKey.SetValue("ProxyEnable", 1)
-                If strProxyServerPort.Length > 0 Then
-                    regKey.SetValue("ProxyServer", strProxyServerAddress & ":" & strProxyServerPort)
+            If strProxyServerAddress.Length > 0 Then
+                'Server address specified: set proxy
+                If Not (strProxyServerAddress.Contains("=")) Then
+                    If strProxyServerAddress.Contains(":") Then
+                        ProxyGlobal = Split(strProxyServerAddress, ":")(0)
+                        ProxyGlobalPort = Split(strProxyServerAddress, ":")(1)
+                        If ProxyGlobalPort.Length = 0 Then
+                            ProxyGlobalPort = "80"
+                        End If
+                    Else
+                        ProxyGlobal = strProxyServerAddress
+                        ProxyGlobalPort = "80"
+                    End If
                 Else
-                    regKey.SetValue("ProxyServer", strProxyServerAddress)
+                    Dim ArrProxyServers() As String = Split(strProxyServerAddress, ";")
+                    For Each ProxyProtocol As String In ArrProxyServers
+                        ProcessProxySettings(ProxyProtocol, "http", ProxyHttp, ProxyHttpPort)
+                        ProcessProxySettings(ProxyProtocol, "https", ProxyHttps, ProxyHttpsPort)
+                        ProcessProxySettings(ProxyProtocol, "ftp", ProxyFtp, ProxyFtpPort)
+                        ProcessProxySettings(ProxyProtocol, "socks", ProxySocks, ProxySocksPort)
+                        ProcessProxySettings(ProxyProtocol, "gopher", ProxyGopher, ProxyGopherPort)
+                    Next
+                    If ProxyHttp <> "" And ProxyHttpPort = "" Then
+                        ProxyHttpPort = "80"
+                    End If
+                    If ProxyHttps <> "" And ProxyHttpsPort = "" Then
+                        ProxyHttpsPort = "443"
+                    End If
+                    If ProxyFtp <> "" And ProxyFtpPort = "" Then
+                        ProxyFtpPort = "21"
+                    End If
+                    If ProxySocks <> "" And ProxySocksPort = "" Then
+                        ProxySocksPort = "0"
+                    End If
+                    If ProxyGopher <> "" And ProxyGopherPort = "" Then
+                        ProxyGopherPort = "0"
+                    End If
                 End If
-                If boolProxyBypass.Equals(True) Then
-                    regKey.SetValue("ProxyOverride", "<local>")
-                Else
-                    regKey.DeleteValue("ProxyOverride")
+                If boolProxyIE.Equals(True) Then
+                    regKey.SetValue("ProxyEnable", 1)
+                    If ProxyGlobal <> "" Then
+                        regKey.SetValue("ProxyServer", ProxyGlobal & ":" & ProxyGlobalPort)
+                    Else
+                        Dim ProxyReg As String
+                        If ProxyHttp <> "" Then
+                            ProxyReg = "http=" & ProxyHttp & ":" & ProxyHttpPort
+                        End If
+                        If ProxyHttps <> "" Then
+                            If ProxyReg <> "" Then
+                                ProxyReg = ProxyReg & ";"
+                            End If
+                            ProxyReg = ProxyReg & "https=" & ProxyHttps & ":" & ProxyHttpsPort
+                        End If
+                        If ProxyFtp <> "" Then
+                            If ProxyReg <> "" Then
+                                ProxyReg = ProxyReg & ";"
+                            End If
+                            ProxyReg = ProxyReg & "ftp=" & ProxyFtp & ":" & ProxyFtpPort
+                        End If
+                        If ProxySocks <> "" Then
+                            If ProxyReg <> "" Then
+                                ProxyReg = ProxyReg & ";"
+                            End If
+                            ProxyReg = ProxyReg & "socks=" & ProxySocks & ":" & ProxySocksPort
+                        End If
+                        regKey.SetValue("ProxyServer", ProxyReg)
+                    End If
+                    If boolProxyBypass.Equals(True) Then
+                        If strProxyExceptions.Length > 0 Then
+                            regKey.SetValue("ProxyOverride", strProxyExceptions & ";<local>")
+                        Else
+                            regKey.SetValue("ProxyOverride", "<local>")
+                        End If
+                    Else
+                        If strProxyExceptions.Length > 0 Then
+                            regKey.SetValue("ProxyOverride", strProxyExceptions)
+                        Else
+                            Try
+                                regKey.DeleteValue("ProxyOverride")
+                            Catch
+                                'Ignore the exception in case the key already didn't exist
+                            End Try
+                        End If
+                    End If
+                End If
+                If boolProxyFirefox.Equals(True) Then
+                    Dim ProxyExceptions As Array = strProxyExceptions.Split(";")
+                    Call SaveFirefoxSettings(ProxyGlobal, ProxyGlobalPort, ProxyHttp, ProxyHttpPort, ProxyHttps, ProxyHttpsPort, ProxyFtp, ProxyFtpPort, ProxySocks, ProxySocksPort, ProxyGopher, ProxyGopher, ProxyExceptions)
                 End If
             Else
-                regKey.SetValue("ProxyEnable", 0)
-                regKey.SetValue("ProxyServer", "")
-            End If
-            If boolProxyFirefox.Equals(True) Then
-                If strProxyServerPort.Length > 0 Then
-                    Call SaveFirefoxSettings(strProxyServerAddress, strProxyServerPort, "1")
-                Else
-                    Call SaveFirefoxSettings(strProxyServerAddress, "0", "1")
+                'Empty server address: clear proxy
+                If boolProxyIE.Equals(True) Then
+                    regKey.SetValue("ProxyEnable", 0)
+                    regKey.DeleteValue("ProxyServer", False)
+                    regKey.DeleteValue("ProxyOverride", False)
                 End If
-            Else
-                Call SaveFirefoxSettings("", "0", "0")
+                If boolProxyFirefox.Equals(True) Then
+                    Call SaveFirefoxSettings("", "", "", "", "", "", "", "", "", "", "", "", New String() {})
+                End If
             End If
-        Else
-            regKey.SetValue("ProxyEnable", 0)
-            regKey.SetValue("ProxyServer", "")
-            regKey.DeleteValue("ProxyOverride", False)
-            Call SaveFirefoxSettings("", "0", "0")
         End If
+        
         If boolProxyIE.Equals(True) Then
             If strAutoConfigAddress.Length > 0 Then
                 regKey.SetValue("AutoConfigURL", strAutoConfigAddress)
@@ -642,10 +726,6 @@ Public Partial Class MainForm
             Else
                 Call SaveFirefoxAutoConfigAddress("")
             End If
-        End If
-
-        If boolOpera.Equals(True) Then
-            Call SaveOperaSettings(strProxyServerAddress, strProxyServerPort, System.Convert.ToInt16(strUseProxySettings), strAutoConfigAddress, boolProxyBypass, strDefaultHomepage)
         End If
 
         Call UpdateProgress(Me.StatusLabelWorking_Homepage, ApplyType)

@@ -709,200 +709,323 @@ Public Module Globals
         oRegKey.DeleteValue(KeyName, False)
     End Sub
     
-    Public Sub SaveOperaSettings(ByVal ProxyServer As String, ByVal ProxyPort As String, ByVal ProxyEnable As Integer, ByVal AutoProxyConfigURL As String, ByVal ProxyBypass As Boolean, ByVal DefaultHomepage As String)
-    	Dim OperaSettingsINI As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Opera\Opera\profile\opera6.ini"
-    	Dim f As New IO.FileInfo(OperaSettingsINI)
-        If f.Exists = True Then
-        	If ProxyServer.Length > 0 Then
-        		INIWrite(OperaSettingsINI, "Proxy", "HTTP Server", ProxyServer.Trim & ":" & ProxyPort.Trim)
-        	Else
-        		INIWrite(OperaSettingsINI, "Proxy", "HTTP Server", "")
-        	End If
-            INIWrite(OperaSettingsINI, "Proxy", "Use HTTP", CStr(ProxyEnable))
-            INIWrite(OperaSettingsINI, "Proxy", "Use HTTPS", CStr(ProxyEnable))
-        	Dim AutoProxyConfigEnable As Integer = 0
-        	If AutoProxyConfigURL.Length > 0 Then
-        		AutoProxyConfigEnable = 1
-        	End If
-            INIWrite(OperaSettingsINI, "Proxy", "Use Automatic Proxy Configuration", CStr(AutoProxyConfigEnable))
-        	INIWrite(OperaSettingsINI, "Proxy", "Automatic Proxy Configuration URL", AutoProxyConfigURL.Trim)
-        	Dim UseProxyOnLocal As Integer = 1
-        	If ProxyBypass.Equals(True) Then
-        		UseProxyOnLocal = 0
-        	End If
-            INIWrite(OperaSettingsINI, "Proxy", "Use Proxy On Local Names Check", CStr(UseProxyOnLocal))
-        	If DefaultHomepage.Length > 0 Then
-        		INIWrite(OperaSettingsINI, "User Prefs", "Home URL", DefaultHomepage)
-        	End If
-        End If
-    End Sub
-    
-    Public Sub SaveFirefoxAutoConfigAddress(ByVal AutoConfigAddress As String)
-    	Dim FireFoxProfilesDir As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\Profiles"
+	Public Sub SaveFirefoxAutoConfigAddress(ByVal AutoConfigAddress As String)
+        ' Fixme: Move all file operations on Firefox settings to a function
+        Dim FireFoxProfilesDir As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\Profiles"
 		If Not Dir(FireFoxProfilesDir, FileAttribute.Directory) = "" Then
 			Dim FirefoxProfiles As New DirectoryInfo(FireFoxProfilesDir)
 			Dim Dirs As DirectoryInfo() = FirefoxProfiles.GetDirectories("*.default")
 			Dim DirectoryName As DirectoryInfo
 			For Each DirectoryName In Dirs
 				Try
-					If Not Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js", FileAttribute.Normal) = "" Then
+					Dim File As String = "\prefs.js"
+                    If Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & File, FileAttribute.Normal) <> "" Then
+                        Dim oFile As System.IO.File
+                        Dim oRead As System.IO.StreamReader
+                        oRead = oFile.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\prefs.js")
+                        Dim CurrentFile As String = ""
+                        Dim CurrentLine As String = ""
+                        Dim AutoConfigAddressExists As Boolean = False
+                        While oRead.Peek <> -1
+                            CurrentLine = oRead.ReadLine()
+                            If CurrentLine <> "" Then
+                                If CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.autoconfig_url" & Chr(34) & ", ") Then
+                                    If AutoConfigAddress = "" Then
+                                        CurrentLine = ""
+                                    Else
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.autoconfig_url" & Chr(34) & ", " & Chr(34) & AutoConfigAddress & Chr(34) & ");"
+                                        AutoConfigAddressExists = True
+                                    End If
+                                End If
+                                If CurrentLine <> "" Then
+                                    If CurrentFile.Length = 0 Then
+                                        CurrentFile = CurrentLine
+                                    Else
+                                        CurrentFile = CurrentFile & vbCrLf & CurrentLine
+                                    End If
+                                End If
+                            Else
+                                If CurrentFile.Length = 0 Then
+                                    CurrentFile = CurrentLine
+                                Else
+                                    CurrentFile = CurrentFile & vbCrLf & CurrentLine
+                                End If
+                            End If
+                        End While
+                        oRead.Close()
+                        'If CurrentFile.Length = 0 Then
+                        '	CurrentFile = "user_pref(" & Chr(34) & "network.proxy.autoconfig_url" & Chr(34) & ", " & Chr(34) & AutoConfigAddress & Chr(34) & ");"
+                        'End If
+                        If AutoConfigAddressExists = False Then
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.autoconfig_url" & Chr(34) & ", " & Chr(34) & AutoConfigAddress & Chr(34) & ");"
+                        End If
+
+                        Dim oWrite As System.IO.StreamWriter
+                        oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & File)
+                        oWrite.Write(CurrentFile)
+                        oWrite.Close()
+                        'Else
                         'Dim oFile As System.IO.File
-						Dim oRead As System.IO.StreamReader
-                        oRead = File.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
-						Dim CurrentFile As String = ""
-						Dim CurrentLine As String = ""
-						Dim AutoConfigAddressExists As Boolean = False
-						While oRead.Peek <> -1
-							CurrentLine = oRead.ReadLine()
-							If CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.autoconfig_url" & Chr(34) & ", ") Then
-								CurrentLine = "user_pref(" & Chr(34) & "network.proxy.autoconfig_url" & Chr(34) & ", " & Chr(34) & AutoConfigAddress & Chr(34) & ");"
-								AutoConfigAddressExists = True
-							End If
-							If CurrentFile.Length = 0 Then
-								CurrentFile = CurrentLine
-							Else
-								CurrentFile = CurrentFile & vbCrLf & CurrentLine
-							End If
-						End While
-						oRead.Close()
-						'If CurrentFile.Length = 0 Then
-						'	CurrentFile = "user_pref(" & Chr(34) & "network.proxy.autoconfig_url" & Chr(34) & ", " & Chr(34) & AutoConfigAddress & Chr(34) & ");"
-						'End If
-						If AutoConfigAddressExists = False Then
-							CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.autoconfig_url" & Chr(34) & ", " & Chr(34) & AutoConfigAddress & Chr(34) & ");"
-						End If
-						
-						Dim oWrite As System.IO.StreamWriter
-                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
-						oWrite.Write(CurrentFile)
-						oWrite.Close()
-					Else
-                        'Dim oFile As System.IO.File
-						Dim oWrite As System.IO.StreamWriter
-                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
-						oWrite.WriteLine("user_pref(" & Chr(34) & "network.proxy.autoconfig_url" & Chr(34) & ", " & Chr(34) & AutoConfigAddress & Chr(34) & ");")
-						oWrite.Close()
-					End If
+                        'Dim oWrite As System.IO.StreamWriter
+                        'oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & File)
+                        'oWrite.WriteLine("user_pref(" & Chr(34) & "network.proxy.autoconfig_url" & Chr(34) & ", " & Chr(34) & AutoConfigAddress & Chr(34) & ");")
+                        'oWrite.Close()
+                    End If
 				Catch
-				
+					
 				End Try
 			Next
 		End If
     End Sub
     
-    Public Sub SaveFirefoxSettings(ByVal ProxyServer As String, ByVal ProxyPort As String, ByVal ProxyEnable As String)
-    	Dim FireFoxProfilesDir As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\Profiles"
+	Public Sub SaveFirefoxSettings(ByVal ProxyGlobal As String, ByVal ProxyGlobalPort As String, ByVal ProxyHttp As String, ByVal ProxyHttpPort As String, ByVal ProxyHttps As String, ByVal ProxyHttpsPort As String, ByVal ProxyFtp As String, ByVal ProxyFtpPort As String, ByVal ProxySocks As String, ByVal ProxySocksPort As String, ByVal ProxyGopher As String, ByVal ProxyGopherPort As String, ByVal ProxyExceptions As Array)
+        ' Fixme: Move all file operations on Firefox settings to a function
+        Dim FireFoxProfilesDir As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\Profiles"
 		If Not Dir(FireFoxProfilesDir, FileAttribute.Directory) = "" Then
 			Dim FirefoxProfiles As New DirectoryInfo(FireFoxProfilesDir)
 			Dim Dirs As DirectoryInfo() = FirefoxProfiles.GetDirectories("*.default")
 			Dim DirectoryName As DirectoryInfo
+			Dim NoProxyOn As String
+			For Each Exception As String In ProxyExceptions
+				If NoProxyOn = "" Then
+					NoProxyOn = Exception
+				Else
+					NoProxyOn = NoProxyOn & ", " & Exception
+				End If
+			Next
 			For Each DirectoryName In Dirs
 				Try
-					If Not Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js", FileAttribute.Normal) = "" Then
+					Dim File As String = "\prefs.js"
+                    If Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & File, FileAttribute.Normal) <> "" Then
+                        Dim oFile As System.IO.File
+                        Dim oRead As System.IO.StreamReader
+                        oRead = oFile.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & File)
+                        Dim CurrentFile As String = ""
+                        Dim CurrentLine As String = ""
+                        Dim ProxyEnable As Boolean
+
+                        If ProxyGlobal <> "" Then
+                            ProxyHttp = ProxyGlobal
+                            ProxyHttpPort = ProxyGlobalPort
+                            ProxyHttps = ProxyGlobal
+                            ProxyHttpsPort = ProxyGlobalPort
+                            ProxyFtp = ProxyGlobal
+                            ProxyFtpPort = ProxyGlobalPort
+                            ProxySocks = ProxyGlobal
+                            ProxySocksPort = ProxyGlobalPort
+                            ProxyGopher = ProxyGlobal
+                            ProxyGopherPort = ProxyGlobalPort
+                        End If
+                        If (ProxyHttp = "" And ProxyHttps = "" And ProxyFtp = "" And ProxySocks = "" And ProxyGopher = "") Then
+                            ProxyEnable = False
+                        Else
+                            ProxyEnable = True
+                        End If
+
+                        While oRead.Peek <> -1
+                            CurrentLine = oRead.ReadLine()
+                            If CurrentLine <> "" Then
+                                If CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", ") Then
+                                    If ProxyHttp = "" Then
+                                        CurrentLine = ""
+                                    Else
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", " & Chr(34) & ProxyHttp & Chr(34) & ");"
+                                        ProxyHttp = ""
+                                    End If
+                                ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", ") Then
+                                    If ProxyHttpPort = "" Then
+                                        CurrentLine = ""
+                                    Else
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", " & ProxyHttpPort & ");"
+                                    End If
+                                ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.ssl" & Chr(34) & ", ") Then
+                                    If ProxyHttps = "" Then
+                                        CurrentLine = ""
+                                    Else
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.ssl" & Chr(34) & ", " & Chr(34) & ProxyHttps & Chr(34) & ");"
+                                        ProxyHttps = ""
+                                    End If
+                                ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.ssl_port" & Chr(34) & ", ") Then
+                                    If ProxyHttpsPort = "" Then
+                                        CurrentLine = ""
+                                    Else
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.ssl_port" & Chr(34) & ", " & ProxyHttpsPort & ");"
+                                    End If
+                                ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.ftp" & Chr(34) & ", ") Then
+                                    If ProxyFtp = "" Then
+                                        CurrentLine = ""
+                                    Else
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.ftp" & Chr(34) & ", " & Chr(34) & ProxyFtp & Chr(34) & ");"
+                                        ProxyFtp = ""
+                                    End If
+                                ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.ftp_port" & Chr(34) & ", ") Then
+                                    If ProxyFtpPort = "" Then
+                                        CurrentLine = ""
+                                    Else
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.ftp_port" & Chr(34) & ", " & ProxyFtpPort & ");"
+                                    End If
+                                ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.socks" & Chr(34) & ", ") Then
+                                    If ProxySocks = "" Then
+                                        CurrentLine = ""
+                                    Else
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.socks" & Chr(34) & ", " & Chr(34) & ProxySocks & Chr(34) & ");"
+                                        ProxySocks = ""
+                                    End If
+                                ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.socks_port" & Chr(34) & ", ") Then
+                                    If ProxySocksPort = "" Then
+                                        CurrentLine = ""
+                                    Else
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.socks_port" & Chr(34) & ", " & ProxySocksPort & ");"
+                                    End If
+                                ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.gopher" & Chr(34) & ", ") Then
+                                    If ProxyGopher = "" Then
+                                        CurrentLine = ""
+                                    Else
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.gopher" & Chr(34) & ", " & Chr(34) & ProxyGopher & Chr(34) & ");"
+                                        ProxyGopher = ""
+                                    End If
+                                ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.gopher_port" & Chr(34) & ", ") Then
+                                    If ProxyGopherPort = "" Then
+                                        CurrentLine = ""
+                                    Else
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.gopher_port" & Chr(34) & ", " & ProxyGopherPort & ");"
+                                    End If
+                                ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.share_proxy_settings" & Chr(34) & ", ") Then
+                                    If ProxyGlobal = "" Then
+                                        CurrentLine = ""
+                                    Else
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.share_proxy_settings" & Chr(34) & ", true);"
+                                        ProxyGlobal = ""
+                                    End If
+                                ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.no_proxies_on" & Chr(34) & ", ") Then
+                                    If NoProxyOn = "" Then
+                                        CurrentLine = ""
+                                    Else
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.no_proxies_on" & Chr(34) & ", " & Chr(34) & NoProxyOn & Chr(34) & ");"
+                                        NoProxyOn = ""
+                                    End If
+                                ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", ") Then
+                                    If ProxyEnable Then
+                                        CurrentLine = "user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", 1);"
+                                        ProxyEnable = False
+                                    Else
+                                        CurrentLine = ""
+                                    End If
+                                End If
+                                If CurrentLine <> "" Then
+                                    If CurrentFile.Length = 0 Then
+                                        CurrentFile = CurrentLine
+                                    Else
+                                        CurrentFile = CurrentFile & vbCrLf & CurrentLine
+                                    End If
+                                End If
+                            Else
+                                If CurrentFile.Length = 0 Then
+                                    CurrentFile = CurrentLine
+                                Else
+                                    CurrentFile = CurrentFile & vbCrLf & CurrentLine
+                                End If
+                            End If
+                        End While
+                        oRead.Close()
+                        'If CurrentFile.Length = 0 Then
+                        '	CurrentFile = "user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", " & Chr(34) & ProxyServer & Chr(34) & ");"
+                        '	CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", " & ProxyPort & ");"
+                        '	CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", " & ProxyEnable & ");"
+                        'End If
+                        If ProxyHttp <> "" Then
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", " & Chr(34) & ProxyHttp & Chr(34) & ");"
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", " & ProxyHttpPort & ");"
+                        End If
+                        If ProxyHttps <> "" Then
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.ssl" & Chr(34) & ", " & Chr(34) & ProxyHttps & Chr(34) & ");"
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.ssl_port" & Chr(34) & ", " & ProxyHttpsPort & ");"
+                        End If
+                        If ProxyFtp <> "" Then
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.ftp" & Chr(34) & ", " & Chr(34) & ProxyFtp & Chr(34) & ");"
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.ftp_port" & Chr(34) & ", " & ProxyFtpPort & ");"
+                        End If
+                        If ProxySocks <> "" Then
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.socks" & Chr(34) & ", " & Chr(34) & ProxySocks & Chr(34) & ");"
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.socks_port" & Chr(34) & ", " & ProxySocksPort & ");"
+                        End If
+                        If ProxyGopher <> "" Then
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.gopher" & Chr(34) & ", " & Chr(34) & ProxyGopher & Chr(34) & ");"
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.gopher_port" & Chr(34) & ", " & ProxyGopherPort & ");"
+                        End If
+                        If ProxyGlobal <> "" Then
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.share_proxy_settings" & Chr(34) & ", true);"
+                        End If
+                        If NoProxyOn <> "" Then
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.no_proxies_on" & Chr(34) & ", " & Chr(34) & NoProxyOn & Chr(34) & ");"
+                        End If
+                        If ProxyEnable Then
+                            CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", 1);"
+                        End If
+
+                        Dim oWrite As System.IO.StreamWriter
+                        oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & File)
+                        oWrite.Write(CurrentFile)
+                        oWrite.Close()
+                        'Else
                         'Dim oFile As System.IO.File
-						Dim oRead As System.IO.StreamReader
-                        oRead = File.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
-						Dim CurrentFile As String = ""
-						Dim CurrentLine As String = ""
-						Dim ProxyHTTPExists As Boolean = False
-						Dim ProxyPortExists As Boolean = False
-						Dim ProxyTypeExists As Boolean = False
-						While oRead.Peek <> -1
-							CurrentLine = oRead.ReadLine()
-							If CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", ") Then
-								CurrentLine = "user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", " & Chr(34) & ProxyServer & Chr(34) & ");"
-								ProxyHTTPExists = True
-							ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", ") Then
-								CurrentLine = "user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", " & ProxyPort & ");"
-								ProxyPortExists = True
-							ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", ") Then
-								CurrentLine = "user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", " & ProxyEnable & ");"
-								ProxyTypeExists = True
-							End If
-							If CurrentFile.Length = 0 Then
-								CurrentFile = CurrentLine
-							Else
-								CurrentFile = CurrentFile & vbCrLf & CurrentLine
-							End If
-						End While
-						oRead.Close()
-						'If CurrentFile.Length = 0 Then
-						'	CurrentFile = "user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", " & Chr(34) & ProxyServer & Chr(34) & ");"
-						'	CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", " & ProxyPort & ");"
-						'	CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", " & ProxyEnable & ");"
-						'End If
-						If ProxyHTTPExists = False Then
-							CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", " & Chr(34) & ProxyServer & Chr(34) & ");"
-						End If
-						If ProxyPortExists = False Then
-							CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", " & ProxyPort & ");"
-						End If
-						If ProxyTypeExists = False Then
-							CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", " & ProxyEnable & ");"
-						End If
-						
-						Dim oWrite As System.IO.StreamWriter
-                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
-						oWrite.Write(CurrentFile)
-						oWrite.Close()
-					Else
-                        'Dim oFile As System.IO.File
-						Dim oWrite As System.IO.StreamWriter
-                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
-						oWrite.WriteLine("user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", " & Chr(34) & ProxyServer & Chr(34) & ");")
-						oWrite.WriteLine("user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", " & ProxyPort & ");")
-						oWrite.WriteLine("user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", " & ProxyEnable & ");")
-						oWrite.Close()
-					End If
+                        'Dim oWrite As System.IO.StreamWriter
+                        'oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & File)
+                        'oWrite.WriteLine("user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", " & Chr(34) & ProxyServer & Chr(34) & ");")
+                        'oWrite.WriteLine("user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", " & ProxyPort & ");")
+                        'oWrite.WriteLine("user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", " & ProxyEnable & ");")
+                        'oWrite.Close()
+                    End If
 				Catch
-				
+
 				End Try
 			Next
 		End If
-    End Sub
+	End Sub
     
 	Public Sub DeleteFirefoxSettings()
-    	Dim FireFoxProfilesDir As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\Profiles"
+        ' Fixme: Move all file operations on Firefox settings to a function
+        Dim FireFoxProfilesDir As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\Profiles"
 		If Not Dir(FireFoxProfilesDir, FileAttribute.Directory) = "" Then
 			Dim FirefoxProfiles As New DirectoryInfo(FireFoxProfilesDir)
 			Dim Dirs As DirectoryInfo() = FirefoxProfiles.GetDirectories("*.default")
 			Dim DirectoryName As DirectoryInfo
 			For Each DirectoryName In Dirs
 				Try
-					If Not Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js", FileAttribute.Normal) = "" Then
-                        'Dim oFile As System.IO.File
-						Dim oRead As System.IO.StreamReader
-                        oRead = File.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
-						Dim CurrentFile As String = ""
-						Dim CurrentLine As String = ""
-						While oRead.Peek <> -1
-							CurrentLine = oRead.ReadLine()
-							If CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", ") Then
-								CurrentLine = ""
-							ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", ") Then
-								CurrentLine = ""
-							ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", ") Then
-								CurrentLine = ""
-							ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", ") Then
-								CurrentLine = ""
-							End If
-							If CurrentLine.Length > 0 Then
-								If CurrentFile.Length = 0 Then
-									CurrentFile = CurrentLine
-								Else
-									CurrentFile = CurrentFile & vbCrLf & CurrentLine
-								End If
-							End If
-						End While
-						oRead.Close()
-						
-						Dim oWrite As System.IO.StreamWriter
-                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
-						oWrite.Write(CurrentFile)
-						oWrite.Close()
-					Else
-						
-					End If
+                    If Not Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & "\prefs.js", FileAttribute.Normal) = "" Then
+                        Dim oFile As System.IO.File
+                        Dim oRead As System.IO.StreamReader
+                        oRead = oFile.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\prefs.js")
+                        Dim CurrentFile As String = ""
+                        Dim CurrentLine As String = ""
+                        While oRead.Peek <> -1
+                            CurrentLine = oRead.ReadLine()
+                            If CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", ") Then
+                                CurrentLine = ""
+                            ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", ") Then
+                                CurrentLine = ""
+                            ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", ") Then
+                                CurrentLine = ""
+                            ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", ") Then
+                                CurrentLine = ""
+                            End If
+                            If CurrentLine.Length > 0 Then
+                                If CurrentFile.Length = 0 Then
+                                    CurrentFile = CurrentLine
+                                Else
+                                    CurrentFile = CurrentFile & vbCrLf & CurrentLine
+                                End If
+                            End If
+                        End While
+                        oRead.Close()
+
+                        Dim oWrite As System.IO.StreamWriter
+                        oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\prefs.js")
+                        oWrite.Write(CurrentFile)
+                        oWrite.Close()
+                    Else
+
+                    End If
 				Catch
 				
 				End Try
@@ -910,52 +1033,52 @@ Public Module Globals
 		End If
     End Sub
     
-    Public Sub SaveFirefoxHomepage(ByVal Homepage As String)
-    	Dim FireFoxProfilesDir As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\Profiles"
+	Public Sub SaveFirefoxHomepage(ByVal Homepage As String)
+        ' Fixme: Move all file operations on Firefox settings to a function
+        Dim FireFoxProfilesDir As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\Profiles"
 		If Not Dir(FireFoxProfilesDir, FileAttribute.Directory) = "" Then
 			Dim FirefoxProfiles As New DirectoryInfo(FireFoxProfilesDir)
 			Dim Dirs As DirectoryInfo() = FirefoxProfiles.GetDirectories("*.default")
 			Dim DirectoryName As DirectoryInfo
 			For Each DirectoryName In Dirs
 				Try
-					If Not Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js", FileAttribute.Normal) = "" Then
-                        'Dim oFile As System.IO.File
-						Dim oRead As System.IO.StreamReader
-                        oRead = File.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
-						Dim CurrentFile As String = ""
-						Dim CurrentLine As String = ""
-						Dim LineExists As Boolean = False
-						While oRead.Peek <> -1
-							CurrentLine = oRead.ReadLine()
-							If CurrentLine.Contains("user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", ") Then
-								CurrentLine = "user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", " & Chr(34) & Homepage & Chr(34) & ");"
-								LineExists = True
-							End If
-							If CurrentFile.Length = 0 Then
-								CurrentFile = CurrentLine
-							Else
-								CurrentFile = CurrentFile & vbCrLf & CurrentLine
-							End If
-						End While
-						oRead.Close()
-						If CurrentFile.Length = 0 Then
-							CurrentFile = "user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", " & Chr(34) & Homepage & Chr(34) & ");"
-						End If
-						If LineExists = False Then
-							CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", " & Chr(34) & Homepage & Chr(34) & ");"
-						End If
-						
-						Dim oWrite As System.IO.StreamWriter
-                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
-						oWrite.Write(CurrentFile)
-						oWrite.Close()
-					Else
-                        'Dim oFile As System.IO.File
-						Dim oWrite As System.IO.StreamWriter
-                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\user.js")
-						oWrite.WriteLine("user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", " & Chr(34) & Homepage & Chr(34) & ");")
-						oWrite.Close()
-					End If
+					Dim File As String = "\prefs.js"
+                    If Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & File, FileAttribute.Normal) <> "" Then
+                        Dim oFile As System.IO.File
+                        Dim oRead As System.IO.StreamReader
+                        oRead = oFile.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & File)
+                        Dim CurrentFile As String = ""
+                        Dim CurrentLine As String = ""
+                        Dim LineExists As Boolean = False
+                        While oRead.Peek <> -1
+                            CurrentLine = oRead.ReadLine()
+                            If CurrentLine.Contains("user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", ") Then
+                                CurrentLine = "user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", " & Chr(34) & Homepage & Chr(34) & ");"
+                                LineExists = True
+                            End If
+                            If CurrentFile.Length = 0 Then
+                                CurrentFile = CurrentLine
+                            Else
+                                CurrentFile = CurrentFile & vbCrLf & CurrentLine
+                            End If
+                        End While
+                        oRead.Close()
+                        'If CurrentFile.Length = 0 Then
+                        'CurrentFile = "user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", " & Chr(34) & Homepage & Chr(34) & ");"
+                        'End If
+                        If LineExists = False Then
+                            If CurrentFile.Length = 0 Then
+                                CurrentFile = "user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", " & Chr(34) & Homepage & Chr(34) & ");"
+                            Else
+                                CurrentFile = CurrentFile & vbCrLf & "user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", " & Chr(34) & Homepage & Chr(34) & ");"
+                            End If
+                        End If
+
+                        Dim oWrite As System.IO.StreamWriter
+                        oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & File)
+                        oWrite.Write(CurrentFile)
+                        oWrite.Close()
+                    End If
 				Catch
 				
 				End Try
@@ -975,5 +1098,20 @@ Public Module Globals
 			ObjComputer.Rename(NewName)
 		Next
     End Sub
-    
+
+	Public Sub ProcessProxySettings(ByVal ProxyServer As String, ByVal Protocol As String, ByRef Server As String, ByRef Port As String)
+		If ProxyServer.StartsWith(Protocol & "=") Then
+			Dim Proxy As Array = ProxyServer.Split("=")(1).Split(":")
+			Server = Proxy(0)
+			If Proxy.Length > 1 Then
+				Port = Proxy(1)
+				If Port.Length = 0 Then
+					Port = ""
+				End If
+			Else
+				Port = ""
+			End If
+		End If
+	End Sub
+
 End Module
