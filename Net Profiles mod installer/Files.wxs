@@ -80,7 +80,7 @@
 							<File Id="fr_fr.xml" Name="fr-fr.xml" Source="$(var.SourcePath)lang\fr-fr.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="HeXml" Guid="01856B36-F42F-47AE-9C0B-4B57C5EDEC10" DiskId="1">
-							<File Id="he.xml" Name="he.xml" Source="$(var.SourcePath)lang\he.xml" KeyPath="yes" />
+							<File Id="he_il.xml" Name="he-il.xml" Source="$(var.SourcePath)lang\he-il.xml" KeyPath="yes" />
 						</Component>
 						<Component Id="Hu_huXml" Guid="DDBD15D9-70E7-4C70-911A-50E14D7A1A77" DiskId="1">
 							<File Id="hu_hu.xml" Name="hu-hu.xml" Source="$(var.SourcePath)lang\hu-hu.xml" KeyPath="yes" />
