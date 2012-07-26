@@ -81,32 +81,34 @@ Public Partial Class RunPrograms
 	End Sub
 	
 	Public Sub LoadLanguage()
+		Dim lang As SetLanguage = New SetLanguage("/Language/RunPrograms/")
+		
 		Thread.CurrentThread.CurrentCulture = New CultureInfo(Globals.CurrentLang, False)
 		
 		Dim xDoc As New XmlDocument
 		xDoc.Load(Globals.CurrentLangPath)
 		Dim root As XmlElement = xDoc.DocumentElement
 
-		Me.Text = root.SelectSingleNode("/Language/RunPrograms/WindowTitle").InnerText
-		Me.labelPath.Text = root.SelectSingleNode("/Language/RunPrograms/labelPath").InnerText
-		Me.labelArgs.Text = root.SelectSingleNode("/Language/RunPrograms/labelArgs").InnerText
-		Me.labelRun.Text = root.SelectSingleNode("/Language/RunPrograms/labelRun").InnerText
-		Me.groupBoxCredentials.Text = root.SelectSingleNode("/Language/RunPrograms/groupBoxCredentials").InnerText
-		Me.labelUsername.Text = root.SelectSingleNode("/Language/RunPrograms/labelUsername").InnerText
-		Me.labelPassword.Text = root.SelectSingleNode("/Language/RunPrograms/labelPassword").InnerText
-		Me.labelDomain.Text = root.SelectSingleNode("/Language/RunPrograms/labelDomain").InnerText
+		lang.SetText(Me.Text, "WindowTitle")
+		lang.SetText(Me.labelPath.Text, "labelPath")
+		lang.SetText(Me.labelArgs.Text, "labelArgs")
+		lang.SetText(Me.labelRun.Text, "labelRun")
+		lang.SetText(Me.groupBoxCredentials.Text, "groupBoxCredentials")
+		lang.SetText(Me.labelUsername.Text, "labelUsername")
+		lang.SetText(Me.labelPassword.Text, "labelPassword")
+		lang.SetText(Me.labelDomain.Text, "labelDomain")
 		If Globals.CreatingNewRunCommand = False Then
-			Me.buttonAdd.Text = root.SelectSingleNode("/Language/RunPrograms/buttonSave").InnerText
+			lang.SetText(Me.buttonAdd.Text, "buttonSave")
 		Else
-			Me.buttonAdd.Text = root.SelectSingleNode("/Language/RunPrograms/buttonAdd").InnerText
+			lang.SetText(Me.buttonAdd.Text, "buttonAdd")
 		End If
-		Me.buttonCancel.Text = root.SelectSingleNode("/Language/RunPrograms/buttonCancel").InnerText
+		lang.SetText(Me.buttonCancel.Text, "buttonCancel")
 		
 		Dim RunBoxList As New ArrayList()
-		RunBoxList.Add(New DictionaryEntry("Normal", root.SelectSingleNode("/Language/RunPrograms/RunText-Normal").InnerText))
-		RunBoxList.Add(New DictionaryEntry("Minimized", root.SelectSingleNode("/Language/RunPrograms/RunText-Minimized").InnerText))
-		RunBoxList.Add(New DictionaryEntry("Maximized", root.SelectSingleNode("/Language/RunPrograms/RunText-Maximized").InnerText))
-		RunBoxList.Add(New DictionaryEntry("Hidden", root.SelectSingleNode("/Language/RunPrograms/RunText-Hidden").InnerText))
+		RunBoxList.Add(New DictionaryEntry("Normal", lang.getText("RunText-Normal", "Normal")))
+		RunBoxList.Add(New DictionaryEntry("Minimized", lang.getText("RunText-Minimized", "Minimized")))
+		RunBoxList.Add(New DictionaryEntry("Maximized", lang.getText("RunText-Maximized", "Maximized")))
+		RunBoxList.Add(New DictionaryEntry("Hidden", lang.getText("RunText-Hidden", "Hidden")))
 		Me.comboBoxRun.DataSource = RunBoxList
 		Me.comboBoxRun.DisplayMember = "Value"
 		Me.comboBoxRun.ValueMember = "Key"
@@ -114,13 +116,13 @@ Public Partial Class RunPrograms
 		If Globals.CreatingNewRunCommand = False Then
 			Select Case ProfileSettings.listViewRun.SelectedItems.Item(0).SubItems.Item(2).Text
 				Case "Normal":
-					Me.comboBoxRun.SelectedIndex = Me.comboBoxRun.FindStringExact(root.SelectSingleNode("/Language/RunPrograms/RunText-Normal").InnerText)
+					Me.comboBoxRun.SelectedIndex = Me.comboBoxRun.FindStringExact(lang.getText("RunText-Normal", "Normal"))
 				Case "Minimized":
-					Me.comboBoxRun.SelectedIndex = Me.comboBoxRun.FindStringExact(root.SelectSingleNode("/Language/RunPrograms/RunText-Minimized").InnerText)
+					Me.comboBoxRun.SelectedIndex = Me.comboBoxRun.FindStringExact(lang.getText("RunText-Minimized", "Minimized"))
 				Case "Maximized":
-					Me.comboBoxRun.SelectedIndex = Me.comboBoxRun.FindStringExact(root.SelectSingleNode("/Language/RunPrograms/RunText-Maximized").InnerText)
+					Me.comboBoxRun.SelectedIndex = Me.comboBoxRun.FindStringExact(lang.getText("RunText-Maximized", "Maximized"))
 				Case "Hidden":
-					Me.comboBoxRun.SelectedIndex = Me.comboBoxRun.FindStringExact(root.SelectSingleNode("/Language/RunPrograms/RunText-Hidden").InnerText)
+					Me.comboBoxRun.SelectedIndex = Me.comboBoxRun.FindStringExact(lang.getText("RunText-Hidden","Hidden"))
 			End Select
 		End If
 	End Sub

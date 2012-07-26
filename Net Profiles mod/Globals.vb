@@ -34,6 +34,8 @@ Imports System.Drawing.Drawing2D
 Imports System.Drawing.Imaging
 Imports System.IO
 Imports System.Xml
+Imports System.Globalization
+Imports System.Threading
 
 Public Module Globals
     Public const ProgramVersion As String = "0.1.0"
@@ -1118,5 +1120,53 @@ Public Module Globals
 			End If
 		End If
 	End Sub
+	
+	Public Class SetLanguage
+	
+		Private root As XmlElement
+		Private prefix As String
+		
+		Public Sub New(prefix As String)
+			Thread.CurrentThread.CurrentCulture = New CultureInfo(Globals.CurrentLang, False)
+			Dim xDoc As New XmlDocument
+			xDoc.Load(Globals.CurrentLangPath)
+			
+			Me.prefix = prefix
+			Me.root = xDoc.DocumentElement
+		End Sub
+		
+		Public Sub SetText(ByRef control As Object, node As String)
+			Try
+				control = Me.root.SelectSingleNode(Me.prefix & node).InnerText
+			Catch
+				' The text remains unchanged if the translation is missing
+			End Try
+		End Sub
+		
+		Public Sub SetText(ByRef control As Object, node As String, oldValue As String, newValue As String)
+			Try
+				control = Me.root.SelectSingleNode(Me.prefix & node).InnerText.Replace(oldValue, newValue)
+			Catch
+				' The text remains unchanged if the translation is missing
+			End Try
+		End Sub
+		
+		Public Sub SetToolTip(toolTip As ToolTip, control As Control, node As String)
+			Try
+				toolTip.SetToolTip(control, root.SelectSingleNode(Me.prefix & node).InnerText)
+			Catch
+				' The tool tip will not be created or changed if the translation is missing
+			End Try
+		End Sub
+		
+		Public Function GetText(node As String, defaultText As String)
+			Try
+				Return root.SelectSingleNode(Me.prefix & node).InnerText
+			Catch
+				' The default is returned if the translation is missing
+				Return defaultText
+			End Try
+		End Function
+	End Class
 
 End Module

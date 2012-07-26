@@ -28,9 +28,6 @@
 Imports System.Management
 Imports System.Drawing.Printing
 Imports Microsoft.Win32
-Imports System.Xml
-Imports System.Globalization
-Imports System.Threading
 Imports System.IO
 
 Public Partial Class ProfileSettings
@@ -74,77 +71,74 @@ Public Partial Class ProfileSettings
 	End Sub
 	
 	Public Sub LoadLanguage()
-		Thread.CurrentThread.CurrentCulture = New CultureInfo(Globals.CurrentLang, False)
-		
-		Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
+		Dim lang As SetLanguage = New SetLanguage("/Language/ProfileSettings/")
 
-		Me.Text = root.SelectSingleNode("/Language/ProfileSettings/WindowTitle").InnerText
-		Me.labelProfileName.Text = root.SelectSingleNode("/Language/ProfileSettings/labelProfileName").InnerText
-		Me.labelNetworkCard.Text = root.SelectSingleNode("/Language/ProfileSettings/labelNetworkCard").InnerText
-		Me.tabPageIPSettings.Text = root.SelectSingleNode("/Language/ProfileSettings/tabPageIPSettings").InnerText
-		Me.tabPageInternet.Text = root.SelectSingleNode("/Language/ProfileSettings/tabPageInternet").InnerText
-		Me.tabPageMappedDrives.Text = root.SelectSingleNode("/Language/ProfileSettings/tabPageMappedDrives").InnerText
-		Me.tabPagePrinter.Text = root.SelectSingleNode("/Language/ProfileSettings/tabPagePrinter").InnerText
-		Me.tabPageRun.Text = root.SelectSingleNode("/Language/ProfileSettings/tabPageRun").InnerText
-		Me.tabPageDesktop.Text = root.SelectSingleNode("/Language/ProfileSettings/tabPageDesktop").InnerText
-		Me.tabPageWireless.Text = root.SelectSingleNode("/Language/ProfileSettings/tabPageWireless").InnerText
-		Me.checkBoxDHCP.Text = root.SelectSingleNode("/Language/ProfileSettings/checkBoxDHCP").InnerText
-		Me.labelIPAddress.Text = root.SelectSingleNode("/Language/ProfileSettings/labelIPAddress").InnerText
-		Me.labelSubnetMask.Text = root.SelectSingleNode("/Language/ProfileSettings/labelSubnetMask").InnerText
-		Me.labelDefaultGateway.Text = root.SelectSingleNode("/Language/ProfileSettings/labelDefaultGateway").InnerText
-		Me.labelPrimaryDNSServer.Text = root.SelectSingleNode("/Language/ProfileSettings/labelPrimaryDNSServer").InnerText
-		Me.labelAlternateDNSServer.Text = root.SelectSingleNode("/Language/ProfileSettings/labelAlternateDNSServer").InnerText
-		Me.labelWINSServer.Text = root.SelectSingleNode("/Language/ProfileSettings/labelWINSServer").InnerText
-		'Me.labelDNSSuffix.Text = root.SelectSingleNode("/Language/ProfileSettings/labelDNSSuffix").InnerText
-		Me.buttonGetCurrentIPSettings.Text = root.SelectSingleNode("/Language/ProfileSettings/buttonGetCurrentIPSettings").InnerText
-		Me.groupBoxProxy.Text = "    " & root.SelectSingleNode("/Language/ProfileSettings/groupBoxProxy").InnerText
-		Me.labelServerAddress.Text = root.SelectSingleNode("/Language/ProfileSettings/labelServerAddress").InnerText
-		Me.labelPort.Text = root.SelectSingleNode("/Language/ProfileSettings/labelPort").InnerText
-		Me.groupBoxHomepage.Text = root.SelectSingleNode("/Language/ProfileSettings/groupBoxHomepage").InnerText
-		Me.buttonUseBlankHomepage.Text = root.SelectSingleNode("/Language/ProfileSettings/buttonUseBlankHomepage").InnerText
-		Me.labelHomepageNote.Text = root.SelectSingleNode("/Language/ProfileSettings/labelHomepageNote").InnerText
-		Me.groupBoxWebBrowsers.Text = root.SelectSingleNode("/Language/ProfileSettings/groupBoxWebBrowsers").InnerText
-		Me.buttonClearFirefox.Text = root.SelectSingleNode("/Language/ProfileSettings/buttonClearFirefox").InnerText
-		Me.toolTip1.SetToolTip(Me.buttonClearFirefox, root.SelectSingleNode("/Language/ProfileSettings/buttonClearFirefox-ToolTip").InnerText)
-		Me.checkBoxIE.Text = root.SelectSingleNode("/Language/ProfileSettings/checkBoxIE").InnerText
-		Me.checkBoxFirefox.Text = root.SelectSingleNode("/Language/ProfileSettings/checkBoxFirefox").InnerText
-		Me.checkBoxOpera.Text = root.SelectSingleNode("/Language/ProfileSettings/checkBoxOpera").InnerText
-		Me.groupBoxPleaseNote.Text = root.SelectSingleNode("/Language/ProfileSettings/groupBoxPleaseNote").InnerText
-		Me.labelPleaseNote.Text = root.SelectSingleNode("/Language/ProfileSettings/labelPleaseNote").InnerText
-		Me.ClearFirefox_Messagebox_1 = root.SelectSingleNode("/Language/ProfileSettings/ClearFirefox-Messagebox-1").InnerText
-		Me.ClearFirefox_Messagebox_2 = root.SelectSingleNode("/Language/ProfileSettings/ClearFirefox-Messagebox-2").InnerText
-		Me.toolStripButtonAddDrive.Text = root.SelectSingleNode("/Language/ProfileSettings/toolStripButtonAddDrive").InnerText
-		Me.toolStripButtonEditDrive.Text = root.SelectSingleNode("/Language/ProfileSettings/toolStripButtonEditDrive").InnerText
-		Me.toolStripButtonRemoveDrive.Text = root.SelectSingleNode("/Language/ProfileSettings/toolStripButtonRemoveDrive").InnerText
-		Me.groupBoxPrinter.Text = root.SelectSingleNode("/Language/ProfileSettings/groupBoxPrinter").InnerText
-		Me.buttonGetDefaultPrinter.Text = root.SelectSingleNode("/Language/ProfileSettings/buttonGetDefaultPrinter").InnerText
-		Me.toolStripButtonAddProgram.Text = root.SelectSingleNode("/Language/ProfileSettings/toolStripButtonAddProgram").InnerText
-		Me.toolStripButtonEditProgram.Text = root.SelectSingleNode("/Language/ProfileSettings/toolStripButtonEditProgram").InnerText
-		Me.toolStripButtonRemoveProgram.Text = root.SelectSingleNode("/Language/ProfileSettings/toolStripButtonRemoveProgram").InnerText
-		Me.groupBoxWallpaper.Text = root.SelectSingleNode("/Language/ProfileSettings/groupBoxWallpaper").InnerText
-		Me.groupBoxWallpaperPreview.Text = root.SelectSingleNode("/Language/ProfileSettings/groupBoxWallpaperPreview").InnerText
-		Me.toolTip1.SetToolTip(Me.buttonBrowseWallpaper, root.SelectSingleNode("/Language/ProfileSettings/buttonBrowseWallpaper-ToolTip").InnerText)
-		Me.openFileDialogWallpaper_Title = root.SelectSingleNode("/Language/ProfileSettings/openFileDialogWallpaper-Title").InnerText
-		Me.openFileDialogWallpaper_Filter = root.SelectSingleNode("/Language/ProfileSettings/openFileDialogWallpaper-Filter").InnerText
-		Me.toolTip1.SetToolTip(Me.buttonResetWallpaper, root.SelectSingleNode("/Language/ProfileSettings/buttonResetWallpaper-ToolTip").InnerText)
-		Me.groupBoxDisplaySettings.Text = root.SelectSingleNode("/Language/ProfileSettings/groupBoxDisplaySettings").InnerText
-		Me.labelScreenResolution.Text = root.SelectSingleNode("/Language/ProfileSettings/labelScreenResolution").InnerText
-		Me.labelColorQuality.Text = root.SelectSingleNode("/Language/ProfileSettings/labelColorQuality").InnerText
-		Me.buttonGetCurrentDisplaySettings.Text = root.SelectSingleNode("/Language/ProfileSettings/buttonGetCurrentDisplaySettings").InnerText
-		Me.groupBoxWireless.Text = root.SelectSingleNode("/Language/ProfileSettings/groupBoxWireless").InnerText
-		Me.labelSSID.Text = root.SelectSingleNode("/Language/ProfileSettings/labelSSID").InnerText
-		Me.labelSSIDNotes.Text = root.SelectSingleNode("/Language/ProfileSettings/labelSSIDNotes").InnerText
-		Me.labelWirelessVista.Text = root.SelectSingleNode("/Language/ProfileSettings/labelWirelessVista").InnerText
-		Me.buttonSave.Text = root.SelectSingleNode("/Language/ProfileSettings/buttonSave").InnerText
-		Me.buttonClose.Text = root.SelectSingleNode("/Language/ProfileSettings/buttonClose").InnerText
-		Me.labelWorking_NetworkCards = root.SelectSingleNode("/Language/ProfileSettings/labelWorking-NetworkCards").InnerText
-		Me.labelWorking_Profile = root.SelectSingleNode("/Language/ProfileSettings/labelWorking-Profile").InnerText
-		Me.labelWorking_Printer = root.SelectSingleNode("/Language/ProfileSettings/labelWorking-Printer").InnerText
-		Me.ProfileName_Messagebox = root.SelectSingleNode("/Language/ProfileSettings/ProfileName-Messagebox").InnerText
-		Me.checkBoxBypassProxyForLocalAddresses.Text = root.SelectSingleNode("/Language/ProfileSettings/checkBoxBypassProxy").InnerText
-		Me.groupBoxAutoConfigAddress.Text = root.SelectSingleNode("/Language/ProfileSettings/groupBoxAutoConfigAddress").InnerText
+		lang.SetText(Me.Text, "WindowTitle")
+		lang.SetText(Me.labelProfileName.Text, "labelProfileName")
+		lang.SetText(Me.labelNetworkCard.Text, "labelNetworkCard")
+		lang.SetText(Me.tabPageIPSettings.Text, "tabPageIPSettings")
+		lang.SetText(Me.tabPageInternet.Text, "tabPageInternet")
+		lang.SetText(Me.tabPageMappedDrives.Text, "tabPageMappedDrives")
+		lang.SetText(Me.tabPagePrinter.Text, "tabPagePrinter")
+		lang.SetText(Me.tabPageRun.Text, "tabPageRun")
+		lang.SetText(Me.tabPageDesktop.Text, "tabPageDesktop")
+		lang.SetText(Me.tabPageWireless.Text, "tabPageWireless")
+		lang.SetText(Me.checkBoxDHCP.Text, "checkBoxDHCP")
+		lang.SetText(Me.labelIPAddress.Text, "labelIPAddress")
+		lang.SetText(Me.labelSubnetMask.Text, "labelSubnetMask")
+		lang.SetText(Me.labelDefaultGateway.Text, "labelDefaultGateway")
+		lang.SetText(Me.labelPrimaryDNSServer.Text, "labelPrimaryDNSServer")
+		lang.SetText(Me.labelAlternateDNSServer.Text, "labelAlternateDNSServer")
+		lang.SetText(Me.labelWINSServer.Text, "labelWINSServer")
+		lang.SetText(Me.labelDNSSuffix.Text, "labelDNSSuffix")
+		lang.SetText(Me.buttonGetCurrentIPSettings.Text, "buttonGetCurrentIPSettings")
+		lang.SetText(Me.groupBoxProxy.Text, "groupBoxProxy")
+		Me.groupBoxProxy.Text = "    " & Me.groupBoxProxy.Text
+		lang.SetText(Me.labelServerAddress.Text, "labelServerAddress")
+		lang.SetText(Me.labelPort.Text, "labelPort")
+		lang.SetText(Me.groupBoxHomepage.Text, "groupBoxHomepage")
+		lang.SetText(Me.buttonUseBlankHomepage.Text, "buttonUseBlankHomepage")
+		lang.SetText(Me.labelHomepageNote.Text, "labelHomepageNote")
+		lang.SetText(Me.groupBoxWebBrowsers.Text, "groupBoxWebBrowsers")
+		lang.SetText(Me.buttonClearFirefox.Text, "buttonClearFirefox")
+		lang.SetToolTip(Me.toolTip1, Me.buttonClearFirefox, "buttonClearFirefox-ToolTip")
+		lang.SetText(Me.checkBoxIE.Text, "checkBoxIE")
+		lang.SetText(Me.checkBoxFirefox.Text, "checkBoxFirefox")
+		lang.SetText(Me.checkBoxOpera.Text, "checkBoxOpera")
+		lang.SetText(Me.groupBoxPleaseNote.Text, "groupBoxPleaseNote")
+		lang.SetText(Me.labelPleaseNote.Text, "labelPleaseNote")
+		lang.SetText(Me.ClearFirefox_Messagebox_1, "ClearFirefox-Messagebox-1")
+		lang.SetText(Me.ClearFirefox_Messagebox_2, "ClearFirefox-Messagebox-2")
+		lang.SetText(Me.toolStripButtonAddDrive.Text, "toolStripButtonAddDrive")
+		lang.SetText(Me.toolStripButtonEditDrive.Text, "toolStripButtonEditDrive")
+		lang.SetText(Me.toolStripButtonRemoveDrive.Text, "toolStripButtonRemoveDrive")
+		lang.SetText(Me.groupBoxPrinter.Text, "groupBoxPrinter")
+		lang.SetText(Me.buttonGetDefaultPrinter.Text, "buttonGetDefaultPrinter")
+		lang.SetText(Me.toolStripButtonAddProgram.Text, "toolStripButtonAddProgram")
+		lang.SetText(Me.toolStripButtonEditProgram.Text, "toolStripButtonEditProgram")
+		lang.SetText(Me.toolStripButtonRemoveProgram.Text, "toolStripButtonRemoveProgram")
+		lang.SetText(Me.groupBoxWallpaper.Text, "groupBoxWallpaper")
+		lang.SetText(Me.groupBoxWallpaperPreview.Text, "groupBoxWallpaperPreview")
+		lang.SetToolTip(Me.toolTip1, Me.buttonBrowseWallpaper, "buttonBrowseWallpaper-ToolTip")
+		lang.SetText(Me.openFileDialogWallpaper_Title, "openFileDialogWallpaper-Title")
+		lang.SetText(Me.openFileDialogWallpaper_Filter, "openFileDialogWallpaper-Filter")
+		lang.SetToolTip(Me.toolTip1, Me.buttonResetWallpaper, "buttonResetWallpaper-ToolTip")
+		lang.SetText(Me.groupBoxDisplaySettings.Text, "groupBoxDisplaySettings")
+		lang.SetText(Me.labelScreenResolution.Text, "labelScreenResolution")
+		lang.SetText(Me.labelColorQuality.Text, "labelColorQuality")
+		lang.SetText(Me.buttonGetCurrentDisplaySettings.Text, "buttonGetCurrentDisplaySettings")
+		lang.SetText(Me.groupBoxWireless.Text, "groupBoxWireless")
+		lang.SetText(Me.labelSSID.Text, "labelSSID")
+		lang.SetText(Me.labelSSIDNotes.Text, "labelSSIDNotes")
+		lang.SetText(Me.labelWirelessVista.Text, "labelWirelessVista")
+		lang.SetText(Me.buttonSave.Text, "buttonSave")
+		lang.SetText(Me.buttonClose.Text, "buttonClose")
+		lang.SetText(Me.labelWorking_NetworkCards, "labelWorking-NetworkCards")
+		lang.SetText(Me.labelWorking_Profile, "labelWorking-Profile")
+		lang.SetText(Me.labelWorking_Printer, "labelWorking-Printer")
+		lang.SetText(Me.ProfileName_Messagebox, "ProfileName-Messagebox")
+		lang.SetText(Me.checkBoxBypassProxyForLocalAddresses.Text, "checkBoxBypassProxy")
+		lang.SetText(Me.groupBoxAutoConfigAddress.Text, "groupBoxAutoConfigAddress")
 	End Sub
 	
 	Public Sub PopulateNetworkCards()		

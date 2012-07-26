@@ -25,9 +25,6 @@
 ' 
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
-Imports System.Xml
-Imports System.Globalization
-Imports System.Threading
 Imports System.IO
 
 Public Partial Class CopyProfile
@@ -54,19 +51,18 @@ Public Partial Class CopyProfile
 	End Sub
 	
 	Public Sub LoadLanguage()
-		Thread.CurrentThread.CurrentCulture = New CultureInfo(Globals.CurrentLang, False)
+		Dim lang As SetLanguage = New SetLanguage("/Language/CopyProfile/")
 		
-		Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-
-		Me.Text = root.SelectSingleNode("/Language/CopyProfile/WindowTitle").InnerText
-		Me.labelProfile.Text = root.SelectSingleNode("/Language/CopyProfile/labelProfile").InnerText
-		Me.labelNewProfile.Text = root.SelectSingleNode("/Language/CopyProfile/labelNewProfile").InnerText
-		Me.labelSelectNetworkCard.Text = root.SelectSingleNode("/Language/CopyProfile/labelSelectNetworkCard").InnerText
-		Me.buttonCopy.Text = root.SelectSingleNode("/Language/CopyProfile/buttonCopy").InnerText
-		Me.buttonCancel.Text = root.SelectSingleNode("/Language/CopyProfile/buttonCancel").InnerText
-		Me.ProfileName_Messagebox = root.SelectSingleNode("/Language/ProfileSettings/ProfileName-Messagebox").InnerText
+		lang.SetText(Me.Text, "WindowTitle")
+		lang.SetText(Me.labelProfile.Text, "labelProfile")
+		lang.SetText(Me.labelNewProfile.Text, "labelNewProfile")
+		lang.SetText(Me.labelSelectNetworkCard.Text, "labelSelectNetworkCard")
+		lang.SetText(Me.buttonCopy.Text, "buttonCopy")
+		lang.SetText(Me.buttonCancel.Text, "buttonCancel")
+		
+		lang = New SetLanguage("/Language/ProfileSettings/")
+		
+		lang.SetText(Me.ProfileName_Messagebox, "ProfileName-Messagebox")
 	End Sub
 	
 	Sub ButtonCancelClick(ByVal sender As Object, ByVal e As EventArgs)

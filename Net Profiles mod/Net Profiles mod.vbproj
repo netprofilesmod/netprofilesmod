@@ -237,7 +237,6 @@
     <Lang Include="lang\en-us.xml" />
     <Lang Include="lang\es-ar.xml" />
     <Lang Include="lang\fr-fr.xml" />
-    <Lang Include="lang\he.xml" />
     <Lang Include="lang\hu-hu.xml" />
     <Lang Include="lang\it-it.xml" />
     <Lang Include="lang\nl-nl.xml" />
@@ -246,9 +245,10 @@
     <Lang Include="lang\ru-ru.xml" />
     <Lang Include="lang\zh-cn.xml" />
     <Lang Include="lang\zh-tw.xml" />
-	<License Include="COPYING.txt" />
-	<MessageBoxManager Include="..\3rd Party\MessageBoxHook\bin\Common\License.txt" />
-	<MessageBoxManager Include="..\3rd Party\MessageBoxHook\bin\Common\Readme.txt" />
+    <License Include="COPYING.txt" />
+    <MessageBoxManager Include="..\3rd Party\MessageBoxHook\bin\Common\License.txt" />
+    <MessageBoxManager Include="..\3rd Party\MessageBoxHook\bin\Common\Readme.txt" />
+    <Lang Include="lang\he-il.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="lang" />

@@ -192,83 +192,77 @@ Public Partial Class MainForm
 	End Sub
 	
 	Public Sub LoadLanguage()
-        If Globals.CurrentLang <> "he" Then
-            Thread.CurrentThread.CurrentCulture = New CultureInfo(Globals.CurrentLang, False)
-        End If
-
-        Dim xDoc As New XmlDocument
-        xDoc.Load(Globals.CurrentLangPath)
-        Dim root As XmlElement = xDoc.DocumentElement
-
-        Me.fileToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/fileToolStripMenuItem").InnerText
-        Me.toolStripMenuItemNewProfile.Text = root.SelectSingleNode("/Language/MainForm/toolStripMenuItemNewProfile").InnerText
-        Me.languageToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/languageToolStripMenuItem").InnerText
-        Me.applyProfileToolStripMenuItemApplyProfile.Text = root.SelectSingleNode("/Language/MainForm/applyProfileToolStripMenuItemApplyProfile").InnerText
-        Me.activateOnDifferentNetworkCardToolStripMenuItem1.Text = root.SelectSingleNode("/Language/MainForm/activateOnDifferentNetworkCardToolStripMenuItem1").InnerText
-        Me.toolStripMenuItemCopyProfile.Text = root.SelectSingleNode("/Language/MainForm/toolStripMenuItemCopyProfile").InnerText
-        Me.toolStripMenuItemEditProfile.Text = root.SelectSingleNode("/Language/MainForm/toolStripMenuItemEditProfile").InnerText
-        Me.deleteToolStripMenuItemDeleteProfile.Text = root.SelectSingleNode("/Language/MainForm/deleteToolStripMenuItemDeleteProfile").InnerText
-        Me.createDesktopShortcutToolStripMenuItem1.Text = root.SelectSingleNode("/Language/MainForm/createDesktopShortcutToolStripMenuItem1").InnerText
-        Me.exitToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/exitToolStripMenuItem").InnerText
-        Me.optionsToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/optionsToolStripMenuItem").InnerText
-        Me.toggleToolbarTextToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/toggleToolbarTextToolStripMenuItem").InnerText
-        Me.minimizeToTrayOnCloseToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/minimizeToTrayOnCloseToolStripMenuItem").InnerText
-        Me.minimizeToTrayOnStartupToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/minimizeToTrayOnStartupToolStripMenuItem").InnerText
-        Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem").InnerText
-        Me.screenResolutionToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/screenResolutionToolStripMenuItem").InnerText
-        Me.askBeforeChangingResolutionToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/askBeforeChangingResolutionToolStripMenuItem").InnerText
-        Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/confirmSettingsAfterChangingResolutionToolStripMenuItem").InnerText
-        Me.runWhenILogInToWindowsToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/runWhenILogInToWindowsToolStripMenuItem").InnerText
-        Me.customizeDesktopShortcutsToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/customizeDesktopShortcutsToolStripMenuItem").InnerText
-        Me.reloadNetworkInterfacesToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/reloadNetworkInterfacesToolStripMenuItem").InnerText
-        Me.reloadProfilesToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/reloadProfilesToolStripMenuItem").InnerText
-        Me.helpToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/helpToolStripMenuItem").InnerText
-        Me.netProfilesWebsiteToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/netProfilesWebsiteToolStripMenuItem").InnerText.Replace("%1", Globals.ProgramName)
-        Me.checkForUpdatesToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/checkForUpdatesToolStripMenuItem").InnerText
-        Me.aboutToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/aboutToolStripMenuItem").InnerText
-        Me.toolStripButtonNewProfile.Text = root.SelectSingleNode("/Language/MainForm/toolStripButtonNewProfile").InnerText
-        Me.toolStripButtonApplyProfile.Text = root.SelectSingleNode("/Language/MainForm/toolStripButtonApplyProfile").InnerText
-        Me.toolStripButtonCopyProfile.Text = root.SelectSingleNode("/Language/MainForm/toolStripButtonCopyProfile").InnerText
-        Me.toolStripButtonEditProfile.Text = root.SelectSingleNode("/Language/MainForm/toolStripButtonEditProfile").InnerText
-        Me.toolStripButtonDeleteProfile.Text = root.SelectSingleNode("/Language/MainForm/toolStripButtonDeleteProfile").InnerText
-        Me.StatusLabelWorking = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking").InnerText
-        Me.StatusLabelWorking_Preloading = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-Preloading").InnerText
-        Me.StatusLabelWorking_Activating = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-Activating").InnerText
-        Me.StatusLabelWorking_UnmapDrives = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-UnmapDrives").InnerText
-        Me.StatusLabelWorking_MapDrives = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-MapDrives").InnerText
-        Me.StatusLabelWorking_Printer = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-Printer").InnerText
-        Me.StatusLabelWorking_Internet = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-Internet").InnerText
-        Me.StatusLabelWorking_Homepage = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-Homepage").InnerText
-        Me.StatusLabelWorking_Programs = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-Programs").InnerText
-        Me.StatusLabelWorking_Wallpaper = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-Wallpaper").InnerText
-        Me.StatusLabelWorking_Resolution = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-Resolution").InnerText
-        Me.StatusLabelWorking_Reloading = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-Reloading").InnerText
-        Me.StatusLabelWorking_DHCP = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-DHCP").InnerText
-        Me.StatusLabelWorking_IPAddress = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-IPAddress").InnerText
-        Me.StatusLabelWorking_Gateway = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-Gateway").InnerText
-        Me.StatusLabelWorking_DNS = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-DNS").InnerText
-        Me.StatusLabelWorking_WINS = root.SelectSingleNode("/Language/MainForm/toolStripStatusLabelWorking-WINS").InnerText
-        Me.applyProfileToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/applyProfileToolStripMenuItem").InnerText
-        Me.activateOnDifferentNetworkCardToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/activateOnDifferentNetworkCardToolStripMenuItem").InnerText
-        Me.copyToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/copyToolStripMenuItem").InnerText
-        Me.editToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/editToolStripMenuItem").InnerText
-        Me.deleteToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/deleteToolStripMenuItem").InnerText
-        Me.createDesktopShortcutToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/createDesktopShortcutToolStripMenuItem").InnerText
-        Me.showHideWindowToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/showHideWindowToolStripMenuItem").InnerText
-        Me.profilesToolStripMenuItem.Text = root.SelectSingleNode("/Language/MainForm/profilesToolStripMenuItem").InnerText
-        Me.exitToolStripMenuItem1.Text = root.SelectSingleNode("/Language/MainForm/exitToolStripMenuItem1").InnerText
-        Me.NoNetworkProfilesMessageBox_1 = root.SelectSingleNode("/Language/MainForm/NoNetworkProfilesMessageBox-1").InnerText
-        Me.NoNetworkProfilesMessageBox_2 = root.SelectSingleNode("/Language/MainForm/NoNetworkProfilesMessageBox-2").InnerText
-        Me.DeleteProfileMessageBox = root.SelectSingleNode("/Language/MainForm/DeleteProfileMessageBox").InnerText
-        Me.DeleteProfileMessageBox_Title = root.SelectSingleNode("/Language/MainForm/DeleteProfileMessageBox-Title").InnerText
-        Me.ShortcutConfigDefault = root.SelectSingleNode("/Language/MainForm/ShortcutConfigDefault").InnerText
-        Me.CreateShortcutMessagebox = root.SelectSingleNode("/Language/MainForm/CreateShortcutMessagebox").InnerText
-        Me.CheckForUpdates_Latest = root.SelectSingleNode("/Language/MainForm/CheckForUpdates-Latest").InnerText
-        Me.CheckForUpdates_New_1 = root.SelectSingleNode("/Language/MainForm/CheckForUpdates-New-1").InnerText.Replace("%1", Globals.ProgramName)
-        Me.CheckForUpdates_New_2 = root.SelectSingleNode("/Language/MainForm/CheckForUpdates-New-2").InnerText.Replace("%1", Globals.ProgramName)
-        Me.CheckForUpdates_Title = root.SelectSingleNode("/Language/MainForm/CheckForUpdates-Title").InnerText.Replace("%1", Globals.ProgramName)
-        Me.CheckForUpdates_Error_1 = root.SelectSingleNode("/Language/MainForm/CheckForUpdates-Error-1").InnerText
-        Me.CheckForUpdates_Error_2 = root.SelectSingleNode("/Language/MainForm/CheckForUpdates-Error-2").InnerText
+        Dim lang As SetLanguage = New SetLanguage("/Language/MainForm/")
+        
+        lang.SetText(Me.fileToolStripMenuItem.Text, "fileToolStripMenuItem")
+        lang.SetText(Me.toolStripMenuItemNewProfile.Text, "toolStripMenuItemNewProfile")
+        lang.SetText(Me.languageToolStripMenuItem.Text, "languageToolStripMenuItem")
+        lang.SetText(Me.applyProfileToolStripMenuItemApplyProfile.Text, "applyProfileToolStripMenuItemApplyProfile")
+        lang.SetText(Me.activateOnDifferentNetworkCardToolStripMenuItem1.Text, "activateOnDifferentNetworkCardToolStripMenuItem1")
+        lang.SetText(Me.toolStripMenuItemCopyProfile.Text, "toolStripMenuItemCopyProfile")
+        lang.SetText(Me.toolStripMenuItemEditProfile.Text, "toolStripMenuItemEditProfile")
+        lang.SetText(Me.deleteToolStripMenuItemDeleteProfile.Text, "deleteToolStripMenuItemDeleteProfile")
+        lang.SetText(Me.createDesktopShortcutToolStripMenuItem1.Text, "createDesktopShortcutToolStripMenuItem1")
+        lang.SetText(Me.exitToolStripMenuItem.Text, "exitToolStripMenuItem")
+        lang.SetText(Me.optionsToolStripMenuItem.Text, "optionsToolStripMenuItem")
+        lang.SetText(Me.toggleToolbarTextToolStripMenuItem.Text, "toggleToolbarTextToolStripMenuItem")
+        lang.SetText(Me.minimizeToTrayOnCloseToolStripMenuItem.Text, "minimizeToTrayOnCloseToolStripMenuItem")
+        lang.SetText(Me.minimizeToTrayOnStartupToolStripMenuItem.Text, "minimizeToTrayOnStartupToolStripMenuItem")
+        lang.SetText(Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Text, "dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem")
+        lang.SetText(Me.screenResolutionToolStripMenuItem.Text, "screenResolutionToolStripMenuItem")
+        lang.SetText(Me.askBeforeChangingResolutionToolStripMenuItem.Text, "askBeforeChangingResolutionToolStripMenuItem")
+        lang.SetText(Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Text, "confirmSettingsAfterChangingResolutionToolStripMenuItem")
+        lang.SetText(Me.runWhenILogInToWindowsToolStripMenuItem.Text, "runWhenILogInToWindowsToolStripMenuItem")
+        lang.SetText(Me.customizeDesktopShortcutsToolStripMenuItem.Text, "customizeDesktopShortcutsToolStripMenuItem")
+        lang.SetText(Me.reloadNetworkInterfacesToolStripMenuItem.Text, "reloadNetworkInterfacesToolStripMenuItem")
+        lang.SetText(Me.reloadProfilesToolStripMenuItem.Text, "reloadProfilesToolStripMenuItem")
+        lang.SetText(Me.helpToolStripMenuItem.Text, "helpToolStripMenuItem")
+        lang.SetText(Me.netProfilesWebsiteToolStripMenuItem.Text, "netProfilesWebsiteToolStripMenuItem", "%1", Globals.ProgramName)
+        lang.SetText(Me.checkForUpdatesToolStripMenuItem.Text, "checkForUpdatesToolStripMenuItem")
+        lang.SetText(Me.aboutToolStripMenuItem.Text, "aboutToolStripMenuItem")
+        lang.SetText(Me.toolStripButtonNewProfile.Text, "toolStripButtonNewProfile")
+        lang.SetText(Me.toolStripButtonApplyProfile.Text, "toolStripButtonApplyProfile")
+        lang.SetText(Me.toolStripButtonCopyProfile.Text, "toolStripButtonCopyProfile")
+        lang.SetText(Me.toolStripButtonEditProfile.Text, "toolStripButtonEditProfile")
+        lang.SetText(Me.toolStripButtonDeleteProfile.Text, "toolStripButtonDeleteProfile")
+        lang.SetText(Me.StatusLabelWorking, "toolStripStatusLabelWorking")
+        lang.SetText(Me.StatusLabelWorking_Preloading, "toolStripStatusLabelWorking-Preloading")
+        lang.SetText(Me.StatusLabelWorking_Activating, "toolStripStatusLabelWorking-Activating")
+        lang.SetText(Me.StatusLabelWorking_UnmapDrives, "toolStripStatusLabelWorking-UnmapDrives")
+        lang.SetText(Me.StatusLabelWorking_MapDrives, "toolStripStatusLabelWorking-MapDrives")
+        lang.SetText(Me.StatusLabelWorking_Printer, "toolStripStatusLabelWorking-Printer")
+        lang.SetText(Me.StatusLabelWorking_Internet, "toolStripStatusLabelWorking-Internet")
+        lang.SetText(Me.StatusLabelWorking_Homepage, "toolStripStatusLabelWorking-Homepage")
+        lang.SetText(Me.StatusLabelWorking_Programs, "toolStripStatusLabelWorking-Programs")
+        lang.SetText(Me.StatusLabelWorking_Wallpaper, "toolStripStatusLabelWorking-Wallpaper")
+        lang.SetText(Me.StatusLabelWorking_Resolution, "toolStripStatusLabelWorking-Resolution")
+        lang.SetText(Me.StatusLabelWorking_Reloading, "toolStripStatusLabelWorking-Reloading")
+        lang.SetText(Me.StatusLabelWorking_DHCP, "toolStripStatusLabelWorking-DHCP")
+        lang.SetText(Me.StatusLabelWorking_IPAddress, "toolStripStatusLabelWorking-IPAddress")
+        lang.SetText(Me.StatusLabelWorking_Gateway, "toolStripStatusLabelWorking-Gateway")
+        lang.SetText(Me.StatusLabelWorking_DNS, "toolStripStatusLabelWorking-DNS")
+        lang.SetText(Me.StatusLabelWorking_WINS, "toolStripStatusLabelWorking-WINS")
+        lang.SetText(Me.applyProfileToolStripMenuItem.Text, "applyProfileToolStripMenuItem")
+        lang.SetText(Me.activateOnDifferentNetworkCardToolStripMenuItem.Text, "activateOnDifferentNetworkCardToolStripMenuItem")
+        lang.SetText(Me.copyToolStripMenuItem.Text, "copyToolStripMenuItem")
+        lang.SetText(Me.editToolStripMenuItem.Text, "editToolStripMenuItem")
+        lang.SetText(Me.deleteToolStripMenuItem.Text, "deleteToolStripMenuItem")
+        lang.SetText(Me.createDesktopShortcutToolStripMenuItem.Text, "createDesktopShortcutToolStripMenuItem")
+        lang.SetText(Me.showHideWindowToolStripMenuItem.Text, "showHideWindowToolStripMenuItem")
+        lang.SetText(Me.profilesToolStripMenuItem.Text, "profilesToolStripMenuItem")
+        lang.SetText(Me.exitToolStripMenuItem1.Text, "exitToolStripMenuItem1")
+        lang.SetText(Me.NoNetworkProfilesMessageBox_1, "NoNetworkProfilesMessageBox-1")
+        lang.SetText(Me.NoNetworkProfilesMessageBox_2, "NoNetworkProfilesMessageBox-2")
+        lang.SetText(Me.DeleteProfileMessageBox, "DeleteProfileMessageBox")
+        lang.SetText(Me.DeleteProfileMessageBox_Title, "DeleteProfileMessageBox-Title")
+        lang.SetText(Me.ShortcutConfigDefault, "ShortcutConfigDefault")
+        lang.SetText(Me.CreateShortcutMessagebox, "CreateShortcutMessagebox")
+        lang.SetText(Me.CheckForUpdates_Latest, "CheckForUpdates-Latest")
+        lang.SetText(Me.CheckForUpdates_New_1, "CheckForUpdates-New-1", "%1", Globals.ProgramName)
+        lang.SetText(Me.CheckForUpdates_New_2, "CheckForUpdates-New-2", "%1", Globals.ProgramName)
+        lang.SetText(Me.CheckForUpdates_Title, "CheckForUpdates-Title", "%1", Globals.ProgramName)
+        lang.SetText(Me.CheckForUpdates_Error_1, "CheckForUpdates-Error-1")
+        lang.SetText(Me.CheckForUpdates_Error_2, "CheckForUpdates-Error-2")
     End Sub
 	
     Sub ToggleToolbarTextToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles toggleToolbarTextToolStripMenuItem.Click
