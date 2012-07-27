@@ -25,10 +25,6 @@
 ' 
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
-Imports System.Xml
-Imports System.Globalization
-Imports System.Threading
-
 Public Partial Class ActivateSelectNetworkCard
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
@@ -59,16 +55,12 @@ Public Partial Class ActivateSelectNetworkCard
 	End Sub
 	
 	Public Sub LoadLanguage()
-		Thread.CurrentThread.CurrentCulture = New CultureInfo(Globals.CurrentLang, False)
+		Dim lang As SetLanguage = New SetLanguage("/Language/ActivateSelectNetworkCard/")
 		
-		Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-
-		Me.Text = root.SelectSingleNode("/Language/ActivateSelectNetworkCard/WindowTitle").InnerText
-		Me.labelProfileTitle.Text = root.SelectSingleNode("/Language/ActivateSelectNetworkCard/labelProfileTitle").InnerText
-		Me.labelSelectNetworkCard.Text = root.SelectSingleNode("/Language/ActivateSelectNetworkCard/labelSelectNetworkCard").InnerText
-		Me.buttonActivate.Text = root.SelectSingleNode("/Language/ActivateSelectNetworkCard/buttonActivate").InnerText
-		Me.buttonCancel.Text = root.SelectSingleNode("/Language/ActivateSelectNetworkCard/buttonCancel").InnerText
+		lang.SetText(Me.Text, "WindowTitle")
+		lang.SetText(labelProfileTitle, "labelProfileTitle")
+		lang.SetText(labelSelectNetworkCard, "labelSelectNetworkCard")
+		lang.SetText(buttonActivate, "buttonActivate")
+		lang.SetText(buttonCancel, "buttonCancel")
 	End Sub
 End Class

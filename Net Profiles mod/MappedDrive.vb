@@ -124,25 +124,24 @@ Public Partial Class MappedDrive
 	End Sub
 	
 	Public Sub LoadLanguage()
-		Thread.CurrentThread.CurrentCulture = New CultureInfo(Globals.CurrentLang, False)
+		Dim lang As SetLanguage = New SetLanguage("/Language/MappedDrive/")
 		
-		Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-
-		Me.Text = root.SelectSingleNode("/Language/MappedDrive/WindowTitle").InnerText
-		Me.labelUsername.Text = root.SelectSingleNode("/Language/MappedDrive/labelUsername").InnerText
-		Me.labelPassword.Text = root.SelectSingleNode("/Language/MappedDrive/labelPassword").InnerText
-		Me.labelNote.Text = root.SelectSingleNode("/Language/MappedDrive/labelNote").InnerText
+		lang.SetText(Me.Text, "WindowTitle")
+		lang.SetText(Me.labelUsername.Text, "labelUsername")
+		lang.SetText(Me.labelPassword.Text, "labelPassword")
+		lang.SetText(Me.labelNote.Text, "labelNote")
 		If Globals.CreatingNewMappedDrive = False Then
-			Me.buttonSave.Text = root.SelectSingleNode("/Language/MappedDrive/buttonSave").InnerText
+			lang.SetText(Me.buttonSave.Text, "buttonSave")
 		Else
-			Me.buttonSave.Text = root.SelectSingleNode("/Language/MappedDrive/buttonAdd").InnerText
+			lang.SetText(Me.buttonSave.Text, "buttonAdd")
 		End If
-		Me.buttonCancel.Text = root.SelectSingleNode("/Language/MappedDrive/buttonCancel").InnerText
-		Me.AlreadyMapped_Messagebox = root.SelectSingleNode("/Language/MappedDrive/AlreadyMapped-Messagebox").InnerText
-		Me.DriveUsed = root.SelectSingleNode("/Language/MappedDrive/DriveUsed").InnerText
-		Globals.BrowseNetworkShare_Title = root.SelectSingleNode("/Language/Misc/BrowseNetworkShare-Title").InnerText
+		lang.SetText(Me.buttonCancel.Text, "buttonCancel")
+		lang.SetText(Me.AlreadyMapped_Messagebox, "AlreadyMapped-Messagebox")
+		lang.SetText(Me.DriveUsed, "DriveUsed")
+		
+		lang = New SetLanguage("/Language/Misc/")
+		
+		lang.SetText(Globals.BrowseNetworkShare_Title, "BrowseNetworkShare-Title")
 	End Sub
 	
 	Sub ButtonBrowseClick(ByVal sender As Object, ByVal e As EventArgs)

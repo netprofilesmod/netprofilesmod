@@ -25,10 +25,6 @@
 ' 
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
-Imports System.Xml
-Imports System.Globalization
-Imports System.Threading
-
 Public Partial Class WirelessDetected
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
@@ -54,16 +50,13 @@ Public Partial Class WirelessDetected
 	End Sub
 	
 	Public Sub LoadLanguage()
-		Thread.CurrentThread.CurrentCulture = New CultureInfo(Globals.CurrentLang, False)
+		Dim lang As SetLanguage = New SetLanguage("/Language/WirelessDetected/")
 		
-		Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-
-		Me.Text = Globals.ProgramName & " - " & root.SelectSingleNode("/Language/WirelessDetected/WindowTitle").InnerText
-		Me.labelConnectedTo.Text = root.SelectSingleNode("/Language/WirelessDetected/labelConnectedTo").InnerText
-		Me.labelActivate.Text = root.SelectSingleNode("/Language/WirelessDetected/labelActivate").InnerText
-		Me.buttonYes.Text = root.SelectSingleNode("/Language/WirelessDetected/buttonYes").InnerText
-		Me.buttonNo.Text = root.SelectSingleNode("/Language/WirelessDetected/buttonNo").InnerText
+		lang.SetText(Me.Text, "WindowTitle")
+		Me.Text = Globals.ProgramName & " - " & Me.Text
+		lang.SetText(Me.labelConnectedTo.Text, "labelConnectedTo")
+		lang.SetText(Me.labelActivate.Text, "labelActivate")
+		lang.SetText(Me.buttonYes.Text, "buttonYes")
+		lang.SetText(Me.buttonNo.Text, "buttonNo")
 	End Sub
 End Class

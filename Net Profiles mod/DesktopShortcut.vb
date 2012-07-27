@@ -25,10 +25,6 @@
 ' 
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
-Imports System.Xml
-Imports System.Globalization
-Imports System.Threading
-
 Public Partial Class DesktopShortcut
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
@@ -65,21 +61,17 @@ Public Partial Class DesktopShortcut
 	End Sub
 	
 	Public Sub LoadLanguage()
-		Thread.CurrentThread.CurrentCulture = New CultureInfo(Globals.CurrentLang, False)
+		Dim lang As SetLanguage = New SetLanguage("/Language/DesktopShortcut/")
 		
-		Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-
-		Me.Text = root.SelectSingleNode("/Language/DesktopShortcut/WindowTitle").InnerText
-		Me.groupBoxLegend.Text = root.SelectSingleNode("/Language/DesktopShortcut/groupBoxLegend").InnerText
-		Me.labelVar1.Text = root.SelectSingleNode("/Language/DesktopShortcut/labelVar1").InnerText
-		Me.labelVar2.Text = root.SelectSingleNode("/Language/DesktopShortcut/labelVar2").InnerText
-		Me.labelVar3.Text = root.SelectSingleNode("/Language/DesktopShortcut/labelVar3").InnerText
-		Me.labelVar4.Text = root.SelectSingleNode("/Language/DesktopShortcut/labelVar4").InnerText
-		Me.buttonRestoreDefaults.Text = root.SelectSingleNode("/Language/DesktopShortcut/buttonRestoreDefaults").InnerText
-		Me.buttonSave.Text = root.SelectSingleNode("/Language/DesktopShortcut/buttonSave").InnerText
-		Me.buttonCancel.Text = root.SelectSingleNode("/Language/DesktopShortcut/buttonCancel").InnerText
+		lang.SetText(Me.Text, "WindowTitle")
+		lang.SetText(Me.groupBoxLegend.Text, "groupBoxLegend")
+		lang.SetText(Me.labelVar1.Text, "labelVar1")
+		lang.SetText(Me.labelVar2.Text, "labelVar2")
+		lang.SetText(Me.labelVar3.Text, "labelVar3")
+		lang.SetText(Me.labelVar4.Text, "labelVar4")
+		lang.SetText(Me.buttonRestoreDefaults.Text, "buttonRestoreDefaults")
+		lang.SetText(Me.buttonSave.Text, "buttonSave")
+		lang.SetText(Me.buttonCancel.Text, "buttonCancel")
 	End Sub
 	
 	Sub ButtonSaveClick(ByVal sender As Object, ByVal e As EventArgs)
