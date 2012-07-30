@@ -73,6 +73,8 @@ Public Module Globals
 	
 	Public BrowseNetworkShare_Title As String
 	
+	Public FfSettings As FirefoxSettings
+	
 	Declare Function GetPrivateProfileSection Lib "kernel32"  Alias "GetPrivateProfileSectionA"(ByVal sSectionName As String, ByVal sReturnedString As String, ByVal lSize As Integer, ByVal sFileName As String) As Integer
 	
 	Public Function StrReverse(ByVal str As String) As String
@@ -1122,7 +1124,6 @@ Public Module Globals
 	End Sub
 	
 	Public Class SetLanguage
-	
 		Private root As XmlElement
 		Private prefix As String
 		
@@ -1169,4 +1170,78 @@ Public Module Globals
 		End Function
 	End Class
 
+	Public Class FirefoxSettings
+		Private const PrefsFileName = "prefs.js"
+		Private PrefsPath As String
+		Private PrefsList As List(Of String)
+		
+		Public Sub New()
+			Dim IniPath As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\profiles.ini"
+			Dim StartWithLastProfile As String = INIRead(iniPath, "General", "StartWithLastProfile", "0")
+			Dim i As Integer = 0
+			Dim IsDefault As String = ""
+			Dim IsRelative As String = ""
+			Dim ProfilePath As String = ""
+			Dim CurrentPath As String = ""
+			Me.PrefsPath = ""
+			Me.PrefsList = New List(Of String)
+			
+			' Iterate over profile sections in the INI file starting with [Profile0]
+			Do
+				CurrentPath = INIRead(IniPath, "Profile" & i, "Path").Replace("/", "\")
+				' CurrentPath will be empty if reading a non-existent profile section
+				If CurrentPath <> "" Then
+					ProfilePath = CurrentPath
+					IsDefault = INIRead(IniPath, "Profile" & i, "Default")
+					IsRelative = INIRead(IniPath, "Profile" & i, "IsRelative", "1")
+					i = i + 1
+				End If
+			Loop While (IsDefault <> "1" And CurrentPath <> "")
+			If (ProfilePath <> "" And (IsDefault = "1" Or i = 1)) Then
+				Dim oFile As System.IO.File
+				Dim oRead As System.IO.StreamReader
+				If IsRelative = "0" Then
+					Me.PrefsPath = ProfilePath & "\" & Me.PrefsFileName
+					oRead = oFile.OpenText(Me.PrefsPath)
+				Else
+					Me.PrefsPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\" & ProfilePath & "\" & Me.PrefsFileName
+					oRead = oFile.OpenText(Me.PrefsPath)
+				End If
+				Do While oRead.Peek() >= 0
+					Me.PrefsList.Add(oRead.ReadLine)
+				Loop
+				oRead.Close()
+			End If
+		End Sub
+		
+		Public Sub ChangeSetting(Setting As String, Value As String)
+			Dim SettingChanged As Boolean = False
+			Dim i As Integer = 0
+			While i < Me.PrefsList.Count
+				If Me.PrefsList(i).Contains("user_pref(" & Chr(34) & Setting & Chr(34) & ", ") Then
+					If SettingChanged Then
+						' Remove duplicate lines
+						Me.PrefsList.RemoveAt(i)
+					Else
+						Me.PrefsList(i) = "user_pref(" & Chr(34) & Setting & Chr(34) & ", " & Chr(34) & Value & Chr(34) & ");"
+						SettingChanged = True
+					End If
+				End If
+				i = i + 1
+			End While
+			If Not SettingChanged Then
+				me.PrefsList.Add("user_pref(" & Chr(34) & Setting & Chr(34) & ", " & Chr(34) & Value & Chr(34) & ");")
+			End if
+		End Sub
+		
+		Public Sub Save()
+			Dim oFile As System.IO.File
+			Dim oWrite As System.IO.StreamWriter
+			oWrite = oFile.CreateText(Me.PrefsPath)
+			For Each Line As String In Me.PrefsList
+				oWrite.WriteLine(Line)
+			Next
+			oWrite.Close()
+		End Sub
+	End Class
 End Module
