@@ -1068,12 +1068,15 @@ Public Partial Class MainForm
     Sub CheckForUpdatesToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles checkForUpdatesToolStripMenuItem.Click
         Application.DoEvents()
         Try
-            Dim wrq As WebRequest = WebRequest.Create("http://www.feldhammer.at/osp/netprofilesmod/latestversion.php")
+            const markBegin As String = "%%___"
+            const markEnd As String = "___%%"
+            Dim wrq As WebRequest = WebRequest.Create("http://code.google.com/p/netprofilesmod/wiki/latestversion")
             Dim wrp As WebResponse = wrq.GetResponse()
             Application.DoEvents()
             Dim sr As StreamReader = New StreamReader(wrp.GetResponseStream())
             Application.DoEvents()
-            Dim currentVersion As String = sr.ReadToEnd()
+            Dim wikiLatestversion As String = sr.ReadToEnd()
+            Dim currentVersion As String = wikiLatestversion.Substring(wikiLatestversion.IndexOf(markBegin) + markBegin.Length, wikiLatestversion.IndexOf(markEnd) - wikiLatestversion.IndexOf(markBegin) - markBegin.Length)
             If currentVersion.Trim = Globals.ProgramVersion Then
                 MessageBox.Show(Me.CheckForUpdates_Latest, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
