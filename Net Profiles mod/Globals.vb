@@ -990,56 +990,6 @@ Public Module Globals
 		End If
 	End Sub
     
-	Public Sub DeleteFirefoxSettings()
-        ' Fixme: Move all file operations on Firefox settings to a function
-        Dim FireFoxProfilesDir As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\Profiles"
-		If Not Dir(FireFoxProfilesDir, FileAttribute.Directory) = "" Then
-			Dim FirefoxProfiles As New DirectoryInfo(FireFoxProfilesDir)
-			Dim Dirs As DirectoryInfo() = FirefoxProfiles.GetDirectories("*.default")
-			Dim DirectoryName As DirectoryInfo
-			For Each DirectoryName In Dirs
-				Try
-                    If Not Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & "\prefs.js", FileAttribute.Normal) = "" Then
-                        Dim oFile As System.IO.File
-                        Dim oRead As System.IO.StreamReader
-                        oRead = oFile.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\prefs.js")
-                        Dim CurrentFile As String = ""
-                        Dim CurrentLine As String = ""
-                        While oRead.Peek <> -1
-                            CurrentLine = oRead.ReadLine()
-                            If CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.http" & Chr(34) & ", ") Then
-                                CurrentLine = ""
-                            ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.http_port" & Chr(34) & ", ") Then
-                                CurrentLine = ""
-                            ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "network.proxy.type" & Chr(34) & ", ") Then
-                                CurrentLine = ""
-                            ElseIf CurrentLine.Contains("user_pref(" & Chr(34) & "browser.startup.homepage" & Chr(34) & ", ") Then
-                                CurrentLine = ""
-                            End If
-                            If CurrentLine.Length > 0 Then
-                                If CurrentFile.Length = 0 Then
-                                    CurrentFile = CurrentLine
-                                Else
-                                    CurrentFile = CurrentFile & vbCrLf & CurrentLine
-                                End If
-                            End If
-                        End While
-                        oRead.Close()
-
-                        Dim oWrite As System.IO.StreamWriter
-                        oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\prefs.js")
-                        oWrite.Write(CurrentFile)
-                        oWrite.Close()
-                    Else
-
-                    End If
-				Catch
-				
-				End Try
-			Next
-		End If
-    End Sub
-    
 	Public Sub SaveFirefoxHomepage(ByVal Homepage As String)
         ' Fixme: Move all file operations on Firefox settings to a function
         Dim FireFoxProfilesDir As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\Profiles"

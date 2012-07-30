@@ -40,8 +40,6 @@ Public Partial Class ProfileSettings
 		'
 	End Sub
 	
-	Public ClearFirefox_Messagebox_1 As String
-	Public ClearFirefox_Messagebox_2 As String
 	Public openFileDialogWallpaper_Title As String
 	Public openFileDialogWallpaper_Filter As String
 	Public labelWorking_NetworkCards As String
@@ -95,20 +93,14 @@ Public Partial Class ProfileSettings
 		lang.SetText(Me.groupBoxProxy.Text, "groupBoxProxy")
 		Me.groupBoxProxy.Text = "    " & Me.groupBoxProxy.Text
 		lang.SetText(Me.labelServerAddress.Text, "labelServerAddress")
-		lang.SetText(Me.labelPort.Text, "labelPort")
 		lang.SetText(Me.groupBoxHomepage.Text, "groupBoxHomepage")
 		lang.SetText(Me.buttonUseBlankHomepage.Text, "buttonUseBlankHomepage")
 		lang.SetText(Me.labelHomepageNote.Text, "labelHomepageNote")
 		lang.SetText(Me.groupBoxWebBrowsers.Text, "groupBoxWebBrowsers")
-		lang.SetText(Me.buttonClearFirefox.Text, "buttonClearFirefox")
-		lang.SetToolTip(Me.toolTip1, Me.buttonClearFirefox, "buttonClearFirefox-ToolTip")
 		lang.SetText(Me.checkBoxIE.Text, "checkBoxIE")
 		lang.SetText(Me.checkBoxFirefox.Text, "checkBoxFirefox")
-		lang.SetText(Me.checkBoxOpera.Text, "checkBoxOpera")
 		lang.SetText(Me.groupBoxPleaseNote.Text, "groupBoxPleaseNote")
 		lang.SetText(Me.labelPleaseNote.Text, "labelPleaseNote")
-		lang.SetText(Me.ClearFirefox_Messagebox_1, "ClearFirefox-Messagebox-1")
-		lang.SetText(Me.ClearFirefox_Messagebox_2, "ClearFirefox-Messagebox-2")
 		lang.SetText(Me.toolStripButtonAddDrive.Text, "toolStripButtonAddDrive")
 		lang.SetText(Me.toolStripButtonEditDrive.Text, "toolStripButtonEditDrive")
 		lang.SetText(Me.toolStripButtonRemoveDrive.Text, "toolStripButtonRemoveDrive")
@@ -262,11 +254,10 @@ Public Partial Class ProfileSettings
 		
 		INIWrite(ThisINIFile, "Internet Settings", "UseProxySettings", UseProxyEntry)
 		INIWrite(ThisINIFile, "Internet Settings", "ProxyServerAddress", Me.textBoxServerAddress.Text.Trim)
-		INIWrite(ThisINIFile, "Internet Settings", "ProxyExceptions", Me.textBoxPort.Text.Trim)
+		INIWrite(ThisINIFile, "Internet Settings", "ProxyExceptions", Me.textBoxExceptions.Text.Trim)
 		INIWrite(ThisINIFile, "Internet Settings", "DefaultHomepage", Me.textBoxDefaultHomepage.Text.Trim)
 		INIWrite(ThisINIFile, "Internet Settings", "InternetExplorer", Me.checkBoxIE.Checked.ToString)
 		INIWrite(ThisINIFile, "Internet Settings", "Firefox", Me.checkBoxFirefox.Checked.ToString)
-		INIWrite(ThisINIFile, "Internet Settings", "Opera", Me.checkBoxOpera.Checked.ToString)
 		INIWrite(ThisINIFile, "Internet Settings", "ProxyBypass", Me.checkBoxBypassProxyForLocalAddresses.Checked.ToString)
 		INIWrite(ThisINIFile, "Internet Settings", "AutoConfigAddress", Me.textBoxAutoConfigAddress.Text.Trim)
 		
@@ -635,15 +626,13 @@ Public Partial Class ProfileSettings
 			Application.DoEvents()
 			Me.textBoxServerAddress.Text = INIRead(TheINIFile,"Internet Settings", "ProxyServerAddress", "")
 			Application.DoEvents()
-			Me.textBoxPort.Text = INIRead(TheINIFile,"Internet Settings", "ProxyExceptions", "")
+			Me.textBoxExceptions.Text = INIRead(TheINIFile,"Internet Settings", "ProxyExceptions", "")
 			Application.DoEvents()
 			Me.textBoxDefaultHomepage.Text = INIRead(TheINIFile,"Internet Settings", "DefaultHomepage", "")
 			Application.DoEvents()
             Me.checkBoxIE.Checked = CBool(INIRead(TheINIFile, "Internet Settings", "InternetExplorer", "False"))
 			Application.DoEvents()
             Me.checkBoxFirefox.Checked = CBool(INIRead(TheINIFile, "Internet Settings", "Firefox", "False"))
-			Application.DoEvents()
-            Me.checkBoxOpera.Checked = CBool(INIRead(TheINIFile, "Internet Settings", "Opera", "False"))
 			Application.DoEvents()
             Me.checkBoxBypassProxyForLocalAddresses.Checked = CBool(INIRead(TheINIFile, "Internet Settings", "ProxyBypass", "False"))
 			
@@ -794,8 +783,8 @@ Public Partial Class ProfileSettings
 	Public Sub EnableDisableProxySettings(ByVal UseProxyStatus As Boolean)
 		Me.labelServerAddress.Enabled = UseProxyStatus
 		Me.textBoxServerAddress.Enabled = UseProxyStatus
-		Me.labelPort.Enabled = UseProxyStatus
-		Me.textBoxPort.Enabled = UseProxyStatus
+		Me.labelExceptions.Enabled = UseProxyStatus
+		Me.textBoxExceptions.Enabled = UseProxyStatus
 		Me.checkBoxBypassProxyForLocalAddresses.Enabled = UseProxyStatus
 	End Sub
 	
@@ -915,7 +904,7 @@ Public Partial Class ProfileSettings
 		If ProxyAddress.Contains(":") Then
             Dim ProxyAddressArray() As String = ProxyAddress.Split(CChar(":"))
 			Me.textBoxServerAddress.Text = ProxyAddressArray(0)
-			Me.textBoxPort.Text = ProxyAddressArray(1)
+			Me.textBoxExceptions.Text = ProxyAddressArray(1)
 		Else
 			Me.textBoxServerAddress.Text = ProxyAddress
 		End If
@@ -968,11 +957,6 @@ Public Partial Class ProfileSettings
 		Me.comboBoxDisplayColors.Text = cScreen.CurrentBPP.ToString
 	End Sub
 	
-	Sub ButtonClearFirefoxClick(ByVal sender As Object, ByVal e As EventArgs)
-		Call DeleteFirefoxSettings()
-		MessageBox.Show(Me.ClearFirefox_Messagebox_1 & vbCrLf & vbCrLf & Me.ClearFirefox_Messagebox_2, Globals.ProgramName & " - Firefox")
-	End Sub
-	
 	Sub ProfileSettingsFormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs)
 		'*** GENERAL ***
 		Me.textBoxProfileName.Text = ""
@@ -1008,13 +992,12 @@ Public Partial Class ProfileSettings
 		'*** INTERNET ***
 		Me.checkBoxUseProxySettings.Checked = False
 		Me.textBoxServerAddress.Text = ""
-		Me.textBoxPort.Text = ""
+		Me.textBoxExceptions.Text = ""
 		Me.checkBoxBypassProxyForLocalAddresses.Checked = False
 		Me.textBoxAutoConfigAddress.Text = ""
 		Me.textBoxDefaultHomepage.Text = ""
 		Me.checkBoxIE.Checked = False
 		Me.checkBoxFirefox.Checked = False
-		Me.checkBoxOpera.Checked = False
 		'*** MAPPED DRIVES ***
 		Me.listViewMappedDrives.Items.Clear
 		'*** PRINTER ***

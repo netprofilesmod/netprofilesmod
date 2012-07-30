@@ -147,7 +147,7 @@
     <value>358, 99</value>
   </data>
   <data name="textBoxDNSSuffix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 20</value>
+    <value>97, 20</value>
   </data>
   <data name="textBoxDNSSuffix.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1783,26 +1783,347 @@
   <data name="&gt;&gt;tabPageIPSettings.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="labelPleaseNote.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;groupBoxPleaseNote.Name" xml:space="preserve">
+    <value>groupBoxPleaseNote</value>
   </data>
-  <data name="labelPleaseNote.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
+  <data name="&gt;&gt;groupBoxPleaseNote.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelPleaseNote.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;groupBoxPleaseNote.Parent" xml:space="preserve">
+    <value>tabPageInternet</value>
   </data>
-  <data name="labelPleaseNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="labelPleaseNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 71</value>
-  </data>
-  <data name="labelPleaseNote.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;groupBoxPleaseNote.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="labelPleaseNote.Text" xml:space="preserve">
-    <value>Mozilla Firefox and Opera must not be running for the changes to take effect.</value>
+  <data name="&gt;&gt;groupBoxAutoConfigAddress.Name" xml:space="preserve">
+    <value>groupBoxAutoConfigAddress</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAutoConfigAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAutoConfigAddress.Parent" xml:space="preserve">
+    <value>tabPageInternet</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAutoConfigAddress.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWebBrowsers.Name" xml:space="preserve">
+    <value>groupBoxWebBrowsers</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWebBrowsers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWebBrowsers.Parent" xml:space="preserve">
+    <value>tabPageInternet</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWebBrowsers.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;groupBoxProxy.Name" xml:space="preserve">
+    <value>groupBoxProxy</value>
+  </data>
+  <data name="&gt;&gt;groupBoxProxy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxProxy.Parent" xml:space="preserve">
+    <value>tabPageInternet</value>
+  </data>
+  <data name="&gt;&gt;groupBoxProxy.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;groupBoxHomepage.Name" xml:space="preserve">
+    <value>groupBoxHomepage</value>
+  </data>
+  <data name="&gt;&gt;groupBoxHomepage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxHomepage.Parent" xml:space="preserve">
+    <value>tabPageInternet</value>
+  </data>
+  <data name="&gt;&gt;groupBoxHomepage.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabPageInternet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPageInternet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 231</value>
+  </data>
+  <data name="tabPageInternet.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabPageInternet.Text" xml:space="preserve">
+    <value>Internet</value>
+  </data>
+  <data name="&gt;&gt;tabPageInternet.Name" xml:space="preserve">
+    <value>tabPageInternet</value>
+  </data>
+  <data name="&gt;&gt;tabPageInternet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageInternet.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPageInternet.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="toolStripMappedDrives.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>3, 203</value>
+  </metadata>
+  <data name="&gt;&gt;listViewMappedDrives.Name" xml:space="preserve">
+    <value>listViewMappedDrives</value>
+  </data>
+  <data name="&gt;&gt;listViewMappedDrives.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listViewMappedDrives.Parent" xml:space="preserve">
+    <value>tabPageMappedDrives</value>
+  </data>
+  <data name="&gt;&gt;listViewMappedDrives.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;toolStripMappedDrives.Name" xml:space="preserve">
+    <value>toolStripMappedDrives</value>
+  </data>
+  <data name="&gt;&gt;toolStripMappedDrives.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMappedDrives.Parent" xml:space="preserve">
+    <value>tabPageMappedDrives</value>
+  </data>
+  <data name="&gt;&gt;toolStripMappedDrives.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabPageMappedDrives.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPageMappedDrives.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPageMappedDrives.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 231</value>
+  </data>
+  <data name="tabPageMappedDrives.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPageMappedDrives.Text" xml:space="preserve">
+    <value>Mapped Drives</value>
+  </data>
+  <data name="&gt;&gt;tabPageMappedDrives.Name" xml:space="preserve">
+    <value>tabPageMappedDrives</value>
+  </data>
+  <data name="&gt;&gt;tabPageMappedDrives.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageMappedDrives.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPageMappedDrives.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;groupBoxPrinter.Name" xml:space="preserve">
+    <value>groupBoxPrinter</value>
+  </data>
+  <data name="&gt;&gt;groupBoxPrinter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxPrinter.Parent" xml:space="preserve">
+    <value>tabPagePrinter</value>
+  </data>
+  <data name="&gt;&gt;groupBoxPrinter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPagePrinter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPagePrinter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 231</value>
+  </data>
+  <data name="tabPagePrinter.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabPagePrinter.Text" xml:space="preserve">
+    <value>Printer</value>
+  </data>
+  <data name="&gt;&gt;tabPagePrinter.Name" xml:space="preserve">
+    <value>tabPagePrinter</value>
+  </data>
+  <data name="&gt;&gt;tabPagePrinter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPagePrinter.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPagePrinter.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="toolStripRun.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>232, 17</value>
+  </metadata>
+  <data name="&gt;&gt;listViewRun.Name" xml:space="preserve">
+    <value>listViewRun</value>
+  </data>
+  <data name="&gt;&gt;listViewRun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listViewRun.Parent" xml:space="preserve">
+    <value>tabPageRun</value>
+  </data>
+  <data name="&gt;&gt;listViewRun.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;toolStripRun.Name" xml:space="preserve">
+    <value>toolStripRun</value>
+  </data>
+  <data name="&gt;&gt;toolStripRun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripRun.Parent" xml:space="preserve">
+    <value>tabPageRun</value>
+  </data>
+  <data name="&gt;&gt;toolStripRun.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabPageRun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPageRun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 231</value>
+  </data>
+  <data name="tabPageRun.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tabPageRun.Text" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="&gt;&gt;tabPageRun.Name" xml:space="preserve">
+    <value>tabPageRun</value>
+  </data>
+  <data name="&gt;&gt;tabPageRun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageRun.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPageRun.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;groupBoxDisplaySettings.Name" xml:space="preserve">
+    <value>groupBoxDisplaySettings</value>
+  </data>
+  <data name="&gt;&gt;groupBoxDisplaySettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxDisplaySettings.Parent" xml:space="preserve">
+    <value>tabPageDesktop</value>
+  </data>
+  <data name="&gt;&gt;groupBoxDisplaySettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWallpaper.Name" xml:space="preserve">
+    <value>groupBoxWallpaper</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWallpaper.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWallpaper.Parent" xml:space="preserve">
+    <value>tabPageDesktop</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWallpaper.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabPageDesktop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPageDesktop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 231</value>
+  </data>
+  <data name="tabPageDesktop.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tabPageDesktop.Text" xml:space="preserve">
+    <value>Desktop</value>
+  </data>
+  <data name="&gt;&gt;tabPageDesktop.Name" xml:space="preserve">
+    <value>tabPageDesktop</value>
+  </data>
+  <data name="&gt;&gt;tabPageDesktop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageDesktop.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPageDesktop.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;labelWirelessVista.Name" xml:space="preserve">
+    <value>labelWirelessVista</value>
+  </data>
+  <data name="&gt;&gt;labelWirelessVista.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelWirelessVista.Parent" xml:space="preserve">
+    <value>tabPageWireless</value>
+  </data>
+  <data name="&gt;&gt;labelWirelessVista.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWireless.Name" xml:space="preserve">
+    <value>groupBoxWireless</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWireless.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWireless.Parent" xml:space="preserve">
+    <value>tabPageWireless</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWireless.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabPageWireless.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPageWireless.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 231</value>
+  </data>
+  <data name="tabPageWireless.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tabPageWireless.Text" xml:space="preserve">
+    <value>Wireless</value>
+  </data>
+  <data name="&gt;&gt;tabPageWireless.Name" xml:space="preserve">
+    <value>tabPageWireless</value>
+  </data>
+  <data name="&gt;&gt;tabPageWireless.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageWireless.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPageWireless.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 53</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 257</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;labelPleaseNote.Name" xml:space="preserve">
     <value>labelPleaseNote</value>
@@ -1820,10 +2141,10 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="groupBoxPleaseNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>283, 129</value>
+    <value>283, 160</value>
   </data>
   <data name="groupBoxPleaseNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 90</value>
+    <value>179, 68</value>
   </data>
   <data name="groupBoxPleaseNote.TabIndex" type="System.Int32, mscorlib">
     <value>71</value>
@@ -1842,6 +2163,78 @@
   </data>
   <data name="&gt;&gt;groupBoxPleaseNote.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="labelPleaseNote.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="labelPleaseNote.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="labelPleaseNote.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelPleaseNote.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="labelPleaseNote.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 49</value>
+  </data>
+  <data name="labelPleaseNote.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelPleaseNote.Text" xml:space="preserve">
+    <value>Mozilla Firefox must not be running for the changes to take effect.</value>
+  </data>
+  <data name="&gt;&gt;labelPleaseNote.Name" xml:space="preserve">
+    <value>labelPleaseNote</value>
+  </data>
+  <data name="&gt;&gt;labelPleaseNote.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelPleaseNote.Parent" xml:space="preserve">
+    <value>groupBoxPleaseNote</value>
+  </data>
+  <data name="&gt;&gt;labelPleaseNote.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textBoxAutoConfigAddress.Name" xml:space="preserve">
+    <value>textBoxAutoConfigAddress</value>
+  </data>
+  <data name="&gt;&gt;textBoxAutoConfigAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxAutoConfigAddress.Parent" xml:space="preserve">
+    <value>groupBoxAutoConfigAddress</value>
+  </data>
+  <data name="&gt;&gt;textBoxAutoConfigAddress.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBoxAutoConfigAddress.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="groupBoxAutoConfigAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 160</value>
+  </data>
+  <data name="groupBoxAutoConfigAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 68</value>
+  </data>
+  <data name="groupBoxAutoConfigAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="groupBoxAutoConfigAddress.Text" xml:space="preserve">
+    <value>Automatic Configuration Address:</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAutoConfigAddress.Name" xml:space="preserve">
+    <value>groupBoxAutoConfigAddress</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAutoConfigAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAutoConfigAddress.Parent" xml:space="preserve">
+    <value>tabPageInternet</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAutoConfigAddress.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="textBoxAutoConfigAddress.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -1867,98 +2260,56 @@
   <data name="&gt;&gt;textBoxAutoConfigAddress.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="groupBoxAutoConfigAddress.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  <data name="&gt;&gt;checkBoxIE.Name" xml:space="preserve">
+    <value>checkBoxIE</value>
   </data>
-  <data name="groupBoxAutoConfigAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 109</value>
-  </data>
-  <data name="groupBoxAutoConfigAddress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 48</value>
-  </data>
-  <data name="groupBoxAutoConfigAddress.TabIndex" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
-  <data name="groupBoxAutoConfigAddress.Text" xml:space="preserve">
-    <value>Automatic Configuration Address:</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAutoConfigAddress.Name" xml:space="preserve">
-    <value>groupBoxAutoConfigAddress</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAutoConfigAddress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAutoConfigAddress.Parent" xml:space="preserve">
-    <value>tabPageInternet</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAutoConfigAddress.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="buttonClearFirefox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonClearFirefox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>283, 100</value>
-  </data>
-  <data name="buttonClearFirefox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 23</value>
-  </data>
-  <data name="buttonClearFirefox.TabIndex" type="System.Int32, mscorlib">
-    <value>69</value>
-  </data>
-  <data name="buttonClearFirefox.Text" xml:space="preserve">
-    <value>Clear Firefox Settings</value>
-  </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>524, 17</value>
-  </metadata>
-  <data name="buttonClearFirefox.ToolTip" xml:space="preserve">
-    <value>Click here if you're having problems changing your proxy settings or default homepage from within Firefox.</value>
-  </data>
-  <data name="&gt;&gt;buttonClearFirefox.Name" xml:space="preserve">
-    <value>buttonClearFirefox</value>
-  </data>
-  <data name="&gt;&gt;buttonClearFirefox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonClearFirefox.Parent" xml:space="preserve">
-    <value>tabPageInternet</value>
-  </data>
-  <data name="&gt;&gt;buttonClearFirefox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="checkBoxOpera.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxOpera.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="checkBoxOpera.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxOpera.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 65</value>
-  </data>
-  <data name="checkBoxOpera.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 17</value>
-  </data>
-  <data name="checkBoxOpera.TabIndex" type="System.Int32, mscorlib">
-    <value>68</value>
-  </data>
-  <data name="checkBoxOpera.Text" xml:space="preserve">
-    <value>Opera</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOpera.Name" xml:space="preserve">
-    <value>checkBoxOpera</value>
-  </data>
-  <data name="&gt;&gt;checkBoxOpera.Type" xml:space="preserve">
+  <data name="&gt;&gt;checkBoxIE.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBoxOpera.Parent" xml:space="preserve">
+  <data name="&gt;&gt;checkBoxIE.Parent" xml:space="preserve">
     <value>groupBoxWebBrowsers</value>
   </data>
-  <data name="&gt;&gt;checkBoxOpera.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;checkBoxIE.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFirefox.Name" xml:space="preserve">
+    <value>checkBoxFirefox</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFirefox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFirefox.Parent" xml:space="preserve">
+    <value>groupBoxWebBrowsers</value>
+  </data>
+  <data name="&gt;&gt;checkBoxFirefox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBoxWebBrowsers.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="groupBoxWebBrowsers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>283, 6</value>
+  </data>
+  <data name="groupBoxWebBrowsers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 66</value>
+  </data>
+  <data name="groupBoxWebBrowsers.TabIndex" type="System.Int32, mscorlib">
+    <value>68</value>
+  </data>
+  <data name="groupBoxWebBrowsers.Text" xml:space="preserve">
+    <value>Enable Settings For</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWebBrowsers.Name" xml:space="preserve">
+    <value>groupBoxWebBrowsers</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWebBrowsers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWebBrowsers.Parent" xml:space="preserve">
+    <value>tabPageInternet</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWebBrowsers.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="checkBoxIE.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1991,7 +2342,7 @@
     <value>groupBoxWebBrowsers</value>
   </data>
   <data name="&gt;&gt;checkBoxIE.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="checkBoxFirefox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2024,55 +2375,7 @@
     <value>groupBoxWebBrowsers</value>
   </data>
   <data name="&gt;&gt;checkBoxFirefox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="groupBoxWebBrowsers.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="groupBoxWebBrowsers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>283, 6</value>
-  </data>
-  <data name="groupBoxWebBrowsers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 88</value>
-  </data>
-  <data name="groupBoxWebBrowsers.TabIndex" type="System.Int32, mscorlib">
-    <value>68</value>
-  </data>
-  <data name="groupBoxWebBrowsers.Text" xml:space="preserve">
-    <value>Enable Settings For</value>
-  </data>
-  <data name="&gt;&gt;groupBoxWebBrowsers.Name" xml:space="preserve">
-    <value>groupBoxWebBrowsers</value>
-  </data>
-  <data name="&gt;&gt;groupBoxWebBrowsers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxWebBrowsers.Parent" xml:space="preserve">
-    <value>tabPageInternet</value>
-  </data>
-  <data name="&gt;&gt;groupBoxWebBrowsers.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="checkBoxBypassProxyForLocalAddresses.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="checkBoxBypassProxyForLocalAddresses.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="checkBoxBypassProxyForLocalAddresses.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxBypassProxyForLocalAddresses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 58</value>
-  </data>
-  <data name="checkBoxBypassProxyForLocalAddresses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>258, 30</value>
-  </data>
-  <data name="checkBoxBypassProxyForLocalAddresses.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="checkBoxBypassProxyForLocalAddresses.Text" xml:space="preserve">
-    <value>Bypass proxy server for local addresses (IE and Opera)</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;checkBoxBypassProxyForLocalAddresses.Name" xml:space="preserve">
     <value>checkBoxBypassProxyForLocalAddresses</value>
@@ -2086,31 +2389,151 @@
   <data name="&gt;&gt;checkBoxBypassProxyForLocalAddresses.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="textBoxPort.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;textBoxExceptions.Name" xml:space="preserve">
+    <value>textBoxExceptions</value>
   </data>
-  <data name="textBoxPort.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="textBoxPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 32</value>
-  </data>
-  <data name="textBoxPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
-  </data>
-  <data name="textBoxPort.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;textBoxPort.Name" xml:space="preserve">
-    <value>textBoxPort</value>
-  </data>
-  <data name="&gt;&gt;textBoxPort.Type" xml:space="preserve">
+  <data name="&gt;&gt;textBoxExceptions.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBoxPort.Parent" xml:space="preserve">
+  <data name="&gt;&gt;textBoxExceptions.Parent" xml:space="preserve">
     <value>groupBoxProxy</value>
   </data>
-  <data name="&gt;&gt;textBoxPort.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;textBoxExceptions.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBoxServerAddress.Name" xml:space="preserve">
+    <value>textBoxServerAddress</value>
+  </data>
+  <data name="&gt;&gt;textBoxServerAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxServerAddress.Parent" xml:space="preserve">
+    <value>groupBoxProxy</value>
+  </data>
+  <data name="&gt;&gt;textBoxServerAddress.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;labelExceptions.Name" xml:space="preserve">
+    <value>labelExceptions</value>
+  </data>
+  <data name="&gt;&gt;labelExceptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelExceptions.Parent" xml:space="preserve">
+    <value>groupBoxProxy</value>
+  </data>
+  <data name="&gt;&gt;labelExceptions.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;labelServerAddress.Name" xml:space="preserve">
+    <value>labelServerAddress</value>
+  </data>
+  <data name="&gt;&gt;labelServerAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelServerAddress.Parent" xml:space="preserve">
+    <value>groupBoxProxy</value>
+  </data>
+  <data name="&gt;&gt;labelServerAddress.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;checkBoxUseProxySettings.Name" xml:space="preserve">
+    <value>checkBoxUseProxySettings</value>
+  </data>
+  <data name="&gt;&gt;checkBoxUseProxySettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxUseProxySettings.Parent" xml:space="preserve">
+    <value>groupBoxProxy</value>
+  </data>
+  <data name="&gt;&gt;checkBoxUseProxySettings.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupBoxProxy.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="groupBoxProxy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 6</value>
+  </data>
+  <data name="groupBoxProxy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 148</value>
+  </data>
+  <data name="groupBoxProxy.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBoxProxy.Text" xml:space="preserve">
+    <value>    Use Proxy Settings</value>
+  </data>
+  <data name="&gt;&gt;groupBoxProxy.Name" xml:space="preserve">
+    <value>groupBoxProxy</value>
+  </data>
+  <data name="&gt;&gt;groupBoxProxy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxProxy.Parent" xml:space="preserve">
+    <value>tabPageInternet</value>
+  </data>
+  <data name="&gt;&gt;groupBoxProxy.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="checkBoxBypassProxyForLocalAddresses.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="checkBoxBypassProxyForLocalAddresses.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="checkBoxBypassProxyForLocalAddresses.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxBypassProxyForLocalAddresses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 110</value>
+  </data>
+  <data name="checkBoxBypassProxyForLocalAddresses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 30</value>
+  </data>
+  <data name="checkBoxBypassProxyForLocalAddresses.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="checkBoxBypassProxyForLocalAddresses.Text" xml:space="preserve">
+    <value>Bypass proxy server for local addresses (IE only)</value>
+  </data>
+  <data name="&gt;&gt;checkBoxBypassProxyForLocalAddresses.Name" xml:space="preserve">
+    <value>checkBoxBypassProxyForLocalAddresses</value>
+  </data>
+  <data name="&gt;&gt;checkBoxBypassProxyForLocalAddresses.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxBypassProxyForLocalAddresses.Parent" xml:space="preserve">
+    <value>groupBoxProxy</value>
+  </data>
+  <data name="&gt;&gt;checkBoxBypassProxyForLocalAddresses.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="textBoxExceptions.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBoxExceptions.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="textBoxExceptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 83</value>
+  </data>
+  <data name="textBoxExceptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 20</value>
+  </data>
+  <data name="textBoxExceptions.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;textBoxExceptions.Name" xml:space="preserve">
+    <value>textBoxExceptions</value>
+  </data>
+  <data name="&gt;&gt;textBoxExceptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxExceptions.Parent" xml:space="preserve">
+    <value>groupBoxProxy</value>
+  </data>
+  <data name="&gt;&gt;textBoxExceptions.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="textBoxServerAddress.Enabled" type="System.Boolean, mscorlib">
@@ -2120,10 +2543,10 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="textBoxServerAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 32</value>
+    <value>10, 37</value>
   </data>
   <data name="textBoxServerAddress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 20</value>
+    <value>258, 20</value>
   </data>
   <data name="textBoxServerAddress.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2140,40 +2563,40 @@
   <data name="&gt;&gt;textBoxServerAddress.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="labelPort.AutoSize" type="System.Boolean, mscorlib">
+  <data name="labelExceptions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labelPort.Enabled" type="System.Boolean, mscorlib">
+  <data name="labelExceptions.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="labelPort.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="labelExceptions.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="labelPort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="labelExceptions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="labelPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 16</value>
+  <data name="labelExceptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 67</value>
   </data>
-  <data name="labelPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
+  <data name="labelExceptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 13</value>
   </data>
-  <data name="labelPort.TabIndex" type="System.Int32, mscorlib">
+  <data name="labelExceptions.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="labelPort.Text" xml:space="preserve">
-    <value>Port:</value>
+  <data name="labelExceptions.Text" xml:space="preserve">
+    <value>Exceptions:</value>
   </data>
-  <data name="&gt;&gt;labelPort.Name" xml:space="preserve">
-    <value>labelPort</value>
+  <data name="&gt;&gt;labelExceptions.Name" xml:space="preserve">
+    <value>labelExceptions</value>
   </data>
-  <data name="&gt;&gt;labelPort.Type" xml:space="preserve">
+  <data name="&gt;&gt;labelExceptions.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelPort.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labelExceptions.Parent" xml:space="preserve">
     <value>groupBoxProxy</value>
   </data>
-  <data name="&gt;&gt;labelPort.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labelExceptions.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="labelServerAddress.AutoSize" type="System.Boolean, mscorlib">
@@ -2189,7 +2612,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelServerAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 16</value>
+    <value>10, 21</value>
   </data>
   <data name="labelServerAddress.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
@@ -2239,35 +2662,68 @@
   <data name="&gt;&gt;checkBoxUseProxySettings.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="groupBoxProxy.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  <data name="&gt;&gt;labelHomepageNote.Name" xml:space="preserve">
+    <value>labelHomepageNote</value>
   </data>
-  <data name="groupBoxProxy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 6</value>
+  <data name="&gt;&gt;labelHomepageNote.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBoxProxy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 97</value>
+  <data name="&gt;&gt;labelHomepageNote.Parent" xml:space="preserve">
+    <value>groupBoxHomepage</value>
   </data>
-  <data name="groupBoxProxy.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;labelHomepageNote.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="groupBoxProxy.Text" xml:space="preserve">
-    <value>    Use Proxy Settings</value>
+  <data name="&gt;&gt;buttonUseBlankHomepage.Name" xml:space="preserve">
+    <value>buttonUseBlankHomepage</value>
   </data>
-  <data name="&gt;&gt;groupBoxProxy.Name" xml:space="preserve">
-    <value>groupBoxProxy</value>
+  <data name="&gt;&gt;buttonUseBlankHomepage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBoxProxy.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonUseBlankHomepage.Parent" xml:space="preserve">
+    <value>groupBoxHomepage</value>
+  </data>
+  <data name="&gt;&gt;buttonUseBlankHomepage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBoxDefaultHomepage.Name" xml:space="preserve">
+    <value>textBoxDefaultHomepage</value>
+  </data>
+  <data name="&gt;&gt;textBoxDefaultHomepage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxDefaultHomepage.Parent" xml:space="preserve">
+    <value>groupBoxHomepage</value>
+  </data>
+  <data name="&gt;&gt;textBoxDefaultHomepage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBoxHomepage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="groupBoxHomepage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>283, 78</value>
+  </data>
+  <data name="groupBoxHomepage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 76</value>
+  </data>
+  <data name="groupBoxHomepage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupBoxHomepage.Text" xml:space="preserve">
+    <value>Default Homepage:</value>
+  </data>
+  <data name="&gt;&gt;groupBoxHomepage.Name" xml:space="preserve">
+    <value>groupBoxHomepage</value>
+  </data>
+  <data name="&gt;&gt;groupBoxHomepage.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBoxProxy.Parent" xml:space="preserve">
+  <data name="&gt;&gt;groupBoxHomepage.Parent" xml:space="preserve">
     <value>tabPageInternet</value>
   </data>
-  <data name="&gt;&gt;groupBoxProxy.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;groupBoxHomepage.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="labelHomepageNote.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="labelHomepageNote.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2276,10 +2732,10 @@
     <value>NoControl</value>
   </data>
   <data name="labelHomepageNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 40</value>
+    <value>85, 40</value>
   </data>
   <data name="labelHomepageNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 13</value>
+    <value>91, 33</value>
   </data>
   <data name="labelHomepageNote.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2306,7 +2762,7 @@
     <value>NoControl</value>
   </data>
   <data name="buttonUseBlankHomepage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 15</value>
+    <value>6, 43</value>
   </data>
   <data name="buttonUseBlankHomepage.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 23</value>
@@ -2336,7 +2792,7 @@
     <value>6, 17</value>
   </data>
   <data name="textBoxDefaultHomepage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 20</value>
+    <value>167, 20</value>
   </data>
   <data name="textBoxDefaultHomepage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2352,57 +2808,6 @@
   </data>
   <data name="&gt;&gt;textBoxDefaultHomepage.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="groupBoxHomepage.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="groupBoxHomepage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 163</value>
-  </data>
-  <data name="groupBoxHomepage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 56</value>
-  </data>
-  <data name="groupBoxHomepage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="groupBoxHomepage.Text" xml:space="preserve">
-    <value>Default Homepage:</value>
-  </data>
-  <data name="&gt;&gt;groupBoxHomepage.Name" xml:space="preserve">
-    <value>groupBoxHomepage</value>
-  </data>
-  <data name="&gt;&gt;groupBoxHomepage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxHomepage.Parent" xml:space="preserve">
-    <value>tabPageInternet</value>
-  </data>
-  <data name="&gt;&gt;groupBoxHomepage.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tabPageInternet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPageInternet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 231</value>
-  </data>
-  <data name="tabPageInternet.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tabPageInternet.Text" xml:space="preserve">
-    <value>Internet</value>
-  </data>
-  <data name="&gt;&gt;tabPageInternet.Name" xml:space="preserve">
-    <value>tabPageInternet</value>
-  </data>
-  <data name="&gt;&gt;tabPageInternet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageInternet.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPageInternet.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="columnHeaderDrive.Text" xml:space="preserve">
     <value>Drive</value>
@@ -2445,12 +2850,12 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABo
-        BAAAAk1TRnQBSQFMAwEBAAEYAQABGAEAARABAAEQAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABQAMA
-        ARADAAEBAQABIAYAARAqAANLAY4BYgJPAe8BYgJPAe8DSwGO2AADgQH/A4EB/wOBAf8DgQH/A4EB/wOB
-        Af8BawIpAfoB6gGlAYEB/wHqAaUBgQH/AWsCKQH6A4EB/wOBAf8DgQH/A4EB/wOBAf8DgQH/wAADgQH/
+        BAAAAk1TRnQBSQFMAwEBAAFQAQABUAEAARABAAEQAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABQAMA
+        ARADAAEBAQABIAYAARAqAANLAY4BYgJYAe8BYgJYAe8DSwGO2AADgQH/A4EB/wOBAf8DgQH/A4EB/wOB
+        Af8BYgIpAfoB6gGlAYEB/wHqAaUBgQH/AWICKQH6A4EB/wOBAf8DgQH/A4EB/wOBAf8DgQH/wAADgQH/
         A40B/wONAf8DjQH/A40B/wONAf8DgQH/Ae0BrwGGAf8B7QGvAYYB/wOBAf8DjQH/A40B/wONAf8DjQH/
-        A40B/wOBAf/AAAOBAf8DgQH/A4EB/wOBAf8DgQH/A4EB/wFZAkIB9QFrAisB/AFrAisB/AFnAk0B8gOB
-        Af8DgQH/A4EB/wOBAf8DgQH/A4EB/9QAAx8BLQOBAf8DiQH/A4kB/wFNAkAB/dgAAVcCVQG3A6AB/wOb
+        A40B/wOBAf/AAAOBAf8DgQH/A4EB/wOBAf8DgQH/A4EB/wFZAkIB9QFkAisB/AFkAisB/AFnAlcB8gOB
+        Af8DgQH/A4EB/wOBAf8DgQH/A4EB/9QAAx8BLQOBAf8DiQH/A4kB/wFGAkAB/dgAAVcCVQG3A6AB/wOb
         Af8DlwH/A5IB/wOOAf8DigH/A4UB/wOBAf8DgQH/A4EB/wOBAf8DgQH/A4EB/wOBAf8BVwJVAbfAAAOp
         Af8D6QH/A80B/wPKAf8DyQH/A8gB/wPIAf8DxQH/A8UB/wPDAf8DxQH/A8IB/wPBAf8DwAH/A+IB/wOB
         Af/AAAOuAf8D1gH/A5IB/wOUAf8DkgH/A5AB/wOLAf8DjgH/A4sB/wOKAf8DhQH/A4cB/wOGAf8DhgH/
@@ -2486,6 +2891,30 @@
   </metadata>
   <data name="toolStripMappedDrives.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
+  </data>
+  <data name="toolStripMappedDrives.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 203</value>
+  </data>
+  <data name="toolStripMappedDrives.Size" type="System.Drawing.Size, System.Drawing">
+    <value>459, 25</value>
+  </data>
+  <data name="toolStripMappedDrives.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="toolStripMappedDrives.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMappedDrives.Name" xml:space="preserve">
+    <value>toolStripMappedDrives</value>
+  </data>
+  <data name="&gt;&gt;toolStripMappedDrives.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMappedDrives.Parent" xml:space="preserve">
+    <value>tabPageMappedDrives</value>
+  </data>
+  <data name="&gt;&gt;toolStripMappedDrives.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="toolStripButtonAddDrive.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2566,56 +2995,56 @@
   <data name="toolStripButtonRemoveDrive.Text" xml:space="preserve">
     <value>Remove</value>
   </data>
-  <data name="toolStripMappedDrives.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 203</value>
+  <data name="&gt;&gt;comboBoxPrinters.Name" xml:space="preserve">
+    <value>comboBoxPrinters</value>
   </data>
-  <data name="toolStripMappedDrives.Size" type="System.Drawing.Size, System.Drawing">
-    <value>459, 25</value>
+  <data name="&gt;&gt;comboBoxPrinters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripMappedDrives.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;comboBoxPrinters.Parent" xml:space="preserve">
+    <value>groupBoxPrinter</value>
+  </data>
+  <data name="&gt;&gt;comboBoxPrinters.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="toolStripMappedDrives.Text" xml:space="preserve">
-    <value>toolStrip1</value>
+  <data name="&gt;&gt;buttonGetDefaultPrinter.Name" xml:space="preserve">
+    <value>buttonGetDefaultPrinter</value>
   </data>
-  <data name="&gt;&gt;toolStripMappedDrives.Name" xml:space="preserve">
-    <value>toolStripMappedDrives</value>
+  <data name="&gt;&gt;buttonGetDefaultPrinter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripMappedDrives.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;buttonGetDefaultPrinter.Parent" xml:space="preserve">
+    <value>groupBoxPrinter</value>
   </data>
-  <data name="&gt;&gt;toolStripMappedDrives.Parent" xml:space="preserve">
-    <value>tabPageMappedDrives</value>
-  </data>
-  <data name="&gt;&gt;toolStripMappedDrives.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonGetDefaultPrinter.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tabPageMappedDrives.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="groupBoxPrinter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="tabPageMappedDrives.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="groupBoxPrinter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 3</value>
   </data>
-  <data name="tabPageMappedDrives.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 231</value>
+  <data name="groupBoxPrinter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 75</value>
   </data>
-  <data name="tabPageMappedDrives.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="groupBoxPrinter.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
   </data>
-  <data name="tabPageMappedDrives.Text" xml:space="preserve">
-    <value>Mapped Drives</value>
+  <data name="groupBoxPrinter.Text" xml:space="preserve">
+    <value>Default Printer</value>
   </data>
-  <data name="&gt;&gt;tabPageMappedDrives.Name" xml:space="preserve">
-    <value>tabPageMappedDrives</value>
+  <data name="&gt;&gt;groupBoxPrinter.Name" xml:space="preserve">
+    <value>groupBoxPrinter</value>
   </data>
-  <data name="&gt;&gt;tabPageMappedDrives.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;groupBoxPrinter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPageMappedDrives.Parent" xml:space="preserve">
-    <value>tabControl1</value>
+  <data name="&gt;&gt;groupBoxPrinter.Parent" xml:space="preserve">
+    <value>tabPagePrinter</value>
   </data>
-  <data name="&gt;&gt;tabPageMappedDrives.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;groupBoxPrinter.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="comboBoxPrinters.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -2693,56 +3122,29 @@
   <data name="&gt;&gt;buttonGetDefaultPrinter.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="groupBoxPrinter.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  <data name="listViewRun.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="groupBoxPrinter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 3</value>
+  <data name="listViewRun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="groupBoxPrinter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 75</value>
+  <data name="listViewRun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 206</value>
   </data>
-  <data name="groupBoxPrinter.TabIndex" type="System.Int32, mscorlib">
-    <value>66</value>
-  </data>
-  <data name="groupBoxPrinter.Text" xml:space="preserve">
-    <value>Default Printer</value>
-  </data>
-  <data name="&gt;&gt;groupBoxPrinter.Name" xml:space="preserve">
-    <value>groupBoxPrinter</value>
-  </data>
-  <data name="&gt;&gt;groupBoxPrinter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxPrinter.Parent" xml:space="preserve">
-    <value>tabPagePrinter</value>
-  </data>
-  <data name="&gt;&gt;groupBoxPrinter.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabPagePrinter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPagePrinter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 231</value>
-  </data>
-  <data name="tabPagePrinter.TabIndex" type="System.Int32, mscorlib">
+  <data name="listViewRun.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="tabPagePrinter.Text" xml:space="preserve">
-    <value>Printer</value>
+  <data name="&gt;&gt;listViewRun.Name" xml:space="preserve">
+    <value>listViewRun</value>
   </data>
-  <data name="&gt;&gt;tabPagePrinter.Name" xml:space="preserve">
-    <value>tabPagePrinter</value>
+  <data name="&gt;&gt;listViewRun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPagePrinter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;listViewRun.Parent" xml:space="preserve">
+    <value>tabPageRun</value>
   </data>
-  <data name="&gt;&gt;tabPagePrinter.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPagePrinter.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;listViewRun.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="columnHeaderRunPath.Text" xml:space="preserve">
     <value>Path</value>
@@ -2780,35 +3182,35 @@
   <data name="columnHeaderRunDomain.Width" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="listViewRun.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="listViewRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="listViewRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 206</value>
-  </data>
-  <data name="listViewRun.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;listViewRun.Name" xml:space="preserve">
-    <value>listViewRun</value>
-  </data>
-  <data name="&gt;&gt;listViewRun.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listViewRun.Parent" xml:space="preserve">
-    <value>tabPageRun</value>
-  </data>
-  <data name="&gt;&gt;listViewRun.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="toolStripRun.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>232, 17</value>
   </metadata>
   <data name="toolStripRun.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
+  </data>
+  <data name="toolStripRun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 206</value>
+  </data>
+  <data name="toolStripRun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 25</value>
+  </data>
+  <data name="toolStripRun.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="toolStripRun.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStripRun.Name" xml:space="preserve">
+    <value>toolStripRun</value>
+  </data>
+  <data name="&gt;&gt;toolStripRun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripRun.Parent" xml:space="preserve">
+    <value>tabPageRun</value>
+  </data>
+  <data name="&gt;&gt;toolStripRun.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="toolStripButtonAddProgram.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2865,16 +3267,16 @@
   <data name="toolStripButtonRemoveProgram.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIiSURBVDhPpdPbSxRRHAfwqVn/gF6iHqKEnnzoP4gua0/R
-        g0+GVNuihKClKa3tGl2ItRtGbGYUGVGSCbVUtOhmZrURaTeSki6mSJKya67Nzv3MzLdzzswIPWV24Afz
-        8Pt95svvzAjC/56y+u6a1jujcnPXKGI3aXV+QfT6J0SufcSBqx/Q2DGMhsvvUH/pLeraX6G2bRCx9ucy
-        m+Pvjt8esBPpafxrbTg3YHOAvXkxtefME3Ag1vkVizmVJ/pdIHrjM583iAWdlmYQyBqBpJmYUwz8LGjI
-        5lVM5RRMZgsYm5J4/+74Qw+gC2PHtG2YlsUh1SRQdBf6pRLMyjpyEoXmNEzPqLx/17EeF2DbZseiAGEI
-        LYNCGoUUloZCBZZIIcgXTMxIOu/fcTjlAuyqOOA4HPAhgz7rDKKID0kexPorDt13gcYr7+cBhviQn0Zn
-        iQjBePI8XoRL8ChYhKcVa9ASDrlA3cXXLkDL9pJwhBbfC62JuxcwHFkPLdUKZ6QXyq0GDNWsQ18wsFfY
-        1zY0f4uOh9heEj/Rs51rodJhJLYBTcuAlmLkTm9EapM4JtQmXv71M2CxnTfJP/ryR1bg1OaAI5Tt7+qu
-        PpsB+7KqTj5GON6H0PE03fIDvqjtzfeQ3LocckclQIf0iIBZWhPVInq3iJML+hcz5SuPDoZWkx9NxchG
-        i/Ctagn6SwJWT+nS2IIA1pQpX3UwHRTHWex0qfjdH/4NKUmzZ04sbZ4AAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIhSURBVDhPpdNdSxRRGAfwqVk/QDdRF1FCV170DaKXtavo
+        witDqm1RQtDSlNZ2jV5Zi8KIzYwiI0oyoZaKFt3MrDYi7Y2kpBdTJEnZNddm5/3MzL9zzswIXWV24IG5
+        eJ7f/HnOjCD87ymr765pvTMqN3eNInaTVucXRK9/QuTaRxy4+gGNHcNouPwO9Zfeoq79FWrbBhFrfy6z
+        Of7u+O0BO5Gexr/WhnMDNgfYmxdTe848AQdinV+xmFN5st8Fojc+83mDWNBpaQaBrBFImok5xcDPgoZs
+        XsVUTsFktoCxKYn3744/9AC6MHZM24ZpWRxSTQJFd6FfKsGsrCMnUWhOw/SMyvt3HetxAbZtdiwKEIbQ
+        MiikUUhhaShUYIkUgnzBxIyk8/4dh1MuwK6KA47DAR8y6LPOIIr4kORBrL/i0H0XaLzyfh5giA/5aXSW
+        iBCMJ8/jRbgEj4JFeFqxBi3hkAvUXXztArRsLwlHaPG90Jq4ewHDkfXQUq1wRnqh3GrAUM069AUDe4V9
+        bUPzt+h4iO0l8RM927kWKh1GYhvQtAxoKUbu9EakNoljQm3i5V8/AxbbeZP8oy9/ZAWObw44Qtn+ru7q
+        sxmwL6vq1GOE430InUjTLT/gi9refA/Jrcshd1QCdEiPCJilNVEtoneLOLmgfzFTvvLoYGg1+dFUjGy0
+        CN+qlqC/JGD1lC6NLQhgTZnyVQfTQXGcxU6Xit/94d8jaLNZMvG1YgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="toolStripButtonRemoveProgram.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2886,53 +3288,92 @@
   <data name="toolStripButtonRemoveProgram.Text" xml:space="preserve">
     <value>Remove</value>
   </data>
-  <data name="toolStripRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 206</value>
+  <data name="&gt;&gt;labelColorQuality.Name" xml:space="preserve">
+    <value>labelColorQuality</value>
   </data>
-  <data name="toolStripRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 25</value>
+  <data name="&gt;&gt;labelColorQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripRun.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;labelColorQuality.Parent" xml:space="preserve">
+    <value>groupBoxDisplaySettings</value>
+  </data>
+  <data name="&gt;&gt;labelColorQuality.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelScreenResolution.Name" xml:space="preserve">
+    <value>labelScreenResolution</value>
+  </data>
+  <data name="&gt;&gt;labelScreenResolution.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelScreenResolution.Parent" xml:space="preserve">
+    <value>groupBoxDisplaySettings</value>
+  </data>
+  <data name="&gt;&gt;labelScreenResolution.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="toolStripRun.Text" xml:space="preserve">
-    <value>toolStrip1</value>
+  <data name="&gt;&gt;buttonGetCurrentDisplaySettings.Name" xml:space="preserve">
+    <value>buttonGetCurrentDisplaySettings</value>
   </data>
-  <data name="&gt;&gt;toolStripRun.Name" xml:space="preserve">
-    <value>toolStripRun</value>
+  <data name="&gt;&gt;buttonGetCurrentDisplaySettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripRun.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;buttonGetCurrentDisplaySettings.Parent" xml:space="preserve">
+    <value>groupBoxDisplaySettings</value>
   </data>
-  <data name="&gt;&gt;toolStripRun.Parent" xml:space="preserve">
-    <value>tabPageRun</value>
+  <data name="&gt;&gt;buttonGetCurrentDisplaySettings.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;toolStripRun.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;comboBoxDisplayColors.Name" xml:space="preserve">
+    <value>comboBoxDisplayColors</value>
   </data>
-  <data name="tabPageRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="&gt;&gt;comboBoxDisplayColors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tabPageRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 231</value>
+  <data name="&gt;&gt;comboBoxDisplayColors.Parent" xml:space="preserve">
+    <value>groupBoxDisplaySettings</value>
   </data>
-  <data name="tabPageRun.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;comboBoxDisplayColors.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="tabPageRun.Text" xml:space="preserve">
-    <value>Run</value>
+  <data name="&gt;&gt;comboBoxDisplaySettings.Name" xml:space="preserve">
+    <value>comboBoxDisplaySettings</value>
   </data>
-  <data name="&gt;&gt;tabPageRun.Name" xml:space="preserve">
-    <value>tabPageRun</value>
+  <data name="&gt;&gt;comboBoxDisplaySettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPageRun.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;comboBoxDisplaySettings.Parent" xml:space="preserve">
+    <value>groupBoxDisplaySettings</value>
   </data>
-  <data name="&gt;&gt;tabPageRun.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPageRun.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;comboBoxDisplaySettings.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="groupBoxDisplaySettings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="groupBoxDisplaySettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 3</value>
+  </data>
+  <data name="groupBoxDisplaySettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>460, 60</value>
+  </data>
+  <data name="groupBoxDisplaySettings.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupBoxDisplaySettings.Text" xml:space="preserve">
+    <value>Display Settings</value>
+  </data>
+  <data name="&gt;&gt;groupBoxDisplaySettings.Name" xml:space="preserve">
+    <value>groupBoxDisplaySettings</value>
+  </data>
+  <data name="&gt;&gt;groupBoxDisplaySettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxDisplaySettings.Parent" xml:space="preserve">
+    <value>tabPageDesktop</value>
+  </data>
+  <data name="&gt;&gt;groupBoxDisplaySettings.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="labelColorQuality.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3100,32 +3541,80 @@
   <data name="&gt;&gt;comboBoxDisplaySettings.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="groupBoxDisplaySettings.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  <data name="&gt;&gt;groupBoxWallpaperPreview.Name" xml:space="preserve">
+    <value>groupBoxWallpaperPreview</value>
   </data>
-  <data name="groupBoxDisplaySettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 3</value>
-  </data>
-  <data name="groupBoxDisplaySettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 60</value>
-  </data>
-  <data name="groupBoxDisplaySettings.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="groupBoxDisplaySettings.Text" xml:space="preserve">
-    <value>Display Settings</value>
-  </data>
-  <data name="&gt;&gt;groupBoxDisplaySettings.Name" xml:space="preserve">
-    <value>groupBoxDisplaySettings</value>
-  </data>
-  <data name="&gt;&gt;groupBoxDisplaySettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;groupBoxWallpaperPreview.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBoxDisplaySettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;groupBoxWallpaperPreview.Parent" xml:space="preserve">
+    <value>groupBoxWallpaper</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWallpaperPreview.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;buttonResetWallpaper.Name" xml:space="preserve">
+    <value>buttonResetWallpaper</value>
+  </data>
+  <data name="&gt;&gt;buttonResetWallpaper.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonResetWallpaper.Parent" xml:space="preserve">
+    <value>groupBoxWallpaper</value>
+  </data>
+  <data name="&gt;&gt;buttonResetWallpaper.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;buttonBrowseWallpaper.Name" xml:space="preserve">
+    <value>buttonBrowseWallpaper</value>
+  </data>
+  <data name="&gt;&gt;buttonBrowseWallpaper.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonBrowseWallpaper.Parent" xml:space="preserve">
+    <value>groupBoxWallpaper</value>
+  </data>
+  <data name="&gt;&gt;buttonBrowseWallpaper.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;textBoxWallpaperPath.Name" xml:space="preserve">
+    <value>textBoxWallpaperPath</value>
+  </data>
+  <data name="&gt;&gt;textBoxWallpaperPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxWallpaperPath.Parent" xml:space="preserve">
+    <value>groupBoxWallpaper</value>
+  </data>
+  <data name="&gt;&gt;textBoxWallpaperPath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBoxWallpaper.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="groupBoxWallpaper.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 69</value>
+  </data>
+  <data name="groupBoxWallpaper.Size" type="System.Drawing.Size, System.Drawing">
+    <value>460, 153</value>
+  </data>
+  <data name="groupBoxWallpaper.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBoxWallpaper.Text" xml:space="preserve">
+    <value>Wallpaper</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWallpaper.Name" xml:space="preserve">
+    <value>groupBoxWallpaper</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWallpaper.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWallpaper.Parent" xml:space="preserve">
     <value>tabPageDesktop</value>
   </data>
-  <data name="&gt;&gt;groupBoxDisplaySettings.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;groupBoxWallpaper.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="groupBoxWallpaperPreview.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -3135,21 +3624,6 @@
   </data>
   <data name="groupBoxWallpaperPreview.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
-  </data>
-  <data name="pictureBoxWallpaperPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBoxWallpaperPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 17</value>
-  </data>
-  <data name="pictureBoxWallpaperPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 115</value>
-  </data>
-  <data name="pictureBoxWallpaperPreview.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pictureBoxWallpaperPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;pictureBoxWallpaperPreview.Name" xml:space="preserve">
     <value>pictureBoxWallpaperPreview</value>
@@ -3193,6 +3667,36 @@
   <data name="&gt;&gt;groupBoxWallpaperPreview.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="pictureBoxWallpaperPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBoxWallpaperPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 17</value>
+  </data>
+  <data name="pictureBoxWallpaperPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 115</value>
+  </data>
+  <data name="pictureBoxWallpaperPreview.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBoxWallpaperPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxWallpaperPreview.Name" xml:space="preserve">
+    <value>pictureBoxWallpaperPreview</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxWallpaperPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxWallpaperPreview.Parent" xml:space="preserve">
+    <value>groupBoxWallpaperPreview</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxWallpaperPreview.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>524, 17</value>
+  </metadata>
   <data name="buttonResetWallpaper.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -3312,57 +3816,6 @@
   <data name="&gt;&gt;textBoxWallpaperPath.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="groupBoxWallpaper.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="groupBoxWallpaper.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 69</value>
-  </data>
-  <data name="groupBoxWallpaper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 153</value>
-  </data>
-  <data name="groupBoxWallpaper.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBoxWallpaper.Text" xml:space="preserve">
-    <value>Wallpaper</value>
-  </data>
-  <data name="&gt;&gt;groupBoxWallpaper.Name" xml:space="preserve">
-    <value>groupBoxWallpaper</value>
-  </data>
-  <data name="&gt;&gt;groupBoxWallpaper.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxWallpaper.Parent" xml:space="preserve">
-    <value>tabPageDesktop</value>
-  </data>
-  <data name="&gt;&gt;groupBoxWallpaper.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabPageDesktop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPageDesktop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 231</value>
-  </data>
-  <data name="tabPageDesktop.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="tabPageDesktop.Text" xml:space="preserve">
-    <value>Desktop</value>
-  </data>
-  <data name="&gt;&gt;tabPageDesktop.Name" xml:space="preserve">
-    <value>tabPageDesktop</value>
-  </data>
-  <data name="&gt;&gt;tabPageDesktop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageDesktop.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPageDesktop.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="labelWirelessVista.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -3392,6 +3845,69 @@
   </data>
   <data name="&gt;&gt;labelWirelessVista.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelSSID.Name" xml:space="preserve">
+    <value>labelSSID</value>
+  </data>
+  <data name="&gt;&gt;labelSSID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSSID.Parent" xml:space="preserve">
+    <value>groupBoxWireless</value>
+  </data>
+  <data name="&gt;&gt;labelSSID.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelSSIDNotes.Name" xml:space="preserve">
+    <value>labelSSIDNotes</value>
+  </data>
+  <data name="&gt;&gt;labelSSIDNotes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSSIDNotes.Parent" xml:space="preserve">
+    <value>groupBoxWireless</value>
+  </data>
+  <data name="&gt;&gt;labelSSIDNotes.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBoxAutoActivateSSID.Name" xml:space="preserve">
+    <value>textBoxAutoActivateSSID</value>
+  </data>
+  <data name="&gt;&gt;textBoxAutoActivateSSID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxAutoActivateSSID.Parent" xml:space="preserve">
+    <value>groupBoxWireless</value>
+  </data>
+  <data name="&gt;&gt;textBoxAutoActivateSSID.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBoxWireless.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="groupBoxWireless.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="groupBoxWireless.Size" type="System.Drawing.Size, System.Drawing">
+    <value>459, 93</value>
+  </data>
+  <data name="groupBoxWireless.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBoxWireless.Text" xml:space="preserve">
+    <value>Auto Activate Profile</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWireless.Name" xml:space="preserve">
+    <value>groupBoxWireless</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWireless.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWireless.Parent" xml:space="preserve">
+    <value>tabPageWireless</value>
+  </data>
+  <data name="&gt;&gt;groupBoxWireless.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="labelSSID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3482,78 +3998,6 @@
   </data>
   <data name="&gt;&gt;textBoxAutoActivateSSID.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="groupBoxWireless.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="groupBoxWireless.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="groupBoxWireless.Size" type="System.Drawing.Size, System.Drawing">
-    <value>459, 93</value>
-  </data>
-  <data name="groupBoxWireless.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBoxWireless.Text" xml:space="preserve">
-    <value>Auto Activate Profile</value>
-  </data>
-  <data name="&gt;&gt;groupBoxWireless.Name" xml:space="preserve">
-    <value>groupBoxWireless</value>
-  </data>
-  <data name="&gt;&gt;groupBoxWireless.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxWireless.Parent" xml:space="preserve">
-    <value>tabPageWireless</value>
-  </data>
-  <data name="&gt;&gt;groupBoxWireless.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabPageWireless.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPageWireless.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 231</value>
-  </data>
-  <data name="tabPageWireless.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tabPageWireless.Text" xml:space="preserve">
-    <value>Wireless</value>
-  </data>
-  <data name="&gt;&gt;tabPageWireless.Name" xml:space="preserve">
-    <value>tabPageWireless</value>
-  </data>
-  <data name="&gt;&gt;tabPageWireless.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageWireless.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPageWireless.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 53</value>
-  </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>473, 257</value>
-  </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="buttonClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -3825,6 +4269,9 @@
   </data>
   <metadata name="openFileDialogWallpaper.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>346, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>524, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

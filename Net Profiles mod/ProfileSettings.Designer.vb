@@ -119,16 +119,14 @@ Partial Class ProfileSettings
 		Me.labelPleaseNote = New System.Windows.Forms.Label()
 		Me.groupBoxAutoConfigAddress = New System.Windows.Forms.GroupBox()
 		Me.textBoxAutoConfigAddress = New System.Windows.Forms.TextBox()
-		Me.buttonClearFirefox = New System.Windows.Forms.Button()
 		Me.groupBoxWebBrowsers = New System.Windows.Forms.GroupBox()
-		Me.checkBoxOpera = New System.Windows.Forms.CheckBox()
 		Me.checkBoxIE = New System.Windows.Forms.CheckBox()
 		Me.checkBoxFirefox = New System.Windows.Forms.CheckBox()
 		Me.groupBoxProxy = New System.Windows.Forms.GroupBox()
 		Me.checkBoxBypassProxyForLocalAddresses = New System.Windows.Forms.CheckBox()
-		Me.textBoxPort = New System.Windows.Forms.TextBox()
+		Me.textBoxExceptions = New System.Windows.Forms.TextBox()
 		Me.textBoxServerAddress = New System.Windows.Forms.TextBox()
-		Me.labelPort = New System.Windows.Forms.Label()
+		Me.labelExceptions = New System.Windows.Forms.Label()
 		Me.labelServerAddress = New System.Windows.Forms.Label()
 		Me.checkBoxUseProxySettings = New System.Windows.Forms.CheckBox()
 		Me.groupBoxHomepage = New System.Windows.Forms.GroupBox()
@@ -726,7 +724,6 @@ Partial Class ProfileSettings
 		'
 		Me.tabPageInternet.Controls.Add(Me.groupBoxPleaseNote)
 		Me.tabPageInternet.Controls.Add(Me.groupBoxAutoConfigAddress)
-		Me.tabPageInternet.Controls.Add(Me.buttonClearFirefox)
 		Me.tabPageInternet.Controls.Add(Me.groupBoxWebBrowsers)
 		Me.tabPageInternet.Controls.Add(Me.groupBoxProxy)
 		Me.tabPageInternet.Controls.Add(Me.groupBoxHomepage)
@@ -758,28 +755,13 @@ Partial Class ProfileSettings
 		resources.ApplyResources(Me.textBoxAutoConfigAddress, "textBoxAutoConfigAddress")
 		Me.textBoxAutoConfigAddress.Name = "textBoxAutoConfigAddress"
 		'
-		'buttonClearFirefox
-		'
-		resources.ApplyResources(Me.buttonClearFirefox, "buttonClearFirefox")
-		Me.buttonClearFirefox.Name = "buttonClearFirefox"
-		Me.toolTip1.SetToolTip(Me.buttonClearFirefox, resources.GetString("buttonClearFirefox.ToolTip"))
-		Me.buttonClearFirefox.UseVisualStyleBackColor = true
-		AddHandler Me.buttonClearFirefox.Click, AddressOf Me.ButtonClearFirefoxClick
-		'
 		'groupBoxWebBrowsers
 		'
-		Me.groupBoxWebBrowsers.Controls.Add(Me.checkBoxOpera)
 		Me.groupBoxWebBrowsers.Controls.Add(Me.checkBoxIE)
 		Me.groupBoxWebBrowsers.Controls.Add(Me.checkBoxFirefox)
 		resources.ApplyResources(Me.groupBoxWebBrowsers, "groupBoxWebBrowsers")
 		Me.groupBoxWebBrowsers.Name = "groupBoxWebBrowsers"
 		Me.groupBoxWebBrowsers.TabStop = false
-		'
-		'checkBoxOpera
-		'
-		resources.ApplyResources(Me.checkBoxOpera, "checkBoxOpera")
-		Me.checkBoxOpera.Name = "checkBoxOpera"
-		Me.checkBoxOpera.UseVisualStyleBackColor = true
 		'
 		'checkBoxIE
 		'
@@ -796,9 +778,9 @@ Partial Class ProfileSettings
 		'groupBoxProxy
 		'
 		Me.groupBoxProxy.Controls.Add(Me.checkBoxBypassProxyForLocalAddresses)
-		Me.groupBoxProxy.Controls.Add(Me.textBoxPort)
+		Me.groupBoxProxy.Controls.Add(Me.textBoxExceptions)
 		Me.groupBoxProxy.Controls.Add(Me.textBoxServerAddress)
-		Me.groupBoxProxy.Controls.Add(Me.labelPort)
+		Me.groupBoxProxy.Controls.Add(Me.labelExceptions)
 		Me.groupBoxProxy.Controls.Add(Me.labelServerAddress)
 		Me.groupBoxProxy.Controls.Add(Me.checkBoxUseProxySettings)
 		resources.ApplyResources(Me.groupBoxProxy, "groupBoxProxy")
@@ -811,20 +793,20 @@ Partial Class ProfileSettings
 		Me.checkBoxBypassProxyForLocalAddresses.Name = "checkBoxBypassProxyForLocalAddresses"
 		Me.checkBoxBypassProxyForLocalAddresses.UseVisualStyleBackColor = true
 		'
-		'textBoxPort
+		'textBoxExceptions
 		'
-		resources.ApplyResources(Me.textBoxPort, "textBoxPort")
-		Me.textBoxPort.Name = "textBoxPort"
+		resources.ApplyResources(Me.textBoxExceptions, "textBoxExceptions")
+		Me.textBoxExceptions.Name = "textBoxExceptions"
 		'
 		'textBoxServerAddress
 		'
 		resources.ApplyResources(Me.textBoxServerAddress, "textBoxServerAddress")
 		Me.textBoxServerAddress.Name = "textBoxServerAddress"
 		'
-		'labelPort
+		'labelExceptions
 		'
-		resources.ApplyResources(Me.labelPort, "labelPort")
-		Me.labelPort.Name = "labelPort"
+		resources.ApplyResources(Me.labelExceptions, "labelExceptions")
+		Me.labelExceptions.Name = "labelExceptions"
 		'
 		'labelServerAddress
 		'
@@ -1296,7 +1278,6 @@ Partial Class ProfileSettings
 	Private labelWirelessVista As System.Windows.Forms.Label
 	Private labelPleaseNote As System.Windows.Forms.Label
 	Private groupBoxPleaseNote As System.Windows.Forms.GroupBox
-	Private checkBoxOpera As System.Windows.Forms.CheckBox
 	Private groupBoxWallpaperPreview As System.Windows.Forms.GroupBox
 	Private pictureBoxWallpaperPreview As System.Windows.Forms.PictureBox
 	Private textBoxAutoConfigAddress As System.Windows.Forms.TextBox
@@ -1322,7 +1303,6 @@ Partial Class ProfileSettings
 	Private tabPageWireless As System.Windows.Forms.TabPage
 	Private tabPageRun As System.Windows.Forms.TabPage
 	Private tabPageDesktop As System.Windows.Forms.TabPage
-	Private buttonClearFirefox As System.Windows.Forms.Button
 	Private groupBoxWebBrowsers As System.Windows.Forms.GroupBox
 	Private checkBoxIE As System.Windows.Forms.CheckBox
 	Private checkBoxFirefox As System.Windows.Forms.CheckBox
@@ -1351,9 +1331,9 @@ Partial Class ProfileSettings
 	Private buttonGetCurrentIPSettings As System.Windows.Forms.Button
 	Private checkBoxUseProxySettings As System.Windows.Forms.CheckBox
 	Private labelServerAddress As System.Windows.Forms.Label
-	Private labelPort As System.Windows.Forms.Label
+	Private labelExceptions As System.Windows.Forms.Label
 	Private textBoxServerAddress As System.Windows.Forms.TextBox
-	Private textBoxPort As System.Windows.Forms.TextBox
+	Private textBoxExceptions As System.Windows.Forms.TextBox
 	Private textBoxDefaultHomepage As System.Windows.Forms.TextBox
 	Private buttonUseBlankHomepage As System.Windows.Forms.Button
 	Private comboBoxPrinters As System.Windows.Forms.ComboBox

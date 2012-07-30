@@ -1,0 +1,15 @@
+﻿Obsolete Translations:
+buttonClearFirefox
+buttonClearFirefox-ToolTip
+checkBoxOpera
+ClearFirefox-Messagebox-1
+ClearFirefox-Messagebox-2
+labelPort
+
+Missing Translations:
+labelDNSSuffix
+labelExceptions
+
+Translation only updated in en-us.xml:
+checkBoxBypassProxy
+labelPleaseNote

@@ -138,7 +138,7 @@
 	<groupBoxProxy>Use Proxy Settings</groupBoxProxy>
     <labelServerAddress>Server Address:</labelServerAddress>
     <labelPort>Port:</labelPort>
-    <checkBoxBypassProxy>Bypass proxy server for local addresses (IE and Opera)</checkBoxBypassProxy>
+    <checkBoxBypassProxy>Bypass proxy server for local addresses (IE only)</checkBoxBypassProxy>
     <groupBoxHomepage>Default Homepage:</groupBoxHomepage>
     <buttonUseBlankHomepage>Use Blank</buttonUseBlankHomepage>
     <labelHomepageNote>Leave blank for no change.</labelHomepageNote>
@@ -146,7 +146,7 @@
     <buttonClearFirefox>Clear Firefox Settings</buttonClearFirefox>
 	<buttonClearFirefox-ToolTip>Click here if you're having problems changing your proxy settings or default homepage from within Firefox.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>Please Note</groupBoxPleaseNote>
-	<labelPleaseNote>Mozilla Firefox and Opera must not be running for the changes to take effect.</labelPleaseNote>
+	<labelPleaseNote>Mozilla Firefox must not be running for the changes to take effect.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
 	<checkBoxOpera>Opera</checkBoxOpera>
