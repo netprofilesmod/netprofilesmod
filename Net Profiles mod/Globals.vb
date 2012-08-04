@@ -73,7 +73,7 @@ Public Module Globals
 	
 	Public BrowseNetworkShare_Title As String
 	
-	Public FfSettings As FirefoxSettings
+	Public FFSettings As FirefoxSettings
 	
 	Declare Function GetPrivateProfileSection Lib "kernel32"  Alias "GetPrivateProfileSectionA"(ByVal sSectionName As String, ByVal sReturnedString As String, ByVal lSize As Integer, ByVal sFileName As String) As Integer
 	
@@ -1171,7 +1171,8 @@ Public Module Globals
 	End Class
 
 	Public Class FirefoxSettings
-		Private const PrefsFileName = "prefs.js"
+		Private const PrefsFile = "prefs.js"
+		Private const SessionstoreFile = "sessionstore.js"
 		Private PrefsPath As String
 		Private PrefsList As List(Of String)
 		
@@ -1186,10 +1187,10 @@ Public Module Globals
 			Me.PrefsPath = ""
 			Me.PrefsList = New List(Of String)
 			
-			' Iterate over profile sections in the INI file starting with [Profile0]
+			' Iterate over profile sections in profiles.ini starting with [Profile0]
 			Do
-				CurrentPath = INIRead(IniPath, "Profile" & i, "Path").Replace("/", "\")
 				' CurrentPath will be empty if reading a non-existent profile section
+				CurrentPath = INIRead(IniPath, "Profile" & i, "Path").Replace("/", "\")
 				If CurrentPath <> "" Then
 					ProfilePath = CurrentPath
 					IsDefault = INIRead(IniPath, "Profile" & i, "Default")
@@ -1198,50 +1199,112 @@ Public Module Globals
 				End If
 			Loop While (IsDefault <> "1" And CurrentPath <> "")
 			If (ProfilePath <> "" And (IsDefault = "1" Or i = 1)) Then
-				Dim oFile As System.IO.File
-				Dim oRead As System.IO.StreamReader
-				If IsRelative = "0" Then
-					Me.PrefsPath = ProfilePath & "\" & Me.PrefsFileName
-					oRead = oFile.OpenText(Me.PrefsPath)
-				Else
-					Me.PrefsPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\" & ProfilePath & "\" & Me.PrefsFileName
-					oRead = oFile.OpenText(Me.PrefsPath)
-				End If
-				Do While oRead.Peek() >= 0
-					Me.PrefsList.Add(oRead.ReadLine)
-				Loop
-				oRead.Close()
+				Try
+					Dim oFile As System.IO.File
+					Dim oRead As System.IO.StreamReader
+					If IsRelative = "0" Then
+						Me.PrefsPath = ProfilePath
+						oRead = oFile.OpenText(Me.PrefsPath & "\" & Me.PrefsFile)
+					Else
+						Me.PrefsPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\Mozilla\Firefox\" & ProfilePath
+						oRead = oFile.OpenText(Me.PrefsPath & "\" & Me.PrefsFile)
+					End If
+					Do While oRead.Peek() >= 0
+						Me.PrefsList.Add(oRead.ReadLine)
+					Loop
+					oRead.Close()
+				Catch
+					' Failed attempt of reading prefs.js is ignored and PrefsList remains empty
+				End Try
 			End If
 		End Sub
 		
 		Public Sub ChangeSetting(Setting As String, Value As String)
+			Me.SetPref(Setting, Chr(34) & Value & Chr(34))
+		End Sub
+		
+		Public Sub ChangeSetting(Setting As String, Value As Boolean)
+			If Value Then
+				Me.SetPref(Setting, "true")
+			Else
+				Me.SetPref(Setting, "false")
+			End If
+		End Sub
+		
+		Private Sub SetPref(Setting As String, Value As String)
 			Dim SettingChanged As Boolean = False
 			Dim i As Integer = 0
 			While i < Me.PrefsList.Count
 				If Me.PrefsList(i).Contains("user_pref(" & Chr(34) & Setting & Chr(34) & ", ") Then
 					If SettingChanged Then
-						' Remove duplicate lines
+						' Remove duplicated settings
 						Me.PrefsList.RemoveAt(i)
 					Else
-						Me.PrefsList(i) = "user_pref(" & Chr(34) & Setting & Chr(34) & ", " & Chr(34) & Value & Chr(34) & ");"
+						Me.PrefsList(i) = "user_pref(" & Chr(34) & Setting & Chr(34) & ", " & Value & ");"
 						SettingChanged = True
 					End If
 				End If
 				i = i + 1
 			End While
 			If Not SettingChanged Then
-				me.PrefsList.Add("user_pref(" & Chr(34) & Setting & Chr(34) & ", " & Chr(34) & Value & Chr(34) & ");")
+				me.PrefsList.Add("user_pref(" & Chr(34) & Setting & Chr(34) & ", " & Value & ");")
 			End if
 		End Sub
 		
-		Public Sub Save()
+		Public Sub Apply()
 			Dim oFile As System.IO.File
+			Dim oRead As System.IO.StreamReader
 			Dim oWrite As System.IO.StreamWriter
-			oWrite = oFile.CreateText(Me.PrefsPath)
-			For Each Line As String In Me.PrefsList
-				oWrite.WriteLine(Line)
+			Dim FFPath As String = ""
+			' List all Firefox processes from all users
+			Dim Processes As Process() = System.Diagnostics.Process.GetProcessesByName("firefox")
+			For Each Process As System.Diagnostics.Process In Processes
+				' Firefox prevents starting itself more than once with the same user account, also if the user is logged
+				' in with multiple sessions. Only processes of the current user have to be killed, for simplicity the
+				' rare case where Firefox runs in an other session of the current user is ignored.
+				If Process.SessionID = System.Diagnostics.Process.GetCurrentProcess().SessionId Then
+					FFPath = Process.MainModule.FileName
+					
+					' Make sure Firefox restores the previous session after killing it (default setting is enabled but set it anyway)
+					Me.ChangeSetting("browser.sessionstore.resume_from_crash", True)
+					
+					' Todo: Show warning with countdown here before killing Firefox
+					
+					Process.Kill()
+					' Wait until process is killed or timeout occurs after 5 seconds
+					Process.WaitForExit(5000)
+				End If
 			Next
-			oWrite.Close()
+			
+			' Save modified preferences
+			Try
+				oWrite = oFile.CreateText(Me.PrefsPath & "\" & Me.PrefsFile)
+				For Each Line As String In Me.PrefsList
+					oWrite.WriteLine(Line)
+				Next
+				oWrite.Close()
+			Catch
+				' Ignore falied attemps to write prefs.js
+			End Try
+			
+			' Start Firefox if it was running before changing the settings
+			If FFPath <> "" Then
+				' Prevent displaying the recovery page by setting the counter of recent crashes to 0
+				Try
+					oRead = oFile.OpenText(Me.PrefsPath & "\" & SessionstoreFile)
+					Dim Sessionstore As String = oRead.ReadToEnd
+					oRead.Close()
+					Dim Pos1 As Integer = Sessionstore.IndexOf(",""recentCrashes"":") + ",""recentCrashes"":".Length
+					Dim Pos2 As Integer = Pos1 + Sessionstore.Substring(Pos1).IndexOf("}")
+					oWrite = oFile.CreateText(Me.PrefsPath & "\" & Me.SessionstoreFile)
+					oWrite.Write(Sessionstore.Substring(0, Pos1) & "0" & Sessionstore.Substring(Pos2))
+					oWrite.Close
+				Catch
+					' Ignore falied attemp to change sessionstore.js
+				End Try
+				
+				Process.Start(FFPath)
+			End If
 		End Sub
 	End Class
 End Module
