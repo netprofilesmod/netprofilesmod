@@ -1085,7 +1085,7 @@ Public Module Globals
 			Me.root = xDoc.DocumentElement
 		End Sub
 		
-		Public Sub SetText(ByRef control As Object, node As String)
+		Public Sub SetText(ByRef control As String, ByVal node As String)
 			Try
 				control = Me.root.SelectSingleNode(Me.prefix & node).InnerText
 			Catch

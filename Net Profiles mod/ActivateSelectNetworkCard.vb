@@ -58,9 +58,9 @@ Public Partial Class ActivateSelectNetworkCard
 		Dim lang As SetLanguage = New SetLanguage("/Language/ActivateSelectNetworkCard/")
 		
 		lang.SetText(Me.Text, "WindowTitle")
-		lang.SetText(labelProfileTitle, "labelProfileTitle")
-		lang.SetText(labelSelectNetworkCard, "labelSelectNetworkCard")
-		lang.SetText(buttonActivate, "buttonActivate")
-		lang.SetText(buttonCancel, "buttonCancel")
+		lang.SetText(labelProfileTitle.Text, "labelProfileTitle")
+		lang.SetText(labelSelectNetworkCard.Text, "labelSelectNetworkCard")
+		lang.SetText(buttonActivate.Text, "buttonActivate")
+		lang.SetText(buttonCancel.Text, "buttonCancel")
 	End Sub
 End Class
