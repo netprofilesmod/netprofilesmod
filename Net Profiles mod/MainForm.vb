@@ -722,6 +722,9 @@ Public Partial Class MainForm
         End If
         If boolProxyFirefox.Equals(True) Then
             FFSettings.ChangeSetting("network.proxy.autoconfig_url", strAutoConfigAddress)
+            If Not boolUseProxySettings Then
+                FFSettings.ChangeSetting("network.proxy.type", 2)
+            End If
         End If
 
         Call UpdateProgress(Me.StatusLabelWorking_Homepage, ApplyType)

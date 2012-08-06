@@ -890,7 +890,12 @@ Public Module Globals
 		End Sub
 		
 		Public Sub ChangeSetting(Setting As String, Value As String)
-			Me.SetPref(Setting, Chr(34) & Value & Chr(34))
+			' Value = "" will delete setting
+			If Value = "" Then
+				Me.SetPref(Setting, "")
+			Else
+				Me.SetPref(Setting, Chr(34) & Value & Chr(34))
+			End If
 		End Sub
 		
 		Public Sub ChangeSetting(Setting As String, Value As Boolean)
@@ -901,13 +906,17 @@ Public Module Globals
 			End If
 		End Sub
 		
+		Public Sub ChangeSetting(Setting As String, Value As Integer)
+			Me.SetPref(Setting, Value.ToString())
+		End Sub
+		
 		Private Sub SetPref(Setting As String, Value As String)
 			Dim SettingChanged As Boolean = False
 			Dim i As Integer = 0
 			While i < Me.PrefsList.Count
 				If Me.PrefsList(i).Contains("user_pref(" & Chr(34) & Setting & Chr(34) & ", ") Then
-					If SettingChanged Then
-						' Remove duplicated settings
+					If SettingChanged Or (Value = "") Then
+						' Remove setting if duplicated or has to be deleted
 						Me.PrefsList.RemoveAt(i)
 					Else
 						Me.PrefsList(i) = "user_pref(" & Chr(34) & Setting & Chr(34) & ", " & Value & ");"
@@ -916,13 +925,16 @@ Public Module Globals
 				End If
 				i = i + 1
 			End While
-			If Not SettingChanged Then
+			If Not SettingChanged And (Value <> "") Then
 				me.PrefsList.Add("user_pref(" & Chr(34) & Setting & Chr(34) & ", " & Value & ");")
 			End if
 		End Sub
 		
 		Public Sub SetProxySettings(ByVal ProxyGlobal As String, ByVal ProxyGlobalPort As String, ByVal ProxyHttp As String, ByVal ProxyHttpPort As String, ByVal ProxyHttps As String, ByVal ProxyHttpsPort As String, ByVal ProxyFtp As String, ByVal ProxyFtpPort As String, ByVal ProxySocks As String, ByVal ProxySocksPort As String, ByVal ProxyGopher As String, ByVal ProxyGopherPort As String, ByVal ProxyExceptions As Array)
+			Dim ProxyEnable As Boolean
+			Dim ShareProxySettings As Boolean
 			Dim NoProxyOn As String
+			
 			For Each Exception As String In ProxyExceptions
 				If NoProxyOn = "" Then
 					NoProxyOn = Exception
@@ -931,8 +943,8 @@ Public Module Globals
 				End If
 			Next
 			
-			Dim ProxyEnable As Boolean
 			If ProxyGlobal <> "" Then
+				ShareProxySettings = True
 				ProxyHttp = ProxyGlobal
 				ProxyHttpPort = ProxyGlobalPort
 				ProxyHttps = ProxyGlobal
@@ -943,14 +955,23 @@ Public Module Globals
 				ProxySocksPort = ProxyGlobalPort
 				ProxyGopher = ProxyGlobal
 				ProxyGopherPort = ProxyGlobalPort
+			Else
+				ShareProxySettings = False
 			End If
 			
-			If (ProxyHttp = "" And ProxyHttps = "" And ProxyFtp = "" And ProxySocks = "" And ProxyGopher = "") Then
+			If (ProxyGlobal = "" And ProxyHttp = "" And ProxyHttps = "" And ProxyFtp = "" And ProxySocks = "" And ProxyGopher = "") Then
 				ProxyEnable = False
 			Else
 				ProxyEnable = True
 			End If
 			
+			If ProxyEnable Then
+				Me.ChangeSetting("network.proxy.type", 1)
+				Me.ChangeSetting("network.proxy.share_proxy_settings", ShareProxySettings)
+			Else
+				Me.ChangeSetting("network.proxy.type", "")
+				Me.ChangeSetting("network.proxy.share_proxy_settings", "")
+			End If
 			Me.ChangeSetting("network.proxy.http", ProxyHttp)
 			Me.ChangeSetting("network.proxy.http_port", ProxyHttpPort)
 			Me.ChangeSetting("network.proxy.ssl", ProxyHttps)
@@ -961,9 +982,7 @@ Public Module Globals
 			Me.ChangeSetting("network.proxy.socks_port", ProxySocksPort)
 			Me.ChangeSetting("network.proxy.gopher", ProxyGopher)
 			Me.ChangeSetting("network.proxy.gopher_port", ProxyGopherPort)
-			Me.ChangeSetting("network.proxy.share_proxy_settings", ProxyGlobal)
 			Me.ChangeSetting("network.proxy.no_proxies_on", NoProxyOn)
-			Me.ChangeSetting("network.proxy.type", ProxyEnable)
 		End Sub
 	
 		Public Sub Apply()
