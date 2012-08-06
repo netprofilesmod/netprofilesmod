@@ -295,7 +295,7 @@ Public Module Globals
 		'connection to the specified drive.
 		'ErrInfo=ERROR_SUCCESS if successful.
 		
-		Dim NETR As NETRESOURCE
+		Dim NETR As NETRESOURCE = New NETRESOURCE
 		Dim errInfo As Integer
 		
 		With NETR
@@ -379,8 +379,10 @@ Public Module Globals
                 Return CStr(queryObj("NetConnectionID"))
 			Next
 		Catch err As ManagementException
-			Return ""
+
 		End Try
+				
+		Return ""
 	End Function
 	
 	Public Sub PopulateNetworkCardArray
@@ -445,7 +447,7 @@ Public Module Globals
                 Dim DefaultGateway As String = CStr(Join(queryObj("DefaultIPGateway"), ","))
                 Dim PrimaryDNSServer As String = CStr(Join(queryObj("DNSServerSearchOrder"), ","))
                 Dim WINSServer As String = CStr(queryObj("WINSPrimaryServer"))
-				Dim DNSSuffix As String = queryObj("DNSDomain")
+				Dim DNSSuffix As String = Convert.ToString(queryObj("DNSDomain"))
 				Return DHCP & "|" & IPAddress & "|" & SubnetMask & "|" & DefaultGateway & "|" & PrimaryDNSServer & "|" & WINSServer & "|" & DNSSuffix
 			Next
 		Catch err As ManagementException
@@ -725,11 +727,10 @@ Public Module Globals
 			Dim DirectoryName As DirectoryInfo
 			For Each DirectoryName In Dirs
 				Try
-					Dim File As String = "\prefs.js"
-                    If Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & File, FileAttribute.Normal) <> "" Then
-                        Dim oFile As System.IO.File
+					Dim prefFile As String = "\prefs.js"
+                    If Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & prefFile, FileAttribute.Normal) <> "" Then
                         Dim oRead As System.IO.StreamReader
-                        oRead = oFile.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\prefs.js")
+                        oRead = File.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & "\prefs.js")
                         Dim CurrentFile As String = ""
                         Dim CurrentLine As String = ""
                         Dim AutoConfigAddressExists As Boolean = False
@@ -768,7 +769,7 @@ Public Module Globals
                         End If
 
                         Dim oWrite As System.IO.StreamWriter
-                        oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & File)
+                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & prefFile)
                         oWrite.Write(CurrentFile)
                         oWrite.Close()
                         'Else
@@ -792,7 +793,7 @@ Public Module Globals
 			Dim FirefoxProfiles As New DirectoryInfo(FireFoxProfilesDir)
 			Dim Dirs As DirectoryInfo() = FirefoxProfiles.GetDirectories("*.default")
 			Dim DirectoryName As DirectoryInfo
-			Dim NoProxyOn As String
+			Dim NoProxyOn As String = ""
 			For Each Exception As String In ProxyExceptions
 				If NoProxyOn = "" Then
 					NoProxyOn = Exception
@@ -802,11 +803,10 @@ Public Module Globals
 			Next
 			For Each DirectoryName In Dirs
 				Try
-					Dim File As String = "\prefs.js"
-                    If Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & File, FileAttribute.Normal) <> "" Then
-                        Dim oFile As System.IO.File
+					Dim prefFile As String = "\prefs.js"
+                    If Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & prefFile, FileAttribute.Normal) <> "" Then
                         Dim oRead As System.IO.StreamReader
-                        oRead = oFile.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & File)
+                        oRead = File.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & prefFile)
                         Dim CurrentFile As String = ""
                         Dim CurrentLine As String = ""
                         Dim ProxyEnable As Boolean
@@ -971,7 +971,7 @@ Public Module Globals
                         End If
 
                         Dim oWrite As System.IO.StreamWriter
-                        oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & File)
+                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & prefFile)
                         oWrite.Write(CurrentFile)
                         oWrite.Close()
                         'Else
@@ -999,11 +999,10 @@ Public Module Globals
 			Dim DirectoryName As DirectoryInfo
 			For Each DirectoryName In Dirs
 				Try
-					Dim File As String = "\prefs.js"
-                    If Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & File, FileAttribute.Normal) <> "" Then
-                        Dim oFile As System.IO.File
+					Dim prefFile As String = "\prefs.js"
+                    If Dir(FireFoxProfilesDir & "\" & DirectoryName.Name & prefFile, FileAttribute.Normal) <> "" Then
                         Dim oRead As System.IO.StreamReader
-                        oRead = oFile.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & File)
+                        oRead = File.OpenText(FireFoxProfilesDir & "\" & DirectoryName.Name & prefFile)
                         Dim CurrentFile As String = ""
                         Dim CurrentLine As String = ""
                         Dim LineExists As Boolean = False
@@ -1032,7 +1031,7 @@ Public Module Globals
                         End If
 
                         Dim oWrite As System.IO.StreamWriter
-                        oWrite = oFile.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & File)
+                        oWrite = File.CreateText(FireFoxProfilesDir & "\" & DirectoryName.Name & prefFile)
                         oWrite.Write(CurrentFile)
                         oWrite.Close()
                     End If
@@ -1058,10 +1057,10 @@ Public Module Globals
 
 	Public Sub ProcessProxySettings(ByVal ProxyServer As String, ByVal Protocol As String, ByRef Server As String, ByRef Port As String)
 		If ProxyServer.StartsWith(Protocol & "=") Then
-			Dim Proxy As Array = ProxyServer.Split("=")(1).Split(":")
-			Server = Proxy(0)
+			Dim Proxy As Array = ProxyServer.Split("="C)(1).Split(":"C)
+			Server = Convert.ToString(Proxy(0))
 			If Proxy.Length > 1 Then
-				Port = Proxy(1)
+				Port = Convert.ToString(Proxy(1))
 				If Port.Length = 0 Then
 					Port = ""
 				End If
@@ -1093,7 +1092,7 @@ Public Module Globals
 			End Try
 		End Sub
 		
-		Public Sub SetText(ByRef control As Object, node As String, oldValue As String, newValue As String)
+		Public Sub SetText(ByRef control As String, ByVal node As String, ByVal oldValue As String, ByVal newValue As String)
 			Try
 				control = Me.root.SelectSingleNode(Me.prefix & node).InnerText.Replace(oldValue, newValue)
 			Catch
@@ -1109,7 +1108,7 @@ Public Module Globals
 			End Try
 		End Sub
 		
-		Public Function GetText(node As String, defaultText As String)
+		Public Function GetText(node As String, defaultText As String) As String
 			Try
 				Return root.SelectSingleNode(Me.prefix & node).InnerText
 			Catch
