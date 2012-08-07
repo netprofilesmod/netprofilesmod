@@ -1017,8 +1017,7 @@ Public Module Globals
 				MsgBoxManager.ShowTitleCountDown = True
 				MsgBoxManager.TimeOut = 5
 				
-				MsgBoxManager.HookEnabled = True
-				
+				' TODO : Add language support
 				'Dim ConfirmPromptTitle As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-ConfirmPrompt-Title").InnerText
 				'Dim ConfirmPromptMessage As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-ConfirmPrompt-Message").InnerText
 				'Dim ResolutionText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Resolution").InnerText
@@ -1028,12 +1027,9 @@ Public Module Globals
 				'Confirm Prompt: Returns Yes/No (DialogResult)
 				Dim strMessage As String
 				strMessage = "Would you like to restart Firefox to apply settings?"
-				Dim ShowConfirmPrompt As System.Windows.Forms.DialogResult = MessageBox.Show(strMessage, "Confirm Firefox Restart", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
-				'strMessage = ConfirmPromptMessage & vbCrLf
-				'strMessage += vbCrLf & ResolutionText & " " & iWidth & "x" & iHeight
-				'strMessage += vbCrLf & BitsText & " " & iBPP
-				'strMessage += vbCrLf & RefreshText & " " & (iRefreshRate) & vbCrLf
-				'Dim ShowConfirmPrompt As System.Windows.Forms.DialogResult = MessageBox.Show(strMessage, ConfirmPromptTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
+				MsgBoxManager.HookEnabled = True
+				Dim ShowConfirmPrompt As System.Windows.Forms.DialogResult = MessageBox.Show(strMessage, "Confirm Firefox Restart", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+				MsgBoxManager.HookEnabled = False
 				
 				If ShowConfirmPrompt = System.Windows.Forms.DialogResult.Yes Then
 					' Make sure Firefox restores the previous session after killing it (default setting is enabled but set it anyway)
