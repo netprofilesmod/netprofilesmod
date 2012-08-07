@@ -560,7 +560,7 @@
   <data name="toolStripButtonNewProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJySURBVDhPrZPvS1NRGMf9W2YRxAoSjYoEdUQJRuKlUjdb
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAJySURBVDhPrZPvS1NRGMf9W2YRxAoSjYoEdUQJRuKlUjdb
         NDXn0k1b5NS7aVPnrjnx13WjzIK2cpuMdNPNHyMVM9l0pYvU61CijSIIamNvv90beK0wX0QPPHDefD7P
         Od9zTkrK/y5qRp3a7lORencV0zQmjatfsD0iZWodUrLq2bXUA+dRUzWEwVsTe7rSh0BsHuEvIax8XoI3
         4oLOVwW59UqsbKiA2FfCwbqRisTUlgs737cw83EcVuYBHm/QcG1bsfDpJag5DaR0fkJiyftdYphSCVo8
@@ -592,7 +592,7 @@
   <data name="toolStripButtonApplyProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGMSURBVDhPY2AYciBsoe/EoDle9WQ5HKQ5d3Py/8z18f89
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAGMSURBVDhPY2AYciBsoe/EoDle9WQ5HKQ5d3Py/8z18f89
         JzpWkmRIyALviTmbkv73X2z633qi6n/CsvD/di3m1UQZEjLPe2LWhoT/vecb/3efr/+fuDziv0Or5X/7
         ensOuAFZu+Kd07dGpaKbGATUDHJy17n6/53n6sA2a9Vr/UHVvDvWJmFTzLPKA7n/49aE5MMMCZrjOTFj
         Xdz/zrO1/9vP1vyPXxqGqTlzZ5xb8tbIJ20nK//3nmv4HwU0PWSBX37ALM/u9LUx/9vO1PxvPV35P3ZJ
@@ -620,7 +620,7 @@
   <data name="toolStripButtonCopyProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJySURBVDhPfZJLTxNRGIZdqvHfuHEHIRRvCQkgxY0x0cSF
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAJySURBVDhPfZJLTxNRGIZdqvHfuHEHIRRvCQkgxY0x0cSF
         MSbEYmi8FKURtlhloyZuZWOixFtRAvQCbSktoKS0HEmH0s4UaGcOLXZmOq/fGcJKh0menMXkPPN+73wn
         OrzRiV5/Itk3kmDu0YWsoG9kIds5HEu1DobvtlyfPnniuOeKP5YyDCMrc4MpREkzmFTWmaTpbCSosB7/
         0uuztz6cdnS4n8XXy3QxnDtkNtdgkyuc8YbBQnmdBb6X2flHc0OOgq7hhWyVBIk8IQmJzqYynOVkzspc
@@ -649,7 +649,7 @@
   <data name="toolStripButtonEditProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFOSURBVDhPY2CgF3h0zILz9mK/V/sn2/89McHv/6XZ2vcf
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAFOSURBVDhPY2CgF3h0zILz9mK/V/sn2/89McHv/6XZ2vcf
         LDaSJNr+mysC/t9YmvX/+8OT/388Pv3/1FSn/webDNYRZcCTXfr/v1xZ/v/Hw6P/fz4+A8bfb+/9v3+C
         /V+CBoA0/3h7+P+PRyv+312X8//L+aVgDDLgdL//d7wGwDT/+bL5/9ebGf8/n8//f2Fu5P+7q4v/n5zo
         /594zXcS/n+55vL/17u+/8+2xP6/2W9NQ837J6iD/Qx2Nqk27+xU+//p2T7SNU+Pl1cAaX54esP/EyvT
@@ -673,7 +673,7 @@
   <data name="toolStripButtonDeleteProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHwSURBVDhPlZNfb9JQGIcXExPiVzCGRL1hxBAz4820TS/c
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAHwSURBVDhPlZNfb9JQGIcXExPiVzCGRL1hxBAz4820TS/c
         JplKpmMd3Yr8kU0cfzYIhA1BvdDET+K34EtwT4wXiy5OB1uBAn08rWFKgCVr0uTN6Xmec37vm87MXPIh
         kbg2FbFyObdVKHinbejqcW9H0zJGMCSN7bFhivtYhRJWNjsm6eq6txOJ091OchJ4/qXpD3jOJUOYynss
         8Q5283STyXOJA4ej9FIZKFew6+PFxxmq1SuORBSumiwPrP238Okzg1KZ3usd7Cs7sB7B3EmD+N4OR6jP
@@ -777,10 +777,10 @@
   </data>
   <data name="imageListProfiles.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABM
-        KwAAAk1TRnQBSQFMAgEBAwEAAQwBAAEMAQABIAEAASABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAGA
+        KwAAAk1TRnQBSQFMAgEBAwEAAQwBAAEYAQABIAEAASABAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAGA
         AwABIAMAAQEBAAEgBgABQFoAAwIBAwMlATcBNQI0AVUDMwFTAzgBXAFRAk8BogFcAlIBzAFdAlMBygFc
         AlIBzAFTAk8BqAM7AWMDMwFTAzUBVgMwAUv/AMkAAzMBUgFdAk8B1wFdAk0B7QFgAk4B6wFJAUMBRwH2
         AQ8BtQHpAf8BFwGvAdwB/wEYAbQB3wH/AQkBqQHcAf8BUgJBAfQBYAJOAesBXAJPAewBWAJLAe4BVgJS
@@ -964,7 +964,7 @@
         AQ8EAAGAAQABfwEfAcABIAEEAQEB/AIAAQ8EAAGAAQABPwEfAcABIAEEASEB/AIAAQ8GAAE/AR8BwAEg
         AQQBIQH8AgABDwYAAT8BHwHAASABBAEhAfwCAAEPBgABIAEfAcACAAEDAfwCAAEPBwABPwHAARABCAED
         Af4CAAEfBAABgAEAASABfwHAAhgBAwH+AgABPwQAAfABAAE/Af8B4AEfAfgBhwH/AgABPwQAAfABAAE/
-        Af8B8QL/AYcB/wGAAQABfwQAAfABAAF/Bv8B4AEBAf8EAAH8AQAH/wHwAQMB/wQACw==
+        Af8B8QL/AYcB/wGAAQABfwQAAfABAAF/Bv8B4AEBAf8EAAH8AQAH/wHwAQMB/xoACw==
 </value>
   </data>
   <data name="columnHeaderName.Text" xml:space="preserve">
@@ -1997,9 +1997,6 @@
   </data>
   <data name="&gt;&gt;pictureBoxWallpaper.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="messageBoxManager1.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>17, 91</value>
   </data>
   <data name="timerDetectWireless.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>185, 91</value>
@@ -3110,12 +3107,6 @@
   </data>
   <data name="&gt;&gt;exitToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;messageBoxManager1.Name" xml:space="preserve">
-    <value>messageBoxManager1</value>
-  </data>
-  <data name="&gt;&gt;messageBoxManager1.Type" xml:space="preserve">
-    <value>MessageBoxManager, MessageBoxHook, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;timerDetectWireless.Name" xml:space="preserve">
     <value>timerDetectWireless</value>

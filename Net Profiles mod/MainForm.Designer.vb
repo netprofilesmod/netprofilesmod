@@ -121,7 +121,6 @@ Partial Class MainForm
         Me.toolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator
         Me.exitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.pictureBoxWallpaper = New System.Windows.Forms.PictureBox
-        Me.messageBoxManager1 = New MessageBoxManager
         Me.timerDetectWireless = New System.Windows.Forms.Timer(Me.components)
         Me.toolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.menuStrip1.SuspendLayout()
@@ -500,19 +499,6 @@ Partial Class MainForm
         Me.pictureBoxWallpaper.Name = "pictureBoxWallpaper"
         Me.pictureBoxWallpaper.TabStop = False
         '
-        'messageBoxManager1
-        '
-        Me.messageBoxManager1.AutoClose = True
-        Me.messageBoxManager1.AutoCloseResult = System.Windows.Forms.DialogResult.No
-        Me.messageBoxManager1.CenterWindow = True
-        Me.messageBoxManager1.DisableButtons = False
-        Me.messageBoxManager1.DisableCancel = False
-        Me.messageBoxManager1.HookEnabled = False
-        Me.messageBoxManager1.LastCheckState = False
-        Me.messageBoxManager1.ShowNextTimeCheck = False
-        Me.messageBoxManager1.ShowTitleCountDown = True
-        Me.messageBoxManager1.TimeOut = 20
-        '
         'timerDetectWireless
         '
         Me.timerDetectWireless.Interval = 3000
@@ -553,7 +539,6 @@ Partial Class MainForm
 	Private WithEvents dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents minimizeToTrayOnStartupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Public WithEvents timerDetectWireless As System.Windows.Forms.Timer
-	Private messageBoxManager1 As MessageBoxManager
 	Private WithEvents confirmSettingsAfterChangingResolutionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents askBeforeChangingResolutionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private screenResolutionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

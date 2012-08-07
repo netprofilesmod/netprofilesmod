@@ -41,8 +41,19 @@ Public Partial Class MainForm
 		Me.InitializeComponent()
 		
 		'
-		' TODO : Add constructor code after InitializeComponents
+		'messageBoxManager1
 		'
+		Me.messageBoxManager1 = New MessageBoxManager
+		Me.messageBoxManager1.AutoClose = True
+		Me.messageBoxManager1.AutoCloseResult = System.Windows.Forms.DialogResult.No
+		Me.messageBoxManager1.CenterWindow = True
+		Me.messageBoxManager1.DisableButtons = False
+		Me.messageBoxManager1.DisableCancel = False
+		Me.messageBoxManager1.HookEnabled = False
+		Me.messageBoxManager1.LastCheckState = False
+		Me.messageBoxManager1.ShowNextTimeCheck = False
+		Me.messageBoxManager1.ShowTitleCountDown = True
+		Me.messageBoxManager1.TimeOut = 20
 	End Sub
 	
 	Public StatusLabelWorking As String
@@ -74,6 +85,8 @@ Public Partial Class MainForm
 	Public CheckForUpdates_Title As String
 	Public CheckForUpdates_Error_1 As String
 	Public CheckForUpdates_Error_2 As String
+	Private messageBoxManager1 As MessageBoxManager
+	
 	
     Sub MainFormLoad(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Globals.CurrentLangPath = My.Application.Info.DirectoryPath & "\lang\" & INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
