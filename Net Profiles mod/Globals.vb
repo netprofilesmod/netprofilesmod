@@ -989,6 +989,7 @@ Public Module Globals
 			Dim oFile As System.IO.File
 			Dim oRead As System.IO.StreamReader
 			Dim oWrite As System.IO.StreamWriter
+			Dim FFProcess As System.Diagnostics.Process
 			Dim FFPath As String = ""
 			' List all Firefox processes from all users
 			Dim Processes As Process() = System.Diagnostics.Process.GetProcessesByName("firefox")
@@ -997,20 +998,56 @@ Public Module Globals
 				' in with multiple sessions. Only processes of the current user have to be killed, for simplicity the
 				' rare case where Firefox runs in an other session of the current user is ignored.
 				If Process.SessionID = System.Diagnostics.Process.GetCurrentProcess().SessionId Then
+					FFProcess = Process
 					FFPath = Process.MainModule.FileName
-					
-					' Make sure Firefox restores the previous session after killing it (default setting is enabled but set it anyway)
-					Me.ChangeSetting("browser.sessionstore.resume_from_crash", True)
-					
-					' Todo: Show warning with countdown here before killing Firefox
-					
-					Process.Kill()
-					' Wait until process is killed or timeout occurs after 5 seconds
-					Process.WaitForExit(5000)
 				End If
 			Next
 			
-			' Save modified preferences
+			If FFPath <> "" Then
+				Dim MsgBoxManager As MessageBoxManager
+				MsgBoxManager = New MessageBoxManager
+				MsgBoxManager.AutoClose = True
+				MsgBoxManager.AutoCloseResult = System.Windows.Forms.DialogResult.Yes
+				MsgBoxManager.CenterWindow = True
+				MsgBoxManager.DisableButtons = False
+				MsgBoxManager.DisableCancel = False
+				MsgBoxManager.HookEnabled = False
+				MsgBoxManager.LastCheckState = False
+				MsgBoxManager.ShowNextTimeCheck = False
+				MsgBoxManager.ShowTitleCountDown = True
+				MsgBoxManager.TimeOut = 5
+				
+				MsgBoxManager.HookEnabled = True
+				
+				'Dim ConfirmPromptTitle As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-ConfirmPrompt-Title").InnerText
+				'Dim ConfirmPromptMessage As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-ConfirmPrompt-Message").InnerText
+				'Dim ResolutionText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Resolution").InnerText
+				'Dim BitsText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Bits").InnerText
+				'Dim RefreshText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Refresh").InnerText
+				
+				'Confirm Prompt: Returns Yes/No (DialogResult)
+				Dim strMessage As String
+				strMessage = "Would you like to restart Firefox to apply settings?"
+				Dim ShowConfirmPrompt As System.Windows.Forms.DialogResult = MessageBox.Show(strMessage, "Confirm Firefox Restart", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
+				'strMessage = ConfirmPromptMessage & vbCrLf
+				'strMessage += vbCrLf & ResolutionText & " " & iWidth & "x" & iHeight
+				'strMessage += vbCrLf & BitsText & " " & iBPP
+				'strMessage += vbCrLf & RefreshText & " " & (iRefreshRate) & vbCrLf
+				'Dim ShowConfirmPrompt As System.Windows.Forms.DialogResult = MessageBox.Show(strMessage, ConfirmPromptTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
+				
+				If ShowConfirmPrompt = System.Windows.Forms.DialogResult.Yes Then
+					' Make sure Firefox restores the previous session after killing it (default setting is enabled but set it anyway)
+					Me.ChangeSetting("browser.sessionstore.resume_from_crash", True)
+					
+					FFProcess.Kill()
+					' Wait until process is killed or timeout occurs after 5 seconds
+					FFProcess.WaitForExit(5000)
+				Else
+					FFPath = ""
+				End If
+			End If
+			
+			' Save modified preferences (will have no affect if Firefox is running and the restart was denied)
 			Try
 				oWrite = oFile.CreateText(Me.PrefsPath & "\" & Me.PrefsFile)
 				For Each Line As String In Me.PrefsList
@@ -1021,7 +1058,7 @@ Public Module Globals
 				' Ignore falied attemps to write prefs.js
 			End Try
 			
-			' Start Firefox if it was running before changing the settings
+			' Start Firefox if it was killed before changing the settings
 			If FFPath <> "" Then
 				' Prevent displaying the recovery page by setting the counter of recent crashes to 0
 				Try
