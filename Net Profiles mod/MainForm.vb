@@ -508,7 +508,7 @@ Public Partial Class MainForm
         Call Me.DeleteProfile()
     End Sub
 	
-    Public Sub ApplyProfile(ByVal ThisProfile As String, ByVal ApplyType As String, Optional ByVal MACAddress As String = "")
+	Public Sub ApplyProfile(ByVal ThisProfile As String, ByVal ApplyType As String, Optional ByVal MACAddress As String = "")
         Call UpdateProgress(Me.StatusLabelWorking_Activating, ApplyType)
         If ApplyType.Equals("normal") Then
             Me.toolStripProgressBar1.Enabled = True
@@ -602,6 +602,11 @@ Public Partial Class MainForm
 
         '*** START INTERNET SETTINGS ***
         Call UpdateProgress(Me.StatusLabelWorking_Internet, ApplyType)
+        
+        Dim FFSettings As FirefoxSettings = Nothing
+        If boolProxyFirefox Then
+            FFSettings = New FirefoxSettings
+        End If
         
         Dim regKey As RegistryKey
         regKey = Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Internet Settings\", True)
@@ -706,7 +711,7 @@ Public Partial Class MainForm
                 End If
                 If boolProxyFirefox.Equals(True) Then
                     Dim ProxyExceptions As Array = strProxyExceptions.Split(";"C)
-                    Call SaveFirefoxSettings(ProxyGlobal, ProxyGlobalPort, ProxyHttp, ProxyHttpPort, ProxyHttps, ProxyHttpsPort, ProxyFtp, ProxyFtpPort, ProxySocks, ProxySocksPort, ProxyGopher, ProxyGopher, ProxyExceptions)
+                    FFSettings.SetProxySettings(ProxyGlobal, ProxyGlobalPort, ProxyHttp, ProxyHttpPort, ProxyHttps, ProxyHttpsPort, ProxyFtp, ProxyFtpPort, ProxySocks, ProxySocksPort, ProxyGopher, ProxyGopher, ProxyExceptions)
                 End If
             Else
                 'Empty server address: clear proxy
@@ -716,7 +721,7 @@ Public Partial Class MainForm
                     regKey.DeleteValue("ProxyOverride", False)
                 End If
                 If boolProxyFirefox.Equals(True) Then
-                    Call SaveFirefoxSettings("", "", "", "", "", "", "", "", "", "", "", "", New String() {})
+                    FFSettings.SetProxySettings("", "", "", "", "", "", "", "", "", "", "", "", New String() {})
                 End If
             End If
         End If
@@ -729,10 +734,9 @@ Public Partial Class MainForm
             End If
         End If
         If boolProxyFirefox.Equals(True) Then
-            If strAutoConfigAddress.Length > 0 Then
-                Call SaveFirefoxAutoConfigAddress(strAutoConfigAddress)
-            Else
-                Call SaveFirefoxAutoConfigAddress("")
+            FFSettings.ChangeSetting("network.proxy.autoconfig_url", strAutoConfigAddress)
+            If Not boolUseProxySettings Then
+                FFSettings.ChangeSetting("network.proxy.type", 2)
             End If
         End If
 
@@ -742,8 +746,12 @@ Public Partial Class MainForm
                 SetHomepage(strDefaultHomepage)
             End If
             If boolProxyFirefox.Equals(True) Then
-                Call SaveFirefoxHomepage(strDefaultHomepage)
+                FFSettings.ChangeSetting("browser.startup.homepage", strDefaultHomepage)
             End If
+        End If
+        
+        If boolProxyFirefox Then
+            FFSettings.Apply()
         End If
         '*** END INTERNET SETTINGS ***
 
