@@ -968,18 +968,14 @@ Public Module Globals
 				MsgBoxManager.ShowTitleCountDown = True
 				MsgBoxManager.TimeOut = 5
 				
-				' TODO : Add language support
-				'Dim ConfirmPromptTitle As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-ConfirmPrompt-Title").InnerText
-				'Dim ConfirmPromptMessage As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-ConfirmPrompt-Message").InnerText
-				'Dim ResolutionText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Resolution").InnerText
-				'Dim BitsText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Bits").InnerText
-				'Dim RefreshText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Refresh").InnerText
+				Dim lang As SetLanguage = New SetLanguage("/Language/Misc/")
+				
+				Dim ConfirmPromptTitle As String = lang.GetText("FirefoxSettings-ConfirmPrompt-Title", "Confirm Firefox Restart")
+				Dim ConfirmPromptMessage As String = lang.GetText("FirefoxSettings-ConfirmPrompt-Message", "Would you like to restart Firefox to apply the new settings?")
 				
 				'Confirm Prompt: Returns Yes/No (DialogResult)
-				Dim strMessage As String
-				strMessage = "Would you like to restart Firefox to apply settings?"
 				MsgBoxManager.HookEnabled = True
-				Dim ShowConfirmPrompt As System.Windows.Forms.DialogResult = MessageBox.Show(strMessage, "Confirm Firefox Restart", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+				Dim ShowConfirmPrompt As System.Windows.Forms.DialogResult = MessageBox.Show(ConfirmPromptMessage, ConfirmPromptTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
 				MsgBoxManager.HookEnabled = False
 				
 				If ShowConfirmPrompt = System.Windows.Forms.DialogResult.Yes Then
