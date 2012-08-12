@@ -3119,7 +3119,7 @@
     <value>0</value>
   </data>
   <data name="labelPleaseNote.Text" xml:space="preserve">
-    <value>Mozilla Firefox must not be running for the changes to take effect.</value>
+    <value>Mozilla Firefox will be restarted for applying the settings.</value>
   </data>
   <data name="&gt;&gt;labelPleaseNote.Name" xml:space="preserve">
     <value>labelPleaseNote</value>

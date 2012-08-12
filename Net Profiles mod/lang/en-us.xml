@@ -146,7 +146,7 @@
     <buttonClearFirefox>Clear Firefox Settings</buttonClearFirefox>
 	<buttonClearFirefox-ToolTip>Click here if you're having problems changing your proxy settings or default homepage from within Firefox.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>Please Note</groupBoxPleaseNote>
-	<labelPleaseNote>Mozilla Firefox must not be running for the changes to take effect.</labelPleaseNote>
+	<labelPleaseNote>Mozilla Firefox will be restarted for applying the settings.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
 	<checkBoxOpera>Opera</checkBoxOpera>
