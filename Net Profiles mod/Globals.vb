@@ -510,11 +510,10 @@ Public Module Globals
         ProfileSettings.comboBoxDisplaySettings.Items.Clear
         ProfileSettings.comboBoxDisplaySettings.Items.Add("")
         
-        Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-		Dim byText As String = root.SelectSingleNode("/Language/ProfileSettings/ScreenResolutionText-By").InnerText
-		Dim pixelsText As String = root.SelectSingleNode("/Language/ProfileSettings/ScreenResolutionText-Pixels").InnerText
+		Dim lang As SetLanguage = New SetLanguage("/Language/ProfileSettings/")
+		
+		Dim byText As String = lang.GetText("ScreenResolutionText-By", "by")
+		Dim pixelsText As String = lang.GetText("ScreenResolutionText-Pixels", "pixels")
 
         For Each strTempRes In strModes
             'cboResolution.Items.Add(strTempRes)
@@ -536,12 +535,11 @@ Public Module Globals
         ProfileSettings.comboBoxDisplayColors.Items.Clear
         ProfileSettings.comboBoxDisplayColors.Items.Add("")
         
-        Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-		Dim bitText As String = root.SelectSingleNode("/Language/ProfileSettings/ColorQualityText-Bit").InnerText
-		Dim lowestText As String = root.SelectSingleNode("/Language/ProfileSettings/ColorQualityText-Lowest").InnerText
-		Dim highestText As String = root.SelectSingleNode("/Language/ProfileSettings/ColorQualityText-Highest").InnerText
+		Dim lang As SetLanguage = New SetLanguage("/Language/ProfileSettings/")
+		
+		Dim bitText As String = lang.GetText("ColorQualityText-Bit", "bit")
+		Dim lowestText As String = lang.GetText("ColorQualityText-Lowest", "Lowest")
+		Dim highestText As String = lang.GetText("ColorQualityText-Highest", "Highest")
         
         For Each strTempBPP In strBPPModes
             Dim ThisBPP As String = ""

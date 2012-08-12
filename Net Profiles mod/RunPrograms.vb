@@ -25,10 +25,6 @@
 ' 
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
-Imports System.Xml
-Imports System.Globalization
-Imports System.Threading
-
 Public Partial Class RunPrograms
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
@@ -83,12 +79,6 @@ Public Partial Class RunPrograms
 	Public Sub LoadLanguage()
 		Dim lang As SetLanguage = New SetLanguage("/Language/RunPrograms/")
 		
-		Thread.CurrentThread.CurrentCulture = New CultureInfo(Globals.CurrentLang, False)
-		
-		Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-
 		lang.SetText(Me.Text, "WindowTitle")
 		lang.SetText(Me.labelPath.Text, "labelPath")
 		lang.SetText(Me.labelArgs.Text, "labelArgs")

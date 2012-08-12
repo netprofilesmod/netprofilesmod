@@ -25,10 +25,6 @@
 ' 
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
-Imports System.Xml
-Imports System.Globalization
-Imports System.Threading
-
 Public Partial Class MappedDrive
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
