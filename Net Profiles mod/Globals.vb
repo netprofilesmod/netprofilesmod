@@ -230,6 +230,14 @@ Public Module Globals
 		
         For Each objNetAdapter In colNetAdapters
             If DHCP.Equals(True) Then
+                ' EnableDHCP() doesn't clear the default gateway on Windows Vista and newer.
+                ' Two default gateways will be active if the gateway assigned by DHCP differs
+                ' from the previously used gateway.
+                ' The workaround for clearing the default gateway is to set the gateway to
+                ' the IP address of the adapter.
+                ' Here we apply the described workaround:
+                objNetAdapter.SetGateways(New Object(){objNetAdapter.IPAddress(0)}, New Object(){1})
+                
                 objNetAdapter.SetDNSDomain("")
                 Application.DoEvents()
                 objNetAdapter.SetDNSServerSearchOrder()
@@ -1002,13 +1010,13 @@ Public Module Globals
 				Next
 				oWrite.Close()
 			Catch
-				' Ignore falied attemps to write prefs.js
+				' Ignore falied attempts to write prefs.js
 			End Try
 			
 			' Start Firefox if it was killed before changing the settings
 			If FFPath <> "" Then
-				' Prevent displaying the recovery page by setting the counter of recent crashes to 0
 				Try
+					' Prevent displaying the recovery page by setting the counter of recent crashes to 0
 					oRead = File.OpenText(Me.PrefsPath & "\" & FirefoxSettings.SessionstoreFile)
 					Dim Sessionstore As String = oRead.ReadToEnd
 					oRead.Close()
@@ -1018,7 +1026,7 @@ Public Module Globals
 					oWrite.Write(Sessionstore.Substring(0, Pos1) & "0" & Sessionstore.Substring(Pos2))
 					oWrite.Close
 				Catch
-					' Ignore falied attemp to change sessionstore.js
+					' Ignore falied attempt to change sessionstore.js
 				End Try
 				
 				Process.Start(FFPath)
