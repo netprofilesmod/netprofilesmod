@@ -69,8 +69,6 @@
 'Code distributed "as is" and can be used without permission. Enjoy. 
 '************************************************************************************
 
-Imports System.Xml
-
 Public Class clsScreenRes
     'Screen Resolution API and Constants
 
@@ -334,11 +332,10 @@ Errorhandler:
     End Function
 
     Public Function CurrentResolution() As String
-        Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-		Dim byText As String = root.SelectSingleNode("/Language/ProfileSettings/ScreenResolutionText-By").InnerText
-		Dim pixelsText As String = root.SelectSingleNode("/Language/ProfileSettings/ScreenResolutionText-Pixels").InnerText
+		Dim lang As SetLanguage = New SetLanguage("/Language/ProfileSettings/")
+		
+		Dim byText As String = lang.GetText("ScreenResolutionText-By", "by")
+		Dim pixelsText As String = lang.GetText("ScreenResolutionText-Pixels", "pixels")
         
         Dim strTempResArray() As String = m_currentRes.Split(CChar("x"))
         Return strTempResArray(0) & " " & byText & " " & strTempResArray(1) & " " & pixelsText
@@ -350,12 +347,11 @@ Errorhandler:
     End Function
 
     Public Function CurrentBPP() As String
-        Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-		Dim bitText As String = root.SelectSingleNode("/Language/ProfileSettings/ColorQualityText-Bit").InnerText
-		Dim lowestText As String = root.SelectSingleNode("/Language/ProfileSettings/ColorQualityText-Lowest").InnerText
-		Dim highestText As String = root.SelectSingleNode("/Language/ProfileSettings/ColorQualityText-Highest").InnerText
+		Dim lang As SetLanguage = New SetLanguage("/Language/ProfileSettings/")
+		
+		Dim bitText As String = lang.GetText("ColorQualityText-Bit", "bit")
+		Dim lowestText As String = lang.GetText("ColorQualityText-Lowest", "Lowest")
+		Dim highestText As String = lang.GetText("ColorQualityText-Highest", "Highest")
         
         Dim ThisBPP As String = ""
 		Select Case m_currentBPP
@@ -597,22 +593,16 @@ Errorhandler:
     End Function
     
     Private Function ShowConfirmPrompt(ByVal iWidth As Integer, ByVal iHeight As Integer, ByVal iBPP As Integer, ByVal iRefreshRate As Integer) As DialogResult
-        Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-		Dim ConfirmPromptTitle As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-ConfirmPrompt-Title").InnerText
-		Dim ConfirmPromptMessage As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-ConfirmPrompt-Message").InnerText
-		Dim ResolutionText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Resolution").InnerText
-		Dim BitsText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Bits").InnerText
-		Dim RefreshText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Refresh").InnerText
-        
+		Dim lang As SetLanguage = New SetLanguage("/Language/Misc/")
+		
+		Dim ConfirmPromptTitle As String = lang.GetText("DisplaySettings-ConfirmPrompt-Title", "Confirm Display Change")
+		Dim ConfirmPromptMessage As String = lang.GetText("DisplaySettings-ConfirmPrompt-Message", "Would you like to change your display settings?")
+		Dim ResolutionText As String = lang.GetText("DisplaySettings-Resolution", "Resolution:")
+		Dim BitsText As String = lang.GetText("DisplaySettings-Bits", "Color Bits:")
+		Dim RefreshText As String = lang.GetText("DisplaySettings-Refresh", "Refresh:")
+		
         'Confirm Prompt: Returns Yes/No (DialogResult)
         Dim strMessage As String
-        'strMessage = "Would you like to change display settings?" & vbCrLf
-        'strMessage += vbCrLf & "Resolution: " & iWidth & "x" & iHeight
-        'strMessage += vbCrLf & "Colour Bits: " & iBPP
-        'strMessage += vbCrLf & "Refresh: " & (iRefreshRate) & vbCrLf
-        'ShowConfirmPrompt = MessageBox.Show(strMessage, "Confirm Display Change", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
         strMessage = ConfirmPromptMessage & vbCrLf
         strMessage += vbCrLf & ResolutionText & " " & iWidth & "x" & iHeight
         strMessage += vbCrLf & BitsText & " " & iBPP
@@ -621,22 +611,16 @@ Errorhandler:
     End Function
     
     Private Function ShowRevertPrompt(ByVal iWidth As Integer, ByVal iHeight As Integer, ByVal iBPP As Integer, ByVal iRefreshRate As Integer) As DialogResult
-        Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-		Dim RevertPromptTitle As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-RevertPrompt-Title").InnerText
-		Dim RevertPromptMessage As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-RevertPrompt-Message").InnerText
-		Dim ResolutionText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Resolution").InnerText
-		Dim BitsText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Bits").InnerText
-		Dim RefreshText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Refresh").InnerText
+		Dim lang As SetLanguage = New SetLanguage("/Language/Misc/")
+		
+		Dim RevertPromptTitle As String = lang.GetText("DisplaySettings-RevertPrompt-Title", "Display Changed")
+		Dim RevertPromptMessage As String = lang.GetText("DisplaySettings-RevertPrompt-Message", "Would you like to keep your current settings?")
+		Dim ResolutionText As String = lang.GetText("DisplaySettings-Resolution", "Resolution:")
+		Dim BitsText As String = lang.GetText("DisplaySettings-Bits", "Color Bits:")
+		Dim RefreshText As String = lang.GetText("DisplaySettings-Refresh", "Refresh:")
         
         'Revert Prompt: Returns Yes/No (DialogResult)
         Dim strMessage As String
-        'strMessage = "Would you like to keep current settings?" & vbCrLf
-        'strMessage += vbCrLf & "Resolution: " & iWidth & "x" & iHeight
-        'strMessage += vbCrLf & "Colour Bits: " & iBPP
-        'strMessage += vbCrLf & "Refresh: " & (iRefreshRate) & vbCrLf
-        'ShowRevertPrompt = MessageBox.Show(strMessage, "Display Changed", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
         strMessage = RevertPromptMessage & vbCrLf
         strMessage += vbCrLf & ResolutionText & " " & iWidth & "x" & iHeight
         strMessage += vbCrLf & BitsText & " " & iBPP

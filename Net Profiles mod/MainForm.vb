@@ -32,8 +32,6 @@ Imports IWshRuntimeLibrary
 Imports System.Diagnostics.Process
 Imports System.Net
 Imports System.Xml
-Imports System.Globalization
-Imports System.Threading
 
 Public Partial Class MainForm
 	Public Sub New()

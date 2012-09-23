@@ -9,6 +9,8 @@ labelPort
 Missing Translations:
 labelDNSSuffix
 labelExceptions
+/Language/Misc/FirefoxSettings-ConfirmPrompt-Title
+/Language/Misc/FirefoxSettings-ConfirmPrompt-Message
 
 Translation only updated in en-us.xml:
 checkBoxBypassProxy

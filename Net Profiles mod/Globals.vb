@@ -518,11 +518,10 @@ Public Module Globals
         ProfileSettings.comboBoxDisplaySettings.Items.Clear
         ProfileSettings.comboBoxDisplaySettings.Items.Add("")
         
-        Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-		Dim byText As String = root.SelectSingleNode("/Language/ProfileSettings/ScreenResolutionText-By").InnerText
-		Dim pixelsText As String = root.SelectSingleNode("/Language/ProfileSettings/ScreenResolutionText-Pixels").InnerText
+		Dim lang As SetLanguage = New SetLanguage("/Language/ProfileSettings/")
+		
+		Dim byText As String = lang.GetText("ScreenResolutionText-By", "by")
+		Dim pixelsText As String = lang.GetText("ScreenResolutionText-Pixels", "pixels")
 
         For Each strTempRes In strModes
             'cboResolution.Items.Add(strTempRes)
@@ -544,12 +543,11 @@ Public Module Globals
         ProfileSettings.comboBoxDisplayColors.Items.Clear
         ProfileSettings.comboBoxDisplayColors.Items.Add("")
         
-        Dim xDoc As New XmlDocument
-		xDoc.Load(Globals.CurrentLangPath)
-		Dim root As XmlElement = xDoc.DocumentElement
-		Dim bitText As String = root.SelectSingleNode("/Language/ProfileSettings/ColorQualityText-Bit").InnerText
-		Dim lowestText As String = root.SelectSingleNode("/Language/ProfileSettings/ColorQualityText-Lowest").InnerText
-		Dim highestText As String = root.SelectSingleNode("/Language/ProfileSettings/ColorQualityText-Highest").InnerText
+		Dim lang As SetLanguage = New SetLanguage("/Language/ProfileSettings/")
+		
+		Dim bitText As String = lang.GetText("ColorQualityText-Bit", "bit")
+		Dim lowestText As String = lang.GetText("ColorQualityText-Lowest", "Lowest")
+		Dim highestText As String = lang.GetText("ColorQualityText-Highest", "Highest")
         
         For Each strTempBPP In strBPPModes
             Dim ThisBPP As String = ""
@@ -976,18 +974,14 @@ Public Module Globals
 				MsgBoxManager.ShowTitleCountDown = True
 				MsgBoxManager.TimeOut = 5
 				
-				' TODO : Add language support
-				'Dim ConfirmPromptTitle As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-ConfirmPrompt-Title").InnerText
-				'Dim ConfirmPromptMessage As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-ConfirmPrompt-Message").InnerText
-				'Dim ResolutionText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Resolution").InnerText
-				'Dim BitsText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Bits").InnerText
-				'Dim RefreshText As String = root.SelectSingleNode("/Language/Misc/DisplaySettings-Refresh").InnerText
+				Dim lang As SetLanguage = New SetLanguage("/Language/Misc/")
+				
+				Dim ConfirmPromptTitle As String = lang.GetText("FirefoxSettings-ConfirmPrompt-Title", "Confirm Firefox Restart")
+				Dim ConfirmPromptMessage As String = lang.GetText("FirefoxSettings-ConfirmPrompt-Message", "Would you like to restart Firefox to apply the new settings?")
 				
 				'Confirm Prompt: Returns Yes/No (DialogResult)
-				Dim strMessage As String
-				strMessage = "Would you like to restart Firefox to apply settings?"
 				MsgBoxManager.HookEnabled = True
-				Dim ShowConfirmPrompt As System.Windows.Forms.DialogResult = MessageBox.Show(strMessage, "Confirm Firefox Restart", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+				Dim ShowConfirmPrompt As System.Windows.Forms.DialogResult = MessageBox.Show(ConfirmPromptMessage, ConfirmPromptTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
 				MsgBoxManager.HookEnabled = False
 				
 				If ShowConfirmPrompt = System.Windows.Forms.DialogResult.Yes Then
