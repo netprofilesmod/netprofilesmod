@@ -31,11 +31,16 @@ namespace Server
 			//
 			InitializeComponent();
 
-			ActivityRef = this.Activity;
-			PipeManager = new PipeManager();
+			PipeManager = new PipeManager(DebugMessage);
 			PipeManager.Initialize();
 		}
 
+		public void DebugMessage(string Message) {
+			this.Invoke((MethodInvoker)delegate {
+				Activity.AppendText(Message);
+			});
+		}
+		
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>

@@ -13,19 +13,25 @@ namespace AppModule.NamedPipes {
 		internal DateTime LastAction;
 		private bool disposed = false;
 		public static IChannelManager PipeManager;
+		public delegate void DebugMessage(string message);
+		private DebugMessage DebugMessageRef;
 
 		private void PipeListener() {
 			CheckIfDisposed();
 			try {
 				Listen = PipeManager.Listen;
-				//Form1.ActivityRef.AppendText("Pipe " + this.PipeConnection.NativeHandle.ToString() + ": new pipe started" + Environment.NewLine);
+				if(DebugMessageRef != null) {
+					DebugMessageRef("Pipe " + this.PipeConnection.NativeHandle.ToString() + ": new pipe started" + Environment.NewLine);
+				}
 				while (Listen) {
 					LastAction = DateTime.Now;
 					string request = PipeConnection.Read();
 					LastAction = DateTime.Now;
 					if (request.Trim() != "") {
 						PipeConnection.Write(PipeManager.HandleRequest(request));
-						//Form1.ActivityRef.AppendText("Pipe " + this.PipeConnection.NativeHandle.ToString() + ": request handled" + Environment.NewLine);
+						if(DebugMessageRef != null) {
+							DebugMessageRef("Pipe " + this.PipeConnection.NativeHandle.ToString() + ": request handled" + Environment.NewLine);
+						}
 					}
 					else {
 						PipeConnection.Write("Error: bad request");
@@ -33,7 +39,9 @@ namespace AppModule.NamedPipes {
 					LastAction = DateTime.Now;
 					PipeConnection.Disconnect();
 					if (Listen) {
-						//Form1.ActivityRef.AppendText("Pipe " + this.PipeConnection.NativeHandle.ToString() + ": listening" + Environment.NewLine);
+						if(DebugMessageRef != null) {
+							DebugMessageRef("Pipe " + this.PipeConnection.NativeHandle.ToString() + ": listening" + Environment.NewLine);
+						}
 						Connect();
 					}
 					PipeManager.WakeUp();
@@ -90,7 +98,10 @@ namespace AppModule.NamedPipes {
 		~ServerNamedPipe() {
 			Dispose(false);
 		}
-		internal ServerNamedPipe(string name, uint outBuffer, uint inBuffer, int maxReadBytes, bool secure, IChannelManager pipeManager) {
+		internal ServerNamedPipe(string name, uint outBuffer, uint inBuffer, int maxReadBytes, bool secure, IChannelManager pipeManager): this(name, outBuffer, inBuffer, maxReadBytes, secure, pipeManager, null) {
+		}
+		internal ServerNamedPipe(string name, uint outBuffer, uint inBuffer, int maxReadBytes, bool secure, IChannelManager pipeManager, DebugMessage activityRef) {
+			DebugMessageRef = activityRef;
 			PipeManager = pipeManager;
 			PipeConnection = new ServerPipeConnection(name, outBuffer, inBuffer, maxReadBytes, secure);
 			PipeThread = new Thread(new ThreadStart(PipeListener));

@@ -13,6 +13,8 @@ namespace AppModule.NamedPipes {
 	public sealed class PipeManager : IChannelManager {
 
 		public Hashtable Pipes;
+		public delegate void DebugMessage(string message);
+		private DebugMessage DebugMessageRef;
 
 		private uint NumberPipes = 5;
 		private uint OutBuffer = 512;
@@ -48,7 +50,9 @@ namespace AppModule.NamedPipes {
 		public string HandleRequest(string request) {
 			string returnVal;
 
-			//Form1.ActivityRef.AppendText(request + Environment.NewLine);
+			if(DebugMessageRef != null) {
+				DebugMessageRef(request + Environment.NewLine);
+			}
 			returnVal = "Response to: " + request;
 
 			return returnVal;
@@ -133,6 +137,12 @@ namespace AppModule.NamedPipes {
 			System.Threading.Interlocked.Decrement(ref numChannels);
 			Pipes.Remove(handle);
 			this.WakeUp();
+		}
+
+		public PipeManager(): this(null) {
+		}
+		public PipeManager(DebugMessage activityRef) {
+			DebugMessageRef = activityRef;
 		}
 	}
 }
