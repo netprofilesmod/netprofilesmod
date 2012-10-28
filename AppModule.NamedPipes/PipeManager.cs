@@ -7,9 +7,8 @@ using System.Configuration;
 using System.Diagnostics;
 
 using AppModule.InterProcessComm;
-using AppModule.NamedPipes;
 
-namespace Server {
+namespace AppModule.NamedPipes {
 
 	public sealed class PipeManager : IChannelManager {
 
@@ -49,7 +48,7 @@ namespace Server {
 		public string HandleRequest(string request) {
 			string returnVal;
 
-			Form1.ActivityRef.AppendText(request + Environment.NewLine);
+			//Form1.ActivityRef.AppendText(request + Environment.NewLine);
 			returnVal = "Response to: " + request;
 
 			return returnVal;
@@ -68,7 +67,7 @@ namespace Server {
 						}
 					}
 					if (numChannels <= NumberPipes) {
-						ServerNamedPipe pipe = new ServerNamedPipe(PipeName, OutBuffer, InBuffer, MAX_READ_BYTES, false);
+						ServerNamedPipe pipe = new ServerNamedPipe(PipeName, OutBuffer, InBuffer, MAX_READ_BYTES, false, this);
 						try {
 							pipe.Connect();
 							pipe.LastAction = DateTime.Now;

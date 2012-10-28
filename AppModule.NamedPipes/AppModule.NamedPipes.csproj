@@ -1,4 +1,5 @@
-﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
     <ProductVersion>9.0.21022</ProductVersion>
@@ -129,6 +130,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PipeHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PipeManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServerNamedPipe.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ServerPipeConnection.cs">
