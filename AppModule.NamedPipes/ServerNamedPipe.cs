@@ -28,6 +28,9 @@ namespace AppModule.NamedPipes {
 					string request = PipeConnection.Read();
 					LastAction = DateTime.Now;
 					if (request.Trim() != "") {
+						string[] profile = request.Split('|');
+						AppModule.Globals.TcpIp.ApplyProfile(profile[0], profile[1]);
+						//Net_Profiles.MainForm.ApplyProfile(request[0], "normal", request[1]);
 						PipeConnection.Write(PipeManager.HandleRequest(request));
 						if(DebugMessageRef != null) {
 							DebugMessageRef("Pipe " + this.PipeConnection.NativeHandle.ToString() + ": request handled" + Environment.NewLine);

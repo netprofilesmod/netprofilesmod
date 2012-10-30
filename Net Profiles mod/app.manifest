@@ -14,7 +14,7 @@
 						                       but do not prompt for administrator password when started by
 						                       standard user.
 				-->
-				<requestedExecutionLevel level="requireAdministrator"/>
+				<!--<requestedExecutionLevel level="requireAdministrator"/>-->
 			</requestedPrivileges>
 		</security>
 	</trustInfo>

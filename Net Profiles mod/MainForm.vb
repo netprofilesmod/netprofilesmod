@@ -32,6 +32,8 @@ Imports IWshRuntimeLibrary
 Imports System.Diagnostics.Process
 Imports System.Net
 Imports System.Xml
+Imports AppModule.InterProcessComm
+Imports AppModule.NamedPipes
 
 Public Partial Class MainForm
 	Public Sub New()
@@ -507,7 +509,19 @@ Public Partial Class MainForm
     End Sub
 	
 	Public Sub ApplyProfile(ByVal ThisProfile As String, ByVal ApplyType As String, Optional ByVal MACAddress As String = "")
-        Call UpdateProgress(Me.StatusLabelWorking_Activating, ApplyType)
+		Dim clientConnection As IInterProcessConnection = Nothing
+		Try
+			clientConnection = New ClientPipeConnection("MyPipe", ".")
+			clientConnection.Connect()
+			clientConnection.Write(ThisProfile + "|" + MACAddress)
+			clientConnection.Read()' + Environment.NewLine
+			clientConnection.Close()
+		Catch ex As Exception
+			clientConnection.Dispose()
+			Throw (ex)
+		End Try
+		
+		Call UpdateProgress(Me.StatusLabelWorking_Activating, ApplyType)
         If ApplyType.Equals("normal") Then
             Me.toolStripProgressBar1.Enabled = True
             Me.toolStripProgressBar1.Visible = True
@@ -552,7 +566,7 @@ Public Partial Class MainForm
             UseThisMACAddress = MACAddress
         End If
 
-        Call SaveTCPIPSettings(strIPAddress, strSubnetMask, strDefaultGateway, strPrefDNSServer, strAltDNSServer, strWINSServer, strDNSSuffix, boolDHCP, UseThisMACAddress, ApplyType)
+        'Call SaveTCPIPSettings(strIPAddress, strSubnetMask, strDefaultGateway, strPrefDNSServer, strAltDNSServer, strWINSServer, strDNSSuffix, boolDHCP, UseThisMACAddress, ApplyType)
         '*** END SAVE TCP/IP SETTINGS ***
 
         '*** START DISCONNECT PREVIOUSLY MAPPED DRIVES ***

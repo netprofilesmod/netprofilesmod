@@ -253,6 +253,16 @@
   <ItemGroup>
     <Folder Include="lang" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppModule.InterProcessComm\AppModule.InterProcessComm.csproj">
+      <Project>{E98F1F7E-40B6-44C8-AC66-EC867B141FA1}</Project>
+      <Name>AppModule.InterProcessComm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppModule.NamedPipes\AppModule.NamedPipes.csproj">
+      <Project>{077B53BB-404A-4B2F-BA17-AAE98C5E9C66}</Project>
+      <Name>AppModule.NamedPipes</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.Targets" />
   <Target Name="CleanIcon">
     <RemoveDir Directories="$(OutputPath)\icons" />

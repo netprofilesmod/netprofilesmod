@@ -95,6 +95,10 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AppModule.Globals\AppModule.Globals.vbproj">
+      <Project>{3A175061-AC8A-4C84-AE75-9341D32DCD17}</Project>
+      <Name>AppModule.Globals</Name>
+    </ProjectReference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
