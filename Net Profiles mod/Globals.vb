@@ -230,14 +230,6 @@ Public Module Globals
 		
         For Each objNetAdapter In colNetAdapters
             If DHCP.Equals(True) Then
-                ' EnableDHCP() doesn't clear the default gateway on Windows Vista and newer.
-                ' Two default gateways will be active if the gateway assigned by DHCP differs
-                ' from the previously used gateway.
-                ' The workaround for clearing the default gateway is to set the gateway to
-                ' the IP address of the adapter.
-                ' Here we apply the described workaround:
-                objNetAdapter.SetGateways(New Object(){objNetAdapter.IPAddress(0)}, New Object(){1})
-                
                 objNetAdapter.SetDNSDomain("")
                 Application.DoEvents()
                 objNetAdapter.SetDNSServerSearchOrder()
@@ -249,6 +241,13 @@ Public Module Globals
                 Application.DoEvents()
                 objNetAdapter.RenewDHCPLease()
                 Application.DoEvents()
+                ' EnableDHCP() sometimes applies two default gateways on Windows Vista and newer.
+                ' As a workaround we check if more than one gateway is active after enabling DHCP
+                ' and assign only the second one.
+                Dim CurrentGateways() As String = GetCurrentIPSettings(objNetAdapter.MACAddress).Split(CChar("|"))(3).Split(CChar(","))
+                If CurrentGateways.Length > 1 Then
+                    objNetAdapter.SetGateways(New Object(){CurrentGateways(1)}, New Object(){1})
+                End If
             Else
                 objNetAdapter.SetDNSDomain(strDNSSuffix)
                 Call UpdateProgress(MainForm.StatusLabelWorking_IPAddress, ApplyType)
