@@ -36,6 +36,7 @@ Imports System.IO
 Imports System.Xml
 Imports System.Globalization
 Imports System.Threading
+Imports AppModule.Globals.TcpIp
 
 Public Module Globals
     Public const ProgramVersion As String = "0.1.0"
@@ -230,14 +231,6 @@ Public Module Globals
 		
         For Each objNetAdapter In colNetAdapters
             If DHCP.Equals(True) Then
-                ' EnableDHCP() doesn't clear the default gateway on Windows Vista and newer.
-                ' Two default gateways will be active if the gateway assigned by DHCP differs
-                ' from the previously used gateway.
-                ' The workaround for clearing the default gateway is to set the gateway to
-                ' the IP address of the adapter.
-                ' Here we apply the described workaround:
-                objNetAdapter.SetGateways(New Object(){objNetAdapter.IPAddress(0)}, New Object(){1})
-                
                 objNetAdapter.SetDNSDomain("")
                 Application.DoEvents()
                 objNetAdapter.SetDNSServerSearchOrder()
@@ -249,6 +242,13 @@ Public Module Globals
                 Application.DoEvents()
                 objNetAdapter.RenewDHCPLease()
                 Application.DoEvents()
+                ' EnableDHCP() sometimes applies two default gateways on Windows Vista and newer.
+                ' As a workaround we check if more than one gateway is active after enabling DHCP
+                ' and assign only the second one.
+                Dim CurrentGateways() As String = GetCurrentIPSettings(objNetAdapter.MACAddress).Split(CChar("|"))(3).Split(CChar(","))
+                If CurrentGateways.Length > 1 Then
+                    objNetAdapter.SetGateways(New Object(){CurrentGateways(1)}, New Object(){1})
+                End If
             Else
                 objNetAdapter.SetDNSDomain(strDNSSuffix)
                 Call UpdateProgress(MainForm.StatusLabelWorking_IPAddress, ApplyType)
@@ -440,29 +440,6 @@ Public Module Globals
 		MainForm.toolStripMain.Enabled = True
 		MainForm.fileToolStripMenuItem.Enabled = True
 	End Sub
-
-	Public Function GetCurrentIPSettings(ThisInterface As String) As String
-		Try
-			Dim searcher As New ManagementObjectSearcher( _
-				"root\CIMV2", _
-				"SELECT * FROM Win32_NetworkAdapterConfiguration WHERE MACAddress = '" & ThisInterface & "'") 
-'
-			For Each queryObj As ManagementObject in searcher.Get()
-				Application.DoEvents
-                Dim DHCP As String = CStr(queryObj("DHCPEnabled"))
-                Dim IPAddress As String = Convert.ToString(queryObj("IPAddress")(0))
-                Dim SubnetMask As String = Convert.ToString(queryObj("IPSubnet")(0))
-                Dim DefaultGateway As String = CStr(Join(queryObj("DefaultIPGateway"), ","))
-                Dim PrimaryDNSServer As String = CStr(Join(queryObj("DNSServerSearchOrder"), ","))
-                Dim WINSServer As String = CStr(queryObj("WINSPrimaryServer"))
-				Dim DNSSuffix As String = Convert.ToString(queryObj("DNSDomain"))
-				Return DHCP & "|" & IPAddress & "|" & SubnetMask & "|" & DefaultGateway & "|" & PrimaryDNSServer & "|" & WINSServer & "|" & DNSSuffix
-			Next
-		Catch err As ManagementException
-			Return ""
-		End Try
-		Return ""
-	End Function
 
 	Public Function GetDefaultPrinter As String
 		Try

@@ -254,6 +254,10 @@
     <Folder Include="lang" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AppModule.Globals\AppModule.Globals.vbproj">
+      <Project>{3A175061-AC8A-4C84-AE75-9341D32DCD17}</Project>
+      <Name>AppModule.Globals</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AppModule.InterProcessComm\AppModule.InterProcessComm.csproj">
       <Project>{E98F1F7E-40B6-44C8-AC66-EC867B141FA1}</Project>
       <Name>AppModule.InterProcessComm</Name>

@@ -25,6 +25,9 @@
 ' 
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
+
+'TODO: Currently this redundant copy of INIFiles.vb is still in use
+
 Option Strict On
 
 Module INIFiles

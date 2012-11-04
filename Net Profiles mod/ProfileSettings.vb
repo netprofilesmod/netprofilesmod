@@ -29,6 +29,7 @@ Imports System.Management
 Imports System.Drawing.Printing
 Imports Microsoft.Win32
 Imports System.IO
+Imports AppModule.Globals
 
 Public Partial Class ProfileSettings
 	Public Sub New()

@@ -509,19 +509,7 @@ Public Partial Class MainForm
     End Sub
 	
 	Public Sub ApplyProfile(ByVal ThisProfile As String, ByVal ApplyType As String, Optional ByVal MACAddress As String = "")
-		Dim clientConnection As IInterProcessConnection = Nothing
-		Try
-			clientConnection = New ClientPipeConnection("MyPipe", ".")
-			clientConnection.Connect()
-			clientConnection.Write(ThisProfile + "|" + MACAddress)
-			clientConnection.Read()' + Environment.NewLine
-			clientConnection.Close()
-		Catch ex As Exception
-			clientConnection.Dispose()
-			Throw (ex)
-		End Try
-		
-		Call UpdateProgress(Me.StatusLabelWorking_Activating, ApplyType)
+        Call UpdateProgress(Me.StatusLabelWorking_Activating, ApplyType)
         If ApplyType.Equals("normal") Then
             Me.toolStripProgressBar1.Enabled = True
             Me.toolStripProgressBar1.Visible = True
@@ -537,36 +525,20 @@ Public Partial Class MainForm
         Next
         INIWrite(Globals.ProgramINIFile, "Program", "Last Activated Profile", ThisProfile)
 
-        '*** START SAVE TCP/IP SETTINGS ***
-        Dim strIPAddress As String = INIRead(ThisProfile, "TCP/IP Settings", "IP Address", "")
-        Dim strSubnetMask As String = INIRead(ThisProfile, "TCP/IP Settings", "Subnet Mask", "")
-        Dim strDefaultGateway As String = INIRead(ThisProfile, "TCP/IP Settings", "Default Gateway", "")
-        Dim strPrefDNSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "DNS Server", "")
-        Dim strAltDNSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "Alternate DNS Server", "")
-        Dim strWINSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "WINS Server", "")
-        Dim strDNSSuffix As String = INIRead(ThisProfile, "TCP/IP Settings", "DNS Suffix", "")
-        Dim strDHCP As String = INIRead(ThisProfile, "TCP/IP Settings", "DHCP", "0")
-        Dim boolDHCP As Boolean
-        If strDHCP.Equals("0") Then boolDHCP = False
-        If strDHCP.Equals("1") Then boolDHCP = True
-        Dim strAutoConfigAddress As String = INIRead(ThisProfile, "Internet Settings", "AutoConfigAddress", "")
-        Dim strUseProxySettings As String = INIRead(ThisProfile, "Internet Settings", "UseProxySettings", "0")
-        Dim boolUseProxySettings As Boolean
-        If strUseProxySettings.Equals("0") Then boolUseProxySettings = False
-        If strUseProxySettings.Equals("1") Then boolUseProxySettings = True
-        Dim strProxyServerAddress As String = INIRead(ThisProfile, "Internet Settings", "ProxyServerAddress", "")
-        Dim strProxyExceptions As String = INIRead(ThisProfile, "Internet Settings", "ProxyExceptions", "")
-        Dim boolProxyBypass As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "ProxyBypass", Convert.ToString(False)))
-        Dim boolProxyIE As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "InternetExplorer", Convert.ToString(False)))
-        Dim boolProxyFirefox As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "Firefox", Convert.ToString(False)))
-        Dim strDefaultHomepage As String = INIRead(ThisProfile, "Internet Settings", "DefaultHomepage", "")
-        Dim TheMACAddress() As String = StrReverse(ThisProfile).Split(System.Convert.ToChar("\"))
-        Dim UseThisMACAddress As String = StrReverse(TheMACAddress(1))
-        If MACAddress.Length > 0 Then
-            UseThisMACAddress = MACAddress
-        End If
+'*** START SAVE TCP/IP SETTINGS ***
 
-        'Call SaveTCPIPSettings(strIPAddress, strSubnetMask, strDefaultGateway, strPrefDNSServer, strAltDNSServer, strWINSServer, strDNSSuffix, boolDHCP, UseThisMACAddress, ApplyType)
+        'TODO: Call UpdateProgress for setting IP
+        Dim clientConnection As IInterProcessConnection = Nothing
+        Try
+            clientConnection = New ClientPipeConnection("MyPipe", ".")
+            clientConnection.Connect()
+            clientConnection.Write(ThisProfile + "|" + MACAddress)
+            clientConnection.Read()
+            clientConnection.Close()
+        Catch ex As Exception
+            clientConnection.Dispose()
+            Throw (ex)
+        End Try
         '*** END SAVE TCP/IP SETTINGS ***
 
         '*** START DISCONNECT PREVIOUSLY MAPPED DRIVES ***
@@ -614,6 +586,17 @@ Public Partial Class MainForm
 
         '*** START INTERNET SETTINGS ***
         Call UpdateProgress(Me.StatusLabelWorking_Internet, ApplyType)
+        Dim strAutoConfigAddress As String = INIRead(ThisProfile, "Internet Settings", "AutoConfigAddress", "")
+        Dim strUseProxySettings As String = INIRead(ThisProfile, "Internet Settings", "UseProxySettings", "0")
+        Dim boolUseProxySettings As Boolean
+        If strUseProxySettings.Equals("0") Then boolUseProxySettings = False
+        If strUseProxySettings.Equals("1") Then boolUseProxySettings = True
+        Dim strProxyServerAddress As String = INIRead(ThisProfile, "Internet Settings", "ProxyServerAddress", "")
+        Dim strProxyExceptions As String = INIRead(ThisProfile, "Internet Settings", "ProxyExceptions", "")
+        Dim boolProxyBypass As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "ProxyBypass", Convert.ToString(False)))
+        Dim boolProxyIE As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "InternetExplorer", Convert.ToString(False)))
+        Dim boolProxyFirefox As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "Firefox", Convert.ToString(False)))
+        Dim strDefaultHomepage As String = INIRead(ThisProfile, "Internet Settings", "DefaultHomepage", "")
         
         Dim FFSettings As FirefoxSettings = Nothing
         If boolProxyFirefox Then
