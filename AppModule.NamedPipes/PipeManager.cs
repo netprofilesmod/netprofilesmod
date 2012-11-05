@@ -32,7 +32,7 @@ namespace AppModule.NamedPipes {
 		private int numChannels = 0;
 		private Hashtable _pipes = new Hashtable();
 		private Thread MainThread;
-		private string PipeName = "MyPipe";
+		private string PipeName = "NetProfilesMod";
 		private ManualResetEvent Mre;
 		private const int PIPE_MAX_STUFFED_TIME = 5000;
 		

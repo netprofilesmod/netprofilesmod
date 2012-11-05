@@ -39,7 +39,7 @@
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.ServiceName = "NamedPipeSrv";
+            this.serviceInstaller1.ServiceName = "NetProfilesMod";
             // 
             // ProjectInstaller
             // 

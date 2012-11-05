@@ -118,7 +118,7 @@ namespace Client {
 				for (int i = 0; i < 1; i++) {
 					IInterProcessConnection clientConnection = null;
 					try {
-						clientConnection = new ClientPipeConnection("MyPipe", ".");
+						clientConnection = new ClientPipeConnection("NetProfilesMod", ".");
 						clientConnection.Connect();
 						clientConnection.Write(textBox1.Text);
 						Activity.AppendText(clientConnection.Read() + Environment.NewLine);

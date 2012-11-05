@@ -529,7 +529,7 @@ Public Partial Class MainForm
         'TODO: Call UpdateProgress for setting IP
         Dim clientConnection As IInterProcessConnection = Nothing
         Try
-            clientConnection = New ClientPipeConnection("MyPipe", ".")
+            clientConnection = New ClientPipeConnection("NetProfilesMod", ".")
             clientConnection.Connect()
             clientConnection.Write(ThisProfile + "|" + MACAddress)
             clientConnection.Read()
