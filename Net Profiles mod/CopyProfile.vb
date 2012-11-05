@@ -31,10 +31,6 @@ Public Partial Class CopyProfile
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
-		
-		'
-		' TODO : Add constructor code after InitializeComponents
-		'
 	End Sub
 	
 	Public ProfileName_Messagebox As String

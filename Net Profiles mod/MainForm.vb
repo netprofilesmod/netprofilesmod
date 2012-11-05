@@ -525,8 +525,7 @@ Public Partial Class MainForm
         Next
         INIWrite(Globals.ProgramINIFile, "Program", "Last Activated Profile", ThisProfile)
 
-'*** START SAVE TCP/IP SETTINGS ***
-
+        '*** START SAVE TCP/IP SETTINGS ***
         'TODO: Call UpdateProgress for setting IP
         Dim clientConnection As IInterProcessConnection = Nothing
         Try
