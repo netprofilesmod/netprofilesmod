@@ -46,6 +46,7 @@
     <Import Include="System.Diagnostics" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GlobalLib.vb" />
     <Compile Include="INIFiles.vb" />
     <Compile Include="TcpIp.vb" />
     <Compile Include="Properties\AssemblyInfo.vb" />

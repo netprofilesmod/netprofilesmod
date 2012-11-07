@@ -26,6 +26,7 @@
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
 Imports System.Diagnostics.Process
+Imports AppModule.Globals
 
 Public Partial Class About
 
@@ -45,7 +46,7 @@ Public Partial Class About
     Public Sub LoadLanguage()
         Dim lang As SetLanguage = New SetLanguage("/Language/About/")
 
-        lang.SetText(Me.Text, "WindowTitle", "%1", Globals.ProgramName)
+        lang.SetText(Me.Text, "WindowTitle", "%1", ProgramName)
         lang.SetText(Me.buttonOK.Text, "buttonOK")
     End Sub
 

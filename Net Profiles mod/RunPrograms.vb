@@ -25,6 +25,8 @@
 ' 
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
+Imports AppModule.Globals
+
 Public Partial Class RunPrograms
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
@@ -37,7 +39,7 @@ Public Partial Class RunPrograms
 	
 	Sub ButtonAddClick(ByVal sender As Object, ByVal e As EventArgs)
 		If Me.textBoxPath.Text.Trim <> "" Then
-			If Globals.CreatingNewRunCommand = True Then
+			If CreatingNewRunCommand = True Then
 				Dim itmx As ListViewItem = ProfileSettings.listViewRun.Items.Add(Me.textBoxPath.Text.Trim)
 				itmx.SubItems.Add(Me.textBoxArguments.Text.Trim)
 				itmx.SubItems.Add(Me.comboBoxRun.SelectedValue.ToString)
@@ -57,7 +59,7 @@ Public Partial Class RunPrograms
 	End Sub
 	
 	Sub RunProgramsLoad(ByVal sender As Object, ByVal e As EventArgs)
-		If Globals.CreatingNewRunCommand = False Then
+		If CreatingNewRunCommand = False Then
 			Me.textBoxPath.Text = ProfileSettings.listViewRun.SelectedItems.Item(0).SubItems.Item(0).Text
 			Me.textBoxArguments.Text = ProfileSettings.listViewRun.SelectedItems.Item(0).SubItems.Item(1).Text
 			'Me.comboBoxRun.SelectedItem = ProfileSettings.listViewRun.SelectedItems.Item(0).SubItems.Item(2).Text
@@ -83,7 +85,7 @@ Public Partial Class RunPrograms
 		lang.SetText(Me.labelUsername.Text, "labelUsername")
 		lang.SetText(Me.labelPassword.Text, "labelPassword")
 		lang.SetText(Me.labelDomain.Text, "labelDomain")
-		If Globals.CreatingNewRunCommand = False Then
+		If CreatingNewRunCommand = False Then
 			lang.SetText(Me.buttonAdd.Text, "buttonSave")
 		Else
 			lang.SetText(Me.buttonAdd.Text, "buttonAdd")
@@ -99,7 +101,7 @@ Public Partial Class RunPrograms
 		Me.comboBoxRun.DisplayMember = "Value"
 		Me.comboBoxRun.ValueMember = "Key"
 		
-		If Globals.CreatingNewRunCommand = False Then
+		If CreatingNewRunCommand = False Then
 			Select Case ProfileSettings.listViewRun.SelectedItems.Item(0).SubItems.Item(2).Text
 				Case "Normal":
 					Me.comboBoxRun.SelectedIndex = Me.comboBoxRun.FindStringExact(lang.getText("RunText-Normal", "Normal"))

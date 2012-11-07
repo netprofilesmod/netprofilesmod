@@ -145,7 +145,7 @@ Public Partial Class ProfileSettings
 	
 	Sub ButtonSaveClick(ByVal sender As Object, ByVal e As EventArgs)
         If Me.textBoxProfileName.Text.Trim.Length = 0 Then
-        	MessageBox.Show(Me.ProfileName_Messagebox, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        	MessageBox.Show(Me.ProfileName_Messagebox, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
         	Me.textBoxProfileName.Focus()
         	Exit Sub
         End If
@@ -156,7 +156,7 @@ Public Partial Class ProfileSettings
         
         Dim ThisINIFile As String
         
-        If Globals.CreatingNewProfile = True Then
+        If CreatingNewProfile = True Then
         	ThisINIFile = ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini"
         Else
         	ThisINIFile = ProfilesFolder & "\" & MainForm.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & MainForm.listViewProfiles.SelectedItems(0).SubItems(2).Text
@@ -285,7 +285,7 @@ Public Partial Class ProfileSettings
 		INIWrite(ThisINIFile, "Wireless", "AutoActivateSSID", Me.textBoxAutoActivateSSID.Text.Trim)
 		'*** END SAVE WIRELESS SETTINGS ***
 		
-		If MainForm.listViewProfiles.SelectedItems.Count > 0 And Globals.CreatingNewProfile = False Then
+		If MainForm.listViewProfiles.SelectedItems.Count > 0 And CreatingNewProfile = False Then
 			If Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":","-") <> MainForm.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString Then
 				
 				System.IO.File.Move(ThisINIFile, ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini")
@@ -470,7 +470,7 @@ Public Partial Class ProfileSettings
 		Call ResolutionsToComboBox()
 		Call BPPToComboBox()
 		
-		If Globals.CreatingNewProfile = False Then
+		If CreatingNewProfile = False Then
 			Dim TheINIFile As String = MainForm.listViewProfiles.SelectedItems(0).SubItems(3).Text
 			
 			Application.DoEvents()
@@ -734,7 +734,7 @@ Public Partial Class ProfileSettings
 	End Sub
 	
 	Sub ToolStripButtonAddDriveClick(ByVal sender As Object, ByVal e As EventArgs)
-		Globals.CreatingNewMappedDrive = True
+		CreatingNewMappedDrive = True
 		MappedDrive.ShowDialog
 	End Sub
 	
@@ -746,7 +746,7 @@ Public Partial Class ProfileSettings
 	
 	Sub ToolStripButtonEditDriveClick(ByVal sender As Object, ByVal e As EventArgs)
 		If Me.listViewMappedDrives.SelectedItems.Count = 1 Then
-			Globals.CreatingNewMappedDrive = False
+			CreatingNewMappedDrive = False
 			MappedDrive.ShowDialog
 		End If
 	End Sub
@@ -912,13 +912,13 @@ Public Partial Class ProfileSettings
 	End Sub
 	
 	Sub ToolStripButtonAddProgramClick(ByVal sender As Object, ByVal e As EventArgs)
-		Globals.CreatingNewRunCommand = True
+		CreatingNewRunCommand = True
 		RunPrograms.ShowDialog
 	End Sub
 	
 	Sub ToolStripButtonEditProgramClick(ByVal sender As Object, ByVal e As EventArgs)
 		If Me.listViewRun.SelectedItems.Count = 1 Then
-			Globals.CreatingNewRunCommand = False
+			CreatingNewRunCommand = False
 			RunPrograms.ShowDialog
 		End If
 	End Sub

@@ -36,19 +36,14 @@ Imports System.IO
 Imports System.Xml
 Imports System.Globalization
 Imports System.Threading
-Imports AppModule.Globals.TcpIp
+Imports AppModule.Globals
 
 Public Module Globals
-    Public const ProgramVersion As String = "0.1.0"
-	Public const ProgramName As String = "Net Profiles mod"
 	Public CurrentLang As String = "en-US"
 	Public CurrentLangPath As String
 	Public CreatingNewProfile As Boolean
 	Public CreatingNewMappedDrive As Boolean
 	Public CreatingNewRunCommand As Boolean
-	
-	Public CommonApplicationDataFolder As String = System.Environment.GetFolderPath(System.Environment.SpecialFolder.CommonApplicationData) + "\" + ProgramName
-	Public ProfilesFolder As String = CommonApplicationDataFolder + "\profiles"
 	
 	Public ProgramINIFile As String = CommonApplicationDataFolder + "\netprofilesmod.ini"
 	Public OKToCloseProgram As Boolean = False
@@ -636,9 +631,9 @@ Public Module Globals
 		Private prefix As String
 		
 		Public Sub New(prefix As String)
-			Thread.CurrentThread.CurrentCulture = New CultureInfo(Globals.CurrentLang, False)
+			Thread.CurrentThread.CurrentCulture = New CultureInfo(CurrentLang, False)
 			Dim xDoc As New XmlDocument
-			xDoc.Load(Globals.CurrentLangPath)
+			xDoc.Load(CurrentLangPath)
 			
 			Me.prefix = prefix
 			Me.root = xDoc.DocumentElement

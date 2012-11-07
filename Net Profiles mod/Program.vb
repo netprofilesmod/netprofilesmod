@@ -27,6 +27,7 @@
 '
 
 Imports Microsoft.VisualBasic.ApplicationServices
+Imports AppModule.Globals
 
 Namespace My
 	' This file controls the behaviour of the application.
@@ -48,7 +49,7 @@ Namespace My
                 MyBase.OnRun()
             Catch ex As Exception
 
-                MessageBox.Show(ex.ToString, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show(ex.ToString, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End Sub	
 	End Class

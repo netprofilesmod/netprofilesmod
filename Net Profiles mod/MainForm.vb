@@ -34,6 +34,7 @@ Imports System.Net
 Imports System.Xml
 Imports AppModule.InterProcessComm
 Imports AppModule.NamedPipes
+Imports AppModule.Globals
 
 Public Partial Class MainForm
 	Public Sub New()
@@ -89,9 +90,9 @@ Public Partial Class MainForm
 	
 	
     Sub MainFormLoad(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
-        Globals.CurrentLangPath = My.Application.Info.DirectoryPath & "\lang\" & INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
-        Globals.CurrentLang = INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
-        Globals.CurrentLang = Globals.CurrentLang.Substring(0, Globals.CurrentLang.Length - 4)
+        CurrentLangPath = My.Application.Info.DirectoryPath & "\lang\" & INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
+        CurrentLang = INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
+        CurrentLang = CurrentLang.Substring(0, CurrentLang.Length - 4)
         Call LoadLanguage()
 
         If Microsoft.VisualBasic.Command.Length > 0 Then
@@ -152,7 +153,7 @@ Public Partial Class MainForm
         If DoNotConfirmAutoActivate.Equals("True") Then
             Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Checked = True
         End If
-        If GetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", Globals.ProgramName).Length > 0 Then
+        If GetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", ProgramName).Length > 0 Then
             Me.runWhenILogInToWindowsToolStripMenuItem.Checked = True
         End If
         If Globals.EnableLoadTimer.Equals(True) Then
@@ -178,7 +179,7 @@ Public Partial Class MainForm
                 LanguageMenuItem.Tag = Filename.Name
                 LanguageMenuItem.CheckOnClick = True
                 AddHandler LanguageMenuItem.Click, AddressOf LanguageMenuClick
-                If Filename.FullName.ToLower = Globals.CurrentLangPath.ToLower Then
+                If Filename.FullName.ToLower = CurrentLangPath.ToLower Then
                 	LanguageMenuItem.Checked = True
                 End If
             Catch E As Exception
@@ -191,12 +192,12 @@ Public Partial Class MainForm
         If sender.Checked = True Then
             Dim LangMenuItem As ToolStripMenuItem
             For Each LangMenuItem In Me.languageToolStripMenuItem.DropDownItems
-                If LangMenuItem.Tag.Substring(0, LangMenuItem.Tag.Length - 4) = Globals.CurrentLang.ToLower Then
+                If LangMenuItem.Tag.Substring(0, LangMenuItem.Tag.Length - 4) = CurrentLang.ToLower Then
                     LangMenuItem.Checked = False
                 End If
             Next
-            Globals.CurrentLang = CStr(sender.Tag).Substring(0, CInt(sender.Tag.Length) - 4)
-            Globals.CurrentLangPath = CStr(My.Application.Info.DirectoryPath & "\lang\" & sender.Tag)
+            CurrentLang = CStr(sender.Tag).Substring(0, CInt(sender.Tag.Length) - 4)
+            CurrentLangPath = CStr(My.Application.Info.DirectoryPath & "\lang\" & sender.Tag)
             INIWrite(Globals.ProgramINIFile, "Program", "Language", CStr(sender.Tag))
             Call LoadLanguage()
         Else
@@ -230,7 +231,7 @@ Public Partial Class MainForm
         lang.SetText(Me.reloadNetworkInterfacesToolStripMenuItem.Text, "reloadNetworkInterfacesToolStripMenuItem")
         lang.SetText(Me.reloadProfilesToolStripMenuItem.Text, "reloadProfilesToolStripMenuItem")
         lang.SetText(Me.helpToolStripMenuItem.Text, "helpToolStripMenuItem")
-        lang.SetText(Me.netProfilesWebsiteToolStripMenuItem.Text, "netProfilesWebsiteToolStripMenuItem", "%1", Globals.ProgramName)
+        lang.SetText(Me.netProfilesWebsiteToolStripMenuItem.Text, "netProfilesWebsiteToolStripMenuItem", "%1", ProgramName)
         lang.SetText(Me.checkForUpdatesToolStripMenuItem.Text, "checkForUpdatesToolStripMenuItem")
         lang.SetText(Me.aboutToolStripMenuItem.Text, "aboutToolStripMenuItem")
         lang.SetText(Me.toolStripButtonNewProfile.Text, "toolStripButtonNewProfile")
@@ -271,9 +272,9 @@ Public Partial Class MainForm
         lang.SetText(Me.ShortcutConfigDefault, "ShortcutConfigDefault")
         lang.SetText(Me.CreateShortcutMessagebox, "CreateShortcutMessagebox")
         lang.SetText(Me.CheckForUpdates_Latest, "CheckForUpdates-Latest")
-        lang.SetText(Me.CheckForUpdates_New_1, "CheckForUpdates-New-1", "%1", Globals.ProgramName)
-        lang.SetText(Me.CheckForUpdates_New_2, "CheckForUpdates-New-2", "%1", Globals.ProgramName)
-        lang.SetText(Me.CheckForUpdates_Title, "CheckForUpdates-Title", "%1", Globals.ProgramName)
+        lang.SetText(Me.CheckForUpdates_New_1, "CheckForUpdates-New-1", "%1", ProgramName)
+        lang.SetText(Me.CheckForUpdates_New_2, "CheckForUpdates-New-2", "%1", ProgramName)
+        lang.SetText(Me.CheckForUpdates_Title, "CheckForUpdates-Title", "%1", ProgramName)
         lang.SetText(Me.CheckForUpdates_Error_1, "CheckForUpdates-Error-1")
         lang.SetText(Me.CheckForUpdates_Error_2, "CheckForUpdates-Error-2")
     End Sub
@@ -414,7 +415,7 @@ Public Partial Class MainForm
 	End Function
 	
     Sub ToolStripButtonNewProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripButtonNewProfile.Click
-        Globals.CreatingNewProfile = True
+        CreatingNewProfile = True
         ProfileSettings.ShowDialog()
     End Sub
 	
@@ -424,7 +425,7 @@ Public Partial Class MainForm
 	
 	Public Sub EditProfile
 		If Me.listViewProfiles.SelectedItems.Count > 0 Then
-			Globals.CreatingNewProfile = False
+			CreatingNewProfile = False
 			ProfileSettings.ShowDialog
 		End If
 	End Sub
@@ -439,9 +440,9 @@ Public Partial Class MainForm
         Call RefreshProfiles()
         If Me.listViewProfiles.Items.Count = 0 Then
             Dim YNResult As Object
-            YNResult = MessageBox.Show(Me.NoNetworkProfilesMessageBox_1 & vbCrLf & Me.NoNetworkProfilesMessageBox_2, Globals.ProgramName, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            YNResult = MessageBox.Show(Me.NoNetworkProfilesMessageBox_1 & vbCrLf & Me.NoNetworkProfilesMessageBox_2, ProgramName, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If YNResult = DialogResult.Yes Then
-                Globals.CreatingNewProfile = True
+                CreatingNewProfile = True
                 ProfileSettings.ShowDialog()
             End If
         End If
@@ -856,7 +857,7 @@ Public Partial Class MainForm
     End Sub
 	
     Sub ToolStripMenuItemNewProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripMenuItemNewProfile.Click
-        Globals.CreatingNewProfile = True
+        CreatingNewProfile = True
         ProfileSettings.ShowDialog()
     End Sub
 	
@@ -981,7 +982,7 @@ Public Partial Class MainForm
 			ShortcutConfig = ShortcutConfig.Replace("%4", MACAddress)
 			
 			CreateShortcut(ShortcutConfig, My.Application.Info.DirectoryPath & "\" & My.Application.Info.AssemblyName & ".exe", "auto|" & Me.listViewProfiles.SelectedItems.Item(0).Group.Name & "|" & Me.listViewProfiles.SelectedItems.Item(0).SubItems.Item(2).Text,,,)
-			MessageBox.Show(Me.CreateShortcutMessagebox, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
+			MessageBox.Show(Me.CreateShortcutMessagebox, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
 		End If
 	End Sub
 	
@@ -1050,9 +1051,9 @@ Public Partial Class MainForm
 	
     Sub RunWhenILogInToWindowsToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles runWhenILogInToWindowsToolStripMenuItem.Click
         If Me.runWhenILogInToWindowsToolStripMenuItem.Checked.Equals(True) Then
-            Call SetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", Globals.ProgramName, Chr(34) & Application.ExecutablePath & Chr(34))
+            Call SetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", ProgramName, Chr(34) & Application.ExecutablePath & Chr(34))
         Else
-            Call DeleteRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", Globals.ProgramName)
+            Call DeleteRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", ProgramName)
         End If
     End Sub
 	
@@ -1092,8 +1093,8 @@ Public Partial Class MainForm
             Application.DoEvents()
             Dim wikiLatestversion As String = sr.ReadToEnd()
             Dim currentVersion As String = wikiLatestversion.Substring(wikiLatestversion.IndexOf(markBegin) + markBegin.Length, wikiLatestversion.IndexOf(markEnd) - wikiLatestversion.IndexOf(markBegin) - markBegin.Length)
-            If currentVersion.Trim = Globals.ProgramVersion Then
-                MessageBox.Show(Me.CheckForUpdates_Latest, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If currentVersion.Trim = ProgramVersion Then
+                MessageBox.Show(Me.CheckForUpdates_Latest, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 Dim YNResult As Object
                 YNResult = MessageBox.Show(Me.CheckForUpdates_New_1.Replace("%2", currentVersion.Trim) & vbCrLf & Me.CheckForUpdates_New_2, Me.CheckForUpdates_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -1103,7 +1104,7 @@ Public Partial Class MainForm
                 End If
             End If
         Catch
-            MessageBox.Show(Me.CheckForUpdates_Error_1 & vbCrLf & Me.CheckForUpdates_Error_2, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show(Me.CheckForUpdates_Error_1 & vbCrLf & Me.CheckForUpdates_Error_2, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Try
 
     End Sub

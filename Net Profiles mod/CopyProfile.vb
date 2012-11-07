@@ -26,6 +26,7 @@
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
 Imports System.IO
+Imports AppModule.Globals
 
 Public Partial Class CopyProfile
 	Public Sub New()
@@ -67,7 +68,7 @@ Public Partial Class CopyProfile
 	
 	Sub ButtonCopyClick(ByVal sender As Object, ByVal e As EventArgs)
 		If Me.textBoxNewName.Text.Trim.Length = 0 Then
-        	MessageBox.Show(Me.ProfileName_Messagebox, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        	MessageBox.Show(Me.ProfileName_Messagebox, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
         	Me.textBoxNewName.Focus()
         	Exit Sub
         End If
