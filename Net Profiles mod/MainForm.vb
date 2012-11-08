@@ -527,12 +527,16 @@ Public Partial Class MainForm
         INIWrite(Globals.ProgramINIFile, "Program", "Last Activated Profile", ThisProfile)
 
         '*** START SAVE TCP/IP SETTINGS ***
-        'TODO: Call UpdateProgress for setting IP
+        'TODO: Call UpdateProgress while applying IP settings
+        'HACK: The profiles folder path prefix is removed here before sending the profile to the service.
+        '      Maybe all functions dealing with profiles should be updated to use partial paths.
+        Dim Profile As String = ThisProfile.Substring(ProfilesFolder.Length)
+        
         Dim clientConnection As IInterProcessConnection = Nothing
         Try
             clientConnection = New ClientPipeConnection("NetProfilesMod", ".")
             clientConnection.Connect()
-            clientConnection.Write(ThisProfile + "|" + MACAddress)
+            clientConnection.Write(Profile + "|" + MACAddress)
             clientConnection.Read()
             clientConnection.Close()
         Catch ex As Exception

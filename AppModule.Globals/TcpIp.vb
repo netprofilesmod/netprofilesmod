@@ -109,24 +109,34 @@ Public Module TcpIp
 		Next objNetAdapter
 	End Sub
 
-	Public Sub ApplyIp(ByVal ThisProfile As String, ByVal MACAddress As String)
-		Dim strIPAddress As String = INIRead(ThisProfile, "TCP/IP Settings", "IP Address", "")
-		Dim strSubnetMask As String = INIRead(ThisProfile, "TCP/IP Settings", "Subnet Mask", "")
-		Dim strDefaultGateway As String = INIRead(ThisProfile, "TCP/IP Settings", "Default Gateway", "")
-		Dim strPrefDNSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "DNS Server", "")
-		Dim strAltDNSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "Alternate DNS Server", "")
-		Dim strWINSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "WINS Server", "")
-		Dim strDNSSuffix As String = INIRead(ThisProfile, "TCP/IP Settings", "DNS Suffix", "")
-		Dim strDHCP As String = INIRead(ThisProfile, "TCP/IP Settings", "DHCP", "0")
-		Dim boolDHCP As Boolean
-		If strDHCP.Equals("0") Then boolDHCP = False
-		If strDHCP.Equals("1") Then boolDHCP = True
-		Dim TheMACAddress() As String = StrReverse(ThisProfile).Split(System.Convert.ToChar("\"))
-		Dim UseThisMACAddress As String = StrReverse(TheMACAddress(1))
-		If MACAddress.Length > 0 Then
-			UseThisMACAddress = MACAddress
-		End If
+	Public Sub ApplyIp(ByVal Profile As String, ByVal MACAddress As String)
+		' To prevent using the service for applying profiles created without administrator rights, this function
+		' only applies profiles saved in the profiles folder. Since this folder is located in the ProgramData folder,
+		' only administrators are able to save profiles.
 		
-		Call SaveTCPIPSettings(strIPAddress, strSubnetMask, strDefaultGateway, strPrefDNSServer, strAltDNSServer, strWINSServer, strDNSSuffix, boolDHCP, UseThisMACAddress)
+		' To prevent escaping the profiles folder, the supplied path is checked for included folder names of ".."
+		If Array.IndexOf(Profile.Split("\"), "..") < 0 Then
+			' The supplied profile path is always suffixed with the profiles path
+			Dim ThisProfile As String = ProfilesFolder + Profile
+			
+			Dim strIPAddress As String = INIRead(ThisProfile, "TCP/IP Settings", "IP Address", "")
+			Dim strSubnetMask As String = INIRead(ThisProfile, "TCP/IP Settings", "Subnet Mask", "")
+			Dim strDefaultGateway As String = INIRead(ThisProfile, "TCP/IP Settings", "Default Gateway", "")
+			Dim strPrefDNSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "DNS Server", "")
+			Dim strAltDNSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "Alternate DNS Server", "")
+			Dim strWINSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "WINS Server", "")
+			Dim strDNSSuffix As String = INIRead(ThisProfile, "TCP/IP Settings", "DNS Suffix", "")
+			Dim strDHCP As String = INIRead(ThisProfile, "TCP/IP Settings", "DHCP", "0")
+			Dim boolDHCP As Boolean
+			If strDHCP.Equals("0") Then boolDHCP = False
+			If strDHCP.Equals("1") Then boolDHCP = True
+			Dim TheMACAddress() As String = StrReverse(ThisProfile).Split(System.Convert.ToChar("\"))
+			Dim UseThisMACAddress As String = StrReverse(TheMACAddress(1))
+			If MACAddress.Length > 0 Then
+				UseThisMACAddress = MACAddress
+			End If
+			
+			Call SaveTCPIPSettings(strIPAddress, strSubnetMask, strDefaultGateway, strPrefDNSServer, strAltDNSServer, strWINSServer, strDNSSuffix, boolDHCP, UseThisMACAddress)
+		End If
 	End Sub
 End Module
