@@ -73,24 +73,23 @@ Public Partial Class CopyProfile
         	Exit Sub
         End If
         
-        If Dir(ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-"), FileAttribute.Directory) = "" Then
-			MkDir((ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-")))
-		End If
-		
-		Dim ThisINIFile As String = ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini"
+		Dim TargetFile As String = ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini"
+		Dim ThisINIFile As String = Path.GetTempFileName()
 		
 		Dim fFile1 As New FileInfo(MainForm.listViewProfiles.SelectedItems.Item(0).SubItems.Item(3).Text)
 		fFile1.CopyTo(ThisINIFile, True)
 		
 		INIWrite(ThisINIFile, "General", "Name", Me.textBoxNewName.Text.Trim)
 		
-		'Me.Visible = False
-        'Me.Opacity = "0"
-        Me.Opacity = 0
-        Application.DoEvents()
-        Call MainForm.RefreshProfiles()
-        'Me.Dispose
-        Me.Close
-        Me.Refresh
+		If SaveProfile(ThisINIFile, TargetFile) Then
+			'Me.Visible = False
+			'Me.Opacity = "0"
+			Me.Opacity = 0
+			Application.DoEvents()
+			Call MainForm.RefreshProfiles()
+			'Me.Dispose
+			Me.Close
+			Me.Refresh
+		End If
 	End Sub
 End Class

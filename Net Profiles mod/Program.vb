@@ -44,13 +44,33 @@ Namespace My
 			Me.MainForm = My.Forms.MainForm
 		End Sub
 
-        Protected Overrides Sub OnRun()
-            Try
-                MyBase.OnRun()
-            Catch ex As Exception
-
-                MessageBox.Show(ex.ToString, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        End Sub	
+		Protected Overrides Sub OnRun()
+			Dim CommandLineArgs As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = My.Application.CommandLineArgs
+			If CommandLineArgs.Count > 0 Then
+				If CommandLineArgs(0) = "profileops" Then
+					' If started with the parameter profileops, the application is started with administrator rights
+					' for modifiying profiles in the ProgramData folder, without showing the GUI
+					If CommandLineArgs(1) = "move" Then
+						Dim Target() As String = CommandLineArgs(3).Split(CChar("\"))
+						Dim TargetFolder As String = Target(Target.Length - 2)
+						' Make sure the subfolder exists
+						If Not System.IO.Directory.Exists(ProfilesFolder & "\" & TargetFolder)  Then
+							MkDir((ProfilesFolder & "\" & TargetFolder))
+						End If
+						' Just moving the profile would keep the write permissions for the user and allow him to modify
+						' the profile without administrator permissions, therfore it's copied and then deleted
+						System.IO.File.Copy(CommandLineArgs(2), CommandLineArgs(3), True)
+						System.IO.File.Delete(CommandLineArgs(2))
+					ElseIf CommandLineArgs(1) = "delete" Then
+						System.IO.File.Delete(CommandLineArgs(2))
+					End If
+					'TODO: Return an exit code
+				Else
+					MyBase.OnRun()
+				End If
+			Else
+				MyBase.OnRun()
+			End If
+		End Sub	
 	End Class
 End Namespace

@@ -150,16 +150,13 @@ Public Partial Class ProfileSettings
         	Exit Sub
         End If
         
-        If Dir(ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-"), FileAttribute.Directory) = "" Then
-			MkDir((ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-")))
-		End If
-        
-        Dim ThisINIFile As String
+        Dim TargetFile As String
+        Dim ThisINIFile As String = Path.GetTempFileName()
         
         If CreatingNewProfile = True Then
-        	ThisINIFile = ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini"
+        	TargetFile = ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini"
         Else
-        	ThisINIFile = ProfilesFolder & "\" & MainForm.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & MainForm.listViewProfiles.SelectedItems(0).SubItems(2).Text
+        	TargetFile = ProfilesFolder & "\" & MainForm.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & MainForm.listViewProfiles.SelectedItems(0).SubItems(2).Text
         End If
         
         '*** SAVE PROFILE NAME ***
@@ -292,14 +289,16 @@ Public Partial Class ProfileSettings
         	End If
         End If
         
-        'Me.Hide
-        'Me.Visible = False
-        Me.Opacity = Double.MinValue
-        Application.DoEvents()
-        Call MainForm.RefreshProfiles()
-        'Me.Dispose
-        Me.Close
-        Me.Refresh
+		If SaveProfile(ThisINIFile, TargetFile) Then
+			'Me.Hide
+			'Me.Visible = False
+			Me.Opacity = Double.MinValue
+			Application.DoEvents()
+			Call MainForm.RefreshProfiles()
+			'Me.Dispose
+			Me.Close
+			Me.Refresh
+		End If
 	End Sub
 	
 	Public Sub ValidateIPBoxes(ByVal sender As Object, ByVal KeyAscii As Short, ByVal NextField As Object, ByVal PrevField As Object, ByVal e As KeyPressEventArgs, ByVal JumpForward As Boolean, ByVal JumpBack As Boolean)

@@ -479,7 +479,7 @@ Public Partial Class MainForm
 			Dim YNResult As Object
 			YNResult = MessageBox.Show(Me.DeleteProfileMessageBox.Replace("%1", Me.listViewProfiles.FocusedItem.Text), Me.DeleteProfileMessageBox_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If YNResult = DialogResult.Yes Then
-                System.IO.File.Delete(ProfilesFolder & "\" & Me.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & Me.listViewProfiles.SelectedItems(0).SubItems(2).Text)
+                RemoveProfile(ProfilesFolder & "\" & Me.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & Me.listViewProfiles.SelectedItems(0).SubItems(2).Text)
                 Call Me.RefreshProfiles()
             Else
                 Exit Sub

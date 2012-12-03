@@ -48,6 +48,7 @@
     <DefineConstants>DEBUG=1,TRACE=1</DefineConstants>
     <NoWarn>42017,42018,42019,42032,42036</NoWarn>
     <Optimize>False</Optimize>
+    <StartAction>Project</StartAction>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -79,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProfileWriter.vb" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
     <Import Include="System.Collections" />
