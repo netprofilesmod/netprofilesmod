@@ -141,7 +141,7 @@
 					</Component>
 					<Component Id="ServiceExe" Guid="30AA7CCB-D663-4D97-9C48-93C733F20D8B" DiskId="1">
 						<File Id="Service.exe" Name="Service.exe" Source="$(var.ServiceSourcePath)Service.exe" KeyPath="yes" />
-						<ServiceInstall Id="ServiceInstaller" Type="ownProcess" Vital="yes" Name="Net Profiles mod"
+						<ServiceInstall Id="ServiceInstaller" Type="ownProcess" Vital="yes" Name="Net Profiles mod" ErrorControl="normal"
 							Description="Helper for TCP/IP settings" Start="auto" Account="[SERVICEACCOUNT]" Password="[SERVICEPASSWORD]" />
 						<ServiceControl Id="StartService" Start="install" Stop="both" Remove="uninstall" Name="Net Profiles mod" Wait="yes" />
 					</Component>
