@@ -15,7 +15,7 @@
 			InstallerVersion="300"
 			Compressed="yes"/>
 
-		<!-- only install on Windows XP, Windows Vista or Windows 7 -->
+		<!-- only install on Windows XP, Windows Vista, Windows 7 or Windows 8 -->
 
 		<Condition Message="This application is only supported on Windows XP, Windows Vista, Windows 7 or Windows 8.">
     		<![CDATA[Installed OR ((VersionNT >= 501) AND (VersionNT <= 602))]]>
@@ -81,7 +81,11 @@
 		         <ComponentRef Id="Msvcp80Dll"/>
 		         <ComponentRef Id="Msvcr80Dll"/>
 		         <ComponentRef Id="MessageBoxHookDll"/>
+		         <ComponentRef Id="AppModuleGlobalsDll"/>
+		         <ComponentRef Id="AppModuleInterProcessCommDll"/>
+		         <ComponentRef Id="AppModuleNamedPipesDll"/>
 		         <ComponentRef Id="Net_Profiles_modExe"/>
+		         <ComponentRef Id="ServiceExe"/>
 		         <ComponentRef Id="ApplicationShortcut"/>
 		         <ComponentRef Id="ApplicationCommonAppDataFolderCreation"/>
 		         <ComponentRef Id="ProfilesFolderCreation"/>

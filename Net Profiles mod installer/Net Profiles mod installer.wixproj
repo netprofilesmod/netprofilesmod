@@ -51,6 +51,10 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{ADA6A4B5-5504-44EB-8F7A-40FAD35EF375}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(WixToolPath)\wix.targets" />
 </Project>
