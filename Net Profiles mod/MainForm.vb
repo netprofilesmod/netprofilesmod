@@ -89,7 +89,13 @@ Public Partial Class MainForm
 	Private messageBoxManager1 As MessageBoxManager
 	
 	
-    Sub MainFormLoad(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+	Sub MainFormLoad(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+		Dim LocalApplicationDataFolder As String = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + "\" + ProgramName
+		' Make sure the settings folder in the user profile exists
+		If Not System.IO.Directory.Exists(LocalApplicationDataFolder)  Then
+			MkDir(LocalApplicationDataFolder)
+		End If
+		
         CurrentLangPath = My.Application.Info.DirectoryPath & "\lang\" & INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
         CurrentLang = INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
         CurrentLang = CurrentLang.Substring(0, CurrentLang.Length - 4)

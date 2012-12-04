@@ -45,8 +45,7 @@ Public Module Globals
 	Public CreatingNewMappedDrive As Boolean
 	Public CreatingNewRunCommand As Boolean
 	
-	'TODO: Save ini file in the user profile folder, maybe still remember the last activated profile in the ProgramData folder
-	Public ProgramINIFile As String = CommonApplicationDataFolder + "\netprofilesmod.ini"
+	Public ProgramINIFile As String = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + "\" + ProgramName + "\netprofilesmod.ini"
 	Public OKToCloseProgram As Boolean = False
 	Public commandArray() As String
 	Public EnableLoadTimer As Boolean = True

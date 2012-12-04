@@ -54,8 +54,8 @@ Namespace My
 						Dim Target() As String = CommandLineArgs(3).Split(CChar("\"))
 						Dim TargetFolder As String = Target(Target.Length - 2)
 						' Make sure the subfolder exists
-						If Not System.IO.Directory.Exists(ProfilesFolder & "\" & TargetFolder)  Then
-							MkDir((ProfilesFolder & "\" & TargetFolder))
+						If Not System.IO.Directory.Exists(ProfilesFolder + "\" + TargetFolder)  Then
+							MkDir(ProfilesFolder + "\" + TargetFolder)
 						End If
 						' Just moving the profile would keep the write permissions for the user and allow him to modify
 						' the profile without administrator permissions, therfore it's copied and then deleted
