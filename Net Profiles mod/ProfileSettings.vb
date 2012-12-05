@@ -985,6 +985,7 @@ Public Partial Class ProfileSettings
 		Me.textBoxWINSServer2.Text = ""
 		Me.textBoxWINSServer3.Text = ""
 		Me.textBoxWINSServer4.Text = ""
+		Me.textBoxDNSSuffix.Text = ""
 		'*** INTERNET ***
 		Me.checkBoxUseProxySettings.Checked = False
 		Me.textBoxServerAddress.Text = ""
