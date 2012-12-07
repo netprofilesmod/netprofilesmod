@@ -30,6 +30,10 @@
 	<?endif?>
 	
 	<Fragment>
+		
+		<!-- preset the all users folder for the start menu entry -->
+		<Property Id="ALLUSERS"><![CDATA[2]]></Property>
+		
 		<DirectoryRef Id="TARGETDIR">
 			
 			<?if $(var.Platform) = "x64" ?>
