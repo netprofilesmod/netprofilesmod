@@ -194,7 +194,11 @@
 		
 		<DirectoryRef Id="ProfilesFolder">
 			<Component Id="ProfilesFolderCreation" Guid="6E28CA8D-DAE9-4F81-AB36-BF813CE78A3B">
-            	<CreateFolder />
+				<CreateFolder>
+					<Permission User="SYSTEM" GenericAll="yes"/>
+					<Permission User="Administrators" GenericAll="yes"/>
+					<Permission User="Users" GenericRead="yes" Read="yes"/>
+				</CreateFolder>
 			</Component>
 		</DirectoryRef>
 		
