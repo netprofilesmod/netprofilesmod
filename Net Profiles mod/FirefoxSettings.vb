@@ -76,6 +76,15 @@ Public Class FirefoxSettings
 		End If
 	End Sub
 	
+	Private Function ConvertPort(Port As String) As Object
+		Try
+			Return Convert.ToInt16(Port)
+		Catch
+			' Port setting will be deleted
+			Return ""
+		End Try
+	End Function
+	
 	Public Sub ChangeSetting(Setting As String, Value As String)
 		' Value = "" will delete setting
 		If Value = "" Then
@@ -160,15 +169,15 @@ Public Class FirefoxSettings
 			Me.ChangeSetting("network.proxy.share_proxy_settings", "")
 		End If
 		Me.ChangeSetting("network.proxy.http", ProxyHttp)
-		Me.ChangeSetting("network.proxy.http_port", ProxyHttpPort)
+		Me.ChangeSetting("network.proxy.http_port", ConvertPort(ProxyHttpPort))
 		Me.ChangeSetting("network.proxy.ssl", ProxyHttps)
-		Me.ChangeSetting("network.proxy.ssl_port", ProxyHttpsPort)
+		Me.ChangeSetting("network.proxy.ssl_port", ConvertPort(ProxyHttpsPort))
 		Me.ChangeSetting("network.proxy.ftp", ProxyFtp)
-		Me.ChangeSetting("network.proxy.ftp_port", ProxyFtpPort)
+		Me.ChangeSetting("network.proxy.ftp_port", ConvertPort(ProxyFtpPort))
 		Me.ChangeSetting("network.proxy.socks", ProxySocks)
-		Me.ChangeSetting("network.proxy.socks_port", ProxySocksPort)
+		Me.ChangeSetting("network.proxy.socks_port", ConvertPort(ProxySocksPort))
 		Me.ChangeSetting("network.proxy.gopher", ProxyGopher)
-		Me.ChangeSetting("network.proxy.gopher_port", ProxyGopherPort)
+		Me.ChangeSetting("network.proxy.gopher_port", ConvertPort(ProxyGopherPort))
 		Me.ChangeSetting("network.proxy.no_proxies_on", NoProxyOn)
 	End Sub
 
