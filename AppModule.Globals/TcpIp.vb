@@ -105,18 +105,19 @@ Public Module TcpIp
 		
 		For Each objNetAdapter In colNetAdapters
 			If DHCP.Equals(True) Then
-			objNetAdapter.SetDNSDomain("")
-			objNetAdapter.SetDNSServerSearchOrder()
-			objNetAdapter.SetDynamicDNSRegistration(True)
-			objNetAdapter.EnableDHCP()
-			objNetAdapter.RenewDHCPLease()
-			' EnableDHCP() sometimes applies two default gateways on Windows Vista and newer.
-			' As a workaround we check if more than one gateway is active after enabling DHCP
-			' and assign only the second one.
-			Dim CurrentGateways() As String = GetCurrentIPSettings(objNetAdapter.MACAddress).Split(CChar("|"))(3).Split(CChar(","))
-			If CurrentGateways.Length > 1 Then
-				objNetAdapter.SetGateways(New Object(){CurrentGateways(1)}, New Object(){1})
-			End If
+				objNetAdapter.SetWINSServer("", "")
+				objNetAdapter.SetDNSDomain("")
+				objNetAdapter.SetDNSServerSearchOrder()
+				objNetAdapter.SetDynamicDNSRegistration(True)
+				objNetAdapter.EnableDHCP()
+				objNetAdapter.RenewDHCPLease()
+				' EnableDHCP() sometimes applies two default gateways on Windows Vista and newer.
+				' As a workaround we check if more than one gateway is active after enabling DHCP
+				' and assign only the second one.
+				Dim CurrentGateways() As String = GetCurrentIPSettings(objNetAdapter.MACAddress).Split(CChar("|"))(3).Split(CChar(","))
+				If CurrentGateways.Length > 1 Then
+					objNetAdapter.SetGateways(New Object(){CurrentGateways(1)}, New Object(){1})
+				End If
 			Else
 				objNetAdapter.SetDNSDomain(strDNSSuffix)
 				objNetAdapter.EnableStatic(strIPAddress, strSubnetMask)
