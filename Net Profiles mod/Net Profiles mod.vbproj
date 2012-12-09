@@ -80,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FirefoxSettings.vb" />
     <Compile Include="ProfileWriter.vb" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
@@ -139,6 +140,7 @@
     <Compile Include="RunPrograms.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SetLanguage.vb" />
     <Compile Include="WirelessDetected.Designer.vb">
       <DependentUpon>WirelessDetected.vb</DependentUpon>
     </Compile>
