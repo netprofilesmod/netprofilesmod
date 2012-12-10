@@ -165,7 +165,7 @@ Public Class FirefoxSettings
 			Me.ChangeSetting("network.proxy.type", 1)
 			Me.ChangeSetting("network.proxy.share_proxy_settings", ShareProxySettings)
 		Else
-			Me.ChangeSetting("network.proxy.type", "")
+			Me.ChangeSetting("network.proxy.type", 0)
 			Me.ChangeSetting("network.proxy.share_proxy_settings", "")
 		End If
 		Me.ChangeSetting("network.proxy.http", ProxyHttp)
