@@ -86,9 +86,9 @@ Public Class FirefoxSettings
 	End Function
 	
 	Public Sub ChangeSetting(Setting As String, Value As String)
-		' Value = "" will delete setting
-		If Value = "" Then
-			Me.SetPref(Setting, "")
+		' Value: empty string will removes setting, "" saves empty setting
+		If (Value = "") Or (Value = Chr(34) & Chr(34)) Then
+			Me.SetPref(Setting, Value)
 		Else
 			Me.SetPref(Setting, Chr(34) & Value & Chr(34))
 		End If
@@ -126,18 +126,44 @@ Public Class FirefoxSettings
 		End if
 	End Sub
 	
-	Public Sub SetProxySettings(ByVal ProxyGlobal As String, ByVal ProxyGlobalPort As String, ByVal ProxyHttp As String, ByVal ProxyHttpPort As String, ByVal ProxyHttps As String, ByVal ProxyHttpsPort As String, ByVal ProxyFtp As String, ByVal ProxyFtpPort As String, ByVal ProxySocks As String, ByVal ProxySocksPort As String, ByVal ProxyGopher As String, ByVal ProxyGopherPort As String, ByVal ProxyExceptions As Array)
+	Public Sub SetProxySettings(ByVal ProxyGlobal As String, ByVal ProxyGlobalPort As String, ByVal ProxyHttp As String, ByVal ProxyHttpPort As String, ByVal ProxyHttps As String, ByVal ProxyHttpsPort As String, ByVal ProxyFtp As String, ByVal ProxyFtpPort As String, ByVal ProxySocks As String, ByVal ProxySocksPort As String, ByVal ProxyGopher As String, ByVal ProxyGopherPort As String, ByVal ProxyExceptions As Array, ProxyBypass As Boolean)
 		Dim ProxyEnable As Boolean
 		Dim ShareProxySettings As Boolean
 		Dim NoProxyOn As String = ""
+		Dim ProxyLh As Boolean = True
+		Dim Proxy127 As Boolean = True
 		
-		For Each Exception As String In ProxyExceptions
-			If NoProxyOn = "" Then
-				NoProxyOn = Exception
-			Else
-				NoProxyOn = NoProxyOn & ", " & Exception
+		If ProxyExceptions.Length > 0 Then
+			For Each Exception As String In ProxyExceptions
+				If NoProxyOn = "" Then
+					NoProxyOn = Exception
+				Else
+					NoProxyOn = NoProxyOn & ", " & Exception
+				End If
+				If Exception.ToLower() = "localhost" Then
+					ProxyLh = False
+				ElseIf Exception = "127.0.0.1" Then
+					Proxy127 = False
+				End If
+			Next
+			If ProxyBypass Then
+				' Make sure localhost and 127.0.0.1 are included, but only once
+				If ProxyLh Then
+					NoProxyOn = NoProxyOn & ", localhost"
+				End If
+				If Proxy127 Then
+					NoProxyOn = NoProxyOn & ", 127.0.0.1"
+				End If
 			End If
-		Next
+		Else
+			If ProxyBypass Then
+				' Firefox will use the default 'localhost, 127.0.0.1' when nothing is configured
+				NoProxyOn = ""
+			Else
+				' Firefox will use no proxy exceptions when an empty string is configured
+				NoProxyOn = Chr(34) & Chr(34)
+			End If
+		End If
 		
 		If ProxyGlobal <> "" Then
 			ShareProxySettings = True

@@ -138,7 +138,7 @@
 	<groupBoxProxy>Use Proxy Settings</groupBoxProxy>
     <labelServerAddress>Server Address:</labelServerAddress>
     <labelPort>Port:</labelPort>
-    <checkBoxBypassProxy>Bypass proxy server for local addresses (IE only)</checkBoxBypassProxy>
+    <checkBoxBypassProxy>Bypass proxy server for local addresses</checkBoxBypassProxy>
     <groupBoxHomepage>Default Homepage:</groupBoxHomepage>
     <buttonUseBlankHomepage>Use Blank</buttonUseBlankHomepage>
     <labelHomepageNote>Leave blank for no change.</labelHomepageNote>

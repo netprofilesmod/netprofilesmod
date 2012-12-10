@@ -709,8 +709,11 @@ Public Partial Class MainForm
                     End If
                 End If
                 If boolProxyFirefox.Equals(True) Then
-                    Dim ProxyExceptions As Array = strProxyExceptions.Split(";"C)
-                    FFSettings.SetProxySettings(ProxyGlobal, ProxyGlobalPort, ProxyHttp, ProxyHttpPort, ProxyHttps, ProxyHttpsPort, ProxyFtp, ProxyFtpPort, ProxySocks, ProxySocksPort, ProxyGopher, ProxyGopher, ProxyExceptions)
+                    Dim ProxyExceptions() As String = {}
+                    If strProxyExceptions <> "" Then
+                        ProxyExceptions = strProxyExceptions.Split(";"C)
+                    End If
+                    FFSettings.SetProxySettings(ProxyGlobal, ProxyGlobalPort, ProxyHttp, ProxyHttpPort, ProxyHttps, ProxyHttpsPort, ProxyFtp, ProxyFtpPort, ProxySocks, ProxySocksPort, ProxyGopher, ProxyGopher, ProxyExceptions, boolProxyBypass)
                 End If
             Else
                 'Empty server address: clear proxy
@@ -720,7 +723,7 @@ Public Partial Class MainForm
                     regKey.DeleteValue("ProxyOverride", False)
                 End If
                 If boolProxyFirefox.Equals(True) Then
-                    FFSettings.SetProxySettings("", "", "", "", "", "", "", "", "", "", "", "", New String() {})
+                    FFSettings.SetProxySettings("", "", "", "", "", "", "", "", "", "", "", "", New String() {}, True)
                 End If
             End If
         End If
