@@ -532,21 +532,27 @@ Public Partial Class MainForm
         'TODO: Call UpdateProgress while applying IP settings
         'HACK: The profiles folder path prefix is removed here before sending the profile to the service.
         '      Maybe all functions dealing with profiles should be updated to use partial paths.
-        Dim Profile As String = ThisProfile.Substring(ProfilesFolder.Length)
+        Dim strIPAddress As String = INIRead(ThisProfile, "TCP/IP Settings", "IP Address", "")
+        Dim strSubnetMask As String = INIRead(ThisProfile, "TCP/IP Settings", "Subnet Mask", "")
+        Dim strDHCP As String = INIRead(ThisProfile, "TCP/IP Settings", "DHCP", "0")
         
-        Dim clientConnection As IInterProcessConnection = Nothing
-        Try
-            clientConnection = New ClientPipeConnection("NetProfilesMod", ".")
-            clientConnection.Connect()
-            clientConnection.Write(Profile + "|" + MACAddress)
-            'TODO: Check the status message if implemented in the server
-            clientConnection.Read()
-            clientConnection.Close()
-        Catch ex As Exception
-            clientConnection.Dispose()
-            'TODO: Display error message instead of throwing exception
-            Throw (ex)
-        End Try
+        ' Only apply TCP/IP settings if IP and netmask are set or DHCP is enabled
+        If ((strIPAddress <> "") And (strSubnetMask <> "")) Or (strDHCP = "1") Then
+            Dim Profile As String = ThisProfile.Substring(ProfilesFolder.Length)
+            Dim clientConnection As IInterProcessConnection = Nothing
+            Try
+                clientConnection = New ClientPipeConnection("NetProfilesMod", ".")
+                clientConnection.Connect()
+                clientConnection.Write(Profile + "|" + MACAddress)
+                'TODO: Check the status message if implemented in the server
+                clientConnection.Read()
+                clientConnection.Close()
+            Catch ex As Exception
+                clientConnection.Dispose()
+                'TODO: Display error message instead of throwing exception
+                Throw (ex)
+            End Try
+        End If
         '*** END SAVE TCP/IP SETTINGS ***
 
         '*** START DISCONNECT PREVIOUSLY MAPPED DRIVES ***
