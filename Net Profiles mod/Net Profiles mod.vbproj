@@ -40,6 +40,11 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <TargetFrameworkProfile />
     <RunSourceAnalysis>False</RunSourceAnalysis>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\urx\AppData\Roaming\ICSharpCode/SharpDevelop4\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -52,10 +57,12 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>bin\Release\</OutputPath>
-    <DebugSymbols>False</DebugSymbols>
-    <DebugType>None</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
     <DefineConstants>TRACE=1</DefineConstants>
     <NoWarn>42017,42018,42019,42032,42036</NoWarn>
+    <Optimize>True</Optimize>
+    <StartAction>Project</StartAction>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
     <RegisterForComInterop>False</RegisterForComInterop>
@@ -82,13 +89,6 @@
   <ItemGroup>
     <Compile Include="FirefoxSettings.vb" />
     <Compile Include="ProfileWriter.vb" />
-    <Import Include="Microsoft.VisualBasic" />
-    <Import Include="System" />
-    <Import Include="System.Collections" />
-    <Import Include="System.Collections.Generic" />
-    <Import Include="System.Diagnostics" />
-    <Import Include="System.Drawing" />
-    <Import Include="System.Windows.Forms" />
     <Compile Include="About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
@@ -270,6 +270,15 @@
       <Project>{077B53BB-404A-4B2F-BA17-AAE98C5E9C66}</Project>
       <Name>AppModule.NamedPipes</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.Targets" />
   <Target Name="CleanIcon">

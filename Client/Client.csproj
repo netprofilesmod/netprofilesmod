@@ -11,12 +11,10 @@
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
     <AssemblyName>Client</AssemblyName>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
-    <DelaySign>false</DelaySign>
+    <DelaySign>False</DelaySign>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Client</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
@@ -25,73 +23,40 @@
     <OldToolsVersion>0.0</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\urx\AppData\Roaming\ICSharpCode/SharpDevelop4\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <SignAssembly>False</SignAssembly>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <RunSourceAnalysis>False</RunSourceAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
-    <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <FileAlignment>4096</FileAlignment>
-    <Optimize>false</Optimize>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
     <ErrorReport>prompt</ErrorReport>
     <DocumentationFile />
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <NoStdLib>false</NoStdLib>
-    <DebugType>full</DebugType>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <WarningLevel>4</WarningLevel>
     <NoWarn />
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
-    <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>TRACE</DefineConstants>
-    <FileAlignment>4096</FileAlignment>
-    <Optimize>true</Optimize>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
     <ErrorReport>prompt</ErrorReport>
     <DocumentationFile />
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <NoStdLib>false</NoStdLib>
-    <DebugType>none</DebugType>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <WarningLevel>4</WarningLevel>
     <NoWarn />
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <BaseAddress>285212672</BaseAddress>
-    <FileAlignment>4096</FileAlignment>
     <ErrorReport>prompt</ErrorReport>
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <BaseAddress>285212672</BaseAddress>
-    <Optimize>true</Optimize>
-    <FileAlignment>4096</FileAlignment>
     <ErrorReport>prompt</ErrorReport>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
-    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
-    <NoStdLib>False</NoStdLib>
-    <DebugType>None</DebugType>
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
@@ -133,14 +98,31 @@
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
     <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <BaseAddress>285212672</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DebugType>Full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DebugType>Full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <BaseAddress>285212672</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
 </Project>

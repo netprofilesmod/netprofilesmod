@@ -22,6 +22,9 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
     <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -32,8 +35,8 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>bin\Release\</OutputPath>
-    <DebugSymbols>false</DebugSymbols>
-    <DebugType>None</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
     <Optimize>True</Optimize>
     <DefineConstants>TRACE=1</DefineConstants>
   </PropertyGroup>
