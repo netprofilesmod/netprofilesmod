@@ -641,6 +641,7 @@ Public Partial Class ProfileSettings
 			Dim iniRunArray2() As String
 			Dim XRun As Integer
 			For XRun = iniRunArray.GetLowerBound(0) To (iniRunArray.GetUpperBound(0) - 1)
+				'TODO: Replace Microsoft.VisualBasic
 				iniRunArray2 = Microsoft.VisualBasic.Strings.Split(INIRead(TheINIFile,"Run", iniRunArray(XRun), ""), "||")
 				Dim itmxRun As ListViewItem
 				itmxRun = Me.listViewRun.Items.Add(iniRunArray2(0))

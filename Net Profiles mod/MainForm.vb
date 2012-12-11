@@ -95,6 +95,7 @@ Public Partial Class MainForm
         CurrentLang = CurrentLang.Substring(0, CurrentLang.Length - 4)
         Call LoadLanguage()
 
+        'TODO: Replace Microsoft.VisualBasic
         If Microsoft.VisualBasic.Command.Length > 0 Then
             commandArray = Microsoft.VisualBasic.Command.Split(System.Convert.ToChar("|"))
             Select Case commandArray(0)
@@ -105,6 +106,7 @@ Public Partial Class MainForm
                     AutoActivate.ShowDialog()
             End Select
         End If
+        'TODO: Replace Microsoft.VisualBasic
         If Dir(ProfilesFolder, Microsoft.VisualBasic.FileAttribute.Directory) = "" Then
             MkDir((ProfilesFolder))
         End If
@@ -537,10 +539,12 @@ Public Partial Class MainForm
             clientConnection = New ClientPipeConnection("NetProfilesMod", ".")
             clientConnection.Connect()
             clientConnection.Write(Profile + "|" + MACAddress)
+            'TODO: Check the status message if implemented in the server
             clientConnection.Read()
             clientConnection.Close()
         Catch ex As Exception
             clientConnection.Dispose()
+            'TODO: Display error message instead of throwing exception
             Throw (ex)
         End Try
         '*** END SAVE TCP/IP SETTINGS ***
@@ -769,6 +773,7 @@ Public Partial Class MainForm
         Dim XRun As Integer
         For XRun = iniRunArray.GetLowerBound(0) To (iniRunArray.GetUpperBound(0) - 1)
             Application.DoEvents()
+            'TODO: Replace Microsoft.VisualBasic
             iniRunArray2 = Microsoft.VisualBasic.Strings.Split(INIRead(ThisProfile, "Run", iniRunArray(XRun), ""), "||")
             Dim ThisProgram As System.Diagnostics.Process = New System.Diagnostics.Process()
             ThisProgram.StartInfo.FileName = iniRunArray2(0)
