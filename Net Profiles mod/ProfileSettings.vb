@@ -55,12 +55,14 @@ Public Partial Class ProfileSettings
 		Me.progressBar1.Visible = True
 		Me.labelWorking.Visible = True
 		Me.timer1.Enabled = True
-		If My.Computer.Info.OSFullName.Contains("Vista") Then
-			Me.tabControl1.TabPages.Item(6).Enabled = False
-			Me.labelWirelessVista.Visible = True
-		Else
+		' Only show the wireless tab in XP
+		'TODO: add support to detect the currently connected SSID on Vista and newer
+		If osInfo.Version.Major < 6 Then
 			Me.tabControl1.TabPages.Item(6).Enabled = True
 			Me.labelWirelessVista.Visible = False
+		Else
+			Me.tabControl1.TabPages.Item(6).Enabled = False
+			Me.labelWirelessVista.Visible = True
 		End If
 		Call LoadLanguage
 	End Sub
