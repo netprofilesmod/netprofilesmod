@@ -27,11 +27,11 @@ Imports System.Runtime.InteropServices
 ' change them to the information which is associated with the assembly
 ' you compile.
 
-<assembly: AssemblyTitle(Globals.ProgramName)>
+<assembly: AssemblyTitle(AppModule.Globals.ProgramName)>
 <assembly: AssemblyDescription("")>
 <assembly: AssemblyConfiguration("")>
 <assembly: AssemblyCompany("")>
-<assembly: AssemblyProduct(Globals.ProgramName)>
+<assembly: AssemblyProduct(AppModule.Globals.ProgramName)>
 <assembly: AssemblyCopyright("")>
 <assembly: AssemblyTrademark("")>
 <assembly: AssemblyCulture("")>
@@ -47,4 +47,4 @@ Imports System.Runtime.InteropServices
 ' You can specify all values by your own or you can build default build and revision
 ' numbers with the '*' character (the default):
 
-<assembly: AssemblyVersion(Globals.ProgramVersion)>
+<assembly: AssemblyVersion(AppModule.Globals.ProgramVersion)>

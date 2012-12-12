@@ -29,15 +29,12 @@ Imports System.Management
 Imports System.Drawing.Printing
 Imports Microsoft.Win32
 Imports System.IO
+Imports AppModule.Globals
 
 Public Partial Class ProfileSettings
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
-		
-		'
-		' TODO : Add constructor code after InitializeComponents
-		'
 	End Sub
 	
 	Public openFileDialogWallpaper_Title As String
@@ -148,21 +145,18 @@ Public Partial Class ProfileSettings
 	
 	Sub ButtonSaveClick(ByVal sender As Object, ByVal e As EventArgs)
         If Me.textBoxProfileName.Text.Trim.Length = 0 Then
-        	MessageBox.Show(Me.ProfileName_Messagebox, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        	MessageBox.Show(Me.ProfileName_Messagebox, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
         	Me.textBoxProfileName.Focus()
         	Exit Sub
         End If
         
-        If Dir(ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-"), FileAttribute.Directory) = "" Then
-			MkDir((ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-")))
-		End If
+        Dim TargetFile As String
+        Dim ThisINIFile As String = Path.GetTempFileName()
         
-        Dim ThisINIFile As String
-        
-        If Globals.CreatingNewProfile = True Then
-        	ThisINIFile = ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini"
+        If CreatingNewProfile = True Then
+        	TargetFile = ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini"
         Else
-        	ThisINIFile = ProfilesFolder & "\" & MainForm.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & MainForm.listViewProfiles.SelectedItems(0).SubItems(2).Text
+        	TargetFile = ProfilesFolder & "\" & MainForm.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & MainForm.listViewProfiles.SelectedItems(0).SubItems(2).Text
         End If
         
         '*** SAVE PROFILE NAME ***
@@ -288,21 +282,23 @@ Public Partial Class ProfileSettings
 		INIWrite(ThisINIFile, "Wireless", "AutoActivateSSID", Me.textBoxAutoActivateSSID.Text.Trim)
 		'*** END SAVE WIRELESS SETTINGS ***
 		
-		If MainForm.listViewProfiles.SelectedItems.Count > 0 And Globals.CreatingNewProfile = False Then
+		If MainForm.listViewProfiles.SelectedItems.Count > 0 And CreatingNewProfile = False Then
 			If Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":","-") <> MainForm.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString Then
 				
 				System.IO.File.Move(ThisINIFile, ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini")
         	End If
         End If
         
-        'Me.Hide
-        'Me.Visible = False
-        Me.Opacity = Double.MinValue
-        Application.DoEvents()
-        Call MainForm.RefreshProfiles()
-        'Me.Dispose
-        Me.Close
-        Me.Refresh
+		If SaveProfile(ThisINIFile, TargetFile) Then
+			'Me.Hide
+			'Me.Visible = False
+			Me.Opacity = Double.MinValue
+			Application.DoEvents()
+			Call MainForm.RefreshProfiles()
+			'Me.Dispose
+			Me.Close
+			Me.Refresh
+		End If
 	End Sub
 	
 	Public Sub ValidateIPBoxes(ByVal sender As Object, ByVal KeyAscii As Short, ByVal NextField As Object, ByVal PrevField As Object, ByVal e As KeyPressEventArgs, ByVal JumpForward As Boolean, ByVal JumpBack As Boolean)
@@ -473,7 +469,7 @@ Public Partial Class ProfileSettings
 		Call ResolutionsToComboBox()
 		Call BPPToComboBox()
 		
-		If Globals.CreatingNewProfile = False Then
+		If CreatingNewProfile = False Then
 			Dim TheINIFile As String = MainForm.listViewProfiles.SelectedItems(0).SubItems(3).Text
 			
 			Application.DoEvents()
@@ -645,6 +641,7 @@ Public Partial Class ProfileSettings
 			Dim iniRunArray2() As String
 			Dim XRun As Integer
 			For XRun = iniRunArray.GetLowerBound(0) To (iniRunArray.GetUpperBound(0) - 1)
+				'TODO: Replace Microsoft.VisualBasic
 				iniRunArray2 = Microsoft.VisualBasic.Strings.Split(INIRead(TheINIFile,"Run", iniRunArray(XRun), ""), "||")
 				Dim itmxRun As ListViewItem
 				itmxRun = Me.listViewRun.Items.Add(iniRunArray2(0))
@@ -737,7 +734,7 @@ Public Partial Class ProfileSettings
 	End Sub
 	
 	Sub ToolStripButtonAddDriveClick(ByVal sender As Object, ByVal e As EventArgs)
-		Globals.CreatingNewMappedDrive = True
+		CreatingNewMappedDrive = True
 		MappedDrive.ShowDialog
 	End Sub
 	
@@ -749,7 +746,7 @@ Public Partial Class ProfileSettings
 	
 	Sub ToolStripButtonEditDriveClick(ByVal sender As Object, ByVal e As EventArgs)
 		If Me.listViewMappedDrives.SelectedItems.Count = 1 Then
-			Globals.CreatingNewMappedDrive = False
+			CreatingNewMappedDrive = False
 			MappedDrive.ShowDialog
 		End If
 	End Sub
@@ -915,13 +912,13 @@ Public Partial Class ProfileSettings
 	End Sub
 	
 	Sub ToolStripButtonAddProgramClick(ByVal sender As Object, ByVal e As EventArgs)
-		Globals.CreatingNewRunCommand = True
+		CreatingNewRunCommand = True
 		RunPrograms.ShowDialog
 	End Sub
 	
 	Sub ToolStripButtonEditProgramClick(ByVal sender As Object, ByVal e As EventArgs)
 		If Me.listViewRun.SelectedItems.Count = 1 Then
-			Globals.CreatingNewRunCommand = False
+			CreatingNewRunCommand = False
 			RunPrograms.ShowDialog
 		End If
 	End Sub
@@ -989,6 +986,7 @@ Public Partial Class ProfileSettings
 		Me.textBoxWINSServer2.Text = ""
 		Me.textBoxWINSServer3.Text = ""
 		Me.textBoxWINSServer4.Text = ""
+		Me.textBoxDNSSuffix.Text = ""
 		'*** INTERNET ***
 		Me.checkBoxUseProxySettings.Checked = False
 		Me.textBoxServerAddress.Text = ""

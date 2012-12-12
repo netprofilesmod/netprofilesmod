@@ -25,20 +25,19 @@
 ' 
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
+Imports AppModule.Globals
+
 Public Partial Class AutoActivate
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
-		
-		'
-		' TODO : Add constructor code after InitializeComponents
-		'
 	End Sub
 	
 	Public ProfileName As String
     Public NetworkCardName As String
 	
 	Sub AutoActivateLoad(ByVal sender As Object, ByVal e As EventArgs)
+		'TODO: Replace Microsoft.VisualBasic
 		If Microsoft.VisualBasic.Command.Length > 0 Then
 			Globals.INIAutoLoad = ProfilesFolder & "\" & commandArray(1) & "\" & commandArray(2)
 		Else
@@ -71,7 +70,8 @@ Public Partial Class AutoActivate
 	
 	Sub Timer1Tick(ByVal sender As Object, ByVal e As EventArgs)
 		Me.timer1.Enabled = False
-        Call MainForm.ApplyProfile(Globals.INIAutoLoad, "auto")
+		Call MainForm.ApplyProfile(Globals.INIAutoLoad, "auto")
+		'TODO: Replace Microsoft.VisualBasic
 		If Microsoft.VisualBasic.Command.Length > 0 Then
 			Globals.OKToCloseProgram = True
 			MainForm.Close

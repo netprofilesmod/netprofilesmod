@@ -1,4 +1,25 @@
 ﻿<?xml version="1.0"?>
+
+<!--
+Copyright 2004-2012 Hugo Anton Feldhammer, Urs Geissbühler, Daniel Milner
+
+
+This file is part of Net Profiles mod.
+
+Net Profiles mod is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Net Profiles mod is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Net Profiles mod.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
 
 	<?include Globals.wxi ?>
@@ -15,7 +36,7 @@
 			InstallerVersion="300"
 			Compressed="yes"/>
 
-		<!-- only install on Windows XP, Windows Vista or Windows 7 -->
+		<!-- only install on Windows XP, Windows Vista, Windows 7 or Windows 8 -->
 
 		<Condition Message="This application is only supported on Windows XP, Windows Vista, Windows 7 or Windows 8.">
     		<![CDATA[Installed OR ((VersionNT >= 501) AND (VersionNT <= 602))]]>
@@ -81,7 +102,11 @@
 		         <ComponentRef Id="Msvcp80Dll"/>
 		         <ComponentRef Id="Msvcr80Dll"/>
 		         <ComponentRef Id="MessageBoxHookDll"/>
+		         <ComponentRef Id="AppModuleGlobalsDll"/>
+		         <ComponentRef Id="AppModuleInterProcessCommDll"/>
+		         <ComponentRef Id="AppModuleNamedPipesDll"/>
 		         <ComponentRef Id="Net_Profiles_modExe"/>
+		         <ComponentRef Id="ServiceExe"/>
 		         <ComponentRef Id="ApplicationShortcut"/>
 		         <ComponentRef Id="ApplicationCommonAppDataFolderCreation"/>
 		         <ComponentRef Id="ProfilesFolderCreation"/>

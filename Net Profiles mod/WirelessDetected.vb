@@ -25,14 +25,12 @@
 ' 
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
+Imports AppModule.Globals
+
 Public Partial Class WirelessDetected
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
-		
-		'
-		' TODO : Add constructor code after InitializeComponents
-		'
 	End Sub
 	
 	Sub ButtonNoClick(ByVal sender As Object, ByVal e As EventArgs)
@@ -53,7 +51,7 @@ Public Partial Class WirelessDetected
 		Dim lang As SetLanguage = New SetLanguage("/Language/WirelessDetected/")
 		
 		lang.SetText(Me.Text, "WindowTitle")
-		Me.Text = Globals.ProgramName & " - " & Me.Text
+		Me.Text = ProgramName & " - " & Me.Text
 		lang.SetText(Me.labelConnectedTo.Text, "labelConnectedTo")
 		lang.SetText(Me.labelActivate.Text, "labelActivate")
 		lang.SetText(Me.buttonYes.Text, "buttonYes")

@@ -26,7 +26,9 @@
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
 
+'TODO: Replace Microsoft.VisualBasic
 Imports Microsoft.VisualBasic.ApplicationServices
+Imports AppModule.Globals
 
 Namespace My
 	' This file controls the behaviour of the application.
@@ -43,13 +45,28 @@ Namespace My
 			Me.MainForm = My.Forms.MainForm
 		End Sub
 
-        Protected Overrides Sub OnRun()
-            Try
-                MyBase.OnRun()
-            Catch ex As Exception
-
-                MessageBox.Show(ex.ToString, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        End Sub	
+		Protected Overrides Sub OnRun()
+			Try
+				Dim CommandLineArgs As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = My.Application.CommandLineArgs
+				If CommandLineArgs.Count > 0 Then
+					If CommandLineArgs(0) = "profileops" Then
+						' If started with the parameter profileops, the application is started with administrator rights
+						' for modifiying profiles in the ProgramData folder, without showing the GUI
+						If CommandLineArgs(1) = "move" Then
+							FileopSaveProfile(CommandLineArgs(2), CommandLineArgs(3))
+						ElseIf CommandLineArgs(1) = "delete" Then
+							FileopDelete(CommandLineArgs(2))
+						End If
+						'TODO: Return an exit code
+					Else
+						MyBase.OnRun()
+					End If
+				Else
+					MyBase.OnRun()
+				End If
+			Catch ex As Exception
+				MessageBox.Show(ex.ToString, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Error)
+			End Try
+		End Sub	
 	End Class
 End Namespace

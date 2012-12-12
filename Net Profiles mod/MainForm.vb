@@ -32,6 +32,9 @@ Imports IWshRuntimeLibrary
 Imports System.Diagnostics.Process
 Imports System.Net
 Imports System.Xml
+Imports AppModule.InterProcessComm
+Imports AppModule.NamedPipes
+Imports AppModule.Globals
 
 Public Partial Class MainForm
 	Public Sub New()
@@ -86,12 +89,13 @@ Public Partial Class MainForm
 	Private messageBoxManager1 As MessageBoxManager
 	
 	
-    Sub MainFormLoad(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
-        Globals.CurrentLangPath = My.Application.Info.DirectoryPath & "\lang\" & INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
-        Globals.CurrentLang = INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
-        Globals.CurrentLang = Globals.CurrentLang.Substring(0, Globals.CurrentLang.Length - 4)
+	Sub MainFormLoad(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+        CurrentLangPath = My.Application.Info.DirectoryPath & "\lang\" & INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
+        CurrentLang = INIRead(Globals.ProgramINIFile, "Program", "Language", "en-US.xml")
+        CurrentLang = CurrentLang.Substring(0, CurrentLang.Length - 4)
         Call LoadLanguage()
 
+        'TODO: Replace Microsoft.VisualBasic
         If Microsoft.VisualBasic.Command.Length > 0 Then
             commandArray = Microsoft.VisualBasic.Command.Split(System.Convert.ToChar("|"))
             Select Case commandArray(0)
@@ -102,6 +106,7 @@ Public Partial Class MainForm
                     AutoActivate.ShowDialog()
             End Select
         End If
+        'TODO: Replace Microsoft.VisualBasic
         If Dir(ProfilesFolder, Microsoft.VisualBasic.FileAttribute.Directory) = "" Then
             MkDir((ProfilesFolder))
         End If
@@ -150,7 +155,7 @@ Public Partial Class MainForm
         If DoNotConfirmAutoActivate.Equals("True") Then
             Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Checked = True
         End If
-        If GetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", Globals.ProgramName).Length > 0 Then
+        If GetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", ProgramName).Length > 0 Then
             Me.runWhenILogInToWindowsToolStripMenuItem.Checked = True
         End If
         If Globals.EnableLoadTimer.Equals(True) Then
@@ -176,7 +181,7 @@ Public Partial Class MainForm
                 LanguageMenuItem.Tag = Filename.Name
                 LanguageMenuItem.CheckOnClick = True
                 AddHandler LanguageMenuItem.Click, AddressOf LanguageMenuClick
-                If Filename.FullName.ToLower = Globals.CurrentLangPath.ToLower Then
+                If Filename.FullName.ToLower = CurrentLangPath.ToLower Then
                 	LanguageMenuItem.Checked = True
                 End If
             Catch E As Exception
@@ -189,12 +194,12 @@ Public Partial Class MainForm
         If sender.Checked = True Then
             Dim LangMenuItem As ToolStripMenuItem
             For Each LangMenuItem In Me.languageToolStripMenuItem.DropDownItems
-                If LangMenuItem.Tag.Substring(0, LangMenuItem.Tag.Length - 4) = Globals.CurrentLang.ToLower Then
+                If LangMenuItem.Tag.Substring(0, LangMenuItem.Tag.Length - 4) = CurrentLang.ToLower Then
                     LangMenuItem.Checked = False
                 End If
             Next
-            Globals.CurrentLang = CStr(sender.Tag).Substring(0, CInt(sender.Tag.Length) - 4)
-            Globals.CurrentLangPath = CStr(My.Application.Info.DirectoryPath & "\lang\" & sender.Tag)
+            CurrentLang = CStr(sender.Tag).Substring(0, CInt(sender.Tag.Length) - 4)
+            CurrentLangPath = CStr(My.Application.Info.DirectoryPath & "\lang\" & sender.Tag)
             INIWrite(Globals.ProgramINIFile, "Program", "Language", CStr(sender.Tag))
             Call LoadLanguage()
         Else
@@ -228,7 +233,7 @@ Public Partial Class MainForm
         lang.SetText(Me.reloadNetworkInterfacesToolStripMenuItem.Text, "reloadNetworkInterfacesToolStripMenuItem")
         lang.SetText(Me.reloadProfilesToolStripMenuItem.Text, "reloadProfilesToolStripMenuItem")
         lang.SetText(Me.helpToolStripMenuItem.Text, "helpToolStripMenuItem")
-        lang.SetText(Me.netProfilesWebsiteToolStripMenuItem.Text, "netProfilesWebsiteToolStripMenuItem", "%1", Globals.ProgramName)
+        lang.SetText(Me.netProfilesWebsiteToolStripMenuItem.Text, "netProfilesWebsiteToolStripMenuItem", "%1", ProgramName)
         lang.SetText(Me.checkForUpdatesToolStripMenuItem.Text, "checkForUpdatesToolStripMenuItem")
         lang.SetText(Me.aboutToolStripMenuItem.Text, "aboutToolStripMenuItem")
         lang.SetText(Me.toolStripButtonNewProfile.Text, "toolStripButtonNewProfile")
@@ -269,9 +274,9 @@ Public Partial Class MainForm
         lang.SetText(Me.ShortcutConfigDefault, "ShortcutConfigDefault")
         lang.SetText(Me.CreateShortcutMessagebox, "CreateShortcutMessagebox")
         lang.SetText(Me.CheckForUpdates_Latest, "CheckForUpdates-Latest")
-        lang.SetText(Me.CheckForUpdates_New_1, "CheckForUpdates-New-1", "%1", Globals.ProgramName)
-        lang.SetText(Me.CheckForUpdates_New_2, "CheckForUpdates-New-2", "%1", Globals.ProgramName)
-        lang.SetText(Me.CheckForUpdates_Title, "CheckForUpdates-Title", "%1", Globals.ProgramName)
+        lang.SetText(Me.CheckForUpdates_New_1, "CheckForUpdates-New-1", "%1", ProgramName)
+        lang.SetText(Me.CheckForUpdates_New_2, "CheckForUpdates-New-2", "%1", ProgramName)
+        lang.SetText(Me.CheckForUpdates_Title, "CheckForUpdates-Title", "%1", ProgramName)
         lang.SetText(Me.CheckForUpdates_Error_1, "CheckForUpdates-Error-1")
         lang.SetText(Me.CheckForUpdates_Error_2, "CheckForUpdates-Error-2")
     End Sub
@@ -412,7 +417,7 @@ Public Partial Class MainForm
 	End Function
 	
     Sub ToolStripButtonNewProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripButtonNewProfile.Click
-        Globals.CreatingNewProfile = True
+        CreatingNewProfile = True
         ProfileSettings.ShowDialog()
     End Sub
 	
@@ -422,7 +427,7 @@ Public Partial Class MainForm
 	
 	Public Sub EditProfile
 		If Me.listViewProfiles.SelectedItems.Count > 0 Then
-			Globals.CreatingNewProfile = False
+			CreatingNewProfile = False
 			ProfileSettings.ShowDialog
 		End If
 	End Sub
@@ -437,9 +442,9 @@ Public Partial Class MainForm
         Call RefreshProfiles()
         If Me.listViewProfiles.Items.Count = 0 Then
             Dim YNResult As Object
-            YNResult = MessageBox.Show(Me.NoNetworkProfilesMessageBox_1 & vbCrLf & Me.NoNetworkProfilesMessageBox_2, Globals.ProgramName, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            YNResult = MessageBox.Show(Me.NoNetworkProfilesMessageBox_1 & vbCrLf & Me.NoNetworkProfilesMessageBox_2, ProgramName, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If YNResult = DialogResult.Yes Then
-                Globals.CreatingNewProfile = True
+                CreatingNewProfile = True
                 ProfileSettings.ShowDialog()
             End If
         End If
@@ -476,7 +481,7 @@ Public Partial Class MainForm
 			Dim YNResult As Object
 			YNResult = MessageBox.Show(Me.DeleteProfileMessageBox.Replace("%1", Me.listViewProfiles.FocusedItem.Text), Me.DeleteProfileMessageBox_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If YNResult = DialogResult.Yes Then
-                System.IO.File.Delete(ProfilesFolder & "\" & Me.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & Me.listViewProfiles.SelectedItems(0).SubItems(2).Text)
+                RemoveProfile(ProfilesFolder & "\" & Me.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString & "\" & Me.listViewProfiles.SelectedItems(0).SubItems(2).Text)
                 Call Me.RefreshProfiles()
             Else
                 Exit Sub
@@ -524,35 +529,30 @@ Public Partial Class MainForm
         INIWrite(Globals.ProgramINIFile, "Program", "Last Activated Profile", ThisProfile)
 
         '*** START SAVE TCP/IP SETTINGS ***
+        'TODO: Call UpdateProgress while applying IP settings
+        'HACK: The profiles folder path prefix is removed here before sending the profile to the service.
+        '      Maybe all functions dealing with profiles should be updated to use partial paths.
         Dim strIPAddress As String = INIRead(ThisProfile, "TCP/IP Settings", "IP Address", "")
         Dim strSubnetMask As String = INIRead(ThisProfile, "TCP/IP Settings", "Subnet Mask", "")
-        Dim strDefaultGateway As String = INIRead(ThisProfile, "TCP/IP Settings", "Default Gateway", "")
-        Dim strPrefDNSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "DNS Server", "")
-        Dim strAltDNSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "Alternate DNS Server", "")
-        Dim strWINSServer As String = INIRead(ThisProfile, "TCP/IP Settings", "WINS Server", "")
-        Dim strDNSSuffix As String = INIRead(ThisProfile, "TCP/IP Settings", "DNS Suffix", "")
         Dim strDHCP As String = INIRead(ThisProfile, "TCP/IP Settings", "DHCP", "0")
-        Dim boolDHCP As Boolean
-        If strDHCP.Equals("0") Then boolDHCP = False
-        If strDHCP.Equals("1") Then boolDHCP = True
-        Dim strAutoConfigAddress As String = INIRead(ThisProfile, "Internet Settings", "AutoConfigAddress", "")
-        Dim strUseProxySettings As String = INIRead(ThisProfile, "Internet Settings", "UseProxySettings", "0")
-        Dim boolUseProxySettings As Boolean
-        If strUseProxySettings.Equals("0") Then boolUseProxySettings = False
-        If strUseProxySettings.Equals("1") Then boolUseProxySettings = True
-        Dim strProxyServerAddress As String = INIRead(ThisProfile, "Internet Settings", "ProxyServerAddress", "")
-        Dim strProxyExceptions As String = INIRead(ThisProfile, "Internet Settings", "ProxyExceptions", "")
-        Dim boolProxyBypass As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "ProxyBypass", Convert.ToString(False)))
-        Dim boolProxyIE As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "InternetExplorer", Convert.ToString(False)))
-        Dim boolProxyFirefox As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "Firefox", Convert.ToString(False)))
-        Dim strDefaultHomepage As String = INIRead(ThisProfile, "Internet Settings", "DefaultHomepage", "")
-        Dim TheMACAddress() As String = StrReverse(ThisProfile).Split(System.Convert.ToChar("\"))
-        Dim UseThisMACAddress As String = StrReverse(TheMACAddress(1))
-        If MACAddress.Length > 0 Then
-            UseThisMACAddress = MACAddress
+        
+        ' Only apply TCP/IP settings if IP and netmask are set or DHCP is enabled
+        If ((strIPAddress <> "") And (strSubnetMask <> "")) Or (strDHCP = "1") Then
+            Dim Profile As String = ThisProfile.Substring(ProfilesFolder.Length)
+            Dim clientConnection As IInterProcessConnection = Nothing
+            Try
+                clientConnection = New ClientPipeConnection("NetProfilesMod", ".")
+                clientConnection.Connect()
+                clientConnection.Write(Profile + "|" + MACAddress)
+                'TODO: Check the status message if implemented in the server
+                clientConnection.Read()
+                clientConnection.Close()
+            Catch ex As Exception
+                clientConnection.Dispose()
+                'TODO: Display error message instead of throwing exception
+                Throw (ex)
+            End Try
         End If
-
-        Call SaveTCPIPSettings(strIPAddress, strSubnetMask, strDefaultGateway, strPrefDNSServer, strAltDNSServer, strWINSServer, strDNSSuffix, boolDHCP, UseThisMACAddress, ApplyType)
         '*** END SAVE TCP/IP SETTINGS ***
 
         '*** START DISCONNECT PREVIOUSLY MAPPED DRIVES ***
@@ -600,6 +600,17 @@ Public Partial Class MainForm
 
         '*** START INTERNET SETTINGS ***
         Call UpdateProgress(Me.StatusLabelWorking_Internet, ApplyType)
+        Dim strAutoConfigAddress As String = INIRead(ThisProfile, "Internet Settings", "AutoConfigAddress", "")
+        Dim strUseProxySettings As String = INIRead(ThisProfile, "Internet Settings", "UseProxySettings", "0")
+        Dim boolUseProxySettings As Boolean
+        If strUseProxySettings.Equals("0") Then boolUseProxySettings = False
+        If strUseProxySettings.Equals("1") Then boolUseProxySettings = True
+        Dim strProxyServerAddress As String = INIRead(ThisProfile, "Internet Settings", "ProxyServerAddress", "")
+        Dim strProxyExceptions As String = INIRead(ThisProfile, "Internet Settings", "ProxyExceptions", "")
+        Dim boolProxyBypass As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "ProxyBypass", Convert.ToString(False)))
+        Dim boolProxyIE As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "InternetExplorer", Convert.ToString(False)))
+        Dim boolProxyFirefox As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "Firefox", Convert.ToString(False)))
+        Dim strDefaultHomepage As String = INIRead(ThisProfile, "Internet Settings", "DefaultHomepage", "")
         
         Dim FFSettings As FirefoxSettings = Nothing
         If boolProxyFirefox Then
@@ -708,8 +719,11 @@ Public Partial Class MainForm
                     End If
                 End If
                 If boolProxyFirefox.Equals(True) Then
-                    Dim ProxyExceptions As Array = strProxyExceptions.Split(";"C)
-                    FFSettings.SetProxySettings(ProxyGlobal, ProxyGlobalPort, ProxyHttp, ProxyHttpPort, ProxyHttps, ProxyHttpsPort, ProxyFtp, ProxyFtpPort, ProxySocks, ProxySocksPort, ProxyGopher, ProxyGopher, ProxyExceptions)
+                    Dim ProxyExceptions() As String = {}
+                    If strProxyExceptions <> "" Then
+                        ProxyExceptions = strProxyExceptions.Split(";"C)
+                    End If
+                    FFSettings.SetProxySettings(ProxyGlobal, ProxyGlobalPort, ProxyHttp, ProxyHttpPort, ProxyHttps, ProxyHttpsPort, ProxyFtp, ProxyFtpPort, ProxySocks, ProxySocksPort, ProxyGopher, ProxyGopher, ProxyExceptions, boolProxyBypass)
                 End If
             Else
                 'Empty server address: clear proxy
@@ -719,7 +733,7 @@ Public Partial Class MainForm
                     regKey.DeleteValue("ProxyOverride", False)
                 End If
                 If boolProxyFirefox.Equals(True) Then
-                    FFSettings.SetProxySettings("", "", "", "", "", "", "", "", "", "", "", "", New String() {})
+                    FFSettings.SetProxySettings("", "", "", "", "", "", "", "", "", "", "", "", New String() {}, True)
                 End If
             End If
         End If
@@ -765,6 +779,7 @@ Public Partial Class MainForm
         Dim XRun As Integer
         For XRun = iniRunArray.GetLowerBound(0) To (iniRunArray.GetUpperBound(0) - 1)
             Application.DoEvents()
+            'TODO: Replace Microsoft.VisualBasic
             iniRunArray2 = Microsoft.VisualBasic.Strings.Split(INIRead(ThisProfile, "Run", iniRunArray(XRun), ""), "||")
             Dim ThisProgram As System.Diagnostics.Process = New System.Diagnostics.Process()
             ThisProgram.StartInfo.FileName = iniRunArray2(0)
@@ -860,7 +875,7 @@ Public Partial Class MainForm
     End Sub
 	
     Sub ToolStripMenuItemNewProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripMenuItemNewProfile.Click
-        Globals.CreatingNewProfile = True
+        CreatingNewProfile = True
         ProfileSettings.ShowDialog()
     End Sub
 	
@@ -985,7 +1000,7 @@ Public Partial Class MainForm
 			ShortcutConfig = ShortcutConfig.Replace("%4", MACAddress)
 			
 			CreateShortcut(ShortcutConfig, My.Application.Info.DirectoryPath & "\" & My.Application.Info.AssemblyName & ".exe", "auto|" & Me.listViewProfiles.SelectedItems.Item(0).Group.Name & "|" & Me.listViewProfiles.SelectedItems.Item(0).SubItems.Item(2).Text,,,)
-			MessageBox.Show(Me.CreateShortcutMessagebox, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
+			MessageBox.Show(Me.CreateShortcutMessagebox, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
 		End If
 	End Sub
 	
@@ -1054,9 +1069,9 @@ Public Partial Class MainForm
 	
     Sub RunWhenILogInToWindowsToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles runWhenILogInToWindowsToolStripMenuItem.Click
         If Me.runWhenILogInToWindowsToolStripMenuItem.Checked.Equals(True) Then
-            Call SetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", Globals.ProgramName, Chr(34) & Application.ExecutablePath & Chr(34))
+            Call SetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", ProgramName, Chr(34) & Application.ExecutablePath & Chr(34))
         Else
-            Call DeleteRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", Globals.ProgramName)
+            Call DeleteRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", ProgramName)
         End If
     End Sub
 	
@@ -1096,8 +1111,8 @@ Public Partial Class MainForm
             Application.DoEvents()
             Dim wikiLatestversion As String = sr.ReadToEnd()
             Dim currentVersion As String = wikiLatestversion.Substring(wikiLatestversion.IndexOf(markBegin) + markBegin.Length, wikiLatestversion.IndexOf(markEnd) - wikiLatestversion.IndexOf(markBegin) - markBegin.Length)
-            If currentVersion.Trim = Globals.ProgramVersion Then
-                MessageBox.Show(Me.CheckForUpdates_Latest, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If currentVersion.Trim = ProgramVersion Then
+                MessageBox.Show(Me.CheckForUpdates_Latest, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 Dim YNResult As Object
                 YNResult = MessageBox.Show(Me.CheckForUpdates_New_1.Replace("%2", currentVersion.Trim) & vbCrLf & Me.CheckForUpdates_New_2, Me.CheckForUpdates_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -1107,7 +1122,7 @@ Public Partial Class MainForm
                 End If
             End If
         Catch
-            MessageBox.Show(Me.CheckForUpdates_Error_1 & vbCrLf & Me.CheckForUpdates_Error_2, Globals.ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show(Me.CheckForUpdates_Error_1 & vbCrLf & Me.CheckForUpdates_Error_2, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Try
 
     End Sub

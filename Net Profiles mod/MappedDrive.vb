@@ -25,14 +25,12 @@
 ' 
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
+Imports AppModule.Globals
+
 Public Partial Class MappedDrive
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
-		
-		'
-		' TODO : Add constructor code after InitializeComponents
-		'
 	End Sub
 	
 	Public AlreadyMapped_Messagebox As String
@@ -55,7 +53,7 @@ Public Partial Class MappedDrive
 							AlreadyMapped = True
 						End If
 					End If
-					If Globals.CreatingNewMappedDrive.Equals(True) Then
+					If CreatingNewMappedDrive.Equals(True) Then
 						AlreadyMapped = True
 					End If
 				End If
@@ -65,7 +63,7 @@ Public Partial Class MappedDrive
 				MessageBox.Show(Me.AlreadyMapped_Messagebox, Me.Text)
 				Me.comboBoxDrives.Focus
 			Else
-				If Globals.CreatingNewMappedDrive = True Then
+				If CreatingNewMappedDrive = True Then
 					Dim itmx As ListViewItem = ProfileSettings.listViewMappedDrives.Items.Add(Me.comboBoxDrives.Text.Substring(0, 2))
 					itmx.SubItems.Add(Me.textBoxPath.Text.Trim)
 					itmx.SubItems.Add(SubstitutionEncode(Me.textBoxUsername.Text.Trim))
@@ -94,12 +92,12 @@ Public Partial Class MappedDrive
 			If GetDriveType(Chr(CInt(DriveNum)) & ":\") = 1 Then
 				driveIs = ""
 				For Each lvi In ProfileSettings.listViewMappedDrives.Items
-					If lvi.Text.Substring(0,1) = Chr(CInt(DriveNum)) And Globals.CreatingNewMappedDrive = True Then
+					If lvi.Text.Substring(0,1) = Chr(CInt(DriveNum)) And CreatingNewMappedDrive = True Then
 						driveIs = " [" & Me.DriveUsed & "]"
 					End If
 				Next lvi
 			Else
-				If Globals.CreatingNewMappedDrive.Equals(False) And ProfileSettings.listViewMappedDrives.SelectedItems.Count > 0 Then
+				If CreatingNewMappedDrive.Equals(False) And ProfileSettings.listViewMappedDrives.SelectedItems.Count > 0 Then
 					If ProfileSettings.listViewMappedDrives.SelectedItems.Item(0).SubItems.Item(0).Text.Substring(0,1) <> Chr(CInt(DriveNum)) Then
 						driveIs = " [" & Me.DriveUsed & "]"
 					End If
@@ -110,7 +108,7 @@ Public Partial Class MappedDrive
 			Me.comboBoxDrives.Items.Add(Chr(CInt(DriveNum)) & ":" & driveIs)
 		Next
 		
-		If Globals.CreatingNewMappedDrive = False Then
+		If CreatingNewMappedDrive = False Then
 			Me.comboBoxDrives.SelectedIndex = Me.comboBoxDrives.FindStringExact(ProfileSettings.listViewMappedDrives.SelectedItems.Item(0).SubItems.Item(0).Text)
 			Me.textBoxPath.Text = ProfileSettings.listViewMappedDrives.SelectedItems.Item(0).SubItems.Item(1).Text
 			Me.textBoxUsername.Text = SubstitutionDecode(ProfileSettings.listViewMappedDrives.SelectedItems.Item(0).SubItems.Item(2).Text)
@@ -126,7 +124,7 @@ Public Partial Class MappedDrive
 		lang.SetText(Me.labelUsername.Text, "labelUsername")
 		lang.SetText(Me.labelPassword.Text, "labelPassword")
 		lang.SetText(Me.labelNote.Text, "labelNote")
-		If Globals.CreatingNewMappedDrive = False Then
+		If CreatingNewMappedDrive = False Then
 			lang.SetText(Me.buttonSave.Text, "buttonSave")
 		Else
 			lang.SetText(Me.buttonSave.Text, "buttonAdd")
