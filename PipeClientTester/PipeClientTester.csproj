@@ -10,13 +10,13 @@
     <ApplicationIcon>App.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>Client</AssemblyName>
+    <AssemblyName>PipeClientTester</AssemblyName>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>False</DelaySign>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Client</RootNamespace>
+    <RootNamespace>PipeClientTester</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -107,6 +107,7 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <DebugType>Full</DebugType>
     <DebugSymbols>true</DebugSymbols>
+    <StartAction>Project</StartAction>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DefineConstants>TRACE</DefineConstants>
