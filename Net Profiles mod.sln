@@ -6,9 +6,9 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Net Profiles mod", "Net Pro
 EndProject
 Project("{CFEE4113-1246-4D54-95CB-156813CB8593}") = "Net Profiles mod installer", "Net Profiles mod installer\Net Profiles mod installer.wixproj", "{5D4E29C6-FAED-49BA-AE6C-C6CEA3388C64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{2846704F-2EB1-4789-A20A-B23C3BA98858}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipeServerTester", "PipeServerTester\PipeServerTester.csproj", "{2846704F-2EB1-4789-A20A-B23C3BA98858}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{8C07F84D-8BBD-414B-9E89-B7E97D81AE2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipeClientTester", "PipeClientTester\PipeClientTester.csproj", "{8C07F84D-8BBD-414B-9E89-B7E97D81AE2F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppModule.InterProcessComm", "AppModule.InterProcessComm\AppModule.InterProcessComm.csproj", "{E98F1F7E-40B6-44C8-AC66-EC867B141FA1}"
 EndProject
