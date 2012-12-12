@@ -2376,12 +2376,12 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABo
-        BAAAAk1TRnQBSQFMAwEBAAFgAQABYAEAARABAAEQAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABQAMA
+        BAAAAk1TRnQBSQFMAwEBAAFoAQABaAEAARABAAEQAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABQAMA
         ARADAAEBAQABIAYAARAqAANLAY4BYgJYAe8BYgJYAe8DSwGO2AADgQH/A4EB/wOBAf8DgQH/A4EB/wOB
-        Af8BXgIpAfoB6gGlAYEB/wHqAaUBgQH/AV4CKQH6A4EB/wOBAf8DgQH/A4EB/wOBAf8DgQH/wAADgQH/
+        Af8BXAIpAfoB6gGlAYEB/wHqAaUBgQH/AVwCKQH6A4EB/wOBAf8DgQH/A4EB/wOBAf8DgQH/wAADgQH/
         A40B/wONAf8DjQH/A40B/wONAf8DgQH/Ae0BrwGGAf8B7QGvAYYB/wOBAf8DjQH/A40B/wONAf8DjQH/
-        A40B/wOBAf/AAAOBAf8DgQH/A4EB/wOBAf8DgQH/A4EB/wFZAkIB9QFiAisB/AFiAisB/AFnAlkB8gOB
-        Af8DgQH/A4EB/wOBAf8DgQH/A4EB/9QAAx8BLQOBAf8DiQH/A4kB/wFEAkAB/dgAAVcCVQG3A6AB/wOb
+        A40B/wOBAf/AAAOBAf8DgQH/A4EB/wOBAf8DgQH/A4EB/wFZAkIB9QFhAisB/AFhAisB/AFnAlkB8gOB
+        Af8DgQH/A4EB/wOBAf8DgQH/A4EB/9QAAx8BLQOBAf8DiQH/A4kB/wFDAkAB/dgAAVcCVQG3A6AB/wOb
         Af8DlwH/A5IB/wOOAf8DigH/A4UB/wOBAf8DgQH/A4EB/wOBAf8DgQH/A4EB/wOBAf8BVwJVAbfAAAOp
         Af8D6QH/A80B/wPKAf8DyQH/A8gB/wPIAf8DxQH/A8UB/wPDAf8DxQH/A8IB/wPBAf8DwAH/A+IB/wOB
         Af/AAAOuAf8D1gH/A5IB/wOUAf8DkgH/A5AB/wOLAf8DjgH/A4sB/wOKAf8DhQH/A4cB/wOGAf8DhgH/
@@ -2797,15 +2797,15 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIhSURBVDhPpdNdSxRRGAfwqVk/QDdRF1FCV170DaKXtavo
-        witDqm1RQtDSlNZ2jTJiLQojNjOKjCjJhFoqWnQzs9qItDeSCitTJEnZNddm5/3MzL9zzswIXWV24IG5
+        witDqm1RQtDSlNZ2jSxiLQojNjOKjCjJhFoqWnQzs9qItDeSCitTJEnZNddm5/3MzL9zzswIXWV24IG5
         eJ7f/HnOjCD87ymr76lpuzMmN3ePIXaTVtcXRK+PInLtIw5d/YDGzhE0XH6H+ktvUdfxCrXtQ4h1PJfZ
         HH93/PagnUjP4F9r07lBmwPszUupfWeegAOxrq9Yyqk8OeAC0Ruf+bxBLOi0NINA1ggkzcS8YuBnQUM2
         r2I6p2AqW8D4tMT798YfegBdGDumbcO0LA6pJoGiu9AvlWBO1pGTKDSvYWZW5f17jve6ANs2OxYFCENo
         GRTSKKSwNBQqsEQKQb5gYlbSef+uoykXYFfFAcfhgA8Z9FlnEEV8SPIg1l9x5L4LNF55vwAwxIf8NDpL
         RAgmkufxIlyCR8EiPK1Yh9ZwyAXqLr52AVq2l4QjtPheaE3evYCRyEZoqTY4n/qg3GrAcM0G9AcD+4UD
-        7cMLt+h4iO0l8RM9270eKh1GYgfQtAJoLUbu9GaktojjQm3i5V8/AxbbeZP8oy9/bBVatgYcoexgd0/1
-        2QzYl1V16jHC8X6ETqTplh/wRe1svofk9pWQOysBOqRHBMzRmqwW0bdNnFrUv5gpX90yFFpLfjQVIxst
-        wreqZRgoCVi9pctjiwJYU6Z8zeF0UJxgsdOl4nd/+DchurNVmNnnswAAAABJRU5ErkJggg==
+        7cMLt+h4iO0l8RM9270eKh1GYgfQtAJoLUbu9GaktojjQm3i5V8/AxbbeZP8oy/fsgotWwOOUHawu6f6
+        bAbsy6o69RjheD9CJ9J0yw/4onY230Ny+0rInZUAHdIjAuZoTVaL6NsmTi3qX8yUrz42FFpLfjQVIxst
+        wreqZRgoCVi9pctjiwJYU6Z8zeF0UJxgsdOl4nd/+Dcg47NTI6BeWAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="toolStripButtonRemoveProgram.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -3297,36 +3297,6 @@
   <data name="&gt;&gt;tabPageDesktop.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="labelWirelessVista.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelWirelessVista.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 177</value>
-  </data>
-  <data name="labelWirelessVista.Size" type="System.Drawing.Size, System.Drawing">
-    <value>459, 46</value>
-  </data>
-  <data name="labelWirelessVista.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="labelWirelessVista.Text" xml:space="preserve">
-    <value>Windows Vista users: This tab will be disabled until I figure out how to determine the currently connected wireless SSID in Vista.</value>
-  </data>
-  <data name="labelWirelessVista.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;labelWirelessVista.Name" xml:space="preserve">
-    <value>labelWirelessVista</value>
-  </data>
-  <data name="&gt;&gt;labelWirelessVista.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelWirelessVista.Parent" xml:space="preserve">
-    <value>tabPageWireless</value>
-  </data>
-  <data name="&gt;&gt;labelWirelessVista.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="labelSSID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3442,7 +3412,7 @@
     <value>tabPageWireless</value>
   </data>
   <data name="&gt;&gt;groupBoxWireless.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="tabPageWireless.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

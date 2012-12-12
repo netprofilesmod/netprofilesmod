@@ -5,6 +5,7 @@ checkBoxOpera
 ClearFirefox-Messagebox-1
 ClearFirefox-Messagebox-2
 labelPort
+ProfileSettings/labelWirelessVista
 
 Missing Translations:
 labelDNSSuffix

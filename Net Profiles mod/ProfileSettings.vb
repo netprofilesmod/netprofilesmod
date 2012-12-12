@@ -57,12 +57,9 @@ Public Partial Class ProfileSettings
 		Me.timer1.Enabled = True
 		' Only show the wireless tab in XP
 		'TODO: add support to detect the currently connected SSID on Vista and newer
-		If osInfo.Version.Major < 6 Then
-			Me.tabControl1.TabPages.Item(6).Enabled = True
-			Me.labelWirelessVista.Visible = False
-		Else
-			Me.tabControl1.TabPages.Item(6).Enabled = False
-			Me.labelWirelessVista.Visible = True
+		Dim osInfo As System.OperatingSystem = System.Environment.OSVersion
+		If osInfo.Version.Major >= 6 Then
+			Me.tabControl1.Controls.Remove(Me.tabPageWireless)
 		End If
 		Call LoadLanguage
 	End Sub
@@ -121,7 +118,6 @@ Public Partial Class ProfileSettings
 		lang.SetText(Me.groupBoxWireless.Text, "groupBoxWireless")
 		lang.SetText(Me.labelSSID.Text, "labelSSID")
 		lang.SetText(Me.labelSSIDNotes.Text, "labelSSIDNotes")
-		lang.SetText(Me.labelWirelessVista.Text, "labelWirelessVista")
 		lang.SetText(Me.buttonSave.Text, "buttonSave")
 		lang.SetText(Me.buttonClose.Text, "buttonClose")
 		lang.SetText(Me.labelWorking_NetworkCards, "labelWorking-NetworkCards")

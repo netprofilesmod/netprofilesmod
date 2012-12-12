@@ -176,7 +176,6 @@ Partial Class ProfileSettings
 		Me.buttonBrowseWallpaper = New System.Windows.Forms.Button()
 		Me.textBoxWallpaperPath = New System.Windows.Forms.TextBox()
 		Me.tabPageWireless = New System.Windows.Forms.TabPage()
-		Me.labelWirelessVista = New System.Windows.Forms.Label()
 		Me.groupBoxWireless = New System.Windows.Forms.GroupBox()
 		Me.labelSSID = New System.Windows.Forms.Label()
 		Me.labelSSIDNotes = New System.Windows.Forms.Label()
@@ -1125,16 +1124,10 @@ Partial Class ProfileSettings
 		'
 		'tabPageWireless
 		'
-		Me.tabPageWireless.Controls.Add(Me.labelWirelessVista)
 		Me.tabPageWireless.Controls.Add(Me.groupBoxWireless)
 		resources.ApplyResources(Me.tabPageWireless, "tabPageWireless")
 		Me.tabPageWireless.Name = "tabPageWireless"
 		Me.tabPageWireless.UseVisualStyleBackColor = true
-		'
-		'labelWirelessVista
-		'
-		resources.ApplyResources(Me.labelWirelessVista, "labelWirelessVista")
-		Me.labelWirelessVista.Name = "labelWirelessVista"
 		'
 		'groupBoxWireless
 		'
@@ -1275,7 +1268,6 @@ Partial Class ProfileSettings
 	End Sub
 	Private textBoxDNSSuffix As System.Windows.Forms.TextBox
 	Private labelDNSSuffix As System.Windows.Forms.Label
-	Private labelWirelessVista As System.Windows.Forms.Label
 	Private labelPleaseNote As System.Windows.Forms.Label
 	Private groupBoxPleaseNote As System.Windows.Forms.GroupBox
 	Private groupBoxWallpaperPreview As System.Windows.Forms.GroupBox
