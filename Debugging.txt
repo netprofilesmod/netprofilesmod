@@ -1,12 +1,16 @@
-This project has been developed with SharpDevelop 4.2. To successfully build and debug the project, take care of those things:
+This project has been developed with SharpDevelop 4.2. To successfully build and debug the project, take care of the
+following:
 
 1. Set Net Profiles mod as startup project in SharpDevelop.
 
-2. SharpDevelop only supports debugging of x86 code, select the x86 platform when debugging on x64 systems.
+2. Select the x86 platform. SharpDevelop only supports debugging of x86 code, the x64 platform is only used for
+   building but not debugging. Building the AnyCPU release will fail, it is reserved for future use when MessageBoxHook
+   is removed.
 
 3. If Net Profiles mod is not installed, the service for applying IP settings via named pipe will be missing. In this
    case run the PipeServerTester without the debugger (will trigger an UAC dialog). Otherwise applying IP setttings
    will fail.
 
 4. If Net Profiles mod is not installed, it will create a the folder structure in the ProgramData folder with different
-   permissions for the profiles folder than the installer. This will allow users to modify (but not delete) profiles.
+   permissions for the profiles folder than the installer. This will allow users to create and edit (but not delete)
+   profile files.
