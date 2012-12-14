@@ -805,6 +805,7 @@ Public Partial Class MainForm
             iniRunArray2 = Microsoft.VisualBasic.Strings.Split(INIRead(ThisProfile, "Run", iniRunArray(XRun), ""), "||")
             Dim ThisProgram As System.Diagnostics.Process = New System.Diagnostics.Process()
             ThisProgram.StartInfo.FileName = iniRunArray2(0)
+            ThisProgram.StartInfo.WorkingDirectory = Path.GetDirectoryName(ThisProgram.StartInfo.FileName)
             If iniRunArray2(2).Length > 0 Then
                 Application.DoEvents()
                 Select Case iniRunArray2(2)
@@ -825,22 +826,30 @@ Public Partial Class MainForm
             Application.DoEvents()
             If iniRunArray2(3).Length > 0 Then
                 ThisProgram.StartInfo.UserName = SubstitutionDecode(iniRunArray2(3))
-            End If
-            Application.DoEvents()
-            If iniRunArray2(4).Length > 0 Then
-                Dim pw As New System.Security.SecureString
-                For Each ch As Char In SubstitutionDecode(iniRunArray2(4))
-                    pw.AppendChar(ch)
-                Next
-                ThisProgram.StartInfo.Password = pw
+                If iniRunArray2(4).Length > 0 Then
+                    Dim pw As New System.Security.SecureString
+                    For Each ch As Char In SubstitutionDecode(iniRunArray2(4))
+                        pw.AppendChar(ch)
+                    Next
+                    ThisProgram.StartInfo.Password = pw
+                End If
             End If
             Application.DoEvents()
             If iniRunArray2(5).Length > 0 Then
                 ThisProgram.StartInfo.Domain = SubstitutionDecode(iniRunArray2(5))
             End If
             Application.DoEvents()
-            ThisProgram.StartInfo.UseShellExecute = True
-            ThisProgram.Start()
+            If ThisProgram.StartInfo.UserName = "" Then
+                ThisProgram.StartInfo.UseShellExecute = True
+            Else
+                'The Process must have UseShellExecute set to false to start as a user, Minimized/Maximized/Hidden will have no effect
+                ThisProgram.StartInfo.UseShellExecute = False
+            End If
+            Try
+                ThisProgram.Start()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, ThisProgram.StartInfo.FileName, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
             Application.DoEvents()
         Next XRun
         '*** END RUNNING PROGRAMS ***
