@@ -518,8 +518,7 @@ Public Partial Class MainForm
             Me.toolStripProgressBar1.Visible = True
         End If
 
-        Dim i As Integer
-        For i = 0 To Me.listViewProfiles.Items.Count - 1
+        For i As Integer = 0 To Me.listViewProfiles.Items.Count - 1
             Me.listViewProfiles.Items.Item(i).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Regular)
             If Me.listViewProfiles.Items.Item(i).SubItems.Item(3).Text = ThisProfile Then
                 Me.listViewProfiles.Items.Item(i).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Bold)
@@ -722,6 +721,29 @@ Public Partial Class MainForm
                     Dim ProxyExceptions() As String = {}
                     If strProxyExceptions <> "" Then
                         ProxyExceptions = strProxyExceptions.Split(";"C)
+                        For i As Integer = 0 To ProxyExceptions.Length - 1
+                            'Remove leading asterisk from proxy exceptions for Firefox
+                            If ProxyExceptions(i).Substring(0, 1) = "*" Then
+                                ProxyExceptions(i) = ProxyExceptions(i).Substring(1)
+                            End If
+                            If ProxyExceptions(i).Substring(ProxyExceptions(i).Length - 1) = "*" Then
+                               'Remove trailing asterisk from proxy exceptions for Firefox
+                                ProxyExceptions(i) = ProxyExceptions(i).Substring(0, ProxyExceptions(i).Length - 1)
+                                
+                                'Convert IP ranges from IE format with wildcards to Firefox format with netmask (192.168.* -> 192.168.0.0/16)
+                                Dim pattern8 As String = "^\d{1,3}\.\z"
+                                Dim pattern16 As String = "^\d{1,3}\.\d{1,3}\.\z"
+                                Dim pattern24 As String = "^\d{1,3}\.\d{1,3}\.\d{1,3}\.\z"
+                                If System.Text.RegularExpressions.Regex.Match(ProxyExceptions(i), pattern8).Success Then
+                                    ProxyExceptions(i) = ProxyExceptions(i) & "0.0.0/8"
+                                ElseIf System.Text.RegularExpressions.Regex.Match(ProxyExceptions(i), pattern16).Success Then
+                                    ProxyExceptions(i) = ProxyExceptions(i) & "0.0/16"
+                                ElseIf System.Text.RegularExpressions.Regex.Match(ProxyExceptions(i), pattern24).Success Then
+                                    ProxyExceptions(i) = ProxyExceptions(i) & "0/24"
+                                End If
+                                'Dim m As Boolean = System.Text.RegularExpressions.Regex.Match(ProxyExceptions(i), "\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b").Success
+                            End If
+                        Next i
                     End If
                     FFSettings.SetProxySettings(ProxyGlobal, ProxyGlobalPort, ProxyHttp, ProxyHttpPort, ProxyHttps, ProxyHttpsPort, ProxyFtp, ProxyFtpPort, ProxySocks, ProxySocksPort, ProxyGopher, ProxyGopher, ProxyExceptions, boolProxyBypass)
                 End If

@@ -219,8 +219,12 @@ Public Class FirefoxSettings
 			' in with multiple sessions. Only processes of the current user have to be killed, for simplicity the
 			' rare case where Firefox runs in an other session of the current user is ignored.
 			If Process.SessionID = System.Diagnostics.Process.GetCurrentProcess().SessionId Then
-				FFProcess = Process
-				FFPath = Process.MainModule.FileName
+				Try
+					FFProcess = Process
+					FFPath = Process.MainModule.FileName
+				Catch
+					'Fails if Firefox runs as administrator
+				End Try
 			End If
 		Next
 		
