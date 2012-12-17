@@ -271,10 +271,14 @@
     <Lang Include="lang\ru-ru.xml" />
     <Lang Include="lang\zh-cn.xml" />
     <Lang Include="lang\zh-tw.xml" />
+    <Lang Include="lang\he-il.xml" />
     <License Include="COPYING.txt" />
     <MessageBoxManager Include="..\3rd Party\MessageBoxHook\bin\Common\License.txt" />
     <MessageBoxManager Include="..\3rd Party\MessageBoxHook\bin\Common\Readme.txt" />
-    <Lang Include="lang\he-il.xml" />
+    <Vc80Crt Include="..\3rd Party\Microsoft\VC80_CRT\bin\$(Platform)\Microsoft.VC80.CRT\Microsoft.VC80.CRT.manifest" />
+    <Vc80Crt Include="..\3rd Party\Microsoft\VC80_CRT\bin\$(Platform)\Microsoft.VC80.CRT\msvcm80.dll" />
+    <Vc80Crt Include="..\3rd Party\Microsoft\VC80_CRT\bin\$(Platform)\Microsoft.VC80.CRT\msvcp80.dll" />
+    <Vc80Crt Include="..\3rd Party\Microsoft\VC80_CRT\bin\$(Platform)\Microsoft.VC80.CRT\msvcr80.dll" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="lang" />
@@ -327,16 +331,24 @@
   <Target Name="DeployMessageBoxManager">
     <Copy SourceFiles="@(MessageBoxManager)" DestinationFolder="$(OutputPath)\MessageBoxManager" />
   </Target>
+  <Target Name="CleanVc80Crt">
+    <RemoveDir Directories="$(OutputPath)\Microsoft.VC80.CRT" />
+  </Target>
+  <Target Name="DeployVc80Crt">
+    <Copy SourceFiles="@(Vc80Crt)" DestinationFolder="$(OutputPath)\Microsoft.VC80.CRT" />
+  </Target>
   <Target Name="BeforeBuild">
     <MSBuild Projects="$(MSBuildProjectFile)" Targets="DeployIcon" />
     <MSBuild Projects="$(MSBuildProjectFile)" Targets="DeployLang" />
     <MSBuild Projects="$(MSBuildProjectFile)" Targets="DeployLicense" />
     <MSBuild Projects="$(MSBuildProjectFile)" Targets="DeployMessageBoxManager" />
+    <MSBuild Projects="$(MSBuildProjectFile)" Targets="DeployVc80Crt" />
   </Target>
   <Target Name="BeforeClean">
     <MSBuild Projects="$(MSBuildProjectFile)" Targets="CleanIcon" />
     <MSBuild Projects="$(MSBuildProjectFile)" Targets="CleanLang" />
     <MSBuild Projects="$(MSBuildProjectFile)" Targets="CleanLicense" />
     <MSBuild Projects="$(MSBuildProjectFile)" Targets="CleanMessageBoxManager" />
+    <MSBuild Projects="$(MSBuildProjectFile)" Targets="CleanVc80Crt" />
   </Target>
 </Project>
