@@ -140,7 +140,8 @@ Public Partial Class MappedDrive
 	
 	Sub ButtonBrowseClick(ByVal sender As Object, ByVal e As EventArgs)
 		Dim MappedPath As String
-		MappedPath = GetBrowseNetworkShare(Me.Handle.ToInt32, True, True)
+		Dim objFolderDialog As New FolderBrowserDialog()
+		MappedPath = GetNetworkFolders(objFolderDialog)
 		If MappedPath <> "" Then
 			Me.textBoxPath.Text = MappedPath
 		End If

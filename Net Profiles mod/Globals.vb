@@ -99,50 +99,24 @@ Public Module Globals
 	Private Const BIF_NEWDIALOGSTYLE As Integer = &H40s
 	Private Const BIF_NONEWFOLDERBUTTON As Integer = &H200s
 	
-	Private Declare Function SHGetSpecialFolderLocation Lib "shell32.dll" (ByVal hwndOwner As Integer, ByVal nFolder As Integer, ByRef pidl As Integer) As Integer
-	Private Declare Function SHBrowseForFolder Lib "shell32.dll"  Alias "SHBrowseForFolderA"(ByRef lpBrowseInfo As BROWSEINFO) As Integer
-	Private Declare Function SHGetPathFromIDList Lib "shell32.dll"  Alias "SHGetPathFromIDListA"(ByVal pidl As Integer, ByVal pszPath As String) As Integer
-    Private Declare Function lstrlenW Lib "kernel32" (ByVal lpString As Integer) As Integer
-    Private Declare Sub CoTaskMemFree Lib "ole32.dll" (ByVal pv_Renamed As Integer)
-
-
-
+	Private Declare Function lstrlenW Lib "kernel32" (ByVal lpString As Integer) As Integer
+	Private Declare Sub CoTaskMemFree Lib "ole32.dll" (ByVal pv_Renamed As Integer)
 	
-	Public Function GetBrowseNetworkShare(ByRef hwndOwner As Integer, ByRef bNewDialog As Boolean, ByRef bNoNewFolder As Boolean) As String
-		Dim bi As BROWSEINFO
-		Dim pidl As Integer
-		Dim spath As String
-		
-		If SHGetSpecialFolderLocation(hwndOwner, CSIDL_NETWORK, pidl) = NOERROR Then
-			With bi
-				.hOwner = hwndOwner
-				.pidlRoot = pidl
-				.pszDisplayName = Space(MAX_PATH)
-				'.lpszTitle = "Select a network computer or share."
-				.lpszTitle = Globals.BrowseNetworkShare_Title
-				.ulFlags = BIF_RETURNONLYFSDIRS
-				If bNewDialog Then .ulFlags = .ulFlags Or BIF_NEWDIALOGSTYLE
-				If bNoNewFolder Then .ulFlags = .ulFlags Or BIF_NONEWFOLDERBUTTON
-				
-			End With
-
-			pidl = SHBrowseForFolder(bi)
-			
-			If pidl <> 0 Then
-				spath = Space(MAX_PATH)
-                If CBool(SHGetPathFromIDList(pidl, spath)) Then
-                    GetBrowseNetworkShare = TrimNull(spath)
-                Else
-                    GetBrowseNetworkShare = "\\" & bi.pszDisplayName
-                End If
-            Else
-                GetBrowseNetworkShare = ""
-            End If
-			
-			Call CoTaskMemFree(pidl)
-        Else
-            GetBrowseNetworkShare = ""
-        End If
+	
+	'Code snippet from http://www.codeproject.com/Articles/20547/How-to-Browse-Network-Folders-using-Folder-Dialog
+	Public Function GetNetworkFolders(ByVal oFolderBrowserDialog As FolderBrowserDialog) As String
+		'Get type of Folder Dialog
+		Dim type As Type = oFolderBrowserDialog.[GetType]
+		'Get Fieldinfo for rootfolder
+		Dim fieldInfo As Reflection.FieldInfo = type.GetField("rootFolder", System.Reflection.BindingFlags.NonPublic Or System.Reflection.BindingFlags.Instance)
+		'Now set the value for Folder Dialog using DirectCast
+		'18 = Network Neighborhood is the root
+		fieldInfo.SetValue(oFolderBrowserDialog, DirectCast(18, Environment.SpecialFolder))
+		If oFolderBrowserDialog.ShowDialog() = DialogResult.OK Then
+			Return oFolderBrowserDialog.SelectedPath
+		Else
+			Return ""
+		End If
 	End Function
 	
 	Private Function TrimNull(ByRef startstr As String) As String
