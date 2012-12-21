@@ -41,6 +41,7 @@ Public Partial Class MainForm
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
 		
+		toolStripStatusLabel1.Text = ProgramName & " " & ProgramVersion
 		'
 		'messageBoxManager1
 		'

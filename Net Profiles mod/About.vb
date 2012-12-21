@@ -33,6 +33,8 @@ Public Partial Class About
     Public Sub New()
         ' The Me.InitializeComponent call is required for Windows Forms designer support.
         Me.InitializeComponent()
+        
+        labelVersion.Text = "Version " & ProgramVersion
     End Sub
 
     Sub ButtonOKClick(ByVal sender As Object, ByVal e As EventArgs) Handles buttonOK.Click
