@@ -58,9 +58,6 @@ Public Partial Class ProfileSettings
 		' Only show the wireless tab in XP
 		'TODO: add support to detect the currently connected SSID on Vista and newer
 		Dim osInfo As System.OperatingSystem = System.Environment.OSVersion
-		If osInfo.Version.Major >= 6 Then
-			Me.tabControl1.Controls.Remove(Me.tabPageWireless)
-		End If
 		Call LoadLanguage
 	End Sub
 	
