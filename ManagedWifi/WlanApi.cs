@@ -691,7 +691,8 @@ namespace NativeWifi
 							break;
 						case Wlan.WlanNotificationCodeAcm.ScanFail:
 							{
-								int expectedSize = Marshal.SizeOf(typeof (Wlan.WlanReasonCode));
+								//HACK: Prevents exception on WLAN connection: System.ArgumentException: Type 'NativeWifi.Wlan+WlanReasonCode' cannot be marshaled as an unmanaged structure; no meaningful size or offset can be computed.
+								int expectedSize = 0;//Marshal.SizeOf(typeof (Wlan.WlanReasonCode));
 								if (notifyData.dataSize >= expectedSize)
 								{
 									Wlan.WlanReasonCode reasonCode = (Wlan.WlanReasonCode) Marshal.ReadInt32(notifyData.dataPtr);
