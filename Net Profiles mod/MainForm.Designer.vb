@@ -112,7 +112,7 @@ Partial Class MainForm
 		Me.deleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.toolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
 		Me.createDesktopShortcutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-		Me.timerLoad = New System.Windows.Forms.Timer(Me.components)
+		Me.timerUpdateAdapters = New System.Windows.Forms.Timer(Me.components)
 		Me.notifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
 		Me.contextMenuStripSystemTray = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.showHideWindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -563,7 +563,7 @@ Partial Class MainForm
 	Private WithEvents contextMenuStripProfiles As System.Windows.Forms.ContextMenuStrip
 	Public toolStripStatusLabelWorking As System.Windows.Forms.ToolStripStatusLabel
 	Private toolStripProgressBar1 As System.Windows.Forms.ToolStripProgressBar
-	Private WithEvents timerLoad As System.Windows.Forms.Timer
+	Private WithEvents timerUpdateAdapters As System.Windows.Forms.Timer
 	Private columnHeaderIPAddress As System.Windows.Forms.ColumnHeader
 	Private columnHeaderName As System.Windows.Forms.ColumnHeader
 	Private toolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel

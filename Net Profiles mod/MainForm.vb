@@ -163,7 +163,7 @@ Public Partial Class MainForm
             Me.runWhenILogInToWindowsToolStripMenuItem.Checked = True
         End If
         If Globals.EnableLoadTimer.Equals(True) Then
-            Me.timerLoad.Enabled = True
+            Me.timerUpdateAdapters.Enabled = True
         End If
 
         Call GetLanguages()
@@ -435,8 +435,8 @@ Public Partial Class MainForm
 		End If
 	End Sub
 	
-	Sub TimerLoadTick(ByVal sender As Object, ByVal e As EventArgs) Handles timerLoad.Tick
-		Me.timerLoad.Enabled = False
+	Sub TimerUpdateAdaptersTick(ByVal sender As Object, ByVal e As EventArgs) Handles timerUpdateAdapters.Tick
+		Me.timerUpdateAdapters.Enabled = False
 		If Not Me.SilentAdapterUpdate Then
 			Me.toolStripProgressBar1.Enabled = True
 			Me.toolStripProgressBar1.Visible = True
@@ -459,7 +459,7 @@ Public Partial Class MainForm
 			
 			' Now prepare for scanning changed adapters silently in the background
 			Me.SilentAdapterUpdate = True
-			Me.timerLoad.Interval = 1000
+			Me.timerUpdateAdapters.Interval = 1000
 		Else
 			Dim CurrentAdapters As ArrayList = PopulateNetworkCardArray()
 			Dim AdaptersChanged As Boolean
@@ -480,7 +480,7 @@ Public Partial Class MainForm
 			End If
 		End If
 		
-		Me.timerLoad.Enabled = True
+		Me.timerUpdateAdapters.Enabled = True
 	End Sub
 	
 	Public Sub RefreshProfiles
