@@ -46,7 +46,7 @@ Namespace My
 		End Sub
 
 		Protected Overrides Sub OnRun()
-			Try
+			'Try
 				Dim CommandLineArgs As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = My.Application.CommandLineArgs
 				If CommandLineArgs.Count > 0 Then
 					If CommandLineArgs(0) = "profileops" Then
@@ -64,9 +64,9 @@ Namespace My
 				Else
 					MyBase.OnRun()
 				End If
-			Catch ex As Exception
-				MessageBox.Show(ex.ToString, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Error)
-			End Try
+			'Catch ex As Exception
+			'	MessageBox.Show(ex.ToString, ProgramName, MessageBoxButtons.OK, MessageBoxIcon.Error)
+			'End Try
 		End Sub	
 	End Class
 End Namespace

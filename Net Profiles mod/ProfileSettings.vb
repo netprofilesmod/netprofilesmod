@@ -128,17 +128,14 @@ Public Partial Class ProfileSettings
 		lang.SetText(Me.groupBoxAutoConfigAddress.Text, "groupBoxAutoConfigAddress")
 	End Sub
 	
-	Public Sub PopulateNetworkCards()		
-		Try
-			Me.labelWorking.Text = Me.labelWorking_NetworkCards
-			Application.DoEvents()
+	Public Sub PopulateNetworkCards()
+		Me.labelWorking.Text = Me.labelWorking_NetworkCards
+		Application.DoEvents()
+		If NetworkCardList.Count > 0 Then
 			Me.comboBoxNetworkCards.DataSource = NetworkCardList
 			Me.comboBoxNetworkCards.DisplayMember = "Value"
 			Me.comboBoxNetworkCards.ValueMember = "Key"
-			
-            Catch err As ManagementException
-                'Nothing
-		End Try
+		End If
 	End Sub
 	
 	Sub ButtonSaveClick(ByVal sender As Object, ByVal e As EventArgs)
@@ -955,7 +952,9 @@ Public Partial Class ProfileSettings
 	Sub ProfileSettingsFormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs)
 		'*** GENERAL ***
 		Me.textBoxProfileName.Text = ""
-		Me.comboBoxNetworkCards.SelectedIndex = 0
+		If Me.comboBoxNetworkCards.Items.Count > 0 Then
+			Me.comboBoxNetworkCards.SelectedIndex = 0
+		End If
 		Me.comboBoxNetworkCards.DataSource = Nothing
 		Me.tabControl1.SelectedIndex = 0
 		'*** IP SETTINGS ***
