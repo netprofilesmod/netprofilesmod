@@ -81,7 +81,6 @@ Partial Class MainForm
 		Me.languageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.toolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator()
 		Me.customizeDesktopShortcutsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-		Me.reloadNetworkInterfacesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.reloadProfilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.helpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.netProfilesWebsiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -205,7 +204,7 @@ Partial Class MainForm
 		'
 		'optionsToolStripMenuItem
 		'
-		Me.optionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toggleToolbarTextToolStripMenuItem, Me.minimizeToTrayOnCloseToolStripMenuItem, Me.minimizeToTrayOnStartupToolStripMenuItem, Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem, Me.screenResolutionToolStripMenuItem, Me.runWhenILogInToWindowsToolStripMenuItem, Me.toolStripSeparator9, Me.languageToolStripMenuItem, Me.toolStripSeparator11, Me.customizeDesktopShortcutsToolStripMenuItem, Me.reloadNetworkInterfacesToolStripMenuItem, Me.reloadProfilesToolStripMenuItem})
+		Me.optionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toggleToolbarTextToolStripMenuItem, Me.minimizeToTrayOnCloseToolStripMenuItem, Me.minimizeToTrayOnStartupToolStripMenuItem, Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem, Me.screenResolutionToolStripMenuItem, Me.runWhenILogInToWindowsToolStripMenuItem, Me.toolStripSeparator9, Me.languageToolStripMenuItem, Me.toolStripSeparator11, Me.customizeDesktopShortcutsToolStripMenuItem, Me.reloadProfilesToolStripMenuItem})
 		Me.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem"
 		resources.ApplyResources(Me.optionsToolStripMenuItem, "optionsToolStripMenuItem")
 		'
@@ -285,11 +284,6 @@ Partial Class MainForm
 		resources.ApplyResources(Me.customizeDesktopShortcutsToolStripMenuItem, "customizeDesktopShortcutsToolStripMenuItem")
 		Me.customizeDesktopShortcutsToolStripMenuItem.Name = "customizeDesktopShortcutsToolStripMenuItem"
 		'
-		'reloadNetworkInterfacesToolStripMenuItem
-		'
-		resources.ApplyResources(Me.reloadNetworkInterfacesToolStripMenuItem, "reloadNetworkInterfacesToolStripMenuItem")
-		Me.reloadNetworkInterfacesToolStripMenuItem.Name = "reloadNetworkInterfacesToolStripMenuItem"
-		'
 		'reloadProfilesToolStripMenuItem
 		'
 		resources.ApplyResources(Me.reloadProfilesToolStripMenuItem, "reloadProfilesToolStripMenuItem")
@@ -318,8 +312,8 @@ Partial Class MainForm
 		'
 		'toolStripMain
 		'
-		Me.toolStripMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStripButtonNewProfile, Me.toolStripSeparator10, Me.toolStripButtonApplyProfile, Me.toolStripSeparator2, Me.toolStripButtonCopyProfile, Me.toolStripButtonEditProfile, Me.toolStripButtonDeleteProfile})
 		resources.ApplyResources(Me.toolStripMain, "toolStripMain")
+		Me.toolStripMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStripButtonNewProfile, Me.toolStripSeparator10, Me.toolStripButtonApplyProfile, Me.toolStripSeparator2, Me.toolStripButtonCopyProfile, Me.toolStripButtonEditProfile, Me.toolStripButtonDeleteProfile})
 		Me.toolStripMain.Name = "toolStripMain"
 		'
 		'toolStripButtonNewProfile
@@ -544,7 +538,6 @@ Partial Class MainForm
 	Private WithEvents activateOnDifferentNetworkCardToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents createDesktopShortcutToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents reloadProfilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Private WithEvents reloadNetworkInterfacesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents customizeDesktopShortcutsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private toolStripSeparator9 As System.Windows.Forms.ToolStripSeparator
 	Private toolStripSeparator8 As System.Windows.Forms.ToolStripSeparator

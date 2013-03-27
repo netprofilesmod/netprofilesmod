@@ -6,6 +6,7 @@ ClearFirefox-Messagebox-1
 ClearFirefox-Messagebox-2
 labelPort
 ProfileSettings/labelWirelessVista
+/Language/MainForm/reloadNetworkInterfacesToolStripMenuItem
 
 Missing Translations:
 labelDNSSuffix

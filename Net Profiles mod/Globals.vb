@@ -246,22 +246,20 @@ Public Module Globals
 			Dim searcher As New ManagementObjectSearcher( _
 				"root\CIMV2", _
 				"SELECT * FROM Win32_NetworkAdapter WHERE MACAddress = '" & ThisInterface.Replace("-",":") & "'") 
-'
+			
 			For Each queryObj As ManagementObject in searcher.Get()
 				Application.DoEvents
-                Return CStr(queryObj("NetConnectionID"))
+				Return CStr(queryObj("NetConnectionID"))
 			Next
 		Catch err As ManagementException
-
+			
 		End Try
 				
 		Return ""
 	End Function
 	
-	Public Sub PopulateNetworkCardArray
-		NetworkCardList.Clear
-		MainForm.toolStripMain.Enabled = False
-		MainForm.fileToolStripMenuItem.Enabled = False
+	Public Function PopulateNetworkCardArray() As ArrayList
+		Dim NetworkAdapters As New ArrayList()
 		Dim MACAddresses As String = ""
 		Dim NetworkInterfaceName As String
 		Try
@@ -269,52 +267,44 @@ Public Module Globals
 				"root\CIMV2", _
 				"SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled = True")
 			
-			' potofcoffee:
-			' tried to patch for issue 1 here
-			' (Ref: http://code.google.com/p/netprofiles/issues/detail?id=1)
-			' 
-			' For some reason, sometimes queryObj doesn't seem to be a valid object
-			' probably depends on some specific configurations, but why not check for
-			' queryObj being something else than "Nothing" ?
 			For Each queryObj As ManagementObject in searcher.Get()
-     			Application.DoEvents
-     			
-     			' check goes here:
-     			If not (queryobj Is Nothing) Then 
-     				' looking good? Then back to the original code ...
-                    If Not MACAddresses.Contains(CStr(queryObj("MACAddress"))) Then
-                        NetworkInterfaceName = ""
-                        NetworkInterfaceName = GetInterfaceName(CStr(queryObj("MACAddress")))
-
-                        ' Implementing ivan.hrehor's solution from
-                        ' http://code.google.com/p/netprofiles/issues/detail?id=1#c18
-                        If NetworkInterfaceName Is Nothing Then
-                            NetworkInterfaceName = GetNetworkInstanceName(CStr(queryObj("MACAddress").Replace("-", ":")))
-                        ElseIf NetworkInterfaceName.Trim().Length = 0 Then
-                            NetworkInterfaceName = GetNetworkInstanceName(CStr(queryObj("MACAddress").Replace("-", ":")))
-                        End If
-                        NetworkCardList.Add(New DictionaryEntry(queryObj("MACAddress"), NetworkInterfaceName))
-                        MACAddresses = MACAddresses & CStr(queryObj("MACAddress"))
-                    End If
-     			End If
+				Application.DoEvents
+				
+				' For some reason, sometimes queryObj doesn't seem to be a valid object
+				' probably depends on some specific configurations, but why not check for
+				' queryObj being something else than "Nothing" ?
+				If not (queryobj Is Nothing) Then 
+					If Not MACAddresses.Contains(CStr(queryObj("MACAddress"))) Then
+						NetworkInterfaceName = ""
+						NetworkInterfaceName = GetInterfaceName(CStr(queryObj("MACAddress")))
+						
+						If NetworkInterfaceName Is Nothing Then
+							NetworkInterfaceName = GetNetworkInstanceName(CStr(queryObj("MACAddress").Replace("-", ":")))
+						ElseIf NetworkInterfaceName.Trim().Length = 0 Then
+							NetworkInterfaceName = GetNetworkInstanceName(CStr(queryObj("MACAddress").Replace("-", ":")))
+						End If
+						NetworkAdapters.Add(New DictionaryEntry(queryObj("MACAddress"), NetworkInterfaceName))
+						MACAddresses = MACAddresses & CStr(queryObj("MACAddress"))
+					End If
+				End If
 			Next
 			
-            Catch err As ManagementException
-                'Nothing
+		Catch err As ManagementException
+				
 		End Try
-		MainForm.toolStripMain.Enabled = True
-		MainForm.fileToolStripMenuItem.Enabled = True
-	End Sub
-
+		
+		Return NetworkAdapters
+	End Function
+	
 	Public Function GetDefaultPrinter As String
 		Try
 			Dim searcher As New ManagementObjectSearcher( _
 				"root\CIMV2", _
 				"SELECT * FROM Win32_Printer WHERE Default = True") 
-'
+			
 			For Each queryObj As ManagementObject in searcher.Get()
 				Application.DoEvents
-                Return CStr(queryObj("Name"))
+				Return CStr(queryObj("Name"))
 			Next
 		Catch err As ManagementException
 			Return ""

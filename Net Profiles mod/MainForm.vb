@@ -88,6 +88,7 @@ Public Partial Class MainForm
 	Public CheckForUpdates_Error_1 As String
 	Public CheckForUpdates_Error_2 As String
 	Private messageBoxManager1 As MessageBoxManager
+	Private SilentAdapterUpdate As Boolean = False
 	
 	
 	Sub MainFormLoad(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
@@ -108,6 +109,8 @@ Public Partial Class MainForm
             End Select
         End If
         'TODO: Replace Microsoft.VisualBasic
+        'TODO: The profiles folder is created by the installer with limited rights for users. If it is missing, maybe a
+        '      dialog to run the installer again should be displayed and the application should exit
         If Dir(ProfilesFolder, Microsoft.VisualBasic.FileAttribute.Directory) = "" Then
             MkDir((ProfilesFolder))
         End If
@@ -231,7 +234,6 @@ Public Partial Class MainForm
         lang.SetText(Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Text, "confirmSettingsAfterChangingResolutionToolStripMenuItem")
         lang.SetText(Me.runWhenILogInToWindowsToolStripMenuItem.Text, "runWhenILogInToWindowsToolStripMenuItem")
         lang.SetText(Me.customizeDesktopShortcutsToolStripMenuItem.Text, "customizeDesktopShortcutsToolStripMenuItem")
-        lang.SetText(Me.reloadNetworkInterfacesToolStripMenuItem.Text, "reloadNetworkInterfacesToolStripMenuItem")
         lang.SetText(Me.reloadProfilesToolStripMenuItem.Text, "reloadProfilesToolStripMenuItem")
         lang.SetText(Me.helpToolStripMenuItem.Text, "helpToolStripMenuItem")
         lang.SetText(Me.netProfilesWebsiteToolStripMenuItem.Text, "netProfilesWebsiteToolStripMenuItem", "%1", ProgramName)
@@ -433,23 +435,53 @@ Public Partial Class MainForm
 		End If
 	End Sub
 	
-    Sub TimerLoadTick(ByVal sender As Object, ByVal e As EventArgs) Handles timerLoad.Tick
-        Me.timerLoad.Enabled = False
-        Me.toolStripProgressBar1.Enabled = True
-        Me.toolStripProgressBar1.Visible = True
-        Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking_Preloading
-        Me.toolStripStatusLabelWorking.Visible = True
-        Call PopulateNetworkCardArray()
-        Call RefreshProfiles()
-        If Me.listViewProfiles.Items.Count = 0 Then
-            Dim YNResult As Object
-            YNResult = MessageBox.Show(Me.NoNetworkProfilesMessageBox_1 & vbCrLf & Me.NoNetworkProfilesMessageBox_2, ProgramName, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If YNResult = DialogResult.Yes Then
-                CreatingNewProfile = True
-                ProfileSettings.ShowDialog()
-            End If
-        End If
-    End Sub
+	Sub TimerLoadTick(ByVal sender As Object, ByVal e As EventArgs) Handles timerLoad.Tick
+		Me.timerLoad.Enabled = False
+		If Not Me.SilentAdapterUpdate Then
+			Me.toolStripProgressBar1.Enabled = True
+			Me.toolStripProgressBar1.Visible = True
+			Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking_Preloading
+			Me.toolStripStatusLabelWorking.Visible = True
+			
+			NetworkCardList = PopulateNetworkCardArray()
+			RefreshProfiles()
+			Me.toolStripMain.Enabled = True
+			Me.toolStripMenuItemNewProfile.Enabled = True
+			
+			If Me.listViewProfiles.Items.Count = 0 Then
+				Dim YNResult As Object
+				YNResult = MessageBox.Show(Me.NoNetworkProfilesMessageBox_1 & vbCrLf & Me.NoNetworkProfilesMessageBox_2, ProgramName, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+				If YNResult = DialogResult.Yes Then
+					CreatingNewProfile = True
+					ProfileSettings.ShowDialog()
+				End If
+			End If
+			
+			' Now prepare for scanning changed adapters silently in the background
+			Me.SilentAdapterUpdate = True
+			Me.timerLoad.Interval = 1000
+		Else
+			Dim CurrentAdapters As ArrayList = PopulateNetworkCardArray()
+			Dim AdaptersChanged As Boolean
+			If CurrentAdapters.Count = NetworkCardList.Count Then
+				AdaptersChanged = False
+				For i As Integer = 0 To CurrentAdapters.Count - 1
+					If Not (CStr(CurrentAdapters(i).Key) = CStr(NetworkCardList(i).Key) And CStr(CurrentAdapters(i).Value) = CStr(NetworkCardList(i).Value)) Then
+						AdaptersChanged = True
+						Exit For
+					End If
+				Next
+			Else
+				AdaptersChanged = True
+			End If
+			If AdaptersChanged Then
+				NetworkCardList = CurrentAdapters
+				RefreshProfiles()
+			End If
+		End If
+		
+		Me.timerLoad.Enabled = True
+	End Sub
 	
 	Public Sub RefreshProfiles
 		Me.toolStripProgressBar1.Enabled = True
@@ -1042,17 +1074,6 @@ Public Partial Class MainForm
 	
     Sub CustomizeDesktopShortcutsToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles customizeDesktopShortcutsToolStripMenuItem.Click
         DesktopShortcut.ShowDialog()
-    End Sub
-	
-    Sub ReloadNetworkInterfacesToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles reloadNetworkInterfacesToolStripMenuItem.Click
-        Me.toolStripProgressBar1.Enabled = True
-        Me.toolStripProgressBar1.Visible = True
-        Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking_Reloading
-        Me.toolStripStatusLabelWorking.Visible = True
-        Call PopulateNetworkCardArray()
-        Me.toolStripProgressBar1.Visible = False
-        Me.toolStripProgressBar1.Enabled = False
-        Me.toolStripStatusLabelWorking.Visible = False
     End Sub
 	
     Sub ReloadProfilesToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles reloadProfilesToolStripMenuItem.Click
