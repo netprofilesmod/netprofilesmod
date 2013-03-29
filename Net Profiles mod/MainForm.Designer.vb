@@ -312,8 +312,8 @@ Partial Class MainForm
 		'
 		'toolStripMain
 		'
-		resources.ApplyResources(Me.toolStripMain, "toolStripMain")
 		Me.toolStripMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStripButtonNewProfile, Me.toolStripSeparator10, Me.toolStripButtonApplyProfile, Me.toolStripSeparator2, Me.toolStripButtonCopyProfile, Me.toolStripButtonEditProfile, Me.toolStripButtonDeleteProfile})
+		resources.ApplyResources(Me.toolStripMain, "toolStripMain")
 		Me.toolStripMain.Name = "toolStripMain"
 		'
 		'toolStripButtonNewProfile

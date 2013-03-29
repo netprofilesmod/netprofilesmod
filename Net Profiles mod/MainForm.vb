@@ -445,8 +445,6 @@ Public Partial Class MainForm
 			
 			NetworkCardList = PopulateNetworkCardArray()
 			RefreshProfiles()
-			Me.toolStripMain.Enabled = True
-			Me.toolStripMenuItemNewProfile.Enabled = True
 			
 			If Me.listViewProfiles.Items.Count = 0 Then
 				Dim YNResult As Object
