@@ -13,6 +13,7 @@ labelDNSSuffix
 labelExceptions
 /Language/Misc/FirefoxSettings-ConfirmPrompt-Title
 /Language/Misc/FirefoxSettings-ConfirmPrompt-Message
+ProfileSettings/noConnectedAdapter
 
 Translation only updated in en-us.xml:
 checkBoxBypassProxy

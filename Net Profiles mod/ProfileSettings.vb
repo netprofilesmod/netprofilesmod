@@ -43,6 +43,7 @@ Public Partial Class ProfileSettings
 	Public labelWorking_Profile As String
 	Public labelWorking_Printer As String
 	Public ProfileName_Messagebox As String
+	Public noConnectedAdapter As String = "No connected network card detected"
 	
 	Sub ButtonCloseClick(ByVal sender As Object, ByVal e As EventArgs)
 		'Me.Dispose
@@ -126,6 +127,7 @@ Public Partial Class ProfileSettings
 		lang.SetText(Me.ProfileName_Messagebox, "ProfileName-Messagebox")
 		lang.SetText(Me.checkBoxBypassProxyForLocalAddresses.Text, "checkBoxBypassProxy")
 		lang.SetText(Me.groupBoxAutoConfigAddress.Text, "groupBoxAutoConfigAddress")
+		lang.SetText(Me.noConnectedAdapter, "noConnectedAdapter")
 	End Sub
 	
 	Public Sub PopulateNetworkCards()
@@ -446,6 +448,13 @@ Public Partial Class ProfileSettings
 	
 	Sub Timer1Tick(ByVal sender As Object, ByVal e As EventArgs)
 		Me.timer1.Enabled = False
+		If NetworkCardList.Count = 0 Then
+			Me.progressBar1.Visible = False
+			Me.progressBar1.Enabled = False
+			Me.labelWorking.Visible = False
+			MessageBox.Show(Me.noConnectedAdapter, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+			Me.Close()
+		End if
 		Call PopulateNetworkCards
 		
 		Me.progressBar1.Visible = True
