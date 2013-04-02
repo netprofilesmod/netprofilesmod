@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>WinExe</OutputType>
     <MyType>WindowsForms</MyType>
-    <RootNamespace>Net_Profiles</RootNamespace>
+    <RootNamespace>NetProfilesMod</RootNamespace>
     <AssemblyName>Net Profiles mod</AssemblyName>
     <ApplicationIcon>icons\netprofiles4.ico</ApplicationIcon>
     <FileUpgradeFlags>
@@ -45,6 +45,7 @@
     <DelaySign>False</DelaySign>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <RunCodeAnalysis>False</RunCodeAnalysis>
+    <StartupObject>NetProfilesMod.My.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
