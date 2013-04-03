@@ -61,6 +61,7 @@ Public Module Globals
 	Public AutoConnectProfile As New ArrayList()
 	Public AutoConnectMACAddress As New ArrayList()
 	Public SSIDi As Integer
+	Dim wlan As WlanClient = Nothing
 	
 	Public BrowseNetworkShare_Title As String
 	
@@ -437,13 +438,13 @@ Public Module Globals
 		End If
 	End Function
 	
-	
-	Dim wlan As New WlanClient()	
-	
 	Public Sub GetConnectedSSIDs()
 		Dim osInfo As System.OperatingSystem = System.Environment.OSVersion
 		' On Vista and newer use the Managed Wifi API to detect the connected SSIDs, on XP use WMI
 		If osInfo.Version.Major >= 6 Then
+			If IsNothing(wlan) Then
+				wlan = New WlanClient()
+			End If
 			CurrentWirelessSSID = ""
 			CurrentWirelessName = ""
 			Try
