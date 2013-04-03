@@ -26,29 +26,47 @@
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
 
-'TODO: Replace Microsoft.VisualBasic
 Imports Microsoft.VisualBasic.ApplicationServices
-Imports AppModule.Globals
 
 Namespace My
 	Module Program
-		 ' For using Sub Main, Windows Forms entry points has to be marked with StaThread
+		
+		Class AppMain
+			Inherits WindowsFormsApplicationBase
+			
+			Public Sub New()
+				MyBase.New(AuthenticationMode.Windows)
+				Me.IsSingleInstance = False
+				Me.SaveMySettingsOnExit = False
+				Me.MainForm = My.Forms.MainForm
+				Me.ShutdownStyle = ShutdownMode.AfterMainFormCloses
+			End Sub
+		End Class
+		
+		
+		' For using Sub Main, Windows Forms entry points has to be marked with StaThread
 		<STAThread()> _
 		Sub Main()
+			' Only in Main() it's early enough to set the unhandled exception mode to catch all exceptions.
 			' Main() is only used if NetProfilesMod.My.Program is set as startup object in project options.
-			' Only in Main() it's early enough to set the unhandled exception.
 			
-			' The unhandled exception mode is set to handle all exceptions by the application.
+			System.Windows.Forms.Application.EnableVisualStyles()
+			System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(False)
+			
+			' Set the unhandled exception mode to handle all Windows Forms errors by the application.
+			' Otherwise some exceptions (for example in MainFormLoad()) are not catched if running with the debugger
+			' attached, but a .NET Framework exception dialog will be shown if run without the debugger.
 			System.Windows.Forms.Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException)
 			
 			If Not Debugger.IsAttached Then
 				' Adding an event handler for handling non-UI thread exceptions to prevent displaying the message
 				' "Net Profiles mod has stopped working" that delivers no information about the source of the problem
 				' for the user.
-				AddHandler System.AppDomain.CurrentDomain.UnhandledException, AddressOf MyUnhandledExceptionHandler
+				AddHandler System.AppDomain.CurrentDomain.UnhandledException, AddressOf UnhandledExceptionHandler
+				
+				' Add an event handler for handling UI thread exceptions (for example raised in MainFormLoad())
+				AddHandler System.Windows.Forms.Application.ThreadException, AddressOf ThreadExceptionHandler
 			End If
-			' All other exceptions will should be displayed with detailed informations by the .NET Framework Exceptions
-			' dialog and don't need a handler
 			
 			Dim CommandLineArgs As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = My.Application.CommandLineArgs
 			If CommandLineArgs.Count > 0 Then
@@ -61,35 +79,24 @@ Namespace My
 						FileopDelete(CommandLineArgs(2))
 					End If
 					'TODO: Return an exit code
-				Else
-					System.Windows.Forms.Application.EnableVisualStyles()
-					System.Windows.Forms.Application.Run(New MainForm)
+					Exit Sub
 				End If
-			Else
-				System.Windows.Forms.Application.EnableVisualStyles()
-				System.Windows.Forms.Application.Run(New MainForm)
 			End If
+			
+			Dim app As New AppMain()
+			app.Run(New String(0) {})
 		End Sub
 		
-		Sub MyUnhandledExceptionHandler(ByVal sender As Object, ByVal e As System.UnhandledExceptionEventArgs)
+		Sub UnhandledExceptionHandler(ByVal sender As Object, ByVal e As System.UnhandledExceptionEventArgs)
+			'TODO: Diplay the exception in a text box that allows to copy the message
 			MessageBox.Show(e.ExceptionObject.ToString(), "Non-UI Thread Exception", MessageBoxButtons.OK, MessageBoxIcon.Stop)
 			End
 		End Sub
 		
-		Sub MyThreadExceptionHandler(ByVal sender As Object, ByVal e As System.Threading.ThreadExceptionEventArgs)
+		Sub ThreadExceptionHandler(ByVal sender As Object, ByVal e As System.Threading.ThreadExceptionEventArgs)
+			'TODO: Diplay the exception in a text box that allows to copy the message
 			MessageBox.Show(e.Exception.ToString(), "UI Thread Exception", MessageBoxButtons.OK, MessageBoxIcon.Stop)
 			End
 		End Sub
 	End Module
-	
-	' This file controls the behaviour of the application.
-	Partial Class MyApplication
-		Public Sub New()
-			MyBase.New(AuthenticationMode.Windows)
-			Me.IsSingleInstance = False
-			Me.EnableVisualStyles = True
-			Me.SaveMySettingsOnExit = False ' MySettings are not supported in SharpDevelop.
-			Me.ShutDownStyle = ShutdownMode.AfterMainFormCloses
-		End Sub
-	End Class
 End Namespace
