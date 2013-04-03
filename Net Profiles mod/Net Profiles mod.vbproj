@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>WinExe</OutputType>
     <MyType>WindowsForms</MyType>
-    <RootNamespace>Net_Profiles</RootNamespace>
+    <RootNamespace>NetProfilesMod</RootNamespace>
     <AssemblyName>Net Profiles mod</AssemblyName>
     <ApplicationIcon>icons\netprofiles4.ico</ApplicationIcon>
     <FileUpgradeFlags>
@@ -45,6 +45,7 @@
     <DelaySign>False</DelaySign>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <RunCodeAnalysis>False</RunCodeAnalysis>
+    <StartupObject>NetProfilesMod.My.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -295,6 +296,10 @@
     <ProjectReference Include="..\AppModule.NamedPipes\AppModule.NamedPipes.csproj">
       <Project>{077B53BB-404A-4B2F-BA17-AAE98C5E9C66}</Project>
       <Name>AppModule.NamedPipes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ManagedWifi\ManagedWifi.csproj">
+      <Project>{6AA425C9-EA6A-4B01-AAED-5FF122E8B663}</Project>
+      <Name>ManagedWifi</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -31,6 +31,7 @@ Imports Microsoft.Win32
 Imports System.Management
 Imports System.Drawing.Imaging
 Imports AppModule.Globals
+Imports NativeWifi
 
 Public Module Globals
 	Public CurrentLang As String = "en-US"
@@ -60,6 +61,7 @@ Public Module Globals
 	Public AutoConnectProfile As New ArrayList()
 	Public AutoConnectMACAddress As New ArrayList()
 	Public SSIDi As Integer
+	Dim wlan As WlanClient = Nothing
 	
 	Public BrowseNetworkShare_Title As String
 	
@@ -424,58 +426,78 @@ Public Module Globals
 			' not even found: this can't be a physical adapter
 			return false
 		End If
-    End Function
-    
-    Public Sub GetConnectedSSIDs()
-		 Try
-			Dim searcher As New ManagementObjectSearcher( _
-				"\root\wmi", _
-				"Select * from MSNdis_80211_ServiceSetIdentifier Where active=true") 
-
+	End Function
+	
+	Public Sub GetConnectedSSIDs()
+		Dim osInfo As System.OperatingSystem = System.Environment.OSVersion
+		' On Vista and newer use the Managed Wifi API to detect the connected SSIDs, on XP use WMI
+		If osInfo.Version.Major >= 6 Then
+			If IsNothing(wlan) Then
+				wlan = New WlanClient()
+			End If
 			CurrentWirelessSSID = ""
 			CurrentWirelessName = ""
-			Dim TheID As String = ""
-			Dim TheName As String = ""
-			For Each queryObj As ManagementObject in searcher.Get()
-				Dim i As Integer
-				Dim ThisName As String = ""
-                For i = 0 To CInt(queryObj("Ndis80211SsId")(0))
-                    TheID = TheID & Chr(CInt(queryObj("Ndis80211SsId")(i + 4)))
-                Next
-                TheName = CStr(queryObj("InstanceName"))
-      			
-      			' potofcoffee:
-      			' the problem is right here: Not all "Packet Schedulers" identify by that
-      			' name, especially on non-English systems. For now, I added to more keywords
-      			' to check, but:
-      			' Is there a way to find out whether an object is a real card or a packet 
-      			' scheduler?
-      			
-'                If Not (TheName.Contains("Packet Scheduler") _
-'                		Or TheName.Contains("Miniport") _
-'                	    Or TheName.Contains("Paketplaner")) Then
-                if isPhysicalAdapter(TheName) then 
-                    'MessageBox.Show(TheID.Length.ToString)
-                    CurrentWirelessSSID = TheID.Substring(0, TheID.Length - 1)
-                    'MessageBox.Show(CurrentWirelessSSID.Length.ToString)
-                    CurrentWirelessName = TheName.ToString 
-                    
-                    If CurrentWirelessSSID.Length > 0 Then
-                        Call CompareWirelessSSID()
-                    Else
-                        CurrentWirelessSSID = ""
-                        CurrentWirelessName = ""
-                        LastWirelessSSID = ""
-                        LastWirelessName = ""
-                    End If
-                End If
-			Next
-		Catch err As ManagementException
-			CurrentWirelessSSID = ""
-			CurrentWirelessName = ""
-			LastWirelessSSID = ""
-			LastWirelessName = ""
-		End Try
+			Try
+				For Each wlanInterface As WlanClient.WlanInterface In wlan.Interfaces
+					If wlanInterface.InterfaceState = NativeWifi.Wlan.WlanInterfaceState.Connected Then
+						Dim ssid As Wlan.Dot11Ssid  = wlanInterface.CurrentConnection.wlanAssociationAttributes.dot11Ssid
+						CurrentWirelessSSID = System.Text.Encoding.ASCII.GetChars(ssid.SSID, 0, Convert.ToInt32(ssid.SSIDLength))
+						CurrentWirelessName = wlanInterface.InterfaceDescription
+						If CurrentWirelessSSID.Length > 0 Then
+							Call CompareWirelessSSID()
+						Else
+							CurrentWirelessSSID = ""
+							CurrentWirelessName = ""
+							LastWirelessSSID = ""
+							LastWirelessName = ""
+						End If
+					End If
+				Next
+			Catch
+				CurrentWirelessSSID = ""
+				CurrentWirelessName = ""
+				LastWirelessSSID = ""
+				LastWirelessName = ""
+			End Try
+		Else
+			Try
+				Dim searcher As New ManagementObjectSearcher( _
+					"\root\wmi", _
+					"Select * from MSNdis_80211_ServiceSetIdentifier Where active=true") 
+				
+				CurrentWirelessSSID = ""
+				CurrentWirelessName = ""
+				Dim TheID As String = ""
+				Dim TheName As String = ""
+				For Each queryObj As ManagementObject in searcher.Get()
+					Dim i As Integer
+					Dim ThisName As String = ""
+					For i = 0 To CInt(queryObj("Ndis80211SsId")(0))
+						TheID = TheID & Chr(CInt(queryObj("Ndis80211SsId")(i + 4)))
+					Next
+					TheName = CStr(queryObj("InstanceName"))
+					
+					if isPhysicalAdapter(TheName) then 
+						CurrentWirelessSSID = TheID.Substring(0, TheID.Length - 1)
+						CurrentWirelessName = TheName.ToString 
+						
+						If CurrentWirelessSSID.Length > 0 Then
+							Call CompareWirelessSSID()
+						Else
+							CurrentWirelessSSID = ""
+							CurrentWirelessName = ""
+							LastWirelessSSID = ""
+							LastWirelessName = ""
+						End If
+					End If
+				Next
+			Catch err As ManagementException
+				CurrentWirelessSSID = ""
+				CurrentWirelessName = ""
+				LastWirelessSSID = ""
+				LastWirelessName = ""
+			End Try
+		End If
 	End Sub
 	
 	Public Sub CompareWirelessSSID()
