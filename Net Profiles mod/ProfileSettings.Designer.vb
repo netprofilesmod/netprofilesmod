@@ -801,11 +801,13 @@ Partial Class ProfileSettings
 		'
 		resources.ApplyResources(Me.textBoxServerAddress, "textBoxServerAddress")
 		Me.textBoxServerAddress.Name = "textBoxServerAddress"
+		Me.toolTip1.SetToolTip(Me.textBoxServerAddress, resources.GetString("textBoxServerAddress.ToolTip"))
 		'
 		'labelExceptions
 		'
 		resources.ApplyResources(Me.labelExceptions, "labelExceptions")
 		Me.labelExceptions.Name = "labelExceptions"
+		Me.toolTip1.SetToolTip(Me.labelExceptions, resources.GetString("labelExceptions.ToolTip"))
 		'
 		'labelServerAddress
 		'

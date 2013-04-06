@@ -87,6 +87,9 @@ Public Partial Class ProfileSettings
 		lang.SetText(Me.groupBoxProxy.Text, "groupBoxProxy")
 		Me.groupBoxProxy.Text = "    " & Me.groupBoxProxy.Text
 		lang.SetText(Me.labelServerAddress.Text, "labelServerAddress")
+		lang.SetToolTip(Me.toolTip1, Me.textBoxServerAddress, "textBoxServerAddress-ToolTip")
+		lang.SetText(Me.labelExceptions.Text, "labelExceptions")
+		lang.SetToolTip(Me.toolTip1, Me.textBoxExceptions, "textBoxExceptions-ToolTip")
 		lang.SetText(Me.groupBoxHomepage.Text, "groupBoxHomepage")
 		lang.SetText(Me.buttonUseBlankHomepage.Text, "buttonUseBlankHomepage")
 		lang.SetText(Me.labelHomepageNote.Text, "labelHomepageNote")

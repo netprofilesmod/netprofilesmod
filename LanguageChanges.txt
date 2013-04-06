@@ -1,20 +1,22 @@
 ﻿Obsolete Translations:
-buttonClearFirefox
-buttonClearFirefox-ToolTip
-checkBoxOpera
-ClearFirefox-Messagebox-1
-ClearFirefox-Messagebox-2
-labelPort
+ProfileSettings/buttonClearFirefox
+ProfileSettings/buttonClearFirefox-ToolTip
+ProfileSettings/checkBoxOpera
+ProfileSettings/ClearFirefox-Messagebox-1
+ProfileSettings/ClearFirefox-Messagebox-2
+ProfileSettings/labelPort
 ProfileSettings/labelWirelessVista
-/Language/MainForm/reloadNetworkInterfacesToolStripMenuItem
+MainForm/reloadNetworkInterfacesToolStripMenuItem
 
 Missing Translations:
-labelDNSSuffix
-labelExceptions
-/Language/Misc/FirefoxSettings-ConfirmPrompt-Title
-/Language/Misc/FirefoxSettings-ConfirmPrompt-Message
+ProfileSettings/labelDNSSuffix
+ProfileSettings/textBoxServerAddress-ToolTip
+ProfileSettings/labelExceptions
+ProfileSettings/textBoxExceptions-ToolTip
 ProfileSettings/noConnectedAdapter
+Misc/FirefoxSettings-ConfirmPrompt-Title
+Misc/FirefoxSettings-ConfirmPrompt-Message
 
 Translation only updated in en-us.xml:
-checkBoxBypassProxy
-labelPleaseNote
+ProfileSettings/checkBoxBypassProxy
+ProfileSettings/labelPleaseNote
