@@ -214,7 +214,7 @@ Public Partial Class ProfileSettings
         INIWrite(ThisINIFile, "TCP/IP Settings", "WINS Server", WINSServerEntry)
         
         '*** SAVE DNS SUFFIX ***
-        INIWrite(ThisINIFile, "TCP/IP Settings", "DNS Suffix", Me.textBoxDNSSuffix.Text.Trim)
+        INIWrite(ThisINIFile, "TCP/IP Settings", "DNS Suffix", Me.textBoxDNSSuffix.Text.Replace(" ", ""))
         
         '*** SAVE DHCP ***
         Dim DHCPEntry As String = Me.checkBoxDHCP.Checked.ToString
@@ -244,8 +244,8 @@ Public Partial Class ProfileSettings
 		End If
 		
 		INIWrite(ThisINIFile, "Internet Settings", "UseProxySettings", UseProxyEntry)
-		INIWrite(ThisINIFile, "Internet Settings", "ProxyServerAddress", Me.textBoxServerAddress.Text.Trim)
-		INIWrite(ThisINIFile, "Internet Settings", "ProxyExceptions", Me.textBoxExceptions.Text.Trim)
+		INIWrite(ThisINIFile, "Internet Settings", "ProxyServerAddress", Me.textBoxServerAddress.Text.Replace(" ", "").Replace(",", ";"))
+		INIWrite(ThisINIFile, "Internet Settings", "ProxyExceptions", Me.textBoxExceptions.Text.Replace(" ", "").Replace(",", ";"))
 		INIWrite(ThisINIFile, "Internet Settings", "DefaultHomepage", Me.textBoxDefaultHomepage.Text.Trim)
 		INIWrite(ThisINIFile, "Internet Settings", "InternetExplorer", Me.checkBoxIE.Checked.ToString)
 		INIWrite(ThisINIFile, "Internet Settings", "Firefox", Me.checkBoxFirefox.Checked.ToString)
