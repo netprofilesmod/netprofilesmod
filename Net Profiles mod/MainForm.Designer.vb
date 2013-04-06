@@ -73,6 +73,7 @@ Partial Class MainForm
 		Me.minimizeToTrayOnCloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.minimizeToTrayOnStartupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.dontAskBeforeRestartingFirefoxToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.screenResolutionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.askBeforeChangingResolutionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.confirmSettingsAfterChangingResolutionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -204,7 +205,7 @@ Partial Class MainForm
 		'
 		'optionsToolStripMenuItem
 		'
-		Me.optionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toggleToolbarTextToolStripMenuItem, Me.minimizeToTrayOnCloseToolStripMenuItem, Me.minimizeToTrayOnStartupToolStripMenuItem, Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem, Me.screenResolutionToolStripMenuItem, Me.runWhenILogInToWindowsToolStripMenuItem, Me.toolStripSeparator9, Me.languageToolStripMenuItem, Me.toolStripSeparator11, Me.customizeDesktopShortcutsToolStripMenuItem, Me.reloadProfilesToolStripMenuItem})
+		Me.optionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toggleToolbarTextToolStripMenuItem, Me.minimizeToTrayOnCloseToolStripMenuItem, Me.minimizeToTrayOnStartupToolStripMenuItem, Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem, Me.dontAskBeforeRestartingFirefoxToolStripMenuItem, Me.screenResolutionToolStripMenuItem, Me.runWhenILogInToWindowsToolStripMenuItem, Me.toolStripSeparator9, Me.languageToolStripMenuItem, Me.toolStripSeparator11, Me.customizeDesktopShortcutsToolStripMenuItem, Me.reloadProfilesToolStripMenuItem})
 		Me.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem"
 		resources.ApplyResources(Me.optionsToolStripMenuItem, "optionsToolStripMenuItem")
 		'
@@ -235,6 +236,12 @@ Partial Class MainForm
 		Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.CheckOnClick = true
 		Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Name = "dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem"
 		resources.ApplyResources(Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem, "dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem")
+		'
+		'dontAskBeforeRestartingFirefoxToolStripMenuItem
+		'
+		Me.dontAskBeforeRestartingFirefoxToolStripMenuItem.CheckOnClick = true
+		Me.dontAskBeforeRestartingFirefoxToolStripMenuItem.Name = "dontAskBeforeRestartingFirefoxToolStripMenuItem"
+		resources.ApplyResources(Me.dontAskBeforeRestartingFirefoxToolStripMenuItem, "dontAskBeforeRestartingFirefoxToolStripMenuItem")
 		'
 		'screenResolutionToolStripMenuItem
 		'
@@ -527,6 +534,7 @@ Partial Class MainForm
 	Private WithEvents netProfilesWebsiteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents runWhenILogInToWindowsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+	Public WithEvents dontAskBeforeRestartingFirefoxToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents minimizeToTrayOnStartupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Public WithEvents timerDetectWireless As System.Windows.Forms.Timer
 	Private WithEvents confirmSettingsAfterChangingResolutionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

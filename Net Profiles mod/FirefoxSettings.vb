@@ -240,19 +240,26 @@ Public Class FirefoxSettings
 			MsgBoxManager.LastCheckState = False
 			MsgBoxManager.ShowNextTimeCheck = False
 			MsgBoxManager.ShowTitleCountDown = True
-			MsgBoxManager.TimeOut = 5
+			MsgBoxManager.TimeOut = 10
 			
 			Dim lang As SetLanguage = New SetLanguage("/Language/Misc/")
 			
-			Dim ConfirmPromptTitle As String = lang.GetText("FirefoxSettings-ConfirmPrompt-Title", "Confirm Firefox Restart")
-			Dim ConfirmPromptMessage As String = lang.GetText("FirefoxSettings-ConfirmPrompt-Message", "Would you like to restart Firefox to apply the new settings?")
 			
-			'Confirm Prompt: Returns Yes/No (DialogResult)
-			MsgBoxManager.HookEnabled = True
-			Dim ShowConfirmPrompt As System.Windows.Forms.DialogResult = MessageBox.Show(ConfirmPromptMessage, ConfirmPromptTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
-			MsgBoxManager.HookEnabled = False
+			Dim restartFirefox As System.Windows.Forms.DialogResult
 			
-			If ShowConfirmPrompt = System.Windows.Forms.DialogResult.Yes Then
+			If MainForm.dontAskBeforeRestartingFirefoxToolStripMenuItem.Checked Then
+				restartFirefox = System.Windows.Forms.DialogResult.Yes
+			Else
+				Dim ConfirmPromptTitle As String = lang.GetText("FirefoxSettings-ConfirmPrompt-Title", "Confirm Firefox Restart")
+				Dim ConfirmPromptMessage As String = lang.GetText("FirefoxSettings-ConfirmPrompt-Message", "Would you like to restart Firefox to apply the new proxy settings?")
+				
+				'Confirm Prompt: Returns Yes/No (DialogResult)
+				MsgBoxManager.HookEnabled = True
+				restartFirefox = MessageBox.Show(ConfirmPromptMessage, ConfirmPromptTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+				MsgBoxManager.HookEnabled = False
+			End If
+			
+			If restartFirefox = System.Windows.Forms.DialogResult.Yes Then
 				' Make sure Firefox restores the previous session after killing it (default setting is enabled but set it anyway)
 				Me.ChangeSetting("browser.sessionstore.resume_from_crash", True)
 				

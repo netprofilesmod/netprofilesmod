@@ -159,6 +159,10 @@ Public Partial Class MainForm
         If DoNotConfirmAutoActivate.Equals("True") Then
             Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Checked = True
         End If
+        Dim DoNotConfirmAutoRestartFirefox As String = INIRead(Globals.ProgramINIFile, "Program", "DoNotConfirmAutoRestartFirefox", "False")
+        If DoNotConfirmAutoRestartFirefox.Equals("True") Then
+            Me.dontAskBeforeRestartingFirefoxToolStripMenuItem.Checked = True
+        End If
         If GetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", ProgramName).Length > 0 Then
             Me.runWhenILogInToWindowsToolStripMenuItem.Checked = True
         End If
@@ -229,6 +233,7 @@ Public Partial Class MainForm
         lang.SetText(Me.minimizeToTrayOnCloseToolStripMenuItem.Text, "minimizeToTrayOnCloseToolStripMenuItem")
         lang.SetText(Me.minimizeToTrayOnStartupToolStripMenuItem.Text, "minimizeToTrayOnStartupToolStripMenuItem")
         lang.SetText(Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Text, "dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem")
+        lang.SetText(Me.dontAskBeforeRestartingFirefoxToolStripMenuItem.Text, "dontAskBeforeRestartingFirefoxToolStripMenuItem")
         lang.SetText(Me.screenResolutionToolStripMenuItem.Text, "screenResolutionToolStripMenuItem")
         lang.SetText(Me.askBeforeChangingResolutionToolStripMenuItem.Text, "askBeforeChangingResolutionToolStripMenuItem")
         lang.SetText(Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Text, "confirmSettingsAfterChangingResolutionToolStripMenuItem")
@@ -1118,6 +1123,10 @@ Public Partial Class MainForm
         INIWrite(Globals.ProgramINIFile, "Program", "DoNotConfirmAutoActivate", Me.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Checked.ToString)
     End Sub
 	
+    Sub DontAskBeforeRestartingFirefoxToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles dontAskBeforeRestartingFirefoxToolStripMenuItem.Click
+        INIWrite(Globals.ProgramINIFile, "Program", "DoNotConfirmAutoRestartFirefox", Me.dontAskBeforeRestartingFirefoxToolStripMenuItem.Checked.ToString)
+    End Sub
+    
     Sub RunWhenILogInToWindowsToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles runWhenILogInToWindowsToolStripMenuItem.Click
         If Me.runWhenILogInToWindowsToolStripMenuItem.Checked.Equals(True) Then
             Call SetRegistryKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", ProgramName, Chr(34) & Application.ExecutablePath & Chr(34))
