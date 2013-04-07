@@ -140,12 +140,10 @@ Public Partial Class MainForm
         End If
         Dim AskBeforeChangingResolution As String = INIRead(Globals.ProgramINIFile, "Program", "AskBeforeChangingResolution", "True")
         If AskBeforeChangingResolution.Equals("False") Then
-            Globals.AskBeforeChangingResolution = False
             Me.askBeforeChangingResolutionToolStripMenuItem.Checked = False
         End If
         Dim AskAfterChangingResolution As String = INIRead(Globals.ProgramINIFile, "Program", "AskAfterChangingResolution", "True")
         If AskAfterChangingResolution.Equals("False") Then
-            Globals.AskAfterChangingResolution = False
             Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked = False
         End If
         Dim ToTrayOnStartup As String = INIRead(Globals.ProgramINIFile, "Program", "ToTrayOnStartup", "False")
@@ -904,8 +902,8 @@ Public Partial Class MainForm
         Me.messageBoxManager1.HookEnabled = True
         Dim NewDisplayResolution As String = INIRead(ThisProfile, "Desktop", "ScreenResolution", "")
         Dim NewColorQuality As String = INIRead(ThisProfile, "Desktop", "ColorQuality", "")
-        cScreen.bConfimPrompt = Globals.AskBeforeChangingResolution
-        cScreen.bRevertPrompt = Globals.AskAfterChangingResolution
+        cScreen.bConfimPrompt = Me.askBeforeChangingResolutionToolStripMenuItem.Checked
+        cScreen.bRevertPrompt = Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked
         cScreen.bValidate = True
         If NewDisplayResolution.Length > 0 And NewColorQuality.Length > 0 Then
             Dim ResArray() As String = NewDisplayResolution.Split(System.Convert.ToChar(" "))
@@ -1100,12 +1098,10 @@ Public Partial Class MainForm
     End Sub
 	
     Sub AskBeforeChangingResolutionToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles askBeforeChangingResolutionToolStripMenuItem.Click
-        Globals.AskBeforeChangingResolution = Me.askBeforeChangingResolutionToolStripMenuItem.Checked
         INIWrite(Globals.ProgramINIFile, "Program", "AskBeforeChangingResolution", Me.askBeforeChangingResolutionToolStripMenuItem.Checked.ToString)
     End Sub
 	
     Sub ConfirmSettingsAfterChangingResolutionToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles confirmSettingsAfterChangingResolutionToolStripMenuItem.Click
-        Globals.AskAfterChangingResolution = Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked
         INIWrite(Globals.ProgramINIFile, "Program", "AskAfterChangingResolution", Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked.ToString)
     End Sub
 	

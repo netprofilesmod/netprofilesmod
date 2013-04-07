@@ -45,13 +45,10 @@ Public Module Globals
 	Public commandArray() As String
 	Public EnableLoadTimer As Boolean = True
 	Public INIAutoLoad As String
-	'Public NetworkCardList As New System.Collections.HashTable()
 	Public NetworkCardList As New ArrayList()
 	Public RunFromTaskTray As Boolean = False
 	Public cScreen As New clsScreenRes
 	Private bStandardResOnly As Boolean = True
-	Public AskBeforeChangingResolution As Boolean = True
-	Public AskAfterChangingResolution As Boolean = True
 	
 	Public CurrentWirelessSSID As String = ""
 	Public CurrentWirelessName As String = ""
@@ -511,9 +508,8 @@ Public Module Globals
 			'Next
 			For i = 0 To AutoConnectSSID.Count - 1
 				If GetNetworkInstanceName(AutoConnectMACAddress(i).ToString).ToLower = CurrentWirelessName.ToLower And AutoConnectSSID(i).ToString.ToLower = CurrentWirelessSSID.ToLower Then
-                    Dim ProfileName As String = INIRead(CStr(AutoConnectProfile(i)), "General", "Name", "[No Name]")
-					Dim DoNotConfirmAutoActivate As String = INIRead(ProgramINIFile, "Program", "DoNotConfirmAutoActivate", "False")
-					If DoNotConfirmAutoActivate.Equals("True") Then
+					Dim ProfileName As String = INIRead(CStr(AutoConnectProfile(i)), "General", "Name", "[No Name]")
+					If MainForm.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Checked Then
 						Globals.INIAutoLoad = AutoConnectProfile(i).ToString
 						AutoActivate.Show
 					Else
@@ -521,12 +517,6 @@ Public Module Globals
 						WirelessDetected.labelSSID.Text = CurrentWirelessSSID.ToString
 						WirelessDetected.labelProfile.Text = ProfileName
 						WirelessDetected.Show
-						'Dim YNResult As Object
-						'YNResult = MessageBox.Show("You are connected to " & CurrentWirelessSSID.ToString & "." & vbCrLf & "Would you like to activate the " & ProfileName & " profile?", Globals.ProgramName & " - Wireless Network Detected", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-						'If YNResult = System.Windows.Forms.DialogResult.Yes Then
-						'	Globals.INIAutoLoad = AutoConnectProfile(i).ToString
-						'	AutoActivate.Show
-						'End If
 					End If
 				End If
 			Next

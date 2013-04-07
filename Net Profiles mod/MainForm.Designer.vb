@@ -533,12 +533,12 @@ Partial Class MainForm
 	Private optionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents netProfilesWebsiteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents runWhenILogInToWindowsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Private WithEvents dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+	Public WithEvents dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Public WithEvents dontAskBeforeRestartingFirefoxToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents minimizeToTrayOnStartupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Public WithEvents timerDetectWireless As System.Windows.Forms.Timer
-	Private WithEvents confirmSettingsAfterChangingResolutionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Private WithEvents askBeforeChangingResolutionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+	Public WithEvents confirmSettingsAfterChangingResolutionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+	Public WithEvents askBeforeChangingResolutionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private screenResolutionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Public pictureBoxWallpaper As System.Windows.Forms.PictureBox
 	Private toolStripSeparator10 As System.Windows.Forms.ToolStripSeparator
