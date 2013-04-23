@@ -900,30 +900,62 @@ Public Partial Class MainForm
 
         '*** START DISPLAY SETTINGS ***
         Me.messageBoxManager1.HookEnabled = True
-        Dim NewDisplayResolution As String = INIRead(ThisProfile, "Desktop", "ScreenResolution", "")
-        Dim NewColorQuality As String = INIRead(ThisProfile, "Desktop", "ColorQuality", "")
-        cScreen.bConfimPrompt = Me.askBeforeChangingResolutionToolStripMenuItem.Checked
-        cScreen.bRevertPrompt = Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked
-        cScreen.bValidate = True
-        If NewDisplayResolution.Length > 0 And NewColorQuality.Length > 0 Then
-            Dim ResArray() As String = NewDisplayResolution.Split(System.Convert.ToChar(" "))
-            Dim ResW As Integer = CInt(ResArray(0))
-            Dim ResH As Integer = CInt(ResArray(2))
-            Dim ResC As Integer = CInt("16")
-            If NewColorQuality.Contains("8") Then ResC = CInt("8")
-            If NewColorQuality.Contains("16") Then ResC = CInt("16")
-            If NewColorQuality.Contains("32") Then ResC = CInt("32")
-            Call UpdateProgress(Me.StatusLabelWorking_Resolution, ApplyType)
-            cScreen.ChangeResolution(ResW, ResH, ResC)
-        ElseIf NewDisplayResolution.Length > 0 And NewColorQuality.Length = 0 Then
-            Dim ResArray() As String = NewDisplayResolution.Split(System.Convert.ToChar(" "))
-            Dim ResW As Integer = System.Convert.ToInt16(ResArray(0))
-            Dim ResH As Integer = System.Convert.ToInt16(ResArray(2))
-            Call UpdateProgress(Me.StatusLabelWorking_Resolution, ApplyType)
-            cScreen.ChangeResolution(ResW, ResH)
-        End If
-        Me.messageBoxManager1.HookEnabled = False
-        '*** END DISPLAY SETTINGS ***
+		Dim newResolution As Integer() = Nothing
+		Dim resolutionSeparator() As String = {String.Format(ResolutionFormatter, "", "")}
+		Try
+			Dim profileResolution As String() = INIRead(ThisProfile, "Desktop", "ScreenResolution", "").Split(resolutionSeparator, StringSplitOptions.None)
+			newResolution = New Integer() {Convert.ToInt32(profileResolution(0)), Convert.ToInt32(profileResolution(1))}
+		Catch
+		End Try
+		
+		If Not IsNothing(newResolution) Then
+			'Prompt for Confirmation (ConfirmPrompt)
+			Dim changeResolution As System.Windows.Forms.DialogResult
+			If Me.askBeforeChangingResolutionToolStripMenuItem.Checked Then
+				Dim lang As SetLanguage = New SetLanguage("/Language/Misc/")
+				
+				Dim ConfirmPromptTitle As String = lang.GetText("DisplaySettings-ConfirmPrompt-Title", "Confirm Display Change")
+				Dim ConfirmPromptMessage As String = lang.GetText("DisplaySettings-ConfirmPrompt-Message", "Would you like to change your display settings?")
+				Dim ResolutionText As String = lang.GetText("DisplaySettings-Resolution", "Resolution:")
+				
+				'Confirm Prompt: Returns Yes/No (DialogResult)
+				Dim strMessage As String
+				strMessage = ConfirmPromptMessage & vbCrLf
+				strMessage += vbCrLf & ResolutionText & " " & ResolutionFormatter
+				strMessage = String.Format(strMessage, newResolution(0), newResolution(1))
+				changeResolution = MessageBox.Show(strMessage, ConfirmPromptTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
+			Else
+				changeResolution = System.Windows.Forms.DialogResult.Yes
+			End If
+			
+			If changeResolution = System.Windows.Forms.DialogResult.Yes Then
+				Dim currentSettings As Integer() = cScreen.GetCurrentSettings()
+				
+				' Change resolution
+				cScreen.SetDisplay(newResolution(0), newResolution(1))
+				
+				If Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked Then
+					Dim lang As SetLanguage = New SetLanguage("/Language/Misc/")
+					
+					Dim RevertPromptTitle As String = lang.GetText("DisplaySettings-RevertPrompt-Title", "Display Changed")
+					Dim RevertPromptMessage As String = lang.GetText("DisplaySettings-RevertPrompt-Message", "Would you like to keep your current settings?")
+					Dim ResolutionText As String = lang.GetText("DisplaySettings-Resolution", "Resolution:")
+					Dim BitsText As String = lang.GetText("DisplaySettings-Bits", "Color Bits:")
+					Dim RefreshText As String = lang.GetText("DisplaySettings-Refresh", "Refresh:")
+					
+					'Revert Prompt: Returns Yes/No (DialogResult)
+					Dim strMessage As String
+					strMessage = RevertPromptMessage & vbCrLf
+					strMessage += vbCrLf & ResolutionText & " " & ResolutionFormatter
+					strMessage = String.Format(strMessage, newResolution(0), newResolution(1))
+					If MessageBox.Show(strMessage, RevertPromptTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = System.Windows.Forms.DialogResult.No Then
+						cScreen.SetDisplay(currentSettings(0), currentSettings(1), currentSettings(2), currentSettings(3))
+					End If
+				End If
+			End If
+			Me.messageBoxManager1.HookEnabled = False
+		End If
+		'*** END DISPLAY SETTINGS ***
 
         If ApplyType.Equals("normal") Then
             Me.toolStripProgressBar1.Visible = False

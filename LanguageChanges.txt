@@ -7,6 +7,11 @@ ProfileSettings/ClearFirefox-Messagebox-2
 ProfileSettings/labelPort
 ProfileSettings/labelWirelessVista
 MainForm/reloadNetworkInterfacesToolStripMenuItem
+Misc/DisplaySettings-Bits
+Misc/DisplaySettings-Refresh
+ProfileSettings/ScreenResolutionText-By
+ProfileSettings/ScreenResolutionText-Pixels
+ProfileSettings/labelColorQuality
 
 Missing Translations:
 ProfileSettings/labelDNSSuffix

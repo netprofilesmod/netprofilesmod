@@ -114,7 +114,6 @@ Public Partial Class ProfileSettings
 		lang.SetToolTip(Me.toolTip1, Me.buttonResetWallpaper, "buttonResetWallpaper-ToolTip")
 		lang.SetText(Me.groupBoxDisplaySettings.Text, "groupBoxDisplaySettings")
 		lang.SetText(Me.labelScreenResolution.Text, "labelScreenResolution")
-		lang.SetText(Me.labelColorQuality.Text, "labelColorQuality")
 		lang.SetText(Me.buttonGetCurrentDisplaySettings.Text, "buttonGetCurrentDisplaySettings")
 		lang.SetText(Me.groupBoxWireless.Text, "groupBoxWireless")
 		lang.SetText(Me.labelSSID.Text, "labelSSID")
@@ -272,7 +271,6 @@ Public Partial Class ProfileSettings
 		
 		'*** SAVE DISPLAY SETTINGS ***
 		INIWrite(ThisINIFile, "Desktop", "ScreenResolution", Me.comboBoxDisplaySettings.Text)
-		INIWrite(ThisINIFile, "Desktop", "ColorQuality", Me.comboBoxDisplayColors.Text)
 		'*** END SAVE DISPLAY SETTINGS ***
 		
 		'*** SAVE WIRELESS SETTINGS ***
@@ -470,11 +468,17 @@ Public Partial Class ProfileSettings
 		
 		Me.labelWorking.Text = Me.labelWorking_Profile
 		Application.DoEvents()
-		Call ResolutionsToComboBox()
-		Call BPPToComboBox()
 		
-		If CreatingNewProfile = False Then
+		If CreatingNewProfile Then
+			ResolutionsToComboBox("")
+		Else
 			Dim TheINIFile As String = MainForm.listViewProfiles.SelectedItems(0).SubItems(3).Text
+			
+			Dim profileResolution As String = INIRead(TheINIFile, "Desktop", "ScreenResolution", "")
+			ResolutionsToComboBox(profileResolution)
+			
+			Application.DoEvents()
+			Me.comboBoxDisplaySettings.Text = profileResolution
 			
 			Application.DoEvents()
 			Me.textBoxProfileName.Text = INIRead(TheINIFile,"General","Name", "[No Name]")
@@ -664,10 +668,6 @@ Public Partial Class ProfileSettings
 					Me.pictureBoxWallpaperPreview.Image = Image.FromFile(Me.textBoxWallpaperPath.Text)
 				End If
 			End If
-			
-			Application.DoEvents()
-			Me.comboBoxDisplaySettings.Text = INIRead(TheINIFile, "Desktop", "ScreenResolution", "")
-			Me.comboBoxDisplayColors.Text = INIRead(TheINIFile, "Desktop", "ColorQuality", "")
 			
 			Application.DoEvents()
 			Me.textBoxAutoActivateSSID.Text = INIRead(TheINIFile, "Wireless", "AutoActivateSSID", "")
@@ -954,8 +954,10 @@ Public Partial Class ProfileSettings
 	End Sub
 	
 	Sub ButtonGetCurrentDisplaySettingsClick(ByVal sender As Object, ByVal e As EventArgs)
-		Me.comboBoxDisplaySettings.Text = cScreen.CurrentResolution
-		Me.comboBoxDisplayColors.Text = cScreen.CurrentBPP.ToString
+		' Make sure the list of resolutions is up to date and includes the current resolution
+		ResolutionsToComboBox("")
+		Dim currentSettings As Integer() = cScreen.GetCurrentSettings()
+		Me.comboBoxDisplaySettings.Text = String.Format(ResolutionFormatter, currentSettings(0).ToString(), currentSettings(1).ToString())
 	End Sub
 	
 	Sub ProfileSettingsFormClosed(ByVal sender As Object, ByVal e As FormClosedEventArgs)
@@ -1010,7 +1012,6 @@ Public Partial Class ProfileSettings
 		Me.listViewRun.Items.Clear
 		'*** DESKTOP ***
 		Me.comboBoxDisplaySettings.Items.Clear
-		Me.comboBoxDisplayColors.Items.Clear
 		Me.textBoxWallpaperPath.Text = ""
 		Me.pictureBoxWallpaperPreview.Image = Nothing
 		'*** WIRELESS ***

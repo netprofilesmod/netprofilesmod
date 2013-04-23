@@ -39,6 +39,7 @@ Public Module Globals
 	Public CreatingNewProfile As Boolean
 	Public CreatingNewMappedDrive As Boolean
 	Public CreatingNewRunCommand As Boolean
+	Public ResolutionFormatter As String = "{0} x {1}"
 	
 	Public ProgramINIFile As String = CommonApplicationDataFolder + "\netprofilesmod.ini"
 	Public OKToCloseProgram As Boolean = False
@@ -48,7 +49,6 @@ Public Module Globals
 	Public NetworkCardList As New ArrayList()
 	Public RunFromTaskTray As Boolean = False
 	Public cScreen As New clsScreenRes
-	Private bStandardResOnly As Boolean = True
 	
 	Public CurrentWirelessSSID As String = ""
 	Public CurrentWirelessName As String = ""
@@ -337,63 +337,26 @@ Public Module Globals
     '*** END CHANGE WALLPAPER ***
     
     
-    '*** START DISPLAY SETTINGS ***
-    Public Sub ResolutionsToComboBox()
-        'Add valid resolutions to combobox
-        'if bStandardResOnly = false or notpassed, it will return all valid resolutions
-        Dim strTempRes As String
-        Dim strResolutions As String
-        Dim strModes() As String
-        strResolutions = cScreen.ValidResolutions(bStandardResOnly)
-        strModes = Split(strResolutions, ",")
-        ProfileSettings.comboBoxDisplaySettings.Items.Clear
-        ProfileSettings.comboBoxDisplaySettings.Items.Add("")
-        
-		Dim lang As SetLanguage = New SetLanguage("/Language/ProfileSettings/")
+	'*** START DISPLAY SETTINGS ***
+	Public Sub ResolutionsToComboBox(ResolutionFromProfile As String)
+		'Add resolutions to combobox
+		Dim profileResolution As Integer()
+		Dim resolutionSeparator() As String = {String.Format(ResolutionFormatter, "", "")}
+		Try
+			Dim profileRes As String() = ResolutionFromProfile.Split(resolutionSeparator, StringSplitOptions.None)
+			profileResolution = New Integer(){Convert.ToInt32(profileRes(0)), Convert.ToInt32(profileRes(1))}
+		Catch
+			profileResolution = New Integer(){}
+		End Try
+		Dim resolutions As List(Of Integer())
+		resolutions = cScreen.GetResolutions(profileResolution)
+		ProfileSettings.comboBoxDisplaySettings.Items.Clear
+		ProfileSettings.comboBoxDisplaySettings.Items.Add("")
 		
-		Dim byText As String = lang.GetText("ScreenResolutionText-By", "by")
-		Dim pixelsText As String = lang.GetText("ScreenResolutionText-Pixels", "pixels")
-
-        For Each strTempRes In strModes
-            'cboResolution.Items.Add(strTempRes)
-            Dim strTempResArray() As String = strTempRes.Split(CChar("x"))
-            If strTempResArray.GetUpperBound(0).ToString = "1" Then
-            	ProfileSettings.comboBoxDisplaySettings.Items.Add(strTempResArray(0) & " " & byText & " " & strTempResArray(1) & " " & pixelsText)
-            End If
-        Next
-    End Sub  
-    
-    Public Sub BPPToComboBox()
-        'Add valid BPP's (ex 8,16,32) bit to combobox
-        Dim strTempBPP As String
-        Dim strBPP As String
-        Dim strBPPModes() As String
-
-        strBPP = cScreen.ValidBPPs
-        strBPPModes = Split(strBPP, ",")
-        ProfileSettings.comboBoxDisplayColors.Items.Clear
-        ProfileSettings.comboBoxDisplayColors.Items.Add("")
-        
-		Dim lang As SetLanguage = New SetLanguage("/Language/ProfileSettings/")
-		
-		Dim bitText As String = lang.GetText("ColorQualityText-Bit", "bit")
-		Dim lowestText As String = lang.GetText("ColorQualityText-Lowest", "Lowest")
-		Dim highestText As String = lang.GetText("ColorQualityText-Highest", "Highest")
-        
-        For Each strTempBPP In strBPPModes
-            Dim ThisBPP As String = ""
-            Select Case strTempBPP
-                Case "8"
-                    ThisBPP = "256 (8 " & bitText & ")"
-                Case "16"
-                    ThisBPP = lowestText & " (16 " & bitText & ")"
-                Case "32"
-                    ThisBPP = highestText & " (32 " & bitText & ")"
-            End Select
-            ProfileSettings.comboBoxDisplayColors.Items.Add(ThisBPP)
-        Next
-
-    End Sub
+		For Each resolution As Integer() In resolutions
+			ProfileSettings.comboBoxDisplaySettings.Items.Add(String.Format(ResolutionFormatter, resolution(0).ToString(), resolution(1).ToString()))
+		Next
+	End Sub
     '*** END DISPLAY SETTINGS ***
     
     

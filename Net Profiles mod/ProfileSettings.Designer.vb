@@ -164,10 +164,8 @@ Partial Class ProfileSettings
 		Me.toolStripButtonRemoveProgram = New System.Windows.Forms.ToolStripButton()
 		Me.tabPageDesktop = New System.Windows.Forms.TabPage()
 		Me.groupBoxDisplaySettings = New System.Windows.Forms.GroupBox()
-		Me.labelColorQuality = New System.Windows.Forms.Label()
 		Me.labelScreenResolution = New System.Windows.Forms.Label()
 		Me.buttonGetCurrentDisplaySettings = New System.Windows.Forms.Button()
-		Me.comboBoxDisplayColors = New System.Windows.Forms.ComboBox()
 		Me.comboBoxDisplaySettings = New System.Windows.Forms.ComboBox()
 		Me.groupBoxWallpaper = New System.Windows.Forms.GroupBox()
 		Me.groupBoxWallpaperPreview = New System.Windows.Forms.GroupBox()
@@ -1037,19 +1035,12 @@ Partial Class ProfileSettings
 		'
 		'groupBoxDisplaySettings
 		'
-		Me.groupBoxDisplaySettings.Controls.Add(Me.labelColorQuality)
 		Me.groupBoxDisplaySettings.Controls.Add(Me.labelScreenResolution)
 		Me.groupBoxDisplaySettings.Controls.Add(Me.buttonGetCurrentDisplaySettings)
-		Me.groupBoxDisplaySettings.Controls.Add(Me.comboBoxDisplayColors)
 		Me.groupBoxDisplaySettings.Controls.Add(Me.comboBoxDisplaySettings)
 		resources.ApplyResources(Me.groupBoxDisplaySettings, "groupBoxDisplaySettings")
 		Me.groupBoxDisplaySettings.Name = "groupBoxDisplaySettings"
 		Me.groupBoxDisplaySettings.TabStop = false
-		'
-		'labelColorQuality
-		'
-		resources.ApplyResources(Me.labelColorQuality, "labelColorQuality")
-		Me.labelColorQuality.Name = "labelColorQuality"
 		'
 		'labelScreenResolution
 		'
@@ -1063,13 +1054,6 @@ Partial Class ProfileSettings
 		Me.buttonGetCurrentDisplaySettings.Name = "buttonGetCurrentDisplaySettings"
 		Me.buttonGetCurrentDisplaySettings.UseVisualStyleBackColor = true
 		AddHandler Me.buttonGetCurrentDisplaySettings.Click, AddressOf Me.ButtonGetCurrentDisplaySettingsClick
-		'
-		'comboBoxDisplayColors
-		'
-		Me.comboBoxDisplayColors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		resources.ApplyResources(Me.comboBoxDisplayColors, "comboBoxDisplayColors")
-		Me.comboBoxDisplayColors.FormattingEnabled = true
-		Me.comboBoxDisplayColors.Name = "comboBoxDisplayColors"
 		'
 		'comboBoxDisplaySettings
 		'
@@ -1279,7 +1263,6 @@ Partial Class ProfileSettings
 	Private checkBoxBypassProxyForLocalAddresses As System.Windows.Forms.CheckBox
 	Private groupBoxWallpaper As System.Windows.Forms.GroupBox
 	Private groupBoxDisplaySettings As System.Windows.Forms.GroupBox
-	Private labelColorQuality As System.Windows.Forms.Label
 	Private labelScreenResolution As System.Windows.Forms.Label
 	Private groupBoxWireless As System.Windows.Forms.GroupBox
 	Private labelSSID As System.Windows.Forms.Label
@@ -1302,7 +1285,6 @@ Partial Class ProfileSettings
 	Private checkBoxFirefox As System.Windows.Forms.CheckBox
 	Private textBoxAutoActivateSSID As System.Windows.Forms.TextBox
 	Private buttonGetCurrentDisplaySettings As System.Windows.Forms.Button
-	Public comboBoxDisplayColors As System.Windows.Forms.ComboBox
 	Public comboBoxDisplaySettings As System.Windows.Forms.ComboBox
 	Private toolTip1 As System.Windows.Forms.ToolTip
 	Private buttonResetWallpaper As System.Windows.Forms.Button
