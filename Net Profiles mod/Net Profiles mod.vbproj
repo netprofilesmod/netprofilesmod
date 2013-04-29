@@ -130,7 +130,7 @@
     <Compile Include="AutoActivate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="clsScreenRes.vb" />
+    <Compile Include="ScreenRes.vb" />
     <Compile Include="CopyProfile.Designer.vb">
       <DependentUpon>CopyProfile.vb</DependentUpon>
     </Compile>
