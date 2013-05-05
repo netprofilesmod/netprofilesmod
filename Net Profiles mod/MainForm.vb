@@ -88,7 +88,7 @@ Public Partial Class MainForm
 	Public CheckForUpdates_Error_1 As String
 	Public CheckForUpdates_Error_2 As String
 	Private messageBoxManager1 As MessageBoxManager
-	Private SilentAdapterUpdate As Boolean = False
+	Const AdapterScanPause As Integer = 1000
 	
 	
 	Sub MainFormLoad(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
@@ -109,8 +109,9 @@ Public Partial Class MainForm
             End Select
         End If
         'TODO: Replace Microsoft.VisualBasic
-        'TODO: The profiles folder is created by the installer with limited rights for users. If it is missing, maybe a
-        '      dialog to run the installer again should be displayed and the application should exit
+        ' The profiles folder is created by the installer with limited rights for users. To allow debugging while the
+        ' application is not installed, the folder is created here. In this case non-administrators are able to modify
+        ' profile files.
         If Dir(ProfilesFolder, Microsoft.VisualBasic.FileAttribute.Directory) = "" Then
             MkDir((ProfilesFolder))
         End If
@@ -440,48 +441,57 @@ Public Partial Class MainForm
 	
 	Sub TimerUpdateAdaptersTick(ByVal sender As Object, ByVal e As EventArgs) Handles timerUpdateAdapters.Tick
 		Me.timerUpdateAdapters.Enabled = False
-		If Not Me.SilentAdapterUpdate Then
-			Me.toolStripProgressBar1.Enabled = True
-			Me.toolStripProgressBar1.Visible = True
-			Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking_Preloading
-			Me.toolStripStatusLabelWorking.Visible = True
-			
-			NetworkCardList = PopulateNetworkCardArray()
-			RefreshProfiles()
-			
-			If Me.listViewProfiles.Items.Count = 0 Then
-				Dim YNResult As Object
-				YNResult = MessageBox.Show(Me.NoNetworkProfilesMessageBox_1 & vbCrLf & Me.NoNetworkProfilesMessageBox_2, ProgramName, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-				If YNResult = DialogResult.Yes Then
-					CreatingNewProfile = True
-					ProfileSettings.ShowDialog()
-				End If
-			End If
-			
-			' Now prepare for scanning changed adapters silently in the background
-			Me.SilentAdapterUpdate = True
-			Me.timerUpdateAdapters.Interval = 1000
-		Else
-			Dim CurrentAdapters As ArrayList = PopulateNetworkCardArray()
-			Dim AdaptersChanged As Boolean
-			If CurrentAdapters.Count = NetworkCardList.Count Then
-				AdaptersChanged = False
-				For i As Integer = 0 To CurrentAdapters.Count - 1
-					If Not (CStr(CurrentAdapters(i).Key) = CStr(NetworkCardList(i).Key) And CStr(CurrentAdapters(i).Value) = CStr(NetworkCardList(i).Value)) Then
-						AdaptersChanged = True
-						Exit For
-					End If
-				Next
-			Else
-				AdaptersChanged = True
-			End If
-			If AdaptersChanged Then
-				NetworkCardList = CurrentAdapters
-				RefreshProfiles()
+		Me.toolStripProgressBar1.Enabled = True
+		Me.toolStripProgressBar1.Visible = True
+		Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking_Preloading
+		Me.toolStripStatusLabelWorking.Visible = True
+		
+		NetworkCardList = PopulateNetworkCardArray()
+		RefreshProfiles()
+		
+		If Me.listViewProfiles.Items.Count = 0 Then
+			Dim YNResult As Object
+			YNResult = MessageBox.Show(Me.NoNetworkProfilesMessageBox_1 & vbCrLf & Me.NoNetworkProfilesMessageBox_2, ProgramName, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+			If YNResult = DialogResult.Yes Then
+				CreatingNewProfile = True
+				ProfileSettings.ShowDialog()
 			End If
 		End If
 		
-		Me.timerUpdateAdapters.Enabled = True
+		System.Threading.Thread.Sleep(AdapterScanPause)
+		' Now start scanning for changed adapters silently in the background
+		Me.backgroundWorkerScanAdapters.RunWorkerAsync()
+	End Sub
+	
+	
+	Sub BackgroundWorkerScanAdaptersDoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs)
+		' Scans the available network adapters until a change is detected
+		
+		Dim CurrentAdapters As New ArrayList()
+		Do While True
+			CurrentAdapters = PopulateNetworkCardArray()
+			If CurrentAdapters.Count = NetworkCardList.Count Then
+				For i As Integer = 0 To CurrentAdapters.Count - 1
+					If Not (CStr(CurrentAdapters(i).Key) = CStr(NetworkCardList(i).Key) And CStr(CurrentAdapters(i).Value) = CStr(NetworkCardList(i).Value)) Then
+						Exit Do
+					End If
+				Next
+			Else
+				Exit Do
+			End If
+			System.Threading.Thread.Sleep(AdapterScanPause)
+		Loop
+		
+		' Submit the list of network adapters to the handler
+		e.Result = CurrentAdapters
+	End Sub
+	
+	Sub BackgroundWorkerScanAdaptersRunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs)
+		' Updates the network adapter list
+		
+		NetworkCardList = DirectCast(e.Result, ArrayList)
+		RefreshProfiles()
+		backgroundWorkerScanAdapters.RunWorkerAsync()
 	End Sub
 	
 	Public Sub RefreshProfiles

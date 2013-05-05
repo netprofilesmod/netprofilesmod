@@ -123,6 +123,7 @@ Partial Class MainForm
 		Me.pictureBoxWallpaper = New System.Windows.Forms.PictureBox()
 		Me.timerDetectWireless = New System.Windows.Forms.Timer(Me.components)
 		Me.toolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+		Me.backgroundWorkerScanAdapters = New System.ComponentModel.BackgroundWorker()
 		Me.menuStrip1.SuspendLayout
 		Me.toolStripMain.SuspendLayout
 		Me.statusStrip1.SuspendLayout
@@ -501,6 +502,11 @@ Partial Class MainForm
 		'
 		Me.timerDetectWireless.Interval = 3000
 		'
+		'backgroundWorkerScanAdapters
+		'
+		AddHandler Me.backgroundWorkerScanAdapters.DoWork, AddressOf Me.BackgroundWorkerScanAdaptersDoWork
+		AddHandler Me.backgroundWorkerScanAdapters.RunWorkerCompleted, AddressOf Me.BackgroundWorkerScanAdaptersRunWorkerCompleted
+		'
 		'MainForm
 		'
 		resources.ApplyResources(Me, "$this")
@@ -524,6 +530,7 @@ Partial Class MainForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
     End Sub
+	Private backgroundWorkerScanAdapters As System.ComponentModel.BackgroundWorker
 	Private WithEvents toolStripButtonCopyProfile As System.Windows.Forms.ToolStripButton
 	Private WithEvents toolStripMenuItemCopyProfile As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents copyToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
