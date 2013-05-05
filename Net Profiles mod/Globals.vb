@@ -201,21 +201,21 @@ Public Module Globals
 	
 	'*** START CREATE SHORTCUT ***
 	Public Sub CreateShortcut(ByVal ShortcutName As String, ByVal ShortcutPath As String, Optional ByVal ShortcutArg As String = "", Optional ByVal ShortcutDesc As String = "", Optional ByVal ShortcutDir As String = "", Optional ByVal ShortcutIcon As String = "", Optional ByRef WinStyle As Integer = 4)
-         Dim Placement As String
-         Dim oShell As New IWshRuntimeLibrary.IWshShell_Class()
-        Dim oShortcut As IWshRuntimeLibrary.IWshShortcut_Class
-        Placement = CStr(oShell.SpecialFolders.Item("Desktop"))
-         oShortcut = oShell.CreateShortcut(Placement & "\" & ShortcutName & ".lnk")
-         oShortcut.TargetPath = ShortcutPath
-         oShortcut.Description = ShortcutDesc
-         oShortcut.Arguments = ShortcutArg
-         oShortcut.WorkingDirectory = ShortcutDir
-         oShortcut.IconLocation = System.Reflection.Assembly.GetExecutingAssembly.Location() & ", 0"
-         oShortcut.WindowStyle = WinStyle
-         oShortcut.Save()
-         oShell = Nothing
-         oShortcut = Nothing
-     End Sub 
+		Dim Placement As String
+		Dim oShell As New IWshRuntimeLibrary.IWshShell_Class()
+		Dim oShortcut As IWshRuntimeLibrary.IWshShortcut_Class
+		Placement = CStr(oShell.SpecialFolders.Item("Desktop"))
+		oShortcut = DirectCast(oShell.CreateShortcut(Placement & "\" & ShortcutName & ".lnk"), IWshRuntimeLibrary.IWshShortcut_Class)
+		oShortcut.TargetPath = ShortcutPath
+		oShortcut.Description = ShortcutDesc
+		oShortcut.Arguments = ShortcutArg
+		oShortcut.WorkingDirectory = ShortcutDir
+		oShortcut.IconLocation = System.Reflection.Assembly.GetExecutingAssembly.Location() & ", 0"
+		oShortcut.WindowStyle = WinStyle
+		oShortcut.Save()
+		oShell = Nothing
+		oShortcut = Nothing
+	End Sub 
 	'*** END CREATE SHORTCUT ***
 	
 	Public Sub UpdateProgress(ByVal ThisText As String, ByVal ProgressType As String)
@@ -539,7 +539,7 @@ Public Module Globals
 		strComputer = "."
         objWMIService = GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\root\cimv2")
 		colComputers = objWMIService.ExecQuery("Select * from Win32_ComputerSystem")
-		For Each objComputer In colComputers
+		For Each objComputer In DirectCast(colComputers, Collections.IEnumerable)
 			ObjComputer.Rename(NewName)
 		Next
     End Sub

@@ -184,7 +184,8 @@ Public Partial Class MainForm
 				xDoc.Load(Filename.FullName)
 				Dim root As XmlElement = xDoc.DocumentElement
 				
-                LanguageMenuItem = Me.languageToolStripMenuItem.DropDownItems.Add(root.SelectSingleNode("/Language").Attributes("display_name").Value)
+				LanguageMenuItem = DirectCast(Me.languageToolStripMenuItem.DropDownItems.Add(root.SelectSingleNode( _
+					"/Language").Attributes("display_name").Value), ToolStripMenuItem)
                 LanguageMenuItem.Tag = Filename.Name
                 LanguageMenuItem.CheckOnClick = True
                 AddHandler LanguageMenuItem.Click, AddressOf LanguageMenuClick
@@ -324,7 +325,7 @@ Public Partial Class MainForm
                 	Application.DoEvents()
                 	If DirectoryName.GetFiles().Length > 0 And (NewProfileCategoryName.Trim <> "Error" Or NewProfileCategoryName.Trim <> "") Then
                 		Application.DoEvents()
-                		CategoryMenu = Me.profilesToolStripMenuItem.DropDownItems.Add(NewProfileCategoryName)
+                		CategoryMenu = DirectCast(Me.profilesToolStripMenuItem.DropDownItems.Add(NewProfileCategoryName), ToolStripMenuItem)
                 		If ThisInterfaceType.ToLower.Contains("wlan") Then
                 			CategoryMenu.Image = Me.imageListProfiles.Images(1)
                 		ElseIf ThisInterfaceType.ToLower.Contains("bluetooth") Then
@@ -372,7 +373,8 @@ Public Partial Class MainForm
                 ThisListItem.SubItems.Add(Filename.FullName)
                 
                 Application.DoEvents()
-                ProfileMenuItem = CategoryMenu.DropDownItems.Add(INIRead(Filename.FullName,"General","Name", "[No Name]"))
+                ProfileMenuItem = DirectCast(CategoryMenu.DropDownItems.Add(INIRead(Filename.FullName, "General", _
+                    "Name", "[No Name]")), ToolStripMenuItem)
                 ProfileMenuItem.Tag = Filename.FullName
                 ProfileMenuItem.ToolTipText = "Activate " & ProfileMenuItem.Text
                 AddHandler ProfileMenuItem.Click, AddressOf SystemTrayMenuClick
