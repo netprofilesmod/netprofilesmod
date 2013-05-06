@@ -124,6 +124,7 @@ Partial Class MainForm
 		Me.timerDetectWireless = New System.Windows.Forms.Timer(Me.components)
 		Me.toolTip1 = New System.Windows.Forms.ToolTip(Me.components)
 		Me.backgroundWorkerScanAdapters = New System.ComponentModel.BackgroundWorker()
+		Me.backgroundWorkerApplyProfile = New System.ComponentModel.BackgroundWorker()
 		Me.menuStrip1.SuspendLayout
 		Me.toolStripMain.SuspendLayout
 		Me.statusStrip1.SuspendLayout
@@ -507,6 +508,13 @@ Partial Class MainForm
 		AddHandler Me.backgroundWorkerScanAdapters.DoWork, AddressOf Me.BackgroundWorkerScanAdaptersDoWork
 		AddHandler Me.backgroundWorkerScanAdapters.RunWorkerCompleted, AddressOf Me.BackgroundWorkerScanAdaptersRunWorkerCompleted
 		'
+		'backgroundWorkerApplyProfile
+		'
+		Me.backgroundWorkerApplyProfile.WorkerReportsProgress = true
+		AddHandler Me.backgroundWorkerApplyProfile.DoWork, AddressOf Me.BackgroundWorkerApplyProfileDoWork
+		AddHandler Me.backgroundWorkerApplyProfile.ProgressChanged, AddressOf Me.BackgroundWorkerApplyProfileProgressChanged
+		AddHandler Me.backgroundWorkerApplyProfile.RunWorkerCompleted, AddressOf Me.BackgroundWorkerApplyProfileRunWorkerCompleted
+		'
 		'MainForm
 		'
 		resources.ApplyResources(Me, "$this")
@@ -530,6 +538,7 @@ Partial Class MainForm
 		Me.ResumeLayout(false)
 		Me.PerformLayout
     End Sub
+	Private backgroundWorkerApplyProfile As System.ComponentModel.BackgroundWorker
 	Private backgroundWorkerScanAdapters As System.ComponentModel.BackgroundWorker
 	Private WithEvents toolStripButtonCopyProfile As System.Windows.Forms.ToolStripButton
 	Private WithEvents toolStripMenuItemCopyProfile As System.Windows.Forms.ToolStripMenuItem

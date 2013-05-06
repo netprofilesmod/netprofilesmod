@@ -226,7 +226,6 @@ Public Module Globals
 			AutoActivate.labelStatus.Text = ThisText
 			AutoActivate.labelStatus.Visible = True
 		End If
-		Application.DoEvents
 	End Sub
 	
 	Public Function GetStoredInterfaceName(ThisInterface As String) As String

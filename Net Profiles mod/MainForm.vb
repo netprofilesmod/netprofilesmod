@@ -491,9 +491,11 @@ Public Partial Class MainForm
 	Sub BackgroundWorkerScanAdaptersRunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs)
 		' Updates the network adapter list
 		
-		NetworkCardList = DirectCast(e.Result, ArrayList)
-		RefreshProfiles()
-		backgroundWorkerScanAdapters.RunWorkerAsync()
+		If Not backgroundWorkerScanAdapters.CancellationPending Then
+			NetworkCardList = DirectCast(e.Result, ArrayList)
+			RefreshProfiles()
+			backgroundWorkerScanAdapters.RunWorkerAsync()
+		End If
 	End Sub
 	
 	Public Sub RefreshProfiles
@@ -558,360 +560,365 @@ Public Partial Class MainForm
     End Sub
 	
 	Public Sub ApplyProfile(ByVal ThisProfile As String, ByVal ApplyType As String, Optional ByVal MACAddress As String = "")
-        Call UpdateProgress(Me.StatusLabelWorking_Activating, ApplyType)
-        If ApplyType.Equals("normal") Then
-            Me.toolStripProgressBar1.Enabled = True
-            Me.toolStripProgressBar1.Visible = True
-        End If
-
-        For i As Integer = 0 To Me.listViewProfiles.Items.Count - 1
-            Me.listViewProfiles.Items.Item(i).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Regular)
-            If Me.listViewProfiles.Items.Item(i).SubItems.Item(3).Text = ThisProfile Then
-                Me.listViewProfiles.Items.Item(i).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Bold)
-                Me.listViewProfiles.Items.Item(i).SubItems.Item(1).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Regular)
-            End If
-        Next
-        INIWrite(Globals.ProgramINIFile, "Program", "Last Activated Profile", ThisProfile)
-
-        '*** START SAVE TCP/IP SETTINGS ***
-        'TODO: Call UpdateProgress while applying IP settings
-        'HACK: The profiles folder path prefix is removed here before sending the profile to the service.
-        '      Maybe all functions dealing with profiles should be updated to use partial paths.
-        Dim strIPAddress As String = INIRead(ThisProfile, "TCP/IP Settings", "IP Address", "")
-        Dim strSubnetMask As String = INIRead(ThisProfile, "TCP/IP Settings", "Subnet Mask", "")
-        Dim strDHCP As String = INIRead(ThisProfile, "TCP/IP Settings", "DHCP", "0")
-        
-        ' Only apply TCP/IP settings if IP and netmask are set or DHCP is enabled
-        If ((strIPAddress <> "") And (strSubnetMask <> "")) Or (strDHCP = "1") Then
-            Dim Profile As String = ThisProfile.Substring(ProfilesFolder.Length)
-            Dim clientConnection As IInterProcessConnection = Nothing
-            Try
-                clientConnection = New ClientPipeConnection("NetProfilesMod", ".")
-                clientConnection.Connect()
-                clientConnection.Write(Profile + "|" + MACAddress)
-                'TODO: Check the status message if implemented in the server
-                clientConnection.Read()
-                clientConnection.Close()
-            Catch ex As Exception
-                clientConnection.Dispose()
-                'TODO: Display error message instead of throwing exception
-                Throw (ex)
-            End Try
-        End If
-        '*** END SAVE TCP/IP SETTINGS ***
-
-        '*** START DISCONNECT PREVIOUSLY MAPPED DRIVES ***
-        Call UpdateProgress(Me.StatusLabelWorking_UnmapDrives, ApplyType)
-        Dim DisconnectTheseDrives() As String
-        DisconnectTheseDrives = INIRead(Globals.ProgramINIFile, "Options", "Mapped Drives", "").Split(System.Convert.ToChar("|"))
-        Dim TheDrive As Object
-        For TheDrive = DisconnectTheseDrives.GetLowerBound(0) To DisconnectTheseDrives.GetUpperBound(0)
-            Application.DoEvents()
-            DisconnectNetworkDrive(DisconnectTheseDrives(System.Convert.ToInt16(TheDrive)), True)
-        Next TheDrive
-        '*** END DISCONNECT PREVIOUSLY MAPPED DRIVES ***
-
-        '*** START MAP NEW DRIVES ***
-        Call UpdateProgress(Me.StatusLabelWorking_MapDrives, ApplyType)
-        Dim CurrentlyMappedDrives As String = ""
-        Dim iniText As String
-        Dim iniArray() As String
-        iniText = INIRead(ThisProfile, "Mapped Drives")
-        iniText = iniText.Replace(ControlChars.NullChar, "|")
-        iniText = Trim(iniText)
-        iniArray = iniText.Split(System.Convert.ToChar("|"))
-        Dim iniArray2() As String
-        Dim X As Integer
-        For X = iniArray.GetLowerBound(0) To (iniArray.GetUpperBound(0) - 1)
-            Application.DoEvents()
-            iniArray2 = INIRead(ThisProfile, "Mapped Drives", iniArray(X), "").Split(System.Convert.ToChar("|"))
-            ConnectThisNetworkDrive(iniArray2(0), iniArray(X), SubstitutionDecode(iniArray2(1)), SubstitutionDecode(iniArray2(2)))
-            CurrentlyMappedDrives = CurrentlyMappedDrives & "|" & iniArray(X)
-        Next X
-        If CurrentlyMappedDrives.Length > 1 Then
-            INIWrite(Globals.ProgramINIFile, "Options", "Mapped Drives", CurrentlyMappedDrives.Substring(1, CurrentlyMappedDrives.Length - 1))
-        Else
-            INIWrite(Globals.ProgramINIFile, "Options", "Mapped Drives", "")
-        End If
-        '*** END MAP NEW DRIVES ***
-
-        '*** START SETTING DEFAULT PRINTER ***
-        Dim NewDefaultPrinter As String = INIRead(ThisProfile, "Printer", "Default", "")
-        If NewDefaultPrinter.Length > 0 Then
-            Call UpdateProgress(Me.StatusLabelWorking_Printer, ApplyType)
-            Call SetDefaultPrinter(NewDefaultPrinter)
-        End If
-        '*** END SETTING DEFAULT PRINTER ***
-
-        '*** START INTERNET SETTINGS ***
-        Call UpdateProgress(Me.StatusLabelWorking_Internet, ApplyType)
-        Dim strAutoConfigAddress As String = INIRead(ThisProfile, "Internet Settings", "AutoConfigAddress", "")
-        Dim strUseProxySettings As String = INIRead(ThisProfile, "Internet Settings", "UseProxySettings", "0")
-        Dim boolUseProxySettings As Boolean
-        If strUseProxySettings.Equals("0") Then boolUseProxySettings = False
-        If strUseProxySettings.Equals("1") Then boolUseProxySettings = True
-        Dim strProxyServerAddress As String = INIRead(ThisProfile, "Internet Settings", "ProxyServerAddress", "")
-        Dim strProxyExceptions As String = INIRead(ThisProfile, "Internet Settings", "ProxyExceptions", "")
-        Dim boolProxyBypass As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "ProxyBypass", Convert.ToString(False)))
-        Dim boolProxyIE As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "InternetExplorer", Convert.ToString(False)))
-        Dim boolProxyFirefox As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "Firefox", Convert.ToString(False)))
-        Dim strDefaultHomepage As String = INIRead(ThisProfile, "Internet Settings", "DefaultHomepage", "")
-        
-        Dim FFSettings As FirefoxSettings = Nothing
-        If boolProxyFirefox Then
-            FFSettings = New FirefoxSettings
-        End If
-        
-        Dim regKey As RegistryKey
-        regKey = Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Internet Settings\", True)
-        Dim ProxyGlobal As String = ""
-        Dim ProxyGlobalPort As String = ""
-        Dim ProxyHttp As String = ""
-        Dim ProxyHttpPort As String = ""
-        Dim ProxyHttps As String = ""
-        Dim ProxyHttpsPort As String = ""
-        Dim ProxyFtp As String = ""
-        Dim ProxyFtpPort As String = ""
-        Dim ProxySocks As String = ""
-        Dim ProxySocksPort As String = ""
-        Dim ProxyGopher As String = ""
-        Dim ProxyGopherPort As String = ""
-        
-        If boolUseProxySettings.Equals(True) Then
-            If strProxyServerAddress.Length > 0 Then
-                'Server address specified: set proxy
-                If Not (strProxyServerAddress.Contains("=")) Then
-                    If strProxyServerAddress.Contains(":") Then
-                        ProxyGlobal = Split(strProxyServerAddress, ":")(0)
-                        ProxyGlobalPort = Split(strProxyServerAddress, ":")(1)
-                        If ProxyGlobalPort.Length = 0 Then
-                            ProxyGlobalPort = "80"
-                        End If
-                    Else
-                        ProxyGlobal = strProxyServerAddress
-                        ProxyGlobalPort = "80"
-                    End If
-                Else
-                    Dim ArrProxyServers() As String = Split(strProxyServerAddress, ";")
-                    For Each ProxyProtocol As String In ArrProxyServers
-                        ProcessProxySettings(ProxyProtocol, "http", ProxyHttp, ProxyHttpPort)
-                        ProcessProxySettings(ProxyProtocol, "https", ProxyHttps, ProxyHttpsPort)
-                        ProcessProxySettings(ProxyProtocol, "ftp", ProxyFtp, ProxyFtpPort)
-                        ProcessProxySettings(ProxyProtocol, "socks", ProxySocks, ProxySocksPort)
-                        ProcessProxySettings(ProxyProtocol, "gopher", ProxyGopher, ProxyGopherPort)
-                    Next
-                    If ProxyHttp <> "" And ProxyHttpPort = "" Then
-                        ProxyHttpPort = "80"
-                    End If
-                    If ProxyHttps <> "" And ProxyHttpsPort = "" Then
-                        ProxyHttpsPort = "443"
-                    End If
-                    If ProxyFtp <> "" And ProxyFtpPort = "" Then
-                        ProxyFtpPort = "21"
-                    End If
-                    If ProxySocks <> "" And ProxySocksPort = "" Then
-                        ProxySocksPort = "0"
-                    End If
-                    If ProxyGopher <> "" And ProxyGopherPort = "" Then
-                        ProxyGopherPort = "0"
-                    End If
-                End If
-                If boolProxyIE.Equals(True) Then
-                    regKey.SetValue("ProxyEnable", 1)
-                    If ProxyGlobal <> "" Then
-                        regKey.SetValue("ProxyServer", ProxyGlobal & ":" & ProxyGlobalPort)
-                    Else
-                        Dim ProxyReg As String = ""
-                        If ProxyHttp <> "" Then
-                            ProxyReg = "http=" & ProxyHttp & ":" & ProxyHttpPort
-                        End If
-                        If ProxyHttps <> "" Then
-                            If ProxyReg <> "" Then
-                                ProxyReg = ProxyReg & ";"
-                            End If
-                            ProxyReg = ProxyReg & "https=" & ProxyHttps & ":" & ProxyHttpsPort
-                        End If
-                        If ProxyFtp <> "" Then
-                            If ProxyReg <> "" Then
-                                ProxyReg = ProxyReg & ";"
-                            End If
-                            ProxyReg = ProxyReg & "ftp=" & ProxyFtp & ":" & ProxyFtpPort
-                        End If
-                        If ProxySocks <> "" Then
-                            If ProxyReg <> "" Then
-                                ProxyReg = ProxyReg & ";"
-                            End If
-                            ProxyReg = ProxyReg & "socks=" & ProxySocks & ":" & ProxySocksPort
-                        End If
-                        regKey.SetValue("ProxyServer", ProxyReg)
-                    End If
-                    If boolProxyBypass.Equals(True) Then
-                        If strProxyExceptions.Length > 0 Then
-                            regKey.SetValue("ProxyOverride", strProxyExceptions & ";<local>")
-                        Else
-                            regKey.SetValue("ProxyOverride", "<local>")
-                        End If
-                    Else
-                        If strProxyExceptions.Length > 0 Then
-                            regKey.SetValue("ProxyOverride", strProxyExceptions)
-                        Else
-                            Try
-                                regKey.DeleteValue("ProxyOverride")
-                            Catch
-                                'Ignore the exception in case the key already didn't exist
-                            End Try
-                        End If
-                    End If
-                End If
-                If boolProxyFirefox.Equals(True) Then
-                    Dim ProxyExceptions() As String = {}
-                    If strProxyExceptions <> "" Then
-                        ProxyExceptions = strProxyExceptions.Split(";"C)
-                        For i As Integer = 0 To ProxyExceptions.Length - 1
-                            'Remove leading asterisk from proxy exceptions for Firefox
-                            If ProxyExceptions(i).Substring(0, 1) = "*" Then
-                                ProxyExceptions(i) = ProxyExceptions(i).Substring(1)
-                            End If
-                            If ProxyExceptions(i).Substring(ProxyExceptions(i).Length - 1) = "*" Then
-                               'Remove trailing asterisk from proxy exceptions for Firefox
-                                ProxyExceptions(i) = ProxyExceptions(i).Substring(0, ProxyExceptions(i).Length - 1)
-                                
-                                'Convert IP ranges from IE format with wildcards to Firefox format with netmask (192.168.* -> 192.168.0.0/16)
-                                Dim pattern8 As String = "^\d{1,3}\.\z"
-                                Dim pattern16 As String = "^\d{1,3}\.\d{1,3}\.\z"
-                                Dim pattern24 As String = "^\d{1,3}\.\d{1,3}\.\d{1,3}\.\z"
-                                If System.Text.RegularExpressions.Regex.Match(ProxyExceptions(i), pattern8).Success Then
-                                    ProxyExceptions(i) = ProxyExceptions(i) & "0.0.0/8"
-                                ElseIf System.Text.RegularExpressions.Regex.Match(ProxyExceptions(i), pattern16).Success Then
-                                    ProxyExceptions(i) = ProxyExceptions(i) & "0.0/16"
-                                ElseIf System.Text.RegularExpressions.Regex.Match(ProxyExceptions(i), pattern24).Success Then
-                                    ProxyExceptions(i) = ProxyExceptions(i) & "0/24"
-                                End If
-                                'Dim m As Boolean = System.Text.RegularExpressions.Regex.Match(ProxyExceptions(i), "\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b").Success
-                            End If
-                        Next i
-                    End If
-                    FFSettings.SetProxySettings(ProxyGlobal, ProxyGlobalPort, ProxyHttp, ProxyHttpPort, ProxyHttps, ProxyHttpsPort, ProxyFtp, ProxyFtpPort, ProxySocks, ProxySocksPort, ProxyGopher, ProxyGopher, ProxyExceptions, boolProxyBypass)
-                End If
-            Else
-                'Empty server address: clear proxy
-                If boolProxyIE.Equals(True) Then
-                    regKey.SetValue("ProxyEnable", 0)
-                    regKey.DeleteValue("ProxyServer", False)
-                    regKey.DeleteValue("ProxyOverride", False)
-                End If
-                If boolProxyFirefox.Equals(True) Then
-                    FFSettings.SetProxySettings("", "", "", "", "", "", "", "", "", "", "", "", New String() {}, True)
-                End If
-            End If
-        End If
-        
-        If boolProxyIE.Equals(True) Then
-            If strAutoConfigAddress.Length > 0 Then
-                regKey.SetValue("AutoConfigURL", strAutoConfigAddress)
-            Else
-                regKey.DeleteValue("AutoConfigURL", False)
-            End If
-        End If
-        If boolProxyFirefox.Equals(True) Then
-            FFSettings.ChangeSetting("network.proxy.autoconfig_url", strAutoConfigAddress)
-            If Not boolUseProxySettings Then
-                FFSettings.ChangeSetting("network.proxy.type", 2)
-            End If
-        End If
-
-        Call UpdateProgress(Me.StatusLabelWorking_Homepage, ApplyType)
-        If strDefaultHomepage.Trim.Length > 0 Then
-            If boolProxyIE.Equals(True) Then
-                SetHomepage(strDefaultHomepage)
-            End If
-            If boolProxyFirefox.Equals(True) Then
-                FFSettings.ChangeSetting("browser.startup.homepage", strDefaultHomepage)
-            End If
-        End If
-        
-        If boolProxyFirefox Then
-            FFSettings.Apply()
-        End If
-        '*** END INTERNET SETTINGS ***
-
-        '*** START RUNNING PROGRAMS ***
-        Call UpdateProgress(Me.StatusLabelWorking_Programs, ApplyType)
-        Dim iniRunText As String
-        Dim iniRunArray() As String
-        iniRunText = INIRead(ThisProfile, "Run")
-        iniRunText = iniRunText.Replace(ControlChars.NullChar, "|")
-        iniRunText = Trim(iniRunText)
-        iniRunArray = iniRunText.Split(System.Convert.ToChar("|"))
-        Dim iniRunArray2() As String
-        Dim XRun As Integer
-        For XRun = iniRunArray.GetLowerBound(0) To (iniRunArray.GetUpperBound(0) - 1)
-            Application.DoEvents()
-            'TODO: Replace Microsoft.VisualBasic
-            iniRunArray2 = Microsoft.VisualBasic.Strings.Split(INIRead(ThisProfile, "Run", iniRunArray(XRun), ""), "||")
-            Dim ThisProgram As System.Diagnostics.Process = New System.Diagnostics.Process()
-            ThisProgram.StartInfo.FileName = iniRunArray2(0)
-            ThisProgram.StartInfo.WorkingDirectory = Path.GetDirectoryName(ThisProgram.StartInfo.FileName)
-            If iniRunArray2(2).Length > 0 Then
-                Application.DoEvents()
-                Select Case iniRunArray2(2)
-                    Case "Normal"
-                        ThisProgram.StartInfo.WindowStyle = ProcessWindowStyle.Normal
-                    Case "Minimized"
-                        ThisProgram.StartInfo.WindowStyle = ProcessWindowStyle.Minimized
-                    Case "Maximized"
-                        ThisProgram.StartInfo.WindowStyle = ProcessWindowStyle.Maximized
-                    Case "Hidden"
-                        ThisProgram.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
-                End Select
-            End If
-            Application.DoEvents()
-            If iniRunArray2(1).Length > 0 Then
-                ThisProgram.StartInfo.Arguments = iniRunArray2(1)
-            End If
-            Application.DoEvents()
-            If iniRunArray2(3).Length > 0 Then
-                ThisProgram.StartInfo.UserName = SubstitutionDecode(iniRunArray2(3))
-                If iniRunArray2(4).Length > 0 Then
-                    Dim pw As New System.Security.SecureString
-                    For Each ch As Char In SubstitutionDecode(iniRunArray2(4))
-                        pw.AppendChar(ch)
-                    Next
-                    ThisProgram.StartInfo.Password = pw
-                End If
-            End If
-            Application.DoEvents()
-            If iniRunArray2(5).Length > 0 Then
-                ThisProgram.StartInfo.Domain = SubstitutionDecode(iniRunArray2(5))
-            End If
-            Application.DoEvents()
-            If ThisProgram.StartInfo.UserName = "" Then
-                ThisProgram.StartInfo.UseShellExecute = True
-            Else
-                'The Process must have UseShellExecute set to false to start as a user, Minimized/Maximized/Hidden will have no effect
-                ThisProgram.StartInfo.UseShellExecute = False
-            End If
-            Try
-                ThisProgram.Start()
-            Catch ex As Exception
-                MessageBox.Show(ex.Message, ThisProgram.StartInfo.FileName, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-            Application.DoEvents()
-        Next XRun
-        '*** END RUNNING PROGRAMS ***
-
-        '*** APPLY WALLPAPER ***
-        Dim NewWallpaper As String = INIRead(ThisProfile, "Desktop", "Wallpaper", "")
-        If NewWallpaper.Length > 0 Then
-            If System.IO.File.Exists(NewWallpaper) Then
-                Call UpdateProgress(Me.StatusLabelWorking_Wallpaper, ApplyType)
-                Call SetWallpaper(NewWallpaper)
-            End If
-        End If
-        '*** END APPLY WALLPAPER ***
-
-        '*** START DISPLAY SETTINGS ***
-        Me.messageBoxManager1.HookEnabled = True
+		Call UpdateProgress(Me.StatusLabelWorking_Activating, ApplyType)
+		
+		If ApplyType.Equals("normal") Then
+			Me.toolStripProgressBar1.Enabled = True
+			Me.toolStripProgressBar1.Visible = True
+		End If
+		
+		For i As Integer = 0 To Me.listViewProfiles.Items.Count - 1
+			Me.listViewProfiles.Items.Item(i).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Regular)
+			If Me.listViewProfiles.Items.Item(i).SubItems.Item(3).Text = ThisProfile Then
+				Me.listViewProfiles.Items.Item(i).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Bold)
+				Me.listViewProfiles.Items.Item(i).SubItems.Item(1).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Regular)
+			End If
+		Next
+		
+		INIWrite(Globals.ProgramINIFile, "Program", "Last Activated Profile", ThisProfile)
+		
+		backgroundWorkerApplyProfile.RunWorkerAsync(New String() {ThisProfile, MACAddress, ApplyType})
+	End Sub
+	
+	Sub BackgroundWorkerApplyProfileDoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs)
+		Dim ThisProfile As String = DirectCast(e.Argument(0), String)
+		Dim MACAddress As String = DirectCast(e.Argument(1), String)
+		Dim ApplyType As String = DirectCast(e.Argument(2), String)
+		
+		'*** START SAVE TCP/IP SETTINGS ***
+		'HACK: The profiles folder path prefix is removed here before sending the profile to the service.
+		'      Maybe all functions dealing with profiles should be updated to use partial paths.
+		Dim strIPAddress As String = INIRead(ThisProfile, "TCP/IP Settings", "IP Address", "")
+		Dim strSubnetMask As String = INIRead(ThisProfile, "TCP/IP Settings", "Subnet Mask", "")
+		Dim strDHCP As String = INIRead(ThisProfile, "TCP/IP Settings", "DHCP", "0")
+		
+		' Only apply TCP/IP settings if IP and netmask are set or DHCP is enabled
+		If ((strIPAddress <> "") And (strSubnetMask <> "")) Or (strDHCP = "1") Then
+			If strDHCP = "1" Then
+				backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_DHCP, ApplyType})
+			Else
+				backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_IPAddress, ApplyType})
+			End If
+			Dim Profile As String = ThisProfile.Substring(ProfilesFolder.Length)
+			Dim clientConnection As IInterProcessConnection = Nothing
+			Try
+				clientConnection = New ClientPipeConnection("NetProfilesMod", ".")
+				clientConnection.Connect()
+				clientConnection.Write(Profile + "|" + MACAddress)
+				'TODO: Check the status message if implemented in the server
+				clientConnection.Read()
+				clientConnection.Close()
+			Catch ex As Exception
+				clientConnection.Dispose()
+				'TODO: Display error message instead of throwing exception
+				Throw (ex)
+			End Try
+		End If
+		'*** END SAVE TCP/IP SETTINGS ***
+		
+		'*** START DISCONNECT PREVIOUSLY MAPPED DRIVES ***
+		backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_UnmapDrives, ApplyType})
+		Dim DisconnectTheseDrives() As String
+		DisconnectTheseDrives = INIRead(Globals.ProgramINIFile, "Options", "Mapped Drives", "").Split(System.Convert.ToChar("|"))
+		Dim TheDrive As Object
+		For TheDrive = DisconnectTheseDrives.GetLowerBound(0) To DisconnectTheseDrives.GetUpperBound(0)
+			DisconnectNetworkDrive(DisconnectTheseDrives(System.Convert.ToInt16(TheDrive)), True)
+		Next TheDrive
+		'*** END DISCONNECT PREVIOUSLY MAPPED DRIVES ***
+		
+		'*** START MAP NEW DRIVES ***
+		backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_MapDrives, ApplyType})
+		Dim CurrentlyMappedDrives As String = ""
+		Dim iniText As String
+		Dim iniArray() As String
+		iniText = INIRead(ThisProfile, "Mapped Drives")
+		iniText = iniText.Replace(ControlChars.NullChar, "|")
+		iniText = Trim(iniText)
+		iniArray = iniText.Split(System.Convert.ToChar("|"))
+		Dim iniArray2() As String
+		Dim X As Integer
+		For X = iniArray.GetLowerBound(0) To (iniArray.GetUpperBound(0) - 1)
+			iniArray2 = INIRead(ThisProfile, "Mapped Drives", iniArray(X), "").Split(System.Convert.ToChar("|"))
+			ConnectThisNetworkDrive(iniArray2(0), iniArray(X), SubstitutionDecode(iniArray2(1)), SubstitutionDecode(iniArray2(2)))
+			CurrentlyMappedDrives = CurrentlyMappedDrives & "|" & iniArray(X)
+		Next X
+		If CurrentlyMappedDrives.Length > 1 Then
+			INIWrite(Globals.ProgramINIFile, "Options", "Mapped Drives", CurrentlyMappedDrives.Substring(1, CurrentlyMappedDrives.Length - 1))
+		Else
+			INIWrite(Globals.ProgramINIFile, "Options", "Mapped Drives", "")
+		End If
+		'*** END MAP NEW DRIVES ***
+		
+		'*** START SETTING DEFAULT PRINTER ***
+		Dim NewDefaultPrinter As String = INIRead(ThisProfile, "Printer", "Default", "")
+		If NewDefaultPrinter.Length > 0 Then
+			backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_Printer, ApplyType})
+			Call SetDefaultPrinter(NewDefaultPrinter)
+		End If
+		'*** END SETTING DEFAULT PRINTER ***
+		
+		'*** START INTERNET SETTINGS ***
+		backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_Internet, ApplyType})
+		Dim strAutoConfigAddress As String = INIRead(ThisProfile, "Internet Settings", "AutoConfigAddress", "")
+		Dim strUseProxySettings As String = INIRead(ThisProfile, "Internet Settings", "UseProxySettings", "0")
+		Dim boolUseProxySettings As Boolean
+		If strUseProxySettings.Equals("0") Then boolUseProxySettings = False
+		If strUseProxySettings.Equals("1") Then boolUseProxySettings = True
+		Dim strProxyServerAddress As String = INIRead(ThisProfile, "Internet Settings", "ProxyServerAddress", "")
+		Dim strProxyExceptions As String = INIRead(ThisProfile, "Internet Settings", "ProxyExceptions", "")
+		Dim boolProxyBypass As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "ProxyBypass", Convert.ToString(False)))
+		Dim boolProxyIE As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "InternetExplorer", Convert.ToString(False)))
+		Dim boolProxyFirefox As Boolean = Convert.ToBoolean(INIRead(ThisProfile, "Internet Settings", "Firefox", Convert.ToString(False)))
+		Dim strDefaultHomepage As String = INIRead(ThisProfile, "Internet Settings", "DefaultHomepage", "")
+		
+		Dim FFSettings As FirefoxSettings = Nothing
+		If boolProxyFirefox Then
+			FFSettings = New FirefoxSettings
+		End If
+		
+		Dim regKey As RegistryKey
+		regKey = Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Internet Settings\", True)
+		Dim ProxyGlobal As String = ""
+		Dim ProxyGlobalPort As String = ""
+		Dim ProxyHttp As String = ""
+		Dim ProxyHttpPort As String = ""
+		Dim ProxyHttps As String = ""
+		Dim ProxyHttpsPort As String = ""
+		Dim ProxyFtp As String = ""
+		Dim ProxyFtpPort As String = ""
+		Dim ProxySocks As String = ""
+		Dim ProxySocksPort As String = ""
+		Dim ProxyGopher As String = ""
+		Dim ProxyGopherPort As String = ""
+		
+		If boolUseProxySettings.Equals(True) Then
+			If strProxyServerAddress.Length > 0 Then
+				'Server address specified: set proxy
+				If Not (strProxyServerAddress.Contains("=")) Then
+					If strProxyServerAddress.Contains(":") Then
+						ProxyGlobal = Split(strProxyServerAddress, ":")(0)
+						ProxyGlobalPort = Split(strProxyServerAddress, ":")(1)
+						If ProxyGlobalPort.Length = 0 Then
+							ProxyGlobalPort = "80"
+						End If
+					Else
+						ProxyGlobal = strProxyServerAddress
+						ProxyGlobalPort = "80"
+					End If
+				Else
+					Dim ArrProxyServers() As String = Split(strProxyServerAddress, ";")
+					For Each ProxyProtocol As String In ArrProxyServers
+						ProcessProxySettings(ProxyProtocol, "http", ProxyHttp, ProxyHttpPort)
+						ProcessProxySettings(ProxyProtocol, "https", ProxyHttps, ProxyHttpsPort)
+						ProcessProxySettings(ProxyProtocol, "ftp", ProxyFtp, ProxyFtpPort)
+						ProcessProxySettings(ProxyProtocol, "socks", ProxySocks, ProxySocksPort)
+						ProcessProxySettings(ProxyProtocol, "gopher", ProxyGopher, ProxyGopherPort)
+					Next
+					If ProxyHttp <> "" And ProxyHttpPort = "" Then
+						ProxyHttpPort = "80"
+					End If
+					If ProxyHttps <> "" And ProxyHttpsPort = "" Then
+						ProxyHttpsPort = "443"
+					End If
+					If ProxyFtp <> "" And ProxyFtpPort = "" Then
+						ProxyFtpPort = "21"
+					End If
+					If ProxySocks <> "" And ProxySocksPort = "" Then
+						ProxySocksPort = "0"
+					End If
+					If ProxyGopher <> "" And ProxyGopherPort = "" Then
+						ProxyGopherPort = "0"
+					End If
+				End If
+				If boolProxyIE.Equals(True) Then
+					regKey.SetValue("ProxyEnable", 1)
+					If ProxyGlobal <> "" Then
+						regKey.SetValue("ProxyServer", ProxyGlobal & ":" & ProxyGlobalPort)
+					Else
+						Dim ProxyReg As String = ""
+						If ProxyHttp <> "" Then
+							ProxyReg = "http=" & ProxyHttp & ":" & ProxyHttpPort
+						End If
+						If ProxyHttps <> "" Then
+							If ProxyReg <> "" Then
+								ProxyReg = ProxyReg & ";"
+							End If
+							ProxyReg = ProxyReg & "https=" & ProxyHttps & ":" & ProxyHttpsPort
+						End If
+						If ProxyFtp <> "" Then
+							If ProxyReg <> "" Then
+								ProxyReg = ProxyReg & ";"
+							End If
+							ProxyReg = ProxyReg & "ftp=" & ProxyFtp & ":" & ProxyFtpPort
+						End If
+						If ProxySocks <> "" Then
+							If ProxyReg <> "" Then
+								ProxyReg = ProxyReg & ";"
+							End If
+							ProxyReg = ProxyReg & "socks=" & ProxySocks & ":" & ProxySocksPort
+						End If
+						regKey.SetValue("ProxyServer", ProxyReg)
+					End If
+					If boolProxyBypass.Equals(True) Then
+						If strProxyExceptions.Length > 0 Then
+							regKey.SetValue("ProxyOverride", strProxyExceptions & ";<local>")
+						Else
+							regKey.SetValue("ProxyOverride", "<local>")
+						End If
+					Else
+						If strProxyExceptions.Length > 0 Then
+							regKey.SetValue("ProxyOverride", strProxyExceptions)
+						Else
+							Try
+								regKey.DeleteValue("ProxyOverride")
+							Catch
+								'Ignore the exception in case the key already didn't exist
+							End Try
+						End If
+					End If
+				End If
+				If boolProxyFirefox.Equals(True) Then
+					Dim ProxyExceptions() As String = {}
+					If strProxyExceptions <> "" Then
+						ProxyExceptions = strProxyExceptions.Split(";"C)
+						For i As Integer = 0 To ProxyExceptions.Length - 1
+							'Remove leading asterisk from proxy exceptions for Firefox
+							If ProxyExceptions(i).Substring(0, 1) = "*" Then
+								ProxyExceptions(i) = ProxyExceptions(i).Substring(1)
+							End If
+							If ProxyExceptions(i).Substring(ProxyExceptions(i).Length - 1) = "*" Then
+								'Remove trailing asterisk from proxy exceptions for Firefox
+								ProxyExceptions(i) = ProxyExceptions(i).Substring(0, ProxyExceptions(i).Length - 1)
+								
+								'Convert IP ranges from IE format with wildcards to Firefox format with netmask (192.168.* -> 192.168.0.0/16)
+								Dim pattern8 As String = "^\d{1,3}\.\z"
+								Dim pattern16 As String = "^\d{1,3}\.\d{1,3}\.\z"
+								Dim pattern24 As String = "^\d{1,3}\.\d{1,3}\.\d{1,3}\.\z"
+								If System.Text.RegularExpressions.Regex.Match(ProxyExceptions(i), pattern8).Success Then
+									ProxyExceptions(i) = ProxyExceptions(i) & "0.0.0/8"
+								ElseIf System.Text.RegularExpressions.Regex.Match(ProxyExceptions(i), pattern16).Success Then
+									ProxyExceptions(i) = ProxyExceptions(i) & "0.0/16"
+								ElseIf System.Text.RegularExpressions.Regex.Match(ProxyExceptions(i), pattern24).Success Then
+									ProxyExceptions(i) = ProxyExceptions(i) & "0/24"
+								End If
+								'Dim m As Boolean = System.Text.RegularExpressions.Regex.Match(ProxyExceptions(i), "\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b").Success
+							End If
+						Next i
+					End If
+					FFSettings.SetProxySettings(ProxyGlobal, ProxyGlobalPort, ProxyHttp, ProxyHttpPort, ProxyHttps, ProxyHttpsPort, ProxyFtp, ProxyFtpPort, ProxySocks, ProxySocksPort, ProxyGopher, ProxyGopher, ProxyExceptions, boolProxyBypass)
+				End If
+			Else
+				'Empty server address: clear proxy
+				If boolProxyIE.Equals(True) Then
+					regKey.SetValue("ProxyEnable", 0)
+					regKey.DeleteValue("ProxyServer", False)
+					regKey.DeleteValue("ProxyOverride", False)
+				End If
+				If boolProxyFirefox.Equals(True) Then
+					FFSettings.SetProxySettings("", "", "", "", "", "", "", "", "", "", "", "", New String() {}, True)
+				End If
+			End If
+		End If
+		
+		If boolProxyIE.Equals(True) Then
+			If strAutoConfigAddress.Length > 0 Then
+				regKey.SetValue("AutoConfigURL", strAutoConfigAddress)
+			Else
+				regKey.DeleteValue("AutoConfigURL", False)
+			End If
+		End If
+		If boolProxyFirefox.Equals(True) Then
+			FFSettings.ChangeSetting("network.proxy.autoconfig_url", strAutoConfigAddress)
+			If Not boolUseProxySettings Then
+				FFSettings.ChangeSetting("network.proxy.type", 2)
+			End If
+		End If
+		
+		backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_Homepage, ApplyType})
+		If strDefaultHomepage.Trim.Length > 0 Then
+			If boolProxyIE.Equals(True) Then
+				SetHomepage(strDefaultHomepage)
+			End If
+			If boolProxyFirefox.Equals(True) Then
+				FFSettings.ChangeSetting("browser.startup.homepage", strDefaultHomepage)
+			End If
+		End If
+		
+		If boolProxyFirefox Then
+			FFSettings.Apply()
+		End If
+		'*** END INTERNET SETTINGS ***
+		
+		'*** START RUNNING PROGRAMS ***
+		backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_Programs, ApplyType})
+		Dim iniRunText As String
+		Dim iniRunArray() As String
+		iniRunText = INIRead(ThisProfile, "Run")
+		iniRunText = iniRunText.Replace(ControlChars.NullChar, "|")
+		iniRunText = Trim(iniRunText)
+		iniRunArray = iniRunText.Split(System.Convert.ToChar("|"))
+		Dim iniRunArray2() As String
+		Dim XRun As Integer
+		For XRun = iniRunArray.GetLowerBound(0) To (iniRunArray.GetUpperBound(0) - 1)
+			'TODO: Replace Microsoft.VisualBasic
+			iniRunArray2 = Microsoft.VisualBasic.Strings.Split(INIRead(ThisProfile, "Run", iniRunArray(XRun), ""), "||")
+			Dim ThisProgram As System.Diagnostics.Process = New System.Diagnostics.Process()
+			ThisProgram.StartInfo.FileName = iniRunArray2(0)
+			ThisProgram.StartInfo.WorkingDirectory = Path.GetDirectoryName(ThisProgram.StartInfo.FileName)
+			If iniRunArray2(2).Length > 0 Then
+				Select Case iniRunArray2(2)
+					Case "Normal"
+						ThisProgram.StartInfo.WindowStyle = ProcessWindowStyle.Normal
+					Case "Minimized"
+						ThisProgram.StartInfo.WindowStyle = ProcessWindowStyle.Minimized
+					Case "Maximized"
+						ThisProgram.StartInfo.WindowStyle = ProcessWindowStyle.Maximized
+					Case "Hidden"
+						ThisProgram.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+				End Select
+			End If
+			If iniRunArray2(1).Length > 0 Then
+				ThisProgram.StartInfo.Arguments = iniRunArray2(1)
+			End If
+			If iniRunArray2(3).Length > 0 Then
+				ThisProgram.StartInfo.UserName = SubstitutionDecode(iniRunArray2(3))
+				If iniRunArray2(4).Length > 0 Then
+					Dim pw As New System.Security.SecureString
+					For Each ch As Char In SubstitutionDecode(iniRunArray2(4))
+						pw.AppendChar(ch)
+					Next
+					ThisProgram.StartInfo.Password = pw
+				End If
+			End If
+			If iniRunArray2(5).Length > 0 Then
+				ThisProgram.StartInfo.Domain = SubstitutionDecode(iniRunArray2(5))
+			End If
+			If ThisProgram.StartInfo.UserName = "" Then
+				ThisProgram.StartInfo.UseShellExecute = True
+			Else
+				'The Process must have UseShellExecute set to false to start as a user, Minimized/Maximized/Hidden will have no effect
+				ThisProgram.StartInfo.UseShellExecute = False
+			End If
+			Try
+				ThisProgram.Start()
+			Catch ex As Exception
+				MessageBox.Show(ex.Message, ThisProgram.StartInfo.FileName, MessageBoxButtons.OK, MessageBoxIcon.Error)
+			End Try
+		Next XRun
+		'*** END RUNNING PROGRAMS ***
+		
+		'*** APPLY WALLPAPER ***
+		Dim NewWallpaper As String = INIRead(ThisProfile, "Desktop", "Wallpaper", "")
+		If NewWallpaper.Length > 0 Then
+			If System.IO.File.Exists(NewWallpaper) Then
+				backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_Wallpaper, ApplyType})
+				Call SetWallpaper(NewWallpaper)
+			End If
+		End If
+		'*** END APPLY WALLPAPER ***
+		
+		'*** START DISPLAY SETTINGS ***
+		Me.messageBoxManager1.HookEnabled = True
 		Dim newResolution As Integer() = Nothing
 		Dim resolutionSeparator() As String = {String.Format(ResolutionFormatter, "", "")}
 		Try
@@ -921,6 +928,7 @@ Public Partial Class MainForm
 		End Try
 		
 		If Not IsNothing(newResolution) Then
+			backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_Resolution, ApplyType})
 			'Prompt for Confirmation (ConfirmPrompt)
 			Dim changeResolution As System.Windows.Forms.DialogResult
 			If Me.askBeforeChangingResolutionToolStripMenuItem.Checked Then
@@ -968,14 +976,22 @@ Public Partial Class MainForm
 			Me.messageBoxManager1.HookEnabled = False
 		End If
 		'*** END DISPLAY SETTINGS ***
-
-        If ApplyType.Equals("normal") Then
-            Me.toolStripProgressBar1.Visible = False
-            Me.toolStripProgressBar1.Enabled = False
-            Me.toolStripStatusLabelWorking.Visible = False
-            Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking
-        End If
-    End Sub
+		
+		e.Result = ApplyType
+	End Sub
+	
+	Sub BackgroundWorkerApplyProfileProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs)
+		UpdateProgress(e.UserState(0).ToString(), e.UserState(1).ToString())
+	End Sub
+	
+	Sub BackgroundWorkerApplyProfileRunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs)
+		If e.Result.ToString = "normal" Then
+			Me.toolStripProgressBar1.Visible = False
+			Me.toolStripProgressBar1.Enabled = False
+			Me.toolStripStatusLabelWorking.Visible = False
+			Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking
+		End If
+	End Sub
 	
     Sub ToolStripButtonApplyProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripButtonApplyProfile.Click
         If Me.listViewProfiles.SelectedItems.Count > 0 Then
@@ -1149,7 +1165,8 @@ Public Partial Class MainForm
         INIWrite(Globals.ProgramINIFile, "Program", "AskAfterChangingResolution", Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked.ToString)
     End Sub
 	
-    Sub TimerDetectWirelessTick(ByVal sender As Object, ByVal e As EventArgs) Handles timerDetectWireless.Tick
+	Sub TimerDetectWirelessTick(ByVal sender As Object, ByVal e As EventArgs) Handles timerDetectWireless.Tick
+        'TODO: Move scanning of connected wireless networks to BackgroundWorkerScanAdapters
         Me.timerDetectWireless.Enabled = False
         Call GetConnectedSSIDs()
         Me.timerDetectWireless.Enabled = True
