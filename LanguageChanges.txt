@@ -12,6 +12,7 @@ Misc/DisplaySettings-Refresh
 ProfileSettings/ScreenResolutionText-By
 ProfileSettings/ScreenResolutionText-Pixels
 ProfileSettings/labelColorQuality
+MainForm/toolStripStatusLabelWorking-Homepage
 
 Missing Translations:
 ProfileSettings/labelDNSSuffix

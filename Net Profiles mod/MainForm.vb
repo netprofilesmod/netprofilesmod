@@ -863,7 +863,6 @@ Public Partial Class MainForm
 			End If
 		End If
 		
-		backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_Homepage, ApplyType})
 		If strDefaultHomepage.Trim.Length > 0 Then
 			If boolProxyIE.Equals(True) Then
 				SetHomepage(strDefaultHomepage)
