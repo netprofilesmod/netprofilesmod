@@ -511,6 +511,7 @@ Partial Class MainForm
 		'backgroundWorkerApplyProfile
 		'
 		Me.backgroundWorkerApplyProfile.WorkerReportsProgress = true
+		Me.backgroundWorkerApplyProfile.WorkerSupportsCancellation = true
 		AddHandler Me.backgroundWorkerApplyProfile.DoWork, AddressOf Me.BackgroundWorkerApplyProfileDoWork
 		AddHandler Me.backgroundWorkerApplyProfile.ProgressChanged, AddressOf Me.BackgroundWorkerApplyProfileProgressChanged
 		AddHandler Me.backgroundWorkerApplyProfile.RunWorkerCompleted, AddressOf Me.BackgroundWorkerApplyProfileRunWorkerCompleted

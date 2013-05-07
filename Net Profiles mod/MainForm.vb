@@ -88,6 +88,7 @@ Public Partial Class MainForm
 	Public CheckForUpdates_Error_1 As String
 	Public CheckForUpdates_Error_2 As String
 	Private messageBoxManager1 As MessageBoxManager
+	Private specialExitPermission As String = ""
 	Const AdapterScanPause As Integer = 1000
 	
 	
@@ -491,11 +492,9 @@ Public Partial Class MainForm
 	Sub BackgroundWorkerScanAdaptersRunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs)
 		' Updates the network adapter list
 		
-		If Not backgroundWorkerScanAdapters.CancellationPending Then
-			NetworkCardList = DirectCast(e.Result, ArrayList)
-			RefreshProfiles()
-			backgroundWorkerScanAdapters.RunWorkerAsync()
-		End If
+		NetworkCardList = DirectCast(e.Result, ArrayList)
+		RefreshProfiles()
+		backgroundWorkerScanAdapters.RunWorkerAsync()
 	End Sub
 	
 	Public Sub RefreshProfiles
@@ -581,6 +580,7 @@ Public Partial Class MainForm
 	End Sub
 	
 	Sub BackgroundWorkerApplyProfileDoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs)
+		Dim worker As System.ComponentModel.BackgroundWorker = CType(sender, System.ComponentModel.BackgroundWorker)
 		Dim ThisProfile As String = DirectCast(e.Argument(0), String)
 		Dim MACAddress As String = DirectCast(e.Argument(1), String)
 		Dim ApplyType As String = DirectCast(e.Argument(2), String)
@@ -595,7 +595,8 @@ Public Partial Class MainForm
 		' Only apply TCP/IP settings if IP and netmask are set or DHCP is enabled
 		If ((strIPAddress <> "") And (strSubnetMask <> "")) Or (strDHCP = "1") Then
 			If strDHCP = "1" Then
-				backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_DHCP, ApplyType})
+				' Allow to exit the program while waiting for possible timeout for DHCP renew
+				backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_DHCP, ApplyType, "ExitAnyway"})
 			Else
 				backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_IPAddress, ApplyType})
 			End If
@@ -614,6 +615,11 @@ Public Partial Class MainForm
 				Throw (ex)
 			End Try
 		End If
+		
+		If worker.CancellationPending Then
+			e.Cancel = True
+			Exit Sub
+		End If
 		'*** END SAVE TCP/IP SETTINGS ***
 		
 		'*** START DISCONNECT PREVIOUSLY MAPPED DRIVES ***
@@ -622,12 +628,19 @@ Public Partial Class MainForm
 		DisconnectTheseDrives = INIRead(Globals.ProgramINIFile, "Options", "Mapped Drives", "").Split(System.Convert.ToChar("|"))
 		Dim TheDrive As Object
 		For TheDrive = DisconnectTheseDrives.GetLowerBound(0) To DisconnectTheseDrives.GetUpperBound(0)
-			DisconnectNetworkDrive(DisconnectTheseDrives(System.Convert.ToInt16(TheDrive)), True)
+			DisconnectNetworkDrive(DisconnectTheseDrives(System.Convert.ToInt16(TheDrive)), True)			
 		Next TheDrive
+		
+		If worker.CancellationPending Then
+			INIWrite(Globals.ProgramINIFile, "Options", "Mapped Drives", "")
+			e.Cancel = True
+			Exit Sub
+		End If
 		'*** END DISCONNECT PREVIOUSLY MAPPED DRIVES ***
 		
 		'*** START MAP NEW DRIVES ***
-		backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_MapDrives, ApplyType})
+		' Allow to exit the program while waiting for possible timeout for connecting mapped drive
+		backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_MapDrives, ApplyType, "ExitAnyway"})
 		Dim CurrentlyMappedDrives As String = ""
 		Dim iniText As String
 		Dim iniArray() As String
@@ -641,11 +654,22 @@ Public Partial Class MainForm
 			iniArray2 = INIRead(ThisProfile, "Mapped Drives", iniArray(X), "").Split(System.Convert.ToChar("|"))
 			ConnectThisNetworkDrive(iniArray2(0), iniArray(X), SubstitutionDecode(iniArray2(1)), SubstitutionDecode(iniArray2(2)))
 			CurrentlyMappedDrives = CurrentlyMappedDrives & "|" & iniArray(X)
+			
+			If worker.CancellationPending Then
+				INIWrite(Globals.ProgramINIFile, "Options", "Mapped Drives", CurrentlyMappedDrives.Substring(1, CurrentlyMappedDrives.Length - 1))
+				e.Cancel = True
+				Exit Sub
+			End If
 		Next X
 		If CurrentlyMappedDrives.Length > 1 Then
 			INIWrite(Globals.ProgramINIFile, "Options", "Mapped Drives", CurrentlyMappedDrives.Substring(1, CurrentlyMappedDrives.Length - 1))
 		Else
 			INIWrite(Globals.ProgramINIFile, "Options", "Mapped Drives", "")
+		End If
+		
+		If worker.CancellationPending Then
+			e.Cancel = True
+			Exit Sub
 		End If
 		'*** END MAP NEW DRIVES ***
 		
@@ -654,6 +678,11 @@ Public Partial Class MainForm
 		If NewDefaultPrinter.Length > 0 Then
 			backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_Printer, ApplyType})
 			Call SetDefaultPrinter(NewDefaultPrinter)
+		End If
+		
+		If worker.CancellationPending Then
+			e.Cancel = True
+			Exit Sub
 		End If
 		'*** END SETTING DEFAULT PRINTER ***
 		
@@ -847,6 +876,11 @@ Public Partial Class MainForm
 		If boolProxyFirefox Then
 			FFSettings.Apply()
 		End If
+		
+		If worker.CancellationPending Then
+			e.Cancel = True
+			Exit Sub
+		End If
 		'*** END INTERNET SETTINGS ***
 		
 		'*** START RUNNING PROGRAMS ***
@@ -904,6 +938,11 @@ Public Partial Class MainForm
 			Catch ex As Exception
 				MessageBox.Show(ex.Message, ThisProgram.StartInfo.FileName, MessageBoxButtons.OK, MessageBoxIcon.Error)
 			End Try
+		
+			If worker.CancellationPending Then
+				e.Cancel = True
+				Exit Sub
+			End If
 		Next XRun
 		'*** END RUNNING PROGRAMS ***
 		
@@ -914,6 +953,11 @@ Public Partial Class MainForm
 				backgroundWorkerApplyProfile.ReportProgress(0, New String() {Me.StatusLabelWorking_Wallpaper, ApplyType})
 				Call SetWallpaper(NewWallpaper)
 			End If
+		End If
+		
+		If worker.CancellationPending Then
+			e.Cancel = True
+			Exit Sub
 		End If
 		'*** END APPLY WALLPAPER ***
 		
@@ -977,23 +1021,34 @@ Public Partial Class MainForm
 		End If
 		'*** END DISPLAY SETTINGS ***
 		
+		' Remember the mode for worker completed handler
 		e.Result = ApplyType
 	End Sub
 	
 	Sub BackgroundWorkerApplyProfileProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs)
 		UpdateProgress(e.UserState(0).ToString(), e.UserState(1).ToString())
+		Try
+			Me.specialExitPermission = e.UserState(2).ToString()
+		Catch
+			Me.specialExitPermission = ""
+		End Try
 	End Sub
 	
 	Sub BackgroundWorkerApplyProfileRunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs)
-		Dim applyType As String = e.Result.ToString
-		If applyType = "normal" Then
-			Me.toolStripProgressBar1.Visible = False
-			Me.toolStripProgressBar1.Enabled = False
-			Me.toolStripStatusLabelWorking.Visible = False
-			Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking
-		ElseIf applyType = "auto" Then
-			' Exit after automatic profile application
+		Me.specialExitPermission = ""
+		If e.Cancelled Then
 			Me.Close()
+		Else
+			Dim applyType As String = e.Result.ToString
+			If applyType = "normal" Then
+				Me.toolStripProgressBar1.Visible = False
+				Me.toolStripProgressBar1.Enabled = False
+				Me.toolStripStatusLabelWorking.Visible = False
+				Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking
+			ElseIf applyType = "auto" Then
+				' Exit after automatic profile application
+				Me.Close()
+			End If
 		End If
 	End Sub
 	
@@ -1027,26 +1082,28 @@ Public Partial Class MainForm
         Me.Close()
     End Sub
 	
-    Sub MainFormFormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If e.CloseReason = System.Windows.Forms.CloseReason.WindowsShutDown Then
-
-        Else
-            If Me.toolStripProgressBar1.Visible = True Or Globals.OKToCloseProgram = False Then
-                If Me.toolStripProgressBar1.Visible = False Then
-                    Call Me.ToggleProgramVisibility()
-                End If
-                e.Cancel = True
-            Else
-                e.Cancel = False
-            End If
-            If Me.Visible.Equals(True) And Me.WindowState <> FormWindowState.Minimized Then
-                INIWrite(Globals.ProgramINIFile, "Program", "LocationTop", Me.Top.ToString)
-                INIWrite(Globals.ProgramINIFile, "Program", "LocationLeft", Me.Left.ToString)
-                INIWrite(Globals.ProgramINIFile, "Program", "WindowWidth", Me.Width.ToString)
-                INIWrite(Globals.ProgramINIFile, "Program", "WindowHeight", Me.Height.ToString)
-            End If
-        End If
-    End Sub
+	Sub MainFormFormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles MyBase.FormClosing
+		If e.CloseReason = System.Windows.Forms.CloseReason.UserClosing Then
+			If Not Globals.OKToCloseProgram Then
+				' Minimize tp tray
+				Me.ToggleProgramVisibility()
+				e.Cancel = True
+			End If
+		End If
+		If Me.Visible And Not Me.WindowState = FormWindowState.Minimized Then
+			INIWrite(Globals.ProgramINIFile, "Program", "LocationTop", Me.Top.ToString)
+			INIWrite(Globals.ProgramINIFile, "Program", "LocationLeft", Me.Left.ToString)
+			INIWrite(Globals.ProgramINIFile, "Program", "WindowWidth", Me.Width.ToString)
+			INIWrite(Globals.ProgramINIFile, "Program", "WindowHeight", Me.Height.ToString)
+		End If
+		If backgroundWorkerApplyProfile.IsBusy And Globals.OKToCloseProgram Then
+			backgroundWorkerApplyProfile.CancelAsync()
+			If Not Me.specialExitPermission = "ExitAnyway" Then
+				' The worker completed handler will call close again when a clean exit is possible
+				e.Cancel = True
+			End If
+		End If
+	End Sub
 	
     Sub ShowHideWindowToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles showHideWindowToolStripMenuItem.Click
         Call Me.ToggleProgramVisibility()
