@@ -70,11 +70,11 @@ Public Partial Class AutoActivate
 	
 	Sub Timer1Tick(ByVal sender As Object, ByVal e As EventArgs)
 		Me.timer1.Enabled = False
-		Call MainForm.ApplyProfile(Globals.INIAutoLoad, "auto")
-		'TODO: Replace Microsoft.VisualBasic
-		If Microsoft.VisualBasic.Command.Length > 0 Then
+		MainForm.ApplyProfile(Globals.INIAutoLoad, "auto")
+		Dim CommandLineArgs As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = My.Application.CommandLineArgs
+		If CommandLineArgs.Count > 0 Then
+			' The program will close after the backgrundworker has applied the profile
 			Globals.OKToCloseProgram = True
-			MainForm.Close
 		Else
 			If Globals.RunFromTaskTray.Equals(True) Then
 				Globals.RunFromTaskTray = False

@@ -985,11 +985,15 @@ Public Partial Class MainForm
 	End Sub
 	
 	Sub BackgroundWorkerApplyProfileRunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs)
-		If e.Result.ToString = "normal" Then
+		Dim applyType As String = e.Result.ToString
+		If applyType = "normal" Then
 			Me.toolStripProgressBar1.Visible = False
 			Me.toolStripProgressBar1.Enabled = False
 			Me.toolStripStatusLabelWorking.Visible = False
 			Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking
+		ElseIf applyType = "auto" Then
+			' Exit after automatic profile application
+			Me.Close()
 		End If
 	End Sub
 	
