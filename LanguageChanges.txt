@@ -13,6 +13,9 @@ ProfileSettings/ScreenResolutionText-By
 ProfileSettings/ScreenResolutionText-Pixels
 ProfileSettings/labelColorQuality
 MainForm/toolStripStatusLabelWorking-Homepage
+MainForm/toolStripStatusLabelWorking-Gateway
+MainForm/toolStripStatusLabelWorking-DNS
+MainForm/toolStripStatusLabelWorking-WINS
 
 Missing Translations:
 ProfileSettings/labelDNSSuffix
