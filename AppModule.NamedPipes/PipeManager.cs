@@ -99,7 +99,7 @@ namespace AppModule.NamedPipes {
 							pipe.Start();
 							Pipes.Add(pipe.PipeConnection.NativeHandle, pipe);
 						}
-						catch (InterProcessIOException ex) {
+						catch (InterProcessIOException) {
 							RemoveServerChannel(pipe.PipeConnection.NativeHandle);
 							pipe.Dispose();
 						}

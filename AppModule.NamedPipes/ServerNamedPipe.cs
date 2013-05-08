@@ -70,9 +70,9 @@ namespace AppModule.NamedPipes {
 					PipeManager.WakeUp();
 				}
 			} 
-			catch (System.Threading.ThreadAbortException ex) { }
-			catch (System.Threading.ThreadStateException ex) { }
-			catch (Exception ex) { 
+			catch (System.Threading.ThreadAbortException) { }
+			catch (System.Threading.ThreadStateException) { }
+			catch (Exception) { 
 				// Log exception
 			}
 			finally {
@@ -109,9 +109,9 @@ namespace AppModule.NamedPipes {
 					try {
 						PipeThread.Abort();
 					} 
-					catch (System.Threading.ThreadAbortException ex) { }
-					catch (System.Threading.ThreadStateException ex) { }
-					catch (Exception ex) {
+					catch (System.Threading.ThreadAbortException) { }
+					catch (System.Threading.ThreadStateException) { }
+					catch (Exception) {
 						// Log exception
 					}
 				}
