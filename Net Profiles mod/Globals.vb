@@ -469,7 +469,9 @@ Public Module Globals
 			'	MessageBox.Show(Globals.AutoConnectSSID(i))
 			'Next
 			For i = 0 To AutoConnectSSID.Count - 1
-				If GetNetworkInstanceName(AutoConnectMACAddress(i).ToString).ToLower = CurrentWirelessName.ToLower And AutoConnectSSID(i).ToString.ToLower = CurrentWirelessSSID.ToLower Then
+				If GetNetworkInstanceName(AutoConnectMACAddress(i).ToString).ToLower = CurrentWirelessName.ToLower And _
+					AutoConnectSSID(i).ToString.ToLower = CurrentWirelessSSID.ToLower And Not MainForm.ProfileApplyInProgress Then
+					
 					Dim ProfileName As String = INIRead(CStr(AutoConnectProfile(i)), "General", "Name", "[No Name]")
 					If MainForm.dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem.Checked Then
 						Globals.INIAutoLoad = AutoConnectProfile(i).ToString

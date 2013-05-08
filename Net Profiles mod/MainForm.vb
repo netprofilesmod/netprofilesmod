@@ -89,6 +89,7 @@ Public Partial Class MainForm
 	Public CheckForUpdates_Error_2 As String
 	Private messageBoxManager1 As MessageBoxManager
 	Private specialExitPermission As String = ""
+	Public ProfileApplyInProgress As Boolean = False
 	Const AdapterScanPause As Integer = 1000
 	
 	
@@ -495,14 +496,13 @@ Public Partial Class MainForm
 	End Sub
 	
 	Public Sub RefreshProfiles
-		Me.toolStripProgressBar1.Enabled = True
-		Me.toolStripProgressBar1.Visible = True
-		Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking
-		Me.toolStripStatusLabelWorking.Visible = True
-		Me.toolStripButtonApplyProfile.Enabled = False
-		Me.toolStripButtonCopyProfile.Enabled = False
-		Me.toolStripButtonEditProfile.Enabled = False
-		Me.toolStripButtonDeleteProfile.Enabled = False
+		If Not Me.ProfileApplyInProgress Then
+			Me.toolStripProgressBar1.Enabled = True
+			Me.toolStripProgressBar1.Visible = True
+			Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking
+			Me.toolStripStatusLabelWorking.Visible = True
+		End If
+		Me.SetProfileOperationsState(False)
 		Globals.AutoConnectSSID.Clear
 		Globals.AutoConnectProfile.Clear
 		Globals.AutoConnectMACAddress.Clear
@@ -511,9 +511,11 @@ Public Partial Class MainForm
 		If Globals.AutoConnectSSID.Count > 0 Then
 			Me.timerDetectWireless.Enabled = True
 		End If
-		Me.toolStripProgressBar1.Visible = False
-		Me.toolStripProgressBar1.Enabled = False
-		Me.toolStripStatusLabelWorking.Visible = False
+		If Not Me.ProfileApplyInProgress Then
+			Me.toolStripProgressBar1.Visible = False
+			Me.toolStripProgressBar1.Enabled = False
+			Me.toolStripStatusLabelWorking.Visible = False
+		End If
 	End Sub
 	
     Sub ToolStripButtonDeleteProfileClick(ByVal sender As Object, ByVal e As EventArgs) Handles toolStripButtonDeleteProfile.Click
@@ -556,24 +558,28 @@ Public Partial Class MainForm
     End Sub
 	
 	Public Sub ApplyProfile(ByVal ThisProfile As String, ByVal ApplyType As String, Optional ByVal MACAddress As String = "")
-		Call UpdateProgress(Me.StatusLabelWorking_Activating, ApplyType)
-		
-		If ApplyType.Equals("normal") Then
-			Me.toolStripProgressBar1.Enabled = True
-			Me.toolStripProgressBar1.Visible = True
-		End If
-		
-		For i As Integer = 0 To Me.listViewProfiles.Items.Count - 1
-			Me.listViewProfiles.Items.Item(i).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Regular)
-			If Me.listViewProfiles.Items.Item(i).SubItems.Item(3).Text = ThisProfile Then
-				Me.listViewProfiles.Items.Item(i).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Bold)
-				Me.listViewProfiles.Items.Item(i).SubItems.Item(1).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Regular)
+		If Not Me.backgroundWorkerApplyProfile.IsBusy Then
+			Me.ProfileApplyInProgress = True
+			UpdateProgress(Me.StatusLabelWorking_Activating, ApplyType)
+			
+			If ApplyType.Equals("normal") Then
+				Me.toolStripProgressBar1.Enabled = True
+				Me.toolStripProgressBar1.Visible = True
+				Me.SetProfileOperationsState(False)
 			End If
-		Next
-		
-		INIWrite(Globals.ProgramINIFile, "Program", "Last Activated Profile", ThisProfile)
-		
-		backgroundWorkerApplyProfile.RunWorkerAsync(New String() {ThisProfile, MACAddress, ApplyType})
+			
+			For i As Integer = 0 To Me.listViewProfiles.Items.Count - 1
+				Me.listViewProfiles.Items.Item(i).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Regular)
+				If Me.listViewProfiles.Items.Item(i).SubItems.Item(3).Text = ThisProfile Then
+					Me.listViewProfiles.Items.Item(i).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Bold)
+					Me.listViewProfiles.Items.Item(i).SubItems.Item(1).Font = New System.Drawing.Font(Me.listViewProfiles.Items.Item(i).Font, FontStyle.Regular)
+				End If
+			Next
+			
+			INIWrite(Globals.ProgramINIFile, "Program", "Last Activated Profile", ThisProfile)
+			
+			backgroundWorkerApplyProfile.RunWorkerAsync(New String() {ThisProfile, MACAddress, ApplyType})
+		End If
 	End Sub
 	
 	Sub BackgroundWorkerApplyProfileDoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs)
@@ -625,7 +631,7 @@ Public Partial Class MainForm
 		DisconnectTheseDrives = INIRead(Globals.ProgramINIFile, "Options", "Mapped Drives", "").Split(System.Convert.ToChar("|"))
 		Dim TheDrive As Object
 		For TheDrive = DisconnectTheseDrives.GetLowerBound(0) To DisconnectTheseDrives.GetUpperBound(0)
-			DisconnectNetworkDrive(DisconnectTheseDrives(System.Convert.ToInt16(TheDrive)), True)			
+			DisconnectNetworkDrive(DisconnectTheseDrives(System.Convert.ToInt16(TheDrive)), True)
 		Next TheDrive
 		
 		If worker.CancellationPending Then
@@ -1041,6 +1047,12 @@ Public Partial Class MainForm
 				Me.toolStripProgressBar1.Enabled = False
 				Me.toolStripStatusLabelWorking.Visible = False
 				Me.toolStripStatusLabelWorking.Text = Me.StatusLabelWorking
+				Me.ProfileApplyInProgress = False
+				If Me.listViewProfiles.SelectedItems.Count > 0 Then
+					Me.SetProfileOperationsState(True)
+				Else
+					Me.SetProfileOperationsState(False)
+				End If
 			ElseIf applyType = "auto" Then
 				' Exit after automatic profile application
 				Me.Close()
@@ -1142,23 +1154,20 @@ Public Partial Class MainForm
 			
 	End Sub
 	
-    Sub FileToolStripMenuItemDropDownOpening(ByVal sender As Object, ByVal e As EventArgs) Handles fileToolStripMenuItem.DropDownOpening
-        If Me.listViewProfiles.SelectedItems.Count > 0 Then
-            Me.toolStripMenuItemEditProfile.Enabled = True
-            Me.deleteToolStripMenuItemDeleteProfile.Enabled = True
-            Me.applyProfileToolStripMenuItemApplyProfile.Enabled = True
-            Me.createDesktopShortcutToolStripMenuItem1.Enabled = True
-            Me.activateOnDifferentNetworkCardToolStripMenuItem1.Enabled = True
-            Me.toolStripMenuItemCopyProfile.Enabled = True
-        Else
-            Me.toolStripMenuItemEditProfile.Enabled = False
-            Me.deleteToolStripMenuItemDeleteProfile.Enabled = False
-            Me.applyProfileToolStripMenuItemApplyProfile.Enabled = False
-            Me.createDesktopShortcutToolStripMenuItem1.Enabled = False
-            Me.activateOnDifferentNetworkCardToolStripMenuItem1.Enabled = False
-            Me.toolStripMenuItemCopyProfile.Enabled = False
-        End If
-    End Sub
+	Sub SetProfileOperationsState(Enabled As Boolean)
+		Dim state As Boolean = Enabled And Not Me.ProfileApplyInProgress
+		Me.toolStripMenuItemEditProfile.Enabled = state
+		Me.deleteToolStripMenuItemDeleteProfile.Enabled = state
+		Me.applyProfileToolStripMenuItemApplyProfile.Enabled = state
+		Me.createDesktopShortcutToolStripMenuItem1.Enabled = state
+		Me.activateOnDifferentNetworkCardToolStripMenuItem1.Enabled = state
+		Me.toolStripMenuItemCopyProfile.Enabled = state
+		
+		Me.toolStripButtonApplyProfile.Enabled = state
+		Me.toolStripButtonEditProfile.Enabled = state
+		Me.toolStripButtonDeleteProfile.Enabled = state
+		Me.toolStripButtonCopyProfile.Enabled = state
+	End Sub
 	
 	Sub CreateDesktopShortcut
 		If Me.listViewProfiles.SelectedItems.Count > 0 Then
@@ -1254,19 +1263,13 @@ Public Partial Class MainForm
         End If
     End Sub
 	
-    Sub ListViewProfilesItemSelectionChanged(ByVal sender As Object, ByVal e As ListViewItemSelectionChangedEventArgs) Handles listViewProfiles.ItemSelectionChanged
-        If Me.listViewProfiles.SelectedItems.Count > 0 Then
-            Me.toolStripButtonApplyProfile.Enabled = True
-            Me.toolStripButtonEditProfile.Enabled = True
-            Me.toolStripButtonDeleteProfile.Enabled = True
-            Me.toolStripButtonCopyProfile.Enabled = True
-        Else
-            Me.toolStripButtonApplyProfile.Enabled = False
-            Me.toolStripButtonEditProfile.Enabled = False
-            Me.toolStripButtonDeleteProfile.Enabled = False
-            Me.toolStripButtonCopyProfile.Enabled = False
-        End If
-    End Sub
+	Sub ListViewProfilesItemSelectionChanged(ByVal sender As Object, ByVal e As ListViewItemSelectionChangedEventArgs) Handles listViewProfiles.ItemSelectionChanged
+		If Me.listViewProfiles.SelectedItems.Count > 0 Then
+			Me.SetProfileOperationsState(True)
+		Else
+			Me.SetProfileOperationsState(False)
+		End If
+	End Sub
 	
     Sub CheckForUpdatesToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles checkForUpdatesToolStripMenuItem.Click
         Application.DoEvents()
