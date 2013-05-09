@@ -112,7 +112,7 @@ Public Partial Class MainForm
         End If
         'TODO: Replace Microsoft.VisualBasic
         ' The profiles folder is created by the installer with limited rights for users. To allow debugging while the
-        ' application is not installed, the folder is created here. In this case non-administrators are able to modify
+        ' application is not installed, the folder is created here. In this case non-administrators are able to add
         ' profile files.
         If Dir(ProfilesFolder, Microsoft.VisualBasic.FileAttribute.Directory) = "" Then
             MkDir((ProfilesFolder))

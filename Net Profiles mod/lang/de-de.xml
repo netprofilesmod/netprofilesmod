@@ -42,7 +42,6 @@
 
     <customizeDesktopShortcutsToolStripMenuItem>Desktop-Verknüpfung anpassen...</customizeDesktopShortcutsToolStripMenuItem>
 
-    <reloadNetworkInterfacesToolStripMenuItem>Netzwerkadapter neu laden</reloadNetworkInterfacesToolStripMenuItem>
 
     <reloadProfilesToolStripMenuItem>Profile neu laden</reloadProfilesToolStripMenuItem>
 
@@ -80,7 +79,6 @@
 
     <toolStripStatusLabelWorking-Internet>Internet-Einstellungen aktivieren...</toolStripStatusLabelWorking-Internet>
 
-    <toolStripStatusLabelWorking-Homepage>Startseite festlegen...</toolStripStatusLabelWorking-Homepage>
 
     <toolStripStatusLabelWorking-Programs>Programe ausführen...</toolStripStatusLabelWorking-Programs>
 
@@ -94,11 +92,8 @@
 
     <toolStripStatusLabelWorking-IPAddress>IP-Adresse festlegen...</toolStripStatusLabelWorking-IPAddress>
 
-    <toolStripStatusLabelWorking-Gateway>Standard-Gateway festlegen...</toolStripStatusLabelWorking-Gateway>
 
-    <toolStripStatusLabelWorking-DNS>DNS Server festlegen...</toolStripStatusLabelWorking-DNS>
 
-    <toolStripStatusLabelWorking-WINS>WINS Server festlegen...</toolStripStatusLabelWorking-WINS>
 
     <applyProfileToolStripMenuItem>Profil aktivieren</applyProfileToolStripMenuItem>
 
@@ -276,7 +271,6 @@
 
     <labelServerAddress>Server Adresse:</labelServerAddress>
 
-    <labelPort>Port:</labelPort>
 
     <checkBoxBypassProxy>Bei lokalen Adressen Proxy-Server umgehen (IE und Opera)</checkBoxBypassProxy>
 
@@ -288,9 +282,7 @@
 
     <groupBoxWebBrowsers>Einstellungen aktivieren für</groupBoxWebBrowsers>
 
-    <buttonClearFirefox>Firefox Einstellungen löschen</buttonClearFirefox>
 
-	<buttonClearFirefox-ToolTip>Klicken Sie hier, falls Sie Probleme bei der Änderung der Proxy-Einstellung oder der Startseite in Firefox haben.</buttonClearFirefox-ToolTip>
 
     <groupBoxPleaseNote>Bitte beachten</groupBoxPleaseNote>
 
@@ -300,11 +292,8 @@
 
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
 
-	<checkBoxOpera>Opera</checkBoxOpera>
 
-	<ClearFirefox-Messagebox-1>Einstellungen wurden entfernt.</ClearFirefox-Messagebox-1>
 
-    <ClearFirefox-Messagebox-2>Die Einstellungen werden beim Neustart von Firefox übernommen.</ClearFirefox-Messagebox-2>
 
     <toolStripButtonAddDrive>Laufwerk hinzufügen</toolStripButtonAddDrive>
 
@@ -338,11 +327,8 @@
 
     <labelScreenResolution>Bildschirm-Auflösung:</labelScreenResolution>
 
-	<ScreenResolutionText-By>mal</ScreenResolutionText-By>
 
-	<ScreenResolutionText-Pixels>Pixel</ScreenResolutionText-Pixels>
 
-    <labelColorQuality>Farbtiefe:</labelColorQuality>
 
 	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
 
@@ -358,7 +344,6 @@
 
     <labelSSIDNotes>Eingabe einer Drahtlos-SSID aktiviert dieses Profil automatisch, wenn die Verbindung zu einem aufgeführten Drahtlos-Netzwerk hergestellt wird.</labelSSIDNotes>
 
-	<labelWirelessVista>Windows Vista Benutzer: Dieser Tab bleibt deaktiviert, bis eine aktuell verbundene Drahtlos-SSID ausgelesen werden kann.</labelWirelessVista>
 
     <buttonSave>Sichern</buttonSave>
 
@@ -432,9 +417,7 @@
 
 	<DisplaySettings-Resolution>Auflösung:</DisplaySettings-Resolution>
 
-	<DisplaySettings-Bits>Farbtiefe:</DisplaySettings-Bits>
 
-	<DisplaySettings-Refresh>Wiederholrate:</DisplaySettings-Refresh>`
 
 	<DisplaySettings-RevertPrompt-Title>Anzeige geändert</DisplaySettings-RevertPrompt-Title>
 

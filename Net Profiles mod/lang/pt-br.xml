@@ -20,7 +20,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>Executar Ao Iniciar O Windows</runWhenILogInToWindowsToolStripMenuItem>
 	<languageToolStripMenuItem>Selecionar Idioma</languageToolStripMenuItem>
     <customizeDesktopShortcutsToolStripMenuItem>Personalizar Atalhos De Tela...</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>Carregar Interfaces De Rede</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>Carregar Perfis</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>Ajuda</helpToolStripMenuItem>
     <!-- Required: %1 (program name) -->
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>Conectando Drives Mapeados...</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>Ajustando Impressora Padrão...</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>Ativando Ajustes De Internet...</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>Ajustando Página Inicial...</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>Executando Programas...</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>Alterando O Papel De Parede...</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>Mudando A Resolução De Tela...</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>Carregando Interfaces De Rede...</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>Habilitando DHCP...</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>Atribuindo Endereços de IP...</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>Ajustando O Gateway...</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>Ajustando Os Servidores DNS...</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>Ajustando Servidor WINS...</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>Ativar Perfil</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>Ativar Em Placa De Rede Diferente...</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>Copiar</copyToolStripMenuItem>
@@ -137,21 +132,15 @@
     <groupBoxAutoConfigAddress>Endereços Automáticos De Configuração:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Usar Ajustes De Proxy</groupBoxProxy>
     <labelServerAddress>Endereço Do Servidor:</labelServerAddress>
-    <labelPort>Porta:</labelPort>
     <checkBoxBypassProxy>Usar Servidor Proxy Em Endereços Locais (IE e Opera)</checkBoxBypassProxy>
     <groupBoxHomepage>Página Inicial:</groupBoxHomepage>
     <buttonUseBlankHomepage>Usar Branca</buttonUseBlankHomepage>
     <labelHomepageNote>Deixe Em Branco Para Não Alterar.</labelHomepageNote>
     <groupBoxWebBrowsers>Habilitar Ajustes Para</groupBoxWebBrowsers>
-    <buttonClearFirefox>Limpar Ajustes Do Firefox</buttonClearFirefox>
-	<buttonClearFirefox-ToolTip>Clique Aqui Se Estiver Tendo Problemas Para Ajustar Seu Proxy Ou Página Padrão Do Firefox.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>Atenção</groupBoxPleaseNote>
 	<labelPleaseNote>O Firefox e Opera Não Podem Estar Rodando Para Que Os Ajustes Tenham Efeito.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-	<checkBoxOpera>Opera</checkBoxOpera>
-	<ClearFirefox-Messagebox-1>Os Ajustes Foram Removidos.</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>Se O Firefox Estiver Em Execução, Reinicie-o Para As Alterações Terem Efeito.</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>Adicionar Drive</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>Editar</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>Remover</toolStripButtonRemoveDrive>
@@ -168,9 +157,6 @@
     <groupBoxWallpaperPreview>Visualizar</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>Ajustes De Vídeo</groupBoxDisplaySettings>
     <labelScreenResolution>Resolução De Tela:</labelScreenResolution>
-	<ScreenResolutionText-By>por</ScreenResolutionText-By>
-	<ScreenResolutionText-Pixels>pixels</ScreenResolutionText-Pixels>
-    <labelColorQuality>Cores:</labelColorQuality>
 	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
 	<ColorQualityText-Lowest>Baixa</ColorQualityText-Lowest>
 	<ColorQualityText-Highest>Alta</ColorQualityText-Highest>
@@ -178,7 +164,6 @@
     <groupBoxWireless>Auto-Ativar O Perfil</groupBoxWireless>
     <labelSSID>Senha Rede Sem Fio:</labelSSID>
     <labelSSIDNotes>Ao Especificar A Senha Da Rede Sem Fio, O Perfil Será Automaticamente Ativado Ao Detectar Uma Rede Sem Fio.</labelSSIDNotes>
-	<labelWirelessVista>Usuários Do Windows Vista: Esta Aba Será Desabilitada Até Que Eu Entenda Como Isso Funciona Na Rede Sem Fio No Vista.</labelWirelessVista>
     <buttonSave>Salvar</buttonSave>
     <buttonClose>Fechar</buttonClose>
     <labelWorking-NetworkCards>Carregando Placas De Rede...</labelWorking-NetworkCards>
@@ -215,8 +200,6 @@
 	<DisplaySettings-ConfirmPrompt-Title>Confirmar Mudança De Vídeo</DisplaySettings-ConfirmPrompt-Title>
 	<DisplaySettings-ConfirmPrompt-Message>Você Deseja Alterar Seus Ajustes De Vídeo?</DisplaySettings-ConfirmPrompt-Message>
 	<DisplaySettings-Resolution>Resolução:</DisplaySettings-Resolution>
-	<DisplaySettings-Bits>Cores:</DisplaySettings-Bits>
-	<DisplaySettings-Refresh>Taxa:</DisplaySettings-Refresh>`
 	<DisplaySettings-RevertPrompt-Title>Video Alterado</DisplaySettings-RevertPrompt-Title>
 	<DisplaySettings-RevertPrompt-Message>Você Deseja Manter Seus Ajustes Atuais?</DisplaySettings-RevertPrompt-Message>
   </Misc>

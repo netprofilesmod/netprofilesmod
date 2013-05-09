@@ -20,7 +20,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>Start "Net Profiles" op Na inloggen Windows</runWhenILogInToWindowsToolStripMenuItem>
 	<languageToolStripMenuItem>Selecteer je Taal</languageToolStripMenuItem>
     <customizeDesktopShortcutsToolStripMenuItem>Pas Buroblad snelkoppeling aan...</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>Herstart Netwerk Interface</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>Herstart Profiel</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>Help</helpToolStripMenuItem>
     <!-- Required: %1 (program name) -->
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>Maak verbinding met Mapped Drives...</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>Stel standaard printer in...</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>Activeer Internet Instellingen...</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>Stel Homepage in...</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>Start Programma's...</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>Verander achtergrond...</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>Verander scherm Resolutie...</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>Herlaat Netwerk Interfaces...</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>DHCP Inschakelen...</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>Stel IP-Adres in...</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>Stel Gateway in...</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>Stel DNS-Servers in...</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>Stel WINS-Server in...</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>Activeer Profiel</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>Activeer een andere Netwerkkaart...</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>Kopieer</copyToolStripMenuItem>
@@ -137,21 +132,15 @@
     <groupBoxAutoConfigAddress>Adres Automatisch Configureren:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Gebruik Proxy instellingen</groupBoxProxy>
     <labelServerAddress>Server Adres:</labelServerAddress>
-    <labelPort>Poort:</labelPort>
     <checkBoxBypassProxy>Passeer proxy server voor lokaal ip-adrressen (IE en Opera)</checkBoxBypassProxy>
     <groupBoxHomepage>Standaard Homepage:</groupBoxHomepage>
     <buttonUseBlankHomepage>Laat leeg</buttonUseBlankHomepage>
     <labelHomepageNote>Laat leeg, om instellingen niet te veranderen.</labelHomepageNote>
     <groupBoxWebBrowsers>Instellingen inschakelen voor</groupBoxWebBrowsers>
-    <buttonClearFirefox>Firefox instellingen resetten</buttonClearFirefox>
-	<buttonClearFirefox-ToolTip>Klik hier als je problemen heb met veranderen van je proxy instellingen of standaard homepage vanuit Firefox.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>Let op!</groupBoxPleaseNote>
 	<labelPleaseNote>Mozilla Firefox en Opera mogen niet actief zijn tijdens het wijzigen van deze instellingen.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-	<checkBoxOpera>Opera</checkBoxOpera>
-	<ClearFirefox-Messagebox-1>Instellingen zijn verwijderd.</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>Als Firefox actief is, moet het herstart worden voordat de veranderingen doorgevoerd worden.</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>Drive toevoegen</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>Aanpassen</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>Verwijder</toolStripButtonRemoveDrive>
@@ -168,9 +157,6 @@
     <groupBoxWallpaperPreview>Voorbeeld</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>Scherm instelling</groupBoxDisplaySettings>
     <labelScreenResolution>Scherm Resolutie:</labelScreenResolution>
-	<ScreenResolutionText-By>bij</ScreenResolutionText-By>
-	<ScreenResolutionText-Pixels>pixels</ScreenResolutionText-Pixels>
-    <labelColorQuality>Kleur kwaliteit:</labelColorQuality>
 	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
 	<ColorQualityText-Lowest>Laagste</ColorQualityText-Lowest>
 	<ColorQualityText-Highest>Hoogste</ColorQualityText-Highest>
@@ -178,7 +164,6 @@
     <groupBoxWireless>Profiel automatisch activeren</groupBoxWireless>
     <labelSSID>Draadloos SSID:</labelSSID>
     <labelSSIDNotes>Het specificeren van een draadloze SSID zal automatisch dit profiel activeren wanneer een verbinding aan het draadloze hierboven vermelde netwerk wordt ontdekt.</labelSSIDNotes>
-	<labelWirelessVista>Windows Vista gebruikers: Dit tabblad is uitgeschakeld, totdat ik weet hoe de huidige draadloos netwerkverbinding in Vista kan achter halen.</labelWirelessVista>
     <buttonSave>Opslaan</buttonSave>
     <buttonClose>Sluiten</buttonClose>
     <labelWorking-NetworkCards>Loading Netwerkkaart...</labelWorking-NetworkCards>
@@ -215,8 +200,6 @@
 	<DisplaySettings-ConfirmPrompt-Title>Bevestig veranderingen scherm instellingen</DisplaySettings-ConfirmPrompt-Title>
 	<DisplaySettings-ConfirmPrompt-Message>Wil je je scherm instellingen veranderen?</DisplaySettings-ConfirmPrompt-Message>
 	<DisplaySettings-Resolution>Resolutie:</DisplaySettings-Resolution>
-	<DisplaySettings-Bits>Kleur Bits:</DisplaySettings-Bits>
-	<DisplaySettings-Refresh>Herlaad:</DisplaySettings-Refresh>`
 	<DisplaySettings-RevertPrompt-Title>Scherm instellingen zijn Veranderd</DisplaySettings-RevertPrompt-Title>
 	<DisplaySettings-RevertPrompt-Message>Wil je je huidige instellingen behouden?</DisplaySettings-RevertPrompt-Message>
   </Misc>

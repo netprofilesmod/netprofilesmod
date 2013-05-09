@@ -21,7 +21,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>הפעל כשאני נכנס לחלונות</runWhenILogInToWindowsToolStripMenuItem>
     <languageToolStripMenuItem>בחר שפה</languageToolStripMenuItem>
     <customizeDesktopShortcutsToolStripMenuItem>התאם אישית קיצורי דרך בשולחן העבודה</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>טען ממשקי רשת מחדש</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>טען פרופילים מחדש</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>עזרה</helpToolStripMenuItem>
 <!-- Required: %1 (program name) -->    <netProfilesWebsiteToolStripMenuItem>%1 אתר האינטרנט של</netProfilesWebsiteToolStripMenuItem>
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>...מחבר כוננים ממופים</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>...קובע מדפסת ברירת מחדל</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>...מפעיל הגדרות אינטרנט</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>...קובע את דף הבית</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>...מריץ תוכנות</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>...משנה טפט</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>...משנה רזולציית מסך</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>...טוען ממשקי רשת מחדש</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>...DHCP מאפשר</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>...IP קובע כתובת</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>...קובע שער</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>...DNS קובע שרתי</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>...WINS קובע שרת</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>הפעל פרופיל</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>הפעל בכרטיס רשת אחר</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>העתק</copyToolStripMenuItem>
@@ -130,21 +125,15 @@
     <groupBoxAutoConfigAddress>כתובת הגדרה אוטומטית:</groupBoxAutoConfigAddress>
     <groupBoxProxy>השתמש בהגדרות פרוקסי</groupBoxProxy>
     <labelServerAddress>כתובת שרת:</labelServerAddress>
-    <labelPort>פורט:</labelPort>
     <checkBoxBypassProxy>(IE-ו Opera) עקוף שרת פרוקסי עבור כתובות מקומיות</checkBoxBypassProxy>
     <groupBoxHomepage>ברירת המחדל של דף הבית:</groupBoxHomepage>
     <buttonUseBlankHomepage>השתמש בריק</buttonUseBlankHomepage>
     <labelHomepageNote>.השאר ריק בשביל לא לשנות</labelHomepageNote>
     <groupBoxWebBrowsers>אפשר הגדרות הבור</groupBoxWebBrowsers>
-    <buttonClearFirefox>Firefox נקה הגדרות</buttonClearFirefox>
-    <buttonClearFirefox-ToolTip>.Firefox הקלק כאן אם נתקלת בקשיים בשינוי הגדרות הפרוקסי או ברירת המחדל של דף הבית מתוך</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>לתשומת ליבך</groupBoxPleaseNote>
     <labelPleaseNote>.לא יכולות לפעול על מנת שהשינויים ייכנסו לתוקף Mozilla Firefox-ו Opera</labelPleaseNote>
     <checkBoxIE>Internet Explorer</checkBoxIE>
     <checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-    <checkBoxOpera>Opera</checkBoxOpera>
-    <ClearFirefox-Messagebox-1>.ההגדרות הוסרו</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>.פועל, יש להפעילו מחדש על מנת שהשינויים ייכנסו לתוקף Firefox אם</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>הוסף כונן</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>ערוך</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>הסר</toolStripButtonRemoveDrive>
@@ -161,9 +150,6 @@
     <groupBoxWallpaperPreview>תצוגה מקדימה</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>הגדרות תצוגה</groupBoxDisplaySettings>
     <labelScreenResolution>רזולוציית מסך:</labelScreenResolution>
-    <ScreenResolutionText-By>על</ScreenResolutionText-By>
-    <ScreenResolutionText-Pixels>פיקסלים</ScreenResolutionText-Pixels>
-    <labelColorQuality>איכות צבע:</labelColorQuality>
     <ColorQualityText-Bit>ביט</ColorQualityText-Bit>
     <ColorQualityText-Lowest>הכי נמוך</ColorQualityText-Lowest>
     <ColorQualityText-Highest>הכי גבוה</ColorQualityText-Highest>
@@ -171,7 +157,6 @@
     <groupBoxWireless>הפעל פרופיל אוטומטית</groupBoxWireless>
     <labelSSID>אלחוטי SSID:</labelSSID>
     <labelSSIDNotes>.אלחוטי תפעיל את הפרופיל הזה אוטומטית כאשר יתגלה חיבור לרשת האלחוטית הנ&quot;ל SSID ציון</labelSSIDNotes>
-    <labelWirelessVista>Vista-האלחוטי המחובר ב SSID-תווית זו תהיה מנוטרלת עד שאבין איך לראות את ה :Vista משתמשי</labelWirelessVista>
     <buttonSave>שמור</buttonSave>
     <buttonClose>סגור</buttonClose>
     <labelWorking-NetworkCards>...טוען כרטיסי רשת</labelWorking-NetworkCards>
@@ -203,7 +188,14 @@
     <buttonYes>כן</buttonYes>
     <buttonNo>לא</buttonNo>
   </WirelessDetected>
-  <Misc><BrowseNetworkShare-Title>.בחר במחשב-רשת או חלקה</BrowseNetworkShare-Title><DisplaySettings-ConfirmPrompt-Title>אשר שינוי תצוגה</DisplaySettings-ConfirmPrompt-Title><DisplaySettings-ConfirmPrompt-Message>?האם תרצה לשנות את הגדרות התצוגה שלך</DisplaySettings-ConfirmPrompt-Message><DisplaySettings-Resolution>רזולוציה:</DisplaySettings-Resolution><DisplaySettings-Bits>ביטים של צבע:</DisplaySettings-Bits><DisplaySettings-Refresh>רענן:</DisplaySettings-Refresh>` <DisplaySettings-RevertPrompt-Title>תצוגה שונתה</DisplaySettings-RevertPrompt-Title><DisplaySettings-RevertPrompt-Message>?האם תרצה לשמור את ההגדרות הנוכחיות שלך</DisplaySettings-RevertPrompt-Message></Misc>
+  <Misc>
+    <BrowseNetworkShare-Title>.בחר במחשב-רשת או חלקה</BrowseNetworkShare-Title>
+    <DisplaySettings-ConfirmPrompt-Title>אשר שינוי תצוגה</DisplaySettings-ConfirmPrompt-Title>
+    <DisplaySettings-ConfirmPrompt-Message>?האם תרצה לשנות את הגדרות התצוגה שלך</DisplaySettings-ConfirmPrompt-Message>
+    <DisplaySettings-Resolution>רזולוציה:</DisplaySettings-Resolution>
+    <DisplaySettings-RevertPrompt-Title>תצוגה שונתה</DisplaySettings-RevertPrompt-Title>
+    <DisplaySettings-RevertPrompt-Message>?האם תרצה לשמור את ההגדרות הנוכחיות שלך</DisplaySettings-RevertPrompt-Message>
+  </Misc>
   <CopyProfile>
     <WindowTitle>העתק פרופיל</WindowTitle>
     <labelProfile>פרופיל:</labelProfile>

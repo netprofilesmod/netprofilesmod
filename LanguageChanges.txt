@@ -1,23 +1,4 @@
-﻿Obsolete Translations:
-ProfileSettings/buttonClearFirefox
-ProfileSettings/buttonClearFirefox-ToolTip
-ProfileSettings/checkBoxOpera
-ProfileSettings/ClearFirefox-Messagebox-1
-ProfileSettings/ClearFirefox-Messagebox-2
-ProfileSettings/labelPort
-ProfileSettings/labelWirelessVista
-MainForm/reloadNetworkInterfacesToolStripMenuItem
-Misc/DisplaySettings-Bits
-Misc/DisplaySettings-Refresh
-ProfileSettings/ScreenResolutionText-By
-ProfileSettings/ScreenResolutionText-Pixels
-ProfileSettings/labelColorQuality
-MainForm/toolStripStatusLabelWorking-Homepage
-MainForm/toolStripStatusLabelWorking-Gateway
-MainForm/toolStripStatusLabelWorking-DNS
-MainForm/toolStripStatusLabelWorking-WINS
-
-Missing Translations:
+﻿Missing Translations:
 ProfileSettings/labelDNSSuffix
 ProfileSettings/textBoxServerAddress-ToolTip
 ProfileSettings/labelExceptions

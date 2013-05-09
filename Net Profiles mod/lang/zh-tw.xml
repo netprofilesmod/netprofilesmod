@@ -20,7 +20,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>登入Windows時自動啟動</runWhenILogInToWindowsToolStripMenuItem>
 	<languageToolStripMenuItem>選擇語言</languageToolStripMenuItem>
     <customizeDesktopShortcutsToolStripMenuItem>自訂桌面快捷方式...</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>重新載入網絡介面</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>重新載入設定檔</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>協助</helpToolStripMenuItem>
     <!-- Required: %1 (program name) -->
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>連接網路磁碟...</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>設定預設列表機...</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>套用網路設定...</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>設定首頁...</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>啟動程式...</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>更換桌布...</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>更換螢幕解析度...</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>重新載入網路介面...</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>啟用DHCP...</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>設置IP地址...</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>設置預設閘道...</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>設置DNS...</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>設置WINS Server...</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>套用設定檔</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>在不同的網卡上套用設定檔...</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>複製</copyToolStripMenuItem>
@@ -137,21 +132,15 @@
     <groupBoxAutoConfigAddress>自動配置地址:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>使用Proxy</groupBoxProxy>
     <labelServerAddress>Proxy位置:</labelServerAddress>
-    <labelPort>Port:</labelPort>
     <checkBoxBypassProxy>近端網址不使用Proxy (IE 和 Opera)</checkBoxBypassProxy>
     <groupBoxHomepage>預設首頁:</groupBoxHomepage>
     <buttonUseBlankHomepage>使用空白頁</buttonUseBlankHomepage>
     <labelHomepageNote>不更改請保持空白</labelHomepageNote>
     <groupBoxWebBrowsers>設定預設瀏覽器</groupBoxWebBrowsers>
-    <buttonClearFirefox>清除Firefox設置</buttonClearFirefox>
-	<buttonClearFirefox-ToolTip>如果改變Firefox預設首頁或Proxy時有問題請點擊此處.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>請注意</groupBoxPleaseNote>
 	<labelPleaseNote>為了使設定檔生效Mozilla Firefox和Opera 必須關閉.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-	<checkBoxOpera>Opera</checkBoxOpera>
-	<ClearFirefox-Messagebox-1>設定檔已被刪除.</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>如果Firefox正在使用,為使設定值生效必須重新啟動.</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>增加磁碟</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>編輯</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>刪除</toolStripButtonRemoveDrive>
@@ -168,9 +157,6 @@
     <groupBoxWallpaperPreview>預覽</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>顯示設置</groupBoxDisplaySettings>
     <labelScreenResolution>螢幕解析度:</labelScreenResolution>
-	<ScreenResolutionText-By>x</ScreenResolutionText-By>
-	<ScreenResolutionText-Pixels>像素</ScreenResolutionText-Pixels>
-    <labelColorQuality>色彩品質:</labelColorQuality>
 	<ColorQualityText-Bit>位元</ColorQualityText-Bit>
 	<ColorQualityText-Lowest>中</ColorQualityText-Lowest>
 	<ColorQualityText-Highest>最高</ColorQualityText-Highest>
@@ -178,7 +164,6 @@
     <groupBoxWireless>自動套用設定檔</groupBoxWireless>
     <labelSSID>無線SSID:</labelSSID>
     <labelSSIDNotes>指定無線SSID以便當檢測到列表中的無線網絡時自動套用設定檔.</labelSSIDNotes>
-	<labelWirelessVista>Windows Vista 用戶: 該功能暫不可用.</labelWirelessVista>
     <buttonSave>儲存</buttonSave>
     <buttonClose>關閉</buttonClose>
     <labelWorking-NetworkCards>載入網卡...</labelWorking-NetworkCards>
@@ -215,8 +200,6 @@
 	<DisplaySettings-ConfirmPrompt-Title>確認顯示設定</DisplaySettings-ConfirmPrompt-Title>
 	<DisplaySettings-ConfirmPrompt-Message>確定要改變顯示設定嗎?</DisplaySettings-ConfirmPrompt-Message>
 	<DisplaySettings-Resolution>解析度:</DisplaySettings-Resolution>
-	<DisplaySettings-Bits>色彩品質:</DisplaySettings-Bits>
-	<DisplaySettings-Refresh>螢幕更新頻率:</DisplaySettings-Refresh>`
 	<DisplaySettings-RevertPrompt-Title>顯示設定已變更</DisplaySettings-RevertPrompt-Title>
 	<DisplaySettings-RevertPrompt-Message>要保留當前設定嗎?</DisplaySettings-RevertPrompt-Message>
   </Misc>

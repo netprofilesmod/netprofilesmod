@@ -20,7 +20,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>Запускать при входе в Виндовс</runWhenILogInToWindowsToolStripMenuItem>
 	<languageToolStripMenuItem>Выбрать язык</languageToolStripMenuItem>
     <customizeDesktopShortcutsToolStripMenuItem>Настроить ярлыки рабочего столя...</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>Перезагрузить сетевые интерфейсы</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>Перезагрузить профили</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>Помощь</helpToolStripMenuItem>
     <!-- Required: %1 (program name) -->
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>Подключение смонтированных дисков...</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>Установка принтера по умолчанию...</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>Установка настроек интернета...</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>Настройка стартовой страницы...</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>Запуск программ...</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>Смена фона рабочего стола...</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>Смена разрешения экрана...</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>Перезагрузка сетевого интерфейса...</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>Настройка параметров DHCP...</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>Настройка параметров IP адреса...</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>Настройка параметров шлюза...</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>Настройка параметров DNS серверов...</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>Настройка параметров WINS сервера...</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>Активировать профиль</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>Активировать на другой сетевой карте...</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>Копировать</copyToolStripMenuItem>
@@ -137,21 +132,15 @@
     <groupBoxAutoConfigAddress>Арес автоматической настройки:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Использовать настройки прокси</groupBoxProxy>
     <labelServerAddress>Адрес сервера:</labelServerAddress>
-    <labelPort>Порт:</labelPort>
     <checkBoxBypassProxy>Использовать прокси для локальных адресов (IE and Opera)</checkBoxBypassProxy>
     <groupBoxHomepage>Страница по умолчанию:</groupBoxHomepage>
     <buttonUseBlankHomepage>Использвать пустую</buttonUseBlankHomepage>
     <labelHomepageNote>Оставте пустым, если не надо менять.</labelHomepageNote>
     <groupBoxWebBrowsers>Разрешит настройки для</groupBoxWebBrowsers>
-    <buttonClearFirefox>Очистить настройки Firefox</buttonClearFirefox>
-	<buttonClearFirefox-ToolTip>Нажмите здесь, если у вас возникли проблемы при смене настроек прокси или страницы по умолчанию для Firefox.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>Обратите внимание</groupBoxPleaseNote>
 	<labelPleaseNote>Mozilla Firefox и Opera не должны быть запущены чтобы настройки сработали.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-	<checkBoxOpera>Opera</checkBoxOpera>
-	<ClearFirefox-Messagebox-1>Настройки были удалены.</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>Если Firefox запущен, он должен быть перезапущен, для применения настроек.</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>Добавить диск</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>Редактировать</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>Удалить</toolStripButtonRemoveDrive>
@@ -168,9 +157,6 @@
     <groupBoxWallpaperPreview>Предпросмотр</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>Показать установки</groupBoxDisplaySettings>
     <labelScreenResolution>Рзрешение экрана:</labelScreenResolution>
-	<ScreenResolutionText-By>на</ScreenResolutionText-By>
-	<ScreenResolutionText-Pixels>пикселей</ScreenResolutionText-Pixels>
-    <labelColorQuality>Количество цветов:</labelColorQuality>
 	<ColorQualityText-Bit>бит</ColorQualityText-Bit>
 	<ColorQualityText-Lowest>Худшее</ColorQualityText-Lowest>
 	<ColorQualityText-Highest>Лучшее</ColorQualityText-Highest>
@@ -178,7 +164,6 @@
     <groupBoxWireless>Автоактивация профиля</groupBoxWireless>
     <labelSSID>SSID беспроводной сети:</labelSSID>
     <labelSSIDNotes>Указание SSID беспроводной сети автоматически активирует профиль когда соединение с данной сентью будет возможно.</labelSSIDNotes>
-	<labelWirelessVista>Пользователи Windows Vista: Эта вкладка будет неактивной до тех пор, пока я не вычсню, как определить текущие SSID беспроводной сети в Vista.</labelWirelessVista>
     <buttonSave>Сохранить</buttonSave>
     <buttonClose>Закрыть</buttonClose>
     <labelWorking-NetworkCards>Закгрузка сетевых карт...</labelWorking-NetworkCards>
@@ -215,8 +200,6 @@
 	<DisplaySettings-ConfirmPrompt-Title>Подтерждение смены параметров дисплея</DisplaySettings-ConfirmPrompt-Title>
 	<DisplaySettings-ConfirmPrompt-Message>Хотите сменить параметры дисплея?</DisplaySettings-ConfirmPrompt-Message>
 	<DisplaySettings-Resolution>Разрешение:</DisplaySettings-Resolution>
-	<DisplaySettings-Bits>Глубина цвета:</DisplaySettings-Bits>
-	<DisplaySettings-Refresh>Обновление:</DisplaySettings-Refresh>`
 	<DisplaySettings-RevertPrompt-Title>Параметры дисплея изменены</DisplaySettings-RevertPrompt-Title>
 	<DisplaySettings-RevertPrompt-Message>Сохранить текущие настройки?</DisplaySettings-RevertPrompt-Message>
   </Misc>

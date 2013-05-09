@@ -20,7 +20,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>Futtatás Windows Bejelentkezés Után</runWhenILogInToWindowsToolStripMenuItem>
     <languageToolStripMenuItem>Válasszon Nyelvet</languageToolStripMenuItem>
     <customizeDesktopShortcutsToolStripMenuItem>Asztal Parancsikon Testreszabása...</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>Hálózati Csatolók Újratöltése</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>Profilok Újratöltése</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>Súgó</helpToolStripMenuItem>
     <!-- Required: %1 (program name) -->
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>Hálózati Meghajtók Csatolása Folyamatban...</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>Alapértelmezett Nyomtató Beállítása Folyamatban...</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>Internet Beállítások Aktiválása Folyamatban...</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>Kezdőlap Beállítása Folyamatban...</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>Programok Futtatása Folyamatban...</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>Háttérkép Megváltoztatása Folyamatban...</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>Képernyőfelbontás Megváltoztatása Folyamatban...</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>Hálózati Csatolók Újratöltése Folyamatban...</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>DHCP Engedélyezése Folyamatban...</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>IP-cím Beállítása Folyamatban...</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>Átjáró Beállítása Folyamatban...</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>DNS Kiszolgálók Beállítása Folyamatban...</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>WINS Kiszolgáló Beállítása Folyamatban...</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>Profil Aktiválása</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>Aktiválás Más Hálózati Kártyán...</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>Másolás</copyToolStripMenuItem>
@@ -137,21 +132,15 @@
     <groupBoxAutoConfigAddress>Automatikus Proxybeállítás Cím:</groupBoxAutoConfigAddress>
     <groupBoxProxy>Proxy Beállítások Használata</groupBoxProxy>
     <labelServerAddress>Kiszolgáló Címe:</labelServerAddress>
-    <labelPort>Port:</labelPort>
     <checkBoxBypassProxy>Proxy figyelmen kívül hagyása helyi címeknél (IE és Opera esetén)</checkBoxBypassProxy>
     <groupBoxHomepage>Alapértelmezett Kezdőlap:</groupBoxHomepage>
     <buttonUseBlankHomepage>Üres Oldal Megjelenítése</buttonUseBlankHomepage>
     <labelHomepageNote>Hagyja üresen, ha nem szeretne változtatást.</labelHomepageNote>
     <groupBoxWebBrowsers>Beállítások Engedélyezése:</groupBoxWebBrowsers>
-    <buttonClearFirefox>Firefox Beállítások Törlése</buttonClearFirefox>
-    <buttonClearFirefox-ToolTip>Kattintson ide, ha problémái adódnak a proxy és az alapértelmezett kezdőlap beállításával Firefoxban.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>Figyelem!</groupBoxPleaseNote>
     <labelPleaseNote>A változtatások érvénybe lépése csak akkor lehetséges, ha a Mozilla Firefox és az Opera nem futnak.</labelPleaseNote>
     <checkBoxIE>Internet Explorer</checkBoxIE>
     <checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-    <checkBoxOpera>Opera</checkBoxOpera>
-    <ClearFirefox-Messagebox-1>A beállítások törlésre kerültek.</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>Ha a Firefox fut, újraindítás szükséges a változtatások érvénybe léptetéséhez.</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>Meghajtó Hozzáadása</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>Szerkesztés</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>Eltávolítás</toolStripButtonRemoveDrive>
@@ -168,9 +157,6 @@
     <groupBoxWallpaperPreview>Előnézet</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>Képernyőbeállítások</groupBoxDisplaySettings>
     <labelScreenResolution>Képernyőfelbontás:</labelScreenResolution>
-    <ScreenResolutionText-By>x</ScreenResolutionText-By>
-    <ScreenResolutionText-Pixels>pixel</ScreenResolutionText-Pixels>
-    <labelColorQuality>Színmélység:</labelColorQuality>
     <ColorQualityText-Bit>bit</ColorQualityText-Bit>
     <ColorQualityText-Lowest>Legalacsonyabb</ColorQualityText-Lowest>
     <ColorQualityText-Highest>Legmagasabb</ColorQualityText-Highest>
@@ -178,7 +164,6 @@
     <groupBoxWireless>Proful Automatikus Aktiválása</groupBoxWireless>
     <labelSSID>Wifi SSID:</labelSSID>
     <labelSSIDNotes>A wifi SSID megadását követően a profil automatikusan aktiválódni fog, ha a felsorolt hálózatok valamelyikét észlelésre kerül.</labelSSIDNotes>
-    <labelWirelessVista>Windows Vista felhasználók: Ez a fül le lesz tiltva, amíg rá nem jövök, hogyan állapítható meg az éppen csatlakoztatott wifi SSID Vista alatt.</labelWirelessVista>
     <buttonSave>Mentés</buttonSave>
     <buttonClose>Bezárás</buttonClose>
     <labelWorking-NetworkCards>Hálózati Kártyák Betöltése Folyamatban...</labelWorking-NetworkCards>
@@ -215,8 +200,6 @@
     <DisplaySettings-ConfirmPrompt-Title>Képernyő Változtatás Megerősítése</DisplaySettings-ConfirmPrompt-Title>
     <DisplaySettings-ConfirmPrompt-Message>Szeretné megváltoztati a képernyő beállításokat?</DisplaySettings-ConfirmPrompt-Message>
     <DisplaySettings-Resolution>Felbontás:</DisplaySettings-Resolution>
-    <DisplaySettings-Bits>Színmélység:</DisplaySettings-Bits>
-    <DisplaySettings-Refresh>Frissítési Frekvencia:</DisplaySettings-Refresh>`
     <DisplaySettings-RevertPrompt-Title>Képernyő Megváltoztatva</DisplaySettings-RevertPrompt-Title>
     <DisplaySettings-RevertPrompt-Message>Szeretné megtartani a mostani beállításokat?</DisplaySettings-RevertPrompt-Message>
   </Misc>

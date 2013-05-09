@@ -20,7 +20,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>Démarrer à l'ouverture de Windows</runWhenILogInToWindowsToolStripMenuItem>
     <languageToolStripMenuItem>Sélection de la langue</languageToolStripMenuItem>
 	<customizeDesktopShortcutsToolStripMenuItem>Personnaliser les raccourcis sur le Bureau...</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>Recharger les Interfaces réseau</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>Recharger les profils</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>Aide</helpToolStripMenuItem>
     <!-- Required: %1 (program name) -->
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>Connexion des lecteurs réseau...</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>Définition de l'imprimante par défaut...</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>Activation des paramètres Internet...</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>Réglage de la page d'accueil...</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>Exécution des programmes...</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>Changement du Papier peint...</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>Changement de la résolution d'écran...</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>Chargement des Interfaces réseau...</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>Activation de DHCP...</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>Définition de l'addresse IP...</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>Définition de la passerelle...</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>Définition des serveurs DNS...</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>Définition des serveurs WINS...</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>Activer le Profil</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>Activer sur une carte réseau différente...</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>Copier</copyToolStripMenuItem>
@@ -137,21 +132,15 @@
     <groupBoxAutoConfigAddress>Adresse script de configuration automatique</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Utiliser un serveur Proxy</groupBoxProxy>
     <labelServerAddress>Addresse du serveur :</labelServerAddress>
-    <labelPort>Port :</labelPort>
     <checkBoxBypassProxy>Ne pas utiliser de serveur proxy pour les adresses locales (IE et Opera)</checkBoxBypassProxy>
     <groupBoxHomepage>Page d'accueil :</groupBoxHomepage>
     <buttonUseBlankHomepage>Page vierge</buttonUseBlankHomepage>
     <labelHomepageNote>Laisser vide pour aucun changement.</labelHomepageNote>
     <groupBoxWebBrowsers>Activer les réglages pour</groupBoxWebBrowsers>
-    <buttonClearFirefox>Effacer les réglages de Firefox</buttonClearFirefox>
-	<buttonClearFirefox-ToolTip>Cliquez ici si vous avez des problèmes pour changer le proxy ou la page d'accueil dans Firefox.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>Note</groupBoxPleaseNote>
 	<labelPleaseNote>Mozilla Firefox et Opera ne doivent pas être en cours d'exécution pour que les changements prennent effet.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-	<checkBoxOpera>Opera</checkBoxOpera>
-	<ClearFirefox-Messagebox-1>Les réglages ont été enlevés.</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>Si Firefox est en cours d'exécution, il doit être redémarré pour que les changements prennent effet.</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>Ajouter un lecteur</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>Editer</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>Enlever</toolStripButtonRemoveDrive>
@@ -168,9 +157,6 @@
     <groupBoxWallpaperPreview>Aperçu</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>Paramètres d'affichage</groupBoxDisplaySettings>
     <labelScreenResolution>Résolution d'écran :</labelScreenResolution>
-	<ScreenResolutionText-By>par</ScreenResolutionText-By>
-	<ScreenResolutionText-Pixels>pixels</ScreenResolutionText-Pixels>
-    <labelColorQuality>Qualité couleur :</labelColorQuality>
 	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
 	<ColorQualityText-Lowest>Moyenne</ColorQualityText-Lowest>
 	<ColorQualityText-Highest>Optimale</ColorQualityText-Highest>
@@ -178,7 +164,6 @@
     <groupBoxWireless>Activer automatiquement le Profil</groupBoxWireless>
     <labelSSID>SSID Sans Fil :</labelSSID>
     <labelSSIDNotes>Si vous indiquez un SSID Sans Fil, ce Profil sera automatiquement activé quand la connexion Sans Fil est détectée.</labelSSIDNotes>
-	<labelWirelessVista>Utilisateurs de Windows Vista : Cet onglet sera desactivé tant que je ne saurais pas comment détecter le SSID Sans Fil dans Vista.</labelWirelessVista>
     <buttonSave>Sauver</buttonSave>
     <buttonClose>Fermer</buttonClose>
     <labelWorking-NetworkCards>Chargement des cartes réseau...</labelWorking-NetworkCards>
@@ -215,8 +200,6 @@
 	<DisplaySettings-ConfirmPrompt-Title>Confirmation des paramètres d'affichage</DisplaySettings-ConfirmPrompt-Title>
 	<DisplaySettings-ConfirmPrompt-Message>Voulez-vous changer les paramètres d'affichage ?</DisplaySettings-ConfirmPrompt-Message>
 	<DisplaySettings-Resolution>Résolution :</DisplaySettings-Resolution>
-	<DisplaySettings-Bits>Qualité couleur :</DisplaySettings-Bits>
-	<DisplaySettings-Refresh>Fréquence :</DisplaySettings-Refresh>`
 	<DisplaySettings-RevertPrompt-Title>Affichage modifié</DisplaySettings-RevertPrompt-Title>
 	<DisplaySettings-RevertPrompt-Message>Voulez-vous conserver les paramètres actuels ?</DisplaySettings-RevertPrompt-Message>
   </Misc>

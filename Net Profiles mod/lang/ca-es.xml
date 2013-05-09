@@ -20,7 +20,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>Arrancar al iniciar windows</runWhenILogInToWindowsToolStripMenuItem>
 	<languageToolStripMenuItem>Seleccionar el llenguatge</languageToolStripMenuItem>
     <customizeDesktopShortcutsToolStripMenuItem>Modificar els accessos directes</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>Actualitzar les targetes de xarxa</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>Actualitzar els perfils</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>Ajuda</helpToolStripMenuItem>
     <!-- Required: %1 (program name) -->
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>Connectant unitats de xarxa...</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>Configurant la impressora per defecte...</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>Activant la configuració d'internet...</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>Configurant la pàgina d'inici...</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>Carregant programes...</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>Canviant el fons d'escriptori...</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>Canviant la resolució de pantalla...</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>Buscant interfícies de xarxa...</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>Activant DHCP...</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>Configurant adreça IP...</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>Configurant la porta d'enllaç...</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>Configurant els servidors DNS...</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>Configurant els servidors WINS...</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>Activar el perfil</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>Activar en un altra targeta de xarxa...</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>Copiar</copyToolStripMenuItem>
@@ -137,21 +132,15 @@
     <groupBoxAutoConfigAddress>Configurar automàticament:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Configuració del proxy</groupBoxProxy>
     <labelServerAddress>Adreça del servidor:</labelServerAddress>
-    <labelPort>Port:</labelPort>
     <checkBoxBypassProxy>No utilitzar el proxy per a adreçes locals (IE i Opera)</checkBoxBypassProxy>
     <groupBoxHomepage>Pàgina d'inici:</groupBoxHomepage>
     <buttonUseBlankHomepage>En blanc</buttonUseBlankHomepage>
     <labelHomepageNote>deixar-ho en blanc si no es vol canviar.</labelHomepageNote>
     <groupBoxWebBrowsers>Activar la configuració per:</groupBoxWebBrowsers>
-    <buttonClearFirefox>Esborrar la configuració del Firefox</buttonClearFirefox>
-	<buttonClearFirefox-ToolTip>Cal clicar aquest botó si no es pot canviar la configuració del Firefox.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>Nota</groupBoxPleaseNote>
 	<labelPleaseNote>Mozilla Firefox i Opera han d'estar tancats per realitzar els canvis.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-	<checkBoxOpera>Opera</checkBoxOpera>
-	<ClearFirefox-Messagebox-1>S'ha esborrat la configuració.</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>Cal reiniciar el Firefox per per realitzar els canvis.</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>Afegir una unitat de xarxa</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>Editar</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>Esborrar</toolStripButtonRemoveDrive>
@@ -168,9 +157,6 @@
     <groupBoxWallpaperPreview>Previsualitzar</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>Configurar la pantalla</groupBoxDisplaySettings>
     <labelScreenResolution>Resolució:</labelScreenResolution>
-	<ScreenResolutionText-By>per</ScreenResolutionText-By>
-	<ScreenResolutionText-Pixels>pixels</ScreenResolutionText-Pixels>
-    <labelColorQuality>Color:</labelColorQuality>
 	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
 	<ColorQualityText-Lowest>Mitjana</ColorQualityText-Lowest>
 	<ColorQualityText-Highest>La més alta</ColorQualityText-Highest>
@@ -178,7 +164,6 @@
     <groupBoxWireless>Auto-activar el perfil</groupBoxWireless>
     <labelSSID>Wirelees SSID:</labelSSID>
     <labelSSIDNotes>Especificar el nom SSID si voleu connectar-vos-hi automaticament al detectar la xarxa wirelees.</labelSSIDNotes>
-	<labelWirelessVista>Usuaris de Windows Vista: Aquesta pestanya restarà desactivada fins a noves versions.</labelWirelessVista>
     <buttonSave>Guardar</buttonSave>
     <buttonClose>Tancar</buttonClose>
     <labelWorking-NetworkCards>Buscant targetes de xarxa...</labelWorking-NetworkCards>
@@ -215,8 +200,6 @@
 	<DisplaySettings-ConfirmPrompt-Title>Confirmar el canvi de configuració de pantalla</DisplaySettings-ConfirmPrompt-Title>
 	<DisplaySettings-ConfirmPrompt-Message>Canviar la configuració de pantalla?</DisplaySettings-ConfirmPrompt-Message>
 	<DisplaySettings-Resolution>Resolució:</DisplaySettings-Resolution>
-	<DisplaySettings-Bits>Color:</DisplaySettings-Bits>
-	<DisplaySettings-Refresh>Refresc:</DisplaySettings-Refresh>`
 	<DisplaySettings-RevertPrompt-Title>Configuració canviada</DisplaySettings-RevertPrompt-Title>
 	<DisplaySettings-RevertPrompt-Message>Mantenir la configuració actual?</DisplaySettings-RevertPrompt-Message>
   </Misc>

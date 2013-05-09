@@ -20,7 +20,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>Spusť po přihlášení do Windows</runWhenILogInToWindowsToolStripMenuItem>
 	<languageToolStripMenuItem>Výběr jazyka</languageToolStripMenuItem>
     <customizeDesktopShortcutsToolStripMenuItem>Uprav zástupce na ploše...</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>Načti síťová rozhraní</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>Načti profily</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>Nápověda</helpToolStripMenuItem>
     <!-- Required: %1 (program name) -->
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>Připojení namapovaných disků...</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>Nastavení výchozí tiskárny...</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>Aktivace nastavení internetu...</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>Nastavení domovské stránky...</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>Běžící programy...</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>Změna tapety...</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>Změna rozlišení obrazovky...</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>Načtení síťových rozhraní...</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>Povolení DHCP...</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>Nastavení IP adresy...</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>Nastavení brány...</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>Nastavení DNS serverů...</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>Nastavení WINS serverů...</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>Aktivuj profil</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>Aktivuj na jiné síťové kartě...</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>Kopíruj</copyToolStripMenuItem>
@@ -137,21 +132,15 @@
     <groupBoxAutoConfigAddress>Automatická konfigurace adresy:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Použij nastavení proxy</groupBoxProxy>
     <labelServerAddress>Adresa serveru:</labelServerAddress>
-    <labelPort>Port:</labelPort>
     <checkBoxBypassProxy>Nepoužívat proxy server pro lokální adresy (IE a Opera)</checkBoxBypassProxy>
     <groupBoxHomepage>Výchozí domovská stránka:</groupBoxHomepage>
     <buttonUseBlankHomepage>Použij prázdnou</buttonUseBlankHomepage>
     <labelHomepageNote>Nechat prázdnou stránku (žádné změny).</labelHomepageNote>
     <groupBoxWebBrowsers>Povolit nastavení pro</groupBoxWebBrowsers>
-    <buttonClearFirefox>Vyčistit nastavení Firefoxu</buttonClearFirefox>
-	<buttonClearFirefox-ToolTip>Klikněte sem, jestli máte problémy se změnou nastavení proxy, nebo výchozí domovské stránky ve Firefoxu.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>Poznámka</groupBoxPleaseNote>
 	<labelPleaseNote>Mozilla Firefox a Opera nesmí být spustěny, aby mohly být provedeny změny.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-	<checkBoxOpera>Opera</checkBoxOpera>
-	<ClearFirefox-Messagebox-1>Nastavení byla odstraněna.</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>Jesltiže Firefox běží, musí být restartován, aby mohly být provedeny změny.</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>Přidat disk</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>Edituj</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>Odstraň</toolStripButtonRemoveDrive>
@@ -168,9 +157,6 @@
     <groupBoxWallpaperPreview>Náhled</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>Zobraz nastavení</groupBoxDisplaySettings>
     <labelScreenResolution>Rozlišení obrazovky:</labelScreenResolution>
-	<ScreenResolutionText-By>na</ScreenResolutionText-By>
-	<ScreenResolutionText-Pixels>pixelů</ScreenResolutionText-Pixels>
-    <labelColorQuality>Kvalita barev:</labelColorQuality>
 	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
 	<ColorQualityText-Lowest>Nejnižší</ColorQualityText-Lowest>
 	<ColorQualityText-Highest>Nejvyšší</ColorQualityText-Highest>
@@ -178,7 +164,6 @@
     <groupBoxWireless>Automatická aktivace profilu</groupBoxWireless>
     <labelSSID>WiFi SSID:</labelSSID>
     <labelSSIDNotes>Specifikace WiFi SSID automaticky aktivuje tento profil pokud je detekováno připojení k výše uvedené bezdrátové síti.</labelSSIDNotes>
-	<labelWirelessVista>Windows Vista uživatelé: Tato záložka nebude povolena dokud nepřijdu na to, jak rozpoznat aktuálně připojenou WiFi síť s SSID ve Vistě.</labelWirelessVista>
     <buttonSave>Ulož</buttonSave>
     <buttonClose>Zavři</buttonClose>
     <labelWorking-NetworkCards>Načítání síťových karet...</labelWorking-NetworkCards>
@@ -215,8 +200,6 @@
 	<DisplaySettings-ConfirmPrompt-Title>Potvrď změnu zobrazení</DisplaySettings-ConfirmPrompt-Title>
 	<DisplaySettings-ConfirmPrompt-Message>Chcete změnit nastavení zobrazení?</DisplaySettings-ConfirmPrompt-Message>
 	<DisplaySettings-Resolution>Rozlišení:</DisplaySettings-Resolution>
-	<DisplaySettings-Bits>Barevných Bitů:</DisplaySettings-Bits>
-	<DisplaySettings-Refresh>Obnovování:</DisplaySettings-Refresh>`
 	<DisplaySettings-RevertPrompt-Title>Zobrazení změněno</DisplaySettings-RevertPrompt-Title>
 	<DisplaySettings-RevertPrompt-Message>Chcete zachovat aktuální nastavení?</DisplaySettings-RevertPrompt-Message>
   </Misc>

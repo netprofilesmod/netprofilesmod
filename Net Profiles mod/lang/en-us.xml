@@ -20,7 +20,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>Run When I Log In To Windows</runWhenILogInToWindowsToolStripMenuItem>
 	<languageToolStripMenuItem>Select Your Language</languageToolStripMenuItem>
     <customizeDesktopShortcutsToolStripMenuItem>Customize Desktop Shortcuts...</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>Reload Network Interfaces</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>Reload Profiles</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>Help</helpToolStripMenuItem>
     <!-- Required: %1 (program name) -->
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>Connecting Mapped Drives...</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>Setting Default Printer...</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>Activating Internet Settings...</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>Setting Homepage...</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>Running Programs...</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>Changing Wallpaper...</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>Changing Screen Resolution...</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>Reloading Network Interfaces...</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>Enabling DHCP...</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>Setting IP Address...</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>Setting Gateway...</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>Setting DNS Servers...</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>Setting WINS Server...</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>Activate Profile</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>Activate On Different Network Card...</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>Copy</copyToolStripMenuItem>
@@ -137,21 +132,15 @@
     <groupBoxAutoConfigAddress>Automatic Configuration Address:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Use Proxy Settings</groupBoxProxy>
     <labelServerAddress>Server Address:</labelServerAddress>
-    <labelPort>Port:</labelPort>
     <checkBoxBypassProxy>Bypass proxy server for local addresses</checkBoxBypassProxy>
     <groupBoxHomepage>Default Homepage:</groupBoxHomepage>
     <buttonUseBlankHomepage>Use Blank</buttonUseBlankHomepage>
     <labelHomepageNote>Leave blank for no change.</labelHomepageNote>
     <groupBoxWebBrowsers>Enable Settings For</groupBoxWebBrowsers>
-    <buttonClearFirefox>Clear Firefox Settings</buttonClearFirefox>
-	<buttonClearFirefox-ToolTip>Click here if you're having problems changing your proxy settings or default homepage from within Firefox.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>Please Note</groupBoxPleaseNote>
 	<labelPleaseNote>Mozilla Firefox will be restarted for applying the settings.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-	<checkBoxOpera>Opera</checkBoxOpera>
-	<ClearFirefox-Messagebox-1>Settings have been removed.</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>If Firefox is running, it must be restarted before changes will take effect.</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>Add Drive</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>Edit</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>Remove</toolStripButtonRemoveDrive>
@@ -168,9 +157,6 @@
     <groupBoxWallpaperPreview>Preview</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>Display Settings</groupBoxDisplaySettings>
     <labelScreenResolution>Screen Resolution:</labelScreenResolution>
-	<ScreenResolutionText-By>by</ScreenResolutionText-By>
-	<ScreenResolutionText-Pixels>pixels</ScreenResolutionText-Pixels>
-    <labelColorQuality>Color Quality:</labelColorQuality>
 	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
 	<ColorQualityText-Lowest>Lowest</ColorQualityText-Lowest>
 	<ColorQualityText-Highest>Highest</ColorQualityText-Highest>
@@ -178,7 +164,6 @@
     <groupBoxWireless>Auto Activate Profile</groupBoxWireless>
     <labelSSID>Wireless SSID:</labelSSID>
     <labelSSIDNotes>Specifying a wireless SSID will automatically activate this profile when a connection to the wireless network listed above is detected.</labelSSIDNotes>
-	<labelWirelessVista>Windows Vista users: This tab will be disabled until I figure out how to determine the currently connected wireless SSID in Vista.</labelWirelessVista>
     <buttonSave>Save</buttonSave>
     <buttonClose>Close</buttonClose>
     <labelWorking-NetworkCards>Loading Network Cards...</labelWorking-NetworkCards>
@@ -215,8 +200,6 @@
 	<DisplaySettings-ConfirmPrompt-Title>Confirm Display Change</DisplaySettings-ConfirmPrompt-Title>
 	<DisplaySettings-ConfirmPrompt-Message>Would you like to change your display settings?</DisplaySettings-ConfirmPrompt-Message>
 	<DisplaySettings-Resolution>Resolution:</DisplaySettings-Resolution>
-	<DisplaySettings-Bits>Color Bits:</DisplaySettings-Bits>
-	<DisplaySettings-Refresh>Refresh:</DisplaySettings-Refresh>`
 	<DisplaySettings-RevertPrompt-Title>Display Changed</DisplaySettings-RevertPrompt-Title>
 	<DisplaySettings-RevertPrompt-Message>Would you like to keep your current settings?</DisplaySettings-RevertPrompt-Message>
   </Misc>

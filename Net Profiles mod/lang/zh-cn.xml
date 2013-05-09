@@ -20,7 +20,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>登录Windows时自动运行</runWhenILogInToWindowsToolStripMenuItem>
 	<languageToolStripMenuItem>选择语言</languageToolStripMenuItem>
     <customizeDesktopShortcutsToolStripMenuItem>定制桌面快捷方式...</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>重新加载网络接口</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>重新加载配置</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>帮助</helpToolStripMenuItem>
     <!-- Required: %1 (program name) -->
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>连接映射驱动器...</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>设置默认打印机...</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>激活Internet设置...</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>设置主页...</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>运行程序...</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>更换墙纸...</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>更换屏幕分辨率...</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>重新加载网络接口...</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>启用DHCP...</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>设置IP地址...</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>设置网关...</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>设置DNS服务器...</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>设置WINS服务器...</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>激活配置</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>在不同的网卡上激活配置...</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>复制</copyToolStripMenuItem>
@@ -137,21 +132,15 @@
     <groupBoxAutoConfigAddress>自动配置地址:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>使用代理设置</groupBoxProxy>
     <labelServerAddress>服务器地址:</labelServerAddress>
-    <labelPort>端口:</labelPort>
     <checkBoxBypassProxy>对于本地地址不使用代理服务器 (IE 和 Opera)</checkBoxBypassProxy>
     <groupBoxHomepage>默认主页:</groupBoxHomepage>
     <buttonUseBlankHomepage>使用空白页</buttonUseBlankHomepage>
     <labelHomepageNote>不更改请保持空白</labelHomepageNote>
     <groupBoxWebBrowsers>为以下启用设置</groupBoxWebBrowsers>
-    <buttonClearFirefox>清除Firefox设置</buttonClearFirefox>
-	<buttonClearFirefox-ToolTip>如果改变Firefox默认主页或代理服务器时有问题请点击此处.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>请注意</groupBoxPleaseNote>
 	<labelPleaseNote>为了使改变生效Mozilla Firefox和Opera 必须关闭.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-	<checkBoxOpera>Opera</checkBoxOpera>
-	<ClearFirefox-Messagebox-1>设置已被删除.</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>如果Firefox正在运行,为使改变生效必须重启.</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>增加驱动器</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>编辑</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>删除</toolStripButtonRemoveDrive>
@@ -168,9 +157,6 @@
     <groupBoxWallpaperPreview>预览</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>显示设置</groupBoxDisplaySettings>
     <labelScreenResolution>屏幕分辨率:</labelScreenResolution>
-	<ScreenResolutionText-By>x</ScreenResolutionText-By>
-	<ScreenResolutionText-Pixels>像素</ScreenResolutionText-Pixels>
-    <labelColorQuality>颜色质量:</labelColorQuality>
 	<ColorQualityText-Bit>位数</ColorQualityText-Bit>
 	<ColorQualityText-Lowest>中</ColorQualityText-Lowest>
 	<ColorQualityText-Highest>最高</ColorQualityText-Highest>
@@ -178,7 +164,6 @@
     <groupBoxWireless>自动激活配置</groupBoxWireless>
     <labelSSID>无线SSID:</labelSSID>
     <labelSSIDNotes>指定无线SSID以便当检测到列表中的无线网络时自动激活配置.</labelSSIDNotes>
-	<labelWirelessVista>Windows Vista 用户: 该功能暂不可用.</labelWirelessVista>
     <buttonSave>保存</buttonSave>
     <buttonClose>关闭</buttonClose>
     <labelWorking-NetworkCards>加载网卡...</labelWorking-NetworkCards>
@@ -215,8 +200,6 @@
 	<DisplaySettings-ConfirmPrompt-Title>确认显示设置</DisplaySettings-ConfirmPrompt-Title>
 	<DisplaySettings-ConfirmPrompt-Message>确定要改变显示设置吗?</DisplaySettings-ConfirmPrompt-Message>
 	<DisplaySettings-Resolution>分辨率:</DisplaySettings-Resolution>
-	<DisplaySettings-Bits>颜色质量:</DisplaySettings-Bits>
-	<DisplaySettings-Refresh>刷新率:</DisplaySettings-Refresh>`
 	<DisplaySettings-RevertPrompt-Title>显示设置已变更</DisplaySettings-RevertPrompt-Title>
 	<DisplaySettings-RevertPrompt-Message>要保留当前设置吗?</DisplaySettings-RevertPrompt-Message>
   </Misc>

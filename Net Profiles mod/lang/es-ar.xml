@@ -20,7 +20,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>Iniciar el Programa Junto con Windows</runWhenILogInToWindowsToolStripMenuItem>
 	<languageToolStripMenuItem>Seleccione su Idioma</languageToolStripMenuItem>
     <customizeDesktopShortcutsToolStripMenuItem>Modifique los Accesos del Escritorio...</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>Reiniciar la Interfaces de Red</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>Recargar Perfil</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>Ayuda</helpToolStripMenuItem>
     <!-- Required: %1 (program name) -->
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>Conectando Unidades de RED...</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>Iniciando Impresora Predeterminada...</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>Activando la Configuración de Internet...</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>Configurando Pagina de Inicio...</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>Ejecutando Programas...</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>Cambiando Fondo de Escritorio...</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>Cambiando Resolución de Pantalla...</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>Reiniciando la Interfaces de Red...</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>Activando DHCP...</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>Configurando Dirección IP...</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>Configurando Puerta de Enlace Predeterminada...</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>Configurando Servidores de DNS...</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>Configurando Servidores WINS...</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>Activando Perfil</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>Active en otra Placa de RED...</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>Copiar</copyToolStripMenuItem>
@@ -137,21 +132,15 @@
     <groupBoxAutoConfigAddress>Dirección automática de la configuración:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Configuración Servidor Proxy</groupBoxProxy>
     <labelServerAddress>Dirección del Servidor:</labelServerAddress>
-    <labelPort>Puerto:</labelPort>
     <checkBoxBypassProxy>Usar puente Proxy para direcciones locales</checkBoxBypassProxy>
     <groupBoxHomepage>Pagina de inicio por Defecto:</groupBoxHomepage>
     <buttonUseBlankHomepage>about:blank</buttonUseBlankHomepage>
     <labelHomepageNote>Dejar en blanco para no cambiar.</labelHomepageNote>
     <groupBoxWebBrowsers>Activar configuración para:</groupBoxWebBrowsers>
-    <buttonClearFirefox>Borrar configuración del Firefox</buttonClearFirefox>
-	<buttonClearFirefox-ToolTip>Seleccionar si usted tiene problema al cambiar la configuración Proxy y pagina de inicio de Firefox</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>Información</groupBoxPleaseNote>
 	<labelPleaseNote>Para que los cambios tengan efecto Mozilla Firefox y Opera, Tiene que estar cerrados.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-	<checkBoxOpera>Opera</checkBoxOpera>
-	<ClearFirefox-Messagebox-1>Los cambios no serán realizados.</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>Si Firefox está funcionando, debe ser Reiniciado antes de que los cambios tengan efecto.</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>Agregar unidad de RED</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>Modificar</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>Eliminar</toolStripButtonRemoveDrive>
@@ -168,9 +157,6 @@
     <groupBoxWallpaperPreview>Vista Previa</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>Mostrar Configuraciones</groupBoxDisplaySettings>
     <labelScreenResolution>Resolución de la pantalla:</labelScreenResolution>
-	<ScreenResolutionText-By>by</ScreenResolutionText-By>
-	<ScreenResolutionText-Pixels>pixels</ScreenResolutionText-Pixels>
-    <labelColorQuality>Calidad del color:</labelColorQuality>
 	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
 	<ColorQualityText-Lowest>Lo más bajo posible</ColorQualityText-Lowest>
 	<ColorQualityText-Highest>Lo más Alto posible</ColorQualityText-Highest>
@@ -178,7 +164,6 @@
     <groupBoxWireless>Activar Automáticamente el Perfil</groupBoxWireless>
     <labelSSID>Wireless SSID (Nombre de su RED inalámbrica):</labelSSID>
     <labelSSIDNotes>Especificar un SSID (Nombre de su RED inalámbrica), activará automáticamente este perfil cuando una conexión a la red inalámbrica Especificada arriba se detecta.</labelSSIDNotes>
-	<labelWirelessVista>Usuarios de Windows Vista: Esta opción esta deshabilitada.</labelWirelessVista>
     <buttonSave>Guardar</buttonSave>
     <buttonClose>Cerrar</buttonClose>
     <labelWorking-NetworkCards>Cargando placa de RED...</labelWorking-NetworkCards>
@@ -215,8 +200,6 @@
 	<DisplaySettings-ConfirmPrompt-Title>Confirme el cambio de la Resolución.</DisplaySettings-ConfirmPrompt-Title>
 	<DisplaySettings-ConfirmPrompt-Message>¿Usted Quiere cambiar Resolución?</DisplaySettings-ConfirmPrompt-Message>
 	<DisplaySettings-Resolution>Resolución:</DisplaySettings-Resolution>
-	<DisplaySettings-Bits>Color Bits:</DisplaySettings-Bits>
-	<DisplaySettings-Refresh>Refresh:</DisplaySettings-Refresh>`
 	<DisplaySettings-RevertPrompt-Title>La configuración de pantalla cambio</DisplaySettings-RevertPrompt-Title>
 	<DisplaySettings-RevertPrompt-Message>¿Usted quiere guardar su configuración actual?</DisplaySettings-RevertPrompt-Message>
   </Misc>

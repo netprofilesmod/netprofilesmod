@@ -20,7 +20,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>Uruchom przy starcie systemu</runWhenILogInToWindowsToolStripMenuItem>
 	<languageToolStripMenuItem>Wybierz swój język</languageToolStripMenuItem>
     <customizeDesktopShortcutsToolStripMenuItem>Parametry skrótu na pulpicie</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>Odśwież interfejsy sieciowe</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>Odśwież profile</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>Pomoc</helpToolStripMenuItem>
     <!-- Required: %1 (program name) -->
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>Łączenie z z dyskami sieciowymi...</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>Ustawianie domyślnej drukarki...</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>Aktywowanie ustawień internetowych...</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>Ustawianie strony startowej...</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>Uruchamianie programu...</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>Zmienianie tapety pulpitu...</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>Zmienianie rozdzielczości ekranu...</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>Odświerzanie interfejsów sieciowych...</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>Aktywowanie DHCP...</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>Ustawianie adresu IP...</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>Ustawianie bramy...</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>Ustawianie serwera DNS...</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>Ustawianie serwera WINS...</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>Aktywuj profil</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>Aktywuj na innej karcie sieciowej</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>Kopiuj</copyToolStripMenuItem>
@@ -137,21 +132,15 @@
     <groupBoxAutoConfigAddress>Adres automatycznej konfiguracji:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Użyj ustawień Proxy</groupBoxProxy>
     <labelServerAddress>Adres serwera:</labelServerAddress>
-    <labelPort>Port:</labelPort>
     <checkBoxBypassProxy>Pomiń serwer proxy dla lokalnych adresów (IE i Opera)</checkBoxBypassProxy>
     <groupBoxHomepage>Strona startowa:</groupBoxHomepage>
     <buttonUseBlankHomepage>Użyj pustej</buttonUseBlankHomepage>
     <labelHomepageNote>Pozostaw puste by nie zmieniać aktualnie ustawionej.</labelHomepageNote>
     <groupBoxWebBrowsers>Aktywuj ustawienia dla:</groupBoxWebBrowsers>
-    <buttonClearFirefox>Wyczyść ustawienia Firefox'a</buttonClearFirefox>
-	<buttonClearFirefox-ToolTip>Kliknij tu jeżeli masz problemy z ustawieniami proxy lub stroną startową w Firefox'ie.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>Uwaga!</groupBoxPleaseNote>
 	<labelPleaseNote>By zmiany przyniosły efekt, Firefox i Opera nie mogą być uruchomione.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-	<checkBoxOpera>Opera</checkBoxOpera>
-	<ClearFirefox-Messagebox-1>Ustawienia zostały usunięte.</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>Jeżeli Firefox jest uruchomiony, musi zostać zresetowany by zmiany przyniosły efekt.</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>Dodaj dysk</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>Edytuj</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>Usuń</toolStripButtonRemoveDrive>
@@ -168,9 +157,6 @@
     <groupBoxWallpaperPreview>Podgląd</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>Ustawienia wyświetlania</groupBoxDisplaySettings>
     <labelScreenResolution>Rozdzielczość ekranu:</labelScreenResolution>
-	<ScreenResolutionText-By>na</ScreenResolutionText-By>
-	<ScreenResolutionText-Pixels>pikseli</ScreenResolutionText-Pixels>
-    <labelColorQuality>Jakość kolorów:</labelColorQuality>
 	<ColorQualityText-Bit>bitów</ColorQualityText-Bit>
 	<ColorQualityText-Lowest>Niska</ColorQualityText-Lowest>
 	<ColorQualityText-Highest>Wysoka</ColorQualityText-Highest>
@@ -178,7 +164,6 @@
     <groupBoxWireless>Automatyczna aktywacja profilu</groupBoxWireless>
     <labelSSID>Identyfikator sieci:</labelSSID>
     <labelSSIDNotes>Podanie identyfikatora sieci Wi-Fi umożliwi automatyczną aktywację profilu gdy zostanie wykryte połączenie z tą siecią.</labelSSIDNotes>
-	<labelWirelessVista>Użytkownicy Windows Vista: Ta zakładka będzie nieaktywna dopóki nie wymyślę, jak można ustawiać klucz sieciowy Wi-Fi w Windows Vista.</labelWirelessVista>
     <buttonSave>Zapisz</buttonSave>
     <buttonClose>Zamknij</buttonClose>
     <labelWorking-NetworkCards>Wczytywanie kart sieciowych...</labelWorking-NetworkCards>
@@ -215,8 +200,6 @@
 	<DisplaySettings-ConfirmPrompt-Title>Potwierdź zmianę ustawień wyświetlania</DisplaySettings-ConfirmPrompt-Title>
 	<DisplaySettings-ConfirmPrompt-Message>Czy chcesz zmienić ustawienia wyświetlania?</DisplaySettings-ConfirmPrompt-Message>
 	<DisplaySettings-Resolution>Rozdzielczość:</DisplaySettings-Resolution>
-	<DisplaySettings-Bits>Głębia kolorów:</DisplaySettings-Bits>
-	<DisplaySettings-Refresh>Odświeżanie:</DisplaySettings-Refresh>`
 	<DisplaySettings-RevertPrompt-Title>Ustawienia wyświetlania zostały zmienione</DisplaySettings-RevertPrompt-Title>
 	<DisplaySettings-RevertPrompt-Message>Czy chcesz zachować aktualne ustawienia?</DisplaySettings-RevertPrompt-Message>
   </Misc>

@@ -20,7 +20,6 @@
     <runWhenILogInToWindowsToolStripMenuItem>Avvio al Log In di Windows</runWhenILogInToWindowsToolStripMenuItem>
 	<languageToolStripMenuItem>Seleziona il linguaggio</languageToolStripMenuItem>
     <customizeDesktopShortcutsToolStripMenuItem>Personalizza collegamenti sul Desktop...</customizeDesktopShortcutsToolStripMenuItem>
-    <reloadNetworkInterfacesToolStripMenuItem>Ricarica schede di rete</reloadNetworkInterfacesToolStripMenuItem>
     <reloadProfilesToolStripMenuItem>Ricarica Profilo</reloadProfilesToolStripMenuItem>
     <helpToolStripMenuItem>Aiuto</helpToolStripMenuItem>
     <!-- Required : %1 (program name) -->
@@ -39,16 +38,12 @@
     <toolStripStatusLabelWorking-MapDrives>Connessione unità mappate...</toolStripStatusLabelWorking-MapDrives>
     <toolStripStatusLabelWorking-Printer>Impostazione della stampante predefinita...</toolStripStatusLabelWorking-Printer>
     <toolStripStatusLabelWorking-Internet>Impostazioni Internet...</toolStripStatusLabelWorking-Internet>
-    <toolStripStatusLabelWorking-Homepage>Imposto Homepage...</toolStripStatusLabelWorking-Homepage>
     <toolStripStatusLabelWorking-Programs>Avvio Programmi...</toolStripStatusLabelWorking-Programs>
     <toolStripStatusLabelWorking-Wallpaper>Cambio sfondo...</toolStripStatusLabelWorking-Wallpaper>
     <toolStripStatusLabelWorking-Resolution>Cambio risoluzione video...</toolStripStatusLabelWorking-Resolution>
     <toolStripStatusLabelWorking-Reloading>Ricarico schede di rete ...</toolStripStatusLabelWorking-Reloading>
     <toolStripStatusLabelWorking-DHCP>Abilito DHCP...</toolStripStatusLabelWorking-DHCP>
     <toolStripStatusLabelWorking-IPAddress>Imposto Indirizzo IP...</toolStripStatusLabelWorking-IPAddress>
-    <toolStripStatusLabelWorking-Gateway>Imposto Gateway...</toolStripStatusLabelWorking-Gateway>
-    <toolStripStatusLabelWorking-DNS>Imposto Server DNS...</toolStripStatusLabelWorking-DNS>
-    <toolStripStatusLabelWorking-WINS>Imposto Server WINS...</toolStripStatusLabelWorking-WINS>
     <applyProfileToolStripMenuItem>Attiva Profilo</applyProfileToolStripMenuItem>
     <activateOnDifferentNetworkCardToolStripMenuItem>Attiva su una sheda di rete differente...</activateOnDifferentNetworkCardToolStripMenuItem>
     <copyToolStripMenuItem>Copia</copyToolStripMenuItem>
@@ -137,21 +132,15 @@
     <groupBoxAutoConfigAddress>Script di configurazione automatica  :</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Usa Impostazioni Proxy</groupBoxProxy>
     <labelServerAddress>Indirizzo Server  :</labelServerAddress>
-    <labelPort>Porta  :</labelPort>
     <checkBoxBypassProxy>Ignora server proxy per indirizzi locali (IE e Opera)</checkBoxBypassProxy>
     <groupBoxHomepage>Homepage  :</groupBoxHomepage>
     <buttonUseBlankHomepage>Vuota</buttonUseBlankHomepage>
     <labelHomepageNote>Lascia in bianco per non modificare.</labelHomepageNote>
     <groupBoxWebBrowsers>Abilita impostazioni per</groupBoxWebBrowsers>
-    <buttonClearFirefox>Ripulisci impostazioni Firefox</buttonClearFirefox>
-	<buttonClearFirefox-ToolTip>Clicca qui se hai problemi a cambiare le impostazioni del server proxy o l'home page con Firefox.</buttonClearFirefox-ToolTip>
     <groupBoxPleaseNote>Attenzione</groupBoxPleaseNote>
 	<labelPleaseNote>Mozilla Firefox e Opera non necessitano di essere avviati per rendere effettivi i cambiamenti.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
-	<checkBoxOpera>Opera</checkBoxOpera>
-	<ClearFirefox-Messagebox-1>Impostazioni rimosse.</ClearFirefox-Messagebox-1>
-    <ClearFirefox-Messagebox-2>Se Firefox è aperto, sarà necessario riavviarlo per rendere effettivi i cambiamenti.</ClearFirefox-Messagebox-2>
     <toolStripButtonAddDrive>Mappa unità di rete</toolStripButtonAddDrive>
     <toolStripButtonEditDrive>Modifica</toolStripButtonEditDrive>
     <toolStripButtonRemoveDrive>Rimuovi</toolStripButtonRemoveDrive>
@@ -168,9 +157,6 @@
     <groupBoxWallpaperPreview>Anteprima</groupBoxWallpaperPreview>
     <groupBoxDisplaySettings>Impostazioni display</groupBoxDisplaySettings>
     <labelScreenResolution>Risoluzione video :</labelScreenResolution>
-	<ScreenResolutionText-By>in</ScreenResolutionText-By>
-	<ScreenResolutionText-Pixels>pixel</ScreenResolutionText-Pixels>
-    <labelColorQuality>Colore :</labelColorQuality>
 	<ColorQualityText-Bit>bit</ColorQualityText-Bit>
 	<ColorQualityText-Lowest>Basso</ColorQualityText-Lowest>
 	<ColorQualityText-Highest>Alto</ColorQualityText-Highest>
@@ -178,7 +164,6 @@
     <groupBoxWireless>Attiva automaticamente il profilo</groupBoxWireless>
     <labelSSID>Wireless SSID :</labelSSID>
     <labelSSIDNotes>Specificando il SSID wireless verrà automaticamente attivato il profilo se la connessione è disponibile.</labelSSIDNotes>
-	<labelWirelessVista>Utenti di Windows Vista : Questa parte è disabilitata finchè non determinerò come configurare il SSID in Vista.</labelWirelessVista>
     <buttonSave>Salva</buttonSave>
     <buttonClose>Chiudi</buttonClose>
     <labelWorking-NetworkCards>Carico schede di rete...</labelWorking-NetworkCards>
@@ -215,8 +200,6 @@
 	<DisplaySettings-ConfirmPrompt-Title>Conferma i cambiamenti del Display</DisplaySettings-ConfirmPrompt-Title>
 	<DisplaySettings-ConfirmPrompt-Message>Vuoi apportare i cambiamenti al display??</DisplaySettings-ConfirmPrompt-Message>
 	<DisplaySettings-Resolution>Risoluzione :</DisplaySettings-Resolution>
-	<DisplaySettings-Bits>Colori :</DisplaySettings-Bits>
-	<DisplaySettings-Refresh>Refresh :</DisplaySettings-Refresh>`
 	<DisplaySettings-RevertPrompt-Title>Impostazioni cambiate</DisplaySettings-RevertPrompt-Title>
 	<DisplaySettings-RevertPrompt-Message>Vuoi tenere i cambiamenti correnti ?</DisplaySettings-RevertPrompt-Message>
   </Misc>
