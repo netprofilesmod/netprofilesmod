@@ -132,7 +132,7 @@
     <groupBoxAutoConfigAddress>Automatikus Proxybeállítás Cím:</groupBoxAutoConfigAddress>
     <groupBoxProxy>Proxy Beállítások Használata</groupBoxProxy>
     <labelServerAddress>Kiszolgáló Címe:</labelServerAddress>
-    <checkBoxBypassProxy>Proxy figyelmen kívül hagyása helyi címeknél (IE és Opera esetén)</checkBoxBypassProxy>
+    <checkBoxBypassProxy>Proxy figyelmen kívül hagyása helyi címeknél</checkBoxBypassProxy>
     <groupBoxHomepage>Alapértelmezett Kezdőlap:</groupBoxHomepage>
     <buttonUseBlankHomepage>Üres Oldal Megjelenítése</buttonUseBlankHomepage>
     <labelHomepageNote>Hagyja üresen, ha nem szeretne változtatást.</labelHomepageNote>

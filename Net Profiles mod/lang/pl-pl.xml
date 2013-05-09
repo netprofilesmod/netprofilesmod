@@ -132,7 +132,7 @@
     <groupBoxAutoConfigAddress>Adres automatycznej konfiguracji:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Użyj ustawień Proxy</groupBoxProxy>
     <labelServerAddress>Adres serwera:</labelServerAddress>
-    <checkBoxBypassProxy>Pomiń serwer proxy dla lokalnych adresów (IE i Opera)</checkBoxBypassProxy>
+    <checkBoxBypassProxy>Pomiń serwer proxy dla lokalnych adresów</checkBoxBypassProxy>
     <groupBoxHomepage>Strona startowa:</groupBoxHomepage>
     <buttonUseBlankHomepage>Użyj pustej</buttonUseBlankHomepage>
     <labelHomepageNote>Pozostaw puste by nie zmieniać aktualnie ustawionej.</labelHomepageNote>

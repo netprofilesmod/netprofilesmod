@@ -132,7 +132,7 @@
     <groupBoxAutoConfigAddress>Арес автоматической настройки:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Использовать настройки прокси</groupBoxProxy>
     <labelServerAddress>Адрес сервера:</labelServerAddress>
-    <checkBoxBypassProxy>Использовать прокси для локальных адресов (IE and Opera)</checkBoxBypassProxy>
+    <checkBoxBypassProxy>Использовать прокси для локальных адресов</checkBoxBypassProxy>
     <groupBoxHomepage>Страница по умолчанию:</groupBoxHomepage>
     <buttonUseBlankHomepage>Использвать пустую</buttonUseBlankHomepage>
     <labelHomepageNote>Оставте пустым, если не надо менять.</labelHomepageNote>

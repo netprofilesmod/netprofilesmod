@@ -132,7 +132,7 @@
     <groupBoxAutoConfigAddress>Adres Automatisch Configureren:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Gebruik Proxy instellingen</groupBoxProxy>
     <labelServerAddress>Server Adres:</labelServerAddress>
-    <checkBoxBypassProxy>Passeer proxy server voor lokaal ip-adrressen (IE en Opera)</checkBoxBypassProxy>
+    <checkBoxBypassProxy>Passeer proxy server voor lokaal ip-adrressen</checkBoxBypassProxy>
     <groupBoxHomepage>Standaard Homepage:</groupBoxHomepage>
     <buttonUseBlankHomepage>Laat leeg</buttonUseBlankHomepage>
     <labelHomepageNote>Laat leeg, om instellingen niet te veranderen.</labelHomepageNote>

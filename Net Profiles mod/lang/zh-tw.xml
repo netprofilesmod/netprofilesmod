@@ -132,7 +132,7 @@
     <groupBoxAutoConfigAddress>自動配置地址:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>使用Proxy</groupBoxProxy>
     <labelServerAddress>Proxy位置:</labelServerAddress>
-    <checkBoxBypassProxy>近端網址不使用Proxy (IE 和 Opera)</checkBoxBypassProxy>
+    <checkBoxBypassProxy>近端網址不使用Proxy</checkBoxBypassProxy>
     <groupBoxHomepage>預設首頁:</groupBoxHomepage>
     <buttonUseBlankHomepage>使用空白頁</buttonUseBlankHomepage>
     <labelHomepageNote>不更改請保持空白</labelHomepageNote>

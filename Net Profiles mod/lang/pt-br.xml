@@ -132,7 +132,7 @@
     <groupBoxAutoConfigAddress>Endereços Automáticos De Configuração:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Usar Ajustes De Proxy</groupBoxProxy>
     <labelServerAddress>Endereço Do Servidor:</labelServerAddress>
-    <checkBoxBypassProxy>Usar Servidor Proxy Em Endereços Locais (IE e Opera)</checkBoxBypassProxy>
+    <checkBoxBypassProxy>Usar Servidor Proxy Em Endereços Locais</checkBoxBypassProxy>
     <groupBoxHomepage>Página Inicial:</groupBoxHomepage>
     <buttonUseBlankHomepage>Usar Branca</buttonUseBlankHomepage>
     <labelHomepageNote>Deixe Em Branco Para Não Alterar.</labelHomepageNote>

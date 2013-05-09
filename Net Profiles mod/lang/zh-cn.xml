@@ -132,7 +132,7 @@
     <groupBoxAutoConfigAddress>自动配置地址:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>使用代理设置</groupBoxProxy>
     <labelServerAddress>服务器地址:</labelServerAddress>
-    <checkBoxBypassProxy>对于本地地址不使用代理服务器 (IE 和 Opera)</checkBoxBypassProxy>
+    <checkBoxBypassProxy>对于本地地址不使用代理服务器</checkBoxBypassProxy>
     <groupBoxHomepage>默认主页:</groupBoxHomepage>
     <buttonUseBlankHomepage>使用空白页</buttonUseBlankHomepage>
     <labelHomepageNote>不更改请保持空白</labelHomepageNote>

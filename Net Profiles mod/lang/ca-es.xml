@@ -132,7 +132,7 @@
     <groupBoxAutoConfigAddress>Configurar automàticament:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Configuració del proxy</groupBoxProxy>
     <labelServerAddress>Adreça del servidor:</labelServerAddress>
-    <checkBoxBypassProxy>No utilitzar el proxy per a adreçes locals (IE i Opera)</checkBoxBypassProxy>
+    <checkBoxBypassProxy>No utilitzar el proxy per a adreçes locals</checkBoxBypassProxy>
     <groupBoxHomepage>Pàgina d'inici:</groupBoxHomepage>
     <buttonUseBlankHomepage>En blanc</buttonUseBlankHomepage>
     <labelHomepageNote>deixar-ho en blanc si no es vol canviar.</labelHomepageNote>

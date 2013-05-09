@@ -132,7 +132,7 @@
     <groupBoxAutoConfigAddress>Automatická konfigurace adresy:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Použij nastavení proxy</groupBoxProxy>
     <labelServerAddress>Adresa serveru:</labelServerAddress>
-    <checkBoxBypassProxy>Nepoužívat proxy server pro lokální adresy (IE a Opera)</checkBoxBypassProxy>
+    <checkBoxBypassProxy>Nepoužívat proxy server pro lokální adresy</checkBoxBypassProxy>
     <groupBoxHomepage>Výchozí domovská stránka:</groupBoxHomepage>
     <buttonUseBlankHomepage>Použij prázdnou</buttonUseBlankHomepage>
     <labelHomepageNote>Nechat prázdnou stránku (žádné změny).</labelHomepageNote>

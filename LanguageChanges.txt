@@ -9,5 +9,4 @@ Misc/FirefoxSettings-ConfirmPrompt-Message
 MainForm/dontAskBeforeRestartingFirefoxToolStripMenuItem
 
 Translation only updated in en-us.xml:
-ProfileSettings/checkBoxBypassProxy
 ProfileSettings/labelPleaseNote

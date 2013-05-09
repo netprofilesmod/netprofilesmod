@@ -272,7 +272,7 @@
     <labelServerAddress>Server Adresse:</labelServerAddress>
 
 
-    <checkBoxBypassProxy>Bei lokalen Adressen Proxy-Server umgehen (IE und Opera)</checkBoxBypassProxy>
+    <checkBoxBypassProxy>Bei lokalen Adressen Proxy-Server umgehen</checkBoxBypassProxy>
 
     <groupBoxHomepage>Startseite:</groupBoxHomepage>
 

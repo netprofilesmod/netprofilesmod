@@ -125,7 +125,7 @@
     <groupBoxAutoConfigAddress>כתובת הגדרה אוטומטית:</groupBoxAutoConfigAddress>
     <groupBoxProxy>השתמש בהגדרות פרוקסי</groupBoxProxy>
     <labelServerAddress>כתובת שרת:</labelServerAddress>
-    <checkBoxBypassProxy>(IE-ו Opera) עקוף שרת פרוקסי עבור כתובות מקומיות</checkBoxBypassProxy>
+    <checkBoxBypassProxy>עקוף שרת פרוקסי עבור כתובות מקומיות</checkBoxBypassProxy>
     <groupBoxHomepage>ברירת המחדל של דף הבית:</groupBoxHomepage>
     <buttonUseBlankHomepage>השתמש בריק</buttonUseBlankHomepage>
     <labelHomepageNote>.השאר ריק בשביל לא לשנות</labelHomepageNote>

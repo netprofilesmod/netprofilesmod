@@ -132,7 +132,7 @@
     <groupBoxAutoConfigAddress>Adresse script de configuration automatique</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Utiliser un serveur Proxy</groupBoxProxy>
     <labelServerAddress>Addresse du serveur :</labelServerAddress>
-    <checkBoxBypassProxy>Ne pas utiliser de serveur proxy pour les adresses locales (IE et Opera)</checkBoxBypassProxy>
+    <checkBoxBypassProxy>Ne pas utiliser de serveur proxy pour les adresses locales</checkBoxBypassProxy>
     <groupBoxHomepage>Page d'accueil :</groupBoxHomepage>
     <buttonUseBlankHomepage>Page vierge</buttonUseBlankHomepage>
     <labelHomepageNote>Laisser vide pour aucun changement.</labelHomepageNote>
