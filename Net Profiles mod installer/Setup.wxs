@@ -103,11 +103,9 @@ along with Net Profiles mod.  If not, see <http://www.gnu.org/licenses/>.
 		         <ComponentRef Id="Msvcr80Dll"/>
 		         <ComponentRef Id="MessageBoxHookDll"/>
 		         <ComponentRef Id="AppModuleGlobalsDll"/>
-		         <ComponentRef Id="AppModuleInterProcessCommDll"/>
-		         <ComponentRef Id="AppModuleNamedPipesDll"/>
 		         <ComponentRef Id="ManagedWifiDll"/>
 		         <ComponentRef Id="Net_Profiles_modExe"/>
-		         <ComponentRef Id="ServiceExe"/>
+		         <ComponentRef Id="Service"/>
 		         <ComponentRef Id="ApplicationShortcut"/>
 		         <ComponentRef Id="ApplicationCommonAppDataFolderCreation"/>
 		         <ComponentRef Id="ProfilesFolderCreation"/>
