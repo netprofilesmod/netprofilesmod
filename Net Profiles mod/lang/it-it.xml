@@ -138,7 +138,6 @@
     <labelHomepageNote>Lascia in bianco per non modificare.</labelHomepageNote>
     <groupBoxWebBrowsers>Abilita impostazioni per</groupBoxWebBrowsers>
     <groupBoxPleaseNote>Attenzione</groupBoxPleaseNote>
-	<labelPleaseNote>Mozilla Firefox e Opera non necessitano di essere avviati per rendere effettivi i cambiamenti.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
     <toolStripButtonAddDrive>Mappa unità di rete</toolStripButtonAddDrive>

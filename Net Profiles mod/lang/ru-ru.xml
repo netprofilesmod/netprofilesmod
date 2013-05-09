@@ -138,7 +138,6 @@
     <labelHomepageNote>Оставте пустым, если не надо менять.</labelHomepageNote>
     <groupBoxWebBrowsers>Разрешит настройки для</groupBoxWebBrowsers>
     <groupBoxPleaseNote>Обратите внимание</groupBoxPleaseNote>
-	<labelPleaseNote>Mozilla Firefox и Opera не должны быть запущены чтобы настройки сработали.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
     <toolStripButtonAddDrive>Добавить диск</toolStripButtonAddDrive>

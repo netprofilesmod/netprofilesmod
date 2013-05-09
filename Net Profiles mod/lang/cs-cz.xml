@@ -138,7 +138,6 @@
     <labelHomepageNote>Nechat prázdnou stránku (žádné změny).</labelHomepageNote>
     <groupBoxWebBrowsers>Povolit nastavení pro</groupBoxWebBrowsers>
     <groupBoxPleaseNote>Poznámka</groupBoxPleaseNote>
-	<labelPleaseNote>Mozilla Firefox a Opera nesmí být spustěny, aby mohly být provedeny změny.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
     <toolStripButtonAddDrive>Přidat disk</toolStripButtonAddDrive>

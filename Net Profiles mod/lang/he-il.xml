@@ -131,7 +131,6 @@
     <labelHomepageNote>.השאר ריק בשביל לא לשנות</labelHomepageNote>
     <groupBoxWebBrowsers>אפשר הגדרות הבור</groupBoxWebBrowsers>
     <groupBoxPleaseNote>לתשומת ליבך</groupBoxPleaseNote>
-    <labelPleaseNote>.לא יכולות לפעול על מנת שהשינויים ייכנסו לתוקף Mozilla Firefox-ו Opera</labelPleaseNote>
     <checkBoxIE>Internet Explorer</checkBoxIE>
     <checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
     <toolStripButtonAddDrive>הוסף כונן</toolStripButtonAddDrive>

@@ -1,5 +1,6 @@
-﻿Missing Translations:
+﻿Missing translations (except en-us.xml):
 ProfileSettings/labelDNSSuffix
+ProfileSettings/labelPleaseNote
 ProfileSettings/textBoxServerAddress-ToolTip
 ProfileSettings/labelExceptions
 ProfileSettings/textBoxExceptions-ToolTip
@@ -7,6 +8,3 @@ ProfileSettings/noConnectedAdapter
 Misc/FirefoxSettings-ConfirmPrompt-Title
 Misc/FirefoxSettings-ConfirmPrompt-Message
 MainForm/dontAskBeforeRestartingFirefoxToolStripMenuItem
-
-Translation only updated in en-us.xml:
-ProfileSettings/labelPleaseNote

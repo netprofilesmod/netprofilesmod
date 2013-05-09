@@ -138,7 +138,6 @@
     <labelHomepageNote>Pozostaw puste by nie zmieniać aktualnie ustawionej.</labelHomepageNote>
     <groupBoxWebBrowsers>Aktywuj ustawienia dla:</groupBoxWebBrowsers>
     <groupBoxPleaseNote>Uwaga!</groupBoxPleaseNote>
-	<labelPleaseNote>By zmiany przyniosły efekt, Firefox i Opera nie mogą być uruchomione.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
     <toolStripButtonAddDrive>Dodaj dysk</toolStripButtonAddDrive>

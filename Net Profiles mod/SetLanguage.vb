@@ -66,6 +66,14 @@ Public Class SetLanguage
 		End Try
 	End Sub
 	
+	Public Sub SetToolTip(toolTip As ToolTip, control As Control, node As String, ByVal oldValue As String, ByVal newValue As String)
+		Try
+			toolTip.SetToolTip(control, root.SelectSingleNode(Me.prefix & node).InnerText.Replace(oldValue, newValue))
+		Catch
+			' The tool tip will not be created or changed if the translation is missing
+		End Try
+	End Sub
+	
 	Public Function GetText(node As String, defaultText As String) As String
 		Try
 			Return root.SelectSingleNode(Me.prefix & node).InnerText

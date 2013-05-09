@@ -138,7 +138,6 @@
     <labelHomepageNote>不更改請保持空白</labelHomepageNote>
     <groupBoxWebBrowsers>設定預設瀏覽器</groupBoxWebBrowsers>
     <groupBoxPleaseNote>請注意</groupBoxPleaseNote>
-	<labelPleaseNote>為了使設定檔生效Mozilla Firefox和Opera 必須關閉.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
     <toolStripButtonAddDrive>增加磁碟</toolStripButtonAddDrive>

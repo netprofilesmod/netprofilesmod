@@ -138,7 +138,6 @@
     <labelHomepageNote>Dejar en blanco para no cambiar.</labelHomepageNote>
     <groupBoxWebBrowsers>Activar configuración para:</groupBoxWebBrowsers>
     <groupBoxPleaseNote>Información</groupBoxPleaseNote>
-	<labelPleaseNote>Para que los cambios tengan efecto Mozilla Firefox y Opera, Tiene que estar cerrados.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
     <toolStripButtonAddDrive>Agregar unidad de RED</toolStripButtonAddDrive>

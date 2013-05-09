@@ -138,7 +138,6 @@
     <labelHomepageNote>Laisser vide pour aucun changement.</labelHomepageNote>
     <groupBoxWebBrowsers>Activer les réglages pour</groupBoxWebBrowsers>
     <groupBoxPleaseNote>Note</groupBoxPleaseNote>
-	<labelPleaseNote>Mozilla Firefox et Opera ne doivent pas être en cours d'exécution pour que les changements prennent effet.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
     <toolStripButtonAddDrive>Ajouter un lecteur</toolStripButtonAddDrive>

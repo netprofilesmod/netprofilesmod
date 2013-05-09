@@ -14,6 +14,7 @@
     <minimizeToTrayOnCloseToolStripMenuItem>Minimize To Tray On Close</minimizeToTrayOnCloseToolStripMenuItem>
     <minimizeToTrayOnStartupToolStripMenuItem>Minimize To Tray On Startup</minimizeToTrayOnStartupToolStripMenuItem>
     <dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>Don't Ask Before Auto Activating Wireless Profiles</dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem>
+    <dontAskBeforeRestartingFirefoxToolStripMenuItem>Don't Ask Before Restarting Firefox</dontAskBeforeRestartingFirefoxToolStripMenuItem>
     <screenResolutionToolStripMenuItem>Screen Resolution</screenResolutionToolStripMenuItem>
     <askBeforeChangingResolutionToolStripMenuItem>Ask Before Changing Resolution</askBeforeChangingResolutionToolStripMenuItem>
     <confirmSettingsAfterChangingResolutionToolStripMenuItem>Confirm Settings After Changing Resolution</confirmSettingsAfterChangingResolutionToolStripMenuItem>
@@ -128,11 +129,17 @@
     <labelPrimaryDNSServer>Primary DNS Server:</labelPrimaryDNSServer>
     <labelAlternateDNSServer>Alternate DNS Server:</labelAlternateDNSServer>
     <labelWINSServer>WINS Server:</labelWINSServer>
+    <labelDNSSuffix>DNS Suffix:</labelDNSSuffix>
     <buttonGetCurrentIPSettings>Get Current Settings</buttonGetCurrentIPSettings>
     <groupBoxAutoConfigAddress>Automatic Configuration Address:</groupBoxAutoConfigAddress>
 	<groupBoxProxy>Use Proxy Settings</groupBoxProxy>
     <labelServerAddress>Server Address:</labelServerAddress>
     <checkBoxBypassProxy>Bypass proxy server for local addresses</checkBoxBypassProxy>
+    <!-- Required: %1 (proxy examples) -->
+    <labelExceptions>Exceptions:</labelExceptions>
+    <textBoxServerAddress-ToolTip>Example for separate proxy settings per protocol: %1</textBoxServerAddress-ToolTip>
+    <!-- Required: %1 (exception examples) -->
+    <textBoxExceptions-ToolTip>Example: %1</textBoxExceptions-ToolTip>
     <groupBoxHomepage>Default Homepage:</groupBoxHomepage>
     <buttonUseBlankHomepage>Use Blank</buttonUseBlankHomepage>
     <labelHomepageNote>Leave blank for no change.</labelHomepageNote>
@@ -170,6 +177,7 @@
     <labelWorking-Profile>Loading Profile...</labelWorking-Profile>
     <labelWorking-Printer>Loading Printers...</labelWorking-Printer>
     <ProfileName-Messagebox>Please enter a name for this profile.</ProfileName-Messagebox>
+    <noConnectedAdapter>No connected network card detected</noConnectedAdapter>
   </ProfileSettings>
   <RunPrograms>
     <WindowTitle>Run Programs</WindowTitle>
@@ -210,5 +218,7 @@
 	<labelSelectNetworkCard>Select A Network Card:</labelSelectNetworkCard>
 	<buttonCopy>Copy</buttonCopy>
 	<buttonCancel>Cancel</buttonCancel>
+	<FirefoxSettings-ConfirmPrompt-Title>Confirm Firefox Restart</FirefoxSettings-ConfirmPrompt-Title>
+	<FirefoxSettings-ConfirmPrompt-Message>Would you like to restart Firefox to apply the new proxy settings</FirefoxSettings-ConfirmPrompt-Message>
   </CopyProfile>
 </Language>

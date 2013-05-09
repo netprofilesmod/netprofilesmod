@@ -138,7 +138,6 @@
     <labelHomepageNote>Laat leeg, om instellingen niet te veranderen.</labelHomepageNote>
     <groupBoxWebBrowsers>Instellingen inschakelen voor</groupBoxWebBrowsers>
     <groupBoxPleaseNote>Let op!</groupBoxPleaseNote>
-	<labelPleaseNote>Mozilla Firefox en Opera mogen niet actief zijn tijdens het wijzigen van deze instellingen.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
     <toolStripButtonAddDrive>Drive toevoegen</toolStripButtonAddDrive>

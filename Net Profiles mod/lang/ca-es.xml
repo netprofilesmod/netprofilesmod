@@ -138,7 +138,6 @@
     <labelHomepageNote>deixar-ho en blanc si no es vol canviar.</labelHomepageNote>
     <groupBoxWebBrowsers>Activar la configuració per:</groupBoxWebBrowsers>
     <groupBoxPleaseNote>Nota</groupBoxPleaseNote>
-	<labelPleaseNote>Mozilla Firefox i Opera han d'estar tancats per realitzar els canvis.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
     <toolStripButtonAddDrive>Afegir una unitat de xarxa</toolStripButtonAddDrive>

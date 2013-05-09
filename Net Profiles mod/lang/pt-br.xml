@@ -138,7 +138,6 @@
     <labelHomepageNote>Deixe Em Branco Para Não Alterar.</labelHomepageNote>
     <groupBoxWebBrowsers>Habilitar Ajustes Para</groupBoxWebBrowsers>
     <groupBoxPleaseNote>Atenção</groupBoxPleaseNote>
-	<labelPleaseNote>O Firefox e Opera Não Podem Estar Rodando Para Que Os Ajustes Tenham Efeito.</labelPleaseNote>
 	<checkBoxIE>Internet Explorer</checkBoxIE>
 	<checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
     <toolStripButtonAddDrive>Adicionar Drive</toolStripButtonAddDrive>

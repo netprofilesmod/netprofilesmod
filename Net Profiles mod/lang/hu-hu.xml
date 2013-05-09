@@ -138,7 +138,6 @@
     <labelHomepageNote>Hagyja üresen, ha nem szeretne változtatást.</labelHomepageNote>
     <groupBoxWebBrowsers>Beállítások Engedélyezése:</groupBoxWebBrowsers>
     <groupBoxPleaseNote>Figyelem!</groupBoxPleaseNote>
-    <labelPleaseNote>A változtatások érvénybe lépése csak akkor lehetséges, ha a Mozilla Firefox és az Opera nem futnak.</labelPleaseNote>
     <checkBoxIE>Internet Explorer</checkBoxIE>
     <checkBoxFirefox>Mozilla Firefox</checkBoxFirefox>
     <toolStripButtonAddDrive>Meghajtó Hozzáadása</toolStripButtonAddDrive>

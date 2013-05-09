@@ -86,10 +86,9 @@ Public Partial Class ProfileSettings
 		lang.SetText(Me.buttonGetCurrentIPSettings.Text, "buttonGetCurrentIPSettings")
 		lang.SetText(Me.groupBoxProxy.Text, "groupBoxProxy")
 		Me.groupBoxProxy.Text = "    " & Me.groupBoxProxy.Text
-		lang.SetText(Me.labelServerAddress.Text, "labelServerAddress")
-		lang.SetToolTip(Me.toolTip1, Me.textBoxServerAddress, "textBoxServerAddress-ToolTip")
+		lang.SetText(Me.labelServerAddress.Text, "labelServerAddress", "%1", "http=proxy.example.com:8080;ftp=127.0.0.1")
 		lang.SetText(Me.labelExceptions.Text, "labelExceptions")
-		lang.SetToolTip(Me.toolTip1, Me.textBoxExceptions, "textBoxExceptions-ToolTip")
+		lang.SetToolTip(Me.toolTip1, Me.textBoxExceptions, "textBoxExceptions-ToolTip", "%1", "192.168.0.100;*.example.com;10.92.*")
 		lang.SetText(Me.groupBoxHomepage.Text, "groupBoxHomepage")
 		lang.SetText(Me.buttonUseBlankHomepage.Text, "buttonUseBlankHomepage")
 		lang.SetText(Me.labelHomepageNote.Text, "labelHomepageNote")
