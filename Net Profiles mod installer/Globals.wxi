@@ -23,5 +23,5 @@ along with Net Profiles mod.  If not, see <http://www.gnu.org/licenses/>.
 <Include>
 
 	<?define ProductName="Net Profiles mod"?>
-	<?define ProductVersion="0.2.0"?>
+	<?define ProductVersion="0.2.1"?>
 </Include>
