@@ -1113,6 +1113,11 @@ Public Partial Class MainForm
 		End If
 	End Sub
 	
+	Sub ExitToolStripMenuItem1Click(ByVal sender As Object, ByVal e As EventArgs) Handles exitToolStripMenuItem1.Click
+		Globals.OKToCloseProgram = True
+		Me.Close()
+	End Sub
+	
     Sub ShowHideWindowToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles showHideWindowToolStripMenuItem.Click
         Call Me.ToggleProgramVisibility()
     End Sub
