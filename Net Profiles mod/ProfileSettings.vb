@@ -56,9 +56,6 @@ Public Partial Class ProfileSettings
 		Me.progressBar1.Visible = True
 		Me.labelWorking.Visible = True
 		Me.timer1.Enabled = True
-		' Only show the wireless tab in XP
-		'TODO: add support to detect the currently connected SSID on Vista and newer
-		Dim osInfo As System.OperatingSystem = System.Environment.OSVersion
 		Call LoadLanguage
 	End Sub
 	
