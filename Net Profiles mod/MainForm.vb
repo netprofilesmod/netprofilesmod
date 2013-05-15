@@ -876,7 +876,7 @@ Public Partial Class MainForm
 		End If
 		
 		If boolProxyFirefox Then
-			FFSettings.Apply()
+			FFSettings.Apply(Me.dontAskBeforeRestartingFirefoxToolStripMenuItem.Checked)
 		End If
 		
 		If worker.CancellationPending Then

@@ -207,7 +207,7 @@ Public Class FirefoxSettings
 		Me.ChangeSetting("network.proxy.no_proxies_on", NoProxyOn)
 	End Sub
 
-	Public Sub Apply()
+	Public Sub Apply(DontAskBeforeRestarting As Boolean)
 		Dim oRead As System.IO.StreamReader
 		Dim oWrite As System.IO.StreamWriter
 		Dim FFProcess As System.Diagnostics.Process = Nothing
@@ -247,7 +247,7 @@ Public Class FirefoxSettings
 			
 			Dim restartFirefox As System.Windows.Forms.DialogResult
 			
-			If MainForm.dontAskBeforeRestartingFirefoxToolStripMenuItem.Checked Then
+			If DontAskBeforeRestarting Then
 				restartFirefox = System.Windows.Forms.DialogResult.Yes
 			Else
 				Dim ConfirmPromptTitle As String = lang.GetText("FirefoxSettings-ConfirmPrompt-Title", "Confirm Firefox Restart")

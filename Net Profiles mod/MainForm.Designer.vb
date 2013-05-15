@@ -551,7 +551,7 @@ Partial Class MainForm
 	Private WithEvents netProfilesWebsiteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents runWhenILogInToWindowsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Public WithEvents dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Public WithEvents dontAskBeforeRestartingFirefoxToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+	Private WithEvents dontAskBeforeRestartingFirefoxToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents minimizeToTrayOnStartupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Public WithEvents timerDetectWireless As System.Windows.Forms.Timer
 	Public WithEvents confirmSettingsAfterChangingResolutionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
