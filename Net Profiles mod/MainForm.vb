@@ -460,6 +460,9 @@ Public Partial Class MainForm
 			End If
 		End If
 		
+		' Auto activate profile if specified SSID is connected
+		GetConnectedSSIDs()
+		
 		' Handler is called if the system notifies a change of the network address
 		AddHandler NetworkChange.NetworkAddressChanged, AddressOf NetworkAddressChanged
 		
@@ -515,6 +518,7 @@ Public Partial Class MainForm
 			RefreshProfiles()
 		End If
 		
+		' Auto activate profile if specified SSID is connected
 		GetConnectedSSIDs()
 
 	End Sub
