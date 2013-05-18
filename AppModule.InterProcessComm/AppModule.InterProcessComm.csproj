@@ -58,6 +58,7 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BlockingQueue.cs" />
     <Compile Include="IChannelManager.cs">
       <SubType>Code</SubType>
     </Compile>
