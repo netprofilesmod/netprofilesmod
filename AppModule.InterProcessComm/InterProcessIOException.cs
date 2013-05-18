@@ -18,6 +18,10 @@ You should have received a copy of the GNU General Public License
 along with Net Profiles mod.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/*
+Based on sample code released at http://www.codeproject.com/Articles/7176/Inter-Process-Communication-in-NET-Using-Named-Pip with no explicit license
+*/
+
 using System;
 using System.Runtime.Serialization;
 
