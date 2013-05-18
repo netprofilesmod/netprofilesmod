@@ -483,6 +483,8 @@ Public Partial Class MainForm
 			Catch
 			End Try
 			
+			'HACK
+			Threading.Thread.Sleep(1000)
 			' Populate the list of the available network adapters using WMI (CPU intensive)
 			Dim currentAdapters As ArrayList = PopulateNetworkCardArray()
 			
