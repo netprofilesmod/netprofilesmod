@@ -121,7 +121,6 @@ Partial Class MainForm
 		Me.toolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
 		Me.exitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.pictureBoxWallpaper = New System.Windows.Forms.PictureBox()
-		Me.timerDetectWireless = New System.Windows.Forms.Timer(Me.components)
 		Me.toolTip1 = New System.Windows.Forms.ToolTip(Me.components)
 		Me.backgroundWorkerScanAdapters = New System.ComponentModel.BackgroundWorker()
 		Me.backgroundWorkerApplyProfile = New System.ComponentModel.BackgroundWorker()
@@ -499,10 +498,6 @@ Partial Class MainForm
 		Me.pictureBoxWallpaper.Name = "pictureBoxWallpaper"
 		Me.pictureBoxWallpaper.TabStop = false
 		'
-		'timerDetectWireless
-		'
-		Me.timerDetectWireless.Interval = 3000
-		'
 		'backgroundWorkerScanAdapters
 		'
 		Me.backgroundWorkerScanAdapters.WorkerReportsProgress = true
@@ -554,7 +549,6 @@ Partial Class MainForm
 	Public WithEvents dontAskBeforeAutoActivatingWirelessProfilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents dontAskBeforeRestartingFirefoxToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private WithEvents minimizeToTrayOnStartupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-	Public WithEvents timerDetectWireless As System.Windows.Forms.Timer
 	Public WithEvents confirmSettingsAfterChangingResolutionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Public WithEvents askBeforeChangingResolutionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 	Private screenResolutionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

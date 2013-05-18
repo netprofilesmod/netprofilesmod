@@ -462,13 +462,14 @@ Public Partial Class MainForm
 		
 		' Handler is called if the system notifies a change of the network address
 		AddHandler NetworkChange.NetworkAddressChanged, AddressOf NetworkAddressChanged
+		
 		' Run the backgroundworker that will prepare the new adapter list on an adress change
 		Me.backgroundWorkerScanAdapters.RunWorkerAsync()
 	End Sub
 	
 	Private Sub NetworkAddressChanged(ByVal sender As Object, ByVal e As EventArgs)
 		' Runs if the system notifies a change of the network adress
-		' This allows to detect changes of adapter states
+		' This allows to detect changes of adapter connection states
 		
 		' Inform the backgroundworker about the change
 		Me.NetworkAddressChangedQueue.Enqueue(0)
@@ -511,6 +512,9 @@ Public Partial Class MainForm
 			NetworkCardList = currentAdapters
 			RefreshProfiles()
 		End If
+		
+		GetConnectedSSIDs()
+
 	End Sub
 	
 	Public Sub RefreshProfiles
@@ -524,11 +528,7 @@ Public Partial Class MainForm
 		Globals.AutoConnectSSID.Clear
 		Globals.AutoConnectProfile.Clear
 		Globals.AutoConnectMACAddress.Clear
-		Me.timerDetectWireless.Enabled = False
 		Call GetProfileCategories
-		If Globals.AutoConnectSSID.Count > 0 Then
-			Me.timerDetectWireless.Enabled = True
-		End If
 		If Not Me.ProfileApplyInProgress Then
 			Me.toolStripProgressBar1.Visible = False
 			Me.toolStripProgressBar1.Enabled = False
@@ -1247,13 +1247,6 @@ Public Partial Class MainForm
 	
     Sub ConfirmSettingsAfterChangingResolutionToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles confirmSettingsAfterChangingResolutionToolStripMenuItem.Click
         INIWrite(Globals.ProgramINIFile, "Program", "AskAfterChangingResolution", Me.confirmSettingsAfterChangingResolutionToolStripMenuItem.Checked.ToString)
-    End Sub
-	
-	Sub TimerDetectWirelessTick(ByVal sender As Object, ByVal e As EventArgs) Handles timerDetectWireless.Tick
-        'TODO: Move scanning of connected wireless networks to BackgroundWorkerScanAdapters
-        Me.timerDetectWireless.Enabled = False
-        Call GetConnectedSSIDs()
-        Me.timerDetectWireless.Enabled = True
     End Sub
 	
     Sub MinimizeToTrayOnStartupToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles minimizeToTrayOnStartupToolStripMenuItem.Click
