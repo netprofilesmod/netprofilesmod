@@ -1072,8 +1072,11 @@ Public Partial Class MainForm
 					Me.SetProfileOperationsState(False)
 				End If
 			ElseIf applyType = "auto" Then
-				' Exit after automatic profile application
-				Me.Close()
+				Dim CommandLineArgs As System.Collections.ObjectModel.ReadOnlyCollection(Of String) = My.Application.CommandLineArgs
+				If CommandLineArgs.Count > 0 Then
+					' Exit after automatic profile application
+					Me.Close()
+				End If
 			End If
 		End If
 	End Sub
