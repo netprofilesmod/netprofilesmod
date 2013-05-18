@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-# SharpDevelop 4.2.2.8818
+# SharpDevelop 4.2.1.8805
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Net Profiles mod", "Net Profiles mod\Net Profiles mod.vbproj", "{03CDC339-A47B-4054-8D46-ECD8C162355D}"
 EndProject
 Project("{CFEE4113-1246-4D54-95CB-156813CB8593}") = "Net Profiles mod installer", "Net Profiles mod installer\Net Profiles mod installer.wixproj", "{5D4E29C6-FAED-49BA-AE6C-C6CEA3388C64}"
@@ -19,6 +19,8 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AppModule.Globals", "AppModule.Globals\AppModule.Globals.vbproj", "{3A175061-AC8A-4C84-AE75-9341D32DCD17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagedWifi", "ManagedWifi\ManagedWifi.csproj", "{6AA425C9-EA6A-4B01-AAED-5FF122E8B663}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockinQueue", "BlockinQueue\BlockinQueue.csproj", "{384840D5-DF13-4B23-980F-5ACF93E9F1DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -140,6 +142,18 @@ Global
 		{6AA425C9-EA6A-4B01-AAED-5FF122E8B663}.Release|x86.ActiveCfg = Release|Any CPU
 		{6AA425C9-EA6A-4B01-AAED-5FF122E8B663}.Release|x64.Build.0 = Release|Any CPU
 		{6AA425C9-EA6A-4B01-AAED-5FF122E8B663}.Release|x64.ActiveCfg = Release|Any CPU
+		{384840D5-DF13-4B23-980F-5ACF93E9F1DB}.Debug|Any CPU.Build.0 = Debug|x86
+		{384840D5-DF13-4B23-980F-5ACF93E9F1DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{384840D5-DF13-4B23-980F-5ACF93E9F1DB}.Debug|x86.Build.0 = Debug|x86
+		{384840D5-DF13-4B23-980F-5ACF93E9F1DB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{384840D5-DF13-4B23-980F-5ACF93E9F1DB}.Debug|x64.Build.0 = Debug|x86
+		{384840D5-DF13-4B23-980F-5ACF93E9F1DB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{384840D5-DF13-4B23-980F-5ACF93E9F1DB}.Release|Any CPU.Build.0 = Release|x86
+		{384840D5-DF13-4B23-980F-5ACF93E9F1DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{384840D5-DF13-4B23-980F-5ACF93E9F1DB}.Release|x86.Build.0 = Release|x86
+		{384840D5-DF13-4B23-980F-5ACF93E9F1DB}.Release|x86.ActiveCfg = Release|Any CPU
+		{384840D5-DF13-4B23-980F-5ACF93E9F1DB}.Release|x64.Build.0 = Release|x86
+		{384840D5-DF13-4B23-980F-5ACF93E9F1DB}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
