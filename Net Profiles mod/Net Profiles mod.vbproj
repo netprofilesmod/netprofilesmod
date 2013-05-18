@@ -296,6 +296,10 @@
       <Project>{077B53BB-404A-4B2F-BA17-AAE98C5E9C66}</Project>
       <Name>AppModule.NamedPipes</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BlockinQueue\BlockinQueue.csproj">
+      <Project>{384840D5-DF13-4B23-980F-5ACF93E9F1DB}</Project>
+      <Name>BlockinQueue</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ManagedWifi\ManagedWifi.csproj">
       <Project>{6AA425C9-EA6A-4B01-AAED-5FF122E8B663}</Project>
       <Name>ManagedWifi</Name>

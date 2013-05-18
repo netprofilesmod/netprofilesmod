@@ -505,8 +505,9 @@ Partial Class MainForm
 		'
 		'backgroundWorkerScanAdapters
 		'
+		Me.backgroundWorkerScanAdapters.WorkerReportsProgress = true
 		AddHandler Me.backgroundWorkerScanAdapters.DoWork, AddressOf Me.BackgroundWorkerScanAdaptersDoWork
-		AddHandler Me.backgroundWorkerScanAdapters.RunWorkerCompleted, AddressOf Me.BackgroundWorkerScanAdaptersRunWorkerCompleted
+		AddHandler Me.backgroundWorkerScanAdapters.ProgressChanged, AddressOf Me.BackgroundWorkerScanAdaptersProgressChanged
 		'
 		'backgroundWorkerApplyProfile
 		'

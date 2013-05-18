@@ -31,6 +31,7 @@ Imports Microsoft.Win32
 Imports IWshRuntimeLibrary
 Imports System.Diagnostics.Process
 Imports System.Net
+Imports System.Net.NetworkInformation
 Imports System.Xml
 Imports AppModule.InterProcessComm
 Imports AppModule.NamedPipes
@@ -90,7 +91,7 @@ Public Partial Class MainForm
 	Private messageBoxManager1 As MessageBoxManager
 	Private specialExitPermission As String = ""
 	Public ProfileApplyInProgress As Boolean = False
-	Const AdapterScanPause As Integer = 1000
+	Private NetworkAddressChangedQueue As BlockingQueue = New BlockingQueue()
 	
 	
 	Sub MainFormLoad(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
@@ -459,40 +460,57 @@ Public Partial Class MainForm
 			End If
 		End If
 		
-		System.Threading.Thread.Sleep(AdapterScanPause)
-		' Now start scanning for changed adapters silently in the background
+		' Handler is called if the system notifies a change of the network address
+		AddHandler NetworkChange.NetworkAddressChanged, AddressOf NetworkAddressChanged
+		' Run the backgroundworker that will prepare the new adapter list on an adress change
 		Me.backgroundWorkerScanAdapters.RunWorkerAsync()
 	End Sub
 	
-	
-	Sub BackgroundWorkerScanAdaptersDoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs)
-		' Scans the available network adapters until a change is detected
+	Private Sub NetworkAddressChanged(ByVal sender As Object, ByVal e As EventArgs)
+		' Runs if the system notifies a change of the network adress
+		' This allows to detect changes of adapter states
 		
-		Dim CurrentAdapters As New ArrayList()
-		Do While True
-			CurrentAdapters = PopulateNetworkCardArray()
-			If CurrentAdapters.Count = NetworkCardList.Count Then
-				For i As Integer = 0 To CurrentAdapters.Count - 1
-					If Not (CStr(CurrentAdapters(i).Key) = CStr(NetworkCardList(i).Key) And CStr(CurrentAdapters(i).Value) = CStr(NetworkCardList(i).Value)) Then
-						Exit Do
-					End If
-				Next
-			Else
-				Exit Do
-			End If
-			System.Threading.Thread.Sleep(AdapterScanPause)
-		Loop
-		
-		' Submit the list of network adapters to the handler
-		e.Result = CurrentAdapters
+		' Inform the backgroundworker about the change
+		Me.NetworkAddressChangedQueue.Enqueue(0)
 	End Sub
 	
-	Sub BackgroundWorkerScanAdaptersRunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs)
-		' Updates the network adapter list
+	Sub BackgroundWorkerScanAdaptersDoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs)
+		While True
+			Try
+				' Blocks until an element is available
+				Me.NetworkAddressChangedQueue.Dequeue()
+			Catch
+			End Try
+			
+			' Populate the list of the available network adapters using WMI (CPU intensive)
+			Dim currentAdapters As ArrayList = PopulateNetworkCardArray()
+			
+			' Submit the list of network adapters to the progess handler
+			Me.backgroundWorkerScanAdapters.ReportProgress(0, currentAdapters)
+		End While
+	End Sub
+	
+	Sub BackgroundWorkerScanAdaptersProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs)
+		' Checks the adapter list for changes and updates the profiles list if necessary
 		
-		NetworkCardList = DirectCast(e.Result, ArrayList)
-		RefreshProfiles()
-		backgroundWorkerScanAdapters.RunWorkerAsync()
+		Dim currentAdapters As ArrayList = DirectCast(e.UserState, ArrayList)
+		Dim changed As Boolean = False
+		
+		If currentAdapters.Count = NetworkCardList.Count Then
+			For i As Integer = 0 To currentAdapters.Count - 1
+				If Not (CStr(currentAdapters(i).Key) = CStr(NetworkCardList(i).Key) And CStr(currentAdapters(i).Value) = CStr(NetworkCardList(i).Value)) Then
+					changed = True
+					Exit For
+				End If
+			Next
+		Else
+			changed = True
+		End If
+		
+		If changed Then
+			NetworkCardList = currentAdapters
+			RefreshProfiles()
+		End If
 	End Sub
 	
 	Public Sub RefreshProfiles
@@ -1093,7 +1111,7 @@ Public Partial Class MainForm
 	Sub MainFormFormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles MyBase.FormClosing
 		If e.CloseReason = System.Windows.Forms.CloseReason.UserClosing Then
 			If Not Globals.OKToCloseProgram Then
-				' Minimize tp tray
+				' Minimize to tray
 				Me.ToggleProgramVisibility()
 				e.Cancel = True
 			End If
