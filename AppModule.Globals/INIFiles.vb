@@ -27,7 +27,7 @@
 '
 Option Strict On
 
-Module INIFiles
+Public Module INIFiles
 	#Region "API Calls"
 	' standard API declarations for INI access
 	' changing only "As Long" to "As Int32" (As Integer would work also)

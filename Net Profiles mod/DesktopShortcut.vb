@@ -25,6 +25,8 @@
 ' 
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
+Imports AppModule.Globals
+
 Public Partial Class DesktopShortcut
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.

@@ -27,6 +27,7 @@
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
 Imports System.IO
+Imports AppModule.Globals
 
 Public Class FirefoxSettings
 	Private const PrefsFile As String = "prefs.js"
