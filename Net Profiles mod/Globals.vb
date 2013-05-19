@@ -58,7 +58,6 @@ Public Module Globals
 	Public AutoConnectProfile As New ArrayList()
 	Public AutoConnectMACAddress As New ArrayList()
 	Public SSIDi As Integer
-	Dim wlan As WlanClient = Nothing
 	
 	Public BrowseNetworkShare_Title As String
 	
@@ -389,35 +388,34 @@ Public Module Globals
 	
 	Public Sub GetConnectedSSIDs()
 		Dim osInfo As System.OperatingSystem = System.Environment.OSVersion
-		' On Vista and newer use the Managed Wifi API to detect the connected SSIDs, on XP use WMI
+		' On Vista and newer the Managed Wifi API is used to detect the connected SSIDs, on XP WMI is used
 		If osInfo.Version.Major >= 6 Then
-			If IsNothing(wlan) Then
-				wlan = New WlanClient()
-			End If
-			CurrentWirelessSSID = ""
-			CurrentWirelessName = ""
-			Try
-				For Each wlanInterface As WlanClient.WlanInterface In wlan.Interfaces
-					If wlanInterface.InterfaceState = NativeWifi.Wlan.WlanInterfaceState.Connected Then
-						Dim ssid As Wlan.Dot11Ssid  = wlanInterface.CurrentConnection.wlanAssociationAttributes.dot11Ssid
-						CurrentWirelessSSID = System.Text.Encoding.ASCII.GetChars(ssid.SSID, 0, Convert.ToInt32(ssid.SSIDLength))
-						CurrentWirelessName = wlanInterface.InterfaceDescription
-						If CurrentWirelessSSID.Length > 0 Then
-							Call CompareWirelessSSID()
-						Else
-							CurrentWirelessSSID = ""
-							CurrentWirelessName = ""
-							LastWirelessSSID = ""
-							LastWirelessName = ""
-						End If
-					End If
-				Next
-			Catch
+			If Not IsNothing(MainForm.Wlan) Then
 				CurrentWirelessSSID = ""
 				CurrentWirelessName = ""
-				LastWirelessSSID = ""
-				LastWirelessName = ""
-			End Try
+				Try
+					For Each wlanInterface As WlanClient.WlanInterface In MainForm.Wlan.Interfaces
+						If wlanInterface.InterfaceState = NativeWifi.Wlan.WlanInterfaceState.Connected Then
+							Dim ssid As Wlan.Dot11Ssid  = wlanInterface.CurrentConnection.wlanAssociationAttributes.dot11Ssid
+							CurrentWirelessSSID = System.Text.Encoding.ASCII.GetChars(ssid.SSID, 0, Convert.ToInt32(ssid.SSIDLength))
+							CurrentWirelessName = wlanInterface.InterfaceDescription
+							If CurrentWirelessSSID.Length > 0 Then
+								Call CompareWirelessSSID()
+							Else
+								CurrentWirelessSSID = ""
+								CurrentWirelessName = ""
+								LastWirelessSSID = ""
+								LastWirelessName = ""
+							End If
+						End If
+					Next
+				Catch
+					CurrentWirelessSSID = ""
+					CurrentWirelessName = ""
+					LastWirelessSSID = ""
+					LastWirelessName = ""
+				End Try
+			End If
 		Else
 			Try
 				Dim searcher As New ManagementObjectSearcher( _

@@ -36,11 +36,22 @@ Imports System.Xml
 Imports AppModule.InterProcessComm
 Imports AppModule.NamedPipes
 Imports AppModule.Globals
+Imports NativeWifi
 
 Public Partial Class MainForm
 	Public Sub New()
 		' The Me.InitializeComponent call is required for Windows Forms designer support.
 		Me.InitializeComponent()
+		
+		Dim osInfo As System.OperatingSystem = System.Environment.OSVersion
+		' On Vista and newer the Managed Wifi API is used to detect the connected SSIDs
+		If osInfo.Version.Major >= 6 Then
+			Try
+				Me.Wlan = New WlanClient()
+			Catch
+				' Fails if the WLAN AutoConfig service isn't started (on systems without WLAN adapters).
+			End Try
+		End If
 		
 		toolStripStatusLabel1.Text = ProgramName & " " & ProgramVersion
 		'
@@ -92,6 +103,7 @@ Public Partial Class MainForm
 	Private specialExitPermission As String = ""
 	Public ProfileApplyInProgress As Boolean = False
 	Private NetworkAddressChangedQueue As BlockingQueue = New BlockingQueue()
+	Public Wlan As WlanClient = Nothing
 	
 	
 	Sub MainFormLoad(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
