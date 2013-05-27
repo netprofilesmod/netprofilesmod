@@ -1,5 +1,8 @@
-This project has been developed with SharpDevelop 4.2. To successfully build and debug the project, take care of the
-following:
+This project is entirely developed with SharpDevelop: http://www.icsharpcode.net/opensource/sd/
+To build the installer also the WiX Toolset is required: http://wix.codeplex.com/
+(the latest tested versions are SharpDevelop 4.3 and WiX Toolset 3.7)
+
+For successfully building and debugging Net Profiles mod please take care of the following:
 
 1. Set Net Profiles mod as startup project in SharpDevelop.
 
