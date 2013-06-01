@@ -58,7 +58,6 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>Full</DebugType>
     <DefineConstants>TRACE=1</DefineConstants>
-    <NoWarn>42017,42018,42019,42032,42036</NoWarn>
     <Optimize>True</Optimize>
     <StartAction>Project</StartAction>
   </PropertyGroup>
