@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-# SharpDevelop 4.2.1.8805
+# SharpDevelop 4.3
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Net Profiles mod", "Net Profiles mod\Net Profiles mod.vbproj", "{03CDC339-A47B-4054-8D46-ECD8C162355D}"
 EndProject
 Project("{CFEE4113-1246-4D54-95CB-156813CB8593}") = "Net Profiles mod installer", "Net Profiles mod installer\Net Profiles mod installer.wixproj", "{5D4E29C6-FAED-49BA-AE6C-C6CEA3388C64}"
