@@ -36,7 +36,7 @@
     <OptionCompare>Binary</OptionCompare>
     <OptionInfer>Off</OptionInfer>
     <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <TargetFrameworkProfile />
     <RunSourceAnalysis>False</RunSourceAnalysis>
@@ -46,6 +46,8 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <RunCodeAnalysis>False</RunCodeAnalysis>
     <StartupObject>NetProfilesMod.My.Program</StartupObject>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,10 +58,11 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>Full</DebugType>
+    <DebugType>PdbOnly</DebugType>
     <DefineConstants>TRACE=1</DefineConstants>
     <Optimize>True</Optimize>
     <StartAction>Project</StartAction>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
     <ReferencePath>..\3rd Party\MessageBoxHook\bin\Win32\</ReferencePath>
@@ -67,6 +70,7 @@
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
     <BaseAddress>4194304</BaseAddress>
     <PlatformTarget>x86</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
     <ReferencePath>..\3rd Party\MessageBoxHook\bin\x64\</ReferencePath>
