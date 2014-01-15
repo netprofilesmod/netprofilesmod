@@ -39,7 +39,7 @@ along with Net Profiles mod.  If not, see <http://www.gnu.org/licenses/>.
 		<!-- only install on Windows XP, Windows Vista, Windows 7 or Windows 8 -->
 
 		<Condition Message="This application is only supported on Windows XP, Windows Vista, Windows 7 or Windows 8.">
-    		<![CDATA[Installed OR ((VersionNT >= 501) AND (VersionNT <= 602))]]>
+    		<![CDATA[Installed OR (VersionNT >= 501)]]>
 		</Condition>
 
 		<!-- don't install a x86 build on a x64 system -->
