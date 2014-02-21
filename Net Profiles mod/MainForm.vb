@@ -415,6 +415,8 @@ Public Partial Class MainForm
                 
             End Try
         Next
+        Me.listViewProfiles.Sort()
+
 	End Sub
 	
 	Private Sub SystemTrayMenuClick(sender as Object, e as System.EventArgs)

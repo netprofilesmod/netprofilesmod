@@ -403,7 +403,9 @@ Partial Class MainForm
 		resources.ApplyResources(Me.listViewProfiles, "listViewProfiles")
 		Me.listViewProfiles.GridLines = true
 		Me.listViewProfiles.LargeImageList = Me.imageListProfiles
+		Me.listViewProfiles.MultiSelect = false
 		Me.listViewProfiles.Name = "listViewProfiles"
+		Me.listViewProfiles.Sorting = System.Windows.Forms.SortOrder.Ascending
 		Me.listViewProfiles.UseCompatibleStateImageBehavior = false
 		Me.listViewProfiles.View = System.Windows.Forms.View.Tile
 		'
