@@ -316,27 +316,34 @@ Public Partial Class MainForm
 	
 	Public Sub GetProfileCategories()
 		Me.listViewProfiles.Items.Clear
+		Me.listViewProfiles.Groups.Clear()
 		Me.profilesToolStripMenuItem.DropDownItems.Clear
 		Dim ProfileCategories As New DirectoryInfo(ProfilesFolder)
 		Dim Dirs As DirectoryInfo() = ProfileCategories.GetDirectories("*.*")
 		Dim DirectoryName As DirectoryInfo
 		Dim CategoryMenu As ToolStripMenuItem
 		For Each DirectoryName In Dirs
-            Try
-				Application.DoEvents()
+			Try
 				Dim NewProfileCategoryName As String = GetStoredInterfaceName(DirectoryName.Name)
 				If NewProfileCategoryName.Trim.Length > 0 Then
-					Application.DoEvents()
 					Dim ThisInterfaceType As String = GetInterfaceType(DirectoryName.Name)
-                	Application.DoEvents()
-                	Dim NewProfileCategory As New ListViewGroup(NewProfileCategoryName, HorizontalAlignment.Left)
-                	Application.DoEvents()
-                	NewProfileCategory.Name = DirectoryName.Name
-                	Application.DoEvents()
-                	Me.listViewProfiles.Groups.Add(NewProfileCategory)
-                	Application.DoEvents()
+					Dim NewProfileCategory As New ListViewGroup(NewProfileCategoryName, HorizontalAlignment.Left)
+					NewProfileCategory.Name = DirectoryName.Name
+					If Me.listViewProfiles.Groups.Count > 0 Then
+						For i As Integer = 0 To Me.listViewProfiles.Groups.Count - 1
+							If NewProfileCategory.Header < Me.listViewProfiles.Groups.Item(i).Header Then
+								Me.listViewProfiles.Groups.Insert(i, NewProfileCategory)
+								Exit For
+							End If
+							If i = Me.listViewProfiles.Groups.Count - 1 Then
+								' Add at last position
+								Me.listViewProfiles.Groups.Add(NewProfileCategory)
+							End If
+						Next
+					Else
+						Me.listViewProfiles.Groups.Add(NewProfileCategory)
+					End If
                 	If DirectoryName.GetFiles().Length > 0 And (NewProfileCategoryName.Trim <> "Error" Or NewProfileCategoryName.Trim <> "") Then
-                		Application.DoEvents()
                 		CategoryMenu = DirectCast(Me.profilesToolStripMenuItem.DropDownItems.Add(NewProfileCategoryName), ToolStripMenuItem)
                 		If ThisInterfaceType.ToLower.Contains("wlan") Then
                 			CategoryMenu.Image = Me.imageListProfiles.Images(1)
@@ -347,12 +354,11 @@ Public Partial Class MainForm
                 		End If
                         Call GetProfiles(DirectoryName.FullName, NewProfileCategory, CategoryMenu, ThisInterfaceType)
                 	End If
-                End If
-            Catch E As Exception
-            
-            End Try
-        Next
-        
+				End If
+			Catch E As Exception
+			
+			End Try
+		Next
 	End Sub
 	
 	Public Sub GetProfiles(DirectoryPath as String, GroupName As ListViewGroup, CategoryMenu As ToolStripMenuItem, ThisInterfaceType As String)
@@ -363,12 +369,9 @@ Public Partial Class MainForm
 
         For Each Filename In Files
             Try
-                Application.DoEvents()
                 Dim ThisListItem As ListViewItem
                 ThisListItem = Me.listViewProfiles.Items.Add(INIRead(Filename.FullName,"General","Name", "[No Name]"))
-                Application.DoEvents()
                 ThisListItem.Group = GroupName
-                Application.DoEvents()
                 If Filename.FullName.ToLower = INIRead(Globals.ProgramINIFile,"Program","Last Activated Profile", "").ToLower Then
                 	ThisListItem.Font = New System.Drawing.Font(ThisListItem.Font, FontStyle.Bold)
                 End If
@@ -377,14 +380,10 @@ Public Partial Class MainForm
                 Else
                 	ThisListItem.SubItems.Add("Dynamic IP")
                 End If
-                Application.DoEvents()
                 ThisListItem.SubItems.Item(1).ForeColor = System.Drawing.Color.Gray
-                Application.DoEvents()
                 ThisListItem.SubItems.Add(Filename.Name)
-                Application.DoEvents()
                 ThisListItem.SubItems.Add(Filename.FullName)
                 
-                Application.DoEvents()
                 ProfileMenuItem = DirectCast(CategoryMenu.DropDownItems.Add(INIRead(Filename.FullName, "General", _
                     "Name", "[No Name]")), ToolStripMenuItem)
                 ProfileMenuItem.Tag = Filename.FullName
@@ -392,7 +391,6 @@ Public Partial Class MainForm
                 AddHandler ProfileMenuItem.Click, AddressOf SystemTrayMenuClick
            
                 
-                Application.DoEvents()
                 If ThisInterfaceType.ToLower.Contains("wlan") Then
                 	ThisListItem.ImageIndex = 1
                 	ProfileMenuItem.Image = Me.imageListProfiles.Images(1)
