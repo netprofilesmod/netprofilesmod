@@ -647,13 +647,14 @@ Public Partial Class MainForm
 				clientConnection = New ClientPipeConnection("NetProfilesMod", ".")
 				clientConnection.Connect()
 				clientConnection.Write(Profile + "|" + MACAddress)
-				'TODO: Check the status message if implemented in the server
-				clientConnection.Read()
+				Dim status As String = clientConnection.Read()
 				clientConnection.Close()
+				If Not status.Equals("OK") Then
+					ShowException(status, "Service Exception")
+				End If
 			Catch ex As Exception
+				ShowException(ex.ToString(), "Named Pipe Client Exception")
 				clientConnection.Dispose()
-				'TODO: Display error message instead of throwing exception
-				Throw (ex)
 			End Try
 		End If
 		
@@ -1057,9 +1058,11 @@ Public Partial Class MainForm
 					End If
 				End If
 			End If
-			Me.messageBoxManager1.HookEnabled = False
 		End If
 		'*** END DISPLAY SETTINGS ***
+		
+		' Disable countdown for message boxes
+		Me.messageBoxManager1.HookEnabled = False
 		
 		' Remember the mode for worker completed handler
 		e.Result = ApplyType

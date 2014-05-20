@@ -1,4 +1,4 @@
-MessageBoxHook has been release unter the Microsoft Public License.
+MessageBoxHook has been released under the Microsoft Public License.
 The text of this license has been taken on 09 June 2012 from:
 
 http://www.opensource.org/licenses/ms-pl.html

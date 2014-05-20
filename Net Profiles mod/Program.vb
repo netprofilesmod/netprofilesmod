@@ -88,12 +88,12 @@ Namespace My
 		End Sub
 		
 		Sub UnhandledExceptionHandler(ByVal sender As Object, ByVal e As System.UnhandledExceptionEventArgs)
-			MessageBox.Show("Press Ctrl-C to copy this message to the clipboard" + vbCrLf + vbCrLf + e.ExceptionObject.ToString(), "Non-UI Thread Exception", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+			ShowException(e.ExceptionObject.ToString(), "Non-UI Thread Exception")
 			End
 		End Sub
 		
 		Sub ThreadExceptionHandler(ByVal sender As Object, ByVal e As System.Threading.ThreadExceptionEventArgs)
-			MessageBox.Show("Press Ctrl-C to copy this message to the clipboard" + vbCrLf + vbCrLf + e.Exception.ToString(), "UI Thread Exception", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+			ShowException(e.Exception.ToString(), "UI Thread Exception")
 			End
 		End Sub
 	End Module

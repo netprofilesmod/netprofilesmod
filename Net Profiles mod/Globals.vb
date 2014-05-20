@@ -557,4 +557,8 @@ Public Module Globals
 			End If
 		End If
 	End Sub
+
+	Public Sub ShowException(Message As String, Caption As String)
+		MessageBox.Show("Press Ctrl-C to copy this message to the clipboard" + vbCrLf + vbCrLf + Message, Caption, MessageBoxButtons.OK, MessageBoxIcon.Stop)
+	End Sub
 End Module

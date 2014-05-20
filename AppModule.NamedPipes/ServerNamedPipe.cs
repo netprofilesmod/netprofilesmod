@@ -52,9 +52,6 @@ namespace AppModule.NamedPipes {
 					string request = PipeConnection.Read();
 					LastAction = DateTime.Now;
 					if (request.Trim() != "") {
-						string[] profile = request.Split('|');
-						AppModule.Globals.TcpIp.ApplyIp(profile[0], profile[1]);
-						//TODO: Implement a status message for applying IP settings
 						PipeConnection.Write(PipeManager.HandleRequest(request));
 						if(DebugMessageRef != null) {
 							DebugMessageRef("Pipe " + this.PipeConnection.NativeHandle.ToString() + ": request handled" + Environment.NewLine);

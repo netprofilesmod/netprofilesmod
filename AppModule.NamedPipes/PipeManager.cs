@@ -77,7 +77,15 @@ namespace AppModule.NamedPipes {
 			if(DebugMessageRef != null) {
 				DebugMessageRef(request + Environment.NewLine);
 			}
-			returnVal = "Response to: " + request;
+			try {
+				string[] profile = request.Split('|');
+				AppModule.Globals.TcpIp.ApplyIp(profile[0], profile[1]);
+				returnVal = "OK";
+			}
+			catch (Exception e) {
+				returnVal = e.ToString();
+			}
+			
 
 			return returnVal;
 		}
