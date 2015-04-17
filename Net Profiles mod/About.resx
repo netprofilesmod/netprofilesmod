@@ -277,7 +277,7 @@
     <value>3</value>
   </data>
   <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Copyright © 2004-2012 Hugo Anton Feldhammer, Urs Geissbühler, Daniel Milner</value>
+    <value>Copyright © 2004-2015 Urs Geissbühler, Hugo Anton Feldhammer, Daniel Milner</value>
   </data>
   <data name="labelCopyright.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -340,7 +340,7 @@
     <value>7</value>
   </data>
   <data name="linkLabelHomepage.Text" xml:space="preserve">
-    <value>http://netprofilesmod.googlecode.com/</value>
+    <value>https://github.com/geissbuehler/netprofilesmod</value>
   </data>
   <data name="linkLabelHomepage.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
