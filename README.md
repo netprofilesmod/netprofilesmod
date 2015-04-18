@@ -1,12 +1,14 @@
 #Net Profiles <sup>mod</sup>
 
+[**Download**](../../releases)
+
 A fork of the abandoned project [Net Profiles](http://code.google.com/p/netprofiles/).
 
-![](http://wiki.netprofilesmod.googlecode.com/git/images/main_screen_win8.png)
+![Screenshot](http://wiki.netprofilesmod.googlecode.com/git/images/main_screen_win8.png)
 
 Net Profiles <sup>mod</sup> saves your network settings in profiles and allows to apply these settings with a click of a button. The project is entirely developed with [SharpDevelop](http://www.icsharpcode.net/opensource/sd/). Net Profiles <sup>mod</sup> is free software and is licensed under the [GNU General Public License (GPL) 3.0](http://www.gnu.org/licenses/gpl-3.0).
 
-# Features
+## Features
 
 The following options are supported in profiles:
  * DHCP or static network configuration, including support for WINS server and DNS suffix.
@@ -23,7 +25,7 @@ Additional features:
  * Can be minimized to tray. The tray context menu allows to directly apply profiles.
  * Optionally start with Windows, optionally start minimized/trayed.
 
-# System Requirements
+## System Requirements
 
  * Windows XP, Vista, 7 or 8 (corresponding server variants not tested very well, but should work as well)
  * .NET Framework 2.0 ([installing .NET 2.0 on Windows 8](http://helpdeskgeek.com/windows-8/install-net-framework-3-5-3-0-2-0-on-windows-8/))
