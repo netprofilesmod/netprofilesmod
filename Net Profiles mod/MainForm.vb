@@ -1330,7 +1330,7 @@ Public Partial Class MainForm
                 YNResult = MessageBox.Show(Me.CheckForUpdates_New_1.Replace("%2", currentVersion.Trim) & vbCrLf & Me.CheckForUpdates_New_2, Me.CheckForUpdates_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If YNResult = DialogResult.Yes Then
                     Application.DoEvents()
-                    Start("https://github.com/geissbuehler/netprofilesmod")
+                    Start("https://github.com/geissbuehler/netprofilesmod/releases/latest")
                 End If
             End If
         Catch
