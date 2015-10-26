@@ -28,22 +28,22 @@
 Imports AppModule.Globals
 
 Public Module ProfileWriter
-	Function SaveProfile(SourceFile As String, TargetFile As String) As Boolean
+	Function SaveProfile(SourceFile As String, TargetFile As String, OldLocation As String) As Boolean
 		Try
 			Dim osInfo As System.OperatingSystem = System.Environment.OSVersion
 			If osInfo.Version.Major < 6 Then
 				' On XP try to save the profile without raising a Run As dialog
 				' This will fail if the user is not an administrator
-				FileopSaveProfile(SourceFile, TargetFile)
+				FileopSaveProfile(SourceFile, TargetFile, OldLocation)
 				Return True
 			Else
-				' On Vista or newer, with UAC enabled, prevent writting the profile to the VirtualStore
+				' On Vista or newer, with UAC enabled, prevent writing the profile to the VirtualStore
 				Throw New Exception()
 			End If
 		Catch
 			Try
 				' Using the elevated process for saving the profile ensures write access to the profiles folder
-				Return ElevatedProcess("move """ & SourceFile & """ """ & TargetFile & """")
+				Return ElevatedProcess("move """ & SourceFile & """ """ & TargetFile & """ """ & OldLocation & """")
 			Catch
 				Return False
 			End Try
@@ -86,7 +86,7 @@ Public Module ProfileWriter
 		'TODO: Return the exit code, raise an exception if WaitForExit() returns False
 	End Function
 	
-	Sub FileopSaveProfile(SourceFile As String, TargetFile As String)
+	Sub FileopSaveProfile(SourceFile As String, TargetFile As String, OldLocation As String)
 		Dim Target() As String = TargetFile.Split(CChar("\"))
 		Dim TargetFolder As String = Target(Target.Length - 2)
 		' Make sure the subfolder named after the MAC address exists
@@ -97,6 +97,9 @@ Public Module ProfileWriter
 		' without administrator permissions, therfore it's copied from the temp folder and then deleted
 		System.IO.File.Copy(SourceFile, TargetFile, True)
 		System.IO.File.Delete(SourceFile)
+		If OldLocation.Length
+			System.IO.File.Delete(OldLocation)
+		End If
 	End Sub
 	
 	Sub FileopDelete(TargetFile As String)

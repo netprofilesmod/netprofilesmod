@@ -273,14 +273,17 @@ Public Partial Class ProfileSettings
 		INIWrite(ThisINIFile, "Wireless", "AutoActivateSSID", Me.textBoxAutoActivateSSID.Text.Trim)
 		'*** END SAVE WIRELESS SETTINGS ***
 		
+		Dim OldLocation As String = ""
 		If MainForm.listViewProfiles.SelectedItems.Count > 0 And CreatingNewProfile = False Then
 			If Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":","-") <> MainForm.listViewProfiles.SelectedItems.Item(0).Group.Name.ToString Then
-				
-				System.IO.File.Move(ThisINIFile, ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini")
-        	End If
-        End If
-        
-		If SaveProfile(ThisINIFile, TargetFile) Then
+				' If a different adapter is selected for an existing profile, it has to be saved into the corresponding
+				' folder and the old profile has to be deleted
+				OldLocation = TargetFile
+				TargetFile = ProfilesFolder & "\" & Me.comboBoxNetworkCards.SelectedValue.ToString.Replace(":", "-") & "\" & System.Guid.NewGuid.ToString & ".ini"
+			End If
+		End If
+		
+		If SaveProfile(ThisINIFile, TargetFile, OldLocation) Then
 			'Me.Hide
 			'Me.Visible = False
 			Me.Opacity = Double.MinValue

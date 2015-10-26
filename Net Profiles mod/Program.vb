@@ -74,7 +74,7 @@ Namespace My
 					' If started with the parameter profileops, the application is started with administrator rights
 					' for modifiying profiles in the ProgramData folder, without showing the GUI
 					If CommandLineArgs(1) = "move" Then
-						FileopSaveProfile(CommandLineArgs(2), CommandLineArgs(3))
+						FileopSaveProfile(CommandLineArgs(2), CommandLineArgs(3), CommandLineArgs(4))
 					ElseIf CommandLineArgs(1) = "delete" Then
 						FileopDelete(CommandLineArgs(2))
 					End If

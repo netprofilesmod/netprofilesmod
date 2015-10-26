@@ -81,7 +81,7 @@ Public Partial Class CopyProfile
 		
 		INIWrite(ThisINIFile, "General", "Name", Me.textBoxNewName.Text.Trim)
 		
-		If SaveProfile(ThisINIFile, TargetFile) Then
+		If SaveProfile(ThisINIFile, TargetFile, "") Then
 			'Me.Visible = False
 			'Me.Opacity = "0"
 			Me.Opacity = 0
