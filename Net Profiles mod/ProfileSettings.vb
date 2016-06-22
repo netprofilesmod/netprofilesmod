@@ -460,10 +460,12 @@ Public Partial Class ProfileSettings
 		Application.DoEvents()
 		Me.comboBoxPrinters.Items.Add("")
 		Dim pkInstalledPrinters As String
-    	For Each pkInstalledPrinters In _
-        	PrinterSettings.InstalledPrinters
-        	Me.comboBoxPrinters.Items.Add(pkInstalledPrinters)
-    	Next pkInstalledPrinters
+		Try
+			For Each pkInstalledPrinters In PrinterSettings.InstalledPrinters
+				Me.comboBoxPrinters.Items.Add(pkInstalledPrinters)
+			Next pkInstalledPrinters
+		Catch
+		End Try
 		
 		Me.labelWorking.Text = Me.labelWorking_Profile
 		Application.DoEvents()
