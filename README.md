@@ -27,5 +27,5 @@ Additional features:
 
 ## System Requirements
 
- * Windows XP, Vista, 7 or 8 (corresponding server variants not tested very well, but should work as well)
+ * Windows XP, Vista, 7, 8 or 10 (corresponding server variants not tested very well, but should work as well)
  * .NET Framework 2.0 ([installing .NET 2.0 on Windows 8](http://helpdeskgeek.com/windows-8/install-net-framework-3-5-3-0-2-0-on-windows-8/))
