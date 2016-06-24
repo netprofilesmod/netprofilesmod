@@ -4,7 +4,7 @@
 
 A fork of the abandoned project [Net Profiles](http://code.google.com/p/netprofiles/).
 
-![Screenshot](http://wiki.netprofilesmod.googlecode.com/git/images/main_screen_win8.png)
+![Alt text](/../meta/Screenshot.png?raw=true "Screenshot")
 
 Net Profiles <sup>mod</sup> saves your network settings in profiles and allows to apply these settings with a click of a button. The project is entirely developed with [SharpDevelop](http://www.icsharpcode.net/opensource/sd/). Net Profiles <sup>mod</sup> is free software and is licensed under the [GNU General Public License (GPL) 3.0](http://www.gnu.org/licenses/gpl-3.0).
 
