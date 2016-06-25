@@ -53,7 +53,7 @@ Public Partial Class About
     End Sub
 
     Private Sub linkLabelHomepage_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles linkLabelHomepage.LinkClicked
-        Start("https://github.com/geissbuehler/netprofilesmod")
+        Start("https://github.com/netprofilesmod/netprofilesmod")
     End Sub
 
     Protected Overrides Sub Finalize()

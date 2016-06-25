@@ -1316,7 +1316,7 @@ Public Partial Class MainForm
         Try
             const markBegin As String = "%%___"
             const markEnd As String = "___%%"
-            Dim wrq As WebRequest = WebRequest.Create("https://raw.githubusercontent.com/geissbuehler/netprofilesmod/meta/latestversion.md")
+            Dim wrq As WebRequest = WebRequest.Create("https://raw.githubusercontent.com/netprofilesmod/netprofilesmod/meta/latestversion.md")
             Dim wrp As WebResponse = wrq.GetResponse()
             Application.DoEvents()
             Dim sr As StreamReader = New StreamReader(wrp.GetResponseStream())
@@ -1330,7 +1330,7 @@ Public Partial Class MainForm
                 YNResult = MessageBox.Show(Me.CheckForUpdates_New_1.Replace("%2", currentVersion.Trim) & vbCrLf & Me.CheckForUpdates_New_2, Me.CheckForUpdates_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If YNResult = DialogResult.Yes Then
                     Application.DoEvents()
-                    Start("https://github.com/geissbuehler/netprofilesmod/releases/latest")
+                    Start("https://github.com/netprofilesmod/netprofilesmod/releases/latest")
                 End If
             End If
         Catch
@@ -1352,6 +1352,6 @@ Public Partial Class MainForm
     End Sub
 	
     Sub NetProfilesWebsiteToolStripMenuItemClick(ByVal sender As Object, ByVal e As EventArgs) Handles netProfilesWebsiteToolStripMenuItem.Click
-        Start("https://github.com/geissbuehler/netprofilesmod")
+        Start("https://github.com/netprofilesmod/netprofilesmod")
     End Sub
 End Class
