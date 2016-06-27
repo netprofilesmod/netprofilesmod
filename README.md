@@ -28,4 +28,4 @@ Additional features:
 ## System Requirements
 
  * Windows XP, Vista, 7, 8 or 10 (corresponding server variants not tested very well, but should work as well)
- * .NET Framework 2.0 ([installing .NET 2.0 on Windows 8](http://helpdeskgeek.com/windows-8/install-net-framework-3-5-3-0-2-0-on-windows-8/))
+ * .NET Framework 2.0 ([Enabling .NET Framework 3.5 (includes .NET 2.0 and 3.0) via Control Panel in Windows 8, 8.1 and 10](https://msdn.microsoft.com/en-us/library/hh506443(v=vs.110).aspx#Anchor_1))
