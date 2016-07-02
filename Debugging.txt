@@ -1,14 +1,12 @@
-This project is entirely developed with SharpDevelop: http://www.icsharpcode.net/opensource/sd/
-To build the installer also the WiX Toolset is required: http://wix.codeplex.com/
-(the latest tested versions are SharpDevelop 4.4 and WiX Toolset 3.9)
+This project is developed with Visual Studio Communitiy 2015
+To build the installer also the WiX Toolset >= 3.10 is required: http://wix.codeplex.com/
 
 For successfully building and debugging Net Profiles mod please take care of the following:
 
-1. Set Net Profiles mod as startup project in SharpDevelop.
+1. Set Net Profiles mod as startup project.
 
-2. Select the x86 platform. SharpDevelop only supports debugging of x86 code, the x64 platform is only used for
-   building but not debugging. Building the AnyCPU release will fail, it is reserved for future use when MessageBoxHook
-   is removed.
+2. Building only succeeds when the x86 platform or the x64 platform is selected. Building the AnyCPU release will fail,
+   it is reserved for future use when MessageBoxHook is no more required.
 
 3. If Net Profiles mod is not installed, the service for applying IP settings via named pipe will be missing. In this
    case run the PipeServerTester without the debugger (will trigger an UAC dialog). Otherwise applying IP setttings

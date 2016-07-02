@@ -14,7 +14,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
     <PlatformTarget>x86</PlatformTarget>
-    <OutputName>Net Profiles mod - Windows x86 - 00.02.05</OutputName>
+    <OutputName>Net Profiles mod - Windows x86 - 00.03.00</OutputName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>True</DebugSymbols>
@@ -28,7 +28,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
     <PlatformTarget>x64</PlatformTarget>
-    <OutputName>Net Profiles mod - Windows x64 - 00.02.05</OutputName>
+    <OutputName>Net Profiles mod - Windows x64 - 00.03.00</OutputName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
     <OutputPath>bin\x64\Debug\</OutputPath>
@@ -43,8 +43,14 @@
     <OutputPath>bin\x86\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <WixExtension Include="$(WixToolPath)\WixUIExtension.dll" />
-    <WixExtension Include="$(WixToolPath)\WixNetFxExtension.dll" />
+    <WixExtension Include="WixUIExtension">
+      <HintPath>C:\Program Files (x86)\WiX Toolset v3.10\bin\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>C:\Program Files (x86)\WiX Toolset v3.10\bin\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Files.wxs" />

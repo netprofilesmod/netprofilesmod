@@ -26,8 +26,8 @@
 ' To change this template use Tools | Options | Coding | Edit Standard Headers.
 '
 Public Module GlobalLib
-	Public const ProgramVersion As String = "0.2.5"
-	Public const ProgramName As String = "Net Profiles mod"
+    Public Const ProgramVersion As String = "0.3.0"
+    Public const ProgramName As String = "Net Profiles mod"
 	
 	Public CommonApplicationDataFolder As String = System.Environment.GetFolderPath(System.Environment.SpecialFolder.CommonApplicationData) + "\" + ProgramName
 	Public ProfilesFolder As String = CommonApplicationDataFolder + "\profiles"
