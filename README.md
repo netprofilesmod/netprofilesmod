@@ -2,6 +2,8 @@
 
 [**Download**](../../releases)
 
+[![Releases](https://img.shields.io/github/downloads/netprofilesmod/netprofilesmod/total.svg)](../../releases)
+
 A fork of the abandoned project [Net Profiles](http://code.google.com/p/netprofiles/).
 
 ![Alt text](/../meta/Screenshot.png?raw=true "Screenshot")
